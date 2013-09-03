@@ -1,8 +1,12 @@
 AIKIF = Artificial Intelligence Knowledge Information Framework
-[Planning stage] 22/8/2013
-This is an example framework of tables to capture the flow of 
-information ready for an AI to utilise it.
-Initially it will be populated and tested for a human 
+[Planning stage] 3/9/2013
+
+Overview
+This is an example framework to capture the flow of information in AI applications.
+Initially it will be populated and tested for human use, but includes tests and verification process for future ‘General AI’s
+Functions (Octave, Python, SQL) are called at set stages of the AI process which log the results into a standard database schema.
+
+This allows you to easily search and compare previous batch runs
 
 
 ===========================================================================================
@@ -12,7 +16,7 @@ GetCommand      - get input from human operator on what goal/task to work on
 ChooseGoal      - initially tied directly to GetCommand, otherwise choose a Goal based on preferences
 CreatePlan      - make a plan based on the current goal
 GetPlanFeedback - publish the plan to humans for review and safety checks
-CollectData     - function to collect raw data from the web and hard drive[ currently using documents on disk instead of web ]
+CollectData     - function to collect raw data from the web and local disks
 ProcessData     - function to process raw data using Bias tables to get a comprehension of the information
 Play            - random learning, pick random problem to solve, test existing knowledge, practice something
 
