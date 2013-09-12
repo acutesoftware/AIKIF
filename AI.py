@@ -11,51 +11,47 @@ import as_util_data as dat
 import AIKIF_utils as aikif
 localPath = "C://user//dev//src//python//AI//"
 
-def GetCommand():
-    allCommands = dat.ReadFileToList("commands.csv", 2)
-    
-    #for com in allCommands:
-    #    if com.split(",")
-    #   currentCommand = allCommands[0].rsplit())
-    currentCommand = "READ"
-    currentCommand = "PROCESS"
-    currentCommand = "PLAY"
-    
-    print("   Current Operator Commands = ", currentCommand)
-    return currentCommand
-    
-def CollectData():
-    # function to collect raw data from the web and hard drive[ currently using documents on disk instead of web ]
-    print("   Collecting Data")
 
-def ProcessData():
-    # function to process raw data using Bias tables to get a comprehension of the information
-    print("   Processing Data")
-
-def Play():
-    # function to process raw data using Bias tables to get a comprehension of the information
-    print("   Free form play - learn what you want")
-
-      
+def BlackBoxAI(command, sourceInfo):
+    # call to your application
+    result = []
+    print('running AI task ...')
+    x = 0
+    #for c in command:
+    for i in sourceInfo:
+        x = x + int(i)
+    # -----------------------------
+    # insert link to real code here
+    # -----------------------------
+    result.append('answer=' + str(x))
+    result.append('status=Success')
+    return result
+    
 #------------------------------
 #  Main Program 
 #------------------------------
-print("Hello - Welcome to AI.py")
-try:
-    AIKIF_FileList = aikif.build_AIKIF_structure()
-except:    
-    sys.exit("Error - cant load data structures")
+print("Sample code to run an AI task using the AIKIF framework")
+#try:
+AIKIF_FileList = aikif.build_AIKIF_structure()
+aikif.printFileList(AIKIF_FileList)
+aikif.LogProcess('sample task - BlackBoxAI')
 
-numIterations = 0
-while(numIterations < 1):
-    currentCommand = GetCommand()
-    if currentCommand == "READ":
-        CollectData()
-    elif currentCommand == "PROCESS":    
-        ProcessData()
-    elif currentCommand == "PLAY":    
-        Play()
-        
-    numIterations = numIterations + 1
+# define source data and commands
+source = []
+command = []
+command.append( 'Sum all variables')
+source.append('2')
+source.append('5')
+aikif.LogCommand(command)
+aikif.LogDataSource(source)
 
-print("Goodbye") 
+# call your AI task 
+result = BlackBoxAI(command, source)        
+
+# record the result
+aikif.LogResult(result)
+    
+#except:    
+#    sys.exit("Error - cant load data structures")
+
+print("Done") 

@@ -11,6 +11,9 @@ import as_util_data as dat
 
 localPath = "C://user//dev//src//python//AI//"
 
+# -----------------------------------------
+# --   Prepare Data structures 
+# -----------------------------------------
 def build_AIKIF_structure():
     AIKIF_FileList = []  # filelist is a list of dictionary objects
     AIKIF_FileList.append({"fname": "rawData.csv", "fields":["date","source","person","raw_string"], "use": "Holds raw data found on web"} )
@@ -54,4 +57,24 @@ def SaveFileList(fl, filename):
     w = open(filename, "wt")
     w.writelines(list( "%s\n" % item for item in lst ))
 
+    
+# -----------------------------------------
+# --   Logging Functions 
+# -----------------------------------------
+def LogDataSource(src):
+    # function to collect raw data from the web and hard drive[ currently using documents on disk instead of web ]
+    print(' source  =', src)
+    
+def LogProcess(process):
+    # function to process raw data using Bias tables to get a comprehension of the information
+    print(' process = ', process)
+
+def LogCommand(cmd):
+    # function to process raw data using Bias tables to get a comprehension of the information
+    print(' command = ', cmd)
+
+def LogResult(res):
+    # function to process raw data using Bias tables to get a comprehension of the information
+    print('   result    = ', res)
+    
     
