@@ -16,6 +16,9 @@ localPath = "C://user//dev//src//python//AI//"
 # -----------------------------------------
 def build_AIKIF_structure():
     AIKIF_FileList = []  # filelist is a list of dictionary objects
+    AIKIF_FileList.append({"fname": "refObject.csv", "fields":["objectTypeName","PhysicalType", "description"], "use": "Top level ref file for objects"} )
+    AIKIF_FileList.append({"fname": "refAction.csv", "fields":["ActionTypeName","PhysicalType", "description"], "use": "Top level ref file for actions"} )
+
     AIKIF_FileList.append({"fname": "rawData.csv", "fields":["date","source","person","raw_string"], "use": "Holds raw data found on web"} )
     AIKIF_FileList.append({"fname": "bias.csv", "fields":["source","weight"], "use": "BIAS values to rate the accuracy of data" } )
     AIKIF_FileList.append({"fname": "websites.csv", "fields":["url","bias"], "use": "websites for bias rankings" } )

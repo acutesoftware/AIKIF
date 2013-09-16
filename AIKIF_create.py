@@ -47,6 +47,18 @@ wipeSampleFiles()   # keep this in here until program starts collecting data
 #-----------------------------------------------------
 AIKIF_FileList = aikif.build_AIKIF_structure()
 
+createSampleFile("refObject.csv", ["objectTypeName","PhysicalType", "description"])
+addSampleData("refObject.csv", ["Thought", "Mental", "Thought or mental note"])
+addSampleData("refObject.csv", ["Idea", "Mental", "Idea from user"])
+addSampleData("refObject.csv", ["File", "Virtual", "File on a computer system"])
+addSampleData("refObject.csv", ["Folder", "Virtual", "location on a computer system"])
+addSampleData("refObject.csv", ["Physical Thing", "Physical", "Physical object"])
+
+createSampleFile("refAction.csv", ["ActionTypeName","PhysicalType", "description"])
+addSampleData("refAction.csv", ["Movement", "Physical", "moving through physical space"])
+addSampleData("refAction.csv", ["Movement", "Virtual", "moving a file / folder in virtual space"])
+
+
 if not os.path.exists("rawData.csv"):
     createSampleFile("rawData.csv", ["date","source","person","raw_string"])
     addSampleData("rawData.csv", ["23/7/2013","manual entry","duncan","python is a good language for programming"])
