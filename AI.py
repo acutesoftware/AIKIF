@@ -6,10 +6,10 @@
 import os
 import sys
 import csv
-sys.path.append('C://user//dev//src//python//_AS_LIB')
+sys.path.append('S://duncan//C//user//dev//src//python//_AS_LIB')
 import as_util_data as dat
 import AIKIF_utils as aikif
-localPath = "C://user//dev//src//python//AI//"
+localPath = "S://duncan//C//user//dev//src//python//AI//"
 
 
 def BlackBoxAI(command, sourceInfo):
@@ -33,7 +33,10 @@ def BlackBoxAI(command, sourceInfo):
 print("Sample code to run an AI task using the AIKIF framework")
 #try:
 AIKIF_FileList = aikif.build_AIKIF_structure()
-aikif.printFileList(AIKIF_FileList)
+#aikif.printFileList(AIKIF_FileList)
+aikif.showColumnStructures(AIKIF_FileList)
+#aikif.debugPrintFileStructures(AIKIF_FileList)
+
 aikif.LogProcess('sample task - BlackBoxAI')
 
 # define source data and commands

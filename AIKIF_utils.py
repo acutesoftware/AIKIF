@@ -6,10 +6,10 @@
 import os
 import sys
 import csv
-sys.path.append('C://user//dev//src//python//_AS_LIB')
+sys.path.append('S://duncan//C//user//dev//src//python//_AS_LIB')
 import as_util_data as dat
 
-localPath = "C://user//dev//src//python//AI//"
+localPath = "S://duncan//C//user//dev//src//python//AI//"
 
 # -----------------------------------------
 # --   Prepare Data structures 
@@ -31,6 +31,17 @@ def build_AIKIF_structure():
    
     return AIKIF_FileList
 
+def showColumnStructures(AIKIF_FileList):
+    print('\n--------------   Column Structures of Data Files  -----------------')
+    for j in range(len(AIKIF_FileList)):
+        for key in AIKIF_FileList[j]:  # dont use sorted function
+            if key == 'fname':
+                dat.print_no_newline('\n ' + AIKIF_FileList[j][key].ljust(15, ' ') + ': ') 
+            if key == 'fields':
+                for fld in AIKIF_FileList[j][key]:
+                    dat.print_no_newline(fld + ',' )  # prints all heirachy - works
+    print('\n-------------------------------------------------------------------\n')
+	
 def debugPrintFileStructures(AIKIF_FileList):
     for j in range(len(AIKIF_FileList)):
         for key in sorted(AIKIF_FileList[j]):
