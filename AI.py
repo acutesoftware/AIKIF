@@ -6,10 +6,10 @@
 import os
 import sys
 import csv
-sys.path.append('S://duncan//C//user//dev//src//python//_AS_LIB')
+sys.path.append('..//_AS_LIB')
 import as_util_data as dat
 import AIKIF_utils as aikif
-localPath = "S://duncan//C//user//dev//src//python//AI//"
+localPath = os.getcwd()
 
 
 def BlackBoxAI(command, sourceInfo):

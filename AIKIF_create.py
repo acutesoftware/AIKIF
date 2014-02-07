@@ -13,10 +13,10 @@
 import os
 import sys
 import csv
-sys.path.append('C://user//dev//src//python//_AS_LIB')
+sys.path.append('..//_AS_LIB')
 import as_util_data as dat
 import AIKIF_utils as aikif
-localPath = "C://user//dev//src//python//AI//"
+localPath = os.getcwd()
 
 def wipeSampleFiles():
     # wipes all files in the filelist passed (be careful)
