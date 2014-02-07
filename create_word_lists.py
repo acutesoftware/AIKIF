@@ -68,7 +68,7 @@ def ExtractCat():
     ipFile = 'S:\\DATA\\opendata\\ontology\\wikipedia_categories\\dbpedia-ontology.owl.bz2.owl.bz2.owl'
     print(ipFile + ' = ' + str(dat.countLinesInFile(ipFile)) + ' rows' )
 
-    
+     
     
   #  dom = xml.dom.minidom.parse( ipFile )   # parse an XML file
     #print (dom1.toxml())
