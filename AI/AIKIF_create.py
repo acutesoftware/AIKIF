@@ -13,29 +13,33 @@
 import os
 import sys
 import csv
-sys.path.append('..//_AS_LIB')
+sys.path.append('..//..//_AS_LIB')
 import as_util_data as dat
 import AIKIF_utils as aikif
-localPath = os.getcwd()
+localPath = '..//data//' # os.getcwd()
 
 def wipeSampleFiles():
     # wipes all files in the filelist passed (be careful)
-    with open('AIKIF_FileList.csv', 'r') as f:
-        filelist = f.readlines()
-        for f in filelist: 
-            #print("deleting - ", f)
-            try:
-                os.remove( f.rstrip())   # this is required to remove trailing \n
-            except: 
-                pass
+    try:
+        with open('..//data//AIKIF_FileList.csv', 'r') as f:
+            filelist = f.readlines()
+            for f in filelist: 
+                f = localPath + f
+                #print("deleting - ", f)
+                try:
+                    os.remove( f.rstrip())   # this is required to remove trailing \n
+                except: 
+                    pass
+    except:
+        print('creating sample filelist ...')
                 
 def createSampleFile(fname, header):
     #print("Creating sample file - ", fname)
-    wr = csv.writer(open(fname, 'wt'), quoting=csv.QUOTE_ALL, lineterminator='\n')
+    wr = csv.writer(open('..//data//' + fname, 'wt'), quoting=csv.QUOTE_ALL, lineterminator='\n')
     wr.writerow(header)
      
 def addSampleData(fname, content):
-    wr = csv.writer(open(fname, 'at'), quoting=csv.QUOTE_ALL, lineterminator='\n')
+    wr = csv.writer(open('..//data//' + fname, 'at'), quoting=csv.QUOTE_ALL, lineterminator='\n')
     wr.writerow(content)
      
 
@@ -138,8 +142,8 @@ if not os.path.exists(f):
     
 # Now print a summary of all files and sizes
 aikif.printFileList(AIKIF_FileList)
-#debugPrintFileStructures(AIKIF_FileList)
+#aikif.debugPrintFileStructures(AIKIF_FileList)
 
 
 
-aikif.SaveFileList(AIKIF_FileList, "AIKIF_FileList.csv")
+aikif.SaveFileList(AIKIF_FileList, '..//data//AIKIF_FileList.csv')

@@ -8,15 +8,15 @@
 import os
 import sys
 import csv
-sys.path.append('..//_AS_LIB')
+sys.path.append('..//..//_AS_LIB')
 import as_util_data as dat
 import AIKIF_utils as aikif
 
 
-verbList = dat.ReadFileToList('verbList.txt')
-nounList = dat.ReadFileToList('nounList.txt')
-adjectiveList = dat.ReadFileToList('adjList.txt')
-adverbList = dat.ReadFileToList('advList.txt')
+verbList = dat.ReadFileToList('..//data//verbList.txt')
+nounList = dat.ReadFileToList('..//data//nounList.txt')
+adjectiveList = dat.ReadFileToList('..//data//adjList.txt')
+adverbList = dat.ReadFileToList('..//data//advList.txt')
 
 #print(adjectiveList)
 

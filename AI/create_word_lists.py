@@ -9,12 +9,12 @@ import os
 import sys
 from xml.dom.minidom import parse, parseString
 import xml
-sys.path.append('..//aspytk')
+sys.path.append('..//..//aspytk')
 #import as_util_data as dat
 import lib_data as dat
 import lib_file as fle
 ipFolder = 'S://DATA//opendata//datasets//dict//'
-opFolder = os.getcwd()
+opFolder = '..//data'  # os.getcwd()
 
 def SaveListFirstWordOnly(msg, ipfile, opFile):
     numRecs = 0

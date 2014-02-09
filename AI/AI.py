@@ -6,7 +6,7 @@
 import os
 import sys
 import csv
-sys.path.append('..//_AS_LIB')
+sys.path.append('..//..//_AS_LIB')
 import as_util_data as dat
 import AIKIF_utils as aikif
 localPath = os.getcwd()

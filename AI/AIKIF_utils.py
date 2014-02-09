@@ -6,10 +6,10 @@
 import os
 import sys
 import csv
-sys.path.append('..//_AS_LIB')
+sys.path.append('..//..//_AS_LIB')
 import as_util_data as dat
 
-localPath = os.getcwd()
+localPath = '..//data//' # os.getcwd()
 
 # -----------------------------------------
 # --   Prepare Data structures 
@@ -36,7 +36,7 @@ def showColumnStructures(AIKIF_FileList):
     for j in range(len(AIKIF_FileList)):
         for key in AIKIF_FileList[j]:  # dont use sorted function
             if key == 'fname':
-                dat.print_no_newline('\n ' + AIKIF_FileList[j][key].ljust(15, ' ') + ': ') 
+                dat.print_no_newline('\n ' + AIKIF_FileList[j][key].ljust(14, ' ') + ': ') 
             if key == 'fields':
                 for fld in AIKIF_FileList[j][key]:
                     dat.print_no_newline(fld + ',' )  # prints all heirachy - works
@@ -53,6 +53,7 @@ def printFileList(l):
     fileList = [row['fname'] for row in l]
     numFiles = 0
     for fileName in fileList:
+        fileName = localPath + fileName
         numFiles=numFiles+1
         print (fileName, "\t",dat.countLinesInFile(fileName), "rows" , "\t(", os.path.getsize(fileName), "bytes)")
   
