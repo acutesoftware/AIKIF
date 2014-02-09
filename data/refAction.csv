@@ -1,0 +1,3 @@
+"ActionTypeName","PhysicalType","description"
+"Movement","Physical","moving through physical space"
+"Movement","Virtual","moving a file / folder in virtual space"
