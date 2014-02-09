@@ -13,8 +13,11 @@ sys.path.append('..//..//aspytk')
 #import as_util_data as dat
 import lib_data as dat
 import lib_file as fle
+import xml.etree.ElementTree as ET
+
+ontologyClassificationFile = 'S:\\DATA\\opendata\\ontology\\wikipedia_categories\\dbpedia-ontology.owl.bz2.owl.bz2.owl'
 ipFolder = 'S://DATA//opendata//datasets//dict//'
-opFolder = '..//data'  # os.getcwd()
+opFolder = '..//data//'  # os.getcwd()
 
 def SaveListFirstWordOnly(msg, ipfile, opFile):
     numRecs = 0
@@ -50,7 +53,7 @@ def ExtractListOfWords():
     print ('Saved ' + str(numRecs) + ' verbs')
 
 
-def ExtractCat():
+def ExtractCat(fname, opFile):
 
     #Look at the wikipedia categories - no - far too detailed
     #S:\DATA\opendata\ontology\wikipedia_categories\articlecategories_en.csv.bz2.csv.bz2.csv
@@ -65,21 +68,57 @@ def ExtractCat():
     # infoboxproperties_en.csv.bz2.csv.bz2 = list of properties or labels (name, age, BestBowlerFirstInnings, PilotName, ProducerAge, etc)
 
     # ontology is in RDF format
-    ipFile = 'S:\\DATA\\opendata\\ontology\\wikipedia_categories\\dbpedia-ontology.owl.bz2.owl.bz2.owl'
-    print(ipFile + ' = ' + str(dat.countLinesInFile(ipFile)) + ' rows' )
+    print(fname + ' = ' + str(dat.countLinesInFile(fname)) + ' rows' )
 
      
     
-  #  dom = xml.dom.minidom.parse( ipFile )   # parse an XML file
+  #  dom = xml.dom.minidom.parse( fname )   # parse an XML file
     #print (dom1.toxml())
    # dom.findall('owl:DatatypeProperty', namespaces=namespaces)
 #    for node in dom.getElementsByTagName('DatatypeProperty'):  # visit every node <bar />
-
-    dom = parse( ipFile )
+    numFound = 0
+    categories = []
+    dom = parse( ontologyClassificationFile )
     for node in dom.getElementsByTagName('rdfs:label'):  # visit every node <bar />
-        print (node.toxml())
+        #print (node.toxml())
+        numFound = numFound + 1
+        cat = dat.StriptHTMLtags(node.toxml()) 
+        print(cat)
+        categories.append(cat)
+        
+        #print ('subclasses = ')
+        #for sub in node.findall('subClassOf'):
+        #    print (sub.toxml())
+    dat.SaveListToFile(categories, opFile)
+    return numFound 
 
-
+def GetOntologyExtract(fname, txt):
+    numFound = 0
+    # see http://stackoverflow.com/questions/14853243/parsing-xml-with-namespace-in-python-elementtree
+    namespaces = {'owl': 'http://www.w3.org/2002/07/owl#'} # add more as needed
+    #namespaces = {'rdfs': 'http://www.w3.org/2000/01/rdf-schema#'}
+    print('Extracting ' + txt )
+    tree = ET.parse(fname)
+    doc = tree.getroot()
+    #nodes = doc.findall('owl:Class', namespaces=namespaces)
+    nodes = doc.findall(txt, namespaces=namespaces)
+    #nodes = doc.findall('rdfs:label', namespaces=namespaces)
+    print('found ' + str(len(nodes)) + ' nodes\n ' )
+    for node in nodes:
+        numFound = numFound + 1
+        for itm in node.items():
+            print (itm[1][28:])
+        #print(node.tail)    
+   # find_in_tree(root,"myNode")
+        #print(node.attrib)
+        #print(len(node))
+        #print(node.get('rdfs'))
+        #print('node.text= ' + node.text)
+        #print('node.tag = ' + node.tag)
+    return numFound
+        
+        
+        
 #-----------------------------------------------------------#
 #                 Build a Master Word List                  #
 #-----------------------------------------------------------#
@@ -93,9 +132,11 @@ def ExtractCat():
 
 
 #    MAIN
-print('create_word_list.py')
-print('script to extract lists for AIKIF')
+opFile = '..\\data\\ontology_list.txt'
+print('create_word_list.py - script to extract lists for AIKIF')
+print('Reading - ' + ontologyClassificationFile)
 #ExtractListOfWords()
-ExtractCat()
+print('Extracted ' + str(ExtractCat(ontologyClassificationFile, opFile)) + ' nodes to ' + opFile)
+#print('Found ' + str(GetOntologyExtract(ontologyClassificationFile, 'owl:Class')) + ' nodes')
 print('Done..')
 
