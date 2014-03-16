@@ -49,9 +49,9 @@ def debugPrintFileStructures(AIKIF_FileList):
     print ("AIKIF_FileList[0][\"fname\"]  = ", AIKIF_FileList[0]["fname"] )
     print ("AIKIF_FileList[1][\"fields\"][0] = ", AIKIF_FileList[1]["fields"][0] )
 
-def printFileList(l):
+def printFileList(l): 
     fileList = [row['fname'] for row in l]
-    numFiles = 0
+    numFiles = 0 
     for fileName in fileList:
         fileName = localPath + fileName
         numFiles=numFiles+1
@@ -71,6 +71,25 @@ def SaveFileList(fl, filename):
     lst = getFileList(fl)
     w = open(filename, "wt")
     w.writelines(list( "%s\n" % item for item in lst ))
+    w.close()
+
+def GetElementsAsString(lst, delim, quote='"'):
+    # gets the remaining elements of a list as strings
+    opTxt = ''
+    for line in lst:
+        for i in line:
+            if type(i) is str:
+                opTxt = opTxt + quote + i + quote + delim
+            else:
+                opTxt = opTxt + quote + str(i) + quote + delim
+        opTxt = opTxt + '\n'
+    return(opTxt)
+    
+def SaveFileDataToFile(lst, filename):
+    w = open(filename, "wt")
+    w.writelines(GetElementsAsString(lst, ','))
+    w.close()
+
 
     
 # -----------------------------------------
