@@ -3,12 +3,10 @@
 # of information ready for an AI to utilise it.
 # AIKIF = Artificial Intelligence Knowledge Information Framework
 
-import os
+import os 
 import sys
-import csv
-sys.path.append('..//..//_AS_LIB')
-import as_util_data as dat
 import AIKIF_utils as aikif
+
 localPath = os.getcwd()
 
 

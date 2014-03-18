@@ -16,6 +16,7 @@ from datetime import datetime
 sys.path.append('..//..//_AS_LIB')
 import as_util_data as dat
 import AIKIF_utils as aikif
+import fileMapping as filemap
 
 rawData_fileList = r"T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv"
 #rawData_fileList = r"T:\user\dev\src\python\AI\data\small-filelist-for-AIKIF.csv"   # medium list creates 107,000 links - all combinations
@@ -25,6 +26,17 @@ object_fileList = r"T:\user\dev\src\python\AI\data\sample-objects.csv"
 location_fileList = r"T:\user\dev\src\python\AI\data\sample-locations.csv"
 link_fileList = r"T:\user\dev\src\python\AI\data\sample-links.csv"
 #pcUsageData = dat.load_csv(
+
+subjectArea = filemap.FindOntology('file') # should return 'SYSTEM-PC-FILE'
+#print ( 'subjectArea = ' + subjectArea[0])
+
+event_fileList = filemap.GetFullFilename(filemap.FindType('event'), subjectArea[0])    
+object_fileList = filemap.GetFullFilename(filemap.FindType('object'), subjectArea[0])    
+location_fileList = filemap.GetFullFilename(filemap.FindType('location'), subjectArea[0])   
+link_fileList = filemap.GetFullFilename(filemap.FindType('link'), subjectArea[0])    
+
+
+print(' event_fileList = ' + event_fileList)
 
 def remove_duplicates(l):
     new_list = []
