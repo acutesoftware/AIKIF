@@ -6,10 +6,15 @@
 import os
 import sys
 import csv
-sys.path.append('..//..//_AS_LIB')
-import as_util_data as dat
+sys.path.append('..//..//aspytk')
+import lib_data as dat
+import lib_file as fle
 
 localPath = '..//data//' # os.getcwd()
+logFileProcess = 'process.log'
+logFileSource = 'source.log'
+logFileCommand = 'command.log'
+logFileResult = 'result.log'
 
 # -----------------------------------------
 # --   Prepare Data structures 
@@ -97,18 +102,22 @@ def SaveFileDataToFile(lst, filename):
 # -----------------------------------------
 def LogDataSource(src):
     # function to collect raw data from the web and hard drive[ currently using documents on disk instead of web ]
-    print(' source  =', src)
+    #print(' source  =', src)
+	pass
     
 def LogProcess(process):
     # function to process raw data using Bias tables to get a comprehension of the information
-    print(' process = ', process)
+    #print(' process = ', process)
+	pass
 
 def LogCommand(cmd):
     # function to process raw data using Bias tables to get a comprehension of the information
-    print(' command = ', cmd)
+    #print(' command = ', cmd)
+	pass
 
 def LogResult(res):
     # function to process raw data using Bias tables to get a comprehension of the information
-    print('   result    = ', res)
+    #print('   result    = ', res)
+	pass
     
     

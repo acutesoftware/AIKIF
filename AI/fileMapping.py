@@ -65,6 +65,10 @@ def main():
 	ShowListOfProposedFiles('N') # TOK
 	ShowListOfMappedFiles('N')   # TOK
 	ShowListOfPhysicalFiles('N')	# TOK
+
+
+def GetDataPath():
+	return dataPath 
 	
 def ShowListOfProposedFiles(printList='Y'):
 	# display a list of files which are defined in AIKIF_utils.py
@@ -76,11 +80,11 @@ def ShowListOfProposedFiles(printList='Y'):
 	fl_all.append(['EV_SMS', 'N', 'Phone texts'])
 	fl_all.append(['EV_SYS_REBOOTS', 'N', 'File system reboots all PCs'])
 	fl_all.append(['ONT__TOP', 'N', 'Ontology Master file for top level hierachy'])
-	fl_all.append(['ONT_WHO', 'N', 'Ontololgy heircahy for contacts'])
-	fl_all.append(['ONT_WHAT', 'N', 'Ontololgy heircahy for Objects'])
-	fl_all.append(['ONT_WHEN', 'N', 'Ontololgy heircahy for Time'])
-	fl_all.append(['ONT_WHERE', 'N', 'Ontololgy heircahy for Locations'])
-	fl_all.append(['ONT_WHY', 'N', 'Ontololgy heircahy for Reasoning'])
+	fl_all.append(['ONT_WHO', 'N', 'Ontology heircahy for contacts'])
+	fl_all.append(['ONT_WHAT', 'N', 'Ontology heircahy for Objects'])
+	fl_all.append(['ONT_WHEN', 'N', 'Ontology heircahy for Time'])
+	fl_all.append(['ONT_WHERE', 'N', 'Ontology heircahy for Locations'])
+	fl_all.append(['ONT_WHY', 'N', 'Ontology heircahy for Reasoning'])
 	if printList == 'Y':
 		print('\nALL FILES (eventually):')
 		for i in fl_all:
