@@ -44,7 +44,7 @@ command.append( 'Sum all variables')
 source.append('2')
 source.append('5')
 aikif.LogCommand(command)
-aikif.LogDataSource(source)
+aikif.LogDataSource(source)  # get rid of this - no point logging a single number
 
 # call your AI task 
 result = BlackBoxAI(command, source)        

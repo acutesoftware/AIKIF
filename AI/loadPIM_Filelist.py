@@ -11,8 +11,8 @@ import sys
 import csv
 import time
 from datetime import datetime
-sys.path.append('..//..//_AS_LIB')
-import as_util_data as dat
+sys.path.append('..//..//aspytk')
+import lib_data as dat
 import AIKIF_utils as aikif
 import fileMapping as filemap
 
@@ -72,20 +72,11 @@ def main():
 
 
 
-def remove_duplicates(l):
-    new_list = []
-    for elem in l:
-        if elem not in new_list:
-            new_list.append(elem)
-
-    return new_list
-    #return list(set(l))   # this is pythonic way to do it for non nested list
-
 
 def BuildUniqueLocations(locListWITH_duplicates):
     newList = []
     location_key = 1
-    locList = remove_duplicates(locListWITH_duplicates)
+    locList = dat.remove_duplicates(locListWITH_duplicates)
     for i in locList:
         location_key = location_key + 1
         for j in i:

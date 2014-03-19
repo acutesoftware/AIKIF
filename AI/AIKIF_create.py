@@ -130,6 +130,7 @@ if not os.path.exists(f):
     createSampleFile(f, ["category", "fact", "weight"])
     addSampleData(f, ["python","dictionaries allow named columns",0.9])
     addSampleData(f, ["weather","storms are caused by low pressure cloud systems",0.9])
+    addSampleData(f, ["PC-FILE","Christmas photos are stored in NAS under events",0.9])
 
 f = "commands.csv"
 if not os.path.exists(f):
