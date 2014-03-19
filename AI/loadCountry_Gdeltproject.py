@@ -46,7 +46,7 @@ def main():
 		print('-----------------------------------')
 		print('Loading DataSets from GDelt project')
 		print('-----------------------------------')
-	aikif.LogDataSource(srcURL)
+	aikif.LogDataSource(srcURL, fle.GetModuleName())
 	net.DownloadFile(srcURL, tmpFile)
 	LoadCountryFile(tmpFile, location_fileList )
 	#MapFilesToOntology(location_fileList, ??)

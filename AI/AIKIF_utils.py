@@ -100,24 +100,27 @@ def SaveFileDataToFile(lst, filename):
 # -----------------------------------------
 # --   Logging Functions 
 # -----------------------------------------
-def LogDataSource(src):
+def LogDataSource(src, prg=''):
     # function to collect raw data from the web and hard drive[ currently using documents on disk instead of web ]
     #print(' source  =', src)
-	pass
+	fle.log(logFileSource , dat.ForceToString(src), prg)
     
-def LogProcess(process):
+def LogProcess(process, prg=''):
     # function to process raw data using Bias tables to get a comprehension of the information
     #print(' process = ', process)
-	pass
+	fle.log(logFileProcess, dat.ForceToString(process), prg)
 
-def LogCommand(cmd):
+def LogCommand(cmd, prg=''):
     # function to process raw data using Bias tables to get a comprehension of the information
     #print(' command = ', cmd)
-	pass
+	fle.log(logFileCommand , dat.ForceToString(cmd), prg)
 
-def LogResult(res):
+def LogResult(res, prg=''):
     # function to process raw data using Bias tables to get a comprehension of the information
     #print('   result    = ', res)
-	pass
+	fle.log(logFileResult , dat.ForceToString(res), prg)
     
-    
+
+ 
+
+
