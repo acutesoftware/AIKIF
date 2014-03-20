@@ -32,7 +32,8 @@ def index():
 		print('Rebuilding Indexes')
 		print('------------------')	
 
-	ndxFile = 'ndxAll.txt'
+	ndxFile = 'ndxFull.txt'
+	opIndex = 'ndxWordsToFiles.txt'
 	with open(ndxFile, "w") as ndx:
 		ndx.write('filename, word, linenumbers\n')
 
@@ -42,7 +43,7 @@ def index():
 	#buildIndex('..//data//test-file.txt', ndxFile, silent)
 	
 	# now build the one big index file
-	consolidate(ndxFile)
+	consolidate(ndxFile, opIndex )
 
 	aikif.LogProcess('Finished indexing',  'index.py')   #, fle.GetModuleName())
 	if silent == 'N':
@@ -58,8 +59,10 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N'):
 	totWordCount = 0
 	if silent == 'N':
 		pass
+	if append == 'N':
+		fle.deleteFile(ndxFile)
 		#print('indexing ' + ipFile)
-	delims = [',', '"', '/', '.', ':', '!', '?', '-', '_', ' ', '\n']
+	delims = [',', '$', '&', '"', '%', '/', '.', ';', ':', '!', '?', '-', '_', ' ', '\n', '*', '\'', '(', ')', '[', ']', '{', '}']
 	# 1st pass - index the ontologies, including 2 depths up (later - TODO)
 	#buildIndex(ipFile, ndxFile, ' ', 1, 'Y')
 
@@ -67,7 +70,7 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N'):
 	totWords, totLines, uniqueWords = getWordList(ipFile, delims)
 	
 	AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile)
-	print(ipFile + ' has ' + str(totLines) + ' lines, ' + str(totWords) + ' words (' + str(len(uniqueWords)) + ' unique words)')
+	print(fle.GetShortFileName(ipFile).ljust(30) + ' ' + str(totLines).rjust(6) + ' lines ' + str(totWords).rjust(6) + ' words ' + str(len(uniqueWords)).rjust(6) + ' unique words')
 	if silent == 'N':
 		pass
 		#show('uniqueWords', uniqueWords, 5)
@@ -82,7 +85,7 @@ def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile):
 		for word in sorted(word_keys):
 			if word != '':
 				line_nums = uniqueWords[word]
-				ndx.write(ipFile + ', ' + word + ', ')
+				ndx.write(fle.GetShortFileName(ipFile) + ', ' + word + ', ')
 				for line_num in line_nums:
 					ndx.write(str(line_num))
 				ndx.write('\n')
@@ -124,7 +127,8 @@ def getWordList(ipFile, delim, headersOnly='N'):
 		words = multi_split(line, delim)
 		totWords = totWords + len(words)
 		#show('orig words', words)
-		for cleanedWord in words:
+		for word in words:
+			cleanedWord = word.lower().strip()
 			if cleanedWord not in indexedWords:
 				#indexedWords[cleanedWord] = cleanedWord + ' ' + str(totLines)
 				indexedWords[cleanedWord] =  str(totLines)
@@ -141,14 +145,55 @@ def multi_split(txt, delims):
 	for delimChar in delims:
 		txt, res = res, []
 		for word in txt:
-			if word != '':
+			if len(word) > 1:
 				res += word.split(delimChar)
 	return res
 
 	
-def consolidate(fname):
-	print('TODO - you now need to consolidate the indexes by unique words')
-	pass
+def consolidate(ipFile, opFile):
+	# make a single index file with 1 record per word which shows the word, file and linenums
+		# storms, knowledge.csv - 3
+		# string, rawData.csv - 1
+		# structure, EVENT_SYSTEM-PC-FILE.CSV - 18, OBJECT_SYSTEM-PC-FILE.CSV - 4, sample-filelist-for-AIKIF.csv - 18 18
+		# subgoal, goals.csv - 3 4 12 13 14, goal_types.csv - 8
+		# subgoals, goal_types.csv - 9
+		# subgoals;, goals.csv - 2
+	curFile = ''
+	curWord = ''
+	curLineNums = ''
+	indexedWords = {}
+	with open(ipFile, "r") as ip:
+		for line in ip:
+			cols = line.split(',')
+			curFile = cols[0]
+			curWord = cols[1]
+			curLineNums = cols[2].strip()
+			#DebugIndexing(curFile, curWord, curLineNums, line)
+			if curWord in indexedWords:
+				indexedWords[curWord] =  indexedWords[curWord] + ', ' + curFile + ' - ' + curLineNums
+			else:
+				indexedWords[curWord] = curFile + ' - ' + curLineNums
+	with open(opFile, "w") as op:
+		op.write('word, filenames\n')  # this shows which words appear in which files
+		word_keys = indexedWords.keys()
+		for word in sorted(word_keys):
+			if word != '':
+				line_nums = indexedWords[word]
+				op.write(word + ', ')
+				for line_num in line_nums:
+					op.write(str(line_num))
+			op.write('\n')
+	
+
+
+	
+
+def DebugIndexing(curFile, curWord, curLineNums, line):
+	print('line = ' + line)
+	print('curFile = ' + curFile)
+	print('curWord = ' + curWord)
+	print('curLineNums = ' + curLineNums)
+	
 		
 if __name__ == '__main__':
     index()	
