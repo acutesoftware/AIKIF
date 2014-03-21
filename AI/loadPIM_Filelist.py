@@ -57,7 +57,7 @@ def main():
 	aikif.SaveFileDataToFile(events, event_fileList)
 
 	# now find links between the items
-	links = FindLinks(objects, locations)
+	links = FindLinks(objects, events)
 	aikif.SaveFileDataToFile(links, link_fileList)
 
 	if silent == 'N':
@@ -178,14 +178,15 @@ def FindLinks(lstA, lstB):
 					if type(a[i]) is str or type(a[i]) is int  or type(b[i]) is str  or type(b[i]) is int:
 						if a[i] == b[j]:
 							match = 'Y0'
-				#        else:
-				#            if a[i] in b[j]:
-				#                match = 'Y1'
-				#            if b[j] in a[i]:
-				#                match = 'Y2'
+						else:
+							if a[i] in b[j]:
+								match = 'Y1'
+							if b[j] in a[i]:
+								match = 'Y2'
 			if match != 'N': 
 				if silent == 'N':
-					print('Found lstA in lstB ')
+					#print('Found lstA in lstB ')
+					pass
 				#print('a = ', a)
 				#print('b = ', b)
 				links.append([linkID, lstA_ID, lstB_ID])
