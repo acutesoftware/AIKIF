@@ -11,34 +11,34 @@ This allows you to easily search and compare previous batch runs.<br />
 
 ###Quick Start
 The goal is to get any set of information and parse it into a consistant format so a machine can read it.<br />
-For example:
-	TODO
+For example:<br />
+	TODO<br />
 
 ##Programs
 ###Main Programs
-AI.py			- sample main program to show a trivial example of logging data
-view.py			- simple command driven procedure to show various details of the system
-index.py		- creates text indexes of all the files
-search.py		- searches, using both indexes and onotologies
+AI.py			- sample main program to show a trivial example of logging data<br />
+view.py			- simple command driven procedure to show various details of the system<br />
+index.py		- creates text indexes of all the files<br />
+search.py		- searches, using both indexes and onotologies<br />
 
 
 
 ###Standard Library Programs
-AIKIF_utils.py	- standard utils for the filelists
-fileMapping.py	- main routine that decides what the output files will be called
-security.py		- manages security, which will allow users to have private data (not the norm for this)
+AIKIF_utils.py	- standard utils for the filelists<br />
+fileMapping.py	- main routine that decides what the output files will be called<br />
+security.py		- manages security, which will allow users to have private data (not the norm for this)<br />
 
 ###Data Load programs
-These programs are used to load a specific dataset, the code used to parse each file is in a separate load procedure
-processRawData.py			- this calls all data load programs and logs results
-create_word_lists.py		- loads a list of nouns, verbs, adjectives from web into local structures
-loadCountry_Gdeltproject.py	- loads a country reference file
-loadPIM_Filelist.py			- loads a list of local files into objects, events, photos
-loadPIM_shopping.py			- sample to show how a personal shopping list is loaded
+These programs are used to load a specific dataset, the code used to parse each file is in a separate load procedure<br />
+processRawData.py			- this calls all data load programs and logs results<br />
+create_word_lists.py		- loads a list of nouns, verbs, adjectives from web into local structures<br />
+loadCountry_Gdeltproject.py	- loads a country reference file<br />
+loadPIM_Filelist.py			- loads a list of local files into objects, events, photos<br />
+loadPIM_shopping.py			- sample to show how a personal shopping list is loaded<br />
 
 ###Experimental programs - probably wont be used
-addRawData.py	- using word lists, this experiments with parsing information as a bag of words
-AIKIF_create.py	- creates default set of filelists and data files (DONT run this if you start using the software)
+addRawData.py	- using word lists, this experiments with parsing information as a bag of words<br />
+AIKIF_create.py	- creates default set of filelists and data files (DONT run this if you start using the software)<br />
 
 
 ##Data                  
