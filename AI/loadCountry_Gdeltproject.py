@@ -1,3 +1,4 @@
+# coding: utf-8
 # loadCountry_Gdeltproject.py   written by Duncan Murray 23/2/2014  (C) Acute Software
 # script to manage GDELT Project files
 #
@@ -48,21 +49,35 @@ def main():
 		print('-----------------------------------')
 	aikif.LogDataSource(srcURL, fle.GetModuleName())
 	net.DownloadFile(srcURL, tmpFile)
-	LoadCountryFile(tmpFile, location_fileList )
+	locations = LoadCountryFile(tmpFile, location_fileList )
 	#MapFilesToOntology(location_fileList, ??)
-	
+	aikif.SaveFileDataToFile(locations, location_fileList)
+
 def MapFilesToOntology(fname, itm):
 	pass
 	return 'TODO'
 
 def LoadCountryFile(ipFile, opFile):
-	lst = fle.LoadFileToList(ipFile)
+	locations = [[0, 'country_code', 'country_desc']]
+	location_key = 0
+	country_code = ''
+	country_desc = ''
+	f = open(ipFile, 'r')
+	
 	if silent == 'N':
 		print('Saving master country list to ' + opFile + ' from ' + ipFile)
-		print(lst)
-	for itm in lst:
-		pass
-		#print(itm)
+		
+	for line in f:
+		if len(line) > 0:
+			#cols = line.split('\t')
+			country_code = line[0:3].strip()
+			country_desc = line[4:].strip()
+			#print('line = ' + line + ', country_code = ' + country_code + ' country_desc = ' + country_desc)
+			location_key = location_key + 1
+			locations.append([location_key, country_code, country_desc])
+			#print(itm)
+	f.close()
+	return locations
 	
 if __name__ == '__main__':
     main()	

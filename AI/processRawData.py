@@ -13,6 +13,7 @@ import fileMapping as filemap
 def main():
 	print('processRawData.py - process raw information to core tables in AIKIF')
 	run('loadCountry_Gdeltproject.py')
+	run('loadPIM_shoppingList.py')
 	run('loadPIM_Filelist.py')
 	print('Done')
 

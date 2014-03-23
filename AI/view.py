@@ -15,7 +15,6 @@ import fileMapping as filemap
 if len(sys.argv) == 2:
 	viewStructure = sys.argv[1]
 
-	
 def view():
 	# main function 
 
@@ -25,10 +24,10 @@ def view():
 	print('---------------------')	
 
 	AIKIF_FileList = aikif.build_AIKIF_structure()
-	aikif.printFileList(AIKIF_FileList)
-	#aikif.showColumnStructures(AIKIF_FileList)
-	aikif.debugPrintFileStructures(AIKIF_FileList)
-
+	#aikif.printFileList(AIKIF_FileList)
+	aikif.showColumnStructures(AIKIF_FileList)
+	#aikif.debugPrintFileStructures(AIKIF_FileList)
+	filemap.ShowListOfPhysicalFiles()
 
 	
 if __name__ == '__main__':

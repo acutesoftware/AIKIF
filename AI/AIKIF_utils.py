@@ -80,20 +80,29 @@ def SaveFileList(fl, filename):
 
 def GetElementsAsString(lst, delim, quote='"'):
     # gets the remaining elements of a list as strings
-    opTxt = ''
-    for line in lst:
-        for i in line:
-            if type(i) is str:
-                opTxt = opTxt + quote + i + quote + delim
-            else:
-                opTxt = opTxt + quote + str(i) + quote + delim
-        opTxt = opTxt + '\n'
-    return(opTxt)
-    
+	opLst = []
+	for itm in lst:
+		opTxt = ''
+		for i in itm:
+			if type(i) is str:
+				#if len(i.strip()) > 0:
+				opTxt = opTxt + quote + i.strip('"') + quote + delim
+			else:
+				opTxt = opTxt + quote + str(i) + quote + delim
+		if opTxt[-1:] == delim:
+			#opTxt = opTxt + quote + quote  # this works but adds a new blank field (not a big deal)
+			opTxt = opTxt.strip(delim)	# remove the last delim from line
+		
+		opLst.append(opTxt)
+		#print ('GetElementsAsString='  + opTxt)
+	return(opLst)
+
 def SaveFileDataToFile(lst, filename):
-    w = open(filename, "wt")
-    w.writelines(GetElementsAsString(lst, ','))
-    w.close()
+	w = open(filename, "wt")
+	for line in GetElementsAsString(lst, ','):
+		#print('line = _' + line + '_')
+		w.writelines(line + '\n')
+	w.close()
 
 
     
