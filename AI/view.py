@@ -20,24 +20,8 @@ def view():
 	aikif.LogProcess('Starting view',  'view.py') # sys.modules[self.__module__].__file__)
 	AIKIF_FileList = aikif.build_AIKIF_structure()
 		
-	command = ''
 	ShowMenu()
-	while True:
-		command = input('Enter command: (m=menu, q=quit, [string]=view entries for string ')
-		if command.upper() == 'Q': 
-			quit()
-		if command.upper() == 'M': 
-			ShowMenu()
-		if command.upper() == 'S':
-			ShowStatistics()
-		if command == '1':
-			aikif.printFileList(AIKIF_FileList)
-		if command == '2':
-			aikif.showColumnStructures(AIKIF_FileList)
-		if command == '3':
-			aikif.debugPrintFileStructures(AIKIF_FileList)
-		if command == '4':
-			filemap.ShowListOfPhysicalFiles()
+	ProcessInputUntilUserQuits(AIKIF_FileList)
 
 def ShowMenu():
 	print('---------------------')
@@ -50,11 +34,33 @@ def ShowMenu():
 	print('m - show this menu')
 	print('s - statistics')
 	print('q - quit')
+
+def ProcessInputUntilUserQuits(AIKIF_FileList):
+	while True:
+		command = input('Enter command: (m=menu, q=quit, [string]=view entries for string ')
+		if command.upper() == 'Q': 
+			quit()
+		if command.upper() == 'M': 
+			ShowMenu()
+		if command.upper() == 'S':
+			ShowStatistics(AIKIF_FileList)
+		if command == '1':
+			aikif.printFileList(AIKIF_FileList)
+		if command == '2':
+			aikif.showColumnStructures(AIKIF_FileList)
+		if command == '3':
+			aikif.debugPrintFileStructures(AIKIF_FileList)
+		if command == '4':
+			filemap.ShowListOfPhysicalFiles()
 	
 	
-def ShowStatistics():
+def ShowStatistics(AIKIF_FileList):
 	print(' ----=== Statistics for AIKIF ===----')
+	print(' AIKIF_FileList          = ' + str(len(AIKIF_FileList)))
+	print(' index entries           = ' + str(dat.countLinesInFile('ndxFull.txt')))
+	print(' indexed words - unique  = ' + str(dat.countLinesInFile('ndxWordsToFiles.txt')))
 	
+	print(' Python files in getcwd  = ' + str(len(fle.GetFileList([os.getcwd()], ['*.py'], ["__pycache__", ".git"], False))))
 	
 if __name__ == '__main__':
     view()	
