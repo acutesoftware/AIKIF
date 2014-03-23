@@ -3,20 +3,43 @@
 *NOTE - this is very much an experimental work in progress* - the code runs, but wont do anything useful at this stage
 
 ##Overview
-This is an example framework to capture the flow of information in AI applications.<br />
+This is an example framework to capture the flow of information initially for personal data management, but ultimately useful for AI applications.<br />
 Initially it will be populated and tested for human use, but includes tests and verification process for future ‘General AI’s.<br />
 Functions (Octave, Python, SQL) are called at set stages of the AI process which log the results into a standard database schema.<br /><br />
 
 This allows you to easily search and compare previous batch runs.<br />
 
-##Processes
-GetCommand      - get input from human operator on what goal/task to work on<br />
-ChooseGoal      - initially tied directly to GetCommand, otherwise choose a Goal based on preferences<br />
-CreatePlan      - make a plan based on the current goal<br />
-GetPlanFeedback - publish the plan to humans for review and safety checks<br />
-CollectData     - function to collect raw data from the web and local disks<br />
-ProcessData     - function to process raw data using Bias tables to get a comprehension of the information<br />
-Play            - random learning, pick random problem to solve, test existing knowledge, practice something<br />
+###Quick Start
+The goal is to get any set of information and parse it into a consistant format so a machine can read it.<br />
+For example:
+	TODO
+
+##Programs
+###Main Programs
+AI.py			- sample main program to show a trivial example of logging data
+view.py			- simple command driven procedure to show various details of the system
+index.py		- creates text indexes of all the files
+search.py		- searches, using both indexes and onotologies
+
+
+
+###Standard Library Programs
+AIKIF_utils.py	- standard utils for the filelists
+fileMapping.py	- main routine that decides what the output files will be called
+security.py		- manages security, which will allow users to have private data (not the norm for this)
+
+###Data Load programs
+These programs are used to load a specific dataset, the code used to parse each file is in a separate load procedure
+processRawData.py			- this calls all data load programs and logs results
+create_word_lists.py		- loads a list of nouns, verbs, adjectives from web into local structures
+loadCountry_Gdeltproject.py	- loads a country reference file
+loadPIM_Filelist.py			- loads a list of local files into objects, events, photos
+loadPIM_shopping.py			- sample to show how a personal shopping list is loaded
+
+###Experimental programs - probably wont be used
+addRawData.py	- using word lists, this experiments with parsing information as a bag of words
+AIKIF_create.py	- creates default set of filelists and data files (DONT run this if you start using the software)
+
 
 ##Data                  
 Raw Data        - raw information from any source<br />
