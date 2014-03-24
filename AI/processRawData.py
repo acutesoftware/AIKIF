@@ -15,6 +15,9 @@ def main():
 	run('loadCountry_Gdeltproject.py')
 	run('loadPIM_shoppingList.py')
 	run('loadPIM_Filelist.py')
+	
+	# load ontology - S:\DATA\opendata\ontology\COSMO 
+	
 	print('Done')
 
 def run(scriptFile, logUsage='Y'):
