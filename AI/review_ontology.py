@@ -106,7 +106,13 @@ ontologyList = [  # links to various upper ontologies - http://en.wikipedia.org/
 	 'localFile': 'S:\\DATA\\opendata\\ontology\\MarineTLO\\core_v3.owl', 
 	 'rating': 'MarineTLO is a top-level ontology for the marine domain (also applicable to the terrestrial domain)', 
 	 'tested': 'Untested'}, 
-	{'name': 'DIY - eg build your own Ontology', 
+	 {'name': 'MindOntology (OpenCog)', 
+	 'url': 'http://wiki.opencog.org/w/MindOntology', 
+	 'data': 'http://wiki.opencog.org/wikihome/index.php?title=Special:AllPages&namespace=104', 
+	 'localFile': 'S:\\DATA\\opendata\\ontology\\MindOntology\\All pages (MindOntology namespace) - OpenCog.htm', 
+	 'rating': 'Focussed for AGI use, but no single download found (arranged as wiki pages)', 
+	 'tested': 'Untested'},
+	 {'name': 'DIY - eg build your own Ontology', 
 	 'url': 'http://localhost', 
 	 'data': '', 
 	 'localFile': '', 
@@ -158,6 +164,11 @@ documentList = [  # links to various documents, tools and general ontology relat
 		'author': 'Barry Smith and Werner Ceusters - University of Buffalo', 'year': '2010',
 		'localSavedFile': 'ontological-realisation.pdf',
 		'comment': 'technical focus on biological and biomedical ontologies within the framework of the OBO (Open Biomedical Ontologies) Foundry initiative'	},
+	{'title': 'Some Ideas and Examples to Evaluate Ontologies', 
+		'author': 'Asuncion Gomez-Perez, Knowledge Systems Laboratory, Stanford University', 'year': '199?', 
+		'url': 'http://oa.upm.es/6242/1/Some_Ideas_and_Examples_to_Evaluate_Ontologies.pdf',
+		'localSavedFile': 'Some_Ideas_and_Examples_to_Evaluate_Ontologies.pdf', 
+		'comment': 'Paper shows ideas and methods to review ontologies'},
 	{'title': 'Ontology Development 101: A Guide to Creating Your First Ontology', 
 		'author': 'Natalya F. Noy and Deborah L. McGuinness - Stanford University', 'year': '2000?', 
 		'url': 'http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html',
@@ -195,7 +206,10 @@ import sys
 def main():
 	ShowStatistics()
 	SaveHTML_Review('review_ontology.html')
+	SaveAsMarkup('review_ontology.txt')
 	os.system('start review_ontology.html')
+	os.system('start review_ontology.txt')
+
 
 	#ShowConclusion()
 
@@ -252,6 +266,27 @@ def SaveHTML_Review(htmlFile):
 		AppendToFile(htmlFile, i['comment'] + '<BR><BR>\r\n')
 	AppendToFile(htmlFile, '<BR><BR></BODY></HTML>')
 
+
+
+def SaveAsMarkup(htmlFile):
+	deleteFile(htmlFile)
+	AppendToFile(htmlFile, 'Updated 25/3/2014 - list of upper ontologies with comments/ratings for possible use in AI applications.<BR><BR>\r\n')
+	AppendToFile(htmlFile, '## Ontology Datasets\n')
+	for i in ontologyList:
+		AppendToFile(htmlFile, '### ' + i['name'] + '\n' )
+		AppendToFile(htmlFile, 'page = [' + i['url'] + '](' + i['url'] + ')\n')
+		AppendToFile(htmlFile, 'data = [' + i['data'] + '](' + i['data'] + ')\n')
+		AppendToFile(htmlFile, i['rating'] + '\n')
+		AppendToFile(htmlFile,  TestLocalFile(i['localFile']) + '\n')
+	
+	AppendToFile(htmlFile, '## Useful Links for Ontological development')
+	for i in documentList:
+		AppendToFile(htmlFile, '### ' + i['title'] + '\n' + '[' + i['url'] + '](' + i['url'] + ')\n')
+		AppendToFile(htmlFile, i['comment'] + '\n')
+	AppendToFile(htmlFile, '\n')
+	AppendToFile(htmlFile, '\n\n This report generated via [https://github.com/acutesoftware/AIKIF/blob/master/AI/review_ontology.py](https://github.com/acutesoftware/AIKIF/blob/master/AI/review_ontology.py)')
+
+	
 def BuildHTMLHeader(title, linefeed='\n', border='1'):
     res = "<HTML><HEAD><title>" + linefeed
     res = res + title + "</title>" + linefeed
