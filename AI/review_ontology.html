@@ -14,46 +14,57 @@ H4 {        font-size:140%; FONT-WEIGHT:NORMAL; margin:0px 0px 0px 0px; padding:
 
 </HEAD><BODY><H1>Ontology Review</H1><TABLE border=0></TABLE>Updated 25/3/2014 - list of upper ontologies with comments/ratings for possible use in AI applications.<BR><BR>
 <H2>Ontology Datasets</h2>
-<B>WordNet</B><BR><a href=http://wordnet.princeton.edu/wordnet/download/>http://wordnet.princeton.edu/wordnet/download/</a><BR>
-qualifies as an upper ontology by including the most general concepts as well as more specialized concepts, related to each other not only by the subsumption relations, but by other semantic relations as well, such as part-of and cause. However, unlike Cyc, it has not been formally axiomatized so as to make the logical relations between the concepts precise. It has been widely used in Natural language processing research<BR><BR>
-<B>SUMO - Suggested Upper Merged Ontology</B><BR><a href=http://www.ontologyportal.org/>http://www.ontologyportal.org/</a><BR>
-includes an upper ontology, created by the IEEE working group P1600.1<BR><BR>
-<B>DOLCE - Descriptive Ontology for Linguistic and Cognitive Engineering </B><BR><a href=http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl>http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl</a><BR>
-has a clear cognitive bias, in that it aims at capturing the ontological categories underlying natural language and human common sense<BR><BR>
-<B>DBPedia</B><BR><a href=http://wiki.dbpedia.org/Datasets>http://wiki.dbpedia.org/Datasets</a><BR>
-The most comprehensive set of data based on Wikipedia (470M facts)<BR><BR>
-<B>BFO - Basic Formal Ontology</B><BR><a href=http://www.ifomis.org/bfo>http://www.ifomis.org/bfo</a><BR>
-Incorporates both three-dimensionalist and four-dimensionalist perspectives on reality within a single framework. Has over 100 other ontologies build based on this<BR><BR>
-<B>UMBEL</B><BR><a href=http://structureddynamics.com/resources.html#Ontologies>http://structureddynamics.com/resources.html#Ontologies</a><BR>
-Maps to a simplified subset of the OpenCyc ontology (28,000 entries)<BR><BR>
-<B>DnS - Descriptions and Situations</B><BR><a href=http://stlab.istc.cnr.it/stlab/The_Semantic_Technology_Laboratory_%28STLab%29>http://stlab.istc.cnr.it/stlab/The_Semantic_Technology_Laboratory_%28STLab%29</a><BR>
-constructivist ontology that pushes DOLCEs descriptive stance even further allowing for context-sensitive redescriptions of the types and relations postulated by other given ontologies<BR><BR>
-<B>GFO - General Formal Ontology</B><BR><a href=http://www.onto-med.de/>http://www.onto-med.de/</a><BR>
-Unrated<BR><BR>
-<B>UFO - Unified Foundation Ontology</B><BR><a href=http://>http://</a><BR>
-new, pretty good. tested for complex domains, combines DOLCE and GFO<BR><BR>
-<B>CIDOC Conceptual Reference Model</B><BR><a href=http://en.wikipedia.org/wiki/CIDOC_Conceptual_Reference_Model>http://en.wikipedia.org/wiki/CIDOC_Conceptual_Reference_Model</a><BR>
-domain ontology, but includes its own version of an upper ontology in its core classes<BR><BR>
-<B>COSMO - COmmon Semantic MOdel</B><BR><a href=http://404>http://404</a><BR>
-The current (May 2009) OWL version of COSMO has over 6400 types (OWL classes), over 700 relations, and over 1400 restrictions<BR><BR>
-<B>OCHRE</B><BR><a href=http://en.wikipedia.org/wiki/Object-centered_high-level_reference_ontology>http://en.wikipedia.org/wiki/Object-centered_high-level_reference_ontology</a><BR>
-has a focus on conceptual simplicity, so that the number of basic (primitive) concepts and relations is as small as possible in order to simplify the theory<BR><BR>
-<B>YAMATO - Yet Another More Advanced Top Ontology</B><BR><a href=http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/upperOnto.htm>http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/upperOnto.htm</a><BR>
-complex but very advanced<BR><BR>
-<B>KSL Omtonlingua</B><BR><a href=http://www.ksl.stanford.edu/software/ontolingua/>http://www.ksl.stanford.edu/software/ontolingua/</a><BR>
-Unrated<BR><BR>
-<B>DAML Ontology Library</B><BR><a href=http://www.daml.org/ontologies/>http://www.daml.org/ontologies/</a><BR>
-Unrated<BR><BR>
-<B>OpenCyc</B><BR><a href=http://en.wikipedia.org/wiki/Cyc#ResearchCyc>http://en.wikipedia.org/wiki/Cyc#ResearchCyc</a><BR>
-Proprietry but fairly precise<BR><BR>
-<B>PROTON</B><BR><a href=http://>http://</a><BR>
-basic subsumption hierarchy which provides coverage of most of the upper-level concepts necessary for semantic annotation, indexing, and retrieval<BR><BR>
-<B>IDEAS</B><BR><a href=http://>http://</a><BR>
-not intended for reasoning and inference purposes; its purpose is to be a precise model of business<BR><BR>
-<B>MarineTLO</B><BR><a href=http://www.ics.forth.gr/isl/MarineTLO/>http://www.ics.forth.gr/isl/MarineTLO/</a><BR>
-Low - aimed for Marine domain<BR><BR>
-<B>DIY - eg build your own Ontology</B><BR><a href=http://localhost>http://localhost</a><BR>
-Not ideal - better to use existing sets, but best method to get a concise set of tuples<BR><BR>
+<B>WordNet</B><BR>page = <a href=http://wordnet.princeton.edu/wordnet/download/>http://wordnet.princeton.edu/wordnet/download/</a><BR>data = <a href=http://wordnetcode.princeton.edu/wn3.1.dict.tar.gz>http://wordnetcode.princeton.edu/wn3.1.dict.tar.gz</a><BR>
+Best word list, not in OWL format, though qualifies as an upper ontology by including the most general concepts as well as more specialized concepts, related to each other not only by the subsumption relations, but by other semantic relations as well, such as part-of and cause. However, unlike Cyc, it has not been formally axiomatized so as to make the logical relations between the concepts precise. It has been widely used in Natural language processing research<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\WordNet\dict\data.noun (15,325,523 bytes)<BR>20 files in folder, totalling 37,405,206 bytes</I><BR><BR>
+<B>SUMO - Suggested Upper Merged Ontology</B><BR>page = <a href=http://www.ontologyportal.org/>http://www.ontologyportal.org/</a><BR>data = <a href=http://sigmakee.cvs.sourceforge.net/viewvc/sigmakee/KBs/?view=tar>http://sigmakee.cvs.sourceforge.net/viewvc/sigmakee/KBs/?view=tar</a><BR>
+Created by the IEEE working group P1600.1 - has multiple files by subject area which includes an upper ontology (which file?)<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\SUMO\KBs\Mid-level-ontology.kif (879,032 bytes)<BR>47 files in folder, totalling 17,591,907 bytes</I><BR><BR>
+<B>DOLCE - Descriptive Ontology for Linguistic and Cognitive Engineering </B><BR>page = <a href=http://www.loa.istc.cnr.it/>http://www.loa.istc.cnr.it/</a><BR>data = <a href=http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl>http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl</a><BR>
+Not an active project on website, but has a clear cognitive bias, in that it aims at capturing the ontological categories underlying natural language and human common sense<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\DOLCE\DOLCE-Lite.owl (106,827 bytes)<BR>10 files in folder, totalling 624,366 bytes</I><BR><BR>
+<B>DBPedia</B><BR>page = <a href=http://wiki.dbpedia.org/Datasets>http://wiki.dbpedia.org/Datasets</a><BR>data = <a href=http://wiki.dbpedia.org/Downloads39>http://wiki.dbpedia.org/Downloads39</a><BR>
+The most comprehensive set of data based on Wikipedia (470M facts)<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\wikipedia_categories\dbpedia-ontology.owl.bz2.owl.bz2.owl (259,244 bytes)<BR>24 files in folder, totalling 2,414,659,446 bytes</I><BR><BR>
+<B>BFO - Basic Formal Ontology</B><BR>page = <a href=http://www.ifomis.org/bfo>http://www.ifomis.org/bfo</a><BR>data = <a href=http://www.ifomis.org/bfo/1.1>http://www.ifomis.org/bfo/1.1</a><BR>
+Incorporates both three-dimensionalist and four-dimensionalist perspectives on reality within a single framework. Has over 100 other ontologies build based on this<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\BFO\bfo-1.1.owl (45,264 bytes)<BR>7 files in folder, totalling 238,453 bytes</I><BR><BR>
+<B>UMBEL</B><BR>page = <a href=http://structureddynamics.com/resources.html#Ontologies>http://structureddynamics.com/resources.html#Ontologies</a><BR>data = <a href=https://github.com/structureddynamics/UMBEL/blob/master/Ontology/umbel.n3>https://github.com/structureddynamics/UMBEL/blob/master/Ontology/umbel.n3</a><BR>
+Maps to a simplified subset of the OpenCyc ontology (28,000 entries)<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\UMBEL\umbel.n3 (505,824 bytes)<BR>1 files in folder, totalling 505,824 bytes</I><BR><BR>
+<B>DnS - Descriptions and Situations (implementation of DOLCE+DnS-Ultralite abbreviated to DUL) </B><BR>page = <a href=http://stlab.istc.cnr.it/stlab/The_Semantic_Technology_Laboratory_%28STLab%29>http://stlab.istc.cnr.it/stlab/The_Semantic_Technology_Laboratory_%28STLab%29</a><BR>data = <a href=http://www.ontologydesignpatterns.org/ont/dul/DUL.owl>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</a><BR>
+constructivist ontology that pushes DOLCEs descriptive stance even further allowing for context-sensitive redescriptions of the types and relations postulated by other given ontologies<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\DnS\DUL.owl (244,258 bytes)<BR>1 files in folder, totalling 244,258 bytes</I><BR><BR>
+<B>GFO - General Formal Ontology</B><BR>page = <a href=http://www.onto-med.de/ontologies/index.jsp>http://www.onto-med.de/ontologies/index.jsp</a><BR>data = <a href=http://www.onto-med.de/ontologies/gfo.owl>http://www.onto-med.de/ontologies/gfo.owl</a><BR>
+have developed a top level ontology and a biological core ontology. OWL file is copyright, but redistribution allowed<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\GFO\gfo-ato.owl (20,855 bytes)<BR>9 files in folder, totalling 420,717 bytes</I><BR><BR>
+<B>UFO - Unified Foundation Ontology</B><BR>page = <a href=https://oxygen.informatik.tu-cottbus.de/drupal7/ufo/>https://oxygen.informatik.tu-cottbus.de/drupal7/ufo/</a><BR>data = <a href=></a><BR>
+new, pretty good. tested for complex domains, combines DOLCE and GFO. Count not find single download OWL file<BR>
+Not downloaded<BR><BR>
+<B>CIDOC Conceptual Reference Model</B><BR>page = <a href=http://en.wikipedia.org/wiki/CIDOC_Conceptual_Reference_Model>http://en.wikipedia.org/wiki/CIDOC_Conceptual_Reference_Model</a><BR>data = <a href=http://www.cidoc-crm.org/rdfs/cidoc_crm_v5.0.4_official_release.rdfs>http://www.cidoc-crm.org/rdfs/cidoc_crm_v5.0.4_official_release.rdfs</a><BR>
+provides an extensible ontology for concepts and information in cultural heritage and museum documentation. Includes its own version of an upper ontology in its core classes<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\CIDOC\cidoc_crm_v5.0.4_official_release.rdfs (307,674 bytes)<BR>1 files in folder, totalling 307,674 bytes</I><BR><BR>
+<B>COSMO - COmmon Semantic MOdel</B><BR>page = <a href=http://ontolog.cim3.net/cgi-bin/wiki.pl?COSMO>http://ontolog.cim3.net/cgi-bin/wiki.pl?COSMO</a><BR>data = <a href=http://www.micra.com/COSMO/COSMO.owl>http://www.micra.com/COSMO/COSMO.owl</a><BR>
+The current (May 2009) OWL version of COSMO has over 6400 types (OWL classes), over 700 relations, and over 1400 restrictions<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\COSMO\COSMO.owl (10,036,090 bytes)<BR>8 files in folder, totalling 16,186,390 bytes</I><BR><BR>
+<B>YAMATO - Yet Another More Advanced Top Ontology</B><BR>page = <a href=http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/upperOnto.htm>http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/upperOnto.htm</a><BR>data = <a href=http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/download.php?filename=YAMATO20120714owl.zip>http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/download.php?filename=YAMATO20120714owl.zip</a><BR>
+complex but very advanced<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\YAMATO\YAMATO20120714.owl (530,486 bytes)<BR>3 files in folder, totalling 1,448,966 bytes</I><BR><BR>
+<B>OpenCyc</B><BR>page = <a href=http://en.wikipedia.org/wiki/Cyc#OpenCyc>http://en.wikipedia.org/wiki/Cyc#OpenCyc</a><BR>data = <a href=http://sourceforge.net/projects/texai/files/open-cyc-rdf/1.1/open-cyc.rdf.ZIP/download>http://sourceforge.net/projects/texai/files/open-cyc-rdf/1.1/open-cyc.rdf.ZIP/download</a><BR>
+Proprietry but fairly precise<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\OpenCyc\open-cyc.rdf (103,037,985 bytes)<BR>3 files in folder, totalling 248,942,337 bytes</I><BR><BR>
+<B>PROTON</B><BR>page = <a href=http://www.ontotext.com/proton-ontology>http://www.ontotext.com/proton-ontology</a><BR>data = <a href=http://www.ontotext.com/sites/default/files/proton/protontop.ttl>http://www.ontotext.com/sites/default/files/proton/protontop.ttl</a><BR>
+basic subsumption hierarchy which provides coverage of most of the upper-level concepts necessary for semantic annotation, indexing, and retrieval<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\PROTON\protontop.ttl (40,080 bytes)<BR>2 files in folder, totalling 230,791 bytes</I><BR><BR>
+<B>IDEAS</B><BR>page = <a href=http://www.ideasgroup.org/7Documents/>http://www.ideasgroup.org/7Documents/</a><BR>data = <a href=http://www.ideasgroup.org/file_download/5/IDEAS+Foundation+v1_0+Released+2009-04-24.xmi.zip>http://www.ideasgroup.org/file_download/5/IDEAS+Foundation+v1_0+Released+2009-04-24.xmi.zip</a><BR>
+The most common usage of IDEAS will be in direct exchange of information between architectural modelling tools are repositories<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\IDEAS\IDEAS Foundation v1_0 Released 2009-04-24.xmi (3,073,554 bytes)<BR>3 files in folder, totalling 7,946,504 bytes</I><BR><BR>
+<B>MarineTLO</B><BR>page = <a href=http://www.ics.forth.gr/isl/MarineTLO/>http://www.ics.forth.gr/isl/MarineTLO/</a><BR>data = <a href=http://www.ics.forth.gr/isl/MarineTLO/v3/core_v3.owl>http://www.ics.forth.gr/isl/MarineTLO/v3/core_v3.owl</a><BR>
+MarineTLO is a top-level ontology for the marine domain (also applicable to the terrestrial domain)<BR>
+<I>Sample file saved to S:\DATA\opendata\ontology\MarineTLO\core_v3.owl (21,541 bytes)<BR>4 files in folder, totalling 1,844,662 bytes</I><BR><BR>
+<B>DIY - eg build your own Ontology</B><BR>page = <a href=http://localhost>http://localhost</a><BR>data = <a href=></a><BR>
+Not ideal - better to use existing sets, but best method to get a concise set of tuples<BR>
+Not downloaded<BR><BR>
 <BR><BR>
 <H2>Useful Links for Ontological development</H2>
 <B>A Comparison of Upper Ontologies (Technical Report DISI-TR-06-21)</B><BR><a href=http://www.disi.unige.it/person/MascardiV/Download/DISI-TR-06-21.pdf>http://www.disi.unige.it/person/MascardiV/Download/DISI-TR-06-21.pdf</a><BR>
@@ -66,6 +77,8 @@ good simple examples for using RDFLIB at https://rdflib.readthedocs.org/en/lates
 feature rich ontology editing environment with full support for the OWL 2 Web Ontology Language, and direct in-memory connections to description logic reasoners like HermiT and Pellet<BR><BR>
 <B>ontogenesis - upper level ontologies</B><BR><a href=http://ontogenesis.knowledgeblog.org/740>http://ontogenesis.knowledgeblog.org/740</a><BR>
 basic overview of ontologies with descriptions of time/space and objects/processes<BR><BR>
+<B>DAML Ontology Library</B><BR><a href=http://www.daml.org/ontologies/>http://www.daml.org/ontologies/</a><BR>
+Not a single ontology, but has links to other ontologies of various grains<BR><BR>
 <B>Toward the Use of an Upper Ontology for U.S. Government and U.S. Military Domains: An Evaluation</B><BR><a href=http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA459575>http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA459575</a><BR>
 very good explanation of the types of ontological choices such as 3d/4d, descriptive vs revisionary, mult vs reduct, ...<BR><BR>
 <B>ROMULUS - A repository of foundational ontologies</B><BR><a href=http://www.thezfiles.co.za/ROMULUS/downloads.html>http://www.thezfiles.co.za/ROMULUS/downloads.html</a><BR>
@@ -74,6 +87,10 @@ Very good list of links to ontologies<BR><BR>
 technical focus on biological and biomedical ontologies within the framework of the OBO (Open Biomedical Ontologies) Foundry initiative<BR><BR>
 <B>Ontology Development 101: A Guide to Creating Your First Ontology</B><BR><a href=http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html>http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html</a><BR>
 Good introduction and examples of building an ontology - key points: reuse parts if possible, but build yourself to keep it short and valid<BR><BR>
+<B>KSL Ontonlingua</B><BR><a href=http://www.ksl.stanford.edu/software/ontolingua/>http://www.ksl.stanford.edu/software/ontolingua/</a><BR>
+Ontolingua provides a distributed collaborative environment to browse, create, edit, modify, and use ontologies. The server supports over 150 active users, some of whom have provided us with descriptions of their projects. <BR><BR>
+<B>OCHRE</B><BR><a href=http://en.wikipedia.org/wiki/Object-centered_high-level_reference_ontology>http://en.wikipedia.org/wiki/Object-centered_high-level_reference_ontology</a><BR>
+Descriptive document, not an actual ontology - has a focus on conceptual simplicity, so that the number of basic (primitive) concepts and relations is as small as possible in order to simplify the theory<BR><BR>
 <B>Onto-Med Report Nr. 8</B><BR><a href=http://www.onto-med.de/publications/2010/gfo-basic-principles.pdf>http://www.onto-med.de/publications/2010/gfo-basic-principles.pdf</a><BR>
 basic principles of GFO<BR><BR>
 <BR><BR></BODY></HTML>
