@@ -134,7 +134,7 @@ def SaveAsCSV(lst, fname):
 		txt = txt + StripLineBreaks(itm['html']) + '","'
 		for i in itm['catList']:
 			txt = txt + str(i['catList']) + ' ; '
-		txt = txt +  '", \n'
+		txt = txt +  '"\n'
 		return txt
 
 	op = open(fname, 'w')
