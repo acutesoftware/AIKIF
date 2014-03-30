@@ -1,0 +1,1570 @@
+<H1>Ontology File Samples</h1>
+Generated via <a href=https://github.com/acutesoftware/AIKIF/blob/master/AI/ontology/review_ontology.py>https://github.com/acutesoftware/AIKIF/blob/master/AI/ontology/review_ontology.py</a><BR>
+<h2>WordNet</h2>
+Page info = <a href=http://wordnet.princeton.edu/wordnet/download/>http://wordnet.princeton.edu/wordnet/download/</a><BR>
+source data = <a href=http://wordnetcode.princeton.edu/wn3.1.dict.tar.gz>http://wordnetcode.princeton.edu/wn3.1.dict.tar.gz</a><BR>
+Sample from S:\DATA\opendata\ontology\WordNet\dict\data.noun<BR>
+<PRE>  1 This software and database is being provided to you, the LICENSEE, by  
+  2 Princeton University under the following license.  By obtaining, using  
+  3 and/or copying this software and database, you agree that you have  
+  4 read, understood, and will comply with these terms and conditions.:  
+  5   
+  6 Permission to use, copy, modify and distribute this software and  
+  7 database and its documentation for any purpose and without fee or  
+  8 royalty is hereby granted, provided that you agree to comply with  
+  9 the following copyright notice and statements, including the disclaimer,  
+  10 and that the same appear on ALL copies of the software, database and  
+  11 documentation, including modifications that you make for internal  
+  12 use or for distribution.  
+  13   
+  14 WordNet 3.1 Copyright 2011 by Princeton University.  All rights reserved.  
+  15   
+  16 THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
+  17 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
+  18 IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
+  19 UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
+  20 ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
+  21 OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
+  22 INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
+  23 OTHER RIGHTS.  
+  24   
+  25 The name of Princeton University or Princeton may not be used in  
+  26 advertising or publicity pertaining to distribution of the software  
+  27 and/or database.  Title to copyright in this software, database and  
+  28 any associated documentation shall at all times remain with  
+  29 Princeton University and LICENSEE agrees to preserve same.  
+00001740 03 n 01 entity 0 003 ~ 00001930 n 0000 ~ 00002137 n 0000 ~ 04431553 n 0000 | that which is perceived or known or inferred to have its own distinct existence (living or nonliving)  
+00001930 03 n 01 physical_entity 0 007 @ 00001740 n 0000 ~ 00002452 n 0000 ~ 00002684 n 0000 ~ 00007347 n 0000 ~ 00021007 n 0000 ~ 00029976 n 0000 ~ 14604577 n 0000 | an entity that has physical existence  
+00002137 03 n 02 abstraction 0 abstract_entity 0 010 @ 00001740 n 0000 + 00694095 v 0101 ~ 00023280 n 0000 ~ 00024444 n 0000 ~ 00031563 n 0000 ~ 00032220 n 0000 ~ 00033319 n 0000 ~ 00033914 n 0000 ~ 05818169 n 0000 ~ 08016141 n 0000 | a general concept f...
+00002452 03 n 01 thing 0 009 @ 00001930 n 0000 ~ 04354303 n 0000 ~ 09248053 n 0000 ~ 09335551 n 0000 ~ 09390100 n 0000 ~ 09408804 n 0000 ~ 09430745 n 0000 ~ 09488589 n 0000 ~ 09492089 n 0000 | a separate and self-contained entity  
+00002684 03 n 02 object 0 physical_object 0 039 @ 00001930 n 0000 + 00533687 v 0105 ~ 00003553 n 0000 ~ 00027365 n 0000 ~ 03013287 n 0000 ~ 03154617 n 0000 ~ 03238126 n 0000 ~ 03343593 n 0000 ~ 03537260 n 0000 ~ 03600372 n 0000 ~ 03615483 n 0000 ~ 037202...
+00003553 03 n 02 whole 0 unit 0 015 @ 00002684 n 0000 + 01464634 v 0204 + 00368338 v 0201 + 01388112 v 0201 + 00368762 v 0201 + 00787771 a 0103 ~ 00003993 n 0000 ~ 00004258 n 0000 ~ 00019308 n 0000 ~ 00022119 n 0000 ~ 02752958 n 0000 ~ 03593583 n 0000 %p...
+00003993 03 n 01 congener 0 001 @ 00003553 n 0000 | a whole (a thing or person) of the same kind or category as another; "lard was also used, though its congener, butter, was more frequently employed"; "the American shopkeeper differs from his European c...
+00004258 03 n 02 living_thing 0 animate_thing 0 007 @ 00003553 n 0000 -c 01651383 a 0000 ~ 00004475 n 0000 ~ 00006269 n 0000 ~ 00006400 n 0000 ~ 00006484 n 0000 -c 05063385 n 0000 | a living (or once living) entity  
+00004475 03 n 02 organism 0 being 0 065 @ 00004258 n 0000 + 02620216 v 0201 + 02997941 a 0102 + 01684118 a 0101 + 01096835 a 0101 -c 00271722 a 0000 -c 00327929 a 0000 -c 01670069 a 0000 ~ 00005787 n 0000 ~ 00005930 n 0000 ~ 00006024 n 0000 ~ 00006150 n ...
+00005787 03 n 01 benthos 0 002 @ 00004475 n 0000 + 02672279 a 0103 | organisms (plants and animals) that live at or near the bottom of a sea  
+00005930 03 n 01 dwarf 0 001 @ 00004475 n 0000 | a plant or animal that is atypically small  
+00006024 03 n 01 heterotroph 0 001 @ 00004475 n 0000 | an organism that depends on complex organic substances for nutrition  
+00006150 03 n 01 parent 0 001 @ 00004475 n 0000 | an organism (plant or animal) from which younger ones are obtained  
+00006269 03 n 01 life 0 002 @ 00004258 n 0000 ~ 08010218 n 0000 | living things collectively; "the oceans are teeming with life"  
+00006400 03 n 01 biont 0 001 @ 00004258 n 0000 | a discrete unit of living matter  
+00006484 03 n 01 cell 0 035 @ 00004258 n 0000 #p 00004475 n 0000 ;c 06047178 n 0000 + 02696036 a 0101 + 00327929 a 0101 -c 02829341 a 0000 ~ 01316379 n 0000 ~ 01462305 n 0000 ~ 01909790 n 0000 ~ 05236952 n 0000 ~ 05250095 n 0000 ~ 05275882 n 0000 %p 0532...
+00007347 03 n 03 causal_agent 0 cause 0 causal_agency 0 020 @ 00001930 n 0000 + 00324097 a 0201 + 01649143 v 0201 + 00772482 v 0203 ~ 00007846 n 0000 ~ 09213796 n 0000 ~ 09526814 n 0000 ~ 09527009 n 0000 ~ 09527596 n 0000 ~ 09527735 n 0000 ~ 09528047 n 0...
+00007846 03 n 06 person 0 individual 0 someone 0 somebody 0 mortal 0 soul 0 421 @ 00004475 n 0000 @ 00007347 n 0000 #m 07958392 n 0000 + 01562007 a 0501 + 00388736 v 0203 + 04626138 n 0101 + 00729535 v 0101 %p 04624919 n 0000 %p 05224424 n 0000 ~ 0962815...
+00015568 03 n 06 animal 0 animate_being 0 beast 0 brute 0 creature 0 fauna 0 092 @ 00004475 n 0000 #m 01315584 n 0000 + 01620211 v 0502 + 01266555 a 0301 + 01266555 a 0302 + 01684651 v 0101 + 01684651 v 0102 -c 00058232 a 0000 -c 00148320 a 0000 -c 00161...
+00017402 03 n 03 plant 0 flora 0 plant_life 0 092 @ 00004475 n 0000 #m 11550054 n 0000 ;c 06076105 n 0000 + 02858504 a 0201 + 02844120 a 0101 + 11551541 n 0101 + 01570056 v 0101 -c 00026819 a 0000 -c 00027187 a 0000 -c 00114287 a 0000 -c 00114474 a 0000 ...
+00019226 03 n 01 native 0 001 @ 00004475 n 0000 | indigenous plants and animals  
+00019308 03 n 01 natural_object 0 022 @ 00003553 n 0000 ! 00022119 n 0101 ~ 02315396 n 0000 ~ 05223633 n 0000 ~ 05225115 n 0000 ~ 09231384 n 0000 ~ 09245313 n 0000 ~ 09247818 n 0000 ~ 09259672 n 0000 ~ 09262646 n 0000 ~ 09275492 n 0000 ~ 09275876 n 0000 ...
+00019793 03 n 01 substance 0 019 @ 00021007 n 0000 @ 13831419 n 0000 + 00628097 a 0101 ~ 05271349 n 0000 ~ 05440312 n 0000 ~ 14604732 n 0000 ~ 14604877 n 0000 ~ 14607408 n 0000 ~ 14610438 n 0000 ~ 14643403 n 0000 ~ 14647071 n 0000 ~ 14747240 n 0000 ~ 147...
+00020270 03 n 01 substance 1 032 @ 00021007 n 0000 ~ 00021445 n 0000 ~ 00021914 n 0000 ~ 14607050 n 0000 ~ 14608440 n 0000 ~ 14608570 n 0000 ~ 14608682 n 0000 ~ 14608838 n 0000 ~ 14615155 n 0000 ~ 14641117 n 0000 ~ 14715983 n 0000 ~ 14734185 n 0000 ~ 147...
+00021007 03 n 01 matter 0 016 @ 00001930 n 0000 ~ 00019793 n 0000 ~ 00020270 n 0000 ~ 09451871 n 0000 ~ 14606205 n 0000 ~ 14606400 n 0000 ~ 14606715 n 0000 ~ 14607753 n 0000 ~ 14963583 n 0000 ~ 14980800 n 0000 ~ 15005742 n 0000 ~ 15029068 n 0000 ~ 150714...
+00021445 03 n 02 food 0 nutrient 0 019 @ 00020270 n 0000 + 02568489 a 0204 + 01206811 v 0201 ~ 01467485 n 0000 %p 07571428 n 0000 ~ 07571971 n 0000 ~ 07572202 n 0000 ~ 07576217 n 0000 ~ 07581905 n 0000 ~ 07586285 n 0000 ~ 07587918 n 0000 ~ 07816067 n 000...
+00021914 03 n 01 nutrient 1 002 @ 00020270 n 0000 ~ 07951744 n 0000 | any substance (such as a chemical element or inorganic compound) that can be taken in by a green plant and used in organic synthesis  
+00022119 03 n 02 artifact 0 artefact 0 049 @ 00003553 n 0000 + 02998172 a 0202 + 02998172 a 0101 ! 00019308 n 0101 ~ 00023083 n 0000 ~ 00586443 n 0000 ~ 02704252 n 0000 ~ 02709895 n 0000 ~ 02726951 n 0000 ~ 02855782 n 0000 ~ 02932225 n 0000 ~ 03080712 n ...
+00023083 03 n 01 article 0 006 @ 00022119 n 0000 ~ 02748096 n 0000 ~ 02897286 n 0000 ~ 03628657 n 0000 ~ 03838339 n 0000 ~ 04558126 n 0000 | one of a class of artifacts; "an article of clothing"  
+00023280 03 n 01 psychological_feature 0 004 @ 00002137 n 0000 ~ 00023451 n 0000 ~ 00023953 n 0000 ~ 00029677 n 0000 | a feature of the mental life of a living organism  
+00023451 03 n 03 cognition 0 knowledge 0 noesis 0 021 @ 00023280 n 0000 + 01784888 a 0303 ~ 05619057 n 0000 ~ 05619605 n 0000 ~ 05619850 n 0000 ~ 05620141 n 0000 ~ 05624029 n 0000 ~ 05652767 n 0000 ~ 05658913 n 0000 ~ 05659087 n 0000 ~ 05675040 n 0000 ~ ...
+00023953 03 n 03 motivation 0 motive 0 need 0 011 @ 00023280 n 0000 + 00325093 a 0202 + 01653541 v 0201 + 02777100 a 0101 + 01653541 v 0101 ~ 09201624 n 0000 ~ 09201718 n 0000 ~ 09203156 n 0000 ~ 09203328 n 0000 ~ 09206590 n 0000 ~ 09207731 n 0000 | the ...
+00024444 03 n 01 attribute 0 020 @ 00002137 n 0000 ~ 00024900 n 0000 ~ 00028005 n 0000 ~ 00028468 n 0000 ~ 00028950 n 0000 ~ 04623223 n 0000 ~ 04623416 n 0000 ~ 04624273 n 0000 ~ 04624646 n 0000 ~ 04624798 n 0000 ~ 04624919 n 0000 ~ 04638046 n 0000 ~ 046...
+00024900 03 n 01 state 0 073 @ 00024444 n 0000 ~ 00026390 n 0000 ~ 05648278 n 0000 ~ 13943045 n 0000 ~ 13943202 n 0000 ~ 13943355 n 0000 ~ 13943462 n 0000 ~ 13943868 n 0000 ~ 13947102 n 0000 ~ 13947229 n 0000 ~ 13949484 n 0000 ~ 13950416 n 0000 ~ 1395142...
+00026390 03 n 01 feeling 0 043 @ 00024900 n 0000 + 01775456 v 0101 ~ 07495066 n 0000 ~ 07495208 n 0000 ~ 07495496 n 0000 ~ 07495661 n 0000 ~ 07495806 n 0000 ~ 07495930 n 0000 ~ 07496036 n 0000 ~ 07497091 n 0000 ~ 07497661 n 0000 ~ 07498445 n 0000 ~ 07498...
+00027365 03 n 01 location 0 032 @ 00002684 n 0000 #p 00028950 n 0000 + 02700775 v 0102 + 02338685 v 0101 + 02291049 v 0101 + 00414801 v 0102 ~ 08506507 n 0000 ~ 08506637 n 0000 ~ 08506775 n 0000 ~ 08506900 n 0000 ~ 08507049 n 0000 ~ 08507209 n 0000 ~ 085...
+00028005 03 n 02 shape 0 form 0 017 @ 00024444 n 0000 ~ 13882990 n 0000 ~ 13883265 n 0000 ~ 13884885 n 0000 ~ 13885247 n 0000 ~ 13885383 n 0000 ~ 13886392 n 0000 ~ 13887384 n 0000 ~ 13888104 n 0000 ~ 13889897 n 0000 ~ 13890113 n 0000 ~ 13893444 n 0000 ~ ...
+00028468 03 n 01 time 0 014 @ 00024444 n 0000 ~ 15140868 n 0000 ~ 15141117 n 0000 ~ 15141309 n 0000 ~ 15141495 n 0000 ~ 15141831 n 0000 ~ 15144478 n 0000 ~ 15145765 n 0000 ~ 15146567 n 0000 ~ 15146953 n 0000 ~ 15148671 n 0000 ~ 15155157 n 0000 ~ 15158440...
+00028950 03 n 02 space 0 infinite 0 009 @ 00024444 n 0000 + 02851951 a 0102 + 02851951 a 0101 %p 00027365 n 0000 ~ 00029306 n 0000 ~ 00029413 n 0000 ~ 08018127 n 0000 ~ 08517454 n 0000 %p 08519192 n 0000 | the unlimited expanse in which everything is loc...
+00029306 03 n 01 absolute_space 0 001 @ 00028950 n 0000 | physical space independent of what occupies it  
+00029413 03 n 01 phase_space 0 003 @ 00028950 n 0000 ;c 06100457 n 0000 ~ 06256491 n 0000 | (physics) an ideal space in which the coordinate dimensions represent the variables that are required to describe a system or substance; "a multidimensional phase...
+00029677 03 n 01 event 0 012 @ 00023280 n 0000 ~ 00030657 n 0000 ~ 01082290 n 0000 ~ 07298069 n 0000 ~ 07298178 n 0000 ~ 07298313 n 0000 ~ 07303344 n 0000 ~ 07303524 n 0000 ~ 07327429 n 0000 ~ 07337369 n 0000 ~i 07493671 n 0000 ~ 07494768 n 0000 | someth...
+00029976 03 n 02 process 0 physical_process 0 025 @ 00001930 n 0000 ~ 00034512 n 0000 ~ 13467145 n 0000 ~ 13477079 n 0000 ~ 13479774 n 0000 ~ 13481502 n 0000 ~ 13486023 n 0000 ~ 13492409 n 0000 ~ 13495698 n 0000 ~ 13498665 n 0000 ~ 13515201 n 0000 ~ 1351...
+00030657 03 n 04 act 0 deed 0 human_action 0 human_activity 0 044 @ 00029677 n 0000 + 01653541 v 0102 + 01647199 v 0102 + 02372362 v 0101 ~ 00038116 n 0000 ~ 00042637 n 0000 ~ 00043049 n 0000 ~ 00043279 n 0000 ~ 00043495 n 0000 ~ 00043933 n 0000 ~ 000443...
+00031563 03 n 02 group 0 grouping 0 031 @ 00002137 n 0000 + 01092289 v 0101 + 00658247 v 0101 ~ 02475618 n 0000 ~ 07955013 n 0000 ~ 07955399 n 0000 ~ 07956688 n 0000 ~ 07957410 n 0000 ~ 07957969 n 0000 ~ 07958392 n 0000 ~ 07967506 n 0000 ~ 07968050 n 000...
+00032220 03 n 01 relation 0 032 @ 00002137 n 0000 + 13951421 n 0101 + 13834819 n 0103 + 13802931 n 0101 + 02730292 v 0101 + 00715072 v 0103 ~ 00032912 n 0000 ~ 00033122 n 0000 ~ 05081943 n 0000 ~ 13261412 n 0000 ~ 13802818 n 0000 ~ 13802931 n 0000 ~ 1380...
+00032912 03 n 01 possession 0 008 @ 00032220 n 0000 ~ 13265007 n 0000 ~ 13273752 n 0000 ~ 13273872 n 0000 ~ 13350511 n 0000 ~ 13350663 n 0000 ~ 13391621 n 0000 ~ 13417227 n 0000 | anything owned or possessed  
+00033122 03 n 01 social_relation 0 005 @ 00032220 n 0000 ~ 13802661 n 0000 ~ 13859638 n 0000 ~ 13862918 n 0000 ~ 13863157 n 0000 | a relation between living organisms (especially between people)  
+00033319 03 n 01 communication 0 027 @ 00002137 n 0000 + 00498715 a 0101 + 02236443 v 0103 + 01032711 v 0101 + 00762447 v 0102 + 01072124 v 0101 + 00744289 v 0101 + 00742582 v 0101 ~ 01104341 n 0000 ~ 06263820 n 0000 ~ 06293036 n 0000 ~ 06293304 n 0000 ~...
+00033914 03 n 03 measure 0 quantity 0 amount 0 026 @ 00002137 n 0000 + 02651091 v 0305 + 00683348 v 0101 + 00490773 v 0102 + 00648747 v 0101 = 02303673 a 0000 = 02304841 a 0000 ~ 05098974 n 0000 ~ 05864101 n 0000 ~ 13434666 n 0000 ~ 13597072 n 0000 ~ 135...
+00034512 03 n 01 phenomenon 0 008 @ 00029976 n 0000 ~ 11428673 n 0000 ~ 11428847 n 0000 ~ 11429028 n 0000 ~ 11430739 n 0000 ~ 11438252 n 0000 ~ 11438574 n 0000 ~ 11549746 n 0000 | any state or process known through the senses rather than by intuition or ...
+00034778 04 n 01 thing 0 001 @ 00038116 n 0000 | an action; "how could you do such a thing?"  
+00034873 04 n 01 exercise 5 001 @ 00038116 n 0000 | an action, often used negatively and without consequences; "an exercise in futility"; "an exercise in cheap talk"  
+00035041 04 n 02 kindness 0 benignity 0 008 @ 00038116 n 0000 + 01374976 a 0101 ~ 01229168 n 0000 ~ 01229326 n 0000 ~ 01229430 n 0000 ~ 01229679 n 0000 ~ 01230294 n 0000 ~ 01232282 n 0000 | a kind act  
+00035244 04 n 01 update 0 004 @ 00408356 n 0000 + 00835207 v 0101 + 00170503 v 0101 + 00170701 v 0101 | the act of bringing someone or something up to date; "the server update ran overnight"; "the local news station broadcast a special weather update"  
+00035498 04 n 02 abdominoplasty 0 tummy_tuck 0 001 @ 00691754 n 0000 | cosmetic surgery of the abdomen to remove wrinkles and tighten the skin over the stomach  
+00035660 04 n 01 abort 0 001 @ 00210792 n 0000 | the act of terminating a project or procedure before it is completed; "I wasted a year of my life working on an abort"; "he sent a short message requesting an abort due to extreme winds in the area"  
+00035910 04 n 02 accomplishment 0 achievement 0 023 @ 00038116 n 0000 + 02531751 v 0201 + 02531751 v 0102 + 01644397 v 0102 ~ 00037020 n 0000 ~ 00037301 n 0000 ~ 00037483 n 0000 ~ 00037727 n 0000 ~ 00037811 n 0000 ~ 00037921 n 0000 ~ 00047847 n 0000 ~ 00...
+00036418 04 n 01 agon 0 005 @ 00428985 n 0000 ~ 00517437 n 0000 ~ 00517615 n 0000 ~ 00517776 n 0000 ~ 00517956 n 0000 | a festivity in ancient Greece at which competitors contended for prizes  
+00036612 04 n 01 alienation 0 001 @ 00038116 n 0000 | the action of alienating; the action of causing to become unfriendly; "his behavior alienated the other students"  
+00036782 04 n 01 application 0 001 @ 00038116 n 0000 | the action of putting something into operation; "the application of maximum thrust"; "massage has far-reaching medical applications"; "the application of indexes to tables of data"  
+00037020 04 n 02 beachhead 0 foothold 0 001 @ 00035910 n 0000 | an initial accomplishment that opens the way for further developments; "the town became a beachhead in the campaign to ban smoking outdoors"; "they are presently attempting to gain a foothol...
+00037301 04 n 01 cakewalk 1 002 @ 00035910 n 0000 ;u 07120141 n 0000 | an easy accomplishment; "winning the tournament was a cakewalk for him"; "invading Iraq won't be a cakewalk"  
+00037483 04 n 03 feat 0 effort 2 exploit 0 006 @ 00035910 n 0000 ~ 00043854 n 0000 ~ 00044640 n 0000 ~ 00046387 n 0000 ~ 00047085 n 0000 ~ 00047759 n 0000 | a notable achievement; "he performed a great feat"; "the book was her finest effort"  
+00037727 04 n 01 masterpiece 0 001 @ 00035910 n 0000 | an outstanding achievement  
+00037811 04 n 01 masterstroke 0 001 @ 00035910 n 0000 | an achievement demonstrating great skill or mastery  
+00037921 04 n 01 credit 1 001 @ 00035910 n 0000 | used in the phrase `to your credit' in order to indicate an achievement deserving praise; "she already had several performances to her credit"  
+00038116 04 n 01 action 2 036 @ 00030657 n 0000 + 02372362 v 0101 ~ 00034778 n 0000 ~ 00034873 n 0000 ~ 00035041 n 0000 ~ 00035910 n 0000 ~ 00036612 n 0000 ~ 00036782 n 0000 ~ 00038913 n 0000 ~ 00039000 n 0000 ~ 00039759 n 0000 ~ 00040654 n 0000 ~ 000419...
+00038913 04 n 01 res_gestae 0 002 @ 00038116 n 0000 ;c 06975340 n 0000 | things done  
+00039000 04 n 02 course 0 course_of_action 0 004 @ 00038116 n 0000 ~ 00039311 n 0000 ~ 00039601 n 0000 ~ 00416689 n 0000 | a mode of action; "if you persist in that course you will surely fail"; "once a nation is embarked on a course of action it becomes...
+00039311 04 n 01 blind_alley 0 002 @ 00039000 n 0000 ;u 07120141 n 0000 | (figurative) a course of action that is unproductive and offers no hope of improvement; "all the clues led the police into blind alleys"; "so far every road that we've been down ha...
+00039601 04 n 01 collision_course 0 001 @ 00039000 n 0000 | a course of action (following a given idea) that will lead to conflict if it continues unabated  
+</PRE><BR><BR><h2>SUMO - Suggested Upper Merged Ontology</h2>
+Page info = <a href=http://www.ontologyportal.org/>http://www.ontologyportal.org/</a><BR>
+source data = <a href=http://sigmakee.cvs.sourceforge.net/viewvc/sigmakee/KBs/?view=tar>http://sigmakee.cvs.sourceforge.net/viewvc/sigmakee/KBs/?view=tar</a><BR>
+Sample from S:\DATA\opendata\ontology\SUMO\KBs\Mid-level-ontology.kif<BR>
+<PRE>;; ==============================
+;;      MILO (Mid-Level Ontology)
+;; ==============================
+
+;; This is the source file for the MILO (MId-Level Ontology), an ontology that 
+;; is being developed as a bridge between the abstract content of the SUMO and 
+;; the rich detail of the various domain ontologies.    
+;; Those who are interested in making use of this ontology are urged 
+;; to contact Adam Pease (apease [at] articulatesoftware [dot] com).
+
+;; The MILO (MId-Level Ontology) is copyrighted by Teknowledge (c) 
+;; 2003 and Articulate Software 2004-2007.  It is released under the GNU Public License 
+;; &lt;http://www.gnu.org/copyleft/gpl.html>.  Users of this code also consent, by 
+;; use of this material, to credit Teknowledge and Articulate Software
+;; in any writings, briefings, 
+;; publications, presentations, or other representations of any code or other 
+;; product which incorporates, builds on, or uses this material. 
+
+;; We ask that people using or referencing this work cite our primary paper:
+
+;; Niles, I., and Pease, A.  2001.  Towards a Standard Upper Ontology.  In 
+;; Proceedings of the 2nd International Conference on Formal Ontology in 
+;; Information Systems (FOIS-2001), Chris Welty and Barry Smith, eds, 
+;; Ogunquit, Maine, October 17-19, 2001.  See also http://www.ontologyportal.org
+
+;; NS: delete.
+;; [1]
+;; (subclass HumanCorpse OrganicObject)
+
+;; NS: delete.
+;; [2]
+;; (documentation HumanCorpse EnglishLanguage "A &%Dead thing which was
+;; formerly a &%Human.")
+
+;; NS: delete.
+;; [3]
+;; (=>
+;;   (instance ?CORPSE HumanCorpse)
+;;   (exists (?HUMAN)
+;;     (and
+;;       (instance ?HUMAN Human)
+;;       (before (WhenFn ?HUMAN) (WhenFn ?CORPSE))
+;;       (not
+;;         (exists (?OTHERPART)
+;;           (and
+;;             (holdsDuring
+;;               (WhenFn ?CORPSE)
+;;               (part ?OTHERPART ?CORPSE))
+;;             (not
+;;               (holdsDuring 
+;;                 (WhenFn ?HUMAN) 
+;;                 (part ?OTHERPART ?HUMAN)))))))))
+
+;; NS: delete.
+;; [4]
+;; (=>
+;;   (instance ?CORPSE HumanCorpse)
+;;   (attribute ?CORPSE Dead))
+
+;; NS: The KR above is inadequate for several reasons: (1)
+;; It completely fails to generalize, saying nothing about
+;; the remains of organisms other than humans, or remains
+;; that are not partonomically identical to the original
+;; living organism; (2) Rule [3] is malformed, because
+;; &%before must be used with TimePoints, not TimeIntervals;
+;; and (3) Axioms that apply the attributes &%Living and
+;; &%Dead to &%Organism and &%HumanCorpse probably result in
+;; unintended conclusions.  Consider rule [4], above, in
+;; conjuction with rules [5] and [6], below, both of which
+;; appear in Merge.kif:
+;;
+;; [5] From Merge.kif.  Already changed there to prevent
+;; concluding that Organisms can be Dead.
+;; (=>
+;;   (and
+;;     (instance ?DEATH Death)
+;;     (experiencer ?DEATH ?AGENT))
+;;   (holdsDuring
+;;     (FutureFn
+;;       (WhenFn ?DEATH))
+;;         (attribute ?AGENT Dead)))
+;;
+;; [6] From Merge.kif.  Already changed there, broadening
+;; the consequent to (instance ?ORG OrganicObject).
+;; (=>
+;;     (and
+;;         (attribute ?ORG ?ATT)
+;;         (instance ?ATT BiologicalAttribute))
+;;     (instance ?ORG Organism))
+;; 
+;;
+;; [6.1] From Merge.kif
+;; (=>
+;;     (and
+;;         (instance ?PATH PathologicProcess)
+;;         (experiencer ?PATH ?ORG))
+;;     (exists (?PART ?DISEASE)
+;;         (and
+;;             (part ?PART ?ORG)
+;;             (instance ?DISEASE DiseaseOrSyndrome)
+;;             (attribute ?PART ?DISEASE))))
+</PRE><BR><BR><h2>DOLCE - Descriptive Ontology for Linguistic and Cognitive Engineering </h2>
+Page info = <a href=http://www.loa.istc.cnr.it/>http://www.loa.istc.cnr.it/</a><BR>
+source data = <a href=http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl>http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl</a><BR>
+Sample from S:\DATA\opendata\ontology\DOLCE\DOLCE-Lite.owl<BR>
+<PRE>&lt;?xml version="1.0"?>
+
+
+&lt;!DOCTYPE rdf:RDF [
+    &lt;!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    &lt;!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    &lt;!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    &lt;!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+&lt;rdf:RDF xmlns="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#"
+     xml:base="http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    &lt;owl:Ontology rdf:about="">
+        &lt;owl:versionInfo rdf:datatype="&xsd;string">classified&lt;/owl:versionInfo>
+        &lt;rdfs:comment rdf:datatype="&xsd;string"
+            >The DOLCE and DnS ontologies. OWL engineering by Aldo Gangemi.&lt;/rdfs:comment>
+        &lt;owl:versionInfo rdf:datatype="&xsd;string">397&lt;/owl:versionInfo>
+    &lt;/owl:Ontology>
+    
+
+
+    &lt;!-- 
+    ///////////////////////////////////////////////////////////////////////////
+    //
+    //   OWL Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    &lt;!-- Class: http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#abstract -->
+
+    &lt;owl:Class rdf:about="#abstract">
+        &lt;rdfs:comment rdf:datatype="&xsd;string"
+            >The main characteristic of abstract entities is that  they do not have spatial nor temporal qualities, and they are not qualities themselves.  The only class of abstract entities we consider in the present version of the upper  ontology is t...
+        &lt;rdfs:subClassOf>
+            &lt;owl:Class rdf:about="#particular"/>
+        &lt;/rdfs:subClassOf>
+        &lt;rdfs:subClassOf>
+            &lt;owl:Restriction>
+                &lt;owl:onProperty rdf:resource="#has-quality"/>
+                &lt;owl:allValuesFrom>
+                    &lt;owl:Class>
+                        &lt;owl:complementOf>
+                            &lt;owl:Class rdf:about="#spatial-location_q"/>
+                        &lt;/owl:complementOf>
+                    &lt;/owl:Class>
+                &lt;/owl:allValuesFrom>
+            &lt;/owl:Restriction>
+        &lt;/rdfs:subClassOf>
+        &lt;rdfs:subClassOf>
+            &lt;owl:Restriction>
+                &lt;owl:onProperty rdf:resource="#has-quality"/>
+                &lt;owl:allValuesFrom>
+                    &lt;owl:Class>
+                        &lt;owl:complementOf>
+                            &lt;owl:Class rdf:about="#temporal-location_q"/>
+                        &lt;/owl:complementOf>
+                    &lt;/owl:Class>
+                &lt;/owl:allValuesFrom>
+            &lt;/owl:Restriction>
+        &lt;/rdfs:subClassOf>
+    &lt;/owl:Class>
+    
+
+
+    &lt;!-- Class: http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#abstract-quality -->
+
+    &lt;owl:Class rdf:about="#abstract-quality">
+        &lt;rdfs:comment rdf:datatype="&xsd;string"
+            >A quality inherent in a non-physical endurant.&lt;/rdfs:comment>
+        &lt;rdfs:subClassOf>
+            &lt;owl:Restriction>
+                &lt;owl:onProperty rdf:resource="#has-quality"/>
+                &lt;owl:allValuesFrom rdf:resource="#abstract-quality"/>
+            &lt;/owl:Restriction>
+        &lt;/rdfs:subClassOf>
+        &lt;rdfs:subClassOf>
+            &lt;owl:Restriction>
+                &lt;owl:onProperty rdf:resource="#q-location"/>
+                &lt;owl:allValuesFrom rdf:resource="#abstract-region"/>
+            &lt;/owl:Restriction>
+        &lt;/rdfs:subClassOf>
+        &lt;rdfs:subClassOf>
+            &lt;owl:Restriction>
+                &lt;owl:onProperty rdf:resource="#inherent-in"/>
+                &lt;owl:someValuesFrom rdf:resource="#non-physical-endurant"/>
+            &lt;/owl:Restriction>
+        &lt;/rdfs:subClassOf>
+        &lt;rdfs:subClassOf>
+            &lt;owl:Class rdf:about="#quality"/>
+        &lt;/rdfs:subClassOf>
+    &lt;/owl:Class>
+    
+</PRE><BR><BR><h2>DBPedia</h2>
+Page info = <a href=http://wiki.dbpedia.org/Datasets>http://wiki.dbpedia.org/Datasets</a><BR>
+source data = <a href=http://wiki.dbpedia.org/Downloads39>http://wiki.dbpedia.org/Downloads39</a><BR>
+Sample from S:\DATA\opendata\ontology\wikipedia_categories\dbpedia-ontology.owl.bz2.owl.bz2.owl<BR>
+<PRE>&lt;rdf:RDF
+        xmlns = "http://dbpedia.org/ontology/"
+        xml:base="http://dbpedia.org/ontology/"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+
+
+        &lt;!-- Ontology Information -->
+        &lt;owl:Ontology rdf:about="">
+        &lt;owl:versionInfo xml:lang="de">Version 3.2 2008-11-17&lt;/owl:versionInfo>
+        &lt;/owl:Ontology>
+        &lt;owl:Class rdf:about="http://dbpedia.org/ontology/PopulatedPlace">
+&lt;rdfs:label xml:lang="en">Populated Place&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Place">
+&lt;rdfs:label xml:lang="en">Place&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Country">
+&lt;rdfs:label xml:lang="en">Country&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Area">
+&lt;rdfs:label xml:lang="en">Area&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Municipality">
+&lt;rdfs:label xml:lang="en">Municipality&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/City">
+&lt;rdfs:label xml:lang="en">City&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/River">
+&lt;rdfs:label xml:lang="en">River&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/HistoricPlace">
+&lt;rdfs:label xml:lang="en">Historic Place&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Infrastructure">
+&lt;rdfs:label xml:lang="en">Infrastructure&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Road">
+&lt;rdfs:label xml:lang="en">Road&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Infrastructure"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Lake">
+&lt;rdfs:label xml:lang="en">Lake&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Mountain">
+&lt;rdfs:label xml:lang="en">Mountain&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Building">
+&lt;rdfs:label xml:lang="en">Building&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Airport">
+&lt;rdfs:label xml:lang="en">Airport&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Building"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/ProtectedArea">
+&lt;rdfs:label xml:lang="en">Protected Area&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Station">
+&lt;rdfs:label xml:lang="en">Station&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Building"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/LunarCrater">
+&lt;rdfs:label xml:lang="en">Lunar Crater&lt;/rdfs:label>
+	&lt;rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Place"/>
+&lt;/owl:Class>
+
+&lt;owl:Class rdf:about="http://dbpedia.org/ontology/Skyscraper">
+&lt;rdfs:label xml:lang="en">Skyscraper&lt;/rdfs:label>
+</PRE><BR><BR><h2>BFO - Basic Formal Ontology</h2>
+Page info = <a href=http://www.ifomis.org/bfo>http://www.ifomis.org/bfo</a><BR>
+source data = <a href=http://www.ifomis.org/bfo/1.1>http://www.ifomis.org/bfo/1.1</a><BR>
+Sample from S:\DATA\opendata\ontology\BFO\bfo-1.1.owl<BR>
+<PRE>&lt;?xml version="1.0"?>
+
+&lt;!DOCTYPE rdf:RDF [
+&lt;!ENTITY base "http://www.ifomis.org/bfo/1.1">
+&lt;!ENTITY bfo "&base;#">
+&lt;!ENTITY snap "&base;/snap#">
+&lt;!ENTITY span "&base;/span#">
+&lt;!ENTITY dc "http://purl.org/dc/elements/1.1/">
+&lt;!ENTITY w3 "http://www.w3.org">
+&lt;!ENTITY owl "&w3;/2002/07/owl#">
+&lt;!ENTITY rdf "&w3;/1999/02/22-rdf-syntax-ns#">
+&lt;!ENTITY rdfs "&w3;/2000/01/rdf-schema#">
+&lt;!ENTITY xsd "&w3;/2001/XMLSchema#">
+]>
+
+&lt;rdf:RDF xmlns:bfo="&bfo;"
+		xmlns:snap="&snap;"
+		xmlns:span="&span;"
+		xmlns:dc="&dc;"
+		xmlns:owl="&owl;"
+		xmlns:rdf="&rdf;"
+		xmlns:rdfs="&rdfs;"
+		xmlns:xsd="&xsd;"
+		xml:base="&base;">
+	&lt;owl:Ontology rdf:about="">
+		&lt;dc:title rdf:datatype="&xsd;string">Basic Formal Ontology (BFO)&lt;/dc:title>
+		&lt;dc:creator rdf:datatype="&xsd;string">Holger Stenzhorn&lt;/dc:creator>
+		&lt;dc:contributor rdf:datatype="&xsd;string">Andrew Spear&lt;/dc:contributor>
+		&lt;dc:contributor rdf:datatype="&xsd;string">Pierre Grenon&lt;/dc:contributor>
+		&lt;dc:contributor rdf:datatype="&xsd;string">Alan Ruttenberg&lt;/dc:contributor>
+		&lt;dc:publisher rdf:datatype="&xsd;string">Institute for Formal Ontology and Medical Information Science (IFOMIS)&lt;/dc:publisher>
+		&lt;dc:rights>http://creativecommons.org/licenses/by/3.0&lt;/dc:rights>
+		&lt;dc:identifier rdf:datatype="&xsd;string">&base;&lt;/dc:identifier>
+		&lt;dc:format rdf:datatype="&xsd;string">application/rdf+xml&lt;/dc:format>
+		&lt;dc:language rdf:datatype="&xsd;string">en&lt;/dc:language>
+		&lt;dc:source rdf:datatype="&xsd;string">Barry Smith: "Against Fantology"&lt;/dc:source>
+		&lt;dc:source rdf:datatype="&xsd;string">Barry Smith: "Beyond Concepts: Ontology as Reality Representation"&lt;/dc:source>
+		&lt;dc:source rdf:datatype="&xsd;string">Pierre Grenon and Barry Smith: "SNAP and SPAN: Towards Geospatial Dynamics"&lt;/dc:source>
+		&lt;dc:source rdf:datatype="&xsd;string">Pierre Grenon, Barry Smith and Louis Goldberg: "Biodynamic Ontology: Applying BFO in the Biomedical Domain"&lt;/dc:source>
+		&lt;dc:source rdf:datatype="&xsd;string">Barry Smith and Pierre Grenon: "The Cornucopia of Formal Ontological Relations"&lt;/dc:source>
+		&lt;dc:source rdf:datatype="&xsd;string">Barry Smith: "Basic Tools of Formal Ontology"&lt;/dc:source>
+		&lt;dc:source rdf:datatype="&xsd;string">Pierre Grenon: "Spatio-temporality in Basic Formal Ontology: SNAP and SPAN, Upper-Level Ontology, and Framework for Formalization"&lt;/dc:source>
+		&lt;dc:source rdf:datatype="&xsd;string">Pierre Grenon: "BFO in a Nutshell: A Bi-categorial Axiomatization of BFO and Comparison with DOLCE"&lt;/dc:source>
+		&lt;dc:source rdf:datatype="&xsd;string">Pierre Grenon: "Nuts in BFO's Nutshell: Revisions to the Bi-categorial Axiomatization of BFO"&lt;/dc:source>
+		&lt;owl:versionInfo rdf:datatype="&xsd;string">1.1.1&lt;/owl:versionInfo>
+	&lt;/owl:Ontology>
+
+
+
+	&lt;!--     -->
+	&lt;!-- BFO -->
+	&lt;!--     -->
+
+
+
+	&lt;owl:Class rdf:about="&bfo;Entity">
+		&lt;rdfs:label rdf:datatype="&xsd;string">entity&lt;/rdfs:label>
+		&lt;owl:unionOf rdf:parseType="Collection">
+			&lt;owl:Class rdf:about="&snap;Continuant"/>
+			&lt;owl:Class rdf:about="&span;Occurrent"/>
+		&lt;/owl:unionOf>
+	&lt;/owl:Class>
+
+
+
+	&lt;!--      -->
+	&lt;!-- SNAP -->
+	&lt;!--      -->
+
+
+
+	&lt;owl:Class rdf:about="&snap;Continuant">
+		&lt;rdfs:subClassOf rdf:resource="&bfo;Entity"/>
+		&lt;owl:equivalentClass>
+			&lt;owl:Class>
+				&lt;owl:unionOf rdf:parseType="Collection">
+					&lt;owl:Class rdf:about="&snap;DependentContinuant"/>
+					&lt;owl:Class rdf:about="&snap;IndependentContinuant"/>
+					&lt;owl:Class rdf:about="&snap;SpatialRegion"/>
+				&lt;/owl:unionOf>
+			&lt;/owl:Class>
+		&lt;/owl:equivalentClass>
+		&lt;owl:disjointWith rdf:resource="&span;Occurrent"/>
+		&lt;rdfs:label rdf:datatype="&xsd;string">continuant&lt;/rdfs:label>
+		&lt;rdfs:comment rdf:datatype="&xsd;string">Definition: An entity [bfo:Entity] that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts.&lt;/rdfs:comment>
+		&lt;rdfs:comment rdf:datatype="&xsd;string">Examples: a heart, a person, the color of a tomato, the mass of a cloud, a symphony orchestra, the disposition of blood to coagulate, the lawn and atmosphere in front of our building&lt;/rdfs:comment>
+		&lt;rdfs:comment rdf:datatype="&xsd;string">Synonyms: endurant&lt;/rdfs:comment>
+	&lt;/owl:Class>
+
+	&lt;owl:Class rdf:about="&snap;DependentContinuant">
+		&lt;rdfs:subClassOf rdf:resource="&snap;Continuant"/>
+		&lt;owl:equivalentClass>
+			&lt;owl:Class>
+				&lt;owl:unionOf rdf:parseType="Collection">
+					&lt;owl:Class rdf:about="&snap;GenericallyDependentContinuant"/>
+					&lt;owl:Class rdf:about="&snap;SpecificallyDependentContinuant"/>
+				&lt;/owl:unionOf>
+			&lt;/owl:Class>
+		&lt;/owl:equivalentClass>
+		&lt;owl:disjointWith rdf:resource="&snap;IndependentContinuant"/>
+		&lt;owl:disjointWith rdf:resource="&snap;SpatialRegion"/>
+</PRE><BR><BR><h2>UMBEL</h2>
+Page info = <a href=http://structureddynamics.com/resources.html#Ontologies>http://structureddynamics.com/resources.html#Ontologies</a><BR>
+source data = <a href=https://github.com/structureddynamics/UMBEL/blob/master/Ontology/umbel.n3>https://github.com/structureddynamics/UMBEL/blob/master/Ontology/umbel.n3</a><BR>
+Sample from S:\DATA\opendata\ontology\UMBEL\umbel.n3<BR>
+<PRE>
+
+
+
+
+&lt;!DOCTYPE html>
+&lt;html class="  ">
+  &lt;head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    &lt;meta charset='utf-8'>
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    
+    &lt;title>UMBEL/Ontology/umbel.n3 at master · structureddynamics/UMBEL&lt;/title>
+    &lt;link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" />
+    &lt;link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+    &lt;link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png" />
+    &lt;link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png" />
+    &lt;link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png" />
+    &lt;link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png" />
+    &lt;meta property="fb:app_id" content="1401488693436528"/>
+
+      &lt;meta content="@github" name="twitter:site" />&lt;meta content="summary" name="twitter:card" />&lt;meta content="structureddynamics/UMBEL" name="twitter:title" />&lt;meta content="UMBEL (Upper Mapping and Binding Exchange Layer) has two purposes. Its first ...
+&lt;meta content="GitHub" property="og:site_name" />&lt;meta content="object" property="og:type" />&lt;meta content="https://avatars3.githubusercontent.com/u/1203043?s=400" property="og:image" />&lt;meta content="structureddynamics/UMBEL" property="og:title" />&lt;meta...
+
+    &lt;link rel="assets" href="https://github.global.ssl.fastly.net/">
+    &lt;link rel="conduit-xhr" href="https://ghconduit.com:25035/">
+    &lt;link rel="xhr-socket" href="/_sockets" />
+
+    &lt;meta name="msapplication-TileImage" content="/windows-tile.png" />
+    &lt;meta name="msapplication-TileColor" content="#ffffff" />
+    &lt;meta name="selected-link" value="repo_source" data-pjax-transient />
+    &lt;meta content="collector.githubapp.com" name="octolytics-host" />&lt;meta content="collector-cdn.github.com" name="octolytics-script-host" />&lt;meta content="github" name="octolytics-app-id" />&lt;meta content="721E776F:2C22:1172489:533238F6" name="octolytic...
+    
+
+    
+    
+    &lt;link rel="icon" type="image/x-icon" href="https://github.global.ssl.fastly.net/favicon.ico" />
+
+    &lt;meta content="authenticity_token" name="csrf-param" />
+&lt;meta content="Yt6XGqYo3pcTJuPa/odo87wTFg1sNF0x0KX44K8PpFU=" name="csrf-token" />
+
+    &lt;link href="https://github.global.ssl.fastly.net/assets/github-337b621337a4eb1e816f9bb51b2443666e8f9849.css" media="all" rel="stylesheet" type="text/css" />
+    &lt;link href="https://github.global.ssl.fastly.net/assets/github2-19782b9f1a9b85f7472fabfe0d9922ca565b03e5.css" media="all" rel="stylesheet" type="text/css" />
+    
+
+
+        &lt;script crossorigin="anonymous" src="https://github.global.ssl.fastly.net/assets/frameworks-1eb4805d296158ea875ffc5fa959a11f5a3cdf13.js" type="text/javascript">&lt;/script>
+        &lt;script async="async" crossorigin="anonymous" src="https://github.global.ssl.fastly.net/assets/github-339bf969f048e4b356d43c7a81f5e1c9f80d082b.js" type="text/javascript">&lt;/script>
+        
+        
+      &lt;meta http-equiv="x-pjax-version" content="58d98b7a201bbef1bb4bec44a348514f">
+
+        &lt;link data-pjax-transient rel='permalink' href='/structureddynamics/UMBEL/blob/33fddf90221f9fb9e7f5ef67d0af6f3f8f8ee3a3/Ontology/umbel.n3'>
+
+  &lt;meta name="description" content="UMBEL (Upper Mapping and Binding Exchange Layer) has two purposes. Its first purpose is to provide a general vocabulary (the UMBEL &quot;vocabulary&quot;) of classes and predicates for describing domain ontologies, wit...
+
+  &lt;meta content="1203043" name="octolytics-dimension-user_id" />&lt;meta content="structureddynamics" name="octolytics-dimension-user_login" />&lt;meta content="2821253" name="octolytics-dimension-repository_id" />&lt;meta content="structureddynamics/UMBEL" name=...
+  &lt;link href="https://github.com/structureddynamics/UMBEL/commits/master.atom" rel="alternate" title="Recent Commits to UMBEL:master" type="application/atom+xml" />
+
+  &lt;/head>
+
+
+  &lt;body class="logged_in  env-production windows vis-public page-blob">
+    &lt;a href="#start-of-content" class="accessibility-aid js-skip-to-content">Skip to content&lt;/a>
+    &lt;div class="wrapper">
+      
+      
+      
+      
+
+
+      &lt;div class="header header-logged-in true">
+  &lt;div class="container clearfix">
+
+    &lt;a class="header-logo-invertocat" href="https://github.com/">
+  &lt;span class="mega-octicon octicon-mark-github">&lt;/span>
+&lt;/a>
+
+    
+    &lt;a href="/notifications" aria-label="You have unread notifications" class="notification-indicator tooltipped tooltipped-s" data-gotokey="n">
+        &lt;span class="mail-status unread">&lt;/span>
+&lt;/a>
+
+      &lt;div class="command-bar js-command-bar  in-repository">
+          &lt;form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+
+&lt;div class="commandbar">
+  &lt;span class="message">&lt;/span>
+  &lt;input type="text" data-hotkey="/ s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off"
+    
+    data-username="acutesoftware"
+      data-repo="structureddynamics/UMBEL"
+      data-branch="master"
+      data-sha="122d3696559986555eb88a47d586078020c0010f"
+  >
+  &lt;div class="display hidden">&lt;/div>
+&lt;/div>
+
+    &lt;input type="hidden" name="nwo" value="structureddynamics/UMBEL" />
+
+    &lt;div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+</PRE><BR><BR><h2>DnS - Descriptions and Situations (implementation of DOLCE+DnS-Ultralite abbreviated to DUL) </h2>
+Page info = <a href=http://stlab.istc.cnr.it/stlab/The_Semantic_Technology_Laboratory_%28STLab%29>http://stlab.istc.cnr.it/stlab/The_Semantic_Technology_Laboratory_%28STLab%29</a><BR>
+source data = <a href=http://www.ontologydesignpatterns.org/ont/dul/DUL.owl>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</a><BR>
+Sample from S:\DATA\opendata\ontology\DnS\DUL.owl<BR>
+<PRE>&lt;?xml version="1.0"?>
+
+
+&lt;!DOCTYPE rdf:RDF [
+    &lt;!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    &lt;!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    &lt;!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    &lt;!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+&lt;rdf:RDF xmlns="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xml:base="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    &lt;owl:Ontology rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl">
+        &lt;rdfs:label rdf:datatype="&xsd;string">DOLCE+DnS Ultralite&lt;/rdfs:label>
+        &lt;owl:versionInfo rdf:datatype="&xsd;string">3.27
+&lt;/owl:versionInfo>
+        &lt;owl:versionInfo rdf:datatype="&xsd;string">Created by Aldo Gangemi as both a simplification and extension of DOLCE and Descriptions and Situations ontologies.&lt;/owl:versionInfo>
+        &lt;owl:versionInfo rdf:datatype="&xsd;string">In 3.2, the links between instances of Region or Parameter, and datatypes have been revised and made more powerful, in order to support efficient design patterns for data value modelling in OWL1.0.
+Also, the names of the related properties have been changed in order to make them more intuitive.
+Furthermore, a large comment field has been added to the &apos;expresses&apos; object property, in order to clarify some issues about the many interpretations.
+In 3.3, the relation between regions, parameters, and datatypes has been still improved.
+In 3.5, the person-related classes have been refactored: Person in 3.4 is now SocialPerson, to avoid confusion with commonsense intuition; Person is now the union of social persons and humans, therefore being a subclass of Agent.
+In 3.6, other fixes on universal restriction involving expresses. Also added the property &apos;isConstraintFor&apos; between parameters and entities. Moved the properties: &apos;assumes&apos; and &apos;adopts&apos; to the new module: http://www.ontology...
+In 3.7, some fixes on the names of classes and properties related to FormalEntity; created a new separate module for general universal restrictions (DULGCI.owl).
+In 3.8, more fixes on the interface to formal entities and links to IOLite.owl.
+In 3.9, some naming and comment fixes.
+In 3.10, removed cardinality restriction from hasPart and isPartOf restrictions (changed to hasComponent and isComponentOf), for OWL(DL) compatibility. Also enlarged the range of includesAgent to contain both social and physical agents, and of conceptual...
+In 3.11, some more subproperty axioms have been introduced, and all elements have got English labels.
+In 3.12, added some classes to map some old DolceLitePlus classes that were used to align OntoWordNet.
+In 3.13, added the LocalConcept class to express a Concept that cannot be used in a Description different from the one that defines it. Also updated some comments.
+In 3.14, added some comments.
+In 3.15, removed some owl:disjointWith axioms relating Collection to InformationObject, Description, Situation, and SocialAgent. The rationale for doing that is to allow less strict constraints on domain relations involving collections that can be also c...
+In 3.16, name of isActedBy changed to actsThrough, which is clearer. Also added SpatioTemporalRegion as constituted by a SpaceRegion and a TimeInterval.
+In 3.17, removed redundant universal axioms from Entity and other top classes. Fixed restrictions on FunctionalSubstance class, and comments in Design and Substance classes.
+In 3.18, removed subClassOf axiom from FunctionalSubstance to DesignedArtifact, created a new subclass of FunctionalSubstance, called DesignedSubstance, and created a subClassOf axiom from DesignedSubstance to DesignedArtifact.
+In 3.19, removed disjointness axiom between Concept and Collection (the same rationale applies as in 3.15 version.
+In 3.20, revised the comment for Quality, added InformationEntity as the superclass for InformationObject and InformationRealization (represented as the union of those classes). This is needed in many domain ontologies that do not need to distinguish bet...
+In 3.21, added comment to InformationEntity, and optimized representation of equivalence for InformationRealization.
+In 3.22, added comment to Personification.
+In 3.23, added associatedWith object property, and put all object properties as subproperties of it.
+In 3.24, removed hasProxy datatype property.
+In 3.25, generalized domain and range of hasComponent and isComponentOf.
+In 3.26, updated some comments in order to clarify or exemplify the concepts.
+In 3.27, added rdfs:isDefinedBy annotations for Linked Data browsers.&lt;/owl:versionInfo>
+        &lt;rdfs:comment rdf:datatype="&xsd;string">The DOLCE+DnS Ultralite ontology.
+It is a simplification of some parts of the DOLCE Lite-Plus library (cf. http://www.ontologydesignpatterns.org/ont/dul/DLP397.owl). 
+Main aspects in which DOLCE+DnS Ultralite departs from DOLCE Lite-Plus are the following:
+
+- The names of classes and relations have been made more intuitive
+- The DnS-related part is closer to the newer &apos;constructive DnS&apos; ontology (http://www.ontologydesignpatterns.org/ont/dul/cDnS.owl).
+- Temporal and spatial relations are simplified
+- Axiomatization makes use of simpler constructs than DOLCE Lite-Plus
+- The architecture of the ontology is pattern-based, which means that DOLCE+DnS Ultralite is also available in modules, called &apos;content ontology design patterns&apos;, which can be applied independently in the design of domain ontologies (cf. http:/...
+
+The final result is a lightweight, easy-to-apply foundational ontology for modeling either physical or social contexts.
+Several extensions of DOLCE+DnS Ultralite have been designed; see for example the extensions for information objects: http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl, 
+for systems: http://www.ontologydesignpatterns.org/ont/dul/SystemsLite.owl, 
+for plans: http://www.ontologydesignpatterns.org/ont/dul/PlansLite.owl, 
+for the legal domain: http://www.ontologydesignpatterns.org/ont/dul/CLO/CoreLegal.owl, 
+and for the lexical and semiotic domains: http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl; etc.&lt;/rdfs:comment>
+    &lt;/owl:Ontology>
+    
+
+
+    &lt;!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    &lt;owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
+    &lt;owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    &lt;owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    &lt;!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    &lt;!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    &lt;rdfs:Datatype rdf:about="&xsd;date"/>
+    
+
+
+    &lt;!-- 
+</PRE><BR><BR><h2>GFO - General Formal Ontology</h2>
+Page info = <a href=http://www.onto-med.de/ontologies/index.jsp>http://www.onto-med.de/ontologies/index.jsp</a><BR>
+source data = <a href=http://www.onto-med.de/ontologies/gfo.owl>http://www.onto-med.de/ontologies/gfo.owl</a><BR>
+Sample from S:\DATA\opendata\ontology\GFO\gfo-ato.owl<BR>
+<PRE>&lt;?xml version="1.0"?>
+&lt;rdf:RDF
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:gfo="http://www.onto-med.de/ontologies/gfo.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://www.w3.org/2002/07/owl">
+  &lt;owl:Ontology rdf:about="http://www.thezfiles.co.za/ontologies/gfo-ato.owl">
+    &lt;owl:versionInfo xml:lang="en">1&lt;/owl:versionInfo>
+    &lt;rdfs:comment xml:lang="en">Abstract top ontology of GFO
+Created 27 July 2012&lt;/rdfs:comment>
+  &lt;/owl:Ontology>
+  &lt;owl:Class rdf:about="http://www.onto-med.de/ontologies/gfo.owl#Set">
+    &lt;rdfs:subClassOf>
+      &lt;owl:Class rdf:about="http://www.onto-med.de/ontologies/gfo.owl#Entity"/>
+    &lt;/rdfs:subClassOf>
+    &lt;rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Set is a category pertaining to the individuals in the ZFC set theory.&lt;/rdfs:comment>
+  &lt;/owl:Class>
+  &lt;owl:Class rdf:about="http://www.onto-med.de/ontologies/gfo.owl#Entity">
+    &lt;rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Everything which exists is called an entity.&lt;/rdfs:comment>
+    &lt;owl:equivalentClass>
+      &lt;owl:Class>
+        &lt;owl:unionOf rdf:parseType="Collection">
+          &lt;owl:Class rdf:about="http://www.onto-med.de/ontologies/gfo.owl#Item"/>
+          &lt;owl:Class rdf:about="http://www.onto-med.de/ontologies/gfo.owl#Set"/>
+        &lt;/owl:unionOf>
+      &lt;/owl:Class>
+    &lt;/owl:equivalentClass>
+  &lt;/owl:Class>
+  &lt;owl:Class rdf:about="http://www.onto-med.de/ontologies/gfo.owl#Item">
+    &lt;rdfs:subClassOf>
+      &lt;owl:Class>
+        &lt;owl:complementOf>
+          &lt;owl:Restriction>
+            &lt;owl:someValuesFrom rdf:resource="http://www.onto-med.de/ontologies/gfo.owl#Entity"/>
+            &lt;owl:onProperty>
+              &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#has_member"/>
+            &lt;/owl:onProperty>
+          &lt;/owl:Restriction>
+        &lt;/owl:complementOf>
+      &lt;/owl:Class>
+    &lt;/rdfs:subClassOf>
+    &lt;rdfs:subClassOf rdf:resource="http://www.onto-med.de/ontologies/gfo.owl#Entity"/>
+    &lt;owl:disjointWith rdf:resource="http://www.onto-med.de/ontologies/gfo.owl#Set"/>
+    &lt;rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An item is everything which is not a set. Also called ur-element.&lt;/rdfs:comment>
+  &lt;/owl:Class>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#categorial_part_of">
+    &lt;rdfs:subPropertyOf>
+      &lt;owl:TransitiveProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#abstract_part_of"/>
+    &lt;/rdfs:subPropertyOf>
+  &lt;/owl:ObjectProperty>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#has_value"/>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#has_sequence_constituent"/>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#instance_of">
+    &lt;rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The instantiation relation holds between a category and an item. It is not a relation between categories and individuals due to higher order categories such as "species".&lt;/rdfs:comment>
+    &lt;rdfs:domain rdf:resource="http://www.onto-med.de/ontologies/gfo.owl#Entity"/>
+  &lt;/owl:ObjectProperty>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#boundary_of">
+    &lt;rdfs:subPropertyOf>
+      &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#depends_on"/>
+    &lt;/rdfs:subPropertyOf>
+  &lt;/owl:ObjectProperty>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#sequence_constituent_of">
+    &lt;rdfs:subPropertyOf>
+      &lt;owl:TransitiveProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#part_of"/>
+    &lt;/rdfs:subPropertyOf>
+    &lt;owl:inverseOf rdf:resource="http://www.onto-med.de/ontologies/gfo.owl#has_sequence_constituent"/>
+  &lt;/owl:ObjectProperty>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#caused_by">
+    &lt;owl:inverseOf>
+      &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#causes"/>
+    &lt;/owl:inverseOf>
+  &lt;/owl:ObjectProperty>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#participates_in"/>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#category_in_layer">
+    &lt;rdfs:subPropertyOf rdf:resource="http://www.onto-med.de/ontologies/gfo.owl#categorial_part_of"/>
+  &lt;/owl:ObjectProperty>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#has_categorial_part">
+    &lt;rdfs:subPropertyOf>
+      &lt;owl:TransitiveProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#abstract_has_part"/>
+    &lt;/rdfs:subPropertyOf>
+    &lt;owl:inverseOf rdf:resource="http://www.onto-med.de/ontologies/gfo.owl#categorial_part_of"/>
+  &lt;/owl:ObjectProperty>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#constituent_part_of">
+    &lt;owl:inverseOf>
+      &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#has_constituent_part"/>
+    &lt;/owl:inverseOf>
+    &lt;rdfs:subPropertyOf>
+      &lt;owl:TransitiveProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#proper_part_of"/>
+    &lt;/rdfs:subPropertyOf>
+  &lt;/owl:ObjectProperty>
+  &lt;owl:ObjectProperty rdf:about="http://www.onto-med.de/ontologies/gfo.owl#level_of">
+</PRE><BR><BR><h2>UFO - Unified Foundation Ontology</h2>
+Page info = <a href=https://oxygen.informatik.tu-cottbus.de/drupal7/ufo/>https://oxygen.informatik.tu-cottbus.de/drupal7/ufo/</a><BR>
+source data = <a href=></a><BR>
+Sample from <BR>
+<PRE>[no local file saved]</PRE><BR><BR><h2>CIDOC Conceptual Reference Model</h2>
+Page info = <a href=http://en.wikipedia.org/wiki/CIDOC_Conceptual_Reference_Model>http://en.wikipedia.org/wiki/CIDOC_Conceptual_Reference_Model</a><BR>
+source data = <a href=http://www.cidoc-crm.org/rdfs/cidoc_crm_v5.0.4_official_release.rdfs>http://www.cidoc-crm.org/rdfs/cidoc_crm_v5.0.4_official_release.rdfs</a><BR>
+Sample from S:\DATA\opendata\ontology\CIDOC\cidoc_crm_v5.0.4_official_release.rdfs<BR>
+<PRE>[no local file saved]</PRE><BR><BR><h2>COSMO - COmmon Semantic MOdel</h2>
+Page info = <a href=http://ontolog.cim3.net/cgi-bin/wiki.pl?COSMO>http://ontolog.cim3.net/cgi-bin/wiki.pl?COSMO</a><BR>
+source data = <a href=http://www.micra.com/COSMO/COSMO.owl>http://www.micra.com/COSMO/COSMO.owl</a><BR>
+Sample from S:\DATA\opendata\ontology\COSMO\COSMO.owl<BR>
+<PRE>&lt;?xml version="1.0"?>
+&lt;!--  
+  File COSMOtop1013.owl
+  Available at:  http://ontolog.cim3.net/file/resource/ontology/COSMO/
+      and at:    http://micra.com/COSMO
+  
+  NOTE: to access by Prot 3.5 and 4.3 file needs to be in 
+     c:\users\pat\documents\Protege (using Win 7 2014).  Use this as editing directory!!
+     
+    COSMO version 0.68-1013
+   last edit 20140218
+   by Patrick Cassidy cassidy@micra.com
+   
+  Longman-LDOCE vocabulary words-WordNet mappings completed to end of 'F' words 
+     At rev10007. 
+           Protege 4.3 Fact++ reasoner inferred types in 206 sec
+
+
+  Remodularized at v991 2013 3-1 to 3-5.  Checked for consistency and inferred types
+     using Protege 3.4.7 (build 620) several inconsistencies detected and corrected.
+     See folder Mod2013
+  Version COSMOtop971.owl was modularized and the modular version (which seems to be
+  missing a few elements) is at \modules\COSMOtop971mod.owl 20120113
+
+  Version COSMOtop991.owl was remodularized 20130131 at &lt;mod>10 and &lt;mod>18
+   and these modules classify OK with Protege 3.4 
+   
+ ToDo: create set of queries that serve as test of ontology
+ ToDo: relate to clinical? ... see NLM (SNOMED CT, LOINC); banking . . . see FIBO
+ ToDo:  add OnlineDocument - WikiPediaArticle - isAccessibleAtURL - URL as name of a Location -
+ LiquidObj -> HomogeneousObj
+
+ ToDo: some ConstantQuantity's appear to duplicate instances of 'UnitOfMeasure' (as with
+ Gram, PoundMass, TonMass, Angstrom, Centimeter, etc. but are actually 
+ ordered pairs that contain a UnitOfMeasure as the second element - this is confusing
+ and some of these should just be deleted.  Perhaps they can be replaced by 'OneTon',
+ OneGram', etc.
+
+20120109 r969 modularized to remove restriction that causes the OWL Pellet reasoner to crash.
+  see **dbmod** for similar restrictions removed for further testing
+*** Protege NOTE ***
+  At version 991, the Pellet reasoner crashes without an error message, closing all 
+    Protege windows.  Modules up to &lt;mod>18 seem to be OK, but at &lt;mod>20 the reasoner
+    sometimes crashes like that, sometimes does not.  After remodularization, several
+    problems were found and this crash does not occur at rev995.
+    
+**** Pellet reasoner note:
+   This restriction on the class 'Capturing' caused the Protege 3.4.7 Pellet reasoner to 
+      crash, declaring all classes as inconsistent.  It was replaced by
+      reference to the class 'TrappingOrPursuing' described above.
+    But there are other similar unions still present that do not cause a crash - why?
+      &lt;/rdfs:subClassOf>
+         &lt;owl:Restriction>
+           &lt;owl:onProperty rdf:resource="#typicallyFinishes"/>
+           &lt;owl:hasValue>
+              &lt;owl:Class>
+                &lt;owl:unionOf rdf:parseType="Collection">
+                  &lt;rdfs:Class rdf:about="#Pursuing"/>
+                  &lt;rdfs:Class rdf:about="#Trapping"/>
+                &lt;/owl:unionOf>
+              &lt;/owl:Class>
+           &lt;/owl:hasValue>
+         &lt;/owl:Restriction>
+
+Protege 4 Fact++ reasoner note:
+    Running the reasoner when an instance is selected in the 'instances' window is much
+      slower than running it when only the clases are displayed.
+      At AVbase9 it takes about 1 minute to run;
+      At &lt;mod>AVBase15a&lt;/mod>  it takes 16 minutes to run; 
+      for the whole rev977 it takes over 4 hours!
+
+   remodularized at r991
+   COSMO was Modularized at r849 (each module &lt;mod> level is consistent and without
+   references to undefined elements),
+   but subsequent versions have unreferenced elements intermingled.
+   The most recent version at any one time will be available at http://micra.com/COSMO
+   for specific ways to say things, see '@template' comments
+   
+   Purpose: COSMO is intended to be an internally logically consistent
+     foundation ontology that includes (but is not limited to) representations of all
+     senses of the words in the 'base defining vocabulary' of English words (approximately
+     2148 base words, up to 10,000 including morphological variants, derived
+     primarily from the Longman dictionary defining vocabulary).
+     The goal is to provide an inventory of basic concepts that can
+     be used in combination to create representations of any concept in
+     any specialized domain.  This goal is likely to be approached incrementally,
+     and the foundation ontology is always open to inclusion of new
+     primitives whose meaning cannot be specified as First-order-Logic (FOL) combinations of
+     existing  elements in the COSMO.  Such an ontology can serve as the basis for 
+     semantic interoperability, allowing separated groups to specify the meanings 
+     of their own domain terms as FOL combinations of the foundation ontology terms,
+     and communicate when desired by sharing local definitions not already in the COSMO.
+     
+     The minimum set of basic concepts that need to be specified for this purpose are the 
+     'semantic primitives, those concept whose meanings cannot be specified as logical (FOL)
+     combinations of other elements in the ontology.  As a practical matter, some non-primitive
+     elements are included for coventience of use.  The primitives themselves, to be
+     fully comprehensible to a computer may require 'grounding' in sensors and effectors
+     (perception and action for humans, and robotic capabilities for computers).  But
+     at this early stage, the practical 'grounding' is provided by the documentation, which
+     should be sufficiently clear for the human user that a user of this ontology will
+</PRE><BR><BR><h2>YAMATO - Yet Another More Advanced Top Ontology</h2>
+Page info = <a href=http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/upperOnto.htm>http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/upperOnto.htm</a><BR>
+source data = <a href=http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/download.php?filename=YAMATO20120714owl.zip>http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/download.php?filename=YAMATO20120714owl.zip</a><BR>
+Sample from S:\DATA\opendata\ontology\YAMATO\YAMATO20120714.owl<BR>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;rdf:RDF 
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns="http://www.hozo.jp/owl/YAMATO20120714.owl"
+        xml:base="http://www.hozo.jp/owl/YAMATO20120714.owl">
+
+&lt;owl:Ontology rdf:about="">
+    &lt;rdfs:comment>
+        HOZO:OWL Export
+    &lt;/rdfs:comment>
+&lt;/owl:Ontology>
+
+&lt;owl:Class rdf:ID="RelationalConcept">
+    &lt;rdfs:label>RelationalConcept&lt;/rdfs:label>
+&lt;/owl:Class>
+&lt;owl:ObjectProperty rdf:ID="hasPart">
+    &lt;rdfs:label>hasPart&lt;/rdfs:label>
+&lt;/owl:ObjectProperty>
+&lt;owl:ObjectProperty rdf:ID="hasAttribute">
+    &lt;rdfs:label>hasAttribute&lt;/rdfs:label>
+&lt;/owl:ObjectProperty>
+&lt;owl:Class rdf:ID="entity">
+    &lt;rdfs:label>entity&lt;/rdfs:label>
+    &lt;rdfs:comment>Something_which_exists_independently_of_others.&lt;/rdfs:comment>
+    &lt;rdfs:subClassOf rdf:resource="#Particular" />
+&lt;/owl:Class>
+&lt;owl:Class rdf:ID="quality_1">
+    &lt;rdfs:label>quality_1&lt;/rdfs:label>
+    &lt;rdfs:comment>The_concept__quality__does_not_appear_under_this_type._Instead___property__corresponds_to_the_conventional__quality_.__It_cannot_exist_alone_but_always_exists_dependently_on_physical_things_which_also_need_qualities_to_exist.&lt;/rdfs:comm...
+    &lt;rdfs:subClassOf rdf:resource="#specifically_dependent" />
+    &lt;rdfs:subClassOf>
+        &lt;owl:Restriction>
+            &lt;owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2&lt;/owl:maxCardinality>
+            &lt;owl:onProperty rdf:resource="#has_referring_to" />
+        &lt;/owl:Restriction>
+    &lt;/rdfs:subClassOf>
+    &lt;rdfs:subClassOf>
+        &lt;owl:Restriction>
+            &lt;owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1&lt;/owl:cardinality>
+            &lt;owl:onProperty rdf:resource="#has_on_what" />
+        &lt;/owl:Restriction>
+    &lt;/rdfs:subClassOf>
+    &lt;rdfs:subClassOf>
+        &lt;owl:Restriction>
+            &lt;owl:onProperty rdf:resource="#has_on_what" />
+            &lt;owl:allValuesFrom rdf:resource="#entity" />
+        &lt;/owl:Restriction>
+    &lt;/rdfs:subClassOf>
+&lt;/owl:Class>
+&lt;owl:Class rdf:ID="State">
+    &lt;rdfs:label>State&lt;/rdfs:label>
+    &lt;rdfs:subClassOf rdf:resource="#Universal" />
+&lt;/owl:Class>
+&lt;owl:Class rdf:ID="space">
+    &lt;rdfs:label>space&lt;/rdfs:label>
+    &lt;rdfs:comment>When_it_is_used_as_a_class_constraint__it_has_to_be_taken__p-space___that_is__its_subspace_part_of_the_space__is_almost_equivalent_to_its_subclass._&lt;Kobe_is_part_of_Japan&gt;__but_&lt;Kobe_is-a_Japan&gt;_is_valid_as_well_in_the_conte...
+    &lt;rdfs:subClassOf rdf:resource="#substrate" />
+    &lt;rdfs:subClassOf>
+        &lt;owl:Restriction>
+            &lt;owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1&lt;/owl:minCardinality>
+            &lt;owl:onProperty rdf:resource="#has_dimension" />
+        &lt;/owl:Restriction>
+    &lt;/rdfs:subClassOf>
+    &lt;rdfs:subClassOf>
+        &lt;owl:Restriction>
+            &lt;owl:onProperty rdf:resource="#has_dimension" />
+            &lt;owl:allValuesFrom rdf:resource="#axis" />
+        &lt;/owl:Restriction>
+    &lt;/rdfs:subClassOf>
+    &lt;rdfs:subClassOf>
+        &lt;owl:Restriction>
+            &lt;owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1&lt;/owl:minCardinality>
+            &lt;owl:onProperty rdf:resource="#has_subspace" />
+        &lt;/owl:Restriction>
+    &lt;/rdfs:subClassOf>
+    &lt;rdfs:subClassOf>
+        &lt;owl:Restriction>
+            &lt;owl:onProperty rdf:resource="#has_subspace" />
+            &lt;owl:allValuesFrom rdf:resource="#space" />
+        &lt;/owl:Restriction>
+    &lt;/rdfs:subClassOf>
+&lt;/owl:Class>
+&lt;owl:Class rdf:ID="_3D_space">
+    &lt;rdfs:label>_3D_space&lt;/rdfs:label>
+    &lt;rdfs:comment>_3D_spaceR_is_a_subspace_and_hence_it_is_part-of_3D_space._At_the_same_time__3D_spaceR_inherits_everything_from_the_class_constraint__3D_space.&lt;/rdfs:comment>
+    &lt;rdfs:subClassOf rdf:resource="#space" />
+    &lt;rdfs:subClassOf>
+        &lt;owl:Restriction>
+            &lt;owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1&lt;/owl:cardinality>
+            &lt;owl:onProperty rdf:resource="#has_dimension_x" />
+        &lt;/owl:Restriction>
+    &lt;/rdfs:subClassOf>
+    &lt;rdfs:subClassOf>
+        &lt;owl:Restriction>
+            &lt;owl:onProperty rdf:resource="#has_dimension_x" />
+            &lt;owl:allValuesFrom rdf:resource="#X-axis" />
+        &lt;/owl:Restriction>
+    &lt;/rdfs:subClassOf>
+</PRE><BR><BR><h2>OpenCyc</h2>
+Page info = <a href=http://en.wikipedia.org/wiki/Cyc#OpenCyc>http://en.wikipedia.org/wiki/Cyc#OpenCyc</a><BR>
+source data = <a href=http://sourceforge.net/projects/texai/files/open-cyc-rdf/1.1/open-cyc.rdf.ZIP/download>http://sourceforge.net/projects/texai/files/open-cyc-rdf/1.1/open-cyc.rdf.ZIP/download</a><BR>
+Sample from S:\DATA\opendata\ontology\OpenCyc\open-cyc.rdf<BR>
+<PRE>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+&lt;rdf:Description rdf:about="http://sw.cyc.com/2006/07/27/cyc/091401hj_htmMt">
+	&lt;comment xmlns="http://www.w3.org/2000/01/rdf-schema#">Source microtheory holding some of the information content of the
+web site http://www.fbi.gov/pressrel/pressrel01/091401hj.htm.&lt;/comment>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/AnalystDatabaseMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICCounterTDBCollectorMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICTerrorismEventsDataMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICBioTerrorismEventsDataMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/PatternsOfGlobalTerrorism1998Mt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/PatternsOfGlobalTerrorism1997Mt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/LDSCGeneralCollectorMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICTerroristGroupsDataMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/TerrorismTacticsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/LDSCExperimentalTermsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/MIPTDatabase19681997-TermsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/MIPTDatabase19982002-TermsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICAlQaidaDataMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/BaseKB"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/LDSCDemonstrationSpindleHeadMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/MIPT-TerroristEventsMt"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SourceMicrotheory"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/PropositionalInformationThing"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/DataMicrotheory"/>
+	&lt;prettyString-Canonical xmlns="http://sw.cyc.com/2006/07/27/cyc/">FBI List of Hijackers -Web Source&lt;/prettyString-Canonical>
+&lt;/rdf:Description>
+
+&lt;rdf:Description rdf:about="http://sw.cyc.com/2006/07/27/cyc/genlMt">
+	&lt;comment xmlns="http://www.w3.org/2000/01/rdf-schema#">A reflexive and transitive #$BinaryPredicate that relates a #$Microtheory to a #$Microtheory.  &lt;code&gt;(#$genlMt SPEC-MT GENL-MT)&lt;/code&gt; means that &lt;code&gt;SPEC-MT&lt;/code&gt; is a sp...
+	&lt;rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/MicrotheoryRelatingPredicate"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/AntiSymmetricBinaryPredicate"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/ReflexiveBinaryPredicate"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/DefaultMonotonicPredicate"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/RuleMacroPredicate"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/MicrotheoryPredicate"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/Predicate"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/Mt-Topic"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/BaseKBPredicate"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/MtExpansion-Topic"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/VocabularyForStatingRelationshipsBetweenMicrotheories-MtExpansion-Topic"/>
+	&lt;rdf:type rdf:resource="http://sw.cyc.com/2006/07/27/cyc/HLPredicate"/>
+	&lt;prettyString-Canonical xmlns="http://sw.cyc.com/2006/07/27/cyc/">Genl Mt&lt;/prettyString-Canonical>
+	&lt;quotedIsa xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/OpenCycDefinitionalPredicate"/>
+	&lt;domain xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/Microtheory"/>
+	&lt;arity xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2&lt;/arity>
+	&lt;range xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/Microtheory"/>
+	&lt;subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/generalizations"/>
+	&lt;subPropertyOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/genlMt-WOFT"/>
+	&lt;arg1Format xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SetTheFormat"/>
+	&lt;arg2Format xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SetTheFormat"/>
+	&lt;oldConstantName xmlns="http://sw.cyc.com/2006/07/27/cyc/">baseMt&lt;/oldConstantName>
+	&lt;typedGenlPreds xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/generalizations"/>
+	&lt;predicateConventionMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/UniversalVocabularyMt"/>
+	&lt;fanOutArg xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1&lt;/fanOutArg>
+&lt;/rdf:Description>
+
+&lt;rdf:Description rdf:about="http://sw.cyc.com/2006/07/27/cyc/AnalystDatabaseMt">
+	&lt;comment xmlns="http://www.w3.org/2000/01/rdf-schema#">This microtheory contains currently true assertions about users of the CAE and their workflow.&lt;/comment>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICCounterTDBCollectorMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICTerrorismEventsDataMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICBioTerrorismEventsDataMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/PatternsOfGlobalTerrorism1998Mt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/PatternsOfGlobalTerrorism1997Mt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/LDSCGeneralCollectorMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICTerroristGroupsDataMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/TerrorismTacticsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/LDSCExperimentalTermsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/MIPTDatabase19681997-TermsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/MIPTDatabase19982002-TermsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/SAICAlQaidaDataMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/BaseKB"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/LDSCDemonstrationSpindleHeadMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/MIPT-TerroristEventsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/ABSSimulatorActivityMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/AllPeopleAreHumanMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/WeaponsOfMassDestructionTacticsMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/TerrorismInTheMiddleEastFactsheetMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/IranGovernmentOrganizationDataMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/CIAWorldFactbook1996Mt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/CIAWorldFactbook1994Mt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/KEInteractionResourceTestMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/PathModelDeonticReasoningMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/IAMissionObligationVocabMt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/CIAWorldFactbook1997Mt"/>
+	&lt;genlMt xmlns="http://sw.cyc.com/2006/07/27/cyc/" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/RecentEventsMt"/>
+&lt;/rdf:Description>
+
+&lt;rdf:Description rdf:about="http://sw.cyc.com/2006/07/27/cyc/105MMRifledBoreCannon">
+	&lt;prettyString xmlns="http://sw.cyc.com/2006/07/27/cyc/">105 mm rifled bore gun&lt;/prettyString>
+	&lt;prettyString xmlns="http://sw.cyc.com/2006/07/27/cyc/">105 mm rifled bore guns&lt;/prettyString>
+	&lt;prettyString xmlns="http://sw.cyc.com/2006/07/27/cyc/">105 millimeter rifled bore gun&lt;/prettyString>
+	&lt;prettyString xmlns="http://sw.cyc.com/2006/07/27/cyc/">105 millimeter rifled bore guns&lt;/prettyString>
+	&lt;prettyString xmlns="http://sw.cyc.com/2006/07/27/cyc/">105 millimeter rifled gun&lt;/prettyString>
+	&lt;prettyString xmlns="http://sw.cyc.com/2006/07/27/cyc/">105 millimeter rifled guns&lt;/prettyString>
+	&lt;prettyString xmlns="http://sw.cyc.com/2006/07/27/cyc/">105 mm rifled bore cannons&lt;/prettyString>
+	&lt;subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/TankCannon"/>
+	&lt;subClassOf xmlns="http://www.w3.org/2000/01/rdf-schema#" rdf:resource="http://sw.cyc.com/2006/07/27/cyc/RifledBoreWeapon"/>
+&lt;/rdf:Description>
+</PRE><BR><BR><h2>PROTON</h2>
+Page info = <a href=http://www.ontotext.com/proton-ontology>http://www.ontotext.com/proton-ontology</a><BR>
+source data = <a href=http://www.ontotext.com/sites/default/files/proton/protontop.ttl>http://www.ontotext.com/sites/default/files/proton/protontop.ttl</a><BR>
+Sample from S:\DATA\opendata\ontology\PROTON\protontop.ttl<BR>
+<PRE>﻿# Saved by TopBraid on Mon Feb 13 20:57:19 EET 2012
+# baseURI: http://www.ontotext.com/proton/protontop
+
+@prefix owl:     &lt;http://www.w3.org/2002/07/owl#> .
+@prefix ptop:    &lt;http://www.ontotext.com/proton/protontop#> .
+@prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#> .
+@prefix dc:       &lt;http://purl.org/dc/elements/1.1/> .
+@prefix dc-term:  &lt;http://purl.org/dc/terms/> .
+
+&lt;http://www.ontotext.com/proton/protontop>
+      rdf:type owl:Ontology ;
+      rdfs:comment "PROTON (Proto Ontology), Top module" ;
+      dc:title "Proton" ;
+      dc:subject "Upper-level ontology with extensions to handle Linked Open Data (LOD)" ;
+      rdfs:label "Proton Ontology" ;
+      dc:creator "Ontotext (Kiril Simov, Atanas Kiryakov, Ivan Terziev, Dimitar Manov, Mariana Damova Svetoslav Petrov)" ;
+      dc:rights "Proton ontology is available under the Creative Commons Attribution 3.0 Unported license; see http://creativecommons.org/licenses/by/3.0/. In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e....
+      owl:versionInfo "3.0" .
+
+ptop:Abstract
+      rdf:type owl:Class ;
+      rdfs:comment "Something, which neither happens nor exists, e.g. a number or a chemical compound formula. Those are usually some symbols, invented to refer to general notions."@en ;
+      rdfs:label "Abstract"@en ;
+      rdfs:subClassOf ptop:Entity .
+
+ptop:Agent
+      rdf:type owl:Class ;
+      rdfs:comment "An Agent is something, which can show (carry out) an independent action, whether consciously or not. Most animals are considered agents, in most contexts; so are most organizations. According to DOLCE 2.0 \"objects to which we ascribe...
+      rdfs:label "Agent"@en ;
+      rdfs:subClassOf ptop:Object .
+
+ptop:ContactInformation
+      rdf:type owl:Class ;
+      rdfs:comment "Any instance of a particular notation, used to make the contact with an individual, an organization, or any other object possible."@en ;
+      rdfs:label "Contact Information"@en ;
+      rdfs:subClassOf ptop:Abstract .
+
+ptop:Document
+      rdf:type owl:Class ;
+      rdfs:comment "The information content of any sort of document. The tangible aspects are ignored. It is usually a document in free text with no formal structure or semantics."@en ;
+      rdfs:label "Document"@en ;
+      rdfs:subClassOf ptop:InformationResource .
+
+ptop:Event
+      rdf:type owl:Class ;
+      rdfs:comment "A dynamic event, such as \"running\" or \"a concert\"."@en ;
+      rdfs:label "Event"@en ;
+      rdfs:subClassOf ptop:Happening .
+
+ptop:GeneralTerm
+      rdf:type owl:Class ;
+      rdfs:comment "General concept with well defined (idiomatic) meaning which can have a set of distinct lexical items (surface realizations) associated with it. Examples are: F2F, I18N, P2P, B2B, VIP, ASAP, Semantic Web"@en ;
+      rdfs:label "General Term"@en ;
+      rdfs:subClassOf ptop:Abstract .
+
+ptop:Group
+      rdf:type owl:Class ;
+      rdfs:comment "A group of agents that is not organized in any way. It could be the group of people in a bus or the shareholders of a company."@en ;
+      rdfs:label "Group"@en ;
+      rdfs:subClassOf ptop:Agent .
+
+ptop:Happening
+      rdf:type owl:Class ;
+      rdfs:comment "Something that happens. It can be either dynamic - like in \"drawing a circle\", or static - like in \"being a president\". In all cases, a happening (an event, a situation, or a time period) has a certain (usually quite concrete) tem...
+      rdfs:label "Happening"@en ;
+      rdfs:subClassOf ptop:Entity .
+
+ptop:InformationResource
+      rdf:type owl:Class ;
+      rdfs:comment "InformationResource denotes an information resource with identity, as defined in Dublin Core (DC2003ISO). InformationResource is considered any communication or message that is delivered or produced, taking into account the specific i...
+      rdfs:label "Information Resource"@en ;
+      rdfs:subClassOf ptop:Statement .
+
+ptop:JobPosition
+      rdf:type owl:Class ;
+      rdfs:comment "The situation of a person, holding a job (employment) position within an organization. The sub-classes of this class define a number of different types of positions."@en ;
+      rdfs:label "Job Position"@en ;
+      rdfs:subClassOf ptop:SocialPosition .
+
+ptop:Language
+      rdf:type owl:Class ;
+      rdfs:comment "A spoken or written natural language"@en ;
+      rdfs:label "Language"@en ;
+      rdfs:subClassOf ptop:Abstract .
+
+ptop:Location
+      rdf:type owl:Class ;
+      rdfs:comment "Usually a geographic location on the earth, however any sort of 3D regions also fit here. The classification is based on the ADL Feature Type Thesaurus version 070203. Additionally, classes from Geonames classification are included. F...
+      rdfs:label "Location"@en ;
+      rdfs:subClassOf ptop:Object .
+
+ptop:Number
+      rdf:type owl:Class ;
+      rdfs:comment "Any given number, within the meaning that a number is one of the following: a concept of quantity derived from zero and units; or a numeral (or a string of numerals) used for identification (\"she refused to give them her Social Secur...
+      rdfs:label "Number"@en ;
+      rdfs:subClassOf ptop:Abstract .
+
+ptop:Object
+      rdf:type owl:Class ;
+</PRE><BR><BR><h2>IDEAS</h2>
+Page info = <a href=http://www.ideasgroup.org/7Documents/>http://www.ideasgroup.org/7Documents/</a><BR>
+source data = <a href=http://www.ideasgroup.org/file_download/5/IDEAS+Foundation+v1_0+Released+2009-04-24.xmi.zip>http://www.ideasgroup.org/file_download/5/IDEAS+Foundation+v1_0+Released+2009-04-24.xmi.zip</a><BR>
+Sample from S:\DATA\opendata\ontology\IDEAS\IDEAS Foundation v1_0 Released 2009-04-24.xmi<BR>
+<PRE>&lt;?xml version="1.0" encoding="windows-1252"?>
+&lt;xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0" xmlns:IDEAS="http://www.sparxsystems.com/profiles/...
+	&lt;xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	&lt;uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		&lt;packagedElement xmi:type="uml:Package" xmi:id="EAPK_A678C81E_8068_4ac3_822B_3346261FFB6F" name="IDEAS" visibility="public">
+			&lt;ownedComment xmi:type="uml:Comment" xmi:id="EAID_D5905878_3BC1_4b2a_8BE7_F64EBBF5A1F8"/>
+			&lt;packagedElement xmi:type="uml:Package" xmi:id="EAPK_DD5936D9_554D_409c_8420_01E2408BE0FA" name="Introduction" visibility="public">
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_4D2816BF_4669_4ba8_A8B6_DD273F49FF13" name="IDEAS Foundation : IDEAS Top Level" visibility="public"/>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_91C5A679_E392_4bb4_B329_2C8F7E9BE36B" name="Text" visibility="public"/>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_9312163A_1D5D_46ee_9D19_62A9697F608D" name="Text" visibility="public"/>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_94E81573_BB42_4884_B25D_039010014576" name="Text" visibility="public"/>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_BA42DB50_D04B_472c_B69A_8DD6FC5DBFAD" name="Text" visibility="public"/>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_C13DA257_C717_4c9e_83F3_B49D87298036" name="IDEAS Foundation : IDEAS Foundation Key Objects" visibility="public"/>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_CE4F5057_EF88_4d69_9C65_412774A3BA23" name="Text" visibility="public"/>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_ED610DE4_4430_4db4_A8C2_174EC9B90BFD" name="Introduction : Diagram Conventions &amp; Use of UML" visibility="public"/>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_F3D9D06C_60D0_4664_BF30_03122DCABDD4" name="http://www.ideasgroup.org" visibility="public"/>
+			&lt;/packagedElement>
+			&lt;packagedElement xmi:type="uml:Package" xmi:id="EAPK_B510628E_9C52_4779_86D9_2ECE589E4305" name="IDEAS Foundation" visibility="public">
+				&lt;ownedComment xmi:type="uml:Comment" xmi:id="EAID_B2A4C639_6CBA_4ce5_9B92_A03A62AE9266" body="Need to document criteria of identity"/>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_74035940_31F4_4f1a_8900_33A26E042CAC" name="couple" visibility="public">
+					&lt;ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst303B50_A248_4592_B09F_13CE9596EA19" visibility="public" association="EAID_0B303B50_A248_4592_B09F_13CE9596EA19" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggreg...
+						&lt;type xmi:idref="EAID_A95155D1_CA8D_4a1c_9F13_E4C7EE9AFC78"/>
+						&lt;lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_DL000000_A248_4592_B09F_13CE9596EA19" value="1"/>
+						&lt;upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_DU000000_A248_4592_B09F_13CE9596EA19" value="1"/>
+					&lt;/ownedAttribute>
+					&lt;ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstE76C8E_ED5C_469e_9E34_0119E426F3A8" visibility="public" association="EAID_6AE76C8E_ED5C_469e_9E34_0119E426F3A8" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggreg...
+						&lt;type xmi:idref="EAID_A95155D1_CA8D_4a1c_9F13_E4C7EE9AFC78"/>
+						&lt;lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_DL000000_ED5C_469e_9E34_0119E426F3A8" value="1"/>
+						&lt;upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_DU000000_ED5C_469e_9E34_0119E426F3A8" value="1"/>
+					&lt;/ownedAttribute>
+					&lt;generalization xmi:type="uml:Generalization" xmi:id="EAID_C0C9B4F2_997F_4a69_A3EA_9C681F747041" general="EAID_76915287_A452_480f_9D06_B73531694356"/>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Association" xmi:id="EAID_0B303B50_A248_4592_B09F_13CE9596EA19" visibility="public">
+					&lt;memberEnd xmi:idref="EAID_dst303B50_A248_4592_B09F_13CE9596EA19"/>
+					&lt;memberEnd xmi:idref="EAID_src303B50_A248_4592_B09F_13CE9596EA19"/>
+					&lt;ownedEnd xmi:type="uml:Property" xmi:id="EAID_src303B50_A248_4592_B09F_13CE9596EA19" visibility="public" association="EAID_0B303B50_A248_4592_B09F_13CE9596EA19" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation=...
+						&lt;type xmi:idref="EAID_74035940_31F4_4f1a_8900_33A26E042CAC"/>
+						&lt;lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_SL000000_A248_4592_B09F_13CE9596EA19" value="0"/>
+						&lt;upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_SU000000_A248_4592_B09F_13CE9596EA19" value="-1"/>
+					&lt;/ownedEnd>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Dependency" xmi:id="EAID_663BA4BC_E05B_40d6_A0DD_D9722B2CE55F" visibility="public" supplier="EAID_5F5930F4_7C73_42c0_A0FE_7E54B0B08D06" client="EAID_74035940_31F4_4f1a_8900_33A26E042CAC"/>
+				&lt;packagedElement xmi:type="uml:Association" xmi:id="EAID_6AE76C8E_ED5C_469e_9E34_0119E426F3A8" visibility="public">
+					&lt;memberEnd xmi:idref="EAID_dstE76C8E_ED5C_469e_9E34_0119E426F3A8"/>
+					&lt;memberEnd xmi:idref="EAID_srcE76C8E_ED5C_469e_9E34_0119E426F3A8"/>
+					&lt;ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcE76C8E_ED5C_469e_9E34_0119E426F3A8" visibility="public" association="EAID_6AE76C8E_ED5C_469e_9E34_0119E426F3A8" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation=...
+						&lt;type xmi:idref="EAID_74035940_31F4_4f1a_8900_33A26E042CAC"/>
+						&lt;lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_SL000000_ED5C_469e_9E34_0119E426F3A8" value="0"/>
+						&lt;upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_SU000000_ED5C_469e_9E34_0119E426F3A8" value="-1"/>
+					&lt;/ownedEnd>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_4133CD2C_5A83_42dd_9E62_EC48EEAF6F9B" name="Individual" visibility="public">
+					&lt;generalization xmi:type="uml:Generalization" xmi:id="EAID_0E26A98C_1263_4481_9918_E27A106EEAF0" general="EAID_A95155D1_CA8D_4a1c_9F13_E4C7EE9AFC78"/>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Dependency" xmi:id="EAID_0CC09F99_10E9_4a38_978B_DF44BC687551" visibility="public" supplier="EAID_5172FDBF_D01D_49a0_A475_0737E2EEDDC1" client="EAID_4133CD2C_5A83_42dd_9E62_EC48EEAF6F9B"/>
+				&lt;packagedElement xmi:type="uml:Dependency" xmi:id="EAID_2A2AF30F_FEA6_4a7d_BA44_2211093BAC43" visibility="public" supplier="EAID_51B4340C_0A4E_4450_8478_B3FC342D5622" client="EAID_4133CD2C_5A83_42dd_9E62_EC48EEAF6F9B"/>
+				&lt;packagedElement xmi:type="uml:Association" xmi:id="EAID_504EBCE4_458F_42c3_B061_0821F97B791D" name="whole" visibility="public">
+					&lt;memberEnd xmi:idref="EAID_dst4EBCE4_458F_42c3_B061_0821F97B791D"/>
+					&lt;memberEnd xmi:idref="EAID_src4EBCE4_458F_42c3_B061_0821F97B791D"/>
+					&lt;ownedEnd xmi:type="uml:Property" xmi:id="EAID_src4EBCE4_458F_42c3_B061_0821F97B791D" visibility="public" association="EAID_504EBCE4_458F_42c3_B061_0821F97B791D" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation=...
+						&lt;type xmi:idref="EAID_1285AF4A_B86D_477f_A77D_D7BC34FC5364"/>
+					&lt;/ownedEnd>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Association" xmi:id="EAID_523C1B18_8A9A_4ab4_BA35_F33180A813D7" name="part" visibility="public">
+					&lt;memberEnd xmi:idref="EAID_dst3C1B18_8A9A_4ab4_BA35_F33180A813D7"/>
+					&lt;memberEnd xmi:idref="EAID_src3C1B18_8A9A_4ab4_BA35_F33180A813D7"/>
+					&lt;ownedEnd xmi:type="uml:Property" xmi:id="EAID_src3C1B18_8A9A_4ab4_BA35_F33180A813D7" visibility="public" association="EAID_523C1B18_8A9A_4ab4_BA35_F33180A813D7" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation=...
+						&lt;type xmi:idref="EAID_1285AF4A_B86D_477f_A77D_D7BC34FC5364"/>
+					&lt;/ownedEnd>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Association" xmi:id="EAID_73AA0831_E02E_49a1_B900_47956B1B7592" visibility="public">
+					&lt;memberEnd xmi:idref="EAID_dstAA0831_E02E_49a1_B900_47956B1B7592"/>
+					&lt;memberEnd xmi:idref="EAID_srcAA0831_E02E_49a1_B900_47956B1B7592"/>
+					&lt;ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcAA0831_E02E_49a1_B900_47956B1B7592" visibility="public" association="EAID_73AA0831_E02E_49a1_B900_47956B1B7592" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation=...
+						&lt;type xmi:idref="EAID_3061364F_4D30_476e_ABFD_AAA41DF677CE"/>
+					&lt;/ownedEnd>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Association" xmi:id="EAID_911DC8A8_224D_4fa8_BDAB_FB808D19E86C" name="before" visibility="public">
+					&lt;memberEnd xmi:idref="EAID_dst1DC8A8_224D_4fa8_BDAB_FB808D19E86C"/>
+					&lt;memberEnd xmi:idref="EAID_src1DC8A8_224D_4fa8_BDAB_FB808D19E86C"/>
+					&lt;ownedEnd xmi:type="uml:Property" xmi:id="EAID_src1DC8A8_224D_4fa8_BDAB_FB808D19E86C" visibility="public" association="EAID_911DC8A8_224D_4fa8_BDAB_FB808D19E86C" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation=...
+						&lt;type xmi:idref="EAID_CBB0F33C_30D5_457c_AEA5_3544618EA961"/>
+					&lt;/ownedEnd>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Association" xmi:id="EAID_AF6284E8_361D_4ba0_BDA2_9DFA01521C5F" name="boundary" visibility="public">
+					&lt;memberEnd xmi:idref="EAID_dst6284E8_361D_4ba0_BDA2_9DFA01521C5F"/>
+					&lt;memberEnd xmi:idref="EAID_src6284E8_361D_4ba0_BDA2_9DFA01521C5F"/>
+					&lt;ownedEnd xmi:type="uml:Property" xmi:id="EAID_src6284E8_361D_4ba0_BDA2_9DFA01521C5F" visibility="public" association="EAID_AF6284E8_361D_4ba0_BDA2_9DFA01521C5F" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation=...
+						&lt;type xmi:idref="EAID_95D055D9_332D_49a0_963F_E4DB5BE6E0F8"/>
+					&lt;/ownedEnd>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Association" xmi:id="EAID_D3E02B75_A8D4_450d_80EE_4D9C32384717" name="after" visibility="public">
+					&lt;memberEnd xmi:idref="EAID_dstE02B75_A8D4_450d_80EE_4D9C32384717"/>
+					&lt;memberEnd xmi:idref="EAID_srcE02B75_A8D4_450d_80EE_4D9C32384717"/>
+					&lt;ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcE02B75_A8D4_450d_80EE_4D9C32384717" visibility="public" association="EAID_D3E02B75_A8D4_450d_80EE_4D9C32384717" isOrdered="false" isDerived="false" isDerivedUnion="false" isUnique="true" aggregation=...
+						&lt;type xmi:idref="EAID_CBB0F33C_30D5_457c_AEA5_3544618EA961"/>
+					&lt;/ownedEnd>
+				&lt;/packagedElement>
+				&lt;packagedElement xmi:type="uml:Class" xmi:id="EAID_51B4340C_0A4E_4450_8478_B3FC342D5622" name="IndividualType" visibility="public">
+					&lt;generalization xmi:type="uml:Generalization" xmi:id="EAID_54C6BA49_B7BF_4e06_85F4_34CB6437BAD4" general="EAID_AF5A9DA4_E8E8_44ea_89CA_24BF18AEF4FA"/>
+				&lt;/packagedElement>
+</PRE><BR><BR><h2>MarineTLO</h2>
+Page info = <a href=http://www.ics.forth.gr/isl/MarineTLO/>http://www.ics.forth.gr/isl/MarineTLO/</a><BR>
+source data = <a href=http://www.ics.forth.gr/isl/MarineTLO/v3/core_v3.owl>http://www.ics.forth.gr/isl/MarineTLO/v3/core_v3.owl</a><BR>
+Sample from S:\DATA\opendata\ontology\MarineTLO\core_v3.owl<BR>
+<PRE>&lt;?xml version="1.0"?>
+
+
+&lt;!DOCTYPE rdf:RDF [
+    &lt;!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    &lt;!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    &lt;!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    &lt;!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+&lt;rdf:RDF xmlns="http://ics.forth.gr/Ontology/MarineTLO/core#"
+     xml:base="http://ics.forth.gr/Ontology/MarineTLO/core"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    &lt;owl:Ontology rdf:about="http://ics.forth.gr/Ontology/MarineTLO/core#"/>
+    
+
+
+    &lt;!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    &lt;!-- http://ics.forth.gr/Ontology/MarineTLO/core#LC1isIdentifiedBy -->
+
+    &lt;owl:ObjectProperty rdf:about="http://ics.forth.gr/Ontology/MarineTLO/core#LC1isIdentifiedBy">
+        &lt;rdfs:range rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#Identifier"/>
+        &lt;rdfs:domain rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#PersistentItem"/>
+    &lt;/owl:ObjectProperty>
+    
+
+
+    &lt;!-- http://ics.forth.gr/Ontology/MarineTLO/core#LC2hasAppellation -->
+
+    &lt;owl:ObjectProperty rdf:about="http://ics.forth.gr/Ontology/MarineTLO/core#LC2hasAppellation">
+        &lt;rdfs:range rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#Appellation"/>
+        &lt;rdfs:domain rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#PersistentItem"/>
+    &lt;/owl:ObjectProperty>
+    
+
+
+    &lt;!-- http://ics.forth.gr/Ontology/MarineTLO/core#LC4isReferredBy -->
+
+    &lt;owl:ObjectProperty rdf:about="http://ics.forth.gr/Ontology/MarineTLO/core#LC4isReferredBy">
+        &lt;rdfs:range rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#ConceptualObject"/>
+        &lt;owl:inverseOf rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#LC4refersTo"/>
+        &lt;rdfs:domain rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#PersistentItem"/>
+    &lt;/owl:ObjectProperty>
+    
+
+
+    &lt;!-- http://ics.forth.gr/Ontology/MarineTLO/core#LC4refersTo -->
+
+    &lt;owl:ObjectProperty rdf:about="http://ics.forth.gr/Ontology/MarineTLO/core#LC4refersTo">
+        &lt;rdfs:domain rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#ConceptualObject"/>
+        &lt;rdfs:range rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#PersistentItem"/>
+    &lt;/owl:ObjectProperty>
+    
+
+
+    &lt;!-- http://ics.forth.gr/Ontology/MarineTLO/core#LT2usuallyConsistsOf -->
+
+    &lt;owl:ObjectProperty rdf:about="http://ics.forth.gr/Ontology/MarineTLO/core#LT2usuallyConsistsOf"/>
+    
+
+
+    &lt;!-- http://ics.forth.gr/Ontology/MarineTLO/core#LTbelongsTo -->
+
+    &lt;owl:ObjectProperty rdf:about="http://ics.forth.gr/Ontology/MarineTLO/core#LTbelongsTo">
+        &lt;rdfs:domain rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#BioticElementType"/>
+        &lt;rdfs:range rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#BioticElementType"/>
+    &lt;/owl:ObjectProperty>
+    
+
+
+    &lt;!-- http://ics.forth.gr/Ontology/MarineTLO/core#LTusuallyFeedingOn -->
+
+    &lt;owl:ObjectProperty rdf:about="http://ics.forth.gr/Ontology/MarineTLO/core#LTusuallyFeedingOn">
+        &lt;rdfs:domain rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#BioticElementType"/>
+        &lt;rdfs:range rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#BioticElementType"/>
+    &lt;/owl:ObjectProperty>
+    
+
+
+    &lt;!-- http://ics.forth.gr/Ontology/MarineTLO/core#LTusuallyIsPredatorOf -->
+
+    &lt;owl:ObjectProperty rdf:about="http://ics.forth.gr/Ontology/MarineTLO/core#LTusuallyIsPredatorOf">
+        &lt;rdfs:subPropertyOf rdf:resource="http://ics.forth.gr/Ontology/MarineTLO/core#LTusuallyFeedingOn"/>
+    &lt;/owl:ObjectProperty>
+    
+
+
+</PRE><BR><BR><h2>MindOntology (OpenCog)</h2>
+Page info = <a href=http://wiki.opencog.org/w/MindOntology>http://wiki.opencog.org/w/MindOntology</a><BR>
+source data = <a href=http://wiki.opencog.org/wikihome/index.php?title=Special:AllPages&namespace=104>http://wiki.opencog.org/wikihome/index.php?title=Special:AllPages&namespace=104</a><BR>
+Sample from S:\DATA\opendata\ontology\MindOntology\mindOntology.csv<BR>
+<PRE>"name","url","title","txt","html","catList"
+"MindOntology:AGI R&D Efforts","http://wiki.opencog.org/w/MindOntology:AGI_R%26D_Efforts","MindOntology:AGI R&D Efforts","","",""
+"MindOntology:AI Prizes","http://wiki.opencog.org/w/MindOntology:AI_Prizes","MindOntology:AI Prizes"," The Loebner Prize in Artificial Intelligence  DARPA Grand Challenge  Lifeboat Foundation A-Prize    ","&lt;ul>&lt;li> &lt;a class=""external text"" href=""http:...
+"MindOntology:Attention Codelet","http://wiki.opencog.org/w/MindOntology:Attention_Codelet","MindOntology:Attention Codelet","A Codelet that attempts to train Attention on some particular kind of Information    Mind Ontology Links  Associated: Attention ...
+"MindOntology:Autonomous Agent","http://wiki.opencog.org/w/MindOntology:Autonomous_Agent","MindOntology:Autonomous Agent","A system situated in, and part of, an environment, which senses that environment, and acts on it, over time, in pursuit of its own ...
+"MindOntology:Behavior Codelet","http://wiki.opencog.org/w/MindOntology:Behavior_Codelet","MindOntology:Behavior Codelet","A Codelet that can execute some particular, specialized Behavior    ","&lt;p>A &lt;a class=""new"" href=""/wikihome/index.php?title=Codel...
+"MindOntology:Cagegory:Scientific and Philosophical Theories Relevant to Cognition","http://wiki.opencog.org/w/MindOntology:Cagegory:Scientific_and_Philosophical_Theories_Relevant_to_Cognition","MindOntology:Cagegory:Scientific and Philosophical Theories...
+"MindOntology:Category:AGI Projects","http://wiki.opencog.org/w/MindOntology:Category:AGI_Projects","MindOntology:Category:AGI Projects","For the purpose of the Mind Ontology, we use the term ""AGI Project"" to refer to an Artificial General Intelligence...
+"MindOntology:Category:Codelet","http://wiki.opencog.org/w/MindOntology:Category:Codelet","MindOntology:Category:Codelet","A Procedure within a mind that, when it achieves sufficient Activation, carries out some specific Process within the mind.  Typical...
+"MindOntology:Category:Cognitive Developmental Stages","http://wiki.opencog.org/w/MindOntology:Category:Cognitive_Developmental_Stages","MindOntology:Category:Cognitive Developmental Stages","Jean PIaget identified a series of cognitive developmental sta...
+"MindOntology:Category:Cognitive Process","http://wiki.opencog.org/w/MindOntology:Category:Cognitive_Process","MindOntology:Category:Cognitive Process","A Process Category that is a Cognitive Structure within some Mind. To be pedantic, it could be called...
+"MindOntology:Category:Intelligence","http://wiki.opencog.org/w/MindOntology:Category:Intelligence","MindOntology:Category:Intelligence","What is intelligence? This is a very polysemous word, and to avoid confusion, it seems sensible to decompose it into...
+"MindOntology:Category:Mind","http://wiki.opencog.org/w/MindOntology:Category:Mind","MindOntology:Category:Mind","  What is a mind?  Many definitions of ""mind"" exist.  For example:    According to Ben Goertzel in The Hidden Pattern, it is ""the set of ...
+"MindOntology:Category:Philosophical Ontologies Relevant to Cognition","http://wiki.opencog.org/w/MindOntology:Category:Philosophical_Ontologies_Relevant_to_Cognition","MindOntology:Category:Philosophical Ontologies Relevant to Cognition","This page at p...
+"MindOntology:Codelet Coalition","http://wiki.opencog.org/w/MindOntology:Codelet_Coalition","MindOntology:Codelet Coalition","A collection of Codelets that form a Cognitive Map and collectively engage in Competition for Attention to have their content at...
+"MindOntology:Components of Mind","http://wiki.opencog.org/w/MindOntology:Components_of_Mind","MindOntology:Components of Mind","This page groups together a number of different pages, each of which refers to a certain collection of related aspects of min...
+"MindOntology:Concretely Implemented Novamente Structure","http://wiki.opencog.org/w/MindOntology:Concretely_Implemented_Novamente_Structure","MindOntology:Concretely Implemented Novamente Structure","A Cognitive Structure that exists explicitly within t...
+"MindOntology:Conscious Content","http://wiki.opencog.org/w/MindOntology:Conscious_Content","MindOntology:Conscious Content","The fuzzy set of information, within a Mind, that is associated with the Structured Consciousness of that mind at a certain poin...
+"MindOntology:Deliberation","http://wiki.opencog.org/w/MindOntology:Deliberation","MindOntology:Deliberation","A cognitive process within which options may be constructed and evaluated, and Plans created    Mind Ontology Links  Supercategory: Focused Cog...
+"MindOntology:Developmental Stages of Uncertain Logic Based AI Systems","http://wiki.opencog.org/w/MindOntology:Developmental_Stages_of_Uncertain_Logic_Based_AI_Systems","MindOntology:Developmental Stages of Uncertain Logic Based AI Systems","In the pape...
+"MindOntology:EstimationOfDistributionAlgorithms","http://wiki.opencog.org/w/MindOntology:EstimationOfDistributionAlgorithms","MindOntology:EstimationOfDistributionAlgorithms","  Estimation of Distribution Algorithms  The somewhat awkward term Estimation...
+"MindOntology:Ethical Properties of Minds","http://wiki.opencog.org/w/MindOntology:Ethical_Properties_of_Minds","MindOntology:Ethical Properties of Minds","Nearly everyone involved in building AGI's agrees that it is important for them to have agreeable ...
+"MindOntology:Flexibly Embodied Mind","http://wiki.opencog.org/w/MindOntology:Flexibly_Embodied_Mind","MindOntology:Flexibly Embodied Mind","A mind that may have zero, one or more bodies, and may move between bodies at will. This will likely be the defau...
+"MindOntology:Focused Cognitive Process","http://wiki.opencog.org/w/MindOntology:Focused_Cognitive_Process","MindOntology:Focused Cognitive Process","A general class of Cognitive Processes, encompassing all such processes that operate by    beginning wit...
+"MindOntology:Frame","http://wiki.opencog.org/w/MindOntology:Frame","MindOntology:Frame","A Frame is a classical GOFAI notion: it consists of Slots and default values for the slots, used to capture expectations about a frequently encountered class of sit...
+"MindOntology:Friendly AI","http://wiki.opencog.org/w/MindOntology:Friendly_AI","MindOntology:Friendly AI","""Friendly AI"" is a nontechnical term introduced by Eliezer Yudkowsky to refer to an AI that is ""benevolent to humans"" -- not killing us nor to...
+"MindOntology:General Intelligence","http://wiki.opencog.org/w/MindOntology:General_Intelligence","MindOntology:General Intelligence"," Psychology In psychology, the notion of ""general intelligence"" is associated with the concept of the ""g-factor."" I...
+"MindOntology:Goal","http://wiki.opencog.org/w/MindOntology:Goal","MindOntology:Goal","To put it semi-mathematically: A Goal is a mathematical function that a system seeks to maximize.  Or, just about equivalently: A Goal is a state of affairs that a sys...
+"MindOntology:Goal Driven Declarative to Procedural Conversion","http://wiki.opencog.org/w/MindOntology:Goal_Driven_Declarative_to_Procedural_Conversion","MindOntology:Goal Driven Declarative to Procedural Conversion","A Backward Synthesis process that t...
+"MindOntology:Greedy Stochastic Pattern Mining","http://wiki.opencog.org/w/MindOntology:Greedy_Stochastic_Pattern_Mining","MindOntology:Greedy Stochastic Pattern Mining","A class of algorithms that search for patterns in data.   The distinguishing featur...
+"MindOntology:Information Codelet","http://wiki.opencog.org/w/MindOntology:Information_Codelet","MindOntology:Information Codelet","Codelets that carry Information and participate in coalitions that compete for Attention    ","&lt;p>&lt;a class=""new"" href=""...
+"MindOntology:Integrative AGI Projects","http://wiki.opencog.org/w/MindOntology:Integrative_AGI_Projects","MindOntology:Integrative AGI Projects","An integrative AGI project, as considered here, is one that has no single AI algorithm and knowledge repres...
+"MindOntology:Intention","http://wiki.opencog.org/w/MindOntology:Intention","MindOntology:Intention","The resolve of an animal (Agent) to achieve some particular Goal.  I.e., a Statement stored in a mind's Declarative Memory, receiving a reasonably high ...
+"MindOntology:Intention Codelet","http://wiki.opencog.org/w/MindOntology:Intention_Codelet","MindOntology:Intention Codelet","An Attention Codelet that watches for information relevant to achieving some particular Goal    ","&lt;p>An &lt;a class=""new"" href="...
+"MindOntology:Logic Based AGI Projects","http://wiki.opencog.org/w/MindOntology:Logic_Based_AGI_Projects","MindOntology:Logic Based AGI Projects","Some major logic-based AGI projects include:   Cyc, led by Doug Lenat; see http://www.cyc.com or http://en....
+"MindOntology:Measures of Complexity","http://wiki.opencog.org/w/MindOntology:Measures_of_Complexity","MindOntology:Measures of Complexity","Minds are Complex Systems.  But how can ""complexity"" be quantified?  Various measures exist, including    Logic...
+"MindOntology:Memetics","http://wiki.opencog.org/w/MindOntology:Memetics","MindOntology:Memetics","Memetics is the study of Memes    Mind Ontology Links  Subcategory: Meme    ","&lt;p>Memetics is the study of &lt;a class=""new"" href=""/wikihome/index.php?titl...
+"MindOntology:Memory Subsystem","http://wiki.opencog.org/w/MindOntology:Memory_Subsystem","MindOntology:Memory Subsystem","A Cognitive Structure devoted to enabling Memory of particular sorts of Patterns.  The specialization to particular sorts of patter...
+"MindOntology:Mental Image","http://wiki.opencog.org/w/MindOntology:Mental_Image","MindOntology:Mental Image","An image produced internally from any Sensory Modality -- or in other words, a part of a mind's internal Virtual Reality    ","&lt;p>An image prod...
+"MindOntology:MindDB","http://wiki.opencog.org/w/MindOntology:MindDB","MindOntology:MindDB","The MindDB is a special part of the Novamente Cognitive Architecture which serves as a global repository of Atoms, spanning the different functionally specialize...
+"MindOntology:Mind Ontology","http://wiki.opencog.org/w/MindOntology:Mind_Ontology","MindOntology:Mind Ontology","A systematic ontology of concepts, projects and resources relevant to Artificial General Intelligence Browse the sub-ontologies (below) for ...
+"MindOntology:Mindplex","http://wiki.opencog.org/w/MindOntology:Mindplex","MindOntology:Mindplex","A mind that comprises a community of sub-minds, yet also has a powerful holistic, emergent-level intelligence in itself. The Global Brain could one day be ...
+"MindOntology:Modest-Resources Mind","http://wiki.opencog.org/w/MindOntology:Modest-Resources_Mind","MindOntology:Modest-Resources Mind","Any mind you will ever encounter will, most likely be a modest-resources mind!!   Without unrealistically  much comp...
+"MindOntology:Neural Net Based AGI Projects","http://wiki.opencog.org/w/MindOntology:Neural_Net_Based_AGI_Projects","MindOntology:Neural Net Based AGI Projects","Major neural net based AGI projects include:   Numenta, Jeff Hawkins' project.  Ccortex, a m...
+"MindOntology:Non-Adaptive System","http://wiki.opencog.org/w/MindOntology:Non-Adaptive_System","MindOntology:Non-Adaptive System","A System that proceeds without substantially modifying its internals based on its interactions with other systems.    Rela...
+"MindOntology:Non Tool Dependent Mind","http://wiki.opencog.org/w/MindOntology:Non_Tool_Dependent_Mind","MindOntology:Non Tool Dependent Mind","   ","    NewPP limit report Preprocessor node count: 1/1000000 Post-expand include size: 0/2097152 bytes Temp...
+"MindOntology:Nonsocial Mind","http://wiki.opencog.org/w/MindOntology:Nonsocial_Mind","MindOntology:Nonsocial Mind","   ","    NewPP limit report Preprocessor node count: 1/1000000 Post-expand include size: 0/2097152 bytes Template argument size: 0/20971...
+"MindOntology:Novamente","http://wiki.opencog.org/w/MindOntology:Novamente","MindOntology:Novamente","    Project  The [informal] Novamente Project is a combination of commercial, academic and non-profit activities in the pursuit of Artificial General In...
+"MindOntology:Novamente Atom","http://wiki.opencog.org/w/MindOntology:Novamente_Atom","MindOntology:Novamente Atom","Novamente Atoms come in two species: Nodes and Links.  These are the basic mechanism by which knowledge is represented in the Novamente A...
+"MindOntology:Novamente Attentional Focus","http://wiki.opencog.org/w/MindOntology:Novamente_Attentional_Focus","MindOntology:Novamente Attentional Focus","This is a word for the collection of Atoms possessing a high STICurrency wealth at a given point i...
+"MindOntology:Novamente Cognition Engine","http://wiki.opencog.org/w/MindOntology:Novamente_Cognition_Engine","MindOntology:Novamente Cognition Engine","Developed by Novamente, the Novamente Cognition Engine (NCE) is a software system designed for large-...
+"MindOntology:Novamente Cognitive Map","http://wiki.opencog.org/w/MindOntology:Novamente_Cognitive_Map","MindOntology:Novamente Cognitive Map","A collection of Novamente Atoms whose Activation collectively follows some recognizable pattern (in the simple...
+"MindOntology:Novamente Concept Formation","http://wiki.opencog.org/w/MindOntology:Novamente_Concept_Formation","MindOntology:Novamente Concept Formation","A set of heuristics, in the Novamente Cognition Engine, for combining two or more Concepts to form...
+"MindOntology:Novamente Forgetting","http://wiki.opencog.org/w/MindOntology:Novamente_Forgetting","MindOntology:Novamente Forgetting","""Forgetting"" is implemented in Novamente via a MindAgent that removes items with low Long Term Importance. Sometimes ...
+"MindOntology:Novamente Perception","http://wiki.opencog.org/w/MindOntology:Novamente_Perception","MindOntology:Novamente Perception","Perception is carried out in  Novamente via a specialized implementation of Greedy Stochastic Pattern Mining which look...
+"MindOntology:Numerical Archetypes","http://wiki.opencog.org/w/MindOntology:Numerical_Archetypes","MindOntology:Numerical Archetypes","Numerical archetypes were used by Charles Peirce and Carl Jung in their metaphysics of cognition.    Mind Ontology Link...
+"MindOntology:Observer","http://wiki.opencog.org/w/MindOntology:Observer","MindOntology:Observer","An observer is a System that carries out the Process of internally associating some other System with Behaviors.    Mind Ontology Links  Supercategory: Sim...
+"MindOntology:PLN Truth Value","http://wiki.opencog.org/w/MindOntology:PLN_Truth_Value","MindOntology:PLN Truth Value","A truth value utilized in the PLN probabilistic logic framework. PLN is built to support the combination of Novamente Atoms or Stateme...
+"MindOntology:Patternism","http://wiki.opencog.org/w/MindOntology:Patternism","MindOntology:Patternism","Previous: OpenCogPrime:Closely Related Work The Patternist Philosophy of Mind The patternist philosophy of mind is a general approach to thinking abo...
+"MindOntology:Post-Formal Stage","http://wiki.opencog.org/w/MindOntology:Post-Formal_Stage","MindOntology:Post-Formal Stage","This is another term for what we here call the Reflective Stage.    Synonym  Reflective Stage    ","&lt;p>This is another term for ...
+"MindOntology:Prior Draft AGI Ontology","http://wiki.opencog.org/w/MindOntology:Prior_Draft_AGI_Ontology","MindOntology:Prior Draft AGI Ontology","  Glossary of terms  Perception -- Converting the (3+1)D sensory experience to a symbolic  form (ie the int...
+"MindOntology:Probabilistic Logic Networks","http://wiki.opencog.org/w/MindOntology:Probabilistic_Logic_Networks","MindOntology:Probabilistic Logic Networks","Entry moved to PLN (on the OpenCog wiki).    Mind Ontology Links  Supercategory: Probabilistic ...
+"MindOntology:Problem","http://wiki.opencog.org/w/MindOntology:Problem","MindOntology:Problem"," Definition of ""Problem"" A problem is a situation which is experienced by an agent as different from the situation which the agent ideally would like to be ...
+"MindOntology:Procedural to Declarative Conversion","http://wiki.opencog.org/w/MindOntology:Procedural_to_Declarative_Conversion","MindOntology:Procedural to Declarative Conversion","A Forward Synthesis process that takes in a set of Procedures and gener...
+"MindOntology:Proto AGI System","http://wiki.opencog.org/w/MindOntology:Proto_AGI_System","MindOntology:Proto AGI System","This is a term for a software system like those currently described under AGI Projects, which is oriented toward eventually achievi...
+"MindOntology:Quantum Gravity Mind","http://wiki.opencog.org/w/MindOntology:Quantum_Gravity_Mind","MindOntology:Quantum Gravity Mind","Roger Penrose and Stuart Hameroff have argued that human creativity and consciousness derive from quantum gravity effec...
+"MindOntology:Quantum Mind","http://wiki.opencog.org/w/MindOntology:Quantum_Mind","MindOntology:Quantum Mind","  Is the Brain a Quantum Computer?  Some think the human brain utilizes quantum computing, via macroscopic quantum effects in the brain.    See...
+"MindOntology:Reality","http://wiki.opencog.org/w/MindOntology:Reality","MindOntology:Reality","According to some, a good theory of mind must take into account Objective Reality, Subjective Reality and Intersubjective Reality.  According to others, only ...
+"MindOntology:Reflectively Interactive System","http://wiki.opencog.org/w/MindOntology:Reflectively_Interactive_System","MindOntology:Reflectively Interactive System","A Symbolically Interactive System that, as it interacts with and adapts to its environ...
+"MindOntology:SMEPH","http://wiki.opencog.org/w/MindOntology:SMEPH","MindOntology:SMEPH","Self-Modifying Evolving Probabilistic Hypergraph","&lt;div class=""redirectMsg"">&lt;img alt=""#REDIRECT"" src=""/wikihome/skins/common/images/redirectltr.png""/>&lt;span cl...
+"MindOntology:Self","http://wiki.opencog.org/w/MindOntology:Self","MindOntology:Self","See   Self-Model  Phenomenal Self    ","&lt;p>See &lt;/p>   &lt;ul>&lt;li> &lt;a class=""mw-redirect"" href=""/w/Self-Model"" title=""Self-Model"">Self-Model&lt;/a> &lt;/li>&lt;li> &lt;a class="...
+"MindOntology:Self-Modification of System Control Schemata","http://wiki.opencog.org/w/MindOntology:Self-Modification_of_System_Control_Schemata","MindOntology:Self-Modification of System Control Schemata","The most obvious route to enabling Strong Self-...
+"MindOntology:Self-Modifying Evolving Probabilistic Hypergraph","http://wiki.opencog.org/w/MindOntology:Self-Modifying_Evolving_Probabilistic_Hypergraph","MindOntology:Self-Modifying Evolving Probabilistic Hypergraph","Self-Modifying Evolving Probabilist...
+"MindOntology:Sensory Stimulus","http://wiki.opencog.org/w/MindOntology:Sensory_Stimulus","MindOntology:Sensory Stimulus","Input arriving in a Mind from the outside world.  The process of Perception transforms sensory stimuli into Percepts, which may the...
+"MindOntology:Simple Event Ontology","http://wiki.opencog.org/w/MindOntology:Simple_Event_Ontology","MindOntology:Simple Event Ontology","This is a basic ontology of temporal phenomena.  Though it is intended to have general utility, it also represents t...
+"MindOntology:Simple Patternist Ontology","http://wiki.opencog.org/w/MindOntology:Simple_Patternist_Ontology","MindOntology:Simple Patternist Ontology","A collection of Concepts related to the concept of ""pattern,"" as defined in Pattern Theory    Links...
+"MindOntology:Singly Embodied Mind","http://wiki.opencog.org/w/MindOntology:Singly_Embodied_Mind","MindOntology:Singly Embodied Mind","A mind that is fundamentally associated with a single body.   Human minds are like this at the moment, though this may ...
+"MindOntology:Social Mind","http://wiki.opencog.org/w/MindOntology:Social_Mind","MindOntology:Social Mind","It has been argued by some theorists that human minds are not correctly thought of as individual, but that human intelligence is fundamentally soc...
+"MindOntology:Specific Entity","http://wiki.opencog.org/w/MindOntology:Specific_Entity","MindOntology:Specific Entity","A Knowledge Component that refers to (i.e. is a Representation of) a specific, spatiotemporally bounded entity, which is understood to...
+"MindOntology:Symbolically Interactive System","http://wiki.opencog.org/w/MindOntology:Symbolically_Interactive_System","MindOntology:Symbolically Interactive System","An Adaptive Control System that, as it interacts with and adapts to its environment, c...
+"MindOntology:Systems","http://wiki.opencog.org/w/MindOntology:Systems","MindOntology:Systems","A system is a part of the universe that is distinguished from the rest of the universe by some Observer, and that is noted by that Observer as being associate...
+</PRE><BR><BR><h2>DIY - eg build your own Ontology</h2>
+Page info = <a href=http://localhost>http://localhost</a><BR>
+source data = <a href=></a><BR>
+Sample from <BR>
+<PRE>[no local file saved]</PRE><BR><BR>

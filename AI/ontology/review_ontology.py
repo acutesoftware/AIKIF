@@ -109,8 +109,8 @@ ontologyList = [  # links to various upper ontologies - http://en.wikipedia.org/
 	 {'name': 'MindOntology (OpenCog)', 
 	 'url': 'http://wiki.opencog.org/w/MindOntology', 
 	 'data': 'http://wiki.opencog.org/wikihome/index.php?title=Special:AllPages&namespace=104', 
-	 'localFile': 'S:\\DATA\\opendata\\ontology\\MindOntology\\All pages (MindOntology namespace) - OpenCog.htm', 
-	 'rating': 'Focussed for AGI use, but no single download found (arranged as wiki pages)', 
+	 'localFile': 'S:\\DATA\\opendata\\ontology\\MindOntology\\mindOntology.csv', 
+	 'rating': 'Focussed for AGI use, but no single download found (arranged as wiki pages, converted to CSV 27/3/2014)', 
 	 'tested': 'Untested'},
 	 {'name': 'DIY - eg build your own Ontology', 
 	 'url': 'http://localhost', 
@@ -205,10 +205,11 @@ import sys
 
 def main():
 	ShowStatistics()
-	SaveHTML_Review('review_ontology.html')
-	SaveAsMarkup('review_ontology.txt')
-	os.system('start review_ontology.html')
-	os.system('start review_ontology.txt')
+	SaveHTML_File_Samples('review_file_samples.html')
+	#SaveHTML_Review('review_ontology.html')
+	#SaveAsMarkup('review_ontology.txt')
+	#os.system('start review_ontology.html')
+	#os.system('start review_ontology.txt')
 
 
 	#ShowConclusion()
@@ -388,8 +389,44 @@ def SaveHTML_Review_as_table(htmlFile):
 	AppendToFile(htmlFile, '</TABLE></TD><TD>\r\n')
 	AppendToFile(htmlFile, '</TD></TR></TABLE><BR><BR><BR><BR></BODY></HTML>')
 
+
+def SaveHTML_File_Samples(htmlFile):
+	# extracts samples of the ontology files into one single HTML file
+	# has bookmarked index at top of page
+	# get the first 10 lines + last 5 lines
+	deleteFile(htmlFile)
+	AppendToFile(htmlFile, '<H1>Ontology File Samples</h1>\n')
+	AppendToFile(htmlFile, 'Generated via <a href=https://github.com/acutesoftware/AIKIF/blob/master/AI/ontology/review_ontology.py>https://github.com/acutesoftware/AIKIF/blob/master/AI/ontology/review_ontology.py</a><BR>\n')
+	for i in ontologyList:
+		ontFile = i['localFile']
+		AppendToFile(htmlFile, '<h2>' + i['name'] + '</h2>\n' )
+		AppendToFile(htmlFile, 'Page info = <a href=' + i['url'] + '>' + i['url'] + '</a><BR>\n')
+		AppendToFile(htmlFile, 'source data = <a href=' + i['data'] + '>' + i['data'] + '</a><BR>\n')
+		AppendToFile(htmlFile, 'Sample from ' + ontFile + '<BR>\n')
+		AppendToFile(htmlFile, '<PRE>' + GetSampleData(ontFile) + '</PRE><BR><BR>')
 	
-		
+
+def GetSampleData(fname):
+	res = ''
+	numLine = 0
+	numChars = 0
+	try:
+		with open(fname, "r") as myfile:
+			for rawLine in myfile:
+				line = rawLine[0:254]
+				res = res + line
+				if len(rawLine) > 254:
+					res = res + '...\n'
+				else:
+					res = res + ''
+				numLine = numLine + 1
+				numChars = numChars + len(line)
+				if numLine > 100 or numChars > 20000:
+					return res.replace('<', '&lt;')
+	except:
+		res = '[no local file saved]'
+	return res.replace('<', '&lt;')
+	
 if __name__ == '__main__':
     main()	
 	

@@ -54,7 +54,7 @@ provides an extensible ontology for concepts and information in cultural heritag
 page = [http://ontolog.cim3.net/cgi-bin/wiki.pl?COSMO](http://ontolog.cim3.net/cgi-bin/wiki.pl?COSMO)
 data = [http://www.micra.com/COSMO/COSMO.owl](http://www.micra.com/COSMO/COSMO.owl)
 The current (May 2009) OWL version of COSMO has over 6400 types (OWL classes), over 700 relations, and over 1400 restrictions
-<I>Sample file saved to S:\DATA\opendata\ontology\COSMO\COSMO.owl (10,036,090 bytes)<BR>8 files in folder, totalling 16,186,390 bytes</I>
+<I>Sample file saved to S:\DATA\opendata\ontology\COSMO\COSMO.owl (10,036,090 bytes)<BR>6 files in folder, totalling 16,015,894 bytes</I>
 ### YAMATO - Yet Another More Advanced Top Ontology
 page = [http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/upperOnto.htm](http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/upperOnto.htm)
 data = [http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/download.php?filename=YAMATO20120714owl.zip](http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/download.php?filename=YAMATO20120714owl.zip)
@@ -74,17 +74,17 @@ basic subsumption hierarchy which provides coverage of most of the upper-level c
 page = [http://www.ideasgroup.org/7Documents/](http://www.ideasgroup.org/7Documents/)
 data = [http://www.ideasgroup.org/file_download/5/IDEAS+Foundation+v1_0+Released+2009-04-24.xmi.zip](http://www.ideasgroup.org/file_download/5/IDEAS+Foundation+v1_0+Released+2009-04-24.xmi.zip)
 The most common usage of IDEAS will be in direct exchange of information between architectural modelling tools are repositories
-<I>Sample file saved to S:\DATA\opendata\ontology\IDEAS\IDEAS Foundation v1_0 Released 2009-04-24.xmi (3,073,554 bytes)<BR>3 files in folder, totalling 7,946,504 bytes</I>
+<I>Sample file saved to S:\DATA\opendata\ontology\IDEAS\IDEAS Foundation v1_0 Released 2009-04-24.xmi (3,073,554 bytes)<BR>2 files in folder, totalling 7,319,058 bytes</I>
 ### MarineTLO
 page = [http://www.ics.forth.gr/isl/MarineTLO/](http://www.ics.forth.gr/isl/MarineTLO/)
 data = [http://www.ics.forth.gr/isl/MarineTLO/v3/core_v3.owl](http://www.ics.forth.gr/isl/MarineTLO/v3/core_v3.owl)
 MarineTLO is a top-level ontology for the marine domain (also applicable to the terrestrial domain)
-<I>Sample file saved to S:\DATA\opendata\ontology\MarineTLO\core_v3.owl (21,541 bytes)<BR>5 files in folder, totalling 1,845,240 bytes</I>
+<I>Sample file saved to S:\DATA\opendata\ontology\MarineTLO\core_v3.owl (21,541 bytes)<BR>2 files in folder, totalling 49,107 bytes</I>
 ### MindOntology (OpenCog)
 page = [http://wiki.opencog.org/w/MindOntology](http://wiki.opencog.org/w/MindOntology)
 data = [http://wiki.opencog.org/wikihome/index.php?title=Special:AllPages&namespace=104](http://wiki.opencog.org/wikihome/index.php?title=Special:AllPages&namespace=104)
-Focussed for AGI use, but no single download found (arranged as wiki pages)
-<I>Sample file saved to S:\DATA\opendata\ontology\MindOntology\All pages (MindOntology namespace) - OpenCog.htm (29,611 bytes)<BR>1 files in folder, totalling 29,611 bytes</I>
+Focussed for AGI use, but no single download found (arranged as wiki pages, converted to CSV 27/3/2014)
+<I>Sample file saved to S:\DATA\opendata\ontology\MindOntology\mindOntology.csv (306,482 bytes)<BR>1 files in folder, totalling 306,482 bytes</I>
 ### DIY - eg build your own Ontology
 page = [http://localhost](http://localhost)
 data = []()
