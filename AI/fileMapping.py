@@ -47,6 +47,8 @@ dataFileTypes = [
 	
 dataSubjectAreas = [
 	'_TOP', 		# this is the top level ontology for all subject areas
+	'INFO-COURSE', 
+	'INFO-DATASET', 
 	'INFO-PIM', 
 	'INFO-PIM-SHOPPING', 
 	'INFO-PIM-DIARY',
@@ -64,12 +66,12 @@ dataSubjectAreas = [
 	'INFO-SOCIAL-FACEBOOK',
 	'INFO-SOCIAL-GOOGLE+',
 	'INFO-SOCIAL-OTHER',
-	'INFO-DATASET', 
 	'OBJECT-ASSET'
 	'OBJECT-ASSET-FURNITURE'
 	'OBJECT-ASSET-CAR'
 	'SYSTEM-PC-LOG', 
 	'SYSTEM-PC-FILE', 
+	'SYSTEM-PC-FILE-LECTURES', 
 	]
 
 
