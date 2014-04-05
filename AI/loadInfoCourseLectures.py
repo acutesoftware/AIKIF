@@ -8,11 +8,9 @@ import sys
 sys.path.append('..//..//aspytk')
 import lib_data as dat
 import lib_file as fle
-import lib_net as net
 import AIKIF_utils as aikif
 import fileMapping as filemap
 import index
-
 import json
 from pprint import pprint
 
@@ -23,47 +21,27 @@ if len(sys.argv) == 2:
 
 
 rootFolderLectures = r"P:\__Downloads\lectures"
-#rootFolderLectures = r"P:\__Downloads\lectures\matrix\matrix-001"
 subjectArea = filemap.FindOntology('Course') # should return 'INFO-COURSE'
-print ( 'subjectArea = ' + subjectArea[0])
 
 object_fileList = filemap.GetFullFilename(filemap.FindType('object'), subjectArea[0])    
 location_fileList = filemap.GetFullFilename(filemap.FindType('location'), subjectArea[0])   
 course_fileList = filemap.GetFullFilename(filemap.FindType('location'), subjectArea[0])   
 
-# Now also save the information as FILES
 fileSubjectArea = filemap.FindOntology('FILE-LECTURES') # should return 'SYSTEM-PC-FILE-LECTURES'
-print ( 'fileSubjectArea = ' + fileSubjectArea[0])
 lectures_fileList = filemap.GetFullFilename(filemap.FindType('thing'), fileSubjectArea[0])    
-
-
-# Standard functions for all loading scripts to allow querying from file mapper and checker
-def GetSrcURL(): return ''
-def GetTempFile(): return ''
-def GetOutputFile(): return ''
-
  
 def main():
-
 	if silent == 'N':
 		print('loadInfoCourseLectures.py - process raw information to core tables in AIKIF')
-
 	courses, locations, objects = LoadData_Lectures(rootFolderLectures)
-	#PrintList(objects)
-	#PrintList(locations)
-
 	aikif.SaveFileDataToFile(locations, location_fileList)
 	aikif.SaveFileDataToFile(objects, lectures_fileList)
 	aikif.SaveFileDataToFile(courses, object_fileList)
-
-	
 	if silent == 'N':
 		DisplayShortListOutput(objects, 'objects')
 		DisplayShortListOutput(locations, 'locations')
 		DisplayShortListOutput(courses, 'courses')
-		#DisplayShortListOutput(links, 'links')
 		print('Done..')
-		
   
 def BuildUniqueLocations(locListWITH_duplicates):
     newList = []
@@ -73,9 +51,7 @@ def BuildUniqueLocations(locListWITH_duplicates):
         location_key = location_key + 1
         for j in i:
             newList.append([location_key, j])
-    #print(newList)
     return newList
- 
   
 def LoadData_Lectures(rootFolder):
     # reads a root folder containing downloaded lectures
@@ -111,7 +87,11 @@ def LoadData_Lectures(rootFolder):
 	# process the file into structures
 	ndxFile = 'ndxFullLecture.txt'
 	opIndex = 'ndxWordsToFilesLecture.txt'
-    
+	try:
+		fle.deleteFile(ndxFile)
+	except:
+		pass
+		
 	if silent == 'N':
 		print (' reading folder ' , rootFolder)
 
@@ -130,21 +110,14 @@ def LoadData_Lectures(rootFolder):
 			courses.append(ExtractCourseData(file, course_key))
 			
 		locations.append([lpath])
-		
-	#print(courses)	
-	# Get the list of folders (not sure why, just as a test?)
 	index.consolidate(ndxFile, opIndex )
-
-	
 	return(courses, BuildUniqueLocations(locations), objects)
 
 def IndexLectureText(f, ndxFile):
 	try:
-		index.buildIndex(f, ndxFile, 'Y', 'Y')  # append=Y and silent=Y
+		index.buildIndex(f, ndxFile, 'Y', 'Y', 'N')  # append=Y and silent=Y, useShortFileName='N'
 	except:
 		print('error indexing ', f)
-		
-	
 	
 def ExtractCourseData(jsonFile, course_key):
 	# extracts course information from a coursera .json file
@@ -180,10 +153,7 @@ def ExtractCourseData(jsonFile, course_key):
 		txt = txt + (cat["name"]) + '; '
 	lst.append(txt)
 	return lst
-		
-
-
-
+	
 	
 def DisplayShortListOutput(lst, title):
     num = 1

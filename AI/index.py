@@ -50,7 +50,7 @@ def index():
 		print('Done')
 
 
-def buildIndex(ipFile, ndxFile, append='Y', silent='N'):
+def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
 	# this creates an index of a text file specifically for use in AIKIF
 	# separates the ontology descriptions highest followed by values and lastly
 	# a final pass to get all delimited word parts.
@@ -69,23 +69,28 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N'):
 	# 2nd pass - use ALL delims to catch each word as part of hyphenated - eg AI Build py
 	totWords, totLines, uniqueWords = getWordList(ipFile, delims)
 	
-	AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile)
-	print(fle.GetShortFileName(ipFile).ljust(30) + ' ' + str(totLines).rjust(6) + ' lines ' + str(totWords).rjust(6) + ' words ' + str(len(uniqueWords)).rjust(6) + ' unique words')
+	AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName)
 	if silent == 'N':
 		pass
+		print(fle.GetShortFileName(ipFile).ljust(30) + ' ' + str(totLines).rjust(6) + ' lines ' + str(totWords).rjust(6) + ' words ' + str(len(uniqueWords)).rjust(6) + ' unique words')
+	
 		#show('uniqueWords', uniqueWords, 5)
 	#print(uniqueWords)  # this is now a DICTIONARY with no key names - TODO - how to save properly
 	#DisplayIndexAsDictionary(uniqueWords)
 
-def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile):
+def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName='Y'):
 	#Save the list of unique words to the master list
+	if useShortFileName == 'Y':
+		f = fle.GetShortFileName(ipFile)
+	else:
+		f = ipFile
 	with open(ndxFile, "a") as ndx:
 		word_keys = uniqueWords.keys()
 		#uniqueWords.sort()
 		for word in sorted(word_keys):
 			if word != '':
 				line_nums = uniqueWords[word]
-				ndx.write(fle.GetShortFileName(ipFile) + ', ' + word + ', ')
+				ndx.write(f + ', ' + word + ', ')
 				for line_num in line_nums:
 					ndx.write(str(line_num))
 				ndx.write('\n')
