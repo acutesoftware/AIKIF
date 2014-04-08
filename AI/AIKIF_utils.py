@@ -91,7 +91,8 @@ def GetElementsAsString(lst, delim, quote='"'):
 				opTxt = opTxt + quote + str(i) + quote + delim
 		if opTxt[-1:] == delim:
 			#opTxt = opTxt + quote + quote  # this works but adds a new blank field (not a big deal)
-			opTxt = opTxt.strip(delim)	# remove the last delim from line
+			# opTxt = opTxt.strip(delim)	# remove the last delim from line
+			pass
 		
 		opLst.append(opTxt)
 		#print ('GetElementsAsString='  + opTxt)
