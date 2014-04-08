@@ -182,12 +182,13 @@ def FindOntology(txt):
 	searchString = txt.upper()
 	#print(searchString)
 	match = []
-	for i in dataSubjectAreas:
-		#print(i)
-		if searchString in i:
-			totFound = totFound + 1
-			match.append(i)
+	if searchString != '':
+		for i in dataSubjectAreas:
 			#print(i)
+			if searchString in i:
+				totFound = totFound + 1
+				match.append(i)
+				#print(i)
 	if len(match) == 0:
 		match.append('_TOP')
 	return match

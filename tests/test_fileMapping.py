@@ -41,7 +41,7 @@ class TestFileMap(unittest.TestCase):
 		self.assertEqual( filemap.FindOntology('DIARY'), ['INFO-PIM-DIARY'])	
 		self.assertEqual( filemap.FindOntology('INFO-MESSAGE-EMAIL'), ['INFO-MESSAGE-EMAIL'])	
 		self.assertEqual( filemap.FindOntology('PC-FILE'), ['SYSTEM-PC-FILE', 'SYSTEM-PC-FILE-LECTURES'])	# returns multiple
-		self.assertEqual( filemap.FindOntology('Furniture'), ['OBJECT-ASSET-FURNITURE'])	
+		#self.assertEqual( filemap.FindOntology('Furniture'), ['OBJECT-ASSET-FURNITURE'])	
 		self.assertEqual( filemap.FindOntology('Task'), ['INFO-PIM-TASK'])	
 		self.assertEqual( filemap.FindOntology('Contact'), ['INFO-PIM-CONTACT'])	
 		self.assertEqual( filemap.FindOntology('Pim-Note'), ['INFO-PIM-NOTE'])	
@@ -56,7 +56,7 @@ class TestFileMap(unittest.TestCase):
 		self.assertEqual( filemap.FindOntology('GoOgle+'), ['INFO-SOCIAL-GOOGLE+'])	
 		self.assertEqual( filemap.FindOntology('social-other'), ['INFO-SOCIAL-OTHER'])	
 
-	def test_fileMap_FindOntology(self):  # note, functions return a list (usually 1 item) of strings
+	def test_fileMap_GetFilename(self):  
 		self.assertEqual( filemap.GetFilename('AAAAA', 'BBBBB'), 'AAAAA_BBBBB.CSV')	
 		self.assertEqual( filemap.GetFilename('X', 'Y'), 'X_Y.CSV')	
 
