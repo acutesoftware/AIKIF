@@ -13,6 +13,14 @@ def main():
 	testFile = 'test.csv'
 	DataSet(testFile)
 	AnalyseCSV(testFile)
+
+def IntentifyColumns(fname):
+	# returns a dict with detailed estimates of col types
+	print('IntentifyColumns(fname):')
+	
+def MapTo(opFile):
+	pass
+
 	
 def AnalyseCSV(fname):
 	print('dataTools.py - AnalyseCSV("' + fname + '")')
