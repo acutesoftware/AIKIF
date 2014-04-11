@@ -2,6 +2,10 @@
 # dataTools.py   written by Duncan Murray 9/4/2014  (C) Acute Software
 # data tools for AIKIF
 
+import os
+import sys
+import csv
+
 
 def DataSet(fname):
 	# defines a dataset
