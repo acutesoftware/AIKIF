@@ -20,7 +20,7 @@ def main():
 
 def IntentifyColumns(fname):
 	# returns a dict with detailed estimates of col types
-	print('IntentifyColumns(fname):')
+	print('IntentifyColumns(' + fname + '):')
 	
 def MapTo(opFile):
 	pass

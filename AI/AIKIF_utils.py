@@ -98,8 +98,11 @@ def GetElementsAsString(lst, delim, quote='"'):
 		#print ('GetElementsAsString='  + opTxt)
 	return(opLst)
 
-def SaveFileDataToFile(lst, filename):
-	w = open(filename, "wt")
+def SaveFileDataToFile(lst, filename, append=False):
+	if append == True:
+		w = open(filename, "at")
+	else:
+		w = open(filename, "wt")
 	for line in GetElementsAsString(lst, ','):
 		#print('line = _' + line + '_')
 		w.writelines(line + '\n')
