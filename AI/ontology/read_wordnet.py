@@ -8,7 +8,7 @@ ipFolder = 'S:\\DATA\\opendata\\ontology\\WordNet\\dict'
 opFolder = '..//..//data//'  # os.getcwd()
 
 files = ['data.noun', 'data.verb']
-lookup = ['gauge', 'mind']
+lookup = ['gauge', 'mind', 'post']
  
 def main():
 	allWords = []
@@ -37,11 +37,12 @@ def main():
 		results = Lookup(i, allWords)
 		for r in results:
 			print(r)
-			#print('Result for ' + i + ' - ' + r[0] + ' ' + r[1] + '\n ' , r[2], '\n')
+			print('Result for ' + i + ' - ' + r[0] + ' ' + r[1] + '\n ' , r[2], '\n')
 
 	# TESTING - show lines for index
 	PrintLineForIndex('00469029', allWords)
 	PrintLineForIndex('05619057', allWords)
+	PrintLineForIndex('01033142', allWords)
 	
 def Lookup(txt, wrdList):
 	res = []
@@ -69,10 +70,10 @@ def GetWordForIndex(ndxToFind, lst):
 
 def PrintLineForIndex(i, wrdList):
 	print('looking for index - ', i)
-	for line in wrdList[3]:  # bug here - TODO
+	for line in wrdList:  # bug here - TODO
 		if i in line:
-			#print(line)
-			print('found index ' + line[0:50])
+			print(line)
+			print('found index ' , i[0:40], '\n')
 	
 def ParseLine(line):
 	wrds = []
