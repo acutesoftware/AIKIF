@@ -34,20 +34,45 @@ import string
 sys.path.append('..//..//..//aspytk')
 import lib_data as dat
 import lib_file as fle
-
+import lib_net as net
+try:
+	import lib_excel as xl
+except:
+	print('you need to install xlrd')
 
 
 
 def TEST():
 	print('Data tools test...')
+	url = 'http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&standard australian classification of countries, 2011, version 2.2.xls&1269.0&Data Cubes&EE21444EE8F2C99CCA257BF30012B66F&0&2011&01.10.2013&Latest'
+	fname = 'test.xlsx'
+	DownloadFile(url, fname)
+	#xl.csv_from_excel(fname , os.getcwd())
 	testFile = 'test.csv'
 	CreateRandomCSVFile(testFile)
 	GenerateSQL(testFile, headerRow=1)
+
+	CreateRandomIndentedCSVFile('indented.csv')
+#	ExtractTable(f, tmpFile, extractList[1]['colList'], 8, 1, 52, 9)
+	AutoFillCSV('indented.csv', 'indented-fixed.csv', ['grouping', 'code', 'desc'],  ['grouping'])   # autofill FIRST col based on prev values
+	RemoveBlankRecs('indented-fixed.csv', 'indented-fixed-and-no-blanks.csv', 2)
+
 	
 
+def DownloadFile(url, fname):
+	net.DownloadFile(url, fname)
+	
+	
 def CreateRandomCSVFile(fname):
 	fle.deleteFile(fname)
 	content = [['id', 'code', 'desc'], ['1', 'S', 'AAA'], ['2', 'B', 'BBB'], ['3', 'X', 'Long description']]
+	for row in content:
+		dat.addSampleData(fname, row)
+			
+	
+def CreateRandomIndentedCSVFile(fname):
+	fle.deleteFile(fname)
+	content = [['grouping', 'code', 'desc'], ['1', 'S', 'AAA'], [' ', 'T', 'BBB'], ['3', 'X', 'Long description'], ['', 'Y', 'Long description']]
 	for row in content:
 		dat.addSampleData(fname, row)
 			
@@ -65,6 +90,84 @@ def MapTo(opFile):
 
 def AnalyseCSV(fname):
 	print('dataTools.py - AnalyseCSV("' + fname + '")')
+
+def ExtractTable(fname, opFile, opCols, startRow=1, startCol=1, endRow=5, endCol=5):			
+	print('Extracting ' + os.path.basename(fname) + ' to ' + opFile)
+	curRow = 1
+	curCol = 1
+	cols = collections.Counter()
+	
+	csv_file = open(opFile, 'wb')
+	#wr = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
+	
+	with open(fname) as input_file:
+	
+		for hdr in opCols:
+			csv_file.write('"' + hdr + '",')
+		csv_file.write('\n')
+		for row in csv.reader(input_file, delimiter=','):
+			if curRow >= startRow:
+				if curRow <= endRow:
+					curCol = 0
+					for col in row:
+						curCol = curCol + 1
+						if curCol >= startCol:
+							if curCol <= endCol:
+								colText = "".join(map(str,col)).strip('"').strip()    #prints JUST the column name in the list item
+								csv_file.write('"' + colText + '",')
+					#wr.writerow(row)
+					csv_file.write('\n')
+			curRow = curRow + 1
+	csv_file.close()
+	
+
+def AutoFillCSV(fname, opFile, colList, autoFillCols):
+	# Converts sub total style data to a flat list, e.g. changes:
+		# 3	HEADING	
+			# 31	data 1
+			# 32	data 2
+
+	print('\nAutoFilling ' + os.path.basename(fname) + ' to ' + opFile)
+	curCol = 1
+	lastValues = []
+	for c in colList:
+		lastValues.append(c)
+	print(lastValues)	
+	csv_file = open(opFile, 'w')
+	with open(fname) as input_file:
+		for row in csv.reader(input_file, delimiter=','):
+			for curCol, col in enumerate(row):
+				colText = "".join(map(str,col)).strip('"').strip()    #prints JUST the column name in the list item
+				if curCol in autoFillCols:
+					if colText == "":
+						colText = lastValues[curCol]
+					else:
+						lastValues[curCol] = colText
+				csv_file.write('"' + colText + '",')
+			csv_file.write('\n')
+	csv_file.close()
+	
+	
+def RemoveBlankRecs(fname, opFile, masterCol):
+	# removes lines where col number 'masterCol' is blank
+	print('cleaning ' + os.path.basename(fname) )
+	curCol = 1
+	rowText = ''
+	csv_file = open(opFile, 'w')
+	with open(fname) as input_file:
+		for row in csv.reader(input_file, delimiter=','):
+			keepRow = True
+			rowText = ''
+			for curCol, col in enumerate(row):
+				colText = "".join(map(str,col)).strip('"').strip()    #prints JUST the column name in the list item
+				if curCol == masterCol:
+					if colText == "":
+						keepRow = False
+				rowText = rowText + '"' + colText + '",'
+			rowText = rowText + '\n'
+			if keepRow:
+				csv_file.write(rowText)
+	csv_file.close()
 
 
 	
