@@ -36,8 +36,17 @@ downloads = [
 	'downloadURL': 'http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055003_ssc_2011_aust_csv.zip&1270.0.55.003&Data%20Cubes&414A81A24C3049A8CA2578D40012D50C&0&July%202011&22.07.2011&Previous',
 	'zipFile': '1270055003_poa_2011_aust_csv.zip',
 	'localFile': 'BBB.csv',
+	'comment': ''},
+    {'name': 'Names list from Princeton',
+	'pageURL': '',
+	'downloadURL': 'http://www.cs.princeton.edu/introcs/data/names.csv',
+	'zipFile': 'names.csv',
+	'localFolder': 'S:\\DATA\\opendata\\datasets\\',
+	'localFile': 'names.csv',
 	'comment': ''}
 	]
+	
+	
 	
 # weather datasets = http://data.gov.au/dataset/precis-forecast-south-australia
 # weather (XML) = http://data.gov.au/dataset/precis-forecast-south-australia/resource/fb1793f4-e3b8-4a26-b805-7a9a48a09b35
@@ -61,7 +70,11 @@ def main():
 	
 	for d in downloads:
 		aikif.LogDataSource(d['name'], fle.GetModuleName())
-		net.DownloadFile(d['downloadURL'], srcDataFolder + '\\' + d['zipFile'])
+		try:
+			loc_fldr = d['localFile']
+		except:
+			loc_fldr = srcDataFolder + '\\'
+		net.DownloadFile(d['downloadURL'], loc_fldr + d['zipFile'])
 		extractZip(d['zipFile'], d['localFile'])
 	#locations = LoadAustPostcodeFile(tmpFile, location_fileList )
 	#MapFilesToOntology(location_fileList, ??)
