@@ -21,9 +21,10 @@ def TEST():
 	print('Data Table ....')
 	colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
 	colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
-	tbl = random_table(6,50, colTypes, colLabel)
+	tbl = random_table(6,5, colTypes, colLabel)
 	show_table(tbl)
 	save_table(tbl, 'test123.csv')
+	print('password generator = ', generate_password(10))
 	
 def random_int(min=0, max=100): return random.randrange(min, max)
 	
@@ -31,6 +32,11 @@ def random_letters(sze=20):
 	lst = [random.choice(string.ascii_letters + string.digits) for n in range(sze)]
 	return "".join(lst)
 
+def generate_password(sze=18):
+	if sze < 8: sze = 8
+	pwd = random_letters(sze-3).lower() + str(random_int(10,99)) + random_letters(sze-6).upper()
+	#print(pwd)
+	return pwd
 	
 def random_hex_string(sze=30):
 	return binascii.b2a_hex(os.urandom(sze))
