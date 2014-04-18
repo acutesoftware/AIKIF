@@ -1,0 +1,5 @@
+This is a test file. Here is a "QUOTED" word and a word-made-of-parts
+It contains some words to the indexed.
+Did you know that storms are caused by low pressure cloud systems
+"PC-FILE","Christmas photos are stored in NAS under photos/events
+The reason for storing photos on the NAS are for safety and a quick way to display them.

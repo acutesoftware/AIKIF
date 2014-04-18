@@ -1,0 +1,5 @@
+"shopping_item","quant",
+"Milk","1L",
+"Bread","1 loaf",
+"Apples","bag",
+"Lettuce","1",

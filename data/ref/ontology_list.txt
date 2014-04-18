@@ -1,0 +1,894 @@
+Populated Place
+Place
+Country
+Area
+Municipality
+City
+River
+Historic Place
+Infrastructure
+Road
+Lake
+Mountain
+Building
+Airport
+Protected Area
+Station
+Lunar Crater
+Skyscraper
+Bridge
+Stadium
+World Heritage Site
+Shopping Mall
+Lighthouse
+Hospital
+Park
+Island
+Site Of Special Scientific Interest
+Wine Region
+Ski Area
+Cave
+Planet
+Musical Artist
+Band
+Formula One Racer
+Actor
+Military Person
+Ice Hockey Player
+Person
+Company
+Radio Station
+Soccer Club
+Military Unit
+Writer
+Organisation
+Sports Team
+Ethnic Group
+Football Team
+Athlete
+Baseball Player
+Wrestler
+Basketball Player
+Office Holder
+Scientist
+College Coach
+Saint
+Rugby Player
+Monarch
+Christian Bishop
+Cyclist
+Figure Skater
+Gaelic Games Player
+Boxer
+Comics Creator
+Artist
+Playboy Playmate
+Cardinal
+Philosopher
+Astronaut
+Tennis Player
+Politician
+National Collegiate Athletic Association Athlete
+Nascar Driver
+Poker Player
+Model
+Journalist
+Pope
+Criminal
+Badminton Player
+British Royalty
+Architect
+Hockey Team
+Comics Character
+Fictional Character
+Adult Actor
+Cricketer
+Football Player
+Non-Profit Organisation
+Record Label
+Airline
+Legislature
+Comedian
+Educational Institution
+School
+University
+College
+Work
+Musical Work
+Album
+Single
+Song
+Eurovision Song Contest Entry
+Film
+Book
+VideoGame
+Television Show
+Television Episode
+Military Conflict
+Software
+Mean Of Transportation
+Ship
+Aircraft
+Broadcast
+Anatomical Structure
+Bone
+Artery
+Vein
+Lymph
+Nerve
+Brain
+Muscle
+Embryology
+Olympic Result
+Event
+Grand Prix
+Wrestling Event
+Music Festival
+Mixed Martial Arts Event
+Convention
+Race
+Olympics
+Womens Tennis Association Tournament
+Newspaper
+Magazine
+Language
+Chemical Compound
+Automobile
+Musical
+Species
+Weapon
+Trade Union
+Protein
+Disease
+Drug
+Supreme Court Of The United States Case
+Grape
+Website
+Film Festival
+Music Genre
+Currency
+Beverage
+Celebrity
+Cleric
+Judge
+Football Manager
+Soccer Player
+Sports Event
+Eukaryote
+Archaea
+Bacteria
+Monera
+Plant
+Animal
+Fungus
+Protista
+Historic Building
+Voice Actor
+Senator
+President
+Governor
+Congressman
+Prime Minister
+Member Of Parliament
+Chancellor
+Mayor
+academyAward
+actingHeadteacher
+active years
+active years end date
+active years start date
+added
+address
+administrative collectivity
+administrative district
+administrator
+affiliation
+afiaAward
+airdate
+album
+allegiance
+alliance
+alma mater
+alumni
+amgId
+anniversaries
+annual temperature
+anthem
+archipelago
+architect
+architecturalBureau
+architecturalStyle
+area
+area code
+area land
+area magnitude
+area metro
+area of catchment
+areaOfSearch
+area served
+area total
+area urban
+area water
+argueDate
+arielAward
+arm
+arrondissement
+Artery
+artist
+a side
+assets
+associatedact
+associatedBand
+associatedMusicalArtist
+associateEditor
+association of local government
+atcPrefix
+atcSuffix
+atcSupplemental
+athletics
+author
+average speed
+avgClassSize
+award
+awards
+background
+baftaAward
+band
+barPassRate
+basedOn
+basin country
+bats
+battles
+beatified_date
+beatified_place
+bedCount
+beltwayCity
+binomial
+binomial_authority
+birthDate
+birthName
+birthPlace
+boards
+body style
+boiling point
+brainInfoNumber
+brainInfoType
+branch
+branchFrom
+branchTo
+brand
+broadcast Area
+bronze
+b side
+budget
+buildingEndDate
+buildingStartDate
+buildingType
+callsign meaning
+campus
+canonized_date
+canonized_place
+canton
+capital
+career points
+careerprizemoney
+Carnumber
+casNumber
+casSupplemental
+causalties
+ceeb
+ceo
+cesarAward
+chairman
+chairperson
+championships
+chancellor
+channel
+chaplain
+chiefEditor
+children
+choreographer
+chromosome
+cinematography
+circulation
+citizenship
+city
+cityType
+class
+classes
+classis
+closed
+closingDate
+closing film
+clubs
+clubsRecordGoalscorer
+coach
+coachedTeam
+coaching Team
+coast line
+coExecutiveProducer
+college
+color
+colours
+combatant
+commander
+commands
+commune
+competitors
+compiler
+completion date
+component
+composer
+contractor
+coordinates
+coProducer
+cornish name
+cost
+country
+countryofbirth
+countryofdeath
+county
+courseInKilometers
+courseInMiles
+cover artist
+creativeDirector
+creator
+crosses
+crownDependency
+currency
+current members
+current number
+current position
+current team
+custodian
+date
+date of burial
+Dateofret
+day
+dean
+death cause
+deathDate
+deathPlace
+debut date
+debutteam
+debut year
+decideDate
+demolitionDate
+demonym
+denomination
+density
+department
+depth
+derivative
+designer
+destinations
+destructionDate
+developer
+diameter
+director
+discharge
+discontinued
+discovered
+discoverer
+diseasesDB
+distanceInKilometers
+distanceInMiles
+distanceLaps
+distance to Belfast
+distance to Cardiff
+distance to Douglas
+distance to Edinburgh
+distance to London
+distributingCompany
+distributingLabel
+distributor
+district
+division
+divisions
+doctoral
+dorlandsPrefix
+dorlandsSuffix
+draft
+draftpick
+draftround
+draftTeam
+draftYear
+drainsFrom
+drainsTo
+drugBank
+ecNumber
+editing
+editor
+editorTitle
+education
+elevation
+eMedicineSubject
+eMedicineTopic
+emmyAward
+employer
+endDate
+endingTheme
+endowment
+engine
+engineer
+entrezGene
+episodeNumber
+equity
+espnId
+established
+established title
+ethnic group
+ethnicGroupsInYear
+ethnicity
+event
+executiveHeadteacher
+executiveProducer
+faculty
+family
+fastestDriverCountry
+fastestDriverDriver
+fastestDriverTeam
+fastest lap
+father
+FC runs
+FCs
+feastDay
+federal state
+fees
+field
+film
+filmfareAward
+finalyear
+first race
+first win
+firstWinner
+flagbearer
+floor area
+floorCount
+followed_by
+followingEvent
+footnotes
+format
+former callsign
+formerChoreographer
+formerCoach
+formerName
+formerPartner
+former team
+former_school(s)
+foundationDate
+foundationOrganisation
+foundationPerson
+foundationPlace
+founding date
+founding person
+founding year
+frazioni
+frequency
+frequently updated
+frozen
+gaelic name
+games
+geminiAward
+genre
+genus
+gold
+goldenCalfAward
+goldenGlobeAward
+goldenRaspberryAward
+governmentType
+goyaAward
+graduates
+grammyAward
+gross
+growing grape
+guest
+hallOfFame
+head
+headLabel
+headquarters
+headteacher
+height
+heir
+hgncId
+highestBuildingInYear
+highschool
+high_school
+home town
+house
+hubAirport
+icd10
+icd9
+icdO
+id
+iftaAward
+illustrator
+imdbId
+industry
+inflow
+influenced
+influenced by
+influences
+innervates
+instrument
+interest
+introduced
+introduction date
+irish name
+isbn
+island
+isPartOf
+issn
+iucn category
+iupacName
+joint community
+key person
+key person position
+kingdom
+known for
+label
+language
+language type
+largest city
+largest metro
+largest settlement
+largest settlement type
+last date
+last position
+last race
+last season
+last win
+last year
+latest preview date
+latest preview version
+latestreleaseversion
+latitudeMinutes
+latitudeNorthOrSouth
+latitudeSeconds
+latituteDegrees
+laurenCeolivierAward
+layout
+leader
+leader name
+leader party
+leader title
+league
+length
+license
+locatedInArea
+location
+locationCity
+locationCountry
+locusSupplementaryData
+longitudeDegrees
+longitudeMinutes
+longitudesEastOrWest
+longitudeSeconds
+longtype
+lounge
+Lymph
+lyrics
+mainspan
+majorIsland
+major shrine
+management
+manager
+managerclubs
+manager title
+manageryears
+managingEditor
+manufacturer
+manx name
+marketcap
+mascot
+mass
+maximum depth
+maximum discharge
+maximum elevation
+media_type
+medlinePlus
+meetingBuilding
+meetingCity
+melting point
+memberOfParliament
+meshID
+meshName
+meshNumber
+minimum discharge
+minimum elevation
+mission
+MolarMass
+molecularWeight
+mostWinner
+mother
+motto
+mouth
+mouthCountry
+mouthDistrict
+mouthMountain
+mouthPlace
+mouthRegion
+mouthState
+movement
+music
+music by
+music fusion genre
+music subgenre
+naacpImageAward
+narrator
+nationalFilmAward
+nationality
+national Olympic Committee
+national origin
+nationalRanking
+nationalteam
+nationalyears
+native name
+nearest city
+neighbourMunicipality
+Nerve
+netIncome
+network
+networth
+nickname
+nobelLaureates
+notable instruments
+notable wine
+notableworks
+notes
+notes on place of burial
+notifyDate
+number built
+number of different sports
+number of employees
+numberOfEntrances
+numberOfFilms
+numberOfIslands
+numberOfMembers
+numberOfParticipatingAthletes
+numberOfParticipatingNations
+number of vineyards
+number of visitors
+number of wineries
+occupation
+officer in charge
+officialOpenedBy
+officials
+official_languages
+oldcode
+olympicOathSwornByAthlete
+olympicOathSwornByJudge
+omim
+openingDate
+opening film
+openingTheme
+operatingIncome
+operating system
+order
+origin
+other
+otherappearances
+other name
+outflow
+oversight
+owner
+owning company
+owningOrganisation
+pages
+parent
+parent company
+parents
+partner
+partof
+part of wine region
+party
+past members
+pastteams
+pdb
+percentage of area water
+photographer
+phylum
+place
+place of burial
+placeOfOrigin
+platform
+playername
+plays
+podiums
+poleDriver
+poleDriverCountry
+poleDriverTeam
+poles
+population as of
+population density
+population metro
+population metro density
+population total
+population urban density
+population urban total
+postal code
+postgrad
+preceded_by
+Precursor
+predecessor
+presenter
+president
+previousEditor
+previousEvent
+previousInfrastructure
+previous work
+principal
+produced
+producer
+product
+products
+program cost
+programming language
+promotion
+prospectLeague
+prospectTeam
+province
+provost
+pubChem
+publish date
+publisher
+races
+rank
+ranking
+ratio
+rebuildingDate
+recentWinner
+recordDate
+recordPlace
+rector
+refSeq
+region
+region1
+regional language
+related
+relations
+relatives
+release date
+religion
+reopened
+residence
+resting place
+resting place coordinates
+result
+retired date
+revenue
+reviews
+rival
+royal anthem
+runtime
+ruralMunicipality
+sagAward
+saint
+salary
+school code
+scottish name
+season
+seasonNumber
+selection
+series
+services
+service years
+share
+shareDate
+sharesource
+shoots
+shore length
+show
+significant_buildings
+significant_design
+significant_projects
+silver
+similar
+sisterCollege
+sisterNewspaper
+sister station
+sister_stations
+skatingclub
+slogan
+sourceCountry
+sourceDistrict
+sourceMountain
+sourcePlace
+sourceRegion
+sourceState
+specialist
+species
+sport
+sports
+spouse
+spurType
+staff
+starring
+startDate
+state
+states
+status
+storyEditor
+strength
+structuralSystem
+students
+stylistic origin
+subClass
+subject
+subregion
+subsequentInfrastructure
+subsequent work
+subsid
+successor
+summerappearances
+summer temperature
+superintendent
+superOrder
+suppdraftround
+suppdraftyear
+supplies
+symbol
+system
+targetAirport
+teams
+temperature
+tenant
+term
+territory
+testaverage
+thirdCountry
+thirdDriver
+thirdDriverCountry
+thirdDriverDriver
+thirdDriverTeam
+thirdTeam
+throws
+title
+tonyAward
+torchBearer
+total_type
+track number
+training
+translator
+tribe
+trustee
+tuition
+twinCity
+twinCountry
+type
+undergrad
+undergraduates
+undraftedyear
+uniProt
+unit
+unit cost
+usingCountry
+variant
+varietals
+Vein
+vice chancellor
+vice president
+viceprincipal
+visitorsPerYear
+visitorsTotal
+voice
+voice type
+volume
+wars
+watershed
+weight
+welsh name
+whaDraft
+whaDraftTeam
+whaDraftYear
+width
+wine produced
+wine region
+wine year
+wins
+winterappearances
+winter temperature
+writer
+years
+youthclubs
+youthyears
