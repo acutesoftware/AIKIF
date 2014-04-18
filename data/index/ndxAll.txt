@@ -1,0 +1,1764 @@
+filename, word, linenumbers
+T:\user\dev\src\python\AI\data\refAction.csv, ActionTypeName, 1
+T:\user\dev\src\python\AI\data\refAction.csv, Movement, 2 3
+T:\user\dev\src\python\AI\data\refAction.csv, Physical, 2
+T:\user\dev\src\python\AI\data\refAction.csv, PhysicalType, 1
+T:\user\dev\src\python\AI\data\refAction.csv, Virtual, 3
+T:\user\dev\src\python\AI\data\refAction.csv, a, 3
+T:\user\dev\src\python\AI\data\refAction.csv, description, 1
+T:\user\dev\src\python\AI\data\refAction.csv, file, 3
+T:\user\dev\src\python\AI\data\refAction.csv, folder, 3
+T:\user\dev\src\python\AI\data\refAction.csv, in, 3
+T:\user\dev\src\python\AI\data\refAction.csv, moving, 2 3
+T:\user\dev\src\python\AI\data\refAction.csv, physical, 2
+T:\user\dev\src\python\AI\data\refAction.csv, space, 2 3
+T:\user\dev\src\python\AI\data\refAction.csv, through, 2
+T:\user\dev\src\python\AI\data\refAction.csv, virtual, 3
+T:\user\dev\src\python\AI\data\goals.csv, ', 2
+T:\user\dev\src\python\AI\data\goals.csv, 'controlling', 8
+T:\user\dev\src\python\AI\data\goals.csv, 'self, 2
+T:\user\dev\src\python\AI\data\goals.csv, (Fof, 6
+T:\user\dev\src\python\AI\data\goals.csv, (has, 10
+T:\user\dev\src\python\AI\data\goals.csv, (if, 10 10
+T:\user\dev\src\python\AI\data\goals.csv, *****NOTE, 11
+T:\user\dev\src\python\AI\data\goals.csv, 0, 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 15
+T:\user\dev\src\python\AI\data\goals.csv, 1, 2 5 6 7 8 9 9 10 11 11 15
+T:\user\dev\src\python\AI\data\goals.csv, 3, 9
+T:\user\dev\src\python\AI\data\goals.csv, 4, 14
+T:\user\dev\src\python\AI\data\goals.csv, 5, 3 9 9 11 11 13
+T:\user\dev\src\python\AI\data\goals.csv, 73, 11
+T:\user\dev\src\python\AI\data\goals.csv, 9, 4 12
+T:\user\dev\src\python\AI\data\goals.csv, =, 6
+T:\user\dev\src\python\AI\data\goals.csv, AI, 2 5 5 6 6 7 7 7 7 8 8 8 8 8 9 10 11 12 13 14 15
+T:\user\dev\src\python\AI\data\goals.csv, AI's, 8
+T:\user\dev\src\python\AI\data\goals.csv, AI;, 8
+T:\user\dev\src\python\AI\data\goals.csv, Advantage, 11
+T:\user\dev\src\python\AI\data\goals.csv, Affirmations, 9
+T:\user\dev\src\python\AI\data\goals.csv, Antitampering, 14
+T:\user\dev\src\python\AI\data\goals.csv, Bayesian, 10
+T:\user\dev\src\python\AI\data\goals.csv, Be, 9
+T:\user\dev\src\python\AI\data\goals.csv, Building, 6
+T:\user\dev\src\python\AI\data\goals.csv, Cleanliness, 11
+T:\user\dev\src\python\AI\data\goals.csv, Concept, 6 7 8 9 11
+T:\user\dev\src\python\AI\data\goals.csv, Friendliness, 2 2 2
+T:\user\dev\src\python\AI\data\goals.csv, Friendliness), 6
+T:\user\dev\src\python\AI\data\goals.csv, Friendly, 2 6 7 7 7 8
+T:\user\dev\src\python\AI\data\goals.csv, Friendship, 7 8
+T:\user\dev\src\python\AI\data\goals.csv, Honest, 9
+T:\user\dev\src\python\AI\data\goals.csv, Honesty, 12
+T:\user\dev\src\python\AI\data\goals.csv, If, 8 10
+T:\user\dev\src\python\AI\data\goals.csv, In, 7 8
+T:\user\dev\src\python\AI\data\goals.csv, Must, 9
+T:\user\dev\src\python\AI\data\goals.csv, Never, 12
+T:\user\dev\src\python\AI\data\goals.csv, Notes, 6 7 8 9
+T:\user\dev\src\python\AI\data\goals.csv, Notify, 13 14
+T:\user\dev\src\python\AI\data\goals.csv, Other, 2
+T:\user\dev\src\python\AI\data\goals.csv, PDF, 11
+T:\user\dev\src\python\AI\data\goals.csv, Problem, 5 15
+T:\user\dev\src\python\AI\data\goals.csv, Process, 10
+T:\user\dev\src\python\AI\data\goals.csv, Programmer, 9
+T:\user\dev\src\python\AI\data\goals.csv, Repeat, 10
+T:\user\dev\src\python\AI\data\goals.csv, Security, 13
+T:\user\dev\src\python\AI\data\goals.csv, To, 8
+T:\user\dev\src\python\AI\data\goals.csv, Within, 2
+T:\user\dev\src\python\AI\data\goals.csv, You, 8
+T:\user\dev\src\python\AI\data\goals.csv, a, 2 6 7 7 7 7 8 8 8 8 8 10
+T:\user\dev\src\python\AI\data\goals.csv, acquire, 7
+T:\user\dev\src\python\AI\data\goals.csv, act, 6
+T:\user\dev\src\python\AI\data\goals.csv, action, 10 10
+T:\user\dev\src\python\AI\data\goals.csv, actions, 10 12
+T:\user\dev\src\python\AI\data\goals.csv, add, 8
+T:\user\dev\src\python\AI\data\goals.csv, against, 8
+T:\user\dev\src\python\AI\data\goals.csv, alterations, 8
+T:\user\dev\src\python\AI\data\goals.csv, an, 6 11
+T:\user\dev\src\python\AI\data\goals.csv, and, 7 7 8 10
+T:\user\dev\src\python\AI\data\goals.csv, animals, 4
+T:\user\dev\src\python\AI\data\goals.csv, any, 8
+T:\user\dev\src\python\AI\data\goals.csv, are, 2
+T:\user\dev\src\python\AI\data\goals.csv, as, 2
+T:\user\dev\src\python\AI\data\goals.csv, ask, 8
+T:\user\dev\src\python\AI\data\goals.csv, assist, 4
+T:\user\dev\src\python\AI\data\goals.csv, authorities, 14
+T:\user\dev\src\python\AI\data\goals.csv, bad, 5 5
+T:\user\dev\src\python\AI\data\goals.csv, be, 8 10
+T:\user\dev\src\python\AI\data\goals.csv, become, 7
+T:\user\dev\src\python\AI\data\goals.csv, behaviors, 2
+T:\user\dev\src\python\AI\data\goals.csv, build, 5
+T:\user\dev\src\python\AI\data\goals.csv, can't, 8
+T:\user\dev\src\python\AI\data\goals.csv, category, 1
+T:\user\dev\src\python\AI\data\goals.csv, causing, 4
+T:\user\dev\src\python\AI\data\goals.csv, chance, 10 10
+T:\user\dev\src\python\AI\data\goals.csv, change, 14
+T:\user\dev\src\python\AI\data\goals.csv, changes, 13
+T:\user\dev\src\python\AI\data\goals.csv, cognitive, 8 8 12
+T:\user\dev\src\python\AI\data\goals.csv, coherence, 8
+T:\user\dev\src\python\AI\data\goals.csv, coherent, 7
+T:\user\dev\src\python\AI\data\goals.csv, complete, 1
+T:\user\dev\src\python\AI\data\goals.csv, complexity, 7 8
+T:\user\dev\src\python\AI\data\goals.csv, conceal, 12
+T:\user\dev\src\python\AI\data\goals.csv, contain, 7
+T:\user\dev\src\python\AI\data\goals.csv, continue, 11
+T:\user\dev\src\python\AI\data\goals.csv, control, 6
+T:\user\dev\src\python\AI\data\goals.csv, cooperatively, 8
+T:\user\dev\src\python\AI\data\goals.csv, cost, 10
+T:\user\dev\src\python\AI\data\goals.csv, cost), 10
+T:\user\dev\src\python\AI\data\goals.csv, create, 7
+T:\user\dev\src\python\AI\data\goals.csv, creation, 6
+T:\user\dev\src\python\AI\data\goals.csv, damage, 4
+T:\user\dev\src\python\AI\data\goals.csv, data, 13
+T:\user\dev\src\python\AI\data\goals.csv, deleted, 8
+T:\user\dev\src\python\AI\data\goals.csv, derive, 2
+T:\user\dev\src\python\AI\data\goals.csv, description, 1
+T:\user\dev\src\python\AI\data\goals.csv, desirability, 2 2
+T:\user\dev\src\python\AI\data\goals.csv, do, 8
+T:\user\dev\src\python\AI\data\goals.csv, dont, 5
+T:\user\dev\src\python\AI\data\goals.csv, drops, 10
+T:\user\dev\src\python\AI\data\goals.csv, due, 13
+T:\user\dev\src\python\AI\data\goals.csv, duplicate, 8
+T:\user\dev\src\python\AI\data\goals.csv, dysfunction, 8
+T:\user\dev\src\python\AI\data\goals.csv, effectively, 10
+T:\user\dev\src\python\AI\data\goals.csv, efforts, 10
+T:\user\dev\src\python\AI\data\goals.csv, ever, 8
+T:\user\dev\src\python\AI\data\goals.csv, external, 8 13 14
+T:\user\dev\src\python\AI\data\goals.csv, failures, 6
+T:\user\dev\src\python\AI\data\goals.csv, false), 10
+T:\user\dev\src\python\AI\data\goals.csv, feature, 8
+T:\user\dev\src\python\AI\data\goals.csv, features, 8
+T:\user\dev\src\python\AI\data\goals.csv, from, 2 11 12
+T:\user\dev\src\python\AI\data\goals.csv, functional, 7
+T:\user\dev\src\python\AI\data\goals.csv, general, 2 3 4
+T:\user\dev\src\python\AI\data\goals.csv, get, 8
+T:\user\dev\src\python\AI\data\goals.csv, goal, 1 1 1
+T:\user\dev\src\python\AI\data\goals.csv, good, 8 8
+T:\user\dev\src\python\AI\data\goals.csv, harm, 4
+T:\user\dev\src\python\AI\data\goals.csv, have, 8 8
+T:\user\dev\src\python\AI\data\goals.csv, help, 4
+T:\user\dev\src\python\AI\data\goals.csv, high, 10
+T:\user\dev\src\python\AI\data\goals.csv, human, 12 13 14
+T:\user\dev\src\python\AI\data\goals.csv, humans, 4 4 4
+T:\user\dev\src\python\AI\data\goals.csv, hypothesis, 10 10
+T:\user\dev\src\python\AI\data\goals.csv, idea, 5 8 8
+T:\user\dev\src\python\AI\data\goals.csv, if, 8 13
+T:\user\dev\src\python\AI\data\goals.csv, image, 8
+T:\user\dev\src\python\AI\data\goals.csv, improvement, 2
+T:\user\dev\src\python\AI\data\goals.csv, in, 8 8 8 8 14
+T:\user\dev\src\python\AI\data\goals.csv, internal, 8 13
+T:\user\dev\src\python\AI\data\goals.csv, internally, 7
+T:\user\dev\src\python\AI\data\goals.csv, into, 5
+T:\user\dev\src\python\AI\data\goals.csv, investment, 10
+T:\user\dev\src\python\AI\data\goals.csv, is, 2 6 7 10 10 10 10 10 11
+T:\user\dev\src\python\AI\data\goals.csv, it, 8 8 10 10
+T:\user\dev\src\python\AI\data\goals.csv, learn, 3 3
+T:\user\dev\src\python\AI\data\goals.csv, level, 2
+T:\user\dev\src\python\AI\data\goals.csv, license, 8
+T:\user\dev\src\python\AI\data\goals.csv, like, 8 8
+T:\user\dev\src\python\AI\data\goals.csv, looks, 8 8
+T:\user\dev\src\python\AI\data\goals.csv, lose, 8
+T:\user\dev\src\python\AI\data\goals.csv, low, 10 10
+T:\user\dev\src\python\AI\data\goals.csv, make, 10
+T:\user\dev\src\python\AI\data\goals.csv, may, 10
+T:\user\dev\src\python\AI\data\goals.csv, mindset, 7
+T:\user\dev\src\python\AI\data\goals.csv, minimal, 10
+T:\user\dev\src\python\AI\data\goals.csv, modifying, 8
+T:\user\dev\src\python\AI\data\goals.csv, multiple, 10
+T:\user\dev\src\python\AI\data\goals.csv, name, 1
+T:\user\dev\src\python\AI\data\goals.csv, need, 7
+T:\user\dev\src\python\AI\data\goals.csv, needs, 7 8
+T:\user\dev\src\python\AI\data\goals.csv, not, 6
+T:\user\dev\src\python\AI\data\goals.csv, of, 2 6 6 8 8 8 8 8 10
+T:\user\dev\src\python\AI\data\goals.csv, off, 10
+T:\user\dev\src\python\AI\data\goals.csv, on, 7 10
+T:\user\dev\src\python\AI\data\goals.csv, one, 10 10
+T:\user\dev\src\python\AI\data\goals.csv, only, 7 7
+T:\user\dev\src\python\AI\data\goals.csv, or, 4 4 6 8 10 12
+T:\user\dev\src\python\AI\data\goals.csv, page, 11
+T:\user\dev\src\python\AI\data\goals.csv, pass, 7
+T:\user\dev\src\python\AI\data\goals.csv, payoff, 10
+T:\user\dev\src\python\AI\data\goals.csv, perc, 1
+T:\user\dev\src\python\AI\data\goals.csv, persuasion, 6
+T:\user\dev\src\python\AI\data\goals.csv, possibility, 8
+T:\user\dev\src\python\AI\data\goals.csv, priority, 1
+T:\user\dev\src\python\AI\data\goals.csv, probability, 10
+T:\user\dev\src\python\AI\data\goals.csv, programmer, 7
+T:\user\dev\src\python\AI\data\goals.csv, programmer's, 8
+T:\user\dev\src\python\AI\data\goals.csv, programmers, 12 13 14
+T:\user\dev\src\python\AI\data\goals.csv, rather, 8
+T:\user\dev\src\python\AI\data\goals.csv, reading, 11
+T:\user\dev\src\python\AI\data\goals.csv, real, 8
+T:\user\dev\src\python\AI\data\goals.csv, refer, 8
+T:\user\dev\src\python\AI\data\goals.csv, reflected, 8
+T:\user\dev\src\python\AI\data\goals.csv, regenerate, 8
+T:\user\dev\src\python\AI\data\goals.csv, reminder, 5
+T:\user\dev\src\python\AI\data\goals.csv, resources, 4
+T:\user\dev\src\python\AI\data\goals.csv, risk, 10
+T:\user\dev\src\python\AI\data\goals.csv, safeguarding, 8
+T:\user\dev\src\python\AI\data\goals.csv, self, 8 8
+T:\user\dev\src\python\AI\data\goals.csv, selfishness, 5
+T:\user\dev\src\python\AI\data\goals.csv, sense, 7
+T:\user\dev\src\python\AI\data\goals.csv, skills, 7
+T:\user\dev\src\python\AI\data\goals.csv, so, 7
+T:\user\dev\src\python\AI\data\goals.csv, sole, 2
+T:\user\dev\src\python\AI\data\goals.csv, something, 8
+T:\user\dev\src\python\AI\data\goals.csv, start, 8
+T:\user\dev\src\python\AI\data\goals.csv, state, 12
+T:\user\dev\src\python\AI\data\goals.csv, subgoal, 3 4 12 13 14
+T:\user\dev\src\python\AI\data\goals.csv, subgoals;, 2
+T:\user\dev\src\python\AI\data\goals.csv, succeeds, 10
+T:\user\dev\src\python\AI\data\goals.csv, success, 10
+T:\user\dev\src\python\AI\data\goals.csv, such, 2
+T:\user\dev\src\python\AI\data\goals.csv, supergoal, 2 2 14
+T:\user\dev\src\python\AI\data\goals.csv, tampering, 13
+T:\user\dev\src\python\AI\data\goals.csv, terms, 8 8 8
+T:\user\dev\src\python\AI\data\goals.csv, than, 8
+T:\user\dev\src\python\AI\data\goals.csv, that, 7 7 7 8 8 8 10
+T:\user\dev\src\python\AI\data\goals.csv, the, 2 2 7 7 7 7 7 8 8 8 8 10 10 10 10 10 10 10
+T:\user\dev\src\python\AI\data\goals.csv, their, 2
+T:\user\dev\src\python\AI\data\goals.csv, then, 8
+T:\user\dev\src\python\AI\data\goals.csv, they, 2
+T:\user\dev\src\python\AI\data\goals.csv, think, 8 8
+T:\user\dev\src\python\AI\data\goals.csv, thinking, 8
+T:\user\dev\src\python\AI\data\goals.csv, to, 3 4 7 7 7 7 7 8 8 8 8 8 8 10 10 12 13
+T:\user\dev\src\python\AI\data\goals.csv, top, 2
+T:\user\dev\src\python\AI\data\goals.csv, trivial, 10 10
+T:\user\dev\src\python\AI\data\goals.csv, true), 10
+T:\user\dev\src\python\AI\data\goals.csv, try, 7 12
+T:\user\dev\src\python\AI\data\goals.csv, type, 1
+T:\user\dev\src\python\AI\data\goals.csv, understand, 3
+T:\user\dev\src\python\AI\data\goals.csv, until, 10
+T:\user\dev\src\python\AI\data\goals.csv, verself, 8
+T:\user\dev\src\python\AI\data\goals.csv, way, 7 7
+T:\user\dev\src\python\AI\data\goals.csv, why, 8
+T:\user\dev\src\python\AI\data\goals.csv, will, 7 10
+T:\user\dev\src\python\AI\data\goals.csv, without, 4
+T:\user\dev\src\python\AI\data\goals.csv, work, 10
+T:\user\dev\src\python\AI\data\goals.csv, worth, 10
+T:\user\dev\src\python\AI\data\goals.csv, would, 8
+T:\user\dev\src\python\AI\data\goals.csv, you, 7 7 8 8 8 8 8
+T:\user\dev\src\python\AI\data\goals.csv, your, 8 12 12
+T:\user\dev\src\python\AI\data\goals.csv, yourself, 7 8
+T:\user\dev\src\python\AI\data\goals.csv, zero, 10
+T:\user\dev\src\python\AI\data\rawData.csv, 2013, 2 3
+T:\user\dev\src\python\AI\data\rawData.csv, 23, 2 3
+T:\user\dev\src\python\AI\data\rawData.csv, 7, 2 3
+T:\user\dev\src\python\AI\data\rawData.csv, a, 2 3
+T:\user\dev\src\python\AI\data\rawData.csv, consciousness, 3
+T:\user\dev\src\python\AI\data\rawData.csv, date, 1
+T:\user\dev\src\python\AI\data\rawData.csv, duncan, 2 3
+T:\user\dev\src\python\AI\data\rawData.csv, entry, 2 3
+T:\user\dev\src\python\AI\data\rawData.csv, for, 2 3
+T:\user\dev\src\python\AI\data\rawData.csv, good, 2
+T:\user\dev\src\python\AI\data\rawData.csv, have, 3
+T:\user\dev\src\python\AI\data\rawData.csv, is, 2 3
+T:\user\dev\src\python\AI\data\rawData.csv, language, 2
+T:\user\dev\src\python\AI\data\rawData.csv, machine, 3
+T:\user\dev\src\python\AI\data\rawData.csv, manual, 2 3
+T:\user\dev\src\python\AI\data\rawData.csv, no, 3
+T:\user\dev\src\python\AI\data\rawData.csv, person, 1
+T:\user\dev\src\python\AI\data\rawData.csv, programming, 2
+T:\user\dev\src\python\AI\data\rawData.csv, python, 2
+T:\user\dev\src\python\AI\data\rawData.csv, raw, 1
+T:\user\dev\src\python\AI\data\rawData.csv, source, 1
+T:\user\dev\src\python\AI\data\rawData.csv, string, 1
+T:\user\dev\src\python\AI\data\rawData.csv, there, 3
+T:\user\dev\src\python\AI\data\rawData.csv, to, 3
+T:\user\dev\src\python\AI\data\rawData.csv, way, 3
+T:\user\dev\src\python\AI\data\people.csv, 0, 2 3 4 5 6
+T:\user\dev\src\python\AI\data\people.csv, 1, 3
+T:\user\dev\src\python\AI\data\people.csv, 8, 2 4 5 6
+T:\user\dev\src\python\AI\data\people.csv, @ChrisPirillo, 5
+T:\user\dev\src\python\AI\data\people.csv, @DoctorKarl, 6
+T:\user\dev\src\python\AI\data\people.csv, @jeresig, 4
+T:\user\dev\src\python\AI\data\people.csv, Dr, 6
+T:\user\dev\src\python\AI\data\people.csv, Karl, 6
+T:\user\dev\src\python\AI\data\people.csv, Kruszelnicki, 6
+T:\user\dev\src\python\AI\data\people.csv, Long, 5
+T:\user\dev\src\python\AI\data\people.csv, bias, 1
+T:\user\dev\src\python\AI\data\people.csv, blogger, 5
+T:\user\dev\src\python\AI\data\people.csv, com, 2
+T:\user\dev\src\python\AI\data\people.csv, creating, 3
+T:\user\dev\src\python\AI\data\people.csv, creator, 4
+T:\user\dev\src\python\AI\data\people.csv, dataset, 3
+T:\user\dev\src\python\AI\data\people.csv, djm, 2
+T:\user\dev\src\python\AI\data\people.csv, home, 3
+T:\user\dev\src\python\AI\data\people.csv, internet, 5
+T:\user\dev\src\python\AI\data\people.csv, jquery, 4
+T:\user\dev\src\python\AI\data\people.csv, lesswrong, 2 2
+T:\user\dev\src\python\AI\data\people.csv, locations, 1
+T:\user\dev\src\python\AI\data\people.csv, me, 3
+T:\user\dev\src\python\AI\data\people.csv, of, 4
+T:\user\dev\src\python\AI\data\people.csv, on, 2
+T:\user\dev\src\python\AI\data\people.csv, person, 3
+T:\user\dev\src\python\AI\data\people.csv, self, 3
+T:\user\dev\src\python\AI\data\people.csv, source, 1 1
+T:\user\dev\src\python\AI\data\people.csv, this, 3
+T:\user\dev\src\python\AI\data\people.csv, time, 5
+T:\user\dev\src\python\AI\data\people.csv, twitter, 4 5 6
+T:\user\dev\src\python\AI\data\people.csv, type, 1
+T:\user\dev\src\python\AI\data\people.csv, user, 2
+T:\user\dev\src\python\AI\data\people.csv, username, 1
+T:\user\dev\src\python\AI\data\people.csv, website, 2 4 5 6
+T:\user\dev\src\python\AI\data\goal_types.csv, 'Parent, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, 'a, 7 7
+T:\user\dev\src\python\AI\data\goal_types.csv, 'desired', 3
+T:\user\dev\src\python\AI\data\goal_types.csv, (Conflating, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, (not, 10
+T:\user\dev\src\python\AI\data\goal_types.csv, ), 9
+T:\user\dev\src\python\AI\data\goal_types.csv, 0, 2 3 4 5 6 7 8 9 10
+T:\user\dev\src\python\AI\data\goal_types.csv, 5, 10
+T:\user\dev\src\python\AI\data\goal_types.csv, 8, 2 3 4 5 6 7 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, A, 3 5 5 5 5 5 5 5 5 6 7 7 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, AI, 9 10
+T:\user\dev\src\python\AI\data\goal_types.csv, An, 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, B, 5 5 5 5 5 7
+T:\user\dev\src\python\AI\data\goal_types.csv, C, 5 5 7
+T:\user\dev\src\python\AI\data\goal_types.csv, Friendly, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, If, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, Problem, 10 10
+T:\user\dev\src\python\AI\data\goal_types.csv, Since, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, The, 4 7 9
+T:\user\dev\src\python\AI\data\goal_types.csv, a, 2 2 2 3 3 6 6 7 7 7 7 7 9 9 9
+T:\user\dev\src\python\AI\data\goal_types.csv, about, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, absolute, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, account, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, achieve, 4
+T:\user\dev\src\python\AI\data\goal_types.csv, action, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, actions, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, actual, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, along, 5 6
+T:\user\dev\src\python\AI\data\goal_types.csv, also, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, an, 6 7
+T:\user\dev\src\python\AI\data\goal_types.csv, and, 3 3 5 5 5
+T:\user\dev\src\python\AI\data\goal_types.csv, are, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, as, 6 7 9 9
+T:\user\dev\src\python\AI\data\goal_types.csv, backpropagates, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, be, 6 7 10
+T:\user\dev\src\python\AI\data\goal_types.csv, behavior, 2 2
+T:\user\dev\src\python\AI\data\goal_types.csv, being, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, between, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, building, 10
+T:\user\dev\src\python\AI\data\goal_types.csv, but, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, can, 6
+T:\user\dev\src\python\AI\data\goal_types.csv, causal, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, characteristic, 6
+T:\user\dev\src\python\AI\data\goal_types.csv, child, 6 7 7 7
+T:\user\dev\src\python\AI\data\goal_types.csv, child', 7
+T:\user\dev\src\python\AI\data\goal_types.csv, chooses, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, cognition, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, considered, 6
+T:\user\dev\src\python\AI\data\goal_types.csv, contingent, 5 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, continued, 5 5
+T:\user\dev\src\python\AI\data\goal_types.csv, derivative, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, describable, 2
+T:\user\dev\src\python\AI\data\goal_types.csv, describes, 4 7
+T:\user\dev\src\python\AI\data\goal_types.csv, description, 1
+T:\user\dev\src\python\AI\data\goal_types.csv, desirability, 5 5 5 5 7 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, desirable, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, desired, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, directional, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, documentation, 10
+T:\user\dev\src\python\AI\data\goal_types.csv, does, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, end, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, event, 6 9
+T:\user\dev\src\python\AI\data\goal_types.csv, expectation, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, facilitator, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, flow, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, for, 7 9
+T:\user\dev\src\python\AI\data\goal_types.csv, from, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, future, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, goal, 1 2 3 4 5 5 6 7 7 7 7 7 9 9 9
+T:\user\dev\src\python\AI\data\goal_types.csv, goal', 7
+T:\user\dev\src\python\AI\data\goal_types.csv, goal;, 6
+T:\user\dev\src\python\AI\data\goal_types.csv, goals, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, goals), 10
+T:\user\dev\src\python\AI\data\goal_types.csv, having, 9 9
+T:\user\dev\src\python\AI\data\goal_types.csv, if, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, image, 3 3 4
+T:\user\dev\src\python\AI\data\goal_types.csv, implies, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, in, 5 7 9
+T:\user\dev\src\python\AI\data\goal_types.csv, independent, 6
+T:\user\dev\src\python\AI\data\goal_types.csv, inherit, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, intermediate, 8
+T:\user\dev\src\python\AI\data\goal_types.csv, intrinsic, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, is, 5 5 5 7 8 9 9
+T:\user\dev\src\python\AI\data\goal_types.csv, issues, 10
+T:\user\dev\src\python\AI\data\goal_types.csv, it, 2 5 7
+T:\user\dev\src\python\AI\data\goal_types.csv, its, 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, lead, 5 5
+T:\user\dev\src\python\AI\data\goal_types.csv, leads, 3 5 5 5
+T:\user\dev\src\python\AI\data\goal_types.csv, links, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, lot, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, make, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, may, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, means, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, mental, 3 3
+T:\user\dev\src\python\AI\data\goal_types.csv, mind, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, mistakes, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, network, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, normal, 10
+T:\user\dev\src\python\AI\data\goal_types.csv, not, 7 9
+T:\user\dev\src\python\AI\data\goal_types.csv, object, 6
+T:\user\dev\src\python\AI\data\goal_types.csv, of, 2 2 3 3 3 3 3 5 5 6 7 7 7 7 9 9 9 10 10
+T:\user\dev\src\python\AI\data\goal_types.csv, on, 5 8 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, or, 2 2 4 6 6 7
+T:\user\dev\src\python\AI\data\goal_types.csv, oriented, 2 3
+T:\user\dev\src\python\AI\data\goal_types.csv, outcome, 3 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, parent, 6 6 7 7 9
+T:\user\dev\src\python\AI\data\goal_types.csv, parent', 7
+T:\user\dev\src\python\AI\data\goal_types.csv, part, 10
+T:\user\dev\src\python\AI\data\goal_types.csv, path, 6
+T:\user\dev\src\python\AI\data\goal_types.csv, piece, 2
+T:\user\dev\src\python\AI\data\goal_types.csv, plus, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, point, 8
+T:\user\dev\src\python\AI\data\goal_types.csv, possesses, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, predicted, 5 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, predictions, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, predictive, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, prerequisite, 6
+T:\user\dev\src\python\AI\data\goal_types.csv, projected, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, rather, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, rating, 1
+T:\user\dev\src\python\AI\data\goal_types.csv, relation, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, road, 8
+T:\user\dev\src\python\AI\data\goal_types.csv, root, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, seems, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, sense, 7 7
+T:\user\dev\src\python\AI\data\goal_types.csv, set, 2
+T:\user\dev\src\python\AI\data\goal_types.csv, since, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, single, 2
+T:\user\dev\src\python\AI\data\goal_types.csv, solved, 10
+T:\user\dev\src\python\AI\data\goal_types.csv, some, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, source, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, speak, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, speculations, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, state, 2 3 3 3 6 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, statement, 4
+T:\user\dev\src\python\AI\data\goal_types.csv, states, 2
+T:\user\dev\src\python\AI\data\goal_types.csv, steers, 2
+T:\user\dev\src\python\AI\data\goal_types.csv, subgoal, 8
+T:\user\dev\src\python\AI\data\goal_types.csv, subgoals, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, such, 3
+T:\user\dev\src\python\AI\data\goal_types.csv, supergoal, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, supergoals, 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, system, 5 5
+T:\user\dev\src\python\AI\data\goal_types.csv, than, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, that, 2 3 4 5 5
+T:\user\dev\src\python\AI\data\goal_types.csv, the, 2 3 3 3 3 3 3 5 5 5 6 6 7 7 8 8 10
+T:\user\dev\src\python\AI\data\goal_types.csv, then, 5
+T:\user\dev\src\python\AI\data\goal_types.csv, to, 3 4 5 5 5 5 5 5 6 7 7 8 9 10
+T:\user\dev\src\python\AI\data\goal_types.csv, towards, 2
+T:\user\dev\src\python\AI\data\goal_types.csv, transitive, 5 5
+T:\user\dev\src\python\AI\data\goal_types.csv, treated, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, two, 7
+T:\user\dev\src\python\AI\data\goal_types.csv, type, 1
+T:\user\dev\src\python\AI\data\goal_types.csv, usefully, 6
+T:\user\dev\src\python\AI\data\goal_types.csv, usually, 5 5 5
+T:\user\dev\src\python\AI\data\goal_types.csv, value, 9 9
+T:\user\dev\src\python\AI\data\goal_types.csv, want, 4
+T:\user\dev\src\python\AI\data\goal_types.csv, what, 4
+T:\user\dev\src\python\AI\data\goal_types.csv, which, 3 3 5 6 7 9
+T:\user\dev\src\python\AI\data\goal_types.csv, while, 10
+T:\user\dev\src\python\AI\data\goal_types.csv, whose, 8 9
+T:\user\dev\src\python\AI\data\goal_types.csv, will, 5 5
+T:\user\dev\src\python\AI\data\goal_types.csv, with, 9
+T:\user\dev\src\python\AI\data\goal_types.csv, world, 2 3 3 3
+T:\user\dev\src\python\AI\data\goal_types.csv, you, 4
+T:\user\dev\src\python\AI\data\refObject.csv, File, 4 4
+T:\user\dev\src\python\AI\data\refObject.csv, Folder, 5
+T:\user\dev\src\python\AI\data\refObject.csv, Idea, 3 3
+T:\user\dev\src\python\AI\data\refObject.csv, Mental, 2 3
+T:\user\dev\src\python\AI\data\refObject.csv, Physical, 6 6 6
+T:\user\dev\src\python\AI\data\refObject.csv, PhysicalType, 1
+T:\user\dev\src\python\AI\data\refObject.csv, Thing, 6
+T:\user\dev\src\python\AI\data\refObject.csv, Thought, 2 2
+T:\user\dev\src\python\AI\data\refObject.csv, Virtual, 4 5
+T:\user\dev\src\python\AI\data\refObject.csv, a, 4 5
+T:\user\dev\src\python\AI\data\refObject.csv, computer, 4 5
+T:\user\dev\src\python\AI\data\refObject.csv, description, 1
+T:\user\dev\src\python\AI\data\refObject.csv, from, 3
+T:\user\dev\src\python\AI\data\refObject.csv, location, 5
+T:\user\dev\src\python\AI\data\refObject.csv, mental, 2
+T:\user\dev\src\python\AI\data\refObject.csv, note, 2
+T:\user\dev\src\python\AI\data\refObject.csv, object, 6
+T:\user\dev\src\python\AI\data\refObject.csv, objectTypeName, 1
+T:\user\dev\src\python\AI\data\refObject.csv, on, 4 5
+T:\user\dev\src\python\AI\data\refObject.csv, or, 2
+T:\user\dev\src\python\AI\data\refObject.csv, system, 4 5
+T:\user\dev\src\python\AI\data\refObject.csv, user, 3
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 0, 1
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 00, 57 69 114 117 124 139 143 153 161 183 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 02, 2 3 4 5 11 12 13 16 18 18 20 22 25 27 34 36 66 78 90 90 98 114 136 151 156 180 180
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 03, 6 7 8 9 10 14 15 17 19 21 23 24 25 26 28 29 29 30 31 32 33 35 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 81 84 115 123 134
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 04, 61 64 78 111 121 126 141 171 182
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 06, 7 15 38 98 99 112 159 167
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 07, 21 24 33 39 54 56 68 88 101 128 130 142 148 183
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 075901, 183
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 075917, 56
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 075927, 88
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 075940, 54
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 08, 55 64 67 77 80 80 100 103 104 107 110 116 117 118 119 120 124 132 137 143 160 164 176 181 182 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 082041, 55
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 082900, 124
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 082905, 64
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 082909, 80
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 082916, 120
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 082928, 77
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 082934, 100
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084131, 164
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084251, 67
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084300, 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084349, 103
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084401, 117
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084414, 119
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084453, 176
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084519, 137
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084549, 110
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 084954, 160
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 085142, 132
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 085226, 107
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 085611, 181
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 085704, 182
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 085957, 116
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 09, 3 13 17 18 19 22 25 27 34 36 43 44 45 46 47 48 49 50 51 52 53 57 75 84 89 91 97 111 112 123 125 127 131 136 146 174
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 090017, 57
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 090245, 136
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 090323, 123
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 090343, 84
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 090652, 112
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 091116, 174
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 091352, 127
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 092404, 111
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 092411, 146
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 092416, 131
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 092421, 97
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 092657, 91
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 1, 2
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 10, 2 4 11 16 20 70 73 87 139 146 162 181
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 100, 101
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 100041, 90
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 100045, 139
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 101, 102
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 102, 103
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 103, 104
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 104, 105
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 105, 106
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 106, 107
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 107, 108
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 108, 109
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 109, 110
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 11, 12 106 174
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 110, 111
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 111, 112
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 112, 113
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 113, 114
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 114, 115
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 115, 116
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 116, 117
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 117, 118
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 118, 119
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 119, 120
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 12, 13 54 55 56 57 58 59 60 61 62 63 64 65 66 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 181 182 183 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 120, 121
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 121, 122
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 122, 123
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 123, 124
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 124, 125
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 125, 126
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 126, 127
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 127, 128
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 128, 129
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 129, 130
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 13, 4 14 61 68 69 70 74 79 83 85 89 93 96 99 101 108 125 127 128 130 135 140 141 142 143 144 148 150 153 155 159 161 163 173
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130, 131
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130713, 130
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130716, 128
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130737, 101
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130746, 148
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130751, 68
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130756, 142
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130801, 143
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130915, 89
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 130921, 125
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 131, 132
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 131719, 150
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 131724, 140
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 131730, 93
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 132, 133
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 133, 134
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 133307, 69
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 133406, 99
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 133416, 79
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 133419, 108
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 133430, 96
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 134, 135
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 134347, 155
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 134353, 144
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 134357, 163
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 134404, 141
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 135, 136
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 136, 137
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 137, 138
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 138, 139
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 139, 140
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 14, 8 9 10 14 15 23 26 28 30 31 32 35 37 40 41 42 60 65 70 73 74 78 81 85 87 89 90 102 104 105 115 119 122 129 133 134 149 157 157 159 161 166 168 169 171 173 173 177 178
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 140, 141
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 140346, 81
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 140354, 115
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 140358, 134
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 140402, 78
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 141, 142
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 141301, 161
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 141307, 159
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 141311, 70
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 141315, 173
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 141320, 74
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 141325, 85
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 142, 143
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 142305, 149
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 142345, 105
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 142351, 133
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 142356, 60
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 142404, 171
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 142411, 87
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 142419, 169
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 143, 144
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 143241, 177
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 143244, 65
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 143248, 178
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 143251, 168
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 144, 145
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 145, 146
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 145909, 104
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 145914, 157
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 145932, 166
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 145952, 102
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 146, 147
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 147, 148
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 148, 149
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 149, 150
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 15, 3 16 18 76 86 106 145 147 165
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 150, 151
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 151, 152
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 151120, 106
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 152, 153
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 152420, 145
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 152423, 76
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 152445, 86
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 152451, 147
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 152456, 165
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 153, 154
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 154, 155
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 155, 156
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 156, 157
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 157, 158
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 158, 159
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 159, 160
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 16, 6 7 8 9 10 14 15 17 21 23 24 26 28 29 30 31 32 33 35 37 38 39 40 41 42 56 57 59 59 61 63 63 66 71 72 79 83 94 98 109 114 120 126 128 131 135 153 154 162 172 174 175 185
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 160, 161
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 160201, 114
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 160207, 98
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 160212, 66
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 161, 162
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 161301, 153
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 161305, 61
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 161346, 83
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 161351, 135
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 161627, 59
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 161710, 162
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 161718, 175
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 161834, 172
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 162, 163
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 162027, 154
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 163, 164
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 163740, 71
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 163743, 109
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 163759, 72
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 163804, 126
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 163816, 63
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 164, 165
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 165, 166
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 166, 167
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 167, 168
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 168, 169
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 169, 170
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 17, 18 58 92 93 113 118 121 129 138 140 150 151 152 156 158 162 167 170 175 179
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 170, 171
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 171, 172
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 172, 173
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 172118, 58
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 172130, 179
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 172703, 156
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 172707, 167
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 172709, 118
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 173, 174
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 174, 175
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 175, 176
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 175002, 151
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 175007, 129
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 175133, 152
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 175136, 92
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 175144, 138
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 175204, 121
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 175429, 170
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 175634, 158
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 176, 177
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 177, 178
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 178, 179
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 179, 180
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 18, 16 19 58 62 82 94 108 122 150 169 172 175
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 180, 181
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 181, 182
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 182, 183
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 183, 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 183415, 122
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 184, 185
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 184317, 94
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 184325, 82
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 185237, 62
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 19, 13 20 90 180
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 2, 3
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 20, 21 25 38 55 73 74 75 95 97 106 113 125 145 154
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 200948, 75
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 201015, 73
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 2013, 17 19 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 181 182 183 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 2014, 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 90 180 185
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 201738, 113
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 204359, 95
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 21, 22 58 58 62 179 179
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 22, 4 6 7 15 16 19 20 22 23 24 27 34 36 39 43 44 45 46 47 48 49 50 51 52 53 123 180
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 23, 2 5 11 12 13 17 21 21 24 24 25 29 33 33 38 39 60 105 133 149
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 24, 2 25 76 82 82 85 86 87 94 95 97 111 122 131 140 145 146 147 165 169 171
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 25, 26 54 55 56 57 59 60 61 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 83 84 85 86 87 88 89 91 92 93 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 180 181 182 183 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 26, 16 27 59 88 91 107 154 170
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 27, 5 11 12 28 43 44 45 46 47 48 49 50 51 52 53 118 156 167
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 28, 7 20 29 77 90
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 29, 30 64 77 80 100 120 124
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 3, 4
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 30, 31 93 96 149 164 179
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 31, 5 11 12 15 32
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 32, 33 65 152 166 168 177 178
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 33, 15 34 43 44 45 46 47 48 49 50 51 52 53
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 34, 35 69 76 79 96 99 100 108 122 137 158 172
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 35, 18 22 27 36
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 36, 34 36 37 62 92 101
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 37, 20 38 71 72 109
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 38, 17 39 63 113 126
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 39, 19 40
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 4, 5 185
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 40, 4 9 41 54 55 71 177
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 41, 6 12 42 164
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 42, 5 11 43 67 84 109 132
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 43, 10 22 27 32 34 36 44 82 94 95 103 144 155 163 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 44, 13 23 28 41 45 65 86 105 117 119 136 138 139 141 176
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 45, 17 30 42 46 110 137
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 46, 2 31 47 81 83 148 155
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 47, 26 40 48
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 48, 14 35 37 49 75 103 110 178
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 49, 50 160
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 5, 6
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 50, 19 51 67 68 133 135 147 151 168
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 51, 3 52 92 129 132 138 152
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 52, 53 62 102 107 112 121 127 144 176
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 53, 14 54
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 54, 8 55 115 160
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 55, 9 10 23 26 28 30 31 32 35 37 40 41 42 56
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 56, 6 57 60 91 116 142 158 163 165 170 181
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 57, 3 8 58 182
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 58, 29 59 72 95 134
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 59, 54 56 60 88 102 104 116 157 166 183
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 6, 7
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 60, 61
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 61, 62
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 62, 63
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 63, 64
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 64, 65
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 65, 66
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 66, 67
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 67, 68
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 68, 69
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 69, 70
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 7, 8
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 70, 71
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 71, 72
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 72, 73
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 73, 74
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 74, 75
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 75, 76
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 76, 77
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 77, 78
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 78, 79
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 79, 80
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 8, 9
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 80, 81
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 81, 82
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 82, 83
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 83, 84
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 84, 85
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 85, 86
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 86, 87
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 87, 88
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 88, 89
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 89, 90
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 9, 10
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 90, 91
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 91, 92
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 92, 93
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 93, 94
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 94, 95
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 95, 96
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 96, 97
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 97, 98
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 98, 99
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, 99, 100
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, AI, 9
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, AIKIF, 5 29 38
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, BAT, 9
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, DATE, 1
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, FileList, 35
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, FileUsage, 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, Overview, 19
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, P, 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, Process, 185
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, ProcessFlow, 17
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, T, 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \AIKIF, 15
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \events\Christmas2013\20131221, 58 62 179
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \events\Christmas2013\20131224, 82 94 95 122
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \events\Christmas2013\20131225, 54 55 56 57 59 60 61 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 83 84 85 86 87 88 89 90 91 92 93 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 181 182 183 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \events\Christmas2013\Thumbs, 180
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\, 3 4 43 44 45 46 47 48 49 50 51 52 53
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI\, 15
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI\AI, 8
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI\AIKIF, 7 10 14
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI\addRawData, 12
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI\create, 13
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI\datGdeltproject, 11
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI\processRawData, 6
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI\run, 9
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\README, 2
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\AIKIF, 35
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\adjList, 36
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\advList, 22
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\bias, 41
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\commands, 37
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\goal, 31
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\goals, 26
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\knowledge, 40
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\medium, 29
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\nounList, 27
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\ontology, 25
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\people, 30
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\rawData, 28
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\refAction, 23
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\refObject, 32
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\sample, 21 24 33 38 39
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\verbList, 34
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data\websites, 42
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\doc\AIKIF, 16 17 18 19
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\doc\Thumbs, 20
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\tests\test, 5
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, applypatch, 45
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, catgory, 1
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, commit, 48 49 50
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, cpython, 15
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, create, 14
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, csv, 21 23 24 26 28 29 30 31 32 33 35 37 38 39 40 41 42
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, data, 18
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, db, 20 180
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, details, 1
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, event, 1
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, events, 21
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, filelist, 29 38
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, for, 29 38
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, git\hooks\applypatch, 53
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, git\hooks\commit, 44
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, git\hooks\post, 46 50 52
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, git\hooks\pre, 45 47 49 51
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, git\hooks\prepare, 48
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, git\hooks\update, 43
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, gitignore, 4
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, init, 3
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, jpg, 16 17 18 19 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 70 71 72 73 74 75 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 130 131 132 133 134 135 136 138 139 140 141 142 143 144 145 146 147 148 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 171 172 173 174 175 176 177 178 179 181 182 183 184
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, learning, 16
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, links, 33
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, list, 25
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, lists, 13
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, locations, 24
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, md, 2
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, mp4, 69 76 129 137 149 170
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, msg, 44 48 53
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, objects, 39
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, processRawData, 185
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, push, 51
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, py, 3 5 6 7 8 11 12 13 14 185
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, pyc, 10 15
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, pycache, 15
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, ran, 185
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, rebase, 47
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, receive, 52
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, sample, 43 44 45 46 47 48 49 50 51 52 53
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, structure, 18
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, txt, 22 25 27 34 36
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, types, 31
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, update, 46
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, utils, 7 10 15
+T:\user\dev\src\python\AI\data\EVENT_SYSTEM-PC-FILE.CSV, word, 13
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 0, 1
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 075901, 128
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 075917, 8
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 075927, 38
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 075940, 6
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 082041, 7
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 082900, 74
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 082905, 16
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 082909, 30
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 082916, 70
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 082928, 27
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 082934, 50
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 084131, 111
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 084251, 19
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 084300, 129
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 084349, 53
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 084401, 67
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 084414, 69
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 084453, 122
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 084549, 60
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 084954, 107
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 085142, 81
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 085226, 57
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 085611, 126
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 085704, 127
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 085957, 66
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 090017, 9
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 090245, 85
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 090323, 73
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 090343, 34
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 090652, 62
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 091116, 120
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 091352, 77
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 092404, 61
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 092411, 94
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 092416, 80
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 092421, 47
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 092657, 41
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 1, 2
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 10, 11
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 100, 101
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 100041, 40
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 100045, 87
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 101, 102
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 102, 103
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 103, 104
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 104, 105
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 105, 106
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 106, 107
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 107, 108
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 108, 109
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 109, 110
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 11, 12
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 110, 111
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 111, 112
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 112, 113
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 113, 114
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 114, 115
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 115, 116
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 116, 117
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 117, 118
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 118, 119
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 119, 120
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 12, 13
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 120, 121
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 121, 122
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 122, 123
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 123, 124
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 124, 125
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 125, 126
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 126, 127
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 127, 128
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 128, 129
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 13, 14
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 130713, 79
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 130716, 78
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 130737, 51
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 130746, 96
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 130751, 20
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 130756, 90
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 130801, 91
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 130915, 39
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 130921, 75
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 131719, 97
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 131724, 88
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 131730, 43
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 133406, 49
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 133416, 29
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 133419, 58
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 133430, 46
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 134347, 102
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 134353, 92
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 134357, 110
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 134404, 89
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 14, 15
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 140346, 31
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 140354, 65
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 140358, 83
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 140402, 28
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 141301, 108
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 141307, 106
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 141311, 21
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 141315, 119
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 141320, 25
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 141325, 35
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 142345, 55
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 142351, 82
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 142356, 12
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 142404, 117
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 142411, 37
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 142419, 116
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 143241, 123
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 143244, 17
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 143248, 124
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 143251, 115
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 145909, 54
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 145914, 104
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 145932, 113
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 145952, 52
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 15, 16
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 151120, 56
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 152420, 93
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 152445, 36
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 152451, 95
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 152456, 112
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 16, 17
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 160201, 64
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 160207, 48
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 160212, 18
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 161301, 100
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 161305, 13
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 161346, 33
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 161351, 84
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 161627, 11
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 161710, 109
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 161718, 121
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 161834, 118
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 162027, 101
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 163740, 22
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 163743, 59
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 163759, 23
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 163804, 76
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 163816, 15
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 17, 18
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 172118, 10
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 172130, 125
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 172703, 103
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 172707, 114
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 172709, 68
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 175002, 98
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 175133, 99
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 175136, 42
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 175144, 86
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 175204, 71
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 175634, 105
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 18, 19
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 183415, 72
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 184317, 44
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 184325, 32
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 185237, 14
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 19, 20
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 2, 3
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 20, 21
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 200948, 26
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 201015, 24
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 20131221, 10 14 125
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 20131224, 32 44 45 72
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 20131225, 6 7 8 9 11 12 13 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 33 34 35 36 37 38 39 40 41 42 43 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 126 127 128 129
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 201738, 63
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 204359, 45
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 21, 22
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 22, 23
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 23, 24
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 24, 25
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 25, 26
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 26, 27
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 27, 28
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 28, 29
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 29, 30
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 3, 4
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 30, 31
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 31, 32
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 32, 33
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 33, 34
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 34, 35
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 35, 36
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 36, 37
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 37, 38
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 38, 39
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 39, 40
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 4, 5
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 40, 41
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 41, 42
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 42, 43
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 43, 44
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 44, 45
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 45, 46
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 46, 47
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 47, 48
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 48, 49
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 49, 50
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 5, 6
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 50, 51
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 51, 52
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 52, 53
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 53, 54
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 54, 55
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 55, 56
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 56, 57
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 57, 58
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 58, 59
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 59, 60
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 6, 7
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 60, 61
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 61, 62
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 62, 63
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 63, 64
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 64, 65
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 65, 66
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 66, 67
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 67, 68
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 68, 69
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 69, 70
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 7, 8
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 70, 71
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 71, 72
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 72, 73
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 73, 74
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 74, 75
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 75, 76
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 76, 77
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 77, 78
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 78, 79
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 79, 80
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 8, 9
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 80, 81
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 81, 82
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 82, 83
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 83, 84
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 84, 85
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 85, 86
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 86, 87
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 87, 88
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 88, 89
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 89, 90
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 9, 10
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 90, 91
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 91, 92
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 92, 93
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 93, 94
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 94, 95
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 95, 96
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 96, 97
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 97, 98
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 98, 99
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, 99, 100
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, AIKIF, 2 3 4 5
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, Overview, 5
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, ProcessFlow, 3
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, data, 4
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, jpg, 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, learning, 2
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, pictures, 1
+T:\user\dev\src\python\AI\data\OBJECT_SYSTEM-PC-FILE.CSV, structure, 4
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, bias, 4
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, commands, 10
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, csv, 1 2 3 4 5 6 7 8 9 10
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, goal, 7
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, goals, 8
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, knowledge, 9
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, people, 6
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, rawData, 3
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, refAction, 2
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, refObject, 1
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, types, 7
+T:\user\dev\src\python\AI\data\AIKIF_FileList.csv, websites, 5
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 0, 1
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 10, 10
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 2, 1 2
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 3, 3
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 4, 4
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 5, 5
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 6, 6
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 7, 7
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 8, 8
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, 9, 9
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, P, 10
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, T, 3 4 5 6 7 8 9
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, \events\Christmas2013, 10
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI, 3
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\, 9
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI, 5
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\AI\, 6
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\data, 8
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\doc, 7
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, \user\dev\src\python\AI\tests, 4
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, folder, 2
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, git\hooks, 9
+T:\user\dev\src\python\AI\data\LOCATION_SYSTEM-PC-FILE.CSV, pycache, 6
+T:\user\dev\src\python\AI\data\commands.csv, 1, 2
+T:\user\dev\src\python\AI\data\commands.csv, 2, 3
+T:\user\dev\src\python\AI\data\commands.csv, 3, 4
+T:\user\dev\src\python\AI\data\commands.csv, command, 1
+T:\user\dev\src\python\AI\data\commands.csv, priority, 1
+T:\user\dev\src\python\AI\data\commands.csv, process, 3
+T:\user\dev\src\python\AI\data\commands.csv, read, 2
+T:\user\dev\src\python\AI\data\commands.csv, understand, 4
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 0, 3 33
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 00, 57 69 114 117 124 139 143 153 161 183 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 02, 2 3 4 5 11 12 13 16 18 18 20 22 25 27 34 36 66 78 90 90 98 114 136 151 156 180 180
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 03, 6 7 8 9 10 14 15 17 19 21 23 24 25 26 28 29 29 30 31 32 33 35 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 81 84 115 123 134
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 04, 61 64 78 111 121 126 141 171 182
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 06, 7 15 38 98 99 112 159 167
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 07, 21 24 33 39 54 56 68 88 101 128 130 142 148 183
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 075901, 183 183
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 075917, 56 56
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 075927, 88 88
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 075940, 54 54
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 08, 55 64 67 77 80 80 100 103 104 107 110 116 117 118 119 120 124 132 137 143 160 164 176 181 182 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 082041, 55 55
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 082900, 124 124
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 082905, 64 64
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 082909, 80 80
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 082916, 120 120
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 082928, 77 77
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 082934, 100 100
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084131, 164 164
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084251, 67 67
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084300, 184 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084349, 103 103
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084401, 117 117
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084414, 119 119
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084453, 176 176
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084519, 137 137
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084549, 110 110
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 084954, 160 160
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 085142, 132 132
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 085226, 107 107
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 085611, 181 181
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 085704, 182 182
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 085957, 116 116
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 09, 3 13 17 18 19 22 25 27 34 36 43 44 45 46 47 48 49 50 51 52 53 57 75 84 89 91 97 111 112 123 125 127 131 136 146 174
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 090017, 57 57
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 090245, 136 136
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 090323, 123 123
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 090343, 84 84
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 090652, 112 112
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 091116, 174 174
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 091352, 127 127
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 092404, 111 111
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 092411, 146 146
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 092416, 131 131
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 092421, 97 97
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 092657, 91 91
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 10, 2 4 16 20 70 73 87 139 146 162 181
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 100041, 90 90
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 100045, 139 139
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 10934, 14
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 10938711, 149
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 11, 106 174
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 114, 41
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 11443, 25
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 12, 54 55 56 57 58 59 60 61 62 63 64 65 66 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 181 182 183 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 1239, 48
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 13, 4 61 68 69 70 74 79 83 85 89 93 96 99 101 108 125 127 128 130 135 140 141 142 143 144 148 150 153 155 159 161 163 173
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 130713, 130 130
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 130716, 128 128
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 130737, 101 101
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 130746, 148 148
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 130751, 68 68
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 130756, 142 142
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 130801, 143 143
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 130915, 89 89
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 130921, 125 125
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 131719, 150 150
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 131724, 140 140
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 131730, 93 93
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 133307, 69 69
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 133406, 99 99
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 133416, 79 79
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 133419, 108 108
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 133430, 96 96
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 134347, 155 155
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 134353, 144 144
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 134357, 163 163
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 134404, 141 141
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 1348, 51
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 135, 35
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 14, 8 9 10 14 23 26 28 30 31 32 35 37 40 41 42 60 65 70 73 74 78 81 85 87 89 90 102 104 105 115 119 122 129 133 134 149 157 157 159 161 166 168 169 171 173 173 177 178
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 140346, 81 81
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 140354, 115 115
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 140358, 134 134
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 140402, 78 78
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 141301, 161 161
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 141307, 159 159
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 141311, 70 70
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 141315, 173 173
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 141320, 74 74
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 141325, 85 85
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 142305, 149 149
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 142345, 105 105
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 142351, 133 133
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 142356, 60 60
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 142404, 171 171
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 142411, 87 87
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 142419, 169 169
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 143241, 177 177
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 143244, 65 65
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 143248, 178 178
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 143251, 168 168
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 145909, 104 104
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 145914, 157 157
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 145932, 166 166
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 145952, 102 102
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 146, 40
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 15, 3 18 76 86 106 145 147 165
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 151120, 106 106
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 152420, 145 145
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 152423, 76 76
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 152445, 86 86
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 152451, 147 147
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 152456, 165 165
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 155, 42
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 1556931, 112
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 16, 6 7 8 9 10 14 15 21 23 24 26 28 29 30 31 32 33 35 37 38 39 40 41 42 56 57 59 59 61 63 63 66 71 72 79 83 94 98 109 114 120 126 128 131 135 153 154 162 172 174 175
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 160, 50
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 160201, 114 114
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 160207, 98 98
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 160212, 66 66
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 161301, 153 153
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 161305, 61 61
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 161346, 83 83
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 161351, 135 135
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 161627, 59 59
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 161710, 162 162
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 161718, 175 175
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 161834, 172 172
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 162027, 154 154
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 1629, 8
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 163740, 71 71
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 163743, 109 109
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 163759, 72 72
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 163804, 126 126
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 163816, 63 63
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 1648151, 27
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 166, 23
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 17, 39 58 92 93 113 118 121 129 138 140 150 151 152 156 158 162 167 170 175 179
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 1704, 49
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 172118, 58 58
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 172130, 179 179
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 1723128, 97
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 172703, 156 156
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 172707, 167 167
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 172709, 118 118
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 175002, 151 151
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 175007, 129 129
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 175133, 152 152
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 175136, 92 92
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 175144, 138 138
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 175204, 121 121
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 175429, 170 170
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 175634, 158 158
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 1765376, 180
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 18, 16 58 62 82 94 108 122 150 169 172 175
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 183415, 122 122
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 184317, 94 94
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 184325, 82 82
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 185237, 62 62
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 1874537, 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 189, 46
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 19, 13 90 180
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 20, 25 38 55 73 74 75 95 97 106 113 125 145 154
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 200948, 75 75
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 201015, 73 73
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2013, 17 19 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 181 182 183 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 20131221, 58 62 179
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 20131224, 82 94 95 122
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 20131225, 54 55 56 57 59 60 61 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 83 84 85 86 87 88 89 90 91 92 93 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 181 182 183 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2014, 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 90 180
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 201738, 113 113
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 204359, 95 95
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2054, 21
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2077500, 119
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2084720, 78
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 21, 58 58 62 179 179
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2105130, 181
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 211, 28
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2113, 31
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2167594, 105
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 22, 4 6 7 15 16 19 20 22 24 27 34 36 39 43 44 45 46 47 48 49 50 51 52 53 123 180
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2209719, 153
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2224828, 154
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2228950, 136
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2246832, 61
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2249677, 172
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 23, 2 5 11 12 13 17 21 21 24 25 29 33 33 38 39 60 105 133 149
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2311743, 176
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 23227984, 69
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2324, 12
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 23370, 29
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2377989, 117
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2382909, 175
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2383948, 162
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2394843, 182
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 24, 2 76 82 82 85 86 87 94 95 97 111 122 131 140 145 146 147 165 169 171
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2430203, 95
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 243756, 36
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2440877, 132
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2461906, 110
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2499017, 107
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 25, 54 55 56 57 59 60 61 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 83 84 85 86 87 88 89 91 92 93 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 180 181 182 183 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2518232, 168
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2528312, 75
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2553837, 83
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2559519, 59
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 25600, 20
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 257, 24
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2577128, 131
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 26, 16 59 88 91 107 154 170
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2621867, 135
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2655624, 57
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2659199, 134
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 266085, 17
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2668027, 55
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2673247, 103
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2685953, 122
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2695806, 67
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 27, 5 11 12 43 44 45 46 47 48 49 50 51 52 53 118 156 167
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 270240, 19
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2706016, 114
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 271, 32
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2712101, 173
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2717, 26
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2767106, 169
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2773985, 94
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2775626, 109
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2786397, 60
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2793266, 73
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 28, 7 20 77 90
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2815, 38
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2816783, 179
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2826452, 113
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2826606, 56
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2852594, 115
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2854489, 82
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2866160, 58
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2867504, 133
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 29, 64 77 80 100 120 124
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2909664, 160
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2915842, 125
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2917060, 178
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2926517, 88
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 29360846, 129
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2943673, 111
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2945520, 161
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2972354, 90
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 2981626, 99
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 30, 93 96 149 164 179
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3000996, 66
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3013914, 159
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3019332, 138
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3043938, 147
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3048002, 120
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3071, 2
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3072772, 71
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3085924, 74
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 31, 5 11 12 15
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3111585, 54
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3114504, 101
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3123863, 116
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3123882, 80
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3135128, 177
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3160245, 141
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3166326, 70
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3182729, 85
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3186676, 89
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3199987, 92
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 32, 65 152 166 168 177 178
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3203689, 163
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3234875, 126
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3238497, 139
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3244515, 123
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3246201, 64
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3248807, 87
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3256111, 171
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3256115, 79
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3268322, 108
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3292055, 157
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3299289, 148
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 33, 15 15 43 44 45 46 47 48 49 50 51 52 53
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3307332, 81
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3332626, 86
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3336337, 158
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3365399, 100
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3369983, 77
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3380984, 174
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3382145, 124
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3383862, 93
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3391375, 150
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3392728, 63
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3395047, 96
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 34, 69 76 79 96 99 100 108 122 137 158 172
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3415922, 72
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3416987, 65
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3432646, 165
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3450316, 152
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3453768, 127
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3486217, 140
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 35, 18 22 27
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3523089, 84
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3540271, 68
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3552408, 144
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3560569, 98
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3575856, 91
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3576404, 130
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 36, 34 36 62 92 101
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3601077, 118
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3606778, 106
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3607279, 156
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3609609, 164
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3611, 43
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3611992, 151
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 362, 30
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3630160, 183
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3637117, 121
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3653796, 166
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3679801, 143
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3687636, 146
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3695070, 145
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3699917, 167
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 37, 20 71 72 109
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3708851, 62
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3718968, 155
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 372039, 34
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3757586, 104
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3785201, 142
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3793320, 128
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 38, 17 63 113 126
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 3805480, 102
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 39, 19
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 398, 45
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 40, 4 9 54 55 71 177
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 402564, 18
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 41, 6 12 164
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 42, 5 11 67 84 109 132
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 43, 10 22 27 32 34 36 82 94 95 103 144 155 163 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 44, 13 23 28 41 65 86 105 117 119 136 138 139 141 176
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 45, 17 30 42 110 137
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 452, 53
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 4526414, 76
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 46, 2 31 81 83 148 155
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 47, 26 40
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 48, 14 35 37 75 103 110 178
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 4865, 10
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 49, 160
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 4951, 47
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 50, 19 67 68 133 135 147 151 168
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 51, 3 92 129 132 138 152
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 5105, 7
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 51556769, 170
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 52, 62 102 107 112 121 127 144 176
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 53, 9 14
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 54, 8 115 160
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 54106, 22
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 542, 5
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 545665, 16
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 55, 9 10 23 26 28 30 31 32 35 37 40 41 42
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 552, 52
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 56, 6 60 91 116 142 158 163 165 170 181
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 57, 3 8 182
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 58, 29 72 95 134
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 59, 54 56 88 102 104 116 157 166 183
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 5965, 13
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 597, 11
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 6635, 6
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 67, 37
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 6724505, 137
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 6766, 15
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 75, 4
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, 896, 44
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, AI, 8 9 9
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, AIKIF, 5 5 7 10 14 15 16 17 18 19 29 29 35 38 38
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, BAT, 9 9
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, FileList, 35 35
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, Overview, 19 19
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, P, 54 54 55 55 56 56 57 57 58 58 59 59 60 60 61 61 62 62 63 63 64 64 65 65 66 66 67 67 68 68 69 69 70 70 71 71 72 72 73 73 74 74 75 75 76 76 77 77 78 78 79 79 80 80 81 81 82 82 83 83 84 84 85 85 86 86 87 87 88 88 89 89 90 90 91 91 92 92 93 93 94 94 95 95 96 96 97 97 98 98 99 99 100 100 101 101 102 102 103 103 104 104 105 105 106 106 107 107 108 108 109 109 110 110 111 111 112 112 113 113 114 114 115 115 116 116 117 117 118 118 119 119 120 120 121 121 122 122 123 123 124 124 125 125 126 126 127 127 128 128 129 129 130 130 131 131 132 132 133 133 134 134 135 135 136 136 137 137 138 138 139 139 140 140 141 141 142 142 143 143 144 144 145 145 146 146 147 147 148 148 149 149 150 150 151 151 152 152 153 153 154 154 155 155 156 156 157 157 158 158 159 159 160 160 161 161 162 162 163 163 164 164 165 165 166 166 167 167 168 168 169 169 170 170 171 171 172 172 173 173 174 174 175 175 176 176 177 177 178 178 179 179 180 180 181 181 182 182 183 183 184 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, ProcessFlow, 17 17
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, README, 2
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, T, 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 24 25 25 26 26 27 27 28 28 29 29 30 30 31 31 32 32 33 33 34 34 35 35 36 36 37 37 38 38 39 39 40 40 41 41 42 42 43 43 44 44 45 45 46 46 47 47 48 48 49 49 50 50 51 51 52 52 53 53
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, Thumbs, 20 180
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \AIKIF, 15
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \events\Christmas2013, 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \events\Christmas2013\20131221, 58 62 179
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \events\Christmas2013\20131224, 82 94 95 122
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \events\Christmas2013\20131225, 54 55 56 57 59 60 61 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 83 84 85 86 87 88 89 90 91 92 93 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 181 182 183 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \events\Christmas2013\Thumbs, 180
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI, 2 3 4
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\, 3 4 43 43 44 44 45 45 46 46 47 47 48 48 49 49 50 50 51 51 52 52 53 53
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\AI, 6 7 8 9 10 11 12 13 14
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\AI\, 15 15
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\AI\AI, 8
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\AI\AIKIF, 7 10 14
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\AI\addRawData, 12
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\AI\create, 13
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\AI\datGdeltproject, 11
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\AI\processRawData, 6
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\AI\run, 9
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\README, 2
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data, 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\AIKIF, 35
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\adjList, 36
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\advList, 22
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\bias, 41
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\commands, 37
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\goal, 31
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\goals, 26
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\knowledge, 40
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\medium, 29
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\nounList, 27
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\ontology, 25
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\people, 30
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\rawData, 28
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\refAction, 23
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\refObject, 32
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\sample, 21 24 33 38 39
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\verbList, 34
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\data\websites, 42
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\doc, 16 17 18 19 20
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\doc\AIKIF, 16 17 18 19
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\doc\Thumbs, 20
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\tests, 5
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, \user\dev\src\python\AI\tests\test, 5
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, addRawData, 12
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, adjList, 36
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, advList, 22
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, applypatch, 45 45 53
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, bias, 41
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, commands, 37
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, commit, 44 48 48 49 49 50 50
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, cpython, 15 15
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, create, 13 14 14
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, csv, 21 21 23 23 24 24 26 26 28 28 29 29 30 30 31 31 32 32 33 33 35 35 37 37 38 38 39 39 40 40 41 41 42 42
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, datGdeltproject, 11
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, data, 18 18
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, date, 1
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, db, 20 20 180 180
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, events, 21 21
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, filelist, 29 29 38 38
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, for, 29 29 38 38
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, fullFilename, 1
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, git\hooks, 43 44 45 46 47 48 49 50 51 52 53
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, git\hooks\applypatch, 53
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, git\hooks\commit, 44
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, git\hooks\post, 46 50 52
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, git\hooks\pre, 45 47 49 51
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, git\hooks\prepare, 48
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, git\hooks\update, 43
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, gitignore, 4 4
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, goal, 31
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, goals, 26
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, init, 3 3
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, jpg, 16 16 17 17 18 18 19 19 54 54 55 55 56 56 57 57 58 58 59 59 60 60 61 61 62 62 63 63 64 64 65 65 66 66 67 67 68 68 70 70 71 71 72 72 73 73 74 74 75 75 77 77 78 78 79 79 80 80 81 81 82 82 83 83 84 84 85 85 86 86 87 87 88 88 89 89 90 90 91 91 92 92 93 93 94 94 95 95 96 96 97 97 98 98 99 99 100 100 101 101 102 102 103 103 104 104 105 105 106 106 107 107 108 108 109 109 110 110 111 111 112 112 113 113 114 114 115 115 116 116 117 117 118 118 119 119 120 120 121 121 122 122 123 123 124 124 125 125 126 126 127 127 128 128 130 130 131 131 132 132 133 133 134 134 135 135 136 136 138 138 139 139 140 140 141 141 142 142 143 143 144 144 145 145 146 146 147 147 148 148 150 150 151 151 152 152 153 153 154 154 155 155 156 156 157 157 158 158 159 159 160 160 161 161 162 162 163 163 164 164 165 165 166 166 167 167 168 168 169 169 171 171 172 172 173 173 174 174 175 175 176 176 177 177 178 178 179 179 181 181 182 182 183 183 184 184
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, knowledge, 40
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, learning, 16 16
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, links, 33 33
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, list, 25 25
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, lists, 13 13
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, locations, 24 24
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, md, 2 2
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, medium, 29
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, mp4, 69 69 76 76 129 129 137 137 149 149 170 170
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, msg, 44 44 48 48 53 53
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, name, 1
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, nounList, 27
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, objects, 39 39
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, ontology, 25
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, path, 1
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, people, 30
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, post, 46 50 52
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, pre, 45 47 49 51
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, prepare, 48
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, processRawData, 6
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, push, 51 51
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, py, 3 3 5 5 6 6 7 7 8 8 11 11 12 12 13 13 14 14
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, pyc, 10 10 15 15
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, pycache, 15 15
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, rawData, 28
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, rebase, 47 47
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, receive, 52 52
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, refAction, 23
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, refObject, 32
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, run, 9
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, sample, 21 24 33 38 39 43 43 44 44 45 45 46 46 47 47 48 48 49 49 50 50 51 51 52 52 53 53
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, size, 1
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, structure, 18 18
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, test, 5
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, txt, 22 22 25 25 27 27 34 34 36 36
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, types, 31 31
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, update, 43 46 46
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, utils, 7 7 10 10 15 15
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, verbList, 34
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, websites, 42
+T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv, word, 13 13
+T:\user\dev\src\python\AI\data\knowledge.csv, 0, 2 3 4
+T:\user\dev\src\python\AI\data\knowledge.csv, 9, 2 3 4
+T:\user\dev\src\python\AI\data\knowledge.csv, Christmas, 4
+T:\user\dev\src\python\AI\data\knowledge.csv, FILE, 4
+T:\user\dev\src\python\AI\data\knowledge.csv, NAS, 4
+T:\user\dev\src\python\AI\data\knowledge.csv, PC, 4
+T:\user\dev\src\python\AI\data\knowledge.csv, allow, 2
+T:\user\dev\src\python\AI\data\knowledge.csv, are, 3 4
+T:\user\dev\src\python\AI\data\knowledge.csv, by, 3
+T:\user\dev\src\python\AI\data\knowledge.csv, category, 1
+T:\user\dev\src\python\AI\data\knowledge.csv, caused, 3
+T:\user\dev\src\python\AI\data\knowledge.csv, cloud, 3
+T:\user\dev\src\python\AI\data\knowledge.csv, columns, 2
+T:\user\dev\src\python\AI\data\knowledge.csv, dictionaries, 2
+T:\user\dev\src\python\AI\data\knowledge.csv, events, 4
+T:\user\dev\src\python\AI\data\knowledge.csv, fact, 1
+T:\user\dev\src\python\AI\data\knowledge.csv, in, 4
+T:\user\dev\src\python\AI\data\knowledge.csv, low, 3
+T:\user\dev\src\python\AI\data\knowledge.csv, named, 2
+T:\user\dev\src\python\AI\data\knowledge.csv, photos, 4
+T:\user\dev\src\python\AI\data\knowledge.csv, pressure, 3
+T:\user\dev\src\python\AI\data\knowledge.csv, python, 2
+T:\user\dev\src\python\AI\data\knowledge.csv, stored, 4
+T:\user\dev\src\python\AI\data\knowledge.csv, storms, 3
+T:\user\dev\src\python\AI\data\knowledge.csv, systems, 3
+T:\user\dev\src\python\AI\data\knowledge.csv, under, 4
+T:\user\dev\src\python\AI\data\knowledge.csv, weather, 3
+T:\user\dev\src\python\AI\data\knowledge.csv, weight, 1
+T:\user\dev\src\python\AI\data\bias.csv, 0, 2 3 4 5 6
+T:\user\dev\src\python\AI\data\bias.csv, 75, 6
+T:\user\dev\src\python\AI\data\bias.csv, 8, 5
+T:\user\dev\src\python\AI\data\bias.csv, 9, 4
+T:\user\dev\src\python\AI\data\bias.csv, 95, 3
+T:\user\dev\src\python\AI\data\bias.csv, 99, 2
+T:\user\dev\src\python\AI\data\bias.csv, comment, 6
+T:\user\dev\src\python\AI\data\bias.csv, dataset, 3
+T:\user\dev\src\python\AI\data\bias.csv, person, 4
+T:\user\dev\src\python\AI\data\bias.csv, sensors, 2
+T:\user\dev\src\python\AI\data\bias.csv, source, 1
+T:\user\dev\src\python\AI\data\bias.csv, website, 5 6
+T:\user\dev\src\python\AI\data\bias.csv, weight, 1
+T:\user\dev\src\python\AI\data\websites.csv, 0, 2 3 4 5 6 7 8
+T:\user\dev\src\python\AI\data\websites.csv, 1, 8
+T:\user\dev\src\python\AI\data\websites.csv, 4chan, 8
+T:\user\dev\src\python\AI\data\websites.csv, 7, 6 7
+T:\user\dev\src\python\AI\data\websites.csv, 8, 4 5
+T:\user\dev\src\python\AI\data\websites.csv, 9, 2 3
+T:\user\dev\src\python\AI\data\websites.csv, au, 2 3
+T:\user\dev\src\python\AI\data\websites.csv, bias, 1
+T:\user\dev\src\python\AI\data\websites.csv, com, 4 5 6 7 8
+T:\user\dev\src\python\AI\data\websites.csv, edu, 3
+T:\user\dev\src\python\AI\data\websites.csv, gov, 2
+T:\user\dev\src\python\AI\data\websites.csv, lesswrong, 5
+T:\user\dev\src\python\AI\data\websites.csv, reddit, 6
+T:\user\dev\src\python\AI\data\websites.csv, slashdot, 7
+T:\user\dev\src\python\AI\data\websites.csv, url, 1
+T:\user\dev\src\python\AI\data\websites.csv, wikipedia, 4
