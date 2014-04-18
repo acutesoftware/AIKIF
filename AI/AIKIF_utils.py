@@ -11,10 +11,10 @@ import lib_data as dat
 import lib_file as fle
 
 localPath = '..//data//' # os.getcwd()
-logFileProcess = 'process.log'
-logFileSource = 'source.log'
-logFileCommand = 'command.log'
-logFileResult = 'result.log'
+logFileProcess = localPath + 'log//process.log'
+logFileSource = localPath + 'log//source.log'
+logFileCommand = localPath + 'log//command.log'
+logFileResult = localPath + 'log//result.log'
 
 # -----------------------------------------
 # --   Prepare Data structures 
@@ -58,7 +58,7 @@ def printFileList(l):
     fileList = [row['fname'] for row in l]
     numFiles = 0 
     for fileName in fileList:
-        fileName = localPath + fileName
+        fileName = localPath + 'temp//' + fileName
         numFiles=numFiles+1
         print (fileName, "\t",dat.countLinesInFile(fileName), "rows" , "\t(", os.path.getsize(fileName), "bytes)")
   
@@ -119,17 +119,17 @@ def LogDataSource(src, prg=''):
 	fle.log(logFileSource , dat.ForceToString(src), prg)
     
 def LogProcess(process, prg=''):
-    # function to process raw data using Bias tables to get a comprehension of the information
+    # log a process or program
     #print(' process = ', process)
 	fle.log(logFileProcess, dat.ForceToString(process), prg)
 
 def LogCommand(cmd, prg=''):
-    # function to process raw data using Bias tables to get a comprehension of the information
+    # record the command passed
     #print(' command = ', cmd)
 	fle.log(logFileCommand , dat.ForceToString(cmd), prg)
 
 def LogResult(res, prg=''):
-    # function to process raw data using Bias tables to get a comprehension of the information
+    # record the output of the command
     #print('   result    = ', res)
 	fle.log(logFileResult , dat.ForceToString(res), prg)
     

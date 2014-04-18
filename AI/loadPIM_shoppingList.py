@@ -19,12 +19,13 @@ import AIKIF_utils as aikif
 import fileMapping as filemap
 
 
-srcURL = filemap.GetDataPath() + '\shoppingList.txt'
+srcURL = filemap.GetDataPath() + '\\raw\\shoppingList.txt'
 
 subjectArea = filemap.FindOntology('shopping') # should return 'INFO-PIM-SHOPPING'
 #print ( 'subjectArea = ' + subjectArea[0])
 
-shopping_fileList = filemap.GetFullFilename(filemap.FindType('thing'), subjectArea[0])   	
+shopping_fileList = filemap.GetFullFilename(filemap.FindType('thing'), subjectArea[0])   
+
 
 # Standard functions for all loading scripts to allow querying from file mapper and checker
 def GetSrcURL(): return srcURL

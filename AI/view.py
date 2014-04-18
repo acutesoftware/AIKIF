@@ -57,8 +57,8 @@ def ProcessInputUntilUserQuits(AIKIF_FileList):
 def ShowStatistics(AIKIF_FileList):
 	print(' ----=== Statistics for AIKIF ===----')
 	print(' AIKIF_FileList          = ' + str(len(AIKIF_FileList)))
-	print(' index entries           = ' + str(dat.countLinesInFile('ndxFull.txt')))
-	print(' indexed words - unique  = ' + str(dat.countLinesInFile('ndxWordsToFiles.txt')))
+	print(' index entries           = ' + str(dat.countLinesInFile('..\\data\\index\\ndxFull.txt')))
+	print(' indexed words - unique  = ' + str(dat.countLinesInFile('..\\data\\index\\ndxWordsToFiles.txt')))
 	
 	print(' Python files in getcwd  = ' + str(len(fle.GetFileList([os.getcwd()], ['*.py'], ["__pycache__", ".git"], False))))
 	

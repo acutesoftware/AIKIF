@@ -13,16 +13,17 @@ import as_util_data as dat
 import AIKIF_utils as aikif
 
 
-verbList = dat.ReadFileToList('..//data//verbList.txt')
-nounList = dat.ReadFileToList('..//data//nounList.txt')
-adjectiveList = dat.ReadFileToList('..//data//adjList.txt')
-adverbList = dat.ReadFileToList('..//data//advList.txt')
+verbList = dat.ReadFileToList('..//data//ref//verbList.txt')
+nounList = dat.ReadFileToList('..//data//ref//nounList.txt')
+adjectiveList = dat.ReadFileToList('..//data//ref//adjList.txt')
+adverbList = dat.ReadFileToList('..//data//ref//advList.txt')
 
 #print(adjectiveList)
 
 def TEST():
     addData('duncan', 'sees', 'the lazy dog chases the faster cat')
-    addData('duncan', 'sees', 'the huge horse plants a tiny flower')
+    addData('duncan', 'sees', 'the huge horse jumps over the gate')
+    addData('duncan', 'thinks', 'I have been coding for too long and need a break')
     addData('website', 'claim', 'for the past 16 years we have been helping businesses via high quality software')
     addData('website', 'question', 'How do I make a small label clickable')
 

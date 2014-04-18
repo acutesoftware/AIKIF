@@ -20,9 +20,9 @@ goals = [
 	]
 
 projects = [
-	{'id': 'aikif', 'parent': '', 'name': 'Artificial Intelligence Knowledge Information Framework', 'folder': r'T:\user\dev\src\python\AI'},
-	{'id': 'aikif_examples', 'parent': 'aikif', 'name': 'Build Examples for AIKIF', 'folder': r'S:\DATA\opendata\ontology\WordNet\wnsqlbuilder\SQL'},
-	{'id': 'shelves', 'parent': 'house', 'name': 'Put up shelf in kitchen', 'folder':''}
+	{'id': 'aikif', 'parent': '',  'due_date': '12/12/2012', 'name': 'Artificial Intelligence Knowledge Information Framework', 'folder': r'T:\user\dev\src\python\AI'},
+	{'id': 'aikif_examples', 'parent': 'aikif', 'due_date': '06/09/2012', 'name': 'Build Examples for AIKIF', 'folder': r'S:\DATA\opendata\ontology\WordNet\wnsqlbuilder\SQL'},
+	{'id': 'shelves', 'parent': 'house', 'due_date': '11/05/2012', 'name': 'Put up shelf in kitchen', 'folder':''}
 	]
 
 tasks = [
@@ -56,19 +56,20 @@ links = [
 	]
 
 aikif_events = [
-	{'table': 'tasks',   'column': 'add_date', 'weight': 0.9, 'logging': 3},
-	{'table': 'tasks',   'column': 'due_date', 'weight': 0.9, 'logging': 3},
-	{'table': 'tasks',   'column': 'complete_date', 'weight': 0.9, 'logging': 3},
-	{'table': 'contacts', 'column': 'add_date', 'weight': 0.9, 'logging': 3}
+	{'table': 'tasks',   'column': 'add_date'},
+	{'table': 'tasks',   'column': 'due_date'},
+	{'table': 'tasks',   'column': 'complete_date'},
+	{'table': 'projects',   'column': 'due_date'},
+	{'table': 'contacts', 'column': 'add_date'}
 ]
 
 aikif_objects = [
-	{'table': 'resources',  'column': 'name', 'weight': 0.9, 'logging': 3}
+	{'table': 'resources',  'column': 'name'}
 ]
 
 aikif_locations = [
-	{'table': 'contacts', 'column': 'contact', 'weight': 0.9, 'logging': 3},
-	{'table': 'projects', 'column': 'folder', 'weight': 0.9, 'logging': 3}
+	{'table': 'contacts', 'column': 'contact'},
+	{'table': 'projects', 'column': 'folder'}
 ]
 
 
@@ -80,9 +81,9 @@ def main():
 	#for t in tableList:
 	#ProcessData('PIM', goals, 'goals')
 	ProcessData('project', projects, 'projects')
-	ProcessData('TASK', tasks, 'tasks')
-	ProcessData('contact', contacts, 'contacts')
-	ProcessData('RESOURCE', resources, 'resources')
+	#ProcessData('TASK', tasks, 'tasks')
+	#ProcessData('contact', contacts, 'contacts')
+	#ProcessData('RESOURCE', resources, 'resources')
 	
 	
 def ProcessData(subjectAreaSearch, lst, title):
@@ -104,16 +105,16 @@ def ProcessData(subjectAreaSearch, lst, title):
 		text = ''
 		#print(dictRecord)
 		for k,v in dictRecord.items():  # this is the projects, tasks, contacts or goals
-			#print('key=',k,', val=',v)
+			print('key=',k,', val=',v)
 			#text = v['name']
 			if k == 'name': 
 				text = v
 			for e in aikif_events:
 				if e['table'] == title:
-#					print('TESTING k=', k, ' == ', e['column'])
+					print('TESTING k=', k, ' == ', e['column'])
 					if e['column'] in k:
 #						if text != '':
-						#print('mapping ', text, ' to ', k) 
+						print('mapping ', text, ' to ', k) 
 						eventsList.append([0, v, k, text])
 			for dic in aikif_objects:
 				if dic['table'] == title:

@@ -16,6 +16,8 @@ if len(sys.argv) == 2:
 	if sys.argv[1] == 'Q':
 		silent = 'Y'
 
+ndxPath = filemap.GetDataPath() + '\\index'
+		
 def index():
 	# main function - outputs in following format BEFORE consolidation (which is TODO)
 	# filename, word, linenumbers
@@ -32,12 +34,12 @@ def index():
 		print('Rebuilding Indexes')
 		print('------------------')	
 
-	ndxFile = 'ndxFull.txt'
-	opIndex = 'ndxWordsToFiles.txt'
+	ndxFile = ndxPath + '\\ndxFull.txt'
+	opIndex = ndxPath + '\\ndxWordsToFiles.txt'
 	with open(ndxFile, "w") as ndx:
 		ndx.write('filename, word, linenumbers\n')
 
-	files_to_index = fle.GetFileList([filemap.GetDataPath()], ['*.csv'], ["__pycache__", ".git"])
+	files_to_index = fle.GetFileList([filemap.GetDataPath() + '\\core'], ['*.csv'], ["__pycache__", ".git"])
 	for f in files_to_index:
 		buildIndex(f, ndxFile, silent)
 	#buildIndex('..//data//test-file.txt', ndxFile, silent)

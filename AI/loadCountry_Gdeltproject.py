@@ -24,7 +24,7 @@ import fileMapping as filemap
 
 
 srcURL = 'http://gdeltproject.org/data/lookups/CAMEO.country.txt'
-tmpFile = filemap.GetDataPath() + '\CAMEO.country.txt'
+tmpFile = filemap.GetDataPath() + '\\raw\\CAMEO.country.txt'
 location_fileList = filemap.GetFullFilename(filemap.FindType('location'), 'WORLD')   	
 
 # Standard functions for all loading scripts to allow querying from file mapper and checker

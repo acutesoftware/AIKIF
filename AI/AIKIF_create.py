@@ -16,12 +16,12 @@ import csv
 sys.path.append('..//..//_AS_LIB')
 import as_util_data as dat
 import AIKIF_utils as aikif
-localPath = '..//data//' # os.getcwd()
+localPath = '..//data//temp' # os.getcwd()
 
 def wipeSampleFiles():
     # wipes all files in the filelist passed (be careful)
     try:
-        with open('..//data//AIKIF_FileList.csv', 'r') as f:
+        with open('..//data//temp//AIKIF_FileList.csv', 'r') as f:
             filelist = f.readlines()
             for f in filelist: 
                 f = localPath + f
@@ -35,11 +35,11 @@ def wipeSampleFiles():
                 
 def createSampleFile(fname, header):
     #print("Creating sample file - ", fname)
-    wr = csv.writer(open('..//data//' + fname, 'wt'), quoting=csv.QUOTE_ALL, lineterminator='\n')
+    wr = csv.writer(open('..//data//temp//' + fname, 'wt'), quoting=csv.QUOTE_ALL, lineterminator='\n')
     wr.writerow(header)
      
 def addSampleData(fname, content):
-    wr = csv.writer(open('..//data//' + fname, 'at'), quoting=csv.QUOTE_ALL, lineterminator='\n')
+    wr = csv.writer(open('..//data//temp//' + fname, 'at'), quoting=csv.QUOTE_ALL, lineterminator='\n')
     wr.writerow(content)
      
 
@@ -147,4 +147,4 @@ aikif.printFileList(AIKIF_FileList)
 
 
 
-aikif.SaveFileList(AIKIF_FileList, '..//data//AIKIF_FileList.csv')
+aikif.SaveFileList(AIKIF_FileList, '..//data//temp//AIKIF_FileList.csv')

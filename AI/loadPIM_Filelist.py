@@ -22,14 +22,9 @@ if len(sys.argv) == 2:
 		silent = 'Y'
 
 
-rawData_fileList = r"T:\user\dev\src\python\AI\data\sample-filelist-for-AIKIF.csv"
+rawData_fileList = r"T:\user\dev\src\python\AI\data\raw\sample-filelist-for-AIKIF.csv"
 #rawData_fileList = r"T:\user\dev\src\python\AI\data\small-filelist-for-AIKIF.csv"   # medium list creates 107,000 links - all combinations
 
-event_fileList = r"T:\user\dev\src\python\AI\data\sample-events.csv"
-object_fileList = r"T:\user\dev\src\python\AI\data\sample-objects.csv"
-location_fileList = r"T:\user\dev\src\python\AI\data\sample-locations.csv"
-link_fileList = r"T:\user\dev\src\python\AI\data\sample-links.csv"
-#pcUsageData = dat.load_csv(
 
 subjectArea = filemap.FindOntology('file') # should return 'SYSTEM-PC-FILE'
 #print ( 'subjectArea = ' + subjectArea[0])
@@ -38,7 +33,6 @@ event_fileList = filemap.GetFullFilename(filemap.FindType('event'), subjectArea[
 object_fileList = filemap.GetFullFilename(filemap.FindType('object'), subjectArea[0])    
 location_fileList = filemap.GetFullFilename(filemap.FindType('location'), subjectArea[0])   
 link_fileList = filemap.GetFullFilename(filemap.FindType('link'), subjectArea[0])    
-
 
 # Standard functions for all loading scripts to allow querying from file mapper and checker
 def GetSrcURL(): return ''

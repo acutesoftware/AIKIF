@@ -17,7 +17,7 @@ import xml.etree.ElementTree as ET
 
 ontologyClassificationFile = 'S:\\DATA\\opendata\\ontology\\wikipedia_categories\\dbpedia-ontology.owl.bz2.owl.bz2.owl'
 ipFolder = 'S://DATA//opendata//datasets//dict//'
-opFolder = '..//data//'  # os.getcwd()
+opFolder = '..//data//ref//'  # os.getcwd()
 
 def SaveListFirstWordOnly(msg, ipfile, opFile):
     numRecs = 0
@@ -132,7 +132,7 @@ def GetOntologyExtract(fname, txt):
 
 
 #    MAIN
-opFile = '..\\data\\ontology_list.txt'
+opFile = '..\\data\\ref\\ontology_list.txt'
 print('create_word_list.py - script to extract lists for AIKIF')
 print('Reading - ' + ontologyClassificationFile)
 #ExtractListOfWords()

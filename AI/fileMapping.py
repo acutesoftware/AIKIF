@@ -75,6 +75,7 @@ dataSubjectAreas = [
 	'SYSTEM-PC-LOG', 
 	'SYSTEM-PC-FILE', 
 	'SYSTEM-PC-FILE-LECTURES', 
+	'SYSTEM-PC-FILE-PROGRAM', 
 	]
 
 
@@ -83,11 +84,11 @@ def main():
 	print('File Mapping information for AIKIF - last updated 18/3/2014')
 	print('-----------------------------------------------------------')
 
-	BuildMasterFileMapping('Y') # TOK
+	BuildMasterFileMapping('HTML') # TOK
 
-	ShowListOfProposedFiles('N') # TOK
-	ShowListOfMappedFiles('N')   # TOK
-	ShowListOfPhysicalFiles('N')	# TOK
+	ShowListOfProposedFiles('HTML') # TOK
+	ShowListOfMappedFiles('HTML')   # TOK
+	ShowListOfPhysicalFiles('HTML')	# TOK
 
 
 def GetDataPath():
@@ -113,9 +114,9 @@ def ShowListOfProposedFiles(printList='Y'):
 		for i in fl_all:
 			print(i)
 	if printList == 'HTML':
-		dat.SaveListToFile(fl_all, 'file_list_required.csv')
-		net.FormatCsvAsHtml('file_list_required.csv', 'file_list_required.html')
-		fle.LaunchFile('file_list_required.html')
+		dat.SaveListToFile(fl_all, dataPath + '\\log\\file_list_required.csv')
+		net.FormatCsvAsHtml(dataPath + '\\log\\file_list_required.csv', dataPath + '\\log\\file_list_required.html')
+		fle.LaunchFile(dataPath + '\\log\\file_list_required.html')
 	numFiles = len(fl_all)
 	print('Proposed Files =  ' + str(numFiles))
 	return len(fl_all)
@@ -131,9 +132,9 @@ def ShowListOfMappedFiles(printList='Y'):
 		aikif.showColumnStructures(AIKIF_FileList)
 		#aikif.printFileList(AIKIF_FileList)
 	if printList == 'HTML':
-		dat.SaveListToFile(fl_defined, 'file_list_mapped.csv')
-		net.FormatCsvAsHtml('file_list_mapped.csv', 'file_list_mapped.html')
-		fle.LaunchFile('file_list_mapped.html')
+		dat.SaveListToFile(fl_defined, dataPath + '\\log\\file_list_mapped.csv')
+		net.FormatCsvAsHtml( dataPath + '\\log\\file_list_mapped.csv',  dataPath + '\\log\\file_list_mapped.html')
+		fle.LaunchFile( dataPath + '\\log\\file_list_mapped.html')
 
 	numFiles = len(fl_defined)	
 	print('Mapped Files =  ' + str(numFiles))
@@ -151,9 +152,9 @@ def ShowListOfPhysicalFiles(printList='Y'):
 		for i in fl_actual:
 			print(i)
 	if printList == 'HTML':
-		fle.SaveFileList(fl_actual, 'file_list_actual.csv', ["name", "path", "size", "date"])
-		net.FormatCsvAsHtml('file_list_actual.csv', 'file_list_actual.html')
-		fle.LaunchFile('file_list_actual.html')
+		fle.SaveFileList(fl_actual, dataPath + '\\log\\file_list_actual.csv', ["name", "path", "size", "date"])
+		net.FormatCsvAsHtml(dataPath + '\\log\\file_list_actual.csv', dataPath + '\\log\\file_list_actual.html')
+		fle.LaunchFile(dataPath + '\\log\\file_list_actual.html')
 	numFiles = len(fl_actual)	
 	print('Actual Files =  ' + str(numFiles))
 	return numFiles
@@ -213,7 +214,7 @@ def GetFullFilename(dataType, subjectArea):
 	#print('a = ', dataType)
 	#print('b = ', subjectArea)
 	# use os.sep()
-	return dataPath + '\\' + dataType + '_' + subjectArea + '.CSV'
+	return dataPath + '\\core\\' + dataType + '_' + subjectArea + '.CSV'
 	
 	
 def GetFilename(dataType, subjectArea):

@@ -40,7 +40,7 @@ class TestFileMap(unittest.TestCase):
 		self.assertEqual( filemap.FindOntology('shop'), ['INFO-PIM-SHOPPING'])	
 		self.assertEqual( filemap.FindOntology('DIARY'), ['INFO-PIM-DIARY'])	
 		self.assertEqual( filemap.FindOntology('INFO-MESSAGE-EMAIL'), ['INFO-MESSAGE-EMAIL'])	
-		self.assertEqual( filemap.FindOntology('PC-FILE'), ['SYSTEM-PC-FILE', 'SYSTEM-PC-FILE-LECTURES'])	# returns multiple
+		self.assertEqual( filemap.FindOntology('PC-FILE'), ['SYSTEM-PC-FILE', 'SYSTEM-PC-FILE-LECTURES', 'SYSTEM-PC-FILE-PROGRAM'])	# returns multiple
 		#self.assertEqual( filemap.FindOntology('Furniture'), ['OBJECT-ASSET-FURNITURE'])	
 		self.assertEqual( filemap.FindOntology('Task'), ['INFO-PIM-TASK'])	
 		self.assertEqual( filemap.FindOntology('Contact'), ['INFO-PIM-CONTACT'])	
