@@ -17,7 +17,7 @@ def TEST():
 	print('Creates random data and strings in various formats')
 	print('Random Strings....\n  ', random_hex_string(20), '\n  ', random_letters(50))
 	print('Random Block ....')
-	print(random_block(40,3))
+	print(random_block(30,11))
 	print('Data Table ....')
 	colLabel = ['DATE', 'name', 'password', 'Born',  'Quote', 'Score']
 	colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
@@ -34,18 +34,13 @@ def random_letters(sze=20):
 
 def generate_password(sze=18):
 	if sze < 8: sze = 8
-	pwd = random_letters(sze-3).lower() + str(random_int(10,99)) + random_letters(sze-6).upper()
-	#print(pwd)
-	return pwd
+	return random_letters(sze-3).lower() + str(random_int(10,99)) + random_letters(sze-6).upper()
 	
 def random_hex_string(sze=30):
 	return binascii.b2a_hex(os.urandom(sze))
 	
 def random_block(cols=40, rows=5):
-	op = ''
-	for r in range(0,rows):
-		op = op + random_letters(sze=cols) + '\n'
-	return op
+	return ''.join([random_letters(cols) + '\n' for r in range(0,rows)])
 
 def random_table(cols=3, rows=10, colSpecs =[], hdr=[]):
 	# verify the colSpecs required and assign defaults to empty sets
@@ -69,7 +64,7 @@ def random_table(cols=3, rows=10, colSpecs =[], hdr=[]):
 		tbl.append(thisRow)
 	return tbl
 
-def show_table(tbl):
+def show_table_OLD(tbl):
 	for row in tbl:
 		txt = ''
 		for col in row:
@@ -79,18 +74,16 @@ def show_table(tbl):
 				txt = txt + str(col) + ', '
 		print(txt)
 
-
-def save_table(tbl, fname, delim=',', quote='"'):
-	f = open(fname, "wt")
+def show_table_BETTER(tbl):
 	for row in tbl:
-		txt = ''
-		for col in row:
-			if type(col) is str:
-				txt = txt + quote + col + quote + delim
-			else:
-				txt = txt + quote + str(col) + quote + delim
-		txt = txt + '\n'
-		f.write(txt)
+		print(''.join([col + ', ' if type(col) is str else str(col) + ', ' for col in row]))
+
+def show_table(tbl):
+	print('\n'.join(','.join([col if type(col) is str else str(col) for col in row]) for row in tbl))
+
+def save_table(tbl, fname, delim=',', qu='"'):
+	with open(fname, "wt") as f:
+		f.write('\n'.join(','.join([qu + col + qu if type(col) is str else qu + str(col) + qu for col in row]) for row in tbl))
 
 def get_rand_text_from_list(lst):
 	try:
@@ -130,36 +123,37 @@ def load_lists(lst):
 			results.append({'name': 'PEOPLE', 'lst': get_list_people()})
 	return results
 
-def get_list_string():
+def get_list_string_OLD():
 	lst = []
 	for i in range(0,100):
 		lst.append(random_letters(10))
 	return lst
+
+def get_list_string():
+	return [random_letters(10) for i in range(0,100)]
 	
-def get_list_words():
+def get_list_words_OLD():
 	lst = []
 	with open(wordList) as f:
 		for line in f:
 			if random.randrange(1,100) > 90:  # only load 10% of random words
 				lst.append(line.strip().replace('_', ' '))
 	return lst
+	
+def get_list_words():
+	with open(wordList) as f:
+		return [line.strip().replace('_', ' ') for line in f if random.randrange(1,100) > 90]
 
 def get_list_dates():
 	return [i for i in range(1985, 2014)]
 
 def get_list_places():
-	lst = []
 	with open(places) as f:
-		for line in f:
-			lst.append(line.split(',')[2].strip().strip('"').title())
-	return lst
+		return [line.split(',')[2].strip().strip('"').title() for line in f]
 
 def get_list_people():
-	lst = []
 	with open(names) as f:
-		for line in f:
-			lst.append(line.split(',')[0].title())
-	return lst
+		return [line.split(',')[0].title() for line in f]
 	
 			
 if __name__ == '__main__':
