@@ -1,0 +1,9 @@
+2014-04-19 23:17:48,005,T:\user\dev\src\python\AI\AI\agents\gather
+2014-04-19 23:18:00,005,pc_usage.txt - Notepad
+2014-04-19 23:18:04,011,T:\user\dev\src\python\AI\AI\agents\gather
+2014-04-19 23:18:15,005,Administrator: Command Prompt - log_PC_usage.py
+2014-04-19 23:18:20,003,
+2014-04-19 23:25:00,027,Administrator: Command Prompt - log_PC_usage.py
+2014-04-19 23:25:26,007,T:\user\dev\src\python\AI\AI\agents\gather
+2014-04-19 23:25:33,002,Administrator: Command Prompt - log_PC_usage.py
+2014-04-19 23:25:35,002,Administrator: Command Prompt - log_PC_usage.py
