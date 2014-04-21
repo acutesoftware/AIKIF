@@ -49,7 +49,7 @@ class Programs(object):
 			with open(fname, 'w') as f:
 				f.write('\n'.join([i for i in self.lstPrograms]))
 
-			
+		
 		# save to standard AIKIF structure
 		location_fileList = filemap.GetFullFilename(filemap.FindType('LOCATION'), filemap.FindOntology('FILE-PROGRAM')[0])   	
 		object_fileList = filemap.GetFullFilename(filemap.FindType('OBJECT'), filemap.FindOntology('FILE-PROGRAM')[0])   	

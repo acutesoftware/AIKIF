@@ -14,11 +14,11 @@
 		# 	test.start()
 		# 	print(test.check_status())
 		# 	print(test.report())
-import sys
-sys.path.append('..//')
-sys.path.append('..//..//..//aspytk')
-import AIKIF_utils as aikif
-import fileMapping as filemap 
+#import sys
+#sys.path.append('..//..//AI')
+#sys.path.append('..//..//..//aspytk')
+#import AI.AIKIF_utils as aikif
+#import AI.fileMapping as filemap 
 		
 agent_status = [  	'NONE',				# agent was never instantiated (then how would it report this?)
 					'RUNNING', 			# agent is running
@@ -60,7 +60,8 @@ class Agent(object):
 		code, but should also call this for the logging and
 		status updates.
 		"""
-		aikif.LogProcess(self.name, 'agent.py')
+		#aikif.LogProcess(self.name, 'agent.py')
+		print('use aikif.LogProcess .... [buggy with module loading - TODO]')
 
 	
 	def stop(self):

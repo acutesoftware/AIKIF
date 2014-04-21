@@ -5,7 +5,7 @@ import sys
 import time
 sys.path.append('S://duncan//C//user//dev//src//python//aspytk')
 import lib_file as fle
-fname = 'T:\\user\\docs\\AIKIF\\pc_usage.txt'
+fname = 'T:\\user\\AIKIF\\pc_usage.txt'
 
 def main():
 	lstRaw = []

@@ -17,8 +17,9 @@
 		# 	print(test.report())
 		
 import os, sys
-sys.path.append('T:\\user\\dev\\src\\python\\AI\\AI\\agents')
-from agent import Agent
+sys.path.append('T:\\user\\dev\\src\\python\\AI\\AI')  # why is this needed when called from run_agents in root??
+#from agent import Agent
+from agents.agent import Agent
 
 class AggContext(Agent):
 	def __init__(self, *arg):
@@ -26,7 +27,7 @@ class AggContext(Agent):
 
 	def do_your_job(self, *arg):
 		print('AggContext... ')
-		self.results.append('TODO')
+		self.results.append('This is your agent code here - TODO')
 	
 	
 def main():

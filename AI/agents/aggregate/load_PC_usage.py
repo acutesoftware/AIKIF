@@ -2,7 +2,7 @@
 # reads a text file containing PC usage collected from daily agent
 # and exports to the AIKIF structures (in personal folder)
 
-ipFile = 'T:\\user\\docs\\AIKIF\\pc_usage.txt'
-opFile = 'T:\\user\\docs\\AIKIF\\diary.csv'
+ipFile = 'T:\\user\\AIKIF\\pc_usage.txt'
+opFile = 'T:\\user\\AIKIF\\diary.csv'
 
 print('aggregating ', ipFile, ' to ' , opFile)

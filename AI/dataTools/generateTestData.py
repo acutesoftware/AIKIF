@@ -8,9 +8,9 @@ import random
 import binascii
 import string
 
-names = 'S:\\DATA\\opendata\\datasets\\names.csv'  # via http://www.cs.princeton.edu/introcs/data/names.csv
-places = 'S:\\duncan\\C\\user\\dev\\src\\python\\AI\\data\\LOCATION_WORLD.CSV'  # use fileMap GETONTOLOGY
-wordList = 'S:\\duncan\\C\\user\\dev\\src\\python\\AI\\data\\nounList.txt'
+names =    'S:\\duncan\\C\\user\\dev\\src\\python\\AI\\data\\ref\\names.csv'  # via http://www.cs.princeton.edu/introcs/data/names.csv
+places =   'S:\\duncan\\C\\user\\dev\\src\\python\\AI\\data\\core\\LOCATION_WORLD.CSV'  # use fileMap GETONTOLOGY
+wordList = 'S:\\duncan\\C\\user\\dev\\src\\python\\AI\\data\\ref\\nounList.txt'
 
 def TEST():
 	print('generateTestData.py')
@@ -23,7 +23,7 @@ def TEST():
 	colTypes = ['DATE', 'PEOPLE', 'STRING', 'PLACE', 'WORD',  'INT']
 	tbl = random_table(6,5, colTypes, colLabel)
 	show_table(tbl)
-	save_table(tbl, 'test123.csv')
+	save_table(tbl, '..//..//data//temp//test123.csv')
 	print('password generator = ', generate_password(10))
 	
 def random_int(min=0, max=100): return random.randrange(min, max)

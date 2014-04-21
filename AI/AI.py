@@ -9,6 +9,8 @@ import AIKIF_utils as aikif
 
 localPath = os.getcwd()
 
+import platform
+print(platform.python_version())
 
 def BlackBoxAI(command, sourceInfo):
     # call to your application

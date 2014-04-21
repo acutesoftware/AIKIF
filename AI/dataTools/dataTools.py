@@ -40,22 +40,22 @@ try:
 except:
 	print('you need to install xlrd')
 
-
+fldr = '..//..//data//temp//'
 
 def TEST():
 	print('Data tools test...')
 	url = 'http://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&standard australian classification of countries, 2011, version 2.2.xls&1269.0&Data Cubes&EE21444EE8F2C99CCA257BF30012B66F&0&2011&01.10.2013&Latest'
-	fname = 'test.xlsx'
+	fname = fldr + 'test.xlsx'
 	DownloadFile(url, fname)
 	#xl.csv_from_excel(fname , os.getcwd())
-	testFile = 'test.csv'
+	testFile = fldr + 'test.csv'
 	CreateRandomCSVFile(testFile)
 	GenerateSQL(testFile, headerRow=1)
 
-	CreateRandomIndentedCSVFile('indented.csv')
+	CreateRandomIndentedCSVFile(fldr + 'indented.csv')
 #	ExtractTable(f, tmpFile, extractList[1]['colList'], 8, 1, 52, 9)
-	AutoFillCSV('indented.csv', 'indented-fixed.csv', ['grouping', 'code', 'desc'],  ['grouping'])   # autofill FIRST col based on prev values
-	RemoveBlankRecs('indented-fixed.csv', 'indented-fixed-and-no-blanks.csv', 2)
+	AutoFillCSV(fldr + 'indented.csv', fldr + 'indented-fixed.csv', ['grouping', 'code', 'desc'],  ['grouping'])   # autofill FIRST col based on prev values
+	RemoveBlankRecs(fldr + 'indented-fixed.csv', fldr + 'indented-fixed-and-no-blanks.csv', 2)
 
 	
 
@@ -175,7 +175,7 @@ def RemoveBlankRecs(fname, opFile, masterCol):
 def GenerateSQL(csvFile, headerRow=1):
 	# top level function
 	tbl = os.path.basename(csvFile).split('.')[0]
-	opFile = os.path.basename(csvFile).split('.')[0] + '.SQL'
+	opFile = fldr + os.path.basename(csvFile).split('.')[0] + '.SQL'
 	# read in the CSV file header
 	cols = []
 	txt = ''

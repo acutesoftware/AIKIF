@@ -10,11 +10,11 @@ sys.path.append('..//..//aspytk')
 import lib_data as dat
 import lib_file as fle
 
-localPath = '..//data//' # os.getcwd()
-logFileProcess = localPath + 'log//process.log'
-logFileSource = localPath + 'log//source.log'
-logFileCommand = localPath + 'log//command.log'
-logFileResult = localPath + 'log//result.log'
+localPath = 'T:\\user\\AIKIF\\' # '..//data//' # os.getcwd()
+logFileProcess = localPath + 'log\\process.log'
+logFileSource = localPath + 'log\\source.log'
+logFileCommand = localPath + 'log\\command.log'
+logFileResult = localPath + 'log\\result.log'
 
 # -----------------------------------------
 # --   Prepare Data structures 
@@ -99,6 +99,9 @@ def GetElementsAsString(lst, delim, quote='"'):
 	return(opLst)
 
 def SaveFileDataToFile(lst, filename, append=False):
+
+	fle.ensure_dir(os.path.dirname(filename))
+
 	if append == True:
 		w = open(filename, "at")
 	else:
