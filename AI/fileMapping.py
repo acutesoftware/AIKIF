@@ -86,9 +86,9 @@ def main():
 
 	BuildMasterFileMapping('HTML') # TOK
 
-	ShowListOfProposedFiles('HTML') # TOK
-	ShowListOfMappedFiles('HTML')   # TOK
-	ShowListOfPhysicalFiles('HTML')	# TOK
+	ShowListOfProposedFiles('N') # TOK
+	ShowListOfMappedFiles('N')   # TOK
+	ShowListOfPhysicalFiles('N')	# TOK
 
 
 def GetDataPath():
