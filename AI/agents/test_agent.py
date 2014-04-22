@@ -12,7 +12,6 @@
 		# 	print(test.check_status())
 		# 	print(test.report())
 		
-import os
 from agent import Agent
 
 class TestAgent(Agent):
