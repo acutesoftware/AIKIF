@@ -28,7 +28,7 @@ def main():
 	test = TestAgent('test_agent',  'T:\\user\\AIKIF', True)
 	print(test.report())
 
-		
+ 		
 		
 if __name__ == '__main__':
 	main()
