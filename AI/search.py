@@ -16,7 +16,7 @@ if len(sys.argv) == 2:
 	if sys.argv[1] == 'Q':
 		silent = 'Y'
 
-searchString = 'truth'		
+searchString = 'confounders'		
 		
 def search():
 	# main function 
@@ -27,10 +27,19 @@ def search():
 		print('Searching for ' + searchString)
 		print('-------------------')	
 
-	ndxFile = 'ndxFull.txt'
-	opIndex = 'ndxWordsToFiles.txt'
+	ndxFiles = ['..\\data\\index\\ndxAll.txt', '..\\data\\index\\ndxFullLecture.txt']
+	ndxFiles = ['..\\data\\index\\ndxAll.txt', '..\\data\\index\\ndxWordsToFilesLecture.txt']
+	numResults = 0
+	totLines = 0
+	for fname in ndxFiles:
+		with open(fname, 'r') as f:
+			for line in f:
+				totLines = totLines + 1
+				if searchString in line:
+					print(line)
+					numResults = numResults + 1
 
-
+	print('Found ', str(numResults), 'results in', str(totLines), 'lines over', str(len(ndxFiles)), 'index files')
 	
 if __name__ == '__main__':
     search()	
