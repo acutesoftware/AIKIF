@@ -1,0 +1,4 @@
+solve_knapsack.py.solve_greedy_trivial
+solve_knapsack.py.solve_smallest_items_first
+solve_knapsack.py.solve_expensive_items_first
+solve_knapsack.py.solve_value_density
