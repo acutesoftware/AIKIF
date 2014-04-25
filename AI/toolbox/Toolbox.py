@@ -69,4 +69,20 @@ class Toolbox():
 		return success
 		
 	def run(self, tool):
-		pass
+		#import tool['file'] as t
+		print('RUNNING ... ' , tool['file'])
+		txtImport = 'import ' + tool['file']
+		#exec txtImport 
+		
+		mod = map(__import__, [tool['file']])
+		
+		print(tool['function'])
+		#import importlib
+		#importlib.import_module(tool['file'])
+		#importlib.import_module('solve_knapsack')
+		
+		#mod = import_this(tool['file'])
+		# mod.doSomething()
+		
+		
+		
