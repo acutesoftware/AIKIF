@@ -12,6 +12,9 @@ fldr = os.getcwd() + '\\toolbox\\'
 def main():
 	tl = tool.Toolbox()
 
+
+	tl.add({'file':fldr + 'test_tool.py', 'function':'test_function', 'args':[], 'return':['int']})
+	# 	 test_function():
 	
 	progName = os.getcwd() + '\\toolbox\\solve_knapsack.py'
 	tl.add({'file':progName, 'function':'solve_greedy_trivial', 'args':['int', 'dict'], 'return':['int', 'list']})
@@ -22,7 +25,7 @@ def main():
 	#tl.add({'file':'solve_knapsack.py', 'function':'', 'args':['int', 'dict'], 'return':['int', 'list']})
 
 	tl.save('tools.txt')
-
+	print(tl.lstTools[0])
 	tl.run(tl.lstTools[0])
 		
 if __name__ == '__main__':
