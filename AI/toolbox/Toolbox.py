@@ -74,9 +74,21 @@ class Toolbox():
 		txtImport = 'import ' + tool['file']
 		#exec txtImport 
 		
-		mod = map(__import__, [tool['file']])
+	#	mod = map(__import__, [tool['file']])
+		mod = __import__( tool['file'])
+		#mod = __import__( os.path.basename(tool['file']).split('.')[0])
+		
 		
 		print(tool['function'])
+		txtFunction = os.path.basename(tool['file']).split('.')[0] + '.' + tool['function']
+		print(txtFunction)
+		
+		#exec txtFunction
+		func = getattr(mod, tool['function'])
+		func()
+		
+		
+		
 		#import importlib
 		#importlib.import_module(tool['file'])
 		#importlib.import_module('solve_knapsack')
