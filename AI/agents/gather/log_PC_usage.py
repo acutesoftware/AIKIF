@@ -25,7 +25,7 @@ def GetPCName():
 try:
 	fname = sys.argv[1] + '\\pc_usage_' + GetPCName() + '_' + GetUser() + '.txt'
 except:
-	fname = os.getcwd() + GetUser() + '\\pc_usage_' + GetPCName() + '_' + GetUser() + '.txt'
+	fname = os.getcwd() + '\\pc_usage_' + GetPCName() + '_' + GetUser() + '.txt'
 
 
 
