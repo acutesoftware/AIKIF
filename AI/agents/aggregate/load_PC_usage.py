@@ -59,7 +59,29 @@ def GetRawFiles(ipFolder):
 
 def processRawFile(f, opFolder):
 	print ('Processing: ', f)
-	
+	opFile = opFolder + '\\diary.csv'
+	curText = ''
+	usage = []
+	with open(opFile,'a') as op:
+		with open(f, 'r') as ip:
+			for line in ip:
+				print('line=====', line)
+				cols = line.split(',')
+				dte = cols[0].split(' ')[0]
+				tme = cols[0].split(' ')[1]
+				amt = cols[1]
+				det = cols[2]
+				print('\ndte = ' , dte, '\ntme = ', tme, '\namt = ',amt,'\ndet = ', det)
+				usage.append(det)
+
+		uniqueUsage = set(usage)
+		
+		for res in uniqueUsage:
+			# sum amt for usage
+			# TODO
+		
+		
+			op.write(res)
 	
 if __name__ == '__main__':
     main()	
