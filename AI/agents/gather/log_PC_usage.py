@@ -2,34 +2,56 @@
 
 from win32gui import GetWindowText, GetForegroundWindow
 import sys
+import os
 import time
-sys.path.append('S://duncan//C//user//dev//src//python//aspytk')
-import lib_file as fle
-fname = 'T:\\user\\AIKIF\\pc_usage.txt'
+
+
+def GetUser():
+	try:
+		import getpass
+		usr = getpass.getuser()
+	except:
+		usr = 'username'
+	return usr
+
+def GetPCName():
+	try:
+		import socket
+		pcname = socket.gethostname()
+	except:
+		pcname = 'computer'
+	return pcname
+
+try:
+	fname = sys.argv[1] + '\\pc_usage_' + GetPCName() + '_' + GetUser() + '.txt'
+except:
+	fname = os.getcwd() + GetUser() + '\\pc_usage_' + GetPCName() + '_' + GetUser() + '.txt'
+
+
 
 def main():
 	lstRaw = []
 	prevText = ''
-	startTime = fle.TodayAsString()
+	startTime = TodayAsString()
 	tot_seconds = 1
 	try:
 		while True:
 			txt = GetWindowText(GetForegroundWindow())
 			#print(txt)
-			#fle.AppendToFile(fname, fle.TodayAsString() + ' ' + txt + '\n')
+			#AppendToFile(fname, TodayAsString() + ' ' + txt + '\n')
 			if txt == prevText:
 				tot_seconds = tot_seconds + 1
 			else:
 				lstRaw.append(startTime + ',' + format(tot_seconds, "03d") + ',' + txt)
 				prevText = txt
 				tot_seconds = 1
-				startTime = fle.TodayAsString()
+				startTime = TodayAsString()
 			time.sleep(1)
-			if fle.TodayAsString()[-3:] == ':00':
+			if TodayAsString()[-3:] == ':00':
 				lstRaw.append(startTime + ',' + format(tot_seconds, "03d") + ',' + txt)
-				print('Recording data')
+				#print('Recording data')
 				tot_seconds = 1
-				startTime = fle.TodayAsString()
+				startTime = TodayAsString()
 				record(lstRaw)
 				lstRaw = []
 
@@ -39,6 +61,9 @@ def main():
 		record(lstRaw)
 
 	
+def TodayAsString():
+	return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
 def record(lst):
 	with open(fname, "a") as f:
 		for txt in lst:
