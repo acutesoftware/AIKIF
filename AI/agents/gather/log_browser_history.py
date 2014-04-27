@@ -1,10 +1,7 @@
-# d:\py>GetBrowserHistoryChrome.py		written by Duncan Murray 13/1/2014 
-# references = http://computer-forensics.sans.org/blog/2010/01/21/google-chrome-forensics/
-#			 = http://www.forensicswiki.org/wiki/Google_Chrome
-#			 = http://sumtxt.wordpress.com/2011/07/02/chrome-browser-history-in-r/
+# log_browser_history.py		written by Duncan Murray 13/1/2014 
 
 #OUTPUT:
-# Reading Chrome history from C:\Users\murraydj\AppData\Local\Google\Chrome\User Data\Default
+# Reading Chrome history from C:\Users\....\AppData\Local\Google\Chrome\User Data\Default
 # Exported 44868 records to chrome_history.csv
 
 
@@ -13,6 +10,7 @@ import datetime
 import sqlite3
 import codecs, re
 import time
+import sys
 from os.path import expanduser
 
 #from datetime import datetime
@@ -20,7 +18,13 @@ from os.path import expanduser
 pattern = "(((http)|(https))(://)(www.)|().*?)\.[a-z]*/"
 SQL_STATEMENT = 'SELECT urls.url, urls.title, urls.visit_count, urls.typed_count, urls.last_visit_time, visits.visit_time, urls.hidden, visits.from_visit, urls.id, visits.transition  FROM urls, visits WHERE urls.id = visits.url;'
 
-opFile = 'T:\\user\\docs\\AIKIF\\chrome_history.csv'
+
+try:
+	opFile = sys.argv[1]
+except:
+	opFile = os.getcwd() + '\\chrome_history.csv'
+
+
 storage = codecs.open(opFile, 'w', 'utf-8')
 
 def DateConv(webkit_timestamp):
@@ -43,8 +47,6 @@ def datetime_from_utc_to_local(utc_datetime):
     return utc_datetime + offset
 
 home = expanduser("~")
-#print(home)	# C:\users\murraydj
-#basePath = "C://Users//murraydj//AppData//Local//Google//Chrome//User Data//Default//" 
 basePath = home + r"\AppData\Local\Google\Chrome\User Data\Default" 
 print ("Reading Chrome history from " + basePath)
 paths = [basePath + "\Archived History", basePath + "\History"] 
@@ -66,4 +68,12 @@ def GetBrowserHistoryChrome():
 			#storage.write(str(date_time)[0:19] + "\t" + urlc + "\n")
 	print('Exported ' + str(numRecs) + ' records to ' + opFile)		
 # Main
-GetBrowserHistoryChrome()			
+
+
+		
+if __name__ == '__main__':
+	GetBrowserHistoryChrome()	
+
+
+
+		
