@@ -60,6 +60,7 @@ def TEST():
 	
 
 def DownloadFile(url, fname):
+	# bug here - you need to wait for download to finish
 	net.DownloadFile(url, fname)
 	
 	

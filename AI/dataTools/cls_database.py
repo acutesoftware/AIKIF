@@ -22,3 +22,9 @@ class Database(object):
 		lst = []
 		print('extracting data')
 		return lst
+	def get_info(self):
+		return '\nserver='+self.server + '\ndatabase=' + self.database + '\nusername='+ self.username + '\npassword=' + self.password
+		
+	def connect(self):
+		print(self.get_info())
+		

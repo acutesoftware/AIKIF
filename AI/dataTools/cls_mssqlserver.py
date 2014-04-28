@@ -25,7 +25,7 @@ def TEST():
 	print('wrapper for MS SQL Server and Access databases')
 	
 	d = MSSQL_server(['server', 'database', 'username', 'password'])
-	d.save()
+	d.connect()
 	print(d.server)
 	
 class MSSQL_server(Database):
