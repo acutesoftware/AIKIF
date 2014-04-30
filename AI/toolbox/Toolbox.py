@@ -68,25 +68,14 @@ class Toolbox():
 		
 		return success
 		
-	def run(self, tool):
-		#import tool['file'] as t
-		print('RUNNING ... ' , tool['file'])
-		txtImport = 'import ' + tool['file']
-		#exec txtImport 
-		
-	#	mod = map(__import__, [tool['file']])
-		mod = __import__( tool['file'])
-		#mod = __import__( os.path.basename(tool['file']).split('.')[0])
-		
-		
-		print(tool['function'])
-		txtFunction = os.path.basename(tool['file']).split('.')[0] + '.' + tool['function']
-		print(txtFunction)
-		
-		#exec txtFunction
+	def run(self, tool, args, silent='Y'):
+		if silent == 'N':
+			print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
+		mod = __import__( os.path.basename(tool['file']).split('.')[0])
 		func = getattr(mod, tool['function'])
-		func()
-		
+		tool['return'] = func(args)
+		return tool['return']
+				
 		
 		
 		#import importlib
