@@ -61,6 +61,7 @@ def processRawFile(f, opFolder):
 	print ('Processing: ', f)
 	opFile = opFolder + '\\diary.csv'
 	curText = ''
+	oldText = ''
 	usage = []
 	with open(opFile,'a') as op:
 		with open(f, 'r') as ip:
@@ -72,6 +73,8 @@ def processRawFile(f, opFolder):
 				amt = cols[1]
 				det = cols[2]
 				print('\ndte = ' , dte, '\ntme = ', tme, '\namt = ',amt,'\ndet = ', det)
+				if oldText == curText:
+					print('same')
 				usage.append(det)
 
 		uniqueUsage = set(usage)

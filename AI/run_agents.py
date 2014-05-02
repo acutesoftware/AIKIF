@@ -5,22 +5,24 @@
 
 schedule_types = ['once', 'year', 'month', 'fortnight', 'week', 'weekday', 'day', 'hour', 'minute', 'second', 'always']
 
+agentCodeFolder = 'T:\\user\\dev\\src\\python\\AI\\AI\\'
+
 agent_list = [
 	{'name': 'Browser history', 
-	 'file': 'agents\\gather\\log_browser_history.py', 
+	 'file': agentCodeFolder + 'agents\\gather\\log_browser_history.py', 
 	 'schedule_type':'week'
 	},
 	{'name': 'PC Usage', 
-	 'file': 'agents\\gather\\log_PC_usage.py', 
-	 'schedule_type':'always'
+	 'file': agentCodeFolder + 'agents\\gather\\log_PC_usage.py', 
+	 'schedule_type':'minute'
 	},
 	{'name': 'Aggregate PC usage', 
-	 'file': 'agents\\aggregate\\load_PC_usage.py', 
+	 'file': agentCodeFolder + 'agents\\aggregate\\load_PC_usage.py', 
 	 'schedule_type':'hour'
 	},
 	{'name': 'Aggregate Context', 
-	 'file': 'agents\\aggregate\\agg_context.py', 
-	 'schedule_type':'minute' 
+	 'file': agentCodeFolder + 'agents\\aggregate\\agg_context.py', 
+	 'schedule_type':'hour' 
 	}
 ]
 
