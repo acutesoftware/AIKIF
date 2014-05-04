@@ -11,21 +11,23 @@ import lib_net as net
 import AIKIF_utils as aikif
 import fileMapping as filemap
 
-silent = 'N'
-if len(sys.argv) == 2:
-	if sys.argv[1] == 'Q':
-		silent = 'Y'
-
-searchString = 'confounders'		
+print(len(sys.argv), sys.argv)
+if len(sys.argv) == 1:   # nothing passes on command line
+	searchString = ['confounders']	
+else:
+	searchString = []
+	for i in range(0, len(sys.argv)):
+		print(i)
+		if i > 0:
+			searchString.append(sys.argv[i])
 		
 def search():
 	# main function 
 
 	aikif.LogProcess('Starting search',  'search.py') # sys.modules[self.__module__].__file__)
-	if silent == 'N':
-		print('-------------------')
-		print('Searching for ' + searchString)
-		print('-------------------')	
+	print('-------------------')
+	print('Searching for ', searchString)
+	print('-------------------')	
 
 	ndxFiles = ['..\\data\\index\\ndxAll.txt', '..\\data\\index\\ndxFullLecture.txt']
 	ndxFiles = ['..\\data\\index\\ndxAll.txt', '..\\data\\index\\ndxWordsToFilesLecture.txt']
@@ -35,9 +37,10 @@ def search():
 		with open(fname, 'r') as f:
 			for line in f:
 				totLines = totLines + 1
-				if searchString in line:
-					print(line)
-					numResults = numResults + 1
+				for src in searchString:
+					if src in line:
+						print(line)
+						numResults = numResults + 1
 
 	print('Found ', str(numResults), 'results in', str(totLines), 'lines over', str(len(ndxFiles)), 'index files')
 	
