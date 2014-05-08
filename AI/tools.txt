@@ -1,3 +1,5 @@
+s:\duncan\C\user\dev\src\python\AI\AI\toolbox\test_tool.py.sum_even_numbers
+s:\duncan\C\user\dev\src\python\AI\AI\toolbox\test_tool.py.get_min_even_num
 s:\duncan\C\user\dev\src\python\AI\AI\toolbox\test_tool.py.test_function
 s:\duncan\C\user\dev\src\python\AI\AI\toolbox\solve_knapsack.py.solve_greedy_trivial
 s:\duncan\C\user\dev\src\python\AI\AI\toolbox\solve_knapsack.py.solve_smallest_items_first
