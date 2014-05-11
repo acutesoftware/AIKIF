@@ -1,35 +1,197 @@
-S:\duncan\C\user\dev\src\python\AI\AI\AI.py
-S:\duncan\C\user\dev\src\python\AI\AI\AIKIF_create.py
-S:\duncan\C\user\dev\src\python\AI\AI\AIKIF_utils.py
-S:\duncan\C\user\dev\src\python\AI\AI\__init__.py
-S:\duncan\C\user\dev\src\python\AI\AI\add.py
-S:\duncan\C\user\dev\src\python\AI\AI\addRawData.py
-S:\duncan\C\user\dev\src\python\AI\AI\codeDocData\__init__.py
-S:\duncan\C\user\dev\src\python\AI\AI\codeDocData\program.py
-S:\duncan\C\user\dev\src\python\AI\AI\create_word_lists.py
-S:\duncan\C\user\dev\src\python\AI\AI\dataTools\AUP_SOURCE.py
-S:\duncan\C\user\dev\src\python\AI\AI\dataTools\Build_GeoCode_Database.py
-S:\duncan\C\user\dev\src\python\AI\AI\dataTools\__init__.py
-S:\duncan\C\user\dev\src\python\AI\AI\dataTools\dataTools.py
-S:\duncan\C\user\dev\src\python\AI\AI\dataTools\generateTestData.py
-S:\duncan\C\user\dev\src\python\AI\AI\fileMapping.py
-S:\duncan\C\user\dev\src\python\AI\AI\index.py
-S:\duncan\C\user\dev\src\python\AI\AI\loadCountry_Gdeltproject.py
-S:\duncan\C\user\dev\src\python\AI\AI\loadInfoCourseLectures.py
-S:\duncan\C\user\dev\src\python\AI\AI\loadPIM_Filelist.py
-S:\duncan\C\user\dev\src\python\AI\AI\loadPIM_shoppingList.py
-S:\duncan\C\user\dev\src\python\AI\AI\load_ABS_data.py
-S:\duncan\C\user\dev\src\python\AI\AI\ontology\createMindOntology.py
-S:\duncan\C\user\dev\src\python\AI\AI\ontology\read_wordnet.py
-S:\duncan\C\user\dev\src\python\AI\AI\ontology\review_ontology.py
-S:\duncan\C\user\dev\src\python\AI\AI\processRawData.py
-S:\duncan\C\user\dev\src\python\AI\AI\search.py
-S:\duncan\C\user\dev\src\python\AI\AI\security.py
-S:\duncan\C\user\dev\src\python\AI\AI\view.py
-S:\duncan\C\user\dev\src\python\AI\examples\document_AIKIF.py
-S:\duncan\C\user\dev\src\python\AI\examples\ex_project_management.py
-S:\duncan\C\user\dev\src\python\AI\tests\test_AIKIF.py
-S:\duncan\C\user\dev\src\python\AI\tests\test_fileMapping.py
-S:\duncan\C\user\dev\src\python\AI\tests\test_index.py
-S:\duncan\C\user\dev\src\python\AI\tests\test_utils.py
-S:\duncan\C\user\dev\src\python\AI\tests\time_generateTestData.py
+AI.py
+AIKIF_create.py
+AIKIF_utils.py
+add.py
+dataTools.py
+fileMapping.py
+generateTestData.py
+index.py
+loadCountry_Gdeltproject.py
+loadInfoCourseLectures.py
+loadPIM_Filelist.py
+loadPIM_shoppingList.py
+processRawData.py
+program.py
+security.py
+view.pyT:\user\dev\src\python\AI\AI\AI.py
+T:\user\dev\src\python\AI\AI\AIKIF_create.py
+T:\user\dev\src\python\AI\AI\AIKIF_utils.py
+T:\user\dev\src\python\AI\AI\__init__.py
+T:\user\dev\src\python\AI\AI\add.py
+T:\user\dev\src\python\AI\AI\addRawData.py
+T:\user\dev\src\python\AI\AI\agents\__init__.py
+T:\user\dev\src\python\AI\AI\agents\agent.py
+T:\user\dev\src\python\AI\AI\agents\aggregate\__init__.py
+T:\user\dev\src\python\AI\AI\agents\aggregate\agg_context.py
+T:\user\dev\src\python\AI\AI\agents\aggregate\load_PC_usage.py
+T:\user\dev\src\python\AI\AI\agents\gather\__init__.py
+T:\user\dev\src\python\AI\AI\agents\gather\collect_Win_processes.py
+T:\user\dev\src\python\AI\AI\agents\gather\log_PC_usage.py
+T:\user\dev\src\python\AI\AI\agents\gather\log_browser_history.py
+T:\user\dev\src\python\AI\AI\agents\learn\__init__.py
+T:\user\dev\src\python\AI\AI\agents\test_agent.py
+T:\user\dev\src\python\AI\AI\codeDocData\Programs.py
+T:\user\dev\src\python\AI\AI\codeDocData\__init__.py
+T:\user\dev\src\python\AI\AI\create_word_lists.py
+T:\user\dev\src\python\AI\AI\dataTools\AUP_SOURCE.py
+T:\user\dev\src\python\AI\AI\dataTools\Build_GeoCode_Database.py
+T:\user\dev\src\python\AI\AI\dataTools\__init__.py
+T:\user\dev\src\python\AI\AI\dataTools\cls_database.py
+T:\user\dev\src\python\AI\AI\dataTools\cls_mssqlserver.py
+T:\user\dev\src\python\AI\AI\dataTools\cls_oracle.py
+T:\user\dev\src\python\AI\AI\dataTools\dataTools.py
+T:\user\dev\src\python\AI\AI\dataTools\generateTestData.py
+T:\user\dev\src\python\AI\AI\fileMapping.py
+T:\user\dev\src\python\AI\AI\index.py
+T:\user\dev\src\python\AI\AI\loadCountry_Gdeltproject.py
+T:\user\dev\src\python\AI\AI\loadInfoCourseLectures.py
+T:\user\dev\src\python\AI\AI\loadPIM_Filelist.py
+T:\user\dev\src\python\AI\AI\loadPIM_shoppingList.py
+T:\user\dev\src\python\AI\AI\load_ABS_data.py
+T:\user\dev\src\python\AI\AI\ontology\createMindOntology.py
+T:\user\dev\src\python\AI\AI\ontology\read_wordnet.py
+T:\user\dev\src\python\AI\AI\ontology\review_ontology.py
+T:\user\dev\src\python\AI\AI\processRawData.py
+T:\user\dev\src\python\AI\AI\run_agents.py
+T:\user\dev\src\python\AI\AI\search.py
+T:\user\dev\src\python\AI\AI\security.py
+T:\user\dev\src\python\AI\AI\toolbox\Toolbox.py
+T:\user\dev\src\python\AI\AI\toolbox\solve_knapsack.py
+T:\user\dev\src\python\AI\AI\toolbox\test_tool.py
+T:\user\dev\src\python\AI\AI\tools.py
+T:\user\dev\src\python\AI\AI\view.py
+T:\user\dev\src\python\AI\examples\document_AIKIF.py
+T:\user\dev\src\python\AI\examples\ex_project_management.py
+T:\user\dev\src\python\AI\tests\test_AIKIF.py
+T:\user\dev\src\python\AI\tests\test_fileMapping.py
+T:\user\dev\src\python\AI\tests\test_index.py
+T:\user\dev\src\python\AI\tests\test_utils.py
+T:\user\dev\src\python\AI\tests\time_generateTestData.pyC:\apps\Blender\blender.exe
+C:\apps\Blender\blenderplayer.exe
+C:\apps\Blender\uninstall.exe
+C:\apps\FileZilla\filezilla.exe
+C:\apps\FileZilla\fzputtygen.exe
+C:\apps\FileZilla\fzsftp.exe
+C:\apps\FileZilla\uninstall.exe
+C:\apps\LifePIM\launch.exe
+C:\apps\Notepad++\notepad++.exe
+C:\apps\Notepad++\uninstall.exe
+C:\apps\Notepad++\updater\GUP.exe
+C:\apps\Notepad++\updater\gpup.exe
+C:\apps\Photoshop\ImageReady.exe
+C:\apps\Photoshop\Photoshop.exe
+C:\apps\Photoshop\Required\Droplet Template.exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Constrain 350, Make JPG 30.exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Constrain to 200x200 pixels.exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Constrain to 64X64 pixels.exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Make Button.exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Make GIF (128 colors).exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Make GIF (32, no dither).exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Make GIF (64 colors).exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Make JPEG (quality 10).exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Make JPEG (quality 30).exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Make JPEG (quality 60).exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Metal Slide Thumbnail.exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Multi-Size Save.exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Rounded Rect Thumbnail.exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Slide Thumbnail.exe
+C:\apps\Photoshop\Samples\Droplets\ImageReady Droplets\Unsharp Mask.exe
+C:\apps\Photoshop\Samples\Droplets\Photoshop Droplets\Aged Photo.exe
+C:\apps\Photoshop\Samples\Droplets\Photoshop Droplets\Conditional Mode Change.exe
+C:\apps\Photoshop\Samples\Droplets\Photoshop Droplets\Constrain to 300 pixels.exe
+C:\apps\Photoshop\Samples\Droplets\Photoshop Droplets\Constrain to 64 pixels.exe
+C:\apps\Photoshop\Samples\Droplets\Photoshop Droplets\Drop Shadow Frame.exe
+C:\apps\Photoshop\Samples\Droplets\Photoshop Droplets\Make Button.exe
+C:\apps\Photoshop\Samples\Droplets\Photoshop Droplets\Make Sepia Tone.exe
+C:\apps\Photoshop\Samples\Droplets\Photoshop Droplets\Save As JPEG Medium.exe
+C:\apps\Photoshop\Samples\Droplets\Photoshop Droplets\Save As Photoshop PDF.exe
+C:\apps\Protege\Protege.exe
+C:\apps\Protege\UninstallProtege\Uninstall Protege.exe
+C:\apps\Protege\UninstallProtege\resource\ZGWin32LaunchHelper.exe
+C:\apps\Protege\UninstallProtege\resource\remove.exe
+C:\apps\Protege\jre\bin\java-rmi.exe
+C:\apps\Protege\jre\bin\java.exe
+C:\apps\Protege\jre\bin\javaw.exe
+C:\apps\Protege\jre\bin\keytool.exe
+C:\apps\Protege\jre\bin\kinit.exe
+C:\apps\Protege\jre\bin\klist.exe
+C:\apps\Protege\jre\bin\ktab.exe
+C:\apps\Protege\jre\bin\orbd.exe
+C:\apps\Protege\jre\bin\pack200.exe
+C:\apps\Protege\jre\bin\policytool.exe
+C:\apps\Protege\jre\bin\rmid.exe
+C:\apps\Protege\jre\bin\rmiregistry.exe
+C:\apps\Protege\jre\bin\servertool.exe
+C:\apps\Protege\jre\bin\tnameserv.exe
+C:\apps\Protege\jre\bin\unpack200.exe
+C:\apps\RStudio\Uninstall.exe
+C:\apps\RStudio\bin\consoleio.exe
+C:\apps\RStudio\bin\diagnostics.exe
+C:\apps\RStudio\bin\gnudiff\cmp.exe
+C:\apps\RStudio\bin\gnudiff\diff.exe
+C:\apps\RStudio\bin\gnudiff\diff3.exe
+C:\apps\RStudio\bin\gnudiff\sdiff.exe
+C:\apps\RStudio\bin\gnugrep\egrep.exe
+C:\apps\RStudio\bin\gnugrep\fgrep.exe
+C:\apps\RStudio\bin\gnugrep\grep.exe
+C:\apps\RStudio\bin\msys_ssh\ssh-add.exe
+C:\apps\RStudio\bin\msys_ssh\ssh-agent.exe
+C:\apps\RStudio\bin\msys_ssh\ssh-keygen.exe
+C:\apps\RStudio\bin\msys_ssh\ssh-keyscan.exe
+C:\apps\RStudio\bin\msys_ssh\ssh.exe
+C:\apps\RStudio\bin\rpostback.exe
+C:\apps\RStudio\bin\rsession.exe
+C:\apps\RStudio\bin\rsinverse.exe
+C:\apps\RStudio\bin\rstudio.exe
+C:\apps\RStudio\bin\sumatra\SumatraPDF.exe
+C:\apps\RStudio\bin\urlopener.exe
+C:\apps\RStudio\bin\x64\rsession.exe
+C:\apps\R\Tcl\bin64\tclsh85.exe
+C:\apps\R\Tcl\bin64\wish85.exe
+C:\apps\R\Tcl\bin\tclsh85.exe
+C:\apps\R\Tcl\bin\wish85.exe
+C:\apps\R\bin\R.exe
+C:\apps\R\bin\Rscript.exe
+C:\apps\R\bin\i386\R.exe
+C:\apps\R\bin\i386\RSetReg.exe
+C:\apps\R\bin\i386\Rcmd.exe
+C:\apps\R\bin\i386\Rgui.exe
+C:\apps\R\bin\i386\Rscript.exe
+C:\apps\R\bin\i386\Rterm.exe
+C:\apps\R\bin\i386\open.exe
+C:\apps\R\bin\x64\R.exe
+C:\apps\R\bin\x64\RSetReg.exe
+C:\apps\R\bin\x64\Rcmd.exe
+C:\apps\R\bin\x64\Rgui.exe
+C:\apps\R\bin\x64\Rscript.exe
+C:\apps\R\bin\x64\Rterm.exe
+C:\apps\R\bin\x64\open.exe
+C:\apps\R\unins000.exe
+C:\apps\VirtualBox\VBoxBalloonCtrl.exe
+C:\apps\VirtualBox\VBoxExtPackHelperApp.exe
+C:\apps\VirtualBox\VBoxHeadless.exe
+C:\apps\VirtualBox\VBoxManage.exe
+C:\apps\VirtualBox\VBoxNetDHCP.exe
+C:\apps\VirtualBox\VBoxNetNAT.exe
+C:\apps\VirtualBox\VBoxSDL.exe
+C:\apps\VirtualBox\VBoxSVC.exe
+C:\apps\VirtualBox\VBoxTestOGL.exe
+C:\apps\VirtualBox\VBoxWebSrv.exe
+C:\apps\VirtualBox\VirtualBox.exe
+C:\apps\launch\launch.exe
+C:\apps\netDiary\OutlookExtract.exe
+C:\apps\netDiary\bugreport.exe
+C:\apps\netDiary\data\bk20090101\nd_bugReport.exe
+C:\apps\netDiary\data\nd_bugReport.exe
+C:\apps\netDiary\datecalc.exe
+C:\apps\netDiary\diarysum.exe
+C:\apps\netDiary\eventrecorder.exe
+C:\apps\netDiary\infolink.exe
+C:\apps\netDiary\ndstartup.exe
+C:\apps\netDiary\netdiary.exe
+C:\apps\netDiary\netpath.exe
+C:\apps\netDiary\pim-util.exe
+C:\apps\netDiary\unins000.exe
+C:\apps\truecrypt\TrueCrypt Format.exe
+C:\apps\truecrypt\TrueCrypt Setup.exe
+C:\apps\truecrypt\TrueCrypt.exe
