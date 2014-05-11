@@ -24,6 +24,18 @@ aikifProgs.add('fileMapping.py', 'uses ontology to get list of files to save dat
 aikifProgs.add('index.py', 'rebuilds indexes')
 aikifProgs.add('view.py', 'view the data in AIKIF')
 aikifProgs.add('AIKIF_utils.py', 'utils for getting standard file structures (soon to be deprecated)')
+aikifProgs.add('AI.py', 'original main entry point - soon to be deprecated')
+aikifProgs.add('add.py', 'command line utility to add information - not yet implemented')
+aikifProgs.add('dataTools.py', 'data tools to manage database access')
+aikifProgs.add('AIKIF_create.py', 'creates default structures with test data')
+aikifProgs.add('generateTestData.py', 'Tool to generate various test data')
+aikifProgs.add('processRawData.py', 'calls various sub tasks to collect raw data')
+aikifProgs.add('loadInfoCourseLectures.py', 'loads course lecture notes into AIKIF')
+aikifProgs.add('loadPIM_Filelist.py', 'loads generic filelists into AIKIF - indexing not implemented')
+aikifProgs.add('loadCountry_Gdeltproject.py', 'sample load - loads country data into AIKIF')
+aikifProgs.add('loadPIM_shoppingList.py', 'sample data - loads a users shopping list into AIKIF')
+aikifProgs.add('security.py', 'future module to handle security and privacy settings')
+
 
 aikifProgs.list()	# get list of all programs
 aikifProgs.save()
