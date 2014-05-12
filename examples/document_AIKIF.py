@@ -5,7 +5,7 @@ import sys
 import os
 sys.path.append('..//AI')
 
-import codeDocData.Programs as prog
+import cls_programs as prog
 
 sys.path.append('..//..//aspytk')
 import lib_file as fle

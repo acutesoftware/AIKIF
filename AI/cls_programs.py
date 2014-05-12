@@ -1,12 +1,9 @@
 # program.py	written by Duncan Murray 18/4/2014
-# part of AIKIF.codeDocData
+# part of AIKIF
 # standard set of programs used for each interface in ccd
 # each having the same functions (at this stage for proof
 # of concept) which allow you to call things as a normal
-# command, such as 
-# from AIKIF import codeDocData as cdd
-# cdd.program.add('program.py', 'class to manage sets of programs')
-# cdd.program.list()	# get list of all programs
+# command
 
 import AIKIF_utils as aikif
 import fileMapping as filemap 
