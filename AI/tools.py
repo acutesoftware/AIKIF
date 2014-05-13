@@ -10,19 +10,22 @@ import toolbox.Toolbox as tool
 import time
 from random import randint
 
-fldr = os.getcwd() + '\\toolbox\\'
+
+aikif_dir = os.path.dirname(os.path.abspath(__file__))
+fldr = os.path.abspath(aikif_dir + os.sep + "toolbox" )
+sys.path.append(aikif_dir)
 sys.path.append(fldr)
 
 def main():
 	tl = tool.Toolbox()
 
 
-	tl.add({'file':fldr + 'test_tool.py', 'function':'sum_even_numbers', 'args':['list'], 'return':['int']})
-	tl.add({'file':fldr + 'test_tool.py', 'function':'get_min_even_num', 'args':['list'], 'return':['int']})
-	tl.add({'file':fldr + 'test_tool.py', 'function':'test_function', 'args':[], 'return':['int']})
+	tl.add({'file':fldr + os.sep + 'test_tool.py', 'function':'sum_even_numbers', 'args':['list'], 'return':['int']})
+	tl.add({'file':fldr + os.sep + 'test_tool.py', 'function':'get_min_even_num', 'args':['list'], 'return':['int']})
+	tl.add({'file':fldr + os.sep + 'test_tool.py', 'function':'test_function', 'args':[], 'return':['int']})
 	# 	 test_function():
 	
-	progName = os.getcwd() + '\\toolbox\\solve_knapsack.py'
+	progName = fldr + os.sep + 'solve_knapsack.py'
 	tl.add({'file':progName, 'function':'solve_greedy_trivial', 'args':['int', 'dict'], 'return':['int', 'list']})
 	tl.add({'file':progName, 'function':'solve_smallest_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
 	tl.add({'file':progName, 'function':'solve_expensive_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
