@@ -17,15 +17,18 @@
 		# 	print(test.report())
 		
 import os, sys
-sys.path.append('T:\\user\\dev\\src\\python\\AI\\AI')  # why is this needed when called from run_agents in root??
-#from agent import Agent
+#sys.path.append('T:\\user\\dev\\src\\python\\AI\\AI')  # why is this needed when called from run_agents in root??
+aikif_dir = os.path.dirname(os.path.abspath(__file__))
+fldr = os.path.abspath(aikif_dir + os.sep + "..\\..\\" )
+sys.path.append(aikif_dir)
+sys.path.append(fldr)
 from agents.agent import Agent
 
 if len(sys.argv) == 3:   # folder and filename passed on command line
 	localFolder = sys.argv[1] 
 	fileListSrc = sys.argv[2]
 else:
-	localFolder = os.getcwd() + '\\'
+	localFolder = aikif_dir + '\\'
 	fileListSrc = 'file_sample.csv' # '\\filelister.csv'
 print('localFolder = ', localFolder)
 print('fileListSrc = ', fileListSrc)
