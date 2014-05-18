@@ -2,10 +2,11 @@
 # manages the agents schedules and calls programs as needed
 
 
+import sys, os
 
 schedule_types = ['once', 'year', 'month', 'fortnight', 'week', 'weekday', 'day', 'hour', 'minute', 'second', 'always']
 
-agentCodeFolder = 'T:\\user\\dev\\src\\python\\AI\\AI\\'
+agentCodeFolder = os.path.dirname(os.path.abspath(__file__)) + os.sep 
 
 agent_list = [
 	{'name': 'Browser history', 
