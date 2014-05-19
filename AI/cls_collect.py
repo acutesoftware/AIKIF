@@ -9,3 +9,5 @@ class clsCollect(object):
 		self.name = name
 		self.fldr = fldr
 
+	def log(self, msg):
+		print("log: ", msg)
