@@ -16,29 +16,37 @@ class clsCollectFiles(cls_collect.clsCollect):
 		self.tot_files = 0
 		self.tot_fldrs = 0
 		self.filelist = []
+		self.folders = []
 
 	def collect_filelist(self):
 		print("collecting files from " , self.fldr)	
 		self.filelist = []
+		self.folders = []
 		for root, dirs, files in os.walk(self.fldr):
 			self.tot_fldrs += 1
+			self.folders.append(root)
+			#print(root)
 			for filename in fnmatch.filter(files, self.pattern):
 				file_size = os.path.getsize((os.path.join(root, filename))) 
 				self.tot_bytes += file_size
 				self.tot_files += 1
 				self.filelist.append(os.path.join(root, filename))
-				print(filename)
+				#print(filename)
 	
-	def get_fldrs(self):
+	def get_tot_fldrs(self):
 		return self.tot_fldrs
 		
-	def get_files(self):
+	def get_tot_files(self):
 		return self.tot_files
 		
-	def get_bytes(self):
+	def get_tot_bytes(self):
 		return self.tot_bytes
 		
 	def get_filelist(self):
 		print("there are " , str(len(self.filelist)), " files found")
 		return self.filelist
+		
+	def get_folders(self):
+		print("there are " , str(len(self.folders)), " folders found")
+		return self.folders
 		
