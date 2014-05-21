@@ -39,7 +39,6 @@ import fileMapping as filemap
 def main():
 	if verify_agents() == True:
 		print('Agents verified')
-
 	for i in agent_list:
 		if is_agent_scheduled_to_start(i) is True:
 			run(i['file'], True)
