@@ -86,7 +86,7 @@ def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName='
 		f = fle.GetShortFileName(ipFile)
 	else:
 		f = ipFile
-	with open(ndxFile, "a") as ndx:
+	with open(ndxFile, "a", encoding='utf8') as ndx:
 		word_keys = uniqueWords.keys()
 		#uniqueWords.sort()
 		for word in sorted(word_keys):
@@ -128,7 +128,7 @@ def getWordList(ipFile, delim, headersOnly='N'):
 	indexedWords = {}
 	totWords = 0
 	totLines = 0
-	f = open(ipFile, 'r')
+	f = open(ipFile, 'r', encoding='utf8')
 	for line in f:
 		totLines = totLines + 1
 		words = multi_split(line, delim)
@@ -169,7 +169,7 @@ def consolidate(ipFile, opFile):
 	curWord = ''
 	curLineNums = ''
 	indexedWords = {}
-	with open(ipFile, "r") as ip:
+	with open(ipFile, "r", encoding='utf8') as ip:
 		for line in ip:
 			cols = line.split(',')
 			curFile = cols[0]
@@ -180,7 +180,7 @@ def consolidate(ipFile, opFile):
 				indexedWords[curWord] =  indexedWords[curWord] + ', ' + curFile + ' - ' + curLineNums
 			else:
 				indexedWords[curWord] = curFile + ' - ' + curLineNums
-	with open(opFile, "w") as op:
+	with open(opFile, "w", encoding='utf8') as op:
 		op.write('word, filenames\n')  # this shows which words appear in which files
 		word_keys = indexedWords.keys()
 		for word in sorted(word_keys):
