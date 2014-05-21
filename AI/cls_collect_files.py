@@ -1,5 +1,5 @@
 # cls_collect_files.py	written by Duncan Murray 13/5/2014
-# Base class for collection classes for AIKIF
+# class for filelist collections in AIKIF
 
 import cls_collect
 import os
