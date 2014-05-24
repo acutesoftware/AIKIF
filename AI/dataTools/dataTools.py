@@ -111,9 +111,18 @@ def MapTo(opFile):
 	pass
 
 
-def AnalyseCSV(fname):
-	print('dataTools.py - AnalyseCSV("' + fname + '")')
-
+def AnalyseCSV_File(datafile, opFolder):
+	baseName = opFolder + '\\' + os.path.basename(datafile).split('.')[0]
+	tmpfile = baseName + '.txt'
+	colHeaders = dat.GetColumnList(datafile)
+	colNum = 0
+	for col in colHeaders:
+		colText = "".join(map(str,col))    #prints JUST the column name in the list item
+		print(colText)
+		dat.GetCountUniqueValues(datafile, colNum, colText, 10, baseName + '_COL_VALUES.csv')
+		dat.GetColumnCounts(datafile, colNum, colText, baseName + '_COL_COUNTS.csv')
+		colNum = colNum + 1
+		
 def ExtractTable(fname, opFile, opCols, startRow=1, startCol=1, endRow=5, endCol=5):			
 	print('Extracting ' + os.path.basename(fname) + ' to ' + opFile)
 	curRow = 1
