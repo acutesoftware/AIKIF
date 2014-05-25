@@ -32,14 +32,10 @@ def start_server():
 	app.run()
 
 ###################### ROUTING #########################
-#import views
-
 
 @app.route("/")
 def page_home():
 	txt = aikif_web_menu()
-	#txt += "<H2>AIKIF - Overview</h2>\n"
-	#txt += "This is the admin web interface for AIKIF (Artificial Intelligence Knowledge Information Framework)\n"
 	txt += "<H3>Pages on this site</h3><TABLE width=80% border=0 align=centre>\n"
 	for m in menu:
 		txt += '<TR><TD><a href="' + m[0] + '">' + m[1] + '</a></td><td>' + m[2] + '</td></tr>\n'
@@ -53,8 +49,6 @@ def page_home():
 @app.route("/todo")
 def page_todo():
 	txt = aikif_web_menu('Todo')
-	#txt += "<H2>TODO List (development)</h2>\n"
-	#txt += "List of things to do for AIKIF\n"
 	txt += "<H3>Dev Tasks</h3>\n"
 	txt += "<LI>get basic web functionality working in this app web_aikif</LI>\n"
 	txt += "<LI>Split to standard MVC layout once implemention works</LI>\n"
@@ -72,14 +66,12 @@ def page_todo():
 @app.route("/data")
 def page_data():
 	txt = aikif_web_menu('Data')
-	#txt += "<H2>List of Data Files</h2>"
 	txt += "Page to show the current set of data files used"
 	return txt
 
 @app.route("/agents")
 def page_agents():
 	txt = aikif_web_menu('Agents')
-	#txt += "<H2>Agent Details</h2>"
 	txt += "<LI>Agent #1 = blah"
 	txt += "<LI>Agent #1 = blah"
 	return txt
@@ -87,23 +79,18 @@ def page_agents():
 @app.route("/programs")
 def page_programs():
 	txt = aikif_web_menu('Programs')
-	#txt += "<H2>Working Programs</h2>"
 	txt += "<LI>Program #1 = blah"
 	return txt
 
 @app.route("/about")
 def page_about():
 	txt = aikif_web_menu('About')
-	#txt += "<H2>What is AIKIF</h2>"
 	txt += "This is an example framework to capture the flow of information initially for personal data management, but ultimately useful for AI applications.<BR>"
 	txt += "Initially it will be populated and tested for human use, but includes tests and verification process for future 'General AI's."
 	txt += get_footer()
 	return txt
 
 	
-
-###################### MODELS #########################
-
 def aikif_web_menu(cur=''):
 	""" returns the web page header containing standard AIKIF top level web menu """
 	pgeHdg = ''
@@ -116,7 +103,6 @@ def aikif_web_menu(cur=''):
 	txt += '   <!-- Banner -->\n'
 	txt += '   <img src = "' + os.path.join('static','aikif_banner.jpg') + '" alt="AIKIF Banner"/>\n'
 	txt += '   <ul id = "menu_list">\n'
-	#menu = [['/','Home'],['/todo','Todo'],['/data','Data'],['/agents','Agents'], ['/programs','Programs'],['/about','About']]
 	for m in menu:
 		print(m)
 		if m[1] == cur:
