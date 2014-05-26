@@ -27,7 +27,7 @@ from datetime import datetime
 sys.path.append('..//..//aspytk')
 import lib_data as dat
 import lib_file as fle
-import lib_net as net
+#import lib_net as net
 import AIKIF_utils as aikif
 
 dataPath = r"T:\user\dev\src\python\AI\data"
@@ -115,8 +115,8 @@ def ShowListOfProposedFiles(printList='Y'):
 			print(i)
 	if printList == 'HTML':
 		dat.SaveListToFile(fl_all, dataPath + '\\log\\file_list_required.csv')
-		net.FormatCsvAsHtml(dataPath + '\\log\\file_list_required.csv', dataPath + '\\log\\file_list_required.html')
-		fle.LaunchFile(dataPath + '\\log\\file_list_required.html')
+		#net.FormatCsvAsHtml(dataPath + '\\log\\file_list_required.csv', dataPath + '\\log\\file_list_required.html')
+		#fle.LaunchFile(dataPath + '\\log\\file_list_required.html')
 	numFiles = len(fl_all)
 	print('Proposed Files =  ' + str(numFiles))
 	return len(fl_all)

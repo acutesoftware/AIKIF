@@ -37,15 +37,16 @@ def build_AIKIF_structure():
     return AIKIF_FileList
 
 def showColumnStructures(AIKIF_FileList):
-    print('\n--------------   Column Structures of Data Files  -----------------')
-    for j in range(len(AIKIF_FileList)):
-        for key in AIKIF_FileList[j]:  # dont use sorted function
-            if key == 'fname':
-                dat.print_no_newline('\n ' + AIKIF_FileList[j][key].ljust(14, ' ') + ': ') 
-            if key == 'fields':
-                for fld in AIKIF_FileList[j][key]:
-                    dat.print_no_newline(fld + ',' )  # prints all heirachy - works
-    print('\n-------------------------------------------------------------------\n')
+	print('\n--------------   Column Structures of Data Files  -----------------')
+	for j in range(len(AIKIF_FileList)):
+		for key in AIKIF_FileList[j]:  # dont use sorted function
+			if key == 'fname':
+				dat.print_no_newline('\n ' + AIKIF_FileList[j][key].ljust(14, ' ') + ': ') 
+				
+			if key == 'fields':
+				for fld in AIKIF_FileList[j][key]:
+					dat.print_no_newline(fld + ',' )  # prints all heirachy - works
+	print('\n-------------------------------------------------------------------\n')
 	
 def debugPrintFileStructures(AIKIF_FileList):
     for j in range(len(AIKIF_FileList)):
