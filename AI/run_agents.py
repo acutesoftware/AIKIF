@@ -43,6 +43,10 @@ def main():
 		if is_agent_scheduled_to_start(i) is True:
 			run(i['file'], True)
 
+def get_agent_list():
+	print('RETURNING AGENT LIST\n\n')
+	return agent_list
+			
 def verify_agents():
 	all_good = True
 	for i in agent_list:

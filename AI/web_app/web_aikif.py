@@ -79,8 +79,8 @@ def page_data():
 @app.route("/agents")
 def page_agents():
 	txt = aikif_web_menu('Agents')
-	txt += "<LI>Agent #1 = blah"
-	txt += "<LI>Agent #1 = blah"
+	import page_agents as agt
+	txt += agt.get_page()
 	return txt
 	
 @app.route("/programs")

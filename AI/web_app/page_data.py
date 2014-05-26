@@ -36,6 +36,6 @@ def get_aikif_structure():
 def get_ontology():
 	txt = '<H3>Master File Mapping</H3>\n<TABLE width=100% border=0 align=centre>\n'
 	lst = filemap.BuildMasterFileMapping('N')
-	txt += web.list2html(lst)
+	txt += web.filelist2html(lst, '..\\..\\data\\')
 	return txt
 	
