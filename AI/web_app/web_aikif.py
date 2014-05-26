@@ -2,6 +2,9 @@
 # web interface for AIKIF
 import sys
 import os
+
+sys.path.append('..\\AI')
+
 print ("sys.version = ", sys.version)
 print ("os.getcwd() = ", os.getcwd())
 
@@ -66,7 +69,11 @@ def page_todo():
 @app.route("/data")
 def page_data():
 	txt = aikif_web_menu('Data')
-	txt += "Page to show the current set of data files used"
+#	try:
+	import page_data
+	txt += page_data.get_page()
+#	except:
+#		txt += page_error('data')
 	return txt
 
 @app.route("/agents")
@@ -90,6 +97,11 @@ def page_about():
 	txt += get_footer()
 	return txt
 
+	
+def page_error(calling_page):
+	txt = '<BR><BR>'
+	txt += '<H2>Error - problem calling ' + calling_page + '</H2>'
+	return txt
 	
 def aikif_web_menu(cur=''):
 	""" returns the web page header containing standard AIKIF top level web menu """
