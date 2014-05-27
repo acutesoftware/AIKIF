@@ -37,7 +37,8 @@ def filelist2html(lst, fldr):
 
 def link_file(f, fldr):
 	""" creates a html link for a file using folder fldr """
-	return '<a href="' + fldr + f + '">' + f + '</a>'
+	return '<a href="data/' + f + '">' + f + '</a>'
+	#return '<a href="?' + f + '">' + f + '</a>'
 	
 
 def dict_to_htmlrow(d):

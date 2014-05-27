@@ -76,6 +76,15 @@ def page_data():
 #		txt += page_error('data')
 	return txt
 
+@app.route("/data/<dataFile>")
+def page_data_show(dataFile):
+	txt = aikif_web_menu('Data')
+	import page_data
+	txt += page_data.get_page(dataFile)
+	return txt
+	
+	
+
 @app.route("/agents")
 def page_agents():
 	txt = aikif_web_menu('Agents')
@@ -113,7 +122,7 @@ def aikif_web_menu(cur=''):
 	txt += '<div id = "container">\n'
 	txt += '   <div id = "header">\n'
 	txt += '   <!-- Banner -->\n'
-	txt += '   <img src = "' + os.path.join('static','aikif_banner.jpg') + '" alt="AIKIF Banner"/>\n'
+	txt += '   <img src = "' + os.path.join('/static','aikif_banner.jpg') + '" alt="AIKIF Banner"/>\n'
 	txt += '   <ul id = "menu_list">\n'
 	for m in menu:
 		print(m)
@@ -138,8 +147,8 @@ def get_header(pge=''):
 	txt += '<title>AIKIF:' + pge + '</title>\n'
 	txt += '<!-- Stylesheets for responsive design -->\n'
 	txt += '<meta name="viewport" content="width=device-width, initial-scale=1.0" />\n'
-	txt += '<link rel="stylesheet" type="text/css" href="' + os.path.join('static','aikif.css') + '" media="screen" />\n'
-	txt += '<link rel="stylesheet" href="' + os.path.join('static','aikif_mob.css') + '" media="only screen and (min-device-width : 320px) and (max-device-width : 480px)">\n'
+	txt += '<link rel="stylesheet" type="text/css" href="' + os.path.join('/static','aikif.css') + '" media="screen" />\n'
+	txt += '<link rel="stylesheet" href="' + os.path.join('/static','aikif_mob.css') + '" media="only screen and (min-device-width : 320px) and (max-device-width : 480px)">\n'
 	txt += '</HEAD>\n'
 	txt += '<body>\n'
 	return txt

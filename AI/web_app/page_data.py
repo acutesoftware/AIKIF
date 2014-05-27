@@ -3,15 +3,22 @@
 
 import sys
 import web_utils as web
+
 sys.path.append('..\\..\\AI')
 import AIKIF_utils as aikif
 import fileMapping as filemap
 
+#from .AI import AIKIF_utils as aikif
+#from ...AI import fileMapping as filemap
+  
 
-def get_page():
+def get_page(dataFile=''):
 	txt = ''
-	txt += get_aikif_structure()
-	txt += get_ontology()
+	if dataFile:
+		txt = "SHOWING FILE - " + dataFile
+	else:
+		txt += get_aikif_structure()
+		txt += get_ontology()
 	return txt
 	
 	
