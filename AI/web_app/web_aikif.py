@@ -12,6 +12,7 @@ from os import environ
 
 #AIKIF_WEB_VERSION = "PROD"
 AIKIF_WEB_VERSION = "DEV"
+AIKIF_VERSION_NUM = "Version 0.1.1 (alpha) - updated 27-May-2014"
 
 import flask
 from flask import Flask
@@ -46,7 +47,7 @@ def page_home():
 	txt += "<H3>Status</h3>\n"
 	txt += "TODO - update status\n"
 	txt += "<BR><BR>\n"
-	
+	txt += get_footer()
 	return txt
 
 @app.route("/todo")
@@ -64,6 +65,7 @@ def page_todo():
 	txt += "<LI>get webserver running, deploy to restricted site</LI>\n"
 	txt += "<LI>schedule collection tasks to run daily</LI>\n"
 	txt += "<BR><BR>\n"
+	txt += get_footer()
 	return txt
 
 @app.route("/data")
@@ -74,6 +76,7 @@ def page_data():
 	txt += page_data.get_page()
 #	except:
 #		txt += page_error('data')
+	txt += get_footer()
 	return txt
 
 @app.route("/data/<dataFile>")
@@ -81,6 +84,7 @@ def page_data_show(dataFile):
 	txt = aikif_web_menu('Data')
 	import page_data
 	txt += page_data.get_page(dataFile)
+	txt += get_footer()
 	return txt
 	
 	
@@ -90,12 +94,14 @@ def page_agents():
 	txt = aikif_web_menu('Agents')
 	import page_agents as agt
 	txt += agt.get_page()
+	txt += get_footer()
 	return txt
 	
 @app.route("/programs")
 def page_programs():
 	txt = aikif_web_menu('Programs')
 	txt += "<LI>Program #1 = blah"
+	txt += get_footer()
 	return txt
 
 @app.route("/about")
@@ -110,6 +116,7 @@ def page_about():
 def page_error(calling_page):
 	txt = '<BR><BR>'
 	txt += '<H2>Error - problem calling ' + calling_page + '</H2>'
+	txt += get_footer()
 	return txt
 	
 def aikif_web_menu(cur=''):
@@ -154,7 +161,12 @@ def get_header(pge=''):
 	return txt
 	
 def get_footer(pge=''):
-	txt = '\n\n<BR><BR><BR>\n<font-size=8px>AIKIF web interface</font></BODY></HTML>\n'
+	txt = '\n\n<BR><BR><BR>\n<div id="footer">\n'
+	txt += '<HR><a href="http://www.acutesoftware.com.au/aikif/index.html">AIKIF web interface</a> - '
+	txt += 'written by Duncan Murray : djmurray@acutesoftware.com.au<BR>\n'
+	txt += AIKIF_WEB_VERSION + ':' + AIKIF_VERSION_NUM + '\n'
+	txt += 'Python version:' + sys.version + '\n'
+	txt += '</div></BODY></HTML>\n'
 	return txt
 
 def escape_html(s):
