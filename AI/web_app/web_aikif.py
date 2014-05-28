@@ -100,8 +100,8 @@ def page_agents():
 @app.route("/programs")
 def page_programs():
 	txt = aikif_web_menu('Programs')
-	txt += "<LI>Program #1 = blah"
-	txt += get_footer()
+	import page_programs as prg
+	txt += prg.get_page()
 	return txt
 
 @app.route("/about")
