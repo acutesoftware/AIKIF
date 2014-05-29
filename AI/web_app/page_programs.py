@@ -8,7 +8,7 @@ sys.path.append('..\\..\\AI')
 
 
 def get_page():
-	txt = 'Programs Submenu = <a href="/programs/rebuild">Rebuild Program List</a>, Search : [  ]'
+	txt = '<a href="/programs/rebuild">Rebuild Program List</a><BR>'
 	txt += show_program_list()
 	return txt
 
@@ -86,13 +86,14 @@ def get_functions(fname):
 	return txt + '<BR>'
 
 def strip_text_after_string(txt, junk):
+	""" used to strip any poorly documented comments at the end of function defs """
 	if junk in txt:
 		return txt[:txt.find(junk)]
 	else:
 		return txt
 	
 def get_imports(fname):
-	""" get a list of functions from a Python program """
+	""" get a list of imports from a Python program """
 	txt = ''
 	with open(fname, 'r') as f:
 		for line in f:
