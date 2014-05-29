@@ -103,6 +103,17 @@ def page_programs():
 	import page_programs as prg
 	txt += prg.get_page()
 	return txt
+	
+@app.route("/programs/rebuild")
+def page_programs_rebuild():
+	txt = aikif_web_menu('Programs')
+	import page_programs as prg
+	print('Rebuilding program list....')
+	prg.rebuild()
+	txt += prg.get_page()
+	return txt
+	
+	return txt
 
 @app.route("/about")
 def page_about():

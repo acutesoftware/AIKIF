@@ -8,9 +8,18 @@ sys.path.append('..\\..\\AI')
 
 
 def get_page():
-	txt = ''
-	txt += get_program_list()
+	txt = 'Programs Submenu = <a href="/programs/rebuild">Rebuild Program List</a>, Search : [  ]'
+	txt += show_program_list()
 	return txt
+
+def show_program_list():
+	with open('program_list.html', 'r') as f:
+		return f.read()
+
+def rebuild():
+	""" rebuilds the list of programs to file  """
+	with open('program_list.html', 'w') as f:
+		f.write(get_program_list())
 	
 def get_program_list():
 	#colList = ['FullName', 'Path', 'FileName','FileSize','Functions', 'Imports']
@@ -90,3 +99,8 @@ def get_imports(fname):
 			if line[0:6] == 'import':
 				txt += '<PRE>' + strip_text_after_string(line[7:], ' as ') + '</PRE>\n'
 	return txt + '<BR>'
+
+
+	
+	
+	

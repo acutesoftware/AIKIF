@@ -68,7 +68,6 @@ def link_file(f, fldr):
 		return f
 	#return '<a href="?' + f + '">' + f + '</a>'
 	
-
 def dict_to_htmlrow(d):
 	res = "<TR>\n"
 	for k, v in d.iteritems():
