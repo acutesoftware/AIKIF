@@ -118,8 +118,8 @@ def page_programs_rebuild():
 @app.route("/about")
 def page_about():
 	txt = aikif_web_menu('About')
-	txt += "This is an example framework to capture the flow of information initially for personal data management, but ultimately useful for AI applications.<BR>"
-	txt += "Initially it will be populated and tested for human use, but includes tests and verification process for future 'General AI's."
+	import page_about as abt
+	txt += abt.get_page()
 	txt += get_footer()
 	return txt
 
