@@ -56,7 +56,7 @@ def get_aikif_structure():
 	return txt
 	
 def get_list_data_files():
-	txt = '<H3>Master File Mapping</H3>\n<TABLE width=100% border=0 align=centre>\n'
+	txt = '<H3>Master File Mapping</H3>\n' # <TABLE width=100% border=0 align=centre>\n'
 	pth = os.path.abspath('..\\data\\core\\')
 	print( "get_list_data_files(): PTH = " + pth )
 	lst = web.GetFileList(pth, '*.CSV')

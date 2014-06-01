@@ -11,10 +11,10 @@ body {
 }
 
 h1 {
-	font-size: 140%;
+	font-size: 170%;
 	font-style: normal;
 	font-weight: normal;
-	letter-spacing:2px;
+	letter-spacing:1px;
     text-align:justify;
     text-align:left;
     
@@ -101,6 +101,19 @@ pre {
 	float: left;  
 	overflow: auto; 
 	padding: 0px 0px 0px 30px;  
+}
+
+#table_list {
+	float: left;
+	width: 300px;
+	overflow: auto; 
+	background-color: green;
+}
+
+#table_data {
+	float: right;
+	width: 70%;
+	background-color: red;
 }
 
 #footer {

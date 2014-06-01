@@ -153,7 +153,7 @@ def aikif_web_menu(cur=''):
 				pass
 		else:
 			txt += '      <LI id="top_menu"><a href=' + m[0] + '>' + m[1] + '</a></li>\n'
-	txt += "    </ul>\n    </div>\n</div>\n\n"
+	txt += "    </ul>\n    </div>\n\n"
 	txt += '<H1>AIKIF ' + pgeHdg + '</H1>\n'
 	txt += '<H4>' + pgeBlurb + '</H4>\n'
 	return txt
