@@ -1,9 +1,11 @@
+# coding: utf-8
 # web_utils.py	written by Duncan Murray 26/5/2014
 # functions to convert data to HTML, etc for web dev
 import csv
 import os
 import glob
 import fnmatch
+from flask import request
 
 def list2html(lst):
 	txt = '<TABLE width=100% border=0>'
@@ -61,9 +63,14 @@ def filelist2html(lst, fldr):
 def link_file(f, fldr):
 	""" creates a html link for a file using folder fldr """
 	fname = os.path.join(fldr,f)
-	print(fname)
+	#print('\nf = ', f, fname)
 	if os.path.isfile(fname):
-		return '<a href="data/' + f + '">' + f + '</a>'
+		#if f.startswith('data/'):
+		if 'data/' in request.path:
+			return '<a href="' + f + '">' + f + '</a>'
+		else:
+			return '<a href="data/' + f + '">' + f + '</a>'
+			#return '<a href="' + f + '">' + f + '</a>'
 	else:
 		return f
 	#return '<a href="?' + f + '">' + f + '</a>'
@@ -86,7 +93,10 @@ def read_csv_to_html_table(csvFile):
 			txt += "<TR>"
 			for col in row:
 				txt += "<TD>"
-				txt += col
+				try:
+					txt += col
+				except:
+					txt += 'Error'
 				txt += "</TD>"
 			txt += "</TR>"
 		txt += "</TABLE>"

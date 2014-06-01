@@ -1,3 +1,4 @@
+# coding: utf-8
 # page_data.py	written by Duncan Murray 26/5/2014
 # handles the data display page for AIKIF web interface
 
@@ -15,7 +16,9 @@ dataFolder = '..\\data\\core\\'
 dataFolder = 'T:\user\dev\src\python\AI\data\core'
 
 def get_page(dataFile=''):
-	txt = ''
+	txt = '<TABLE width=98% align=centre valign=top border=0><TR><TD width=40%>'
+	txt += get_list_data_files()
+	txt += '</TD><TD>'
 	if dataFile:
 		fullName = os.path.join(dataFolder , dataFile)
 		print("\nREADING " + fullName + '\n')
@@ -23,7 +26,8 @@ def get_page(dataFile=''):
 	else:
 		txt += get_aikif_structure()
 		#txt += get_ontology()   # no - this is the proposed file list
-		txt += get_list_data_files()
+		
+	txt += '</TD></TR></TABLE>\n'
 	return txt
 	
 def showDataFile(fname):
@@ -54,7 +58,7 @@ def get_aikif_structure():
 def get_list_data_files():
 	txt = '<H3>Master File Mapping</H3>\n<TABLE width=100% border=0 align=centre>\n'
 	pth = os.path.abspath('..\\data\\core\\')
-	print( pth )
+	print( "get_list_data_files(): PTH = " + pth )
 	lst = web.GetFileList(pth, '*.CSV')
 	txt += web.filelist2html(lst, pth)
 	return txt
