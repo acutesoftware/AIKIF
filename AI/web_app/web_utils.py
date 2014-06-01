@@ -41,9 +41,26 @@ def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
 						opFileList.append(filename)
 	return opFileList
 
-	
+# table_data	
 	
 def filelist2html(lst, fldr):
+	txt = '<div id = "table_list">'
+	txt += '<TABLE width=100% border=3><tr>'
+	for l in lst:
+		if type(l) is str:
+			txt+= '<TD>' + link_file(l, fldr) + '</TD>\n'
+		elif type(l) is list:
+			txt+= '<TD>'
+			for i in l:
+				txt+= link_file(i, fldr) + ', '
+			txt+= '</TD>'
+		else:
+			txt+= '<TD>' + str(l) + '</TD>\n'
+		txt += '</TR>\n'
+	txt += '</TABLE><BR></div>\n'
+	return txt
+	
+def filelist2html_OLD_VIA_TABLES(lst, fldr):
 	txt = '<TABLE width=100% border=0>'
 	for l in lst:
 		txt += '<TR>'
