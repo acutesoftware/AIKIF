@@ -105,9 +105,10 @@ pre {
 
 #table_list {
 	float: left;
-	width: 300px;
+	width: 400px;
 	overflow: auto; 
-	background-color: green;
+	background-color: white;
+	font-size: small;
 }
 
 #table_data {
