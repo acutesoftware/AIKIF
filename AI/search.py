@@ -21,12 +21,13 @@ else:
 		if i > 0:
 			searchString.append(sys.argv[i])
 		
-def search():
+def search(search_string = ''):
 	# main function 
-
+	if search_string == '':
+		search_string = searchString
 	aikif.LogProcess('Starting search',  'search.py') # sys.modules[self.__module__].__file__)
 	print('-------------------')
-	print('Searching for ', searchString)
+	print('Searching for ', search_string)
 	print('-------------------')	
 
 	ndxFiles = ['..\\data\\index\\ndxAll.txt', '..\\data\\index\\ndxFullLecture.txt']
@@ -37,7 +38,7 @@ def search():
 		with open(fname, 'r') as f:
 			for line in f:
 				totLines = totLines + 1
-				for src in searchString:
+				for src in search_string:
 					if src in line:
 						print(line)
 						numResults = numResults + 1
