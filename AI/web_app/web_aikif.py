@@ -14,9 +14,12 @@ from os import environ
 AIKIF_WEB_VERSION = "DEV"
 AIKIF_VERSION_NUM = "Version 0.1.1 (alpha) - updated 27-May-2014"
 
+import web_utils as web
+
 import flask
 from flask import Flask
-
+from flask import request
+    
 app = Flask(__name__)
 menu = [
 	['/',        'Home',     'This is the admin web interface for AIKIF (Artificial Intelligence Knowledge Information Framework)'],
@@ -40,6 +43,8 @@ def start_server():
 @app.route("/")
 def page_home():
 	txt = aikif_web_menu()
+	txt += web.build_search_form()
+	
 	txt += "<H3>Pages on this site</h3><TABLE width=80% border=0 align=centre>\n"
 	for m in menu:
 		txt += '<TR><TD><a href="' + m[0] + '">' + m[1] + '</a></td><td>' + m[2] + '</td></tr>\n'
@@ -50,9 +55,20 @@ def page_home():
 	txt += get_footer()
 	return txt
 
+@app.route('/', methods=['POST'])
+def search_post():
+	search_text = request.form['search_text']
+	txt = aikif_web_menu()
+	txt += web.build_search_form()
+	import page_search
+	txt += page_search.get_page(search_text)
+	return txt
+
+	
 @app.route("/todo")
 def page_todo():
 	txt = aikif_web_menu('Todo')
+	txt += web.build_search_form()
 	txt += "<H3>Dev Tasks</h3>\n"
 	txt += "<LI>get basic web functionality working in this app web_aikif</LI>\n"
 	txt += "<LI>Split to standard MVC layout once implemention works</LI>\n"

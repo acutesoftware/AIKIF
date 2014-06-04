@@ -59,6 +59,13 @@ def filelist2html(lst, fldr):
 		txt += '</TR>\n'
 	txt += '</TABLE><BR></div>\n'
 	return txt
+
+def build_search_form():
+	txt = '<form action="." method="POST">\n'
+	txt += '  <input type="text" name="search_text">\n'
+	txt += '  <input type="submit" name="my-form" value="Search">\n'
+	txt += '</form>\n'
+	return txt
 	
 def filelist2html_OLD_VIA_TABLES(lst, fldr):
 	txt = '<TABLE width=100% border=0>'
