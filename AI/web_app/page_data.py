@@ -16,9 +16,11 @@ dataFolder = '..\\data\\core\\'
 dataFolder = 'T:\user\dev\src\python\AI\data\core'
 
 def get_page(dataFile=''):
-	txt = '<TABLE width=98% align=centre valign=top border=0><TR><TD width=40%>'
+	txt = '<div id="content">\n'
+	txt += '<div id="table_list">\n'
 	txt += get_list_data_files()
-	txt += '</TD><TD>'
+	txt += '</div>\n'
+	txt += '<div id="table_data">\n'
 	if dataFile:
 		fullName = os.path.join(dataFolder , dataFile)
 		print("\nREADING " + fullName + '\n')
@@ -26,14 +28,15 @@ def get_page(dataFile=''):
 	else:
 		txt += get_aikif_structure()
 		#txt += get_ontology()   # no - this is the proposed file list
-		
-	txt += '</TD></TR></TABLE>\n'
+	txt += '</div>\n'
+	txt += '</div>\n'
 	return txt
 	
 def showDataFile(fname):
 	""" shows a data file in CSV format - all files live in CORE folder """
 	txt = '<H2>' + fname + '</H2>'
-	txt += web.read_csv_to_html_table(fname)
+	txt += web.read_csv_to_html_list(fname)
+	txt += '</div>\n'
 	return txt
 		
 	

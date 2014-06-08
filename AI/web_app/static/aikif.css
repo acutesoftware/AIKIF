@@ -97,15 +97,15 @@ pre {
 
 #content {     
 	/*height: 460px;   */ 
-	width: 380px;
-	float: left;  
+	width: 980px;
+	float: center;  
 	overflow: auto; 
 	padding: 0px 0px 0px 30px;  
 }
 
 #table_list {
 	float: left;
-	width: 400px;
+	width: 40%;
 	overflow: auto; 
 	background-color: white;
 	font-size: small;
@@ -113,8 +113,11 @@ pre {
 
 #table_data {
 	float: right;
-	width: 70%;
-	background-color: red;
+	overflow: auto; 
+	width: 60%;
+	background-color: white;
+	font-size: small;
+	font-family: courier;
 }
 
 #footer {

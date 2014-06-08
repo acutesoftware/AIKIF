@@ -44,20 +44,18 @@ def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
 # table_data	
 	
 def filelist2html(lst, fldr):
-	txt = '<div id = "table_list">'
-	txt += '<TABLE width=100% border=3><tr>'
+	txt = ''
 	for l in lst:
 		if type(l) is str:
-			txt+= '<TD>' + link_file(l, fldr) + '</TD>\n'
+			txt+= ' ' + link_file(l, fldr) + '\n'
 		elif type(l) is list:
-			txt+= '<TD>'
 			for i in l:
 				txt+= link_file(i, fldr) + ', '
-			txt+= '</TD>'
+			txt+= '\n'
 		else:
-			txt+= '<TD>' + str(l) + '</TD>\n'
-		txt += '</TR>\n'
-	txt += '</TABLE><BR></div>\n'
+			txt+= ' ' + str(l) + '\n'
+		txt += '<BR>\n'
+	txt += '\n'
 	return txt
 
 def build_search_form():
@@ -124,5 +122,20 @@ def read_csv_to_html_table(csvFile):
 				txt += "</TD>"
 			txt += "</TR>"
 		txt += "</TABLE>"
+	return txt
+	
+def read_csv_to_html_list(csvFile):
+	txt = ''
+	with open(csvFile) as csv_file:
+		for row in csv.reader(csv_file, delimiter=','):
+			txt += '<div id="table_row">'
+			for col in row:
+				txt += " "
+				try:
+					txt += col
+				except:
+					txt += 'Error'
+				txt += " "
+			txt += "</div>\n"
 	return txt
 	
