@@ -43,7 +43,7 @@ def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
 
 # table_data	
 	
-def filelist2html(lst, fldr):
+def filelist2html_div(lst, fldr):
 	txt = ''
 	for l in lst:
 		if type(l) is str:
@@ -65,19 +65,31 @@ def build_search_form():
 	txt += '</form>\n'
 	return txt
 	
-def filelist2html_OLD_VIA_TABLES(lst, fldr):
+def filelist2html(lst, fldr, hasHeader='N'):
 	txt = '<TABLE width=100% border=0>'
+	numRows = 1
 	for l in lst:
+		if hasHeader == 'Y':
+			if numRows == 1:
+				td_begin = '<TH>'
+				td_end = '</TH>'
+			else:
+				td_begin = '<TD>'
+				td_end = '</TD>'
+		else:
+			td_begin = '<TD>'
+			td_end = '</TD>'
+		numRows += 1
 		txt += '<TR>'
 		if type(l) is str:
-			txt+= '<TD>' + link_file(l, fldr) + '</TD>\n'
+			txt += td_begin + link_file(l, fldr) + td_end
 		elif type(l) is list:
-			txt+= '<TD>'
+			txt += td_begin
 			for i in l:
-				txt+= link_file(i, fldr) + ', '
-			txt+= '</TD>'
+				txt+= link_file(i, fldr) + '; '
+			txt += td_end
 		else:
-			txt+= '<TD>' + str(l) + '</TD>\n'
+			txt += td_begin + str(l) + td_end
 		txt += '</TR>\n'
 	txt += '</TABLE><BR>\n'
 	return txt
@@ -101,27 +113,40 @@ def dict_to_htmlrow(d):
 	res = "<TR>\n"
 	for k, v in d.iteritems():
 		if type(v) == str:
-			res = res + '<TD>' + k + ':</TD><TD>' + v + '</TD>\n'
+			res = res + '<TD>' + k + ':</TD><TD>' + v + '</TD>'
 		else:
-			res = res + '<TD>' + k + ':</TD><TD>' + str(v) + '</TD>\n'
+			res = res + '<TD>' + k + ':</TD><TD>' + str(v) + '</TD>'
 	#print res
 	res += '</TR>\n'
 	return res
 
-def read_csv_to_html_table(csvFile):
+def read_csv_to_html_table(csvFile, hasHeader='N'):
 	txt = '<TABLE width=100% border=1>'
 	with open(csvFile) as csv_file:
+		numRows = 1
 		for row in csv.reader(csv_file, delimiter=','):
+			if hasHeader == 'Y':
+				if numRows == 1:
+					td_begin = '<TH>'
+					td_end = '</TH>'
+				else:
+					td_begin = '<TD>'
+					td_end = '</TD>'
+			else:
+				td_begin = '<TD>'
+				td_end = '</TD>'
+			numRows += 1
+
 			txt += "<TR>"
 			for col in row:
-				txt += "<TD>"
+				txt += td_begin
 				try:
 					txt += col
 				except:
 					txt += 'Error'
-				txt += "</TD>"
-			txt += "</TR>"
-		txt += "</TABLE>"
+				txt += td_end
+			txt += "</TR>\n"
+		txt += "</TABLE>\n\n"
 	return txt
 	
 def read_csv_to_html_list(csvFile):

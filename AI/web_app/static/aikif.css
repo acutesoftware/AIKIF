@@ -87,8 +87,9 @@ p {
 }
 
 
-table tr td {
+table tr td  th{
     vertical-align: top;
+	float: left;
 } 
 
 pre {
@@ -112,13 +113,15 @@ pre {
 }
 
 #table_data {
-	float: right;
+	float: left;
 	overflow: auto; 
 	width: 60%;
 	background-color: white;
 	font-size: small;
-	font-family: courier;
+	
 }
+
+
 
 #footer {
 	height: 28px;
