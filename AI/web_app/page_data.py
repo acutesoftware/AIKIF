@@ -35,7 +35,11 @@ def get_page(dataFile=''):
 def showDataFile(fname):
 	""" shows a data file in CSV format - all files live in CORE folder """
 	txt = '<H2>' + fname + '</H2>'
+	print (fname)
+	#try:
 	txt += web.read_csv_to_html_table(fname, 'Y')  # it is ok to use a table for actual table data
+	#except:
+	#	txt += '<H2>ERROR - cant read file</H2>'
 	#txt += web.read_csv_to_html_list(fname)  # only use this for single column lists
 	
 	txt += '</div>\n'

@@ -6,6 +6,9 @@ import os
 import glob
 import fnmatch
 from flask import request
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 def list2html(lst):
 	txt = '<TABLE width=100% border=0>'
@@ -16,7 +19,7 @@ def list2html(lst):
 		elif type(l) is list:
 			txt+= '<TD>'
 			for i in l:
-				txt+= i + ', '
+				txt += i + ', '
 			txt+= '</TD>'
 		else:
 			txt+= '<TD>' + str(l) + '</TD>\n'
@@ -122,7 +125,39 @@ def dict_to_htmlrow(d):
 
 def read_csv_to_html_table(csvFile, hasHeader='N'):
 	txt = '<TABLE width=100% border=1>'
-	with open(csvFile) as csv_file:
+	with open(csvFile, "r") as file:  # 
+		numRows = 1
+		for row in file:
+			if hasHeader == 'Y':
+				if numRows == 1:
+					td_begin = '<TH>'
+					td_end = '</TH>'
+				else:
+					td_begin = '<TD>'
+					td_end = '</TD>'
+			else:
+				td_begin = '<TD>'
+				td_end = '</TD>'
+			cols = row.split(',')
+			numRows += 1
+
+			txt += "<TR>"
+			for col in cols:
+				txt += td_begin
+				try:
+					colString = col.decode("utf8")
+				except:
+					colString = '<font color=red>Error decoding column data</font>'
+				txt += colString.strip('"')	
+				txt += td_end
+			txt += "</TR>\n"
+		txt += "</TABLE>\n\n"
+	return txt
+	
+
+def read_csv_to_html_table_using_CSV_module_OLD(csvFile, hasHeader='N'):
+	txt = '<TABLE width=100% border=1>'
+	with open(csvFile, "rb") as csv_file:  # , encoding='utf-8'
 		numRows = 1
 		for row in csv.reader(csv_file, delimiter=','):
 			if hasHeader == 'Y':

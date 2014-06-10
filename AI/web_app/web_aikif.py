@@ -124,7 +124,6 @@ def page_programs():
 def page_programs_rebuild():
 	txt = aikif_web_menu('Programs')
 	import page_programs as prg
-	print('Rebuilding program list....')
 	prg.rebuild()
 	txt += prg.get_page()
 	return txt
@@ -159,7 +158,6 @@ def aikif_web_menu(cur=''):
 	txt += '   <img src = "' + os.path.join('/static','aikif_banner.jpg') + '" alt="AIKIF Banner"/>\n'
 	txt += '   <ul id = "menu_list">\n'
 	for m in menu:
-		print(m)
 		if m[1] == cur:
 			txt += '      <LI id="top_menu_selected"><a href=' + m[0] + '>' + m[1] + '</a></li>\n'
 			pgeHdg = m[1]
@@ -209,8 +207,6 @@ def format_list_as_html_table_row(lst):
 	for i in lst:
 		txt = txt + '<TD>' + i + '</TD>'
 	txt = txt + '</TR>'	
-	print(lst)
-	print('txt = ' + txt)
 	return txt
     
 def format_csv_to_html(csvFile, opHTML):
