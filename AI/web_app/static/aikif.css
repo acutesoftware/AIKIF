@@ -28,9 +28,21 @@ h4 {
     font-style:italic;
 }
 
-p {
-	font-size: 110%;
+p  {
+	font-size: 100%;
     text-align:justify;
+}
+
+TD a {
+	font-size: 100%;
+    text-align:justify;
+}
+
+TD {
+	font-size: 80%;
+    text-align: justify;
+	color: black;
+	font-family: Courier;
 }
 
 #header {
@@ -90,6 +102,7 @@ p {
 table tr td  th{
     vertical-align: top;
 	float: left;
+	font-size: small;
 } 
 
 pre {
@@ -98,7 +111,8 @@ pre {
 
 #content {     
 	/*height: 460px;   */ 
-	width: 980px;
+	/*width: 980px;*/
+	width: 100%;
 	float: center;  
 	overflow: auto; 
 	padding: 0px 0px 0px 30px;  
@@ -113,7 +127,7 @@ pre {
 }
 
 #table_data {
-	float: left;
+	float: right;
 	overflow: auto; 
 	width: 60%;
 	background-color: white;
