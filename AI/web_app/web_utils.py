@@ -124,7 +124,7 @@ def dict_to_htmlrow(d):
 	return res
 
 def read_csv_to_html_table(csvFile, hasHeader='N'):
-	txt = '<TABLE width=100% border=1>'
+	txt = '<table class="as-table as-table-zebra as-table-horizontal">'
 	with open(csvFile, "r") as file:  # 
 		numRows = 1
 		for row in file:

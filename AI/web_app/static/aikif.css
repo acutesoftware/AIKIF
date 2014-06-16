@@ -39,10 +39,9 @@ TD a {
 }
 
 TD {
-	font-size: 80%;
+	font-size: 90%;
     text-align: justify;
 	color: black;
-	font-family: Courier;
 }
 
 #header {
@@ -102,7 +101,6 @@ TD {
 table tr td  th{
     vertical-align: top;
 	float: left;
-	font-size: small;
 } 
 
 pre {
@@ -122,17 +120,12 @@ pre {
 	float: left;
 	width: 40%;
 	overflow: auto; 
-	background-color: white;
-	font-size: small;
 }
 
 #table_data {
 	float: right;
 	overflow: auto; 
 	width: 60%;
-	background-color: white;
-	font-size: small;
-	
 }
 
 
@@ -145,6 +138,39 @@ pre {
 	padding: 0px;
 	text-align: center;        
 }
+
+.as-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.as-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.as-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.as-table-zebra tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+.as-table-zebra tbody tr:nth-child(even) {
+    background-color: #EEF7EE;
+}
+.as-table-horizontal tbody td {
+    border-left: none;
+    border-right: none;
+}
+
+
 
 /*--------------------------------
 			Colour
