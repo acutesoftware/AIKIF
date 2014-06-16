@@ -33,6 +33,9 @@ def main():
 	tl.add({'file':progName, 'function':'main', 'args':['int', 'dict'], 'return':['int', 'list']})
 	#tl.add({'file':'solve_knapsack.py', 'function':'', 'args':['int', 'dict'], 'return':['int', 'list']})
 
+	progName = fldr + os.sep + 'game_board_utils.py'
+	tl.add({'file':progName, 'function':'build_board_2048', 'args':[], 'return':['list']})
+	tl.add({'file':progName, 'function':'build_board_checkers', 'args':[], 'return':['list']})
 	
 	tl.save('tools.txt')
 	args = [1,2,3,4,5,6,7]
