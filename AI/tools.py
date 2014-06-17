@@ -36,6 +36,9 @@ def main():
 	progName = fldr + os.sep + 'game_board_utils.py'
 	tl.add({'file':progName, 'function':'build_board_2048', 'args':[], 'return':['list']})
 	tl.add({'file':progName, 'function':'build_board_checkers', 'args':[], 'return':['list']})
+
+	progName = fldr + os.sep + 'crypt_utils.py'
+	tl.add({'file':progName, 'function':'solve', 'args':['string'], 'return':['string']})
 	
 	tl.save('tools.txt')
 	args = [1,2,3,4,5,6,7]
