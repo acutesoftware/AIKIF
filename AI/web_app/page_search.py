@@ -7,7 +7,7 @@ sys.path.append('..\\..\\AI')
 
 def get_page(search_text):
 	lst = search_aikif(search_text)
-	txt = '<TABLE width=100% border=0>'
+	txt = '<table class="as-table as-table-zebra as-table-horizontal">'
 	for result in lst:
 		txt += '<TR><TD>' + result + '</TD></TR>'
 	txt += '</TABLE>\n\n'
@@ -29,13 +29,15 @@ def search_aikif(txt):
 					line_num += 1
 					if txt in line:
 						num_found += 1
-						results.append(format_result(f, line, line_num))
+						results.append(format_result(f, line, line_num, txt))
 			results.append(f + ' = ' + str(num_found) + ' results')
 			
 		except:
 			results.append('problem with file ' + f)
 	return results
 			
-def format_result(file, txt, line_num):
-	return '&nbsp;&nbsp;' + str(line_num) + ': ' + txt 
+def format_result(file, line, line_num, txt):
+	""" highlight the search result """
+	
+	return '&nbsp;&nbsp;' + str(line_num) + ': ' + line.replace(txt, '<span style="background-color: #FFFF00">' + txt + '</span>')
 	
