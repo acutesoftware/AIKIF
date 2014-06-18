@@ -19,7 +19,7 @@ def TEST():
 	d.save()
 	
 class Oracle(Database):
-	def GetListOfOracleTables(conn, tNameFilter):
+	def GetListOfOracleTables(self, conn, tNameFilter):
 		sql = "select * from TAB where tname like '" + tNameFilter + "'"
 		opList = []
 		c = conn.cursor()
@@ -28,7 +28,7 @@ class Oracle(Database):
 			opList.append(row_data[0])
 		return opList
 		
-	def Oracle2CSV(conn, tblName, fldrLocation = '', printHeader = True):
+	def Oracle2CSV(self, conn, tblName, fldrLocation = '', printHeader = True):
 		csv_file_dest = fldrLocation + tblName + ".CSV"
 		print('Exporting ', tblName,' to ',csv_file_dest )
 		outputFile = open(csv_file_dest,'wb') # 'wb'
@@ -48,7 +48,7 @@ class Oracle(Database):
 
 		outputFile.close()	
 
-	def ConnectOracle( schema, dbase, usr, encryptedPasswd):
+	def ConnectOracle(self, schema, dbase, usr, encryptedPasswd):
 		# connects to Oracle database and returns the open connection cursor
 		password = base64.b64decode('XXXXXXXX')
 		conn_str = schema + u'/' + password + '@' + dbase
@@ -56,7 +56,7 @@ class Oracle(Database):
 		conn = cx_Oracle.connect(conn_str)
 		return conn
 		
-	def DisconnectOracle(conn):
+	def DisconnectOracle(self, conn):
 		# closes the open connection cursor
 		try:
 			conn.close()
