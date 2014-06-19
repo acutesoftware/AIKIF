@@ -32,6 +32,7 @@ import sys
 import csv
 import string
 sys.path.append('..//..//..//aspytk')
+
 import lib_data as dat
 import lib_file as fle
 import lib_net as net
@@ -257,15 +258,10 @@ def GenerateSQL(csvFile, tblName, opFile, headerRow=1):
 		SQL_file.write('COMMIT;')
 
 def clean_column_heading(txt):
-	""" terrible code, but will be fixed later - TODO """
+	""" make the column clean for databases """
 	c1 = txt.strip().replace(' ', '_').replace('.', '_').upper().strip()
-	c2 = ''
-	try:  # difference in earlier versions of python
-		c2 = re.sub('[^0-9a-zA-Z]+', '_', c1) 
-	except:
-		c2 =  "".join([ c if c.isalnum() else "" for c in c1 ])
-	#print('c1=', c2, 'c2=',c2)
-	return c2.strip('_')
+
+	return c1.strip('_')
 		
 def GenerateSQL_CreateTable(tbl, cols):
 	txt = 'DROP TABLE ' + tbl + '  CASCADE CONSTRAINTS;\n'
@@ -295,6 +291,7 @@ def GenerateSQL_Insert(tbl, row, cols):
 	
 
 if __name__ == '__main__':
-    TEST()	
+    #TEST()	
+	pass
 	
 
