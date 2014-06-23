@@ -1,10 +1,12 @@
 # cls_goal_time.py
 
+from cls_goal import Goal
+
 class GoalTime(Goal):
     """ 
     goals around time - eg maximise use of object / minimize time of task
     """
-    def __init__(self, maximise=True, current_val, target_val):
+    def __init__(self, maximise=True, current_val=0, target_val=0):
         """
         set maximise = True for class to find maximum time (usage) or
         set to False to minimise the amount of time (eg reduce task time)
@@ -20,9 +22,8 @@ class GoalTime(Goal):
         ]
         
         
-    def check_for_success(self):
-		pass
-        return False
+	def check_for_success(self):
+		return False
 
     def run_plan(self, strategy):
         """ 
