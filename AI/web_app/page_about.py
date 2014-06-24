@@ -12,7 +12,7 @@ import fileMapping as filemap
 #from ...AI import fileMapping as filemap
 
 dataFolder = '..\\data\\core\\'  
-dataFolder = 'T:\user\dev\src\python\AI\data\core'
+dataFolder = 'T:\\user\\dev\\src\\python\\AI\\data\\core'
 
 def get_page(dataFile=''):
 	txt = ''

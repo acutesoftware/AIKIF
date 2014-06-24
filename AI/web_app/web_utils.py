@@ -7,8 +7,7 @@ import glob
 import fnmatch
 from flask import request
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+
 
 def list2html(lst):
 	txt = '<TABLE width=100% border=0>'
@@ -114,7 +113,7 @@ def link_file(f, fldr):
 	
 def dict_to_htmlrow(d):
 	res = "<TR>\n"
-	for k, v in d.iteritems():
+	for k, v in d.items():
 		if type(v) == str:
 			res = res + '<TD>' + k + ':</TD><TD>' + v + '</TD>'
 		else:
@@ -145,7 +144,7 @@ def read_csv_to_html_table(csvFile, hasHeader='N'):
 			for col in cols:
 				txt += td_begin
 				try:
-					colString = col.decode("utf8")
+					colString = col
 				except:
 					colString = '<font color=red>Error decoding column data</font>'
 				txt += colString.strip('"')	
