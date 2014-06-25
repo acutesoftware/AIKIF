@@ -30,10 +30,13 @@ def search_aikif(txt):
 					if txt in line:
 						num_found += 1
 						results.append(format_result(f, line, line_num, txt))
-			results.append(f + ' = ' + str(num_found) + ' results')
+			if num_found > 0:
+				results.append(f + ' = ' + str(num_found) + ' results')
 			
 		except:
 			results.append('problem with file ' + f)
+	if len(results) == 0:
+		results.append("No results")
 	return results
 			
 def format_result(file, line, line_num, txt):
