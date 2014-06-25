@@ -38,7 +38,7 @@ import lib_file as fle
 import lib_net as net
 try:
 	import xlrd as xl        # NOTE - xlrd imports fine from python shell, but this line cant find it
-except:
+except ImportError:
 	print('you need to install xlrd')
 
 fldr = '..//..//data//temp//'
