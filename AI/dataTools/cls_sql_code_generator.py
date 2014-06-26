@@ -104,3 +104,21 @@ class SQLCodeGenerator(object):
         self.sql_text += "                WHERE ip." + dimension_join_col + " = " + fact_join_col + "), \n"
         self.sql_text += "             -1); \n"
         
+    def aggregate(self, opTable, group_by_cols, meas):
+        """ 
+        Create an aggregate table grouped by col showing meas
+        The meas is omething like "sum(income)" or "count(*)"
+        RETURNS:
+            DROP TABLE C_AGG_PRODUCT;
+            CREATE TABLE C_AGG_PRODUCT AS (
+                SELECT PRODUCT, sum(AMOUNT) AS result 
+                FROM C_SALES GROUP BY PRODUCT
+            );
+
+        """
+        self.sql_text += "DROP TABLE " + opTable + ";\n"
+        self.sql_text += "CREATE TABLE " + opTable + " AS (\n"
+        self.sql_text += "    SELECT " + group_by_cols + ", " + meas + " AS result \n"
+        self.sql_text += "    FROM " + self.fact_table + " GROUP BY " + group_by_cols + "\n"
+        self.sql_text += ");\n"
+        
