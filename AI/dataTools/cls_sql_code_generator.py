@@ -107,7 +107,7 @@ class SQLCodeGenerator(object):
     def aggregate(self, opTable, group_by_cols, meas):
         """ 
         Create an aggregate table grouped by col showing meas
-        The meas is omething like "sum(income)" or "count(*)"
+        The meas is something like "sum(income)" or "count(*)"
         RETURNS:
             DROP TABLE C_AGG_PRODUCT;
             CREATE TABLE C_AGG_PRODUCT AS (

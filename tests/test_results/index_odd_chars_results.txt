@@ -1,0 +1,3 @@
+index_odd_chars_source.txt, aaa, 1 2 3 3
+index_odd_chars_source.txt, bbb, 1 3 3 3
+index_odd_chars_source.txt, ccc, 2 3 3 3 3

@@ -8,6 +8,7 @@ class TestClassDataSet(unittest.TestCase):
  
     def setUp(self):
         pass
+        self.results_folder = 'test_results/'
 
     def test_full_sql_generation(self):
         
@@ -25,17 +26,24 @@ class TestClassDataSet(unittest.TestCase):
         tst.comment_block('Key to Dimensions')
         tst.key_to_dimension('PRODUCT_KEY', 'substr(op.PRODUCT, 1,10)', 'U_PRODUCT_LIST', 'product_name', 'PRODUCT_KEY')
         tst.commit()
-        tst.save('test.sql')
+        tst.save(self.results_folder + 'test_full_sql_generation.sql')
         #print(tst.get_sql())
         self.assertEqual(len(tst.get_sql()), 1112) 		
     
 
-    def test_aggregate_1(self):
+    def test_sql_code_agg_single_col(self):
         t2 = SQLCodeGenerator('C_SALES')
         t2.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
         t2.aggregate('C_AGG_PRODUCT', 'PRODUCT', 'sum(AMOUNT)')
-        t2.save('test_agg1.sql')
+        t2.save(self.results_folder + 'test_sql_code_agg_single_col.sql')
         self.assertEqual(len(t2.get_sql()), 138) 		
+
+    def test_aggregate_multiple_cols(self):
+        t2 = SQLCodeGenerator('C_SALES')
+        t2.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
+        t2.aggregate('C_AGG_PRODUCT', 'PRODUCT, CUSTOMER_NAME', 'sum(AMOUNT)')
+        t2.save(self.results_folder + 'test_sql_code_agg_multiple_cols.sql')
+        self.assertEqual(len(t2.get_sql()), 168) 		
 
 
 if __name__ == '__main__':

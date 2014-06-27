@@ -1,0 +1,9 @@
+index_normal_source.txt, file, 1 2
+index_normal_source.txt, has, 2
+index_normal_source.txt, is, 1
+index_normal_source.txt, lines, 2
+index_normal_source.txt, normal, 1
+index_normal_source.txt, particular, 2
+index_normal_source.txt, text, 1 2
+index_normal_source.txt, this, 1 2
+index_normal_source.txt, two, 2
