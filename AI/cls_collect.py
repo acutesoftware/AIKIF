@@ -3,7 +3,9 @@
 
 class clsCollect(object):
 	"""
-	Base Class for collection classes in AIKIF
+	Base Class for collection classes in AIKIF. Purpose is
+    to provide consistent logging and tracking of collections
+    
 	"""
 	def __init__(self, name=None,  fldr=None):
 		self.name = name
