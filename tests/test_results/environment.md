@@ -8,75 +8,71 @@ Created by check_python_env.py
 
 ##Required packages
 ###Packages needed to be installed
-numpy Fail
-pypyodbc Fail
-cx_Oracle Fail
-xlrd Fail
-
+numpy Fail<BR>pypyodbc Fail<BR>cx_Oracle Fail<BR>xlrd Fail<BR>
 
 ###Packages required and already installed
-os, sys, requests, codecs, re, csv, operator, datetime, xml, platform, socket, getopt, unittest, random, binascii, time, glob, flask, json, sqlite3, string, math, getpass, subprocess, fnmatch, ctypes, ctypes
+os, sys, requests, codecs, re, csv, operator, datetime, xml, platform, socket, getopt, unittest, random, binascii, time, glob, flask, json, sqlite3, string, math, getpass, subprocess, fnmatch, ctypes, ctypes<BR><BR>
 
 ##List of all imports in all modules
-unittest
-page_programs as prg
-platform
-cx_Oracle
-index
-AIKIF_utils as aikif
-index as ndx
-csv
-page_about as abt
-datetime
-sqlite3
-xml.etree.ElementTree as ET
-cls_collect_files as cl
-xlrd as xl        # NOTE - xlrd imports fine from python shell, but this line cant find it
-run_agents as agt
-image_tools as cl
-statements.append(line.strip()[7:])
-binascii
-toolbox.Toolbox as tool
-string
-sys
-web_utils as web
-pypyodbc
-lib_net as net
-cls_dataset as cl
-sys, os
-glob
-page_data
-generateTestData as src
-math
-page_agents as agt
-statements = []
-as_util_data as dat
-time, os, sys
-time
-os
-socket
-operator
-dataTools.dataTools as dt
-cls_collect
-subprocess
-xml
-flask
-re
-urllib.request
-os, sys
-cls_programs as prog
-getpass
-add
-cls_datatable as cl
-random
-getopt
-test_utils as tst
-lib_data as dat
-lib_file as fle
-cls_file as cl
-ctypes
-fileMapping as filemap
-page_search
-fnmatch
-json
-codecs, re
+cls_collect<BR>
+ctypes<BR>
+datetime<BR>
+toolbox.Toolbox as tool<BR>
+time<BR>
+page_programs as prg<BR>
+codecs, re<BR>
+cls_collect_files as cl<BR>
+csv<BR>
+sys, os<BR>
+socket<BR>
+image_tools as cl<BR>
+statements.append(line.strip()[7:])<BR>
+unittest<BR>
+binascii<BR>
+cls_programs as prog<BR>
+test_utils as tst<BR>
+AIKIF_utils as aikif<BR>
+glob<BR>
+random<BR>
+getpass<BR>
+index<BR>
+xml.etree.ElementTree as ET<BR>
+page_data<BR>
+urllib.request<BR>
+lib_data as dat<BR>
+fileMapping as filemap<BR>
+index as ndx<BR>
+lib_file as fle<BR>
+subprocess<BR>
+cls_file as cl<BR>
+pypyodbc<BR>
+generateTestData as src<BR>
+lib_net as net<BR>
+flask<BR>
+time, os, sys<BR>
+sys<BR>
+os, sys<BR>
+string<BR>
+platform<BR>
+page_about as abt<BR>
+cls_dataset as cl<BR>
+re<BR>
+getopt<BR>
+cls_datatable as cl<BR>
+page_agents as agt<BR>
+math<BR>
+cx_Oracle<BR>
+operator<BR>
+page_search<BR>
+fnmatch<BR>
+statements = []<BR>
+xlrd as xl        # NOTE - xlrd imports fine from python shell, but this line cant find it<BR>
+add<BR>
+json<BR>
+sqlite3<BR>
+os<BR>
+as_util_data as dat<BR>
+xml<BR>
+web_utils as web<BR>
+run_agents as agt<BR>
+dataTools.dataTools as dt<BR>

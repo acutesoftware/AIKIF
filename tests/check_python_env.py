@@ -36,14 +36,14 @@ def generate_report(lst_imports, tok, fail ):
         f.write("\n##Required packages\n")
         f.write("###Packages needed to be installed\n")
         for imp in fail:
-            f.write(imp + "\n")
+            f.write(imp + "<BR>")
         f.write("\n\n###Packages required and already installed\n")
         for imp in tok:
             f.write(imp + ", ")
-        f.write(imp + "\n\n")
+        f.write(imp + "<BR><BR>\n\n")
         f.write("##List of all imports in all modules\n")
         for imp in lst_imports:
-            f.write(imp + "\n")        
+            f.write(imp + "<BR>\n")        
 
 def get_import_list(root_folder):
     """
