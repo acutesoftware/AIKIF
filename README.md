@@ -7,21 +7,27 @@ This is an example framework to capture the flow of information initially for pe
 Initially it will be populated and tested for human use, but includes tests and verification process for future ‘General AI’s.<br />
 Functions (Octave, Python, SQL) are called at set stages of the AI process which log the results into a standard database schema.<br /><br />
 
-This allows you to easily search and compare previous batch runs.<br />
 
 ###Quick Start
-The goal is to get any set of information and parse it into a consistant format so a machine can read it.<br />
+The goal is to get any set of information and parse it into a consistent format so a machine can read it.<br />
 For example:<br />
-	TODO<br />
+	Project Management<br/>
+    Code Management<br/>
+    Personal Information Management<br/>
 
 ##Programs
 ###Main Programs
 AI.py			- sample main program to show a trivial example of logging data<br />
 view.py			- simple command driven procedure to show various details of the system<br />
 index.py		- creates text indexes of all the files<br />
-search.py		- searches, using both indexes and onotologies<br />
+search.py		- searches, using both indexes and ontologies<br />
+go_web_aikif.bat- starts the web server for the AIKIF admin interface
 
+###Toolbox
+Various modules which contain generic functions
 
+###DataTools
+collection of modules to manage data transformations
 
 ###Standard Library Programs
 AIKIF_utils.py	- standard utils for the filelists<br />
