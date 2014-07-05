@@ -10,6 +10,7 @@ import sys
 
 
 def list2html(lst):
+    """ convert a list to html using table formatting """
 	txt = '<TABLE width=100% border=0>'
 	for l in lst:
 		txt += '<TR>\n'
@@ -27,8 +28,7 @@ def list2html(lst):
 	return txt
 
 def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
-	# written by Duncan Murray 7/8/2013 (C) Acute Software
-	# builds a list of files and returns as a list 
+	""" builds a list of files and returns as a list """
 	numFiles = 0    
 	opFileList = []
 	for root, dirs, files in os.walk(rootPath):
@@ -46,6 +46,7 @@ def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
 # table_data	
 	
 def filelist2html_div(lst, fldr):
+    """ convert a list to html using DIV formatting """
 	txt = ''
 	for l in lst:
 		if type(l) is str:
@@ -61,6 +62,7 @@ def filelist2html_div(lst, fldr):
 	return txt
 
 def build_search_form():
+    """ returns the html for a simple search form """
 	txt = '<form action="." method="POST">\n'
 	txt += '  <input type="text" name="search_text">\n'
 	txt += '  <input type="submit" name="my-form" value="Search">\n'
@@ -68,6 +70,7 @@ def build_search_form():
 	return txt
 	
 def filelist2html(lst, fldr, hasHeader='N'):
+    """ formats a standard filelist to htmk using table formats """
 	txt = '<TABLE width=100% border=0>'
 	numRows = 1
 	for l in lst:
