@@ -35,6 +35,15 @@ def create_html_summary():
         fop.write(txt)
     print('Done')
 
+    
+def escape_html(s):
+    res = s
+    res = res.replace('&', "&amp;")
+    res = res.replace('>', "&gt;")
+    res = res.replace('<', "&lt;")
+    res = res.replace('"', "&quot;")
+    return res
+    
 def summarise_file_as_html(fname):
     """ 
     takes a large data file and produces a HTML summary as html
@@ -48,7 +57,7 @@ def summarise_file_as_html(fname):
             if line.strip() != '':
                 num_lines += 1
                 if num_lines < 80:
-                    txt += str(num_lines) + ': ' + line + '<HR>'
+                    txt += str(num_lines) + ': ' + escape_html(line) + ''
         txt += '</PRE>'
         txt += 'Total lines = ' + str(num_lines) + '<BR><BR>'
     
