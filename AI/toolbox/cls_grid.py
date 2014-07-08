@@ -3,8 +3,6 @@
 
 import random
 
-#EMPTY = 0 
-#FULL = 1
 EMPTY = '.' 
 FULL = 'X'
 
@@ -17,8 +15,6 @@ class Grid:
         self.grid_height = grid_height
         self.grid_width = grid_width
         self.spacing = spacing
-        
-        #self.grid = []
         self.pieces = pieces
         self.reset()
         self.grid = [[EMPTY for dummy_col in range(self.grid_width)] 
@@ -35,9 +31,7 @@ class Grid:
         Clears grid to be EMPTY
         """
         self.grid = [[EMPTY for dummy_col in range(self.grid_width)] for dummy_row in range(self.grid_height)]
-                
-        
-     
+      
     def __str__(self):
         """
         Return a string representation of the grid for debugging.
@@ -134,8 +128,7 @@ class Grid:
         blanks = 0
         for row_ndx in range(self.grid_height - 0):
             for col_ndx in range(self.grid_width - 0):
-                cell = self.get_tile(row_ndx, col_ndx)
-                if cell == EMPTY:
+                if self.get_tile(row_ndx, col_ndx) == EMPTY:
                     blanks += 1
         return blanks
         
@@ -146,8 +139,7 @@ class Grid:
         filled = 0
         for row_ndx in range(self.grid_height - 0):
             for col_ndx in range(self.grid_width - 0):
-                cell = self.get_tile(row_ndx, col_ndx)
-                if cell != EMPTY:
+                if self.get_tile(row_ndx, col_ndx) != EMPTY:
                     filled += 1
         return filled
         
@@ -169,22 +161,22 @@ class Grid:
         if col < 0:
             print("ERROR - x less than zero", col)
             col = 0
-            return
+            #return
             
         if col > self.grid_width - 1:
             print("ERROR - x larger than grid", col)
             col = self.grid_width - 1
-            return
+            #return
             
         if row < 0:
             print("ERROR - y less than zero", row)
             row = 0
-            return
+            #return
             
         if row > self.grid_height - 1:
             print("ERROR - y larger than grid", row)
             row = self.grid_height - 1
-            return
+            #return
             
         self.grid[row][col] = value
 

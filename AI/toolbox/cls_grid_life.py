@@ -56,31 +56,13 @@ class GameOfLifePatterns(object):
                              ]
         for i in range(num_patterns):
             pattern_to_add = random.choice(self.pattern_list)
-            
             methodToCall = getattr(sys.modules['cls_grid_life'], pattern_to_add)
-            
-            #result = locals()[pattern_to_add]()
-            
             result = methodToCall()
             self.patterns.extend(self.random_offset(self.bitmap_pattern_to_list(result)))
-            
-            
-            """
-            if result == 'dots':
-                self.patterns.extend(self.random_offset(self.dots()))
-            elif result == 'cube':
-                self.patterns.extend(self.random_offset(self.cube()))
-            elif result == 'edge':
-                self.patterns.extend(self.random_offset(self.edge()))
-            elif result == 'rand':
-                self.patterns.extend(self.random_offset(self.rand()))
-            """ 
 
     def get_patterns(self):    
         """ return the list of patterns """
-        #print (self.patterns)
         return self.patterns
-
         
     def bitmap_pattern_to_list(self, bmp_pat):
         """ 
@@ -90,7 +72,6 @@ class GameOfLifePatterns(object):
         res = []
         x = 1
         y = 1
-        #print('bmp_pat = ', bmp_pat)
         lines = bmp_pat.split('\n')
         for line in lines:
             y += 1
@@ -108,8 +89,6 @@ class GameOfLifePatterns(object):
         res = []
         x = random.randint(4,self.max_x - 42)
         y = random.randint(4,self.max_y - 10)
-        #print('lst = ', lst)
-        #print ('x=',x, 'y=',y)
         for itm in lst:
             res.append([itm[0] + y, itm[1] + x])
         return res
@@ -152,7 +131,6 @@ def boat():
         '..........'])
 
 # Oscillators
-     
 def blinker():
     return '\n'.join([
         '..........', 
@@ -178,7 +156,6 @@ def beacon():
         '..........'])
         
 # Spaceships
-       
 def glider():
     return '\n'.join([
         '..........', 
