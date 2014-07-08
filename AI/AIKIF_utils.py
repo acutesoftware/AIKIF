@@ -120,23 +120,23 @@ def SaveFileDataToFile(lst, filename, append=False):
 def LogDataSource(src, prg=''):
     # function to collect raw data from the web and hard drive[ currently using documents on disk instead of web ]
     #print(' source  =', src)
-	fle.log(logFileSource , dat.ForceToString(src), prg)
-    
+    fle.log(logFileSource , dat.ForceToString(src), prg)
+
 def LogProcess(process, prg=''):
     # log a process or program
     #print(' process = ', process)
-	fle.log(logFileProcess, dat.ForceToString(process), prg)
+    fle.log(logFileProcess, dat.ForceToString(process), prg)
 
 def LogCommand(cmd, prg=''):
     # record the command passed
     #print(' command = ', cmd)
-	fle.log(logFileCommand , dat.ForceToString(cmd), prg)
+    fle.log(logFileCommand , dat.ForceToString(cmd), prg)
 
 def LogResult(res, prg=''):
     # record the output of the command
     #print('   result    = ', res)
-	fle.log(logFileResult , dat.ForceToString(res), prg)
-    
+    fle.log(logFileResult , dat.ForceToString(res), prg)
+
 
  
 
