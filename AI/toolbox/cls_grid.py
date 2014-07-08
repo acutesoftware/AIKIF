@@ -169,15 +169,22 @@ class Grid:
         if col < 0:
             print("ERROR - x less than zero", col)
             col = 0
+            return
+            
         if col > self.grid_width - 1:
             print("ERROR - x larger than grid", col)
             col = self.grid_width - 1
+            return
+            
         if row < 0:
             print("ERROR - y less than zero", row)
             row = 0
+            return
+            
         if row > self.grid_height - 1:
             print("ERROR - y larger than grid", row)
             row = self.grid_height - 1
+            return
             
         self.grid[row][col] = value
 
