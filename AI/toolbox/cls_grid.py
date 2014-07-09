@@ -6,6 +6,8 @@ import random
 EMPTY = '.' 
 FULL = 'X'
 
+print("LOADING cls_grid module")
+
 class Grid:
     """
     Class to run the game logic.
@@ -20,6 +22,9 @@ class Grid:
         self.grid = [[EMPTY for dummy_col in range(self.grid_width)] 
                        for dummy_row in range(self.grid_height)]
 
+        print("INITIAILISING GRID")
+        
+                       
     def reset(self):
         """
         Reset the game so the grid is zeros (or default items)
@@ -43,6 +48,17 @@ class Grid:
             output_string += "\n"
         output_string += "\n"
         return output_string
+
+    def save(self, fname):
+        """ saves a grid to file as ASCII text """
+        with open(fname, "w") as f:
+            f.write(str(self))
+        
+        
+    def load(self, fname):
+        """ loads a ASCII text file grid to self  """
+        pass
+        
         
     def get_grid_height(self):
         """
@@ -163,9 +179,9 @@ class Grid:
             col = 0
             #return
             
-        if col > self.grid_width - 1:
+        if col > self.grid_width :
             print("ERROR - x larger than grid", col)
-            col = self.grid_width - 1
+            col = self.grid_width 
             #return
             
         if row < 0:
@@ -173,12 +189,14 @@ class Grid:
             row = 0
             #return
             
-        if row > self.grid_height - 1:
+        if row > self.grid_height:
             print("ERROR - y larger than grid", row)
-            row = self.grid_height - 1
+            row = self.grid_height 
             #return
-            
-        self.grid[row][col] = value
+        try:    
+            self.grid[row][col] = value
+        except:
+            print("Error - tile out of range")
 
     def get_tile(self, row, col):
         """
