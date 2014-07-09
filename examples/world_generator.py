@@ -12,11 +12,11 @@ def main():
     """
     iterations  =  10   # how many simulations to run
     years       = 100   # how many times to run each simulation
-    width       =  40   # grid width
-    height      =  20   # grid height
+    width       =  75   # grid width
+    height      =  75   # grid height
     time_delay  = 0.3   # delay when printing on screen
     num_seeds   =   4   # number of seed points to start land generation
-    perc_land   =  50   # % of world that is land
+    perc_land   =  30   # % of world that is land
     perc_sea    =  35   # % of world that is sea
     perc_blocked=  30   # % of world that is blocked
     myWorld = my_world.World( height, width, [0,1,2])
