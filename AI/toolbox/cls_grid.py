@@ -3,8 +3,8 @@
 
 import random
 
-EMPTY = '.' 
-FULL = 'X'
+EMPTY = '.'   # TODO - need to change this in multiple places (see worlds.py, cls_grid, world_generator)
+FULL = 'X'     
 
 print("LOADING cls_grid module")
 

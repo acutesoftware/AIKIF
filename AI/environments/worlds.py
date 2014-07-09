@@ -9,21 +9,17 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 sys.path.append(root_folder)
 import AI.toolbox.cls_grid as grd
 
-TERRAIN_SEA = 0
-TERRAIN_LAND = 1
-TERRAIN_BLOCKED = 2
-
-print("HELLO")
+TERRAIN_SEA = '.'  # TODO - need to change this in multiple places (see worlds.py, cls_grid, world_generator)
+TERRAIN_LAND = 'X'
+TERRAIN_BLOCKED = '#'
 
 class World(object):
     """
     base class for a simple virtual environment
     """
     def __init__(self, width, height, terrain):
-        print ("INIT IN WORLD")
         self.grd = grd.Grid(width, height, terrain, 1)
         self.refresh_stats()
-        print(self.grd)
     
     def __str__(self):
         txt_summary = '\nWorld'
@@ -44,7 +40,6 @@ class World(object):
         txt_summary += str(self.tot_blocked) + "(" + str(math.floor(self.tot_blocked*100/self.tot_pix)) + '%) blocked'
         return txt_summary
     
-
     def refresh_stats(self):
         """
         only need this when generating terrain (sea = 100 - perc_land at start).
@@ -58,9 +53,12 @@ class World(object):
             for col in range(self.grd.grid_width):
                 self.tot_pix += 1
                 val = self.grd.get_tile(row, col)
-                if val == '.': self.tot_sea += 1
-                if val == 'X': self.tot_land += 1
-                if val == '?': self.tot_blocked += 1
+                if val == TERRAIN_SEA: 
+                    self.tot_sea += 1
+                elif val == TERRAIN_LAND: 
+                    self.tot_land += 1
+                else:
+                    self.tot_blocked += 1
         
     
     def build_random(self, num_seeds=4, perc_land=40, perc_sea=30, perc_blocked=30):
@@ -75,7 +73,6 @@ class World(object):
         rnge = math.floor(num_seeds/2)
         self.show_grid_stats()
         seeds = [[randint(0,self.grd.grid_height-1), randint(0,self.grd.grid_width-1)] for y in range(rnge) for x in range(rnge)]
-        print (seeds)
         for seed in seeds:
              self.expand_seed(seed, (self.grd.grid_height * self.grd.grid_width)/(perc_sea),  TERRAIN_LAND)
         
@@ -93,7 +90,10 @@ class World(object):
                 self.expand_seed(self.add_new_seed(), 50, TERRAIN_LAND)
             else:
                 old_land = self.tot_land
-                
+        self.add_blocks(perc_blocked)
+        self.refresh_stats()
+
+         
     def add_new_seed(self):
         y = randint(0,self.grd.grid_height-1)
         x = randint(0,self.grd.grid_width-1)
@@ -164,24 +164,36 @@ class World(object):
         """
         pass
         
-    def build_random_v1(self, perc_land=40, perc_sea=30, perc_blocked=30):
-        """  WRONG
-        generates a random world with appropraite percentages
-        of land/sea or blocked (cannot pass)
+    def add_blocks(self, perc_blocked=30):
+        """  
+        adds a series of blocks - normally more straight than
+        random sea/land features - blocks are default 5x2
         """
-        for row in range(self.grd.grid_height):
-            for col in range(self.grd.grid_width):
-            
-                rand_value = random.randrange(0,100)
-                if rand_value < perc_land:
-                    val = 1
-                elif rand_value > (100-perc_blocked):
-                    val = 2
-                else:
-                    val = 0
-                self.grd.set_tile(row, col, val)
+        self.refresh_stats()
+        print(self.show_grid_stats())
+        while (100*(self.tot_blocked-10))/self.tot_pix < perc_blocked - 1:
+            self.add_block()
+            self.refresh_stats()
+            print(self.show_grid_stats())
  
-
+ 
+    def add_block(self):
+        """ adds a random size block to the map """
+        row = randint(0, self.grd.get_grid_height() - 6)
+        col = randint(0, self.grd.get_grid_width() - 6)
+        direction = randint(1,20)-10
+        if direction > 0:
+            y_len = 6
+            x_len = 2
+        else:
+            y_len = 2
+            x_len = 6
+        
+        print("Adding block to ", row, col, direction)
+        for r in range(row, row + y_len):
+            for c in range(col, col + x_len):
+                self.grd.set_tile(r,c,TERRAIN_BLOCKED)
+        
 
 
 
