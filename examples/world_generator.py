@@ -5,6 +5,7 @@ import sys
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
 sys.path.append(root_folder)
 import AI.environments.worlds as my_world
+import AI.agents.explore.agent_explore_grid as agt
 
 def main():
     """
@@ -13,8 +14,8 @@ def main():
     """
     iterations  =  10   # how many simulations to run
     years       = 100   # how many times to run each simulation
-    width       =  75   # grid width
-    height      =  75   # grid height
+    width       =  55   # grid width
+    height      =  15   # grid height
     time_delay  = 0.3   # delay when printing on screen
     num_seeds   =   4   # number of seed points to start land generation
     perc_land   =  40   # % of world that is land
@@ -24,4 +25,11 @@ def main():
     myWorld.build_random( num_seeds, perc_land, perc_sea, perc_blocked)
     print(myWorld)
     myWorld.grd.save('test_world.txt')
+    
+    #Create some agents to walk the grid
+    ag1 = agt.ExploreAgent( 'exploring_agent',  'T:\\user\\AIKIF', False)
+    ag1.set_world(myWorld, 4,4, myWorld.grd.grid_height - 4, myWorld.grd.grid_width - 3)
+    ag1.show_status()
+    ag1.start()
+    
 main()
