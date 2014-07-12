@@ -23,13 +23,16 @@ def main():
     perc_blocked=  10   # % of world that is blocked
     myWorld = my_world.World( height, width, ['.','X','#'])  # TODO - fix passing
     myWorld.build_random( num_seeds, perc_land, perc_sea, perc_blocked)
-    print(myWorld)
+    #print(myWorld)
     myWorld.grd.save('test_world.txt')
     
     #Create some agents to walk the grid
     ag1 = agt.ExploreAgent( 'exploring_agent',  'T:\\user\\AIKIF', False)
-    ag1.set_world(myWorld, 4,4, myWorld.grd.grid_height - 4, myWorld.grd.grid_width - 3)
-    ag1.show_status()
+    ag1.set_world(myWorld.grd, 4,4, myWorld.grd.grid_height - 4, myWorld.grd.grid_width - 3)
     ag1.start()
+    ag1.clear_surroundings()
+    ag1.show_status()
+    ag1.grd.set_tile(5,5,'A')
+    ag1.show_status()
     
 main()
