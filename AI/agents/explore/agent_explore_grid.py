@@ -42,7 +42,12 @@ class ExploreAgent(agt.Agent):
     def do_your_job(self, *arg):
         """
         the goal of the explore agent is to move to the 
-        target while avoiding blockages on the grid
+        target while avoiding blockages on the grid.
+        This function is messy and needs to be looked at.
+        It currently has a bug in that the backtrack oscillates
+        so need a new method of doing this - probably checking if
+        previously backtracked in that direction for those coords, ie
+        keep track of cells visited and number of times visited?
         """
         direction = ''
             
