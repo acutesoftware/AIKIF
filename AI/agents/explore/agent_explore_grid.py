@@ -14,10 +14,11 @@ class ExploreAgent(agt.Agent):
     """
     agent that explores a world (2D grid)
     """
-    def __init__(self, *arg):
-        agt.Agent.__init__(self, *arg)
-
-    def set_world(self, grd, start_x, start_y, y, x):
+    def __init__(self, name,  fldr, running):
+        #agt.Agent.__init__(self, *arg)
+        agt.Agent.__init__(self, name,  fldr, running)
+        
+    def set_world(self, grd, start_y, start_x, y, x):
         """
         tell the agent to move to location y,x 
         Why is there another grd object in the agent? Because 
@@ -35,7 +36,10 @@ class ExploreAgent(agt.Agent):
 
         
     def do_your_job(self, *arg):
-        print(' ---- your agents code goes here ---- ')
+        direction = ''
+        if self.target_x == self.current_x and self.target_y == self.current_y:
+            print(self.name + " : TARGET AQUIRED")
+            return
         if self.target_y > self.current_y:
             direction = 'S'
             self.current_y += 1
@@ -50,7 +54,7 @@ class ExploreAgent(agt.Agent):
             self.current_x -= 1
         
         self.results.append('do_your_job: moving ' + direction)
-        print("Setting agent to ", self.current_y, self.current_x)
+        print("   Setting agent '" + self.name + "' to ", self.current_y, self.current_x)
         self.grd.set_tile(self.start_y, self.start_x, 'A')
         self.grd.save('agent.txt')
 

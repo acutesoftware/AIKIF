@@ -39,7 +39,7 @@ class Agent(object):
 		self.running = running
 		self.results = []
 		self.status = 'READY'
-		print('Agent.py	: Creating Agent', self.name)
+		#print('Agent.py	: Creating Agent', self.name)
 		if self.running is True:
 			self.start()
 
@@ -49,9 +49,8 @@ class Agent(object):
 		"""
 		self.running = True
 		self.status = 'RUNNING'
-		print('Agent.py	: starting', self.name)
-		#self.results.append('The answer is 7')
-		self.do_your_job()	# starts the process
+		#print('Agent.py	: starting', self.name)
+		#self.do_your_job()	# starts the process
 	
 	def do_your_job(self):
 		"""

@@ -205,7 +205,7 @@ class WorldSimulation(object):
     def __init__(self, cls_world, agent_list):
         self.world = cls_world
         self.agent_list = agent_list
-        print("WorldSimulation:Simulation loading...")
+        #print("WorldSimulation:Simulation loading...")
     
     def run(self, num_runs, log_file_base = ''):
         """
@@ -237,5 +237,5 @@ class WorldSimulation(object):
         """
         for agt in self.agent_list:
             agt.start()
-            print(agt.name, " has started")
+            #print(agt.name, " has started")
  
