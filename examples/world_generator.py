@@ -27,12 +27,14 @@ def main():
     myWorld.grd.save('test_world.txt')
     
     #Create some agents to walk the grid
-    ag1 = agt.ExploreAgent( 'exploring_agent',  'T:\\user\\AIKIF', False)
-    ag1.set_world(myWorld.grd, 4,4, myWorld.grd.grid_height - 4, myWorld.grd.grid_width - 3)
-    ag1.start()
-    ag1.clear_surroundings()
-    ag1.show_status()
-    ag1.grd.set_tile(5,5,'A')
-    ag1.show_status()
+    target_coords = [myWorld.grd.grid_height - 4, myWorld.grd.grid_width - 3]
+    ag1 = agt.ExploreAgent( 'exploring_agent1',  'T:\\user\\AIKIF', False)
+    ag1.set_world(myWorld.grd, 4,4, target_coords[0], target_coords[1])
+    ag2 = agt.ExploreAgent( 'exploring_agent2',  'T:\\user\\AIKIF', False)
+    ag2.set_world(myWorld.grd, 8,3, target_coords[0], target_coords[1])
+    sim = my_world.WorldSimulation(myWorld, [ag1, ag2])
+    sim.run(4, 'T:\\user\\AIKIF\\log\\agents\\agt_run')
+    print("TODO - agents run , but grid save is saving the agents copy of grid without movement")
+    
     
 main()

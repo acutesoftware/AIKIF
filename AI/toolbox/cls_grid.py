@@ -195,8 +195,8 @@ class Grid:
             #return
         try:    
             self.grid[row][col] = value
-            if value == 'A':
-                print("AGENT INSTALLED at ", row, col)
+            #if value == 'A':
+            #    print("AGENT INSTALLED at ", row, col)
         except:
             print("Error - tile out of range")
 

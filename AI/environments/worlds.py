@@ -196,6 +196,46 @@ class World(object):
         
 
 
+class WorldSimulation(object):
+    """
+    takes a world object and number of agents, objects
+    and runs a simulation
+    
+    """
+    def __init__(self, cls_world, agent_list):
+        self.world = cls_world
+        self.agent_list = agent_list
+        print("WorldSimulation:Simulation loading...")
+    
+    def run(self, num_runs, log_file_base = ''):
+        """
+        Run each agent in the world for 'num_runs' iterations
+        Optionally saves grid results to file if base name is
+        passed to method.
+        """
+        self.start_all_agents()
+        for cur_run in range(1,num_runs):
+            print("WorldSimulation:run#", cur_run)
+            for agt in self.agent_list:
+                #agt.grd.replace_grid(self.world.grd)
+                self.world.grd.set_tile(agt.current_y, agt.current_x, ' ')
+                agt.do_your_job()
+                self.world.grd.set_tile(agt.current_y, agt.current_x, 'A')    # update the main world grid with agents changes
+            
+            # save grid after each run if required
+            if log_file_base != '':
+                self.world.grd.save(log_file_base + '_' + str(cur_run) + '.log')
+    
 
-
+    
+    def start_all_agents(self):
+        """
+        Start all agents - not sure yet if this method 
+        should be used - probably leave this up to the 
+        calling procedure so it can be managed, but put
+        here for simplicity now.
+        """
+        for agt in self.agent_list:
+            agt.start()
+            print(agt.name, " has started")
  

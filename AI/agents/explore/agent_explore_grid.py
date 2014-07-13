@@ -20,6 +20,10 @@ class ExploreAgent(agt.Agent):
     def set_world(self, grd, start_x, start_y, y, x):
         """
         tell the agent to move to location y,x 
+        Why is there another grd object in the agent? Because 
+        this is NOT the main grid, rather a copy for the agent
+        to overwrite with planning routes, etc.
+        The real grid is initialised in World.__init__() class
         """
         self.grd = grd
         self.start_x = start_x
