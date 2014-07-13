@@ -241,12 +241,12 @@ class WorldSimulation(object):
     
         # save the agents results here
         with open (log_file_base + '__agents.txt', "a") as f:
-            f.write("\n\nFinal World = \n")
+            f.write("\n\nFinal World: target = [" + str(self.agent_list[0].target_y) + "," + str(self.agent_list[0].target_x) + "]\n")
             f.write(str(self.world.grd))
-            f.write('\n\nAgent Name , num Steps , num Climbs\n')
+            f.write('\n\nAgent Name , starting, num Steps , num Climbs\n')
             for num, agt in enumerate(self.agent_list):
                 res = ''.join([a for a in agt.results])
-                f.write(agt.name + ' , ' + str(agt.num_steps)  + ' , ' + str(agt.num_climbs) + ' , ' + res + '\n')
+                f.write(agt.name + ' , [' + str(agt.start_y) + ', ' + str(agt.start_x) + '], ' + str(agt.num_steps)  + ' , ' + str(agt.num_climbs) + ' , ' + res + '\n')
                 
     def highlight_cell_surroundings(self, target_y, target_x):
         """

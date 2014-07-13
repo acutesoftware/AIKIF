@@ -11,15 +11,15 @@ import AI.environments.worlds as my_world
 import AI.agents.explore.agent_explore_grid as agt
 
 log_folder = 'T:\\user\\AIKIF\\log\\agents\\world_gen_logs'
-LOG_LEVEL = 5
+LOG_LEVEL = 3
 
 def main():
     """
     generates a random world, sets terrain and runs agents in it
      TODO - need to change pieces in multiple places (see worlds.py, cls_grid, world_generator)
     """
-    width       =  70   # grid width
-    height      =  70   # grid height
+    width       =  75   # grid width
+    height      =  40   # grid height
     time_delay  = 0.3   # delay when printing on screen
     num_seeds   =   4   # number of seed points to start land generation
     perc_land   =  20   # % of world that is land
@@ -31,8 +31,8 @@ def main():
     myWorld.grd.save('test_world.txt')
     
     #Create some agents to walk the grid
-    iterations  =   90   # how many simulations to run
-    num_agents  =   25   # number of agents to enter the world
+    iterations  =   150   # how many simulations to run
+    num_agents  =   7   # number of agents to enter the world
     years       = 100   # how many times to run each simulation
     target_coords = [math.floor(myWorld.grd.grid_height/2) + randint(1, math.floor(myWorld.grd.grid_height/2)) - 3, \
                      math.floor(myWorld.grd.grid_width /2) + randint(1, math.floor(myWorld.grd.grid_width/2)) - 5]
