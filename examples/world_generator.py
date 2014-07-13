@@ -18,8 +18,8 @@ def main():
     generates a random world, sets terrain and runs agents in it
      TODO - need to change pieces in multiple places (see worlds.py, cls_grid, world_generator)
     """
-    width       =  75   # grid width
-    height      =  40   # grid height
+    width       =  100   # grid width  (takes about 5 minutes to generate 500x400 grid with 8% blockages)
+    height      =  200   # grid height
     time_delay  = 0.3   # delay when printing on screen
     num_seeds   =   4   # number of seed points to start land generation
     perc_land   =  20   # % of world that is land
@@ -31,7 +31,7 @@ def main():
     myWorld.grd.save('test_world.txt')
     
     #Create some agents to walk the grid
-    iterations  =   150   # how many simulations to run
+    iterations  =   400   # how many simulations to run
     num_agents  =   7   # number of agents to enter the world
     years       = 100   # how many times to run each simulation
     target_coords = [math.floor(myWorld.grd.grid_height/2) + randint(1, math.floor(myWorld.grd.grid_height/2)) - 3, \
@@ -44,6 +44,6 @@ def main():
         agt_list.append(ag)
     sim = my_world.WorldSimulation(myWorld, agt_list, LOG_LEVEL)
     sim.run(iterations, 'Y', log_folder + '\\agt_run')
-    
+    sim.world.grd.save('test_world_traversed.txt')
  
 main()
