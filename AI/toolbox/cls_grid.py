@@ -276,4 +276,13 @@ class Grid:
                     self.set_empty(row, col)
                 else:
                     self.set_full(row, col)
-            
+   
+    def find_safe_starting_point(self):
+        """
+        finds a place on the grid which is clear on all sides 
+        to avoid starting in the middle of a blockage
+        """
+        y = random.randint(2,self.grid_height-4)
+        x = random.randint(2,self.grid_width-4)
+        return y, x
+        

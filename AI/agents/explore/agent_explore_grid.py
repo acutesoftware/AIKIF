@@ -3,6 +3,7 @@
 
 import os
 import sys
+import random
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 sys.path.append(root_folder)
 print(root_folder)
@@ -19,6 +20,7 @@ class ExploreAgent(agt.Agent):
         agt.Agent.__init__(self, name,  fldr, running)
         self.LOG_LEVEL = LOG_LEVEL
         self.num_steps = 0
+        self.num_climbs = 0
         
     def set_world(self, grd, start_y, start_x, y, x):
         """
@@ -35,7 +37,7 @@ class ExploreAgent(agt.Agent):
         self.current_y = start_y
         self.target_x = x
         self.target_y = y
-
+        self.backtrack = [0,0]   # set only if blocked and agent needs to go back
         
     def do_your_job(self, *arg):
         """
@@ -46,81 +48,106 @@ class ExploreAgent(agt.Agent):
             
         y,x = self.get_intended_direction()  # first find out where we should go
         if self.target_x == self.current_x and self.target_y == self.current_y:
-            print(self.name + " : TARGET ACQUIRED")
-            self.lg_mv(2, self.name + ": TARGET ACQUIRED" )
-                    
+            #print(self.name + " : TARGET ACQUIRED")
+            if len(self.results) == 0:
+                self.results.append("TARGET ACQUIRED")
+                self.lg_mv(2, self.name + ": TARGET ACQUIRED" )
+            
             return
         
         self.num_steps += 1   
         
+        # check for backtracking from prior move and change intended direction
+        if self.backtrack[0] == 1:  # need to backtrack y axis
+            self.lg_mv(3, self.name + ": have to backtrack on y axis" )
+            y = -y
+            self.backtrack[0] == 0
+            
+        if self.backtrack[1] == 1:  # need to backtrack y axis
+            self.lg_mv(3, self.name + ": have to backtrack on x axis" )
+            x = -x
+            self.backtrack[1] == 0
+        
+ 
         # first try is to move on the x axis in a simple greedy search
         accessible = ['\\', '-', '|', '/', '.']
         blocked = '#'
-        if x != 0:
-            if x == 1:
-                if self.grd.get_tile(self.current_y, self.current_x + 1) in accessible:
-                    self.current_x += 1
-                    self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - moving West" )
+        
+        # randomly move in Y direction instead of X if all paths clear
+        if y != 0 and x != 0 and self.backtrack == [0,0]:
+            if random.randint(1,10) > 6:
+                if self.grd.get_tile(self.current_y + y, self.current_x) in accessible:
+                    self.current_y += y
+                    self.lg_mv(3, self.name + ": randomly moving Y axis " + str(self.num_steps)  )
                     return
-            elif x == -1:
-                if self.grd.get_tile(self.current_y, self.current_x - 1) in accessible:
-                    self.current_x -= 1
-                    self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - moving East" )
-                    return
-
-        # if movement was not successful or needed along x, then try y
-        if y != 0:
-            if y == 1:
-                if self.grd.get_tile(self.current_y + 1, self.current_x) in accessible:
-                    self.current_y += 1
-                    self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - moving South" )
-                    return
-            elif y == -1:
-                if self.grd.get_tile(self.current_y - 1, self.current_x) in accessible:
-                    self.current_y -= 1
-                    self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - moving North")
-                    return
+                
+        
+        
+        if x == 1:
+            if self.grd.get_tile(self.current_y, self.current_x + 1) in accessible:
+                self.current_x += 1
+                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - moving West" )
+                return
+        elif x == -1:
+            if self.grd.get_tile(self.current_y, self.current_x - 1) in accessible:
+                self.current_x -= 1
+                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - moving East" )
+                return
+        elif y == 1:
+            if self.grd.get_tile(self.current_y + 1, self.current_x) in accessible:
+                self.current_y += 1
+                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - moving South" )
+                return
+        elif y == -1:
+            if self.grd.get_tile(self.current_y - 1, self.current_x) in accessible:
+                self.current_y -= 1
+                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - moving North")
+                return
 
         # damn - we are still here, so there are no simple paths in both directions
         # Repeat by going over mountains (takes double time)
-        if x != 0:
-            if x == 1:
-                if self.grd.get_tile(self.current_y, self.current_x + 1) not in blocked:
-                    self.current_x += 1
-                    self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing West" )
-                    return
-                else:
-                    self.lg_mv(4, "The way East is shut")
-            elif x == -1:
-                if self.grd.get_tile(self.current_y, self.current_x - 1) not in blocked:
-                    self.current_x -= 1
-                    self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing East" )
-                    return
-                else:
-                    self.lg_mv(4, "The way West is shut")
-        # if movement was not successful or needed along x, then try y
-        if y != 0:
-            if y == 1:
-                if self.grd.get_tile(self.current_y + 1, self.current_x) not in blocked:
-                    self.current_y += 1
-                    self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing South" )
-                    return
-                else:
-                    self.lg_mv(4, "The way South is shut")
-            elif y == -1:
-                if self.grd.get_tile(self.current_y - 1, self.current_x) not in blocked:
-                    self.current_y -= 1
-                    self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing North")
-                    return
-                else:
-                    self.lg_mv(4, "The way North is shut")        
-        
-        
-        
-        self.lg_mv(4, "damn - blocked in both directions - need to backtrack (TODO)")
+        self.num_climbs += 1
+        if x == 1:
+            if self.grd.get_tile(self.current_y, self.current_x + 1) not in blocked:
+                self.current_x += 1
+                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing West" )
+                return
+            else:
+                self.lg_mv(4, "The way East is shut")
+        elif x == -1:
+            if self.grd.get_tile(self.current_y, self.current_x - 1) not in blocked:
+                self.current_x -= 1
+                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing East" )
+                return
+            else:
+                self.lg_mv(4, "The way West is shut")
+        elif y == 1:
+            if self.grd.get_tile(self.current_y + 1, self.current_x) not in blocked:
+                self.current_y += 1
+                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing South" )
+                return
+            else:
+                self.lg_mv(4, "The way South is shut")
+        elif y == -1:
+            if self.grd.get_tile(self.current_y - 1, self.current_x) not in blocked:
+                self.current_y -= 1
+                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing North")
+                return
+            else:
+                self.lg_mv(4, "The way North is shut")        
+
         # damn - we are still here, so there are no simple paths in both directions
         # Repeat by going over mountains (takes double time)
-        
+        if self.backtrack[1] == 1:
+            if self.backtrack[0] == 1:
+                self.lg_mv(3, self.name + ": trapped on all sides " )
+            else:
+                self.lg_mv(3, self.name + ": Backtracking on X axis" )
+                self.backtrack[0] == 0
+        else:
+            self.lg_mv(3, self.name + ": Backtracking on Y axis" )
+            self.backtrack[1] == 1
+            
         
         self.grd.set_tile(self.start_y, self.start_x, 'A')
         self.grd.save('agent.txt')

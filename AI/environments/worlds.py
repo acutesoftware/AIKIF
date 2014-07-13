@@ -216,8 +216,14 @@ class WorldSimulation(object):
         """
         print("--------------------------------------------------")
         print("Starting Simulation - target = ", self.agent_list[0].target_y, self.agent_list[0].target_x)
-        self.highlight_cell_surroundings(self.agent_list[0].target_y, self.agent_list[0].target_x)
+        self.world.grd.set_tile(self.agent_list[0].target_y , self.agent_list[0].target_x , 'T')
+        #self.highlight_cell_surroundings(self.agent_list[0].target_y, self.agent_list[0].target_x)
         self.start_all_agents()
+        # save the agents results here
+        with open (log_file_base + '__agents.txt', "w") as f:
+            f.write("Starting World = \n")
+            f.write(str(self.world.grd))
+            
         for cur_run in range(0,num_runs):
             print("WorldSimulation:run#", cur_run)
             for num, agt in enumerate(self.agent_list):
@@ -233,6 +239,15 @@ class WorldSimulation(object):
             if log_file_base != 'N':
                 self.world.grd.save(log_file_base + '_' + str(cur_run) + '.log')
     
+        # save the agents results here
+        with open (log_file_base + '__agents.txt', "a") as f:
+            f.write("\n\nFinal World = \n")
+            f.write(str(self.world.grd))
+            f.write('\n\nAgent Name , num Steps , num Climbs\n')
+            for num, agt in enumerate(self.agent_list):
+                res = ''.join([a for a in agt.results])
+                f.write(agt.name + ' , ' + str(agt.num_steps)  + ' , ' + str(agt.num_climbs) + ' , ' + res + '\n')
+                
     def highlight_cell_surroundings(self, target_y, target_x):
         """
         highlights the cells around a target to make it simpler
@@ -259,7 +274,7 @@ class WorldSimulation(object):
         self.world.grd.set_tile(target_y - 0, target_x + 1, '-')
         self.world.grd.set_tile(target_y + 1, target_x + 1, '\\')
         
-            
+               
     
     def start_all_agents(self):
         """
