@@ -202,31 +202,64 @@ class WorldSimulation(object):
     and runs a simulation
     
     """
-    def __init__(self, cls_world, agent_list):
+    def __init__(self, cls_world, agent_list, LOG_LEVEL):
         self.world = cls_world
         self.agent_list = agent_list
+        self.LOG_LEVEL = LOG_LEVEL
         #print("WorldSimulation:Simulation loading...")
     
-    def run(self, num_runs, log_file_base = ''):
+    def run(self, num_runs, show_trails, log_file_base):
         """
         Run each agent in the world for 'num_runs' iterations
         Optionally saves grid results to file if base name is
         passed to method.
         """
+        print("--------------------------------------------------")
+        print("Starting Simulation - target = ", self.agent_list[0].target_y, self.agent_list[0].target_x)
+        self.highlight_cell_surroundings(self.agent_list[0].target_y, self.agent_list[0].target_x)
         self.start_all_agents()
-        for cur_run in range(1,num_runs):
+        for cur_run in range(0,num_runs):
             print("WorldSimulation:run#", cur_run)
-            for agt in self.agent_list:
-                #agt.grd.replace_grid(self.world.grd)
-                self.world.grd.set_tile(agt.current_y, agt.current_x, ' ')
-                agt.do_your_job()
+            for num, agt in enumerate(self.agent_list):
+                if show_trails == 'Y':
+                    if len(self.agent_list) == 1 or len(self.agent_list) > 9:
+                        self.world.grd.set_tile(agt.current_y, agt.current_x, 'o')
+                    else:
+                        self.world.grd.set_tile(agt.current_y, agt.current_x, str(num))
+                agt.do_your_job(self.LOG_LEVEL)
                 self.world.grd.set_tile(agt.current_y, agt.current_x, 'A')    # update the main world grid with agents changes
             
             # save grid after each run if required
-            if log_file_base != '':
+            if log_file_base != 'N':
                 self.world.grd.save(log_file_base + '_' + str(cur_run) + '.log')
     
+    def highlight_cell_surroundings(self, target_y, target_x):
+        """
+        highlights the cells around a target to make it simpler
+        to see on a grid. Currently assumes the target is within
+        the boundary by 1 on all sides
+        """
+        if target_y < 1:
+            print("target too close to top")
+        if target_y > self.world.grd.grid_height - 1:  
+            print("target too close to bottom")
+        if target_x < 1:
+            print("target too close to left")
+        if target_x < self.world.grd.grid_width:  
+            print("target too close to right")
+        valid_cells = ['\\', '-', '|', '/']    
+        self.world.grd.set_tile(target_y - 1, target_x - 1, '\\')
+        self.world.grd.set_tile(target_y - 0, target_x - 1, '-')
+        self.world.grd.set_tile(target_y + 1, target_x - 1, '/')
 
+        self.world.grd.set_tile(target_y - 1, target_x - 0, '|')
+        self.world.grd.set_tile(target_y + 1, target_x - 0, '|')
+        
+        self.world.grd.set_tile(target_y - 1, target_x + 1, '/')
+        self.world.grd.set_tile(target_y - 0, target_x + 1, '-')
+        self.world.grd.set_tile(target_y + 1, target_x + 1, '\\')
+        
+            
     
     def start_all_agents(self):
         """
