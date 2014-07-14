@@ -38,7 +38,8 @@ class ExploreAgent(agt.Agent):
         self.target_x = x
         self.target_y = y
         self.backtrack = [0,0]   # set only if blocked and agent needs to go back
-        
+        self.prefer_x = 0        # set only if backtracked as preferred direction x
+        self.prefer_y = 0        # set only if backtracked as preferred direction y
     def do_your_job(self, *arg):
         """
         the goal of the explore agent is to move to the 
@@ -65,12 +66,14 @@ class ExploreAgent(agt.Agent):
         # check for backtracking from prior move and change intended direction
         if self.backtrack[0] == 1:  # need to backtrack y axis
             self.lg_mv(3, self.name + ": have to backtrack on y axis" )
-            y = -y
+            #y = -y
+            self.prefer_y = y
             self.backtrack[0] == 0
             
         if self.backtrack[1] == 1:  # need to backtrack y axis
             self.lg_mv(3, self.name + ": have to backtrack on x axis" )
-            x = -x
+            #x = -x
+            self.prefer_x = x
             self.backtrack[1] == 0
         
  
@@ -86,8 +89,14 @@ class ExploreAgent(agt.Agent):
                     self.lg_mv(3, self.name + ": randomly moving Y axis " + str(self.num_steps)  )
                     return
                 
-        
-        
+        if self.prefer_x != 0:  # already backtracked TWICE so go perpendicular
+            y = 0
+            x = self.prefer_y
+        if self.prefer_y != 0:  # already backtracked TWICE so go perpendicular
+            x = 0
+            y = self.prefer_y
+            
+            
         if x == 1:
             if self.grd.get_tile(self.current_y, self.current_x + 1) in accessible:
                 self.current_x += 1
@@ -144,6 +153,15 @@ class ExploreAgent(agt.Agent):
         # damn - we are still here, so there are no simple paths in both directions
         # Repeat by going over mountains (takes double time)
         if self.backtrack[1] == 1:
+            if self.prefer_y == y:   # already did this before
+                self.prefer_x == y   # so try wandering perpendicular
+            else:
+                self.prefer_y = y
+            if self.prefer_x == x:   # already did this before
+                self.prefer_y == x   # so try wandering perpendicular
+            else:
+                self.prefer_x = x
+                
             if self.backtrack[0] == 1:
                 self.lg_mv(3, self.name + ": trapped on all sides " )
             else:
@@ -152,6 +170,25 @@ class ExploreAgent(agt.Agent):
         else:
             self.lg_mv(3, self.name + ": Backtracking on Y axis" )
             self.backtrack[1] == 1
+            
+        if self.backtrack[0] == 1:
+            if self.prefer_x == x:   # already did this before
+                self.prefer_y == x   # so try wandering perpendicular
+            else:
+                self.prefer_x = x
+            if self.prefer_y == x:   # already did this before
+                self.prefer_x == y   # so try wandering perpendicular
+            else:
+                self.prefer_y = y
+                
+            if self.backtrack[1] == 1:
+                self.lg_mv(3, self.name + ": trapped on all sides " )
+            else:
+                self.lg_mv(3, self.name + ": Backtracking on X axis" )
+                self.backtrack[1] == 0
+        else:
+            self.lg_mv(3, self.name + ": Backtracking on Y axis" )
+            self.backtrack[0] == 1
             
         
         self.grd.set_tile(self.start_y, self.start_x, 'A')

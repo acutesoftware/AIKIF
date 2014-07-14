@@ -179,15 +179,15 @@ class World(object):
  
     def add_block(self):
         """ adds a random size block to the map """
-        row = randint(0, self.grd.get_grid_height() - 6)
-        col = randint(0, self.grd.get_grid_width() - 6)
-        direction = randint(1,20)-10
+        row = randint(0, self.grd.get_grid_height() - 30)
+        col = randint(0, self.grd.get_grid_width() - 10)
+        direction = randint(1,19)-10
         if direction > 0:
-            y_len = 6
-            x_len = 2
+            y_len = 10 * (math.floor(self.grd.get_grid_height() / 120) + 1)
+            x_len = 1 * (math.floor(self.grd.get_grid_width() / 200) + 1)
         else:
-            y_len = 2
-            x_len = 6
+            y_len = 1 * (math.floor(self.grd.get_grid_height() / 200) + 1)
+            x_len = 10 * (math.floor(self.grd.get_grid_width() / 120) + 1)
         
         print("Adding block to ", row, col, direction)
         for r in range(row, row + y_len):
