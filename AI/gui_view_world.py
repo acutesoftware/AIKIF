@@ -64,9 +64,9 @@ class gui_view_tk(Tkinter.Tk):
         Tkinter.Tk.__init__(self,parent)
         self.parent = parent
         self.appWidth = 1900   # initial values
-        self.appHeight = 1100
-        self.cell_width = 5
-        self.cell_height = 5
+        self.appHeight = 1000
+        self.cell_width = 8
+        self.cell_height = 8
         self.screenWidth = self.winfo_screenwidth()
         self.screenHeight = self.winfo_screenheight()
         self.configure(bg='black')
@@ -81,7 +81,7 @@ class gui_view_tk(Tkinter.Tk):
         #self.TEST_sin()   # testing - draws a sin wave
         self.show_grid_from_file(fname)
         self.appWidth = 1900   # canvas.width
-        self.appHeight = 1100
+        self.appHeight = 1000
         self.canvas.pack()
         self.update()
 
@@ -113,18 +113,18 @@ class gui_view_tk(Tkinter.Tk):
 
     def draw_cell(self, row, col, val):
        # print("drawing cell: ", row, col, val)
-        if val == '.':
-            self.paint_land(row,col)
+        if val == 'T':
+            self.paint_target(row,col)
         elif val == '#':
             self.paint_block(row,col)
         elif val == 'X':
             self.paint_hill(row,col)
-        elif val == 'T':
-            self.paint_target(row,col)
-        elif val in ['1','2','3','4','5','6','7','8','9']:
-            self.paint_agent_trail(row,col, val)
+        elif val == '.':
+            self.paint_land(row,col)
         elif val in ['A']:
             self.paint_agent_location(row,col)
+        elif val in ['1','2','3','4','5','6','7','8','9']:
+            self.paint_agent_trail(row,col, val)
     
     def put_standard_block(self, y, x, val): 
         for j in range(0,self.cell_height):
