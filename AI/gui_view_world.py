@@ -65,8 +65,8 @@ class gui_view_tk(Tkinter.Tk):
         self.parent = parent
         self.appWidth = 1900   # initial values
         self.appHeight = 1000
-        self.cell_width = 8
-        self.cell_height = 8
+        self.cell_width = 4
+        self.cell_height = 3
         self.screenWidth = self.winfo_screenwidth()
         self.screenHeight = self.winfo_screenheight()
         self.configure(bg='black')

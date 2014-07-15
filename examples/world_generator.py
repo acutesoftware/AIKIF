@@ -18,13 +18,13 @@ def main():
     generates a random world, sets terrain and runs agents in it
      TODO - need to change pieces in multiple places (see worlds.py, cls_grid, world_generator)
     """
-    width       =  100   # grid width  (takes about 5 minutes to generate 500x400 grid with 8% blockages)
-    height      =  100   # grid height
+    width       =  400   # grid width  (takes about 5 minutes to generate 500x400 grid with 8% blockages)
+    height      =  300   # grid height
     time_delay  = 0.3   # delay when printing on screen
     num_seeds   =  6   # number of seed points to start land generation
     perc_land   =  20   # % of world that is land
     perc_sea    =  80   # % of world that is sea
-    perc_blocked=   8   # % of world that is blocked
+    perc_blocked=   4   # % of world that is blocked
     
     myWorld = my_world.World( height, width, ['.','X','#'])  # TODO - fix passing
     myWorld.build_random( num_seeds, perc_land, perc_sea, perc_blocked)
