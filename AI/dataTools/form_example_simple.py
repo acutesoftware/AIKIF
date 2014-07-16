@@ -3,8 +3,9 @@
 import os
 import sys
 import math
-
+import time
 import tkinter
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep ) 
 
 def main():
     frame = tkinter.Tk()
@@ -45,8 +46,10 @@ def generate_sql(text_box, fname, proj_id, tbl_name, cols):
     for col in col_list:
         sql.append("SELECT count(distinct " + col.strip() + ") FROM " + tbl_name)
     text_box.insert(tkinter.END,"\n".join([l for l in sql]))
-
+    with open(root_folder + os.sep + fname, "w") as f:
+        f.write("\n".join([l for l in sql]))
     
-    
+    time.sleep(0.2)
+    os.system("start " + fname )
 main()    
     
