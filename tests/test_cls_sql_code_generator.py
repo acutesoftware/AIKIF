@@ -28,7 +28,7 @@ class TestClassDataSet(unittest.TestCase):
         tst.commit()
         tst.save(self.results_folder + 'test_full_sql_generation.sql')
         #print(tst.get_sql())
-        self.assertEqual(len(tst.get_sql()), 1112) 		
+        self.assertEqual(len(tst.get_sql()), 1059) 		
     
 
     def test_sql_code_agg_single_col(self):
@@ -39,12 +39,21 @@ class TestClassDataSet(unittest.TestCase):
         self.assertEqual(len(t2.get_sql()), 138) 		
 
     def test_aggregate_multiple_cols(self):
-        t2 = SQLCodeGenerator('C_SALES')
-        t2.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
-        t2.aggregate('C_AGG_PRODUCT', 'PRODUCT, CUSTOMER_NAME', 'sum(AMOUNT)')
-        t2.save(self.results_folder + 'test_sql_code_agg_multiple_cols.sql')
-        self.assertEqual(len(t2.get_sql()), 168) 		
+        t3 = SQLCodeGenerator('C_SALES')
+        t3.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
+        t3.aggregate('C_AGG_PRODUCT', 'PRODUCT, CUSTOMER_NAME', 'sum(AMOUNT)')
+        t3.save(self.results_folder + 'test_sql_code_agg_multiple_cols.sql')
+        self.assertEqual(len(t3.get_sql()), 168) 		
 
+
+    def test_reverse_pivot(self):
+        t4 = SQLCodeGenerator('C_SALES_UNPIVOT')
+        t4.reverse_pivot_to_fact('C_SALES_UNPIVOT', ['Q1', 'Q2'], ['YEAR', 'Person'], ['Question', 'Result'])
+        t4.save(self.results_folder + 'test_sql_code_test_rev_piv.sql')
+        self.assertEqual(len(t4.get_sql()), 365) 		
+
+        
+        
 
 if __name__ == '__main__':
     unittest.main()

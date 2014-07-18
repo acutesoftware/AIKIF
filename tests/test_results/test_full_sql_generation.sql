@@ -10,7 +10,7 @@ INSERT INTO C_FACT_TABLE (
     PRODUCT,
     CUSTOMER_NAME,
     AMOUNT,
-    REC_EXTRACT_DATE) (
+    UPDATE_DATE) (
     SELECT 
         DATE,
         PRODUCT,
@@ -32,10 +32,9 @@ COMMIT;
 --  Key to Dimensions
 ------------------------------------------------------------
 
-UPDATE C_FACT_TABLE op 
-    SET op.PRODUCT_KEY = 
-        NVL ( (SELECT MAX (ip.PRODUCT_KEY)
-                 FROM U_PRODUCT_LIST ip 
-                WHERE ip.product_name = substr(op.PRODUCT, 1,10)), 
-             -1); 
+UPDATE C_FACT_TABLE op SET op.PRODUCT_KEY = NVL(
+  (SELECT MAX (ip.PRODUCT_KEY)
+    FROM U_PRODUCT_LIST ip WHERE substr(op.PRODUCT, 1,10) = 
+       ip.product_name), -1); 
+
 COMMIT;
