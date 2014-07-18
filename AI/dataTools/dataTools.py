@@ -260,16 +260,16 @@ def GenerateSQL(csvFile, tblName, opFile, headerRow=1):
         ID VARCHAR2(2000), 
         CODE VARCHAR2(2000), 
         DESC VARCHAR2(2000), 
-        REC_EXTRACT_DATE DATE
+        UPDATE_DATE DATE
         );
 
-        INSERT INTO MY_TABLE (ID, CODE, DESC, REC_EXTRACT_DATE) VALUES (
+        INSERT INTO MY_TABLE (ID, CODE, DESC, UPDATE_DATE) VALUES (
         'id', 'code', 'desc',  sysdate ); 
-        INSERT INTO MY_TABLE (ID, CODE, DESC, REC_EXTRACT_DATE) VALUES (
+        INSERT INTO MY_TABLE (ID, CODE, DESC, UPDATE_DATE) VALUES (
         '1', 'S', 'AAA',  sysdate ); 
-        INSERT INTO MY_TABLE (ID, CODE, DESC, REC_EXTRACT_DATE) VALUES (
+        INSERT INTO MY_TABLE (ID, CODE, DESC, UPDATE_DATE) VALUES (
         '2', 'B', 'BBB',  sysdate ); 
-        INSERT INTO MY_TABLE (ID, CODE, DESC, REC_EXTRACT_DATE) VALUES (
+        INSERT INTO MY_TABLE (ID, CODE, DESC, UPDATE_DATE) VALUES (
         '3', 'X', 'Long description',  sysdate ); 
         COMMIT;
     
@@ -316,7 +316,7 @@ def GenerateSQL_CreateTable(tbl, cols):
     for c in cols:
         if c != '':
             txt = txt + '    ' + c + ' VARCHAR2(2000), \n'
-    txt = txt + '    REC_EXTRACT_DATE DATE\n);\n\n'
+    txt = txt + '    UPDATE_DATE DATE\n);\n\n'
     #print (txt)
     return txt
 
@@ -325,7 +325,7 @@ def GenerateSQL_Insert(tbl, row, cols):
     for c in cols:
         if c != '':
             txt = txt + c + ', '
-    txt = txt + 'REC_EXTRACT_DATE) VALUES (\n'
+    txt = txt + 'UPDATE_DATE) VALUES (\n'
     for d in row:
         if 'Rahman, M.M.' in row:
             print (d)
