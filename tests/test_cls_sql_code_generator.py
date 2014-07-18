@@ -52,7 +52,20 @@ class TestClassDataSet(unittest.TestCase):
         t4.save(self.results_folder + 'test_sql_code_test_rev_piv.sql')
         self.assertEqual(len(t4.get_sql()), 365) 		
 
-        
+    def test_get_column_list_from_select(self) :
+        t5 = SQLCodeGenerator('BLAH')
+        cols = t5.get_column_list_from_select('col1, col2, col3' , ',')
+        self.assertEqual(len(cols), 3) 	
+        cols = t5.get_column_list_from_select('col1,Col2,;col3' , ',')
+        self.assertEqual(len(cols), 3) 	
+        cols = t5.get_column_list_from_select('c' , ',')
+        self.assertEqual(len(cols), 1) 	
+        cols = t5.get_column_list_from_select('a,b,c,d,e,f,g' , ',')
+        self.assertEqual(len(cols), 7) 	
+        cols = t5.get_column_list_from_select('a;c,d:e,f_g' , ',')
+        self.assertEqual(len(cols), 3) 	
+        cols = t5.get_column_list_from_select('my_column:2nd_col, not a col' , ':')
+        self.assertEqual(cols[0], 'my_column') 	
         
 
 if __name__ == '__main__':
