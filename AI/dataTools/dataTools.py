@@ -39,6 +39,9 @@ except:
     print('you need to install xlrd')
 
 fldr = '..//..//data//temp//'
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "data" + os.sep + "temp") 
+
+print(root_folder)
 
 def TEST():
     print('Data tools test...')
@@ -56,6 +59,11 @@ def TEST():
     AutoFillCSV(fldr + 'indented.csv', fldr + 'indented-fixed.csv', ['grouping', 'code', 'desc'],  ['grouping'])   # autofill FIRST col based on prev values
     RemoveBlankRecs(fldr + 'indented-fixed.csv', fldr + 'indented-fixed-and-no-blanks.csv', 2)
 
+def delete_file(f):
+    try:
+        os.remove(f)
+    except:
+        pass
 
 def csv_from_excel(excel_file, pth):
     opFname = ''
@@ -88,14 +96,14 @@ def addSampleData(fname, content):
     wr.writerow(content)	
     
 def CreateRandomCSVFile(fname):
-    fle.deleteFile(fname)
+    delete_file(fname)
     content = [['id', 'code', 'desc'], ['1', 'S', 'AAA'], ['2', 'B', 'BBB'], ['3', 'X', 'Long description']]
     for row in content:
         addSampleData(fname, row)
             
     
 def CreateRandomIndentedCSVFile(fname):
-    fle.deleteFile(fname)
+    delete_file(fname)
     content = [['grouping', 'code', 'desc'], ['1', 'S', 'AAA'], [' ', 'T', 'BBB'], ['3', 'X', 'Long description'], ['', 'Y', 'Long description']]
     for row in content:
         addSampleData(fname, row)
