@@ -69,7 +69,7 @@ def export(g, csv_fname):
 def get_string_from_rdf(src):
     """ extracts the real content from an RDF info object """
     res = src.split("/") #[:-1]
-    return "".join([l for l in res[len(res) - 1]])
+    return "".join([l.replace('"', '""') for l in res[len(res) - 1]])
         
  
 def create_sample_file(ip, op, num_lines): 
