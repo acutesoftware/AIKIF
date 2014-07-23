@@ -16,6 +16,8 @@ class SQLCodeGenerator(object):
         self.sql_text = ''      # for the main procedure
         self.ddl_text = ''      # for the create scripts
         self.col_list = []
+        self.date_updated_col = 'REC_EXTRACT_DATE'
+        self.date_updated_col = 'UPDATE_DATE'
 
     def __str__(self):
         txt = self.fact_table + '\n'
@@ -65,7 +67,7 @@ class SQLCodeGenerator(object):
         self.ddl_text += 'DROP TABLE ' + self.fact_table + ' CASCADE CONSTRAINTS;\n'
         self.ddl_text += 'CREATE TABLE ' + self.fact_table + ' (\n'
         self.ddl_text += ' '.join([col + ' VARCHAR2(200), \n' for col in self.col_list])
-        self.ddl_text += ' REC_EXTRACT_DATE  DATE \n' # + src_table + '; \n'
+        self.ddl_text += ' ' + self.date_updated_col + ' DATE \n' # + src_table + '; \n'
         self.ddl_text += ');\n'
     
     def create_script_staging_table(self, output_table, col_list):
@@ -78,7 +80,7 @@ class SQLCodeGenerator(object):
         self.ddl_text += 'DROP TABLE ' + output_table + ' CASCADE CONSTRAINTS;\n'
         self.ddl_text += 'CREATE TABLE ' + output_table + ' (\n'
         self.ddl_text += ' '.join([col + ' VARCHAR2(200), \n' for col in col_list])
-        self.ddl_text += ' REC_EXTRACT_DATE  DATE \n' # + src_table + '; \n'
+        self.ddl_text += ' ' + self.date_updated_col + '  DATE \n' # + src_table + '; \n'
         self.ddl_text += ');\n'
     
     def create_index(self, tbl, col_list ):
@@ -150,7 +152,7 @@ class SQLCodeGenerator(object):
                         if num_chars_on_line > 100:
                             self.sql_text +=  new_line
                             num_chars_on_line = 0
-            self.sql_text += 'REC_EXTRACT_DATE) (\n' 
+            self.sql_text += '' + self.date_updated_col + ') (\n' 
                         
             
             # SELECT columns
@@ -186,7 +188,7 @@ class SQLCodeGenerator(object):
         for c in self.col_list:
             if c != '':
                 self.sql_text += '    ' + c + ',\n'
-        self.sql_text += '    REC_EXTRACT_DATE) (\n'
+        self.sql_text += '    ' + self.date_updated_col + ') (\n'
         self.sql_text += '    SELECT \n'
         for c in from_column_list:
             if c != '':
@@ -251,7 +253,7 @@ class SQLCodeGenerator(object):
         self.ddl_text += 'DROP TABLE ' + dim_stag_table + ' CASCADE CONSTRAINTS;\n'
         self.ddl_text += 'CREATE TABLE ' + dim_stag_table + ' (\n'
         self.ddl_text += ' '.join([col + ' VARCHAR2(200), \n' for col in dim_cols])
-        self.ddl_text += ' REC_EXTRACT_DATE  DATE \n' # + src_table + '; \n'
+        self.ddl_text += ' ' + self.date_updated_col + '  DATE \n' # + src_table + '; \n'
         self.ddl_text += ');\n'
         
         self.ddl_text += 'DROP TABLE ' + dim_name + ' CASCADE CONSTRAINTS;\n'
@@ -259,10 +261,10 @@ class SQLCodeGenerator(object):
         self.ddl_text += ' ' + dim_key + ' NUMBER, \n'
         self.ddl_text += ' '.join([col + ' VARCHAR2(200), \n' for col in dim_cols])
         self.ddl_text += ' REC_SOURCE_SYSTEM  VARCHAR2(100), \n' # + src_table + '; \n'
-        self.ddl_text += ' REC_EXTRACT_DATE  DATE \n' # + src_table + '; \n'
+        self.ddl_text += ' ' + self.date_updated_col + '  DATE \n' # + src_table + '; \n'
         self.ddl_text += ');\n'
         self.ddl_text += 'CREATE OR REPLACE VIEW U' + dim_name[1:] + ' AS SELECT * FROM ' + dim_name + ';\n'
-        self.ddl_text += 'GRANT SELECT ON U' + dim_name[1:] + ' TO EDW_STUDENT;\n'
+        self.ddl_text += 'GRANT SELECT ON U' + dim_name[1:] + ' TO ALL_USERS;\n'
         self.ddl_text += '\n'
         self.ddl_text += 'DROP SEQUENCE SEQ_' + dim_name + ';\n'
         self.ddl_text += 'CREATE SEQUENCE SEQ_' + dim_name + ';\n\n'
@@ -290,7 +292,7 @@ class SQLCodeGenerator(object):
         self.sql_text += "COMMIT;\n"
         self.sql_text += "INSERT INTO " + dim_name + " (\n"
         self.sql_text += ", ".join([col for col in dim_cols])
-        self.sql_text += ", REC_SOURCE_SYSTEM, REC_EXTRACT_DATE "
+        self.sql_text += ", REC_SOURCE_SYSTEM, " + self.date_updated_col + " "
         
         self.sql_text += ") \n(SELECT \n"
         self.sql_text += ", ".join([col for col in src_cols])
