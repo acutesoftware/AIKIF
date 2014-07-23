@@ -17,7 +17,7 @@ class TestClassDataSet(unittest.TestCase):
 
         tst.comment_block('Insert staging records to Fact')
         tst.trunc_fact_table()
-        tst.populate_from_staging('RAW_DATA_TABLE', ['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
+        tst.populate_from_staging('RAW_DATA_TABLE', ['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'], 'STAGING_TABLE')
 
         tst.comment_block('DQ Fixes')
         tst.update_set_where("PRODUCT = 'new name'", "PRODUCT = 'old name'")
@@ -28,7 +28,7 @@ class TestClassDataSet(unittest.TestCase):
         tst.commit()
         tst.save(self.results_folder + 'test_full_sql_generation.sql')
         #print(tst.get_sql())
-        self.assertEqual(len(tst.get_sql()), 1059) 		
+        self.assertEqual(len(tst.get_sql()), 1060) 		
     
 
     def test_sql_code_agg_single_col(self):
@@ -48,9 +48,17 @@ class TestClassDataSet(unittest.TestCase):
 
     def test_reverse_pivot(self):
         t4 = SQLCodeGenerator('C_SALES_UNPIVOT')
-        t4.reverse_pivot_to_fact('C_SALES_UNPIVOT', ['Q1', 'Q2'], ['YEAR', 'Person'], ['Question', 'Result'])
+        meas_cols = ['Sales', 'Expenses']
+        t4.reverse_pivot_to_fact('C_SALES_UNPIVOT', 'Question' , ['Q1', 'Q2'], ['YEAR', 'Person'], meas_cols, meas_cols, '\n')
         t4.save(self.results_folder + 'test_sql_code_test_rev_piv.sql')
-        self.assertEqual(len(t4.get_sql()), 365) 		
+        self.assertEqual(len(t4.get_sql()), 401) 		
+
+    def test_reverse_pivot_simple(self):
+        t4 = SQLCodeGenerator('C_TEST_UNPIVOT')
+        meas_cols = ['Car', 'Home', 'Travel', 'Study']
+        t4.reverse_pivot_to_fact('C_TEST_UNPIVOT', 'Category' , meas_cols, meas_cols, meas_cols, meas_cols, '\n')
+        t4.save(self.results_folder + 'test_sql_code_test_rev_piv_simple.sql')
+        self.assertEqual(len(t4.get_sql()), 689) 		
 
     def test_get_column_list_from_select(self) :
         t5 = SQLCodeGenerator('BLAH')
