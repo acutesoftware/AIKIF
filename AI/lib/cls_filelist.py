@@ -40,7 +40,6 @@ class FileList(object):
                         if fnmatch.fnmatch(basename, xtn):
                             filename = os.path.join(root, basename)
                             includeThisFile = "Y"
-                            #print ("filename = ", filename, " Exlude = ", lstExcluded)
                             if len(lstExcluded) > 0:
                                 for exclude in lstExcluded:
                                     if filename.find(exclude) != -1:
@@ -55,7 +54,7 @@ class FileList(object):
         return self.filelist
 
         
-    def GetDateAsString(t):
+    def GetDateAsString(self, t):
         res = ''
         try:
             res = str(datetime.fromtimestamp(t).strftime("%Y-%m-%d %H:%M:%S"))
@@ -63,36 +62,36 @@ class FileList(object):
             pass
         return res     
         
-    def TodayAsString():	# returns current date and time like oracle
+    def TodayAsString(self):	
+        """
+        returns current date and time like oracle
     #	return time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+        """
         return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         
         
         
-    def SaveFileList(filelist, opFile, opFormat, delim=',', qu='"'):
-        # written by Duncan Murray 7/8/2013 (C) Acute Software
-        # uses a List of files and collects meta data on them and saves 
-        # to an text file as a list or with metadata depending on opFormat.
+    def save_filelist(self, filelist, opFile, opFormat, delim=',', qu='"'):
+        """
+        uses a List of files and collects meta data on them and saves 
+        to an text file as a list or with metadata depending on opFormat.
+        """
         with open(opFile,'w') as fout:
-            #Print header
             fout.write("fullFilename" + delim)
             for colHeading in opFormat:
                 fout.write(colHeading + delim)
             fout.write('\n')    
-            #Print all file data
             for f in filelist:
                 line = qu + f + qu + delim
                 for fld in opFormat:
                     if fld == "name":
                         line = line + qu + os.path.basename(f) + qu + delim
                     if fld == "date":
-                        line = line + qu + GetDateAsString(os.path.getmtime(f)) + qu + delim # str(datetime.fromtimestamp(modifiedTime).strftime("%Y%m%b %H:%M:%S"))
+                        line = line + qu + self.GetDateAsString(os.path.getmtime(f)) + qu + delim 
                     if fld == "size":
                         line = line + qu + str(os.path.getsize(f)) + qu + delim
                     if fld == "path":
                         line = line + qu + os.path.dirname(f) + qu + delim
                         
-                #line = os.path.basename(f) + ',' + str(os.path.getsize(f)) + ',' + f + '\n'
                 fout.write (line + '\n')
-                #print(line)
             print ("Finished saving " , opFile)

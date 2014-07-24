@@ -21,6 +21,10 @@ agent_list = [
 	 'file': agentCodeFolder + 'agents\\aggregate\\load_PC_usage.py', 
 	 'schedule_type':'hour'
 	},
+	{'name': 'File Usage', 
+	 'file': agentCodeFolder + 'agents\\gather\\agent_filelist.py', 
+	 'schedule_type':'minute'
+	},
 	{'name': 'Aggregate Context', 
 	 'file': agentCodeFolder + 'agents\\aggregate\\agg_context.py', 
 	 'schedule_type':'hour' 
