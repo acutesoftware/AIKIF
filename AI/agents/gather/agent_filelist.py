@@ -1,4 +1,4 @@
-# agent_explore_grid.py		written by Duncan Murray	9/7/2014
+# agent_filelist.py		written by Duncan Murray	24/7/2014
 
 
 import os
@@ -26,8 +26,8 @@ class FileListAgent(agt.Agent):
         the goal of the filelist agent is to collect metdata on files
         """
         print("Collecting file metadata")
-        
-        
+        lst = fl.FileList([root_folder], ['*.*'], [], True)
+        print(lst)
     
 def main():
 	agt = FileListAgent('filelist_agent',  'T:\\user\\AIKIF', True, 3)
