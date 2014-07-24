@@ -3,6 +3,7 @@
 
 try:
     from PIL import Image
+    print("PIL imported OK")
 except ImportError:
     print("--------------------------------------------------------------------------")
     print("Error: Cant import PIL")
