@@ -18,7 +18,10 @@ class FileList(object):
         self.excluded = excluded
         
         self.get_file_list(self.paths, self.xtn, self.excluded, True)
-        
+    
+    def get_list(self):
+        return self.filelist
+            
     def get_file_list(self, lstPaths, lstXtn, lstExcluded, VERBOSE = False):
         """
         builds a list of files and returns as a list 
