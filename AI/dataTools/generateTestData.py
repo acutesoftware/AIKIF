@@ -8,9 +8,11 @@ import random
 import binascii
 import string
 
-names =    'S:\\duncan\\C\\user\\dev\\src\\python\\AI\\data\\ref\\names.csv'  # via http://www.cs.princeton.edu/introcs/data/names.csv
-places =   'S:\\duncan\\C\\user\\dev\\src\\python\\AI\\data\\core\\LOCATION_WORLD.CSV'  # use fileMap GETONTOLOGY
-wordList = 'S:\\duncan\\C\\user\\dev\\src\\python\\AI\\data\\ref\\nounList.txt'
+root = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "..")
+dat_fldr = root + os.sep + 'data' 
+names =    dat_fldr + os.sep + 'ref' + os.sep + 'names.csv'  # via http://www.cs.princeton.edu/introcs/data/names.csv
+places =   dat_fldr + os.sep + 'core' + os.sep + 'LOCATION_WORLD.CSV'  # use fileMap GETONTOLOGY
+wordList = dat_fldr + os.sep + 'ref' + os.sep + 'nounList.txt'
 
 def TEST():
 	print('generateTestData.py')
