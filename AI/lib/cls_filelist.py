@@ -7,8 +7,6 @@ import fnmatch
 import time
 from datetime import datetime
 
-print("loading filelist class...")
-
 class FileList(object):
     def __init__(self, paths, xtn, excluded, output_file_name = 'my_files.csv'):
         self.output_file_name = output_file_name
@@ -17,7 +15,7 @@ class FileList(object):
         self.xtn = xtn
         self.excluded = excluded
         
-        self.get_file_list(self.paths, self.xtn, self.excluded, True)
+        self.get_file_list(self.paths, self.xtn, self.excluded)
     
     def get_list(self):
         return self.filelist
@@ -74,7 +72,7 @@ class FileList(object):
         
         
         
-    def save_filelist(self, filelist, opFile, opFormat, delim=',', qu='"'):
+    def save_filelist(self, opFile, opFormat, delim=',', qu='"'):
         """
         uses a List of files and collects meta data on them and saves 
         to an text file as a list or with metadata depending on opFormat.
@@ -84,7 +82,7 @@ class FileList(object):
             for colHeading in opFormat:
                 fout.write(colHeading + delim)
             fout.write('\n')    
-            for f in filelist:
+            for f in self.filelist:
                 line = qu + f + qu + delim
                 for fld in opFormat:
                     if fld == "name":
@@ -97,4 +95,4 @@ class FileList(object):
                         line = line + qu + os.path.dirname(f) + qu + delim
                         
                 fout.write (line + '\n')
-            print ("Finished saving " , opFile)
+            #print ("Finished saving " , opFile)

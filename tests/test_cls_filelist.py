@@ -16,21 +16,28 @@ class TestClassFile(unittest.TestCase):
     def setUp(self):
         self.fname = 'test_results/cls_filelist_results1.csv'
         
-    def test_one_file_result(self):
-        print("test1 - Collecting one file")
-        lst1 = fl.FileList([root_folder + os.sep + 'README.md'], ['*.*'], [],  self.fname)
+    def test_1_file_result(self):
+        """print("test1 - filelist with one file")"""
+        lst1 = fl.FileList([root_folder ], ['README.md'], [],  self.fname)
         self.assertEqual(len(lst1.get_list()), 1) 
         
-    def test_multiple_file_result(self):
-        print("test2 - Collecting multiple file metadata")
+    def test_2_multiple_file_result(self):
+        """print("test2 - Collecting multiple file metadata")"""
         lst2 = fl.FileList([root_folder + os.sep + 'tests'], ['*.*'], [],  self.fname)
-        self.assertEqual(len(lst2.get_list()), 25) 
+        self.assertEqual(len(lst2.get_list()), 26) 
         
-    def save_filelist(self):
-        self.lst.save_filelist(lst.filelist, lst.output_file_name, ["name", "path", "size", "date"])
-        print("test3 - saving filelist to ", lst.output_file_name)
-        self.assertEqual(3, 3) 
+    def test_3_save_filelist(self):
+        """ print("test3 - saving filelist to ", self.fname)
+         note to self, tests must be name test_ """
         
+        if os.path.isfile(self.fname):
+            os.remove(self.fname)
+        aikif_fl = fl.FileList([root_folder], ['*.py'], [],  self.fname)
+        aikif_fl.save_filelist(self.fname, ["name", "path", "size", "date"])
+        if os.path.isfile(self.fname):
+            self.assertEqual("File Exists", "File Exists") 
+        else:
+            self.assertEqual("File Exists", "Whoops - nope") 
 
         
 if __name__ == '__main__':
