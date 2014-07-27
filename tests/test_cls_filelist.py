@@ -24,9 +24,14 @@ class TestClassFile(unittest.TestCase):
     def test_2_multiple_file_result(self):
         """print("test2 - Collecting multiple file metadata")"""
         lst2 = fl.FileList([root_folder + os.sep + 'tests'], ['*.*'], [],  self.fname)
-        self.assertEqual(len(lst2.get_list()), 26) 
+        self.assertEqual(len(lst2.get_list()), 29) 
         
-    def test_3_save_filelist(self):
+    def test_3_exclude_files(self):
+        """print("test2 - Collecting multiple file metadata")"""
+        lst3 = fl.FileList([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['*.*'], ['*.sql'],  self.fname)
+        self.assertEqual(len(lst3.get_list()), 12) 
+        
+    def test_4_save_filelist(self):
         """ print("test3 - saving filelist to ", self.fname)
          note to self, tests must be name test_ """
         
