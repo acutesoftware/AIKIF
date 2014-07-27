@@ -46,6 +46,8 @@ TD {
 
 #header {
 	font-size: 110%;
+    align: center;
+    width: 100%;
 }
 
 #menu_list a {
