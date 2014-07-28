@@ -1,0 +1,18 @@
+
+---------- Folder Locations ---------
+public_data_path T:\user\dev\src\python\AI\AI\data
+localPath T:\user\AIKIF\
+root_path T:\user\dev\src\python\AI\AI
+program_path T:\user\dev\src\python\AI\AI\AI
+
+---------- Logfiles ---------
+logFileProcess T:\user\AIKIF\log\process.log
+logFileSource T:\user\AIKIF\log\source.log
+logFileResult T:\user\AIKIF\log\result.log
+logFileCommand T:\user\AIKIF\log\command.log
+
+---------- Parameters ---------
+AIKIF_version 0.1
+AIKIF_deploy DEV
+
+usage from other programs - returns T:\user\dev\src\python\AI\AI
