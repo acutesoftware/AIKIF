@@ -64,6 +64,10 @@ def get_img_hash(image, hash_size = 8):
             decimal_value = 0
 
     return ''.join(hex_string)
+
+def load_image(fname):
+    """ read an image from file """
+    return Image.open(fname)
     
 def dump_img(fname):
     img = Image.open(fname)

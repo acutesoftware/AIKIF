@@ -4,6 +4,7 @@ import unittest
 import os
 import sys
 import csv
+import PIL
 sys.path.append("..\\AI\\toolbox")
 import image_tools as cl
 
@@ -21,18 +22,22 @@ def get_sample_file_list():
         "..\\doc\\web-if-v01.jpg"
     ]
 
-					
-class TestClassCollect(unittest.TestCase):
- 
-    def setUp(self):
-        pass
+                    
+class TestClassImageTools(unittest.TestCase):
 
-    def test_image_tools_start(self):
-        img = cl.get_img_hash(test_file1)  
-        self.assertEqual(len(img), 5404) 
+    def test_1_load_image(self):
+        image = cl.load_image(test_file1)
+        self.assertEqual(type(image), PIL.JpegImagePlugin.JpegImageFile)     
+        
+    def test_2_image_hash(self):
+        image = cl.load_image(test_file1)
+        img = cl.get_img_hash(image)  
+        self.assertEqual(len(img), 16) 
         
            
 
     
 if __name__ == '__main__':
-	unittest.main()
+    unittest.main()
+    
+    
