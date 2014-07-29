@@ -7,16 +7,29 @@ import sys
 import AIKIF_utils as aikif
 import fileMapping as filemap
 import config as cfg
-print(len(sys.argv), sys.argv)
-if len(sys.argv) == 1:   # nothing passes on command line
-    searchString = ['swimming']	
-else:
-    searchString = []
-    for i in range(0, len(sys.argv)):
-        print(i)
-        if i > 0:
-            searchString.append(sys.argv[i])
-        
+
+import getopt
+# parse command line options
+try:
+    opts, args = getopt.getopt(sys.argv[1:], "h", ["help"])
+except:
+    sys.exit(2)
+
+print("NOTE - you need to call python to get args passed, e.g.\n")
+print("python search.py database\n")
+
+searchString = []
+# process arguments
+for arg in args:
+    print(arg) # process() is defined elsewhere
+    searchString.append(arg)
+ 
+if len(searchString) == 0: 
+    searchString = ['Artificial']
+print(searchString)
+
+
+  
 def search(search_string = ''):
     """ main function to search using indexes """
     if search_string == '':
@@ -43,7 +56,7 @@ def search(search_string = ''):
     print('Found ', str(numResults), 'results in', str(totLines), 'lines over', str(len(ndxFiles)), 'index files')
     
 if __name__ == '__main__':
-    search()	
+    search(sys.argv)	
     
 
     
