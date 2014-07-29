@@ -22,10 +22,22 @@ logs['logFileSource'] = fldrs['localPath'] + 'log' + os.sep + 'source.log'
 logs['logFileCommand'] = fldrs['localPath'] + 'log' + os.sep + 'command.log'
 logs['logFileResult'] = fldrs['localPath'] + 'log' + os.sep + 'result.log'
 
+
+
 # useful folder locations used by programs - don't modify
-fldrs['root_path'] = os.path.dirname(os.path.abspath(__file__))
+fldrs['root_path'] = os.path.dirname(os.path.abspath(__file__)) + os.sep + '..'
 fldrs['program_path'] = fldrs['root_path'] + os.sep + "AI"
 fldrs['public_data_path'] = fldrs['root_path'] + os.sep + "data"
+
+# index files
+#                         fldrs['public_data_path'] + os.sep  + 'index' + os.sep + 'ndxWordsToFilesLecture.txt',
+#                         fldrs['localPath'] + 'diary' + os.sep + 'filelister2014.csv',
+
+params['index_files'] = [fldrs['public_data_path'] + os.sep  + 'index' + os.sep + 'ndxAll.txt',
+                         fldrs['localPath'] + 'pers_data' + os.sep + 'pers_index_final.txt',
+                         fldrs['localPath'] + 'pers_data' + os.sep + 'ndx_PCusage.txt'
+                        ]
+
 
 def show_config():
     """
