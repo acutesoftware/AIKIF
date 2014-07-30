@@ -22,8 +22,8 @@ class GoalTime(Goal):
         ]
         
         
-	def check_for_success(self):
-		return False
+    def check_for_success(self):
+        return False
 
     def run_plan(self, strategy):
         """ 
