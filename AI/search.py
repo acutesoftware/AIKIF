@@ -8,32 +8,15 @@ import AIKIF_utils as aikif
 import fileMapping as filemap
 import config as cfg
 
-import getopt
-# parse command line options
-try:
-    opts, args = getopt.getopt(sys.argv[1:], "h", ["help"])
-except:
-    sys.exit(2)
+import argparse
 
 print("NOTE - you need to call python to get args passed, e.g.\n")
 print("python search.py database\n")
 
-searchString = []
-# process arguments
-for arg in args:
-    print(arg) # process() is defined elsewhere
-    searchString.append(arg)
- 
-if len(searchString) == 0: 
-    searchString = ['Artificial']
-print(searchString)
-
 
   
-def search(search_string = ''):
+def search(search_string):
     """ main function to search using indexes """
-    if search_string == '':
-        search_string = searchString
     aikif.LogProcess('Starting search',  'search.py') # sys.modules[self.__module__].__file__)
     print('-------------------')
     print('Searching for ', search_string)
@@ -50,13 +33,23 @@ def search(search_string = ''):
                 totLines = totLines + 1
                 for src in search_string:
                     if src in line:
-                        print(line)
+                        try:
+                            print(line)   # gives error with some encoding
+                        except:
+                            print("Cant print search result")
                         numResults = numResults + 1
             print(str(line_num) + " lines searched")
     print('Found ', str(numResults), 'results in', str(totLines), 'lines over', str(len(ndxFiles)), 'index files')
     
 if __name__ == '__main__':
-    search(sys.argv)	
+    parser = argparse.ArgumentParser(description='Search.py looks in AIKIF index files for strings')
+    parser.add_argument('-s', '--search', help='enter a search string, enclosed with quotes if multiple words needed')
+    parser.add_argument('-i', '--index', help='choose an index file to search')
+    args = parser.parse_args()
+    # ... do something with args.search ...
+    # ... do something with args.verbose ..
+    print(args.search)
+    search([args.search])	
     
 
     
