@@ -46,6 +46,13 @@ class Plan(object):
         """
         print("adding constraint..." + name + " of type " + type + " = " + str(val) )
 
-        
+class Beliefs(object):
+    pass
+    
+class Desires(object):
+    pass
+
+class Intentions(object):
+    pass
         
         
