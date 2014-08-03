@@ -16,8 +16,8 @@ class Plan(object):
         self.success = False
         self.start_date = datetime.datetime.now().strftime("%I:%M%p %d-%B-%Y")
         self.beliefs = Beliefs(self)
-        self.desires = Desires()
-        self.intentions = Intentions()
+        self.desires = Desires(self)
+        self.intentions = Intentions(self)
         
         
     def __str__(self):
@@ -50,24 +50,36 @@ class Plan(object):
         """
         print("adding constraint..." + name + " of type " + type + " = " + str(val) )
 
-class Beliefs(object):
-    def __init__(self, parent_plan):
-        self.parent_plan = parent_plan
-        self.beliefs = []
+class Thoughts(object):
+    """ base class for beliefs, desires, intentions simply
+    to make it easier to manage similar groups of objects """
+    def __init__(self, thought_type):
+        self._thoughts = []
+        self._type = thought_type
         
     def add(self, name):
-        self.beliefs.append(name)
+        self._thoughts.append(name)
     
     def list(self):
-        for i, bel in enumerate(self.beliefs):
-            print('belief ' + str(i) + ' = ' + bel)
+        for i, thought in enumerate(self._thoughts):
+            print(self._type + str(i) + ' = ' + thought)
             
-    
-class Desires(object):
-    pass
 
-class Intentions(object):
-    pass
+    
+class Beliefs(Thoughts):
+    def __init__(self, parent_plan):
+        self.parent_plan = parent_plan
+        super().__init__('belief')
+        
+class Desires(Thoughts):
+    def __init__(self, parent_plan):
+        self.parent_plan = parent_plan
+        super().__init__('desire')
+
+class Intentions(Thoughts):
+    def __init__(self, parent_plan):
+        self.parent_plan = parent_plan
+        super().__init__('intention')
         
 
 def TEST():        
@@ -75,7 +87,12 @@ def TEST():
     myplan.beliefs.add('belief0')
     myplan.beliefs.add('belief1')
     myplan.beliefs.add('belief2')
+    myplan.desires.add('desire0')
+    myplan.desires.add('desire1')
+    myplan.intentions.add('intention0')
     myplan.beliefs.list()
+    myplan.desires.list()
+    myplan.intentions.list()
 
 if __name__ == '__main__':
 	TEST()    
