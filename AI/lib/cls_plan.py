@@ -15,6 +15,10 @@ class Plan(object):
         self.id = 1  
         self.success = False
         self.start_date = datetime.datetime.now().strftime("%I:%M%p %d-%B-%Y")
+        self.beliefs = Beliefs(self)
+        self.desires = Desires()
+        self.intentions = Intentions()
+        
         
     def __str__(self):
         res = "---==  Plan ==---- \n"
@@ -47,7 +51,17 @@ class Plan(object):
         print("adding constraint..." + name + " of type " + type + " = " + str(val) )
 
 class Beliefs(object):
-    pass
+    def __init__(self, parent_plan):
+        self.parent_plan = parent_plan
+        self.beliefs = []
+        
+    def add(self, name):
+        self.beliefs.append(name)
+    
+    def list(self):
+        for i, bel in enumerate(self.beliefs):
+            print('belief ' + str(i) + ' = ' + bel)
+            
     
 class Desires(object):
     pass
@@ -55,4 +69,14 @@ class Desires(object):
 class Intentions(object):
     pass
         
-        
+
+def TEST():        
+    myplan = Plan('new plan', '')
+    myplan.beliefs.add('belief0')
+    myplan.beliefs.add('belief1')
+    myplan.beliefs.add('belief2')
+    myplan.beliefs.list()
+
+if __name__ == '__main__':
+	TEST()    
+    
