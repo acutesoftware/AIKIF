@@ -116,16 +116,18 @@ class Thoughts(object):
     """ base class for beliefs, desires, intentions simply
     to make it easier to manage similar groups of objects """
     def __init__(self, thought_type):
+        #print("Thoughts - init: thought_type = " + thought_type + "\n")
         self._thoughts = []
         self._type = thought_type
         
     def add(self, name):
         self._thoughts.append(name)
     
-    def list(self):
+    def list(self, print_console=False):
         lst = []
         for i, thought in enumerate(self._thoughts):
-            #print(self._type + str(i) + ' = ' + thought)
+            if print_console == True:
+                print(self._type + str(i) + ' = ' + thought)
             lst.append(thought)
         return lst
     
@@ -157,12 +159,12 @@ def TEST():
     myplan.beliefs.list()
     myplan.desires.list()
     myplan.intentions.list()
-    myplan.save_plan("test_plan.txt")
+    #myplan.save_plan("test_plan.txt")
+    #myplan.load_plan("test_plan.txt")
+    print(str(myplan))
     
 if __name__ == '__main__':
-	#TEST()  
-    myplan = Plan('','')
-    myplan.load_plan("test_plan.txt")
-    print(str(myplan))
+	TEST()  
+
     
     

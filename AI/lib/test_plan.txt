@@ -1,9 +1,0 @@
-# AIKIF Plan specification 
-name       :new plan
-version    :v0.10
-belief     :belief0
-belief     :belief1
-belief     :belief2
-desire     :desire0
-desire     :desire1
-intention  :intention0

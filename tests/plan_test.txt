@@ -1,0 +1,12 @@
+# AIKIF Plan specification 
+name       :New Plan
+version    :v0.10
+belief     :The house contains 2 bedrooms, a hallway and a kitchen
+belief     :The kitchen is joined to the hallway and bedroom1
+belief     :bedroom2 is connected to the hallway
+belief     :The chair is in bedroom1
+belief     :The ball is red
+belief     :The ball is not in bedroom1
+desire     :Find the ball
+desire     :Move the ball to bedroom1
+intention  :interate each room, check for ball
