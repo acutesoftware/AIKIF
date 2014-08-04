@@ -59,6 +59,14 @@ class PlanTest(unittest.TestCase):
         plan2.load_plan('plan_test.txt')
         self.assertEqual(len(str(plan2)), 475)
     
+    def test_20_check_random_thought_types(self):
+        from cls_plan import Thoughts
+        thought = Thoughts('bizzare_type')
+        thought.add('I AM A BUS')
+        thought.add('No - you are a test case')
+        #print(str(thought))
+        self.assertEqual(len(str(thought)), 52)
+    
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
         #print(str(self.myplan))

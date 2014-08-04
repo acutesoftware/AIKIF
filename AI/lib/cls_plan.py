@@ -64,7 +64,8 @@ class Plan(object):
                     elif type == 'intention':
                         self.intentions.add(txt)
                     else:
-                        print("COMMENT (or unknown) - " + txt)
+                        #print("COMMENT (or unknown) - " + txt)
+                        pass
     
     def save_plan(self, fname):
                 
@@ -119,7 +120,13 @@ class Thoughts(object):
         #print("Thoughts - init: thought_type = " + thought_type + "\n")
         self._thoughts = []
         self._type = thought_type
-        
+    
+    def __str__(self):
+        res = ' -- Thoughts --\n'
+        for i in self._thoughts:
+            res += i + '\n'
+        return res    
+    
     def add(self, name):
         self._thoughts.append(name)
     
