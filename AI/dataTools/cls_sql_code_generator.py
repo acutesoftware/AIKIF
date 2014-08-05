@@ -229,11 +229,11 @@ class SQLCodeGenerator(object):
         The fact table is aliased as "op" and the join dimension is aliased as "ip"
         meaning you can pass substrings or SQL to match values.
         e.g. the command:
-        aup.key_to_dimension('GENDER_KEY', 'substr(op.GENDER, 1,1)', 'EDW.U_CFM_GENDER_C', 'gender_code', 'GENDER_KEY')
+        aup.key_to_dimension('GENDER_KEY', 'substr(op.GENDER, 1,1)', 'tbl_GENDER', 'gender_code', 'GENDER_KEY')
 
         will generate the code:
-        UPDATE c_aup_compl op SET op.gender_key = NVL ( (SELECT MAX (ip.gender_key)
-          FROM edw.u_cfm_gender_c ip WHERE ip.gender_code = SUBSTR (op.gender, 1, 1)), -1);
+        UPDATE table op SET op.gender_key = NVL ( (SELECT MAX (ip.gender_key)
+          FROM tbl_GENDER ip WHERE ip.gender_code = SUBSTR (op.gender, 1, 1)), -1);
         """
         
         self.sql_text += "UPDATE " + self.fact_table + " op SET op." + fact_key + " = NVL(\n"

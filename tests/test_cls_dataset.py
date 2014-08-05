@@ -19,7 +19,7 @@ class TestClassDataSet(unittest.TestCase):
 		self.assertEqual(len(fldr.list_tables('\n')), 19) 		
 		
 	def test_create_database(self):
-		schema = cl.DataSet('EDW', 'database')
+		schema = cl.DataSet('schema', 'database')
 		schema.add('C_CUSTOMERS')
 		schema.add('C_PRODUCTS')
 		schema.add('C_SALES')
