@@ -7,7 +7,6 @@ import sys
 import AIKIF_utils as aikif
 import fileMapping as filemap
 
-
 if len(sys.argv) == 2:
     viewStructure = sys.argv[1]
 
@@ -20,7 +19,6 @@ securityLevels = [
     'SELF'		# yourself
     ]
     
-
 
 privateFiles = []
 privateFiles.append(filemap.GetFullFilename(filemap.FindType('thing'), filemap.FindOntology('shopping')[0]))
@@ -38,13 +36,15 @@ def MapSecurityLevel(files, security):
         securityMappings.append([file, security])
 
     
-def ShowSecurity():
+def show_security():
+    res = ''
     num = 0
-    print('map\tfile\t\t\t\tlevel')
+    res += 'num\tmap\tfile\n'
+    res += '---\t------\t-------------------------------------\n'
     for map in securityMappings:
         num = num+ 1
-        print(str(num) + '\t' + map[0] + '\t' + map[1])
-
+        res += str(num) + '\t' + map[1] + '\t' + os.path.basename(map[0]) + '\n'
+    return res
         
 def main():
     # main function 
@@ -52,14 +52,11 @@ def main():
     MapSecurityLevel(privateFiles, 'FAMILY')
 
     aikif.LogProcess('Starting Security',  'view.py') 
-    print('--------------')
     print('AIKIF Security Settings')
-    print('--------------')	
     
     
-    #print(privateFiles)
-    ShowSecurity()
-
+    print(show_security())
+    
     
 if __name__ == '__main__':
     main()	
