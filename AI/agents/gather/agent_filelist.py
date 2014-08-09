@@ -6,7 +6,7 @@ import sys
 import random
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 sys.path.append(root_folder)
-print(root_folder)
+#print(root_folder)
 import AI.agents.agent as agt
 import AI.lib.cls_filelist as fl
 		
@@ -17,20 +17,23 @@ class FileListAgent(agt.Agent):
     is to manage when the filelist runs (calls cls_filelist.py)
     and how the results are saved [using AIKIF logging]
     """
-    def __init__(self, name,  fldr, running, LOG_LEVEL):
+    def __init__(self, name,  fldr, running, LOG_LEVEL, col_list=[]):
         agt.Agent.__init__(self, name,  fldr, running)
         self.LOG_LEVEL = LOG_LEVEL
+        self.root_folder = fldr
+        self.fl_opname = name + '.lis'
+        self.col_list = col_list
         if running == True:
             self.do_your_job()
 
     def do_your_job(self, *arg):
         """
         the goal of the filelist agent is to collect metdata on files
-        """
-        print("Collecting file metadata")
-        lst = fl.FileList([root_folder + '\\tests'], ['*.*'], [], True)
-        lst.save_filelist(lst.filelist, lst.output_file_name, ["name", "path", "size", "date"])
-        print("saved filelist to ", lst.output_file_name)
+        """ 
+        #print("Collecting file metadata")
+        self.lst = fl.FileList([self.root_folder], ['*.*'], [], True)
+        self.lst.save_filelist( self.fl_opname, self.col_list, "", "")
+        #print("saved filelist to ", self.fl_opname)
     
     def check_last_updated(self):
         """
