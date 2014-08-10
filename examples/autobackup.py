@@ -17,7 +17,28 @@ LOG_LEVEL = 2
 
 def main():
     """
-    autobackup program implemented using AIKIF agent
+    autobackup program implemented using AIKIF agent.
+
+    TODO :
+    the cls_filelist (or agent_filelist) needs to
+    have a class called FileListGroup which takes an autobackup
+    name and set of files AS WELL AS a destination folder.
+    This way every file has TWO locations - a master and a backup.
+    
+    The filelist will manage collecting the metadata of files and 
+    also checking the backup version and put a flag DIRTY/CLEAN 
+    against each file in the list.
+    
+    You then need to have an iterate method in the class which iterates
+    not only the filename but other metadata parameters (multi methods)
+    
+    Then, all the autobackup.py program needs to do is iterate 
+    through the list of files in each filelistgroup and backup
+    the dirty files.
+    
+    Also, new apps fileList server can use this collection for 
+    quick viewing.
+    
     """
     log_folder      = "T:\\user\\AIKIF\\log\\agents"
     dest_folder     = "E:\\backup"
