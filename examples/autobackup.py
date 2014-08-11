@@ -39,15 +39,17 @@ def main():
     Also, new apps fileList server can use this collection for 
     quick viewing.
     
+{"name":"Documents", "fldr":"T:\\user\\docs\\business", "base_path_ignore":"T:\\user\\"},
+{"name":"eBooks", "fldr":"Z:\\DATA\\eBooks\\000_Computer_Science", "base_path_ignore":"Z:\\DATA\\"},
+    
     """
     log_folder      = "T:\\user\\AIKIF\\log\\agents"
     dest_folder     = "E:\\backup"
 
     backups = [
-{"name":"AIKIF Code", "fldr":"T:\\user\\dev\\src\\python\\AI", "base_path_ignore":"T:\\user\\"},
+{"name":"AIKIF Code", "fldr":"T:\\user\\dev\\src\\python\\AI\\examples", "base_path_ignore":"T:\\user\\"},
 {"name":"AIKIF logs", "fldr":"T:\\user\\AIKIF", "base_path_ignore":"T:\\user\\"},
-{"name":"Documents", "fldr":"T:\\user\\docs\\business", "base_path_ignore":"T:\\user\\"},
-{"name":"eBooks", "fldr":"Z:\\DATA\\eBooks\\000_Computer_Science", "base_path_ignore":"Z:\\DATA\\"},
+{"name":"Documents", "fldr":"T:\\user\\docs\\articles", "base_path_ignore":"T:\\user\\"},
 ]
     
     for backup in backups:
@@ -57,10 +59,13 @@ def autobackup(nme, fldr, ignore_root, dest_folder):
     aikif.LogCommand('autobackup - ' + nme, 'autobackup.py')
     print('Starting backup "' + nme + '" - ' +  fldr)
     fl = agt.FileListAgent(nme, fldr, True, 1, [])
+    
+    
+    """ code below works with backup for orig version PRIOR to FileListGroups
     for num, file in enumerate(fl.lst.get_list()):
         backup_file(file, dest_folder, ignore_root)
     print("Backed up " + "{0:,d}".format(num) + " files \t[" + nme + "]")
-
+    """
 
         
 def backup_file(fname, dest_root_folder, base_path_ignore):
