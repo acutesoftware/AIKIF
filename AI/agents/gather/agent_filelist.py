@@ -11,14 +11,21 @@ import AI.agents.agent as agt
 import AI.lib.cls_filelist as fl
 		
 
+    
+    
 class FileListAgent(agt.Agent):
     """
     agent that gathers file metadata. The purpose of this class 
     is to manage when the filelist runs (calls cls_filelist.py)
-    and how the results are saved [using AIKIF logging]
+    and how the results are saved [using AIKIF logging].
+    
     """
     def __init__(self, name,  fldr, running, LOG_LEVEL, col_list=[]):
         agt.Agent.__init__(self, name,  fldr, running)
+        """
+        takes a fldr which is a single folder as string and makes its
+        own instance of cls_filelist in do_your_job - not the best idea
+        """
         self.LOG_LEVEL = LOG_LEVEL
         self.root_folder = fldr
         self.fl_opname = name + '.lis'
