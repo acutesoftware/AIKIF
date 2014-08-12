@@ -2,3 +2,4 @@
 __pycache__/
 *.py[cod]
 Thumbs.db
+AI/ontology/open-cyc.n3
