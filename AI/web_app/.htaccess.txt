@@ -1,0 +1,2 @@
+DirectoryIndex index.py
+AddHandler cgi-script .py
