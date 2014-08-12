@@ -6,9 +6,15 @@
 import os
 import sys
 import csv
+import time
+import getpass
+import socket
+    
+"""
 sys.path.append('..//..//aspytk')
 import lib_data as dat
 import lib_file as fle
+"""
 
 localPath = 'T:\\user\\AIKIF\\' # '..//data//' # os.getcwd()
 logFileProcess = localPath + 'log\\process.log'
@@ -36,16 +42,26 @@ def build_AIKIF_structure():
    
     return AIKIF_FileList
 
+def print_no_newline(string):
+	sys.stdout.write(string)
+	sys.stdout.flush()  
+
+def countLinesInFile(fname):
+    with open(fname) as f:
+        for i, l in enumerate(f):
+            pass
+    return i + 1
+    
 def showColumnStructures(AIKIF_FileList):
 	print('\n--------------   Column Structures of Data Files  -----------------')
 	for j in range(len(AIKIF_FileList)):
 		for key in AIKIF_FileList[j]:  # dont use sorted function
 			if key == 'fname':
-				dat.print_no_newline('\n ' + AIKIF_FileList[j][key].ljust(14, ' ') + ': ') 
+				print_no_newline('\n ' + AIKIF_FileList[j][key].ljust(14, ' ') + ': ') 
 				
 			if key == 'fields':
 				for fld in AIKIF_FileList[j][key]:
-					dat.print_no_newline(fld + ',' )  # prints all heirachy - works
+					print_no_newline(fld + ',' )  # prints all heirachy - works
 	print('\n-------------------------------------------------------------------\n')
 	
 def debugPrintFileStructures(AIKIF_FileList):
@@ -61,7 +77,7 @@ def printFileList(l):
     for fileName in fileList:
         fileName = localPath + 'temp//' + fileName
         numFiles=numFiles+1
-        print (fileName, "\t",dat.countLinesInFile(fileName), "rows" , "\t(", os.path.getsize(fileName), "bytes)")
+        print (fileName, "\t",countLinesInFile(fileName), "rows" , "\t(", os.path.getsize(fileName), "bytes)")
   
     
 def getFileList(l):
@@ -101,7 +117,7 @@ def GetElementsAsString(lst, delim, quote='"'):
 
 def SaveFileDataToFile(lst, filename, append=False):
 
-	fle.ensure_dir(os.path.dirname(filename))
+	ensure_dir(os.path.dirname(filename))
 
 	if append == True:
 		w = open(filename, "at")
@@ -112,7 +128,61 @@ def SaveFileDataToFile(lst, filename, append=False):
 		w.writelines(line + '\n')
 	w.close()
 
+def ensure_dir(f):
+    d = os.path.dirname(f)
+    if not os.path.exists(d):
+        os.makedirs(d)
+        
+def List2String(l):
+	res = ""
+	for v in l:
+		res = res + v
+	return res
+    
+def Dict2String(d):
+	res = ","
+	for k, v in d: 
+		res = res + k + str(v) + ','
+	return res
+    
+def TodayAsString():
+	return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+	
+            
+def force_to_string(unknown):
+	result = ''
+	if type(unknown) is str:
+		result = unknown
+	if type(unknown) is int:
+		result = str(unknown)
+	if type(unknown) is dict:
+		result = Dict2String(unknown)
+	if type(unknown) is list:
+		result = List2String(unknown)
+	
+	return result
+	 
+def log(fname, txt, prg=''):
+	# logs an entry to fname along with standard date and user details
+	delim = ','
+	q = '"'
+	dte = TodayAsString()
+	usr = GetUserName()
+	hst = GetHostName()
+	ensure_dir(os.path.dirname(fname))
 
+	if prg == '':
+		prg = GetModuleName()  # note - if you do this here it always returns 'AIKIF_utils.LogCommand'
+	logEntry = q + dte + q + delim + q + usr + q + delim + q + hst + q + delim + q + prg + q + delim + q + txt + q + delim + '\n'
+	with open(fname, "a") as myfile:
+		myfile.write(logEntry)
+
+def GetUserName():
+    return getpass.getuser()
+
+def GetHostName():
+	return socket.gethostname()
+	        
     
 # -----------------------------------------
 # --   Logging Functions 
@@ -120,22 +190,22 @@ def SaveFileDataToFile(lst, filename, append=False):
 def LogDataSource(src, prg=''):
     # function to collect raw data from the web and hard drive[ currently using documents on disk instead of web ]
     #print(' source  =', src)
-    fle.log(logFileSource , dat.ForceToString(src), prg)
+    log(logFileSource , force_to_string(src), prg)
 
 def LogProcess(process, prg=''):
     # log a process or program
     #print(' process = ', process)
-    fle.log(logFileProcess, dat.ForceToString(process), prg)
+    log(logFileProcess, force_to_string(process), prg)
 
 def LogCommand(cmd, prg=''):
     # record the command passed
     #print(' command = ', cmd)
-    fle.log(logFileCommand , dat.ForceToString(cmd), prg)
+    log(logFileCommand , force_to_string(cmd), prg)
 
 def LogResult(res, prg=''):
     # record the output of the command
     #print('   result    = ', res)
-    fle.log(logFileResult , dat.ForceToString(res), prg)
+    log(logFileResult , force_to_string(res), prg)
 
 
  
