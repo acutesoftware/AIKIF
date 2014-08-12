@@ -14,6 +14,8 @@ def TEST():
     TODO - make sure folder passed is a LIST not a string
     TODO - make sure xtn passed is a LIST not a string
     TODO - make sure excluded is passed NOT just the output file
+    TODO - decide whether you really need a FileListGroup or just
+           an autobackup app class
     """
     print("Running self test for cls_filelist")
     fldr = os.path.dirname(os.path.abspath(__file__))
@@ -22,8 +24,12 @@ def TEST():
     print(fl_grp)
     
     fl = FileList([fldr], ['*.py'], [], "sample_filelist.csv")
-    for f in fl.filelist:
-        print(f)
+    #col_headers = ["name", "size", "date", "path"]
+    col_headers = ["name", "date", "size"]
+    #col_headers = ["date", "fullfilename"]
+    for f in fl.fl_metadata:
+        #print('{:<30}'.format(f["name"]), '{:,}'.format(f["size"]))
+        print(fl.print_file_details_in_line(f["fullfilename"], col_headers))
     print("Done.")
     
 class FileListGroup(object):
@@ -67,7 +73,10 @@ class FileListGroup(object):
 class FileList(object):
     def __init__(self, paths, xtn, excluded, output_file_name = 'my_files.csv'):
         self.output_file_name = output_file_name
-        self.filelist = []
+        self.filelist = []       # list of full filenames
+        self.fl_metadata = []    # dictionary of all file metadata
+        self.fl_dirty_files = [] # list of fullfilenames needing to be backed up
+        self.failed_backups = [] # list of files that failed to backup
         self.paths = paths
         self.xtn = xtn
         self.excluded = excluded
@@ -76,7 +85,90 @@ class FileList(object):
     
     def get_list(self):
         return self.filelist
+
+    def get_dirty_filelist(self):
+        return self.fl_dirty_files
+
+    def get_metadata(self):
+        return self.fl_metadata
+    
+
+    def get_failed_backups(self):
+        return self.failed_backups
+
+    def add_failed_file(self, fname, dest_folder):
+        """ this file failed to backup, so log it for future retry """
+        self.failed_backups.append(fname)
+        
+    def check_files_needing_synch(self, dest_root_folder, base_path_ignore, date_accuracy = 'hour'):
+        """ 
+        checks the metadata in the list of source files
+        against the dest_folder (building path) and flags a
+        data_dirty column in the metadata if the file needs
+        backing up.
+        """
+        for f in self.fl_metadata:
+            dest_folder =  os.path.join(dest_root_folder, os.path.dirname(f["fullfilename"])[len(base_path_ignore):])
+            dest_file = dest_folder + os.sep + f["name"]
+            # works - find correct source file and dest file
+            #print("Checking file - " + f["fullfilename"])
+            #print("against dest_file = " + dest_file)
+            if self.is_file_dirty(f, dest_file, date_accuracy):
+                self.fl_dirty_files.append(f["fullfilename"])
+                
+    
+    def is_file_dirty(self, src_file_dict, dest_file, date_accuracy):
+        """ 
+        does various tests based on config options (eg simple
+        date modified, all files, check CRC hash
+        """
+        
+        if os.path.isfile(dest_file) == False:
+            return True  # no backup exists, so needs backing up
+        
+        if src_file_dict["size"] != os.path.getsize(dest_file):
+            return True  # file size has changed, so backup
+        
+        if self.compare_file_date(src_file_dict["date"], dest_file, date_accuracy) == False:
+            return True  # file date is different so MAYBE backup
             
+        if self.get_file_hash(src_file_dict["fullfilename"]) != self.get_file_hash(dest_file):
+            return True   # file contents changed so backup (e.g. fixed file sizes)
+        
+        # all tests pass, so assume file is ok and doesn't need syncing    
+        
+        return False
+    
+    def get_file_hash(self, fname):
+        """ returns a file hash of the file """
+        return 1  # not implemented obviously - should used saved results anyway
+    
+    def compare_file_date(self, dte, dest_file, date_accuracy):
+        """Checks to see if date of file is the same   """
+        dest_date = self.GetDateAsString(os.path.getmtime(dest_file))
+        
+        date_size = 17
+        if date_accuracy == 'day':
+            date_size = 11
+        if date_accuracy == 'hour':
+            date_size = 13
+        if date_accuracy == 'min':
+            date_size = 15
+            
+        # now trunc both date strings by same amount
+        #print("dte before = " + dte)
+        dest_date = dest_date[:date_size]
+        dte  = dte[:date_size]
+        #print("dte after  = " + dte)
+        # TODO = take into account time differences on other servers
+        # do this once at calling function by creating a file and 
+        # checking timestamp against sysdate and then getting an offset
+        # (usually .5 to 1 hour difference max)
+        
+        if dte != dest_date:
+            return False
+        return True
+        
     def get_file_list(self):
         """
         uses self parameters if no parameters passed - TODO - add test for this!!!!
@@ -122,8 +214,50 @@ class FileList(object):
     def add_file_metadata(self, fname):
         file_dict = {}
         file_dict["fullfilename"] = fname
-        
+        file_dict["name"] = os.path.basename(fname)
+        file_dict["date"] = self.GetDateAsString(os.path.getmtime(fname))
+#        file_dict["size"] = str(os.path.getsize(fname))
+        file_dict["size"] = os.path.getsize(fname)
+        file_dict["path"] = os.path.dirname(fname)
         self.fl_metadata.append(file_dict)
+
+    def print_file_details_in_line(self, fname, col_headers):
+        """ makes a nice display of filename for printing based on columns passed 
+               print('{:<30}'.format(f["name"]), '{:,}'.format(f["size"]))
+        """
+        line = ''
+        for fld in col_headers:
+            if fld == "fullfilename":
+                line = line + fname
+            if fld == "name":
+                line = line + '{:<30}'.format(os.path.basename(fname)) + ' '
+            if fld == "date":
+                line = line + self.GetDateAsString(os.path.getmtime(fname)) + ' '
+            if fld == "size":
+                line = line + '{:,}'.format(os.path.getsize(fname)) + ' ' 
+            if fld == "path":
+                line = line + os.path.dirname(fname) + ' '
+        #line += '\n'
+        return line
+        
+    def print_file_details_as_csv(self, fname, col_headers):
+        """ saves as csv format """
+        line = ''
+        qu = '"'
+        d = ','
+        for fld in col_headers:
+            if fld == "fullfilename":
+                line = line + qu + fname + qu + d
+            if fld == "name":
+                line = line + qu + os.path.basename(fname) + qu + d
+            if fld == "date":
+                line = line + qu + self.GetDateAsString(os.path.getmtime(fname)) + qu + d
+            if fld == "size":
+                line = line + qu + str(os.path.getsize(fname)) + qu + d
+            if fld == "path":
+                line = line + qu + os.path.dirname(fname) + qu + d 
+        #line += '\n'
+        return line
         
     def GetDateAsString(self, t):
         res = ''
@@ -167,7 +301,53 @@ class FileList(object):
                 fout.write (line + '\n')
             #print ("Finished saving " , opFile)
 
-		
+	
+    def save_file_usage(self, fldr, nme):
+        """ saves a record of used files for infolink applications """
+        print("Saving File Usage to " + fldr)
+        #print(self.get_dirty_filelist())
+        file_copied = fldr + 'copied_' + nme + '.txt'
+        file_failed = fldr + 'failed_' + nme + '.txt'
+        file_data = fldr + 'filelist_' + nme + '.csv'
+        file_usage = fldr + 'file_usage.csv'
+        
+        if os.path.isfile(file_copied):
+            os.remove(file_copied)
+        with open(file_copied, 'w') as f:
+            f.write("# Backed up on " + self.TodayAsString() + '\n')
+            for fname in self.get_dirty_filelist():
+                f.write(fname + '\n')
+                
+        if os.path.isfile(file_failed):
+            os.remove(file_failed)
+        with open(file_failed, 'w') as f:
+            f.write("# Files Failed to backup on " + self.TodayAsString() + '\n')
+            for fname in self.get_failed_backups():
+                f.write(fname + '\n')
+                
+        if os.path.isfile(file_data):
+            os.remove(file_data)
+        with open(file_data, 'w') as f:
+            f.write("# FileList refreshed on " + self.TodayAsString() + '\n')
+            for fname in self.get_list():
+                f.write(self.print_file_details_as_csv(fname, ["name", "size", "date", "path"] ) + '\n')
+            
+        with open(file_usage, 'a') as f:
+            for fname in self.get_dirty_filelist():
+                f.write(self.TodayAsString() + ', ' + fname + ' (' + str(os.path.getsize(fname)) + ' bytes)\n')
+
+
+ 
+    def update_indexes(self, fname):
+        """ 
+        updates the indexes in AIKIF with any changed files.
+        This uses the same process as main metdatalist - check to see if date of index
+        is old, THEN update index for that file and call consolidate index
+        """
+        print("Updating index " + fname)
+        
+        
+	
 if __name__ == '__main__':
 	TEST()
 	

@@ -20,7 +20,7 @@ class FileListAgent(agt.Agent):
     and how the results are saved [using AIKIF logging].
     
     """
-    def __init__(self, name,  fldr, running, LOG_LEVEL, col_list=[]):
+    def __init__(self, name,  fldr, running, LOG_LEVEL, log_folder, col_list=[]):
         agt.Agent.__init__(self, name,  fldr, running)
         """
         takes a fldr which is a single folder as string and makes its
@@ -28,7 +28,8 @@ class FileListAgent(agt.Agent):
         """
         self.LOG_LEVEL = LOG_LEVEL
         self.root_folder = fldr
-        self.fl_opname = name + '.lis'
+        self.log_folder = log_folder
+        self.fl_opname = log_folder + os.sep + name + '.csv'
         self.col_list = col_list
         if running == True:
             self.do_your_job()
@@ -39,7 +40,7 @@ class FileListAgent(agt.Agent):
         """ 
         #print("Collecting file metadata")
         self.lst = fl.FileList([self.root_folder], ['*.*'], [], True)
-        self.lst.save_filelist( self.fl_opname, self.col_list, "", "")
+        self.lst.save_filelist( self.fl_opname, self.col_list)
         #print("saved filelist to ", self.fl_opname)
     
     def check_last_updated(self):
