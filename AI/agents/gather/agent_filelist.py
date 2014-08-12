@@ -18,8 +18,8 @@ class FileListAgent(agt.Agent):
     agent that gathers file metadata. The purpose of this class 
     is to manage when the filelist runs (calls cls_filelist.py)
     and how the results are saved [using AIKIF logging].
-    
     """
+    
     def __init__(self, name,  fldr, running, LOG_LEVEL, log_folder, col_list=[]):
         agt.Agent.__init__(self, name,  fldr, running)
         """
@@ -36,7 +36,7 @@ class FileListAgent(agt.Agent):
 
     def do_your_job(self, *arg):
         """
-        the goal of the filelist agent is to collect metdata on files
+        the goal of the filelist agent is to collect metadata on files
         """ 
         #print("Collecting file metadata")
         self.lst = fl.FileList([self.root_folder], ['*.*'], [], True)

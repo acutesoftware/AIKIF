@@ -28,7 +28,7 @@ class TestClassFile(unittest.TestCase):
     def test_2_multiple_file_result(self):
         """print("test2 - Collecting multiple file metadata")"""
         lst2 = fl.FileList([root_folder + os.sep + 'tests'], ['*.*'], [],  self.fname)
-        self.assertEqual(len(lst2.get_list()), 29) 
+        self.assertEqual(len(lst2.get_list()), 32) 
         
     def test_3_exclude_files(self):
         """print("test2 - Collecting multiple file metadata")"""
@@ -36,18 +36,27 @@ class TestClassFile(unittest.TestCase):
         self.assertEqual(len(lst3.get_list()), 12) 
         
     def test_4_save_filelist(self):
-        """ print("test3 - saving filelist to ", self.fname)
-         note to self, tests must be name test_ """
+        """ test saving filelist  """
         
         if os.path.isfile(self.fname):
             os.remove(self.fname)
-        aikif_fl = fl.FileList([root_folder], ['*.py'], [],  self.fname)
+        aikif_fl = fl.FileList([root_folder + os.sep + 'tests'], ['*.py'], [],  self.fname)
         aikif_fl.save_filelist(self.fname, ["name", "path", "size", "date"])
         if os.path.isfile(self.fname):
             self.assertEqual("File Exists", "File Exists") 
         else:
             self.assertEqual("File Exists", "Whoops - nope") 
 
+    def test_5_check_metadata(self):
+        """ make sure metadata is correct for this file """
+        lst5 = fl.FileList([os.path.dirname(os.path.abspath(__file__))], ['test_cls_filelist.py'], [],  self.fname)
+        files = lst5.get_metadata()
+        for file_dict in files:
+            self.assertEqual(file_dict["name"], 'test_cls_filelist.py') 
+            self.assertTrue(file_dict["size"] > 2500) 
+            self.assertTrue(file_dict["date"] > '2014-08-12 21:32:57') 
+            self.assertEqual(file_dict["path"], 'T:\\user\\dev\\src\\python\\AI\\tests') 
+    
         
 if __name__ == '__main__':
     unittest.main()

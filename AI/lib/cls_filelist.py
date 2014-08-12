@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # cls_filelist.py
 import os
 import shutil
@@ -298,7 +299,11 @@ class FileList(object):
                     if fld == "path":
                         line = line + qu + os.path.dirname(f) + qu + delim
                         
-                fout.write (line + '\n')
+                try:
+                    fout.write (line + '\n')
+                except:
+                    print("Cant print line - cls_filelist line 304")
+                    
             #print ("Finished saving " , opFile)
 
 	
