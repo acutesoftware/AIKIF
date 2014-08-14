@@ -204,10 +204,18 @@ class FileList(object):
                                         includeThisFile = "N"
                             if includeThisFile == "Y":
                                 if VERBOSE:
-                                    print(os.path.basename(filename), '\t', os.path.getsize(filename))
+                                    try:
+                                        print(os.path.basename(filename), '\t', os.path.getsize(filename))
+                                    except:
+                                        print("ERROR printing UniCode filename")
                                 numFiles = numFiles + 1
                                 self.filelist.append(filename)
                                 self.add_file_metadata(filename)    # not sure why there is a 2nd list, but there is.
+                        else:
+                            try:
+                                print("file not matched " + basename)
+                            except:
+                                print("file not matched, but cant print basename")
         if VERBOSE:
             print("Found ", numFiles, " files")
         return self.filelist
@@ -248,15 +256,31 @@ class FileList(object):
         d = ','
         for fld in col_headers:
             if fld == "fullfilename":
-                line = line + qu + fname + qu + d
+                try:
+                    line = line + qu + fname + qu + d
+                except:
+                    line = line + qu + 'ERROR_FILENAME' + qu + d
             if fld == "name":
-                line = line + qu + os.path.basename(fname) + qu + d
+                try:
+                    line = line + qu + os.path.basename(fname) + qu + d
+                except:
+                    line = line + qu + 'ERROR_FOLDER' + qu + d
             if fld == "date":
-                line = line + qu + self.GetDateAsString(os.path.getmtime(fname)) + qu + d
+                try:
+                    line = line + qu + self.GetDateAsString(os.path.getmtime(fname)) + qu + d
+                except:
+                    line = line + qu + 'ERROR_DATE' + qu + d
             if fld == "size":
-                line = line + qu + str(os.path.getsize(fname)) + qu + d
+                try:
+                    line = line + qu + str(os.path.getsize(fname)) + qu + d
+                except:
+                    line = line + qu + 'ERROR_SIZE' + qu + d
             if fld == "path":
-                line = line + qu + os.path.dirname(fname) + qu + d 
+                try:
+                    line = line + qu + os.path.dirname(fname) + qu + d 
+                except:
+                    line = line + qu + 'ERROR_PATH' + qu + d
+                   
         #line += '\n'
         return line
         
@@ -289,16 +313,18 @@ class FileList(object):
             fout.write('\n')    
             for f in self.filelist:
                 line = qu + f + qu + delim
-                for fld in opFormat:
-                    if fld == "name":
-                        line = line + qu + os.path.basename(f) + qu + delim
-                    if fld == "date":
-                        line = line + qu + self.GetDateAsString(os.path.getmtime(f)) + qu + delim 
-                    if fld == "size":
-                        line = line + qu + str(os.path.getsize(f)) + qu + delim
-                    if fld == "path":
-                        line = line + qu + os.path.dirname(f) + qu + delim
-                        
+                try:
+                    for fld in opFormat:
+                        if fld == "name":
+                            line = line + qu + os.path.basename(f) + qu + delim
+                        if fld == "date":
+                            line = line + qu + self.GetDateAsString(os.path.getmtime(f)) + qu + delim 
+                        if fld == "size":
+                            line = line + qu + str(os.path.getsize(f)) + qu + delim
+                        if fld == "path":
+                            line = line + qu + os.path.dirname(f) + qu + delim
+                except:
+                    line += '\n'   # no metadata
                 try:
                     fout.write (line + '\n')
                 except:
@@ -318,29 +344,40 @@ class FileList(object):
         
         if os.path.isfile(file_copied):
             os.remove(file_copied)
-        with open(file_copied, 'w') as f:
+        with open(file_copied, 'w', encoding='utf-8') as f:
             f.write("# Backed up on " + self.TodayAsString() + '\n')
             for fname in self.get_dirty_filelist():
-                f.write(fname + '\n')
+                try:
+                    f.write(fname + '\n')
+                except:
+                    print("FAILED LOGGING FILENAME to file_copied")
                 
         if os.path.isfile(file_failed):
             os.remove(file_failed)
-        with open(file_failed, 'w') as f:
+        with open(file_failed, 'w', encoding='utf-8') as f:
             f.write("# Files Failed to backup on " + self.TodayAsString() + '\n')
             for fname in self.get_failed_backups():
-                f.write(fname + '\n')
+                try:
+                    f.write(fname + '\n')
+                except:
+                    print("FAILED LOGGING FILENAME to file_failed")
                 
         if os.path.isfile(file_data):
             os.remove(file_data)
-        with open(file_data, 'w') as f:
+        with open(file_data, 'w', encoding='utf-8') as f:
             f.write("# FileList refreshed on " + self.TodayAsString() + '\n')
             for fname in self.get_list():
-                f.write(self.print_file_details_as_csv(fname, ["name", "size", "date", "path"] ) + '\n')
+                try:
+                    f.write(self.print_file_details_as_csv(fname, ["name", "size", "date", "path"] ) + '\n')
+                except:
+                    print("FAILED LOGGING FILENAME to file_data")
             
-        with open(file_usage, 'a') as f:
+        with open(file_usage, 'a', encoding='utf-8') as f:
             for fname in self.get_dirty_filelist():
-                f.write(self.TodayAsString() + ', ' + fname + ' (' + str(os.path.getsize(fname)) + ' bytes)\n')
-
+                try:
+                    f.write(self.TodayAsString() + ', ' + fname + ' (' + str(os.path.getsize(fname)) + ' bytes)\n')
+                except:
+                    print("FAILED LOGGING FILENAME to file_usage")
 
  
     def update_indexes(self, fname):

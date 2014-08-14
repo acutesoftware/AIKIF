@@ -39,7 +39,7 @@ class FileListAgent(agt.Agent):
         the goal of the filelist agent is to collect metadata on files
         """ 
         #print("Collecting file metadata")
-        self.lst = fl.FileList([self.root_folder], ['*.*'], [], True)
+        self.lst = fl.FileList([self.root_folder], ['*'], [], False)
         self.lst.save_filelist( self.fl_opname, self.col_list)
         #print("saved filelist to ", self.fl_opname)
     
