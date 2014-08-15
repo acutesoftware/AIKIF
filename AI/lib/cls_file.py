@@ -75,7 +75,6 @@ class TextFile(File):
         super().__init__(fname)
         self.lines = self.count_lines_in_file(fname)
 
-
     def __str__(self):
         """ display the text file sample """
         #txt = self.name + '\n'

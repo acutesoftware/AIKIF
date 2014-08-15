@@ -213,7 +213,8 @@ class FileList(object):
                                 self.add_file_metadata(filename)    # not sure why there is a 2nd list, but there is.
                         else:
                             try:
-                                print("file not matched " + basename)
+                                #print("file not matched " + basename)
+                                pass
                             except:
                                 print("file not matched, but cant print basename")
         if VERBOSE:
