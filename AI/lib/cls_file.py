@@ -1,8 +1,11 @@
 # cls_file.py
+
 import os
 import sys
 import time
 from datetime import datetime
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "..") 
+sys.path.append(root_folder)
 
 def TEST():
     """ test routines during development - will be part of unittest 
@@ -16,6 +19,9 @@ def TEST():
     else:
         file2 = TextFile('cls_file.py')
         print(file2)
+        
+        img_file = ImageFile('..\\..\\doc\\web-if-progs-v01.jpg')
+        print(img_file)
 
         
 class File(object):
@@ -127,6 +133,26 @@ class TextFile(File):
                 lst.append(line) 
         return lst	
 
+        
+class ImageFile(File):
+    """
+    handles various image file metadata collection
+    (by calling toolbox/image_tools.py)
+    """
+    
+    def __init__(self, fname):
+        import AI.toolbox.image_tools as img
+        super().__init__(fname)
+        self.meta = img.get_metadata_as_dict(fname)
+        
+    def __str__(self):
+        """ display the text file sample """
+        #txt = self.name + '\n'
+        txt = super().__str__()
+        txt += 'Image size =  ' + str(self.meta['width']) + ' x ' + str(self.meta['height']) + '\n'
+        return txt
+        
+        
         
 if __name__ == "__main__":
     TEST()

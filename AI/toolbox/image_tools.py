@@ -211,28 +211,41 @@ def metadata_header():
         ]  
     return hdr
 
-def List2String(l, delim):
-    res = ""
-    for v in l:
-        if is_number(v):
-            res = res + str(v) + delim
-        else:
-            res = res + v + delim
-    return res
-
-def Dict2String(d):
-	res = ","
-	for k, v in d: # .iteritems():
-		res = res + k + ',' + str(v) + ','
-	return res
-
-def is_number(s):
+def get_metadata_as_dict(fname):
+    """ Gets all metadata and puts into dictionary """
+    imgdict = {}
+    imgdict['filename'] = fname
+    imgdict['basename'] = os.path.basename(fname)
+    imgdict['path'] = os.path.dirname(fname)
+    imgdict['size'] = str(os.path.getsize(fname)) 
     try:
-        float(s)
-        return True
-    except ValueError:
-        return False    
+        img = Image.open(fname)
+        # get the image's width and height in pixels
+        width, height = img.size
+        imgdict['width'] = str(width)
+        imgdict['height'] = str(height)
+        imgdict['format'] = str(img.format) 
+        imgdict['palette'] = str(img.palette)
+        stat = ImageStat.Stat(img)
+         
+        #res = res + q + str(stat.extrema) + q + d
+        imgdict['count'] =  List2String(stat.count, ",")
+        imgdict['sum'] =  List2String(stat.sum, ",")
+        imgdict['sum2'] =  List2String(stat.sum2, ",")
+        imgdict['mean'] =  List2String(stat.mean, ",") 
+        imgdict['median'] =  List2String(stat.median, ",") 
+        imgdict['rms'] =  List2String(stat.rms, ",") 
+        imgdict['var'] =  List2String(stat.var, ",")
+        imgdict['stddev'] =  List2String(stat.stddev, ",") 
 
+        exif_data = get_exif_data(img)
+        (lat, lon) = get_lat_lon(exif_data)
+        imgdict['lat'] =  str(lat)
+        imgdict['lon'] =  str(lon)
+    except:
+        pass
+    return imgdict
+        
 def get_metadata_as_csv(fname):
     """ Gets all metadata and puts into CSV format """
     q = chr(34)
@@ -269,6 +282,30 @@ def get_metadata_as_csv(fname):
         pass
     return res
         
+    
+    
+def List2String(l, delim):
+    res = ""
+    for v in l:
+        if is_number(v):
+            res = res + str(v) + delim
+        else:
+            res = res + v + delim
+    return res
+
+def Dict2String(d):
+	res = ","
+	for k, v in d: # .iteritems():
+		res = res + k + ',' + str(v) + ','
+	return res
+
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False    
+
         
 def auto_contrast(img, opFile):
     """ run the autocontrast PIL function to a new opFile """
