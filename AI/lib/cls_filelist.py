@@ -123,18 +123,29 @@ class FileList(object):
         does various tests based on config options (eg simple
         date modified, all files, check CRC hash
         """
+        try:
+            if os.path.isfile(dest_file) == False:
+                return True  # no backup exists, so needs backing up
+        except:
+            pass
+
+        try:
+            if src_file_dict["size"] != os.path.getsize(dest_file):
+                return True  # file size has changed, so backup
+        except:
+            pass
         
-        if os.path.isfile(dest_file) == False:
-            return True  # no backup exists, so needs backing up
-        
-        if src_file_dict["size"] != os.path.getsize(dest_file):
-            return True  # file size has changed, so backup
-        
-        if self.compare_file_date(src_file_dict["date"], dest_file, date_accuracy) == False:
-            return True  # file date is different so MAYBE backup
-            
-        if self.get_file_hash(src_file_dict["fullfilename"]) != self.get_file_hash(dest_file):
-            return True   # file contents changed so backup (e.g. fixed file sizes)
+        try:
+            if self.compare_file_date(src_file_dict["date"], dest_file, date_accuracy) == False:
+                return True  # file date is different so MAYBE backup
+        except:
+            pass
+         
+        try:
+            if self.get_file_hash(src_file_dict["fullfilename"]) != self.get_file_hash(dest_file):
+                return True   # file contents changed so backup (e.g. fixed file sizes)
+        except:
+            pass
         
         # all tests pass, so assume file is ok and doesn't need syncing    
         
@@ -226,7 +237,6 @@ class FileList(object):
         file_dict["fullfilename"] = fname
         file_dict["name"] = os.path.basename(fname)
         file_dict["date"] = self.GetDateAsString(os.path.getmtime(fname))
-#        file_dict["size"] = str(os.path.getsize(fname))
         file_dict["size"] = os.path.getsize(fname)
         file_dict["path"] = os.path.dirname(fname)
         self.fl_metadata.append(file_dict)
