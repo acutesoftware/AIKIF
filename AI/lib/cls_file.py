@@ -159,9 +159,9 @@ class AudioFile(File):
     """
     
     def __init__(self, fname):
-        import AI.toolbox.audio_tools as img
+        import AI.toolbox.audio_tools as aud
         super().__init__(fname)
-        self.meta = img.get_metadata_as_dict(fname)
+        self.meta = aud.get_metadata_as_dict(fname)
         
     def __str__(self):
         """ display the meta data from the audio file """
