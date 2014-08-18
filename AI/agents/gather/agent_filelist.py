@@ -6,13 +6,10 @@ import sys
 import random
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 sys.path.append(root_folder)
-#print(root_folder)
 import AI.agents.agent as agt
 import AI.lib.cls_filelist as fl
 		
-
-    
-    
+  
 class FileListAgent(agt.Agent):
     """
     agent that gathers file metadata. The purpose of this class 
@@ -38,10 +35,8 @@ class FileListAgent(agt.Agent):
         """
         the goal of the filelist agent is to collect metadata on files
         """ 
-        #print("Collecting file metadata")
         self.lst = fl.FileList([self.root_folder], ['*'], [], False)
         self.lst.save_filelist( self.fl_opname, self.col_list)
-        #print("saved filelist to ", self.fl_opname)
     
     def check_last_updated(self):
         """

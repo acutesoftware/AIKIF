@@ -83,20 +83,20 @@ class TextFile(File):
 
     def __str__(self):
         """ display the text file sample """
-        #txt = self.name + '\n'
         txt = super().__str__()
         txt += 'TextFile contains ' + str(self.lines) + ' lines\n'
         txt += self.get_file_sample()
         return txt
         
     def count_lines_in_file(self, fname):
+        """ you wont believe what this method does """
         with open(fname) as f:
             for i, l in enumerate(f):
                 pass
-        #print("Found " + str(i) + " lines in " + fname)
         return i + 1    
     
     def get_file_sample(self, numLines=10):
+        """ retrieve a sample of the file """
         res = ''
         with open(self.fullname, 'r') as f:
             for line_num, line in enumerate(f):
@@ -152,6 +152,22 @@ class ImageFile(File):
         txt += 'Image size =  ' + str(self.meta['width']) + ' x ' + str(self.meta['height']) + '\n'
         return txt
         
+class AudioFile(File):
+    """
+    handles various audio file metadata collection
+    (by calling toolbox/audio_tools.py)
+    """
+    
+    def __init__(self, fname):
+        import AI.toolbox.audio_tools as img
+        super().__init__(fname)
+        self.meta = img.get_metadata_as_dict(fname)
+        
+    def __str__(self):
+        """ display the meta data from the audio file """
+        txt = super().__str__()
+        txt += 'Song = ' + str(self.meta['song']) + ' by ' + str(self.meta['artist']) + '\n'
+        return txt
         
         
 if __name__ == "__main__":
