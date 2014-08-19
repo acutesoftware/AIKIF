@@ -20,16 +20,17 @@ def TEST():
     
     print("Local test of audio_tools.py")
     fname = r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3"
-    res = get_audio_metadata(fname)
-    print(res)
-
-    #res = get_easy_metadata(fname)
+    #res = get_audio_metadata(fname)
     #print(res)
 
+    res = get_audio_metadata(fname)
+    print(res)
+    #{'album': ['Red Back Fever'], 'title': ['Red Back Fever'], 'artist': ['Angels']}    
+
     
     
 
-def get_easy_metadata(fname):
+def get_audio_metadata(fname):
     """ collects basic MP3 metadata
     Works, once you use mutagenx (buried deep in issues page)
     ['Angels']
@@ -38,34 +39,24 @@ def get_easy_metadata(fname):
     {'album': ['Red Back Fever'], 'title': ['Red Back Fever'], 'artist': ['Angels']}    
     """
     from mutagenx.easyid3 import EasyID3
-    #m = mutagen.File(fname, easy=True)
     audio = EasyID3(fname)
     audio_dict = {}
     
     try:
         artist = audio["artist"]
-        print (artist)
     except:
-        print("Cant get artist")
         artist = ''
         
     try:    
         title = audio["title"]
-        print (title)
     except:
         print("Cant get title")
-        title = ''
         
     try:
         album = audio["album"]
-        print (album)
     except:
-        print("Cant get album")
         album = ''
         
-    #print(m['length'])
-    #m['artist']
-    #m['album'] 
     
     audio_dict['album'] = album
     audio_dict['title'] = title
@@ -73,7 +64,7 @@ def get_easy_metadata(fname):
     
     return audio_dict
         
-def get_audio_metadata(fname):
+def get_audio_metadata_old(fname):
     """ retrieve the metadata from an MP3 file """
     audio_dict = {}
     print("IDv2 tag info for %s:" % fname)
@@ -81,28 +72,28 @@ def get_audio_metadata(fname):
         audio = mutagenx.id3.ID3(fname, translate=False)
     except StandardError as err:
         print("ERROR = " + str(err))
-    else:
-        print(audio.pprint().encode("utf-8", "replace"))
-        for frame in audio.values():
-            print(repr(frame))
+    #else:
+        #print(audio.pprint().encode("utf-8", "replace"))
+        #for frame in audio.values():
+        #    print(repr(frame))
     
     try:
-        audio_dict["title"] = audio.info.title 
+        audio_dict["title"] = audio["title"]
     except:
         print("No title")
         
     try:
-        audio_dict["artist"] = audio.info.artist # tags['TPE1'] 
+        audio_dict["artist"] = audio["artist"] # tags['TPE1'] 
     except:
         print("No artist")
         
     try:
-        audio_dict["album"] = audio.info.album
+        audio_dict["album"] = audio["album"]
     except:
         print("No album")
         
     try:
-        audio_dict["length"] = audio.info.length 
+        audio_dict["length"] = audio["length"]
     except:
         print("No length")
         

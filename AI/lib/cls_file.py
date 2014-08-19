@@ -23,6 +23,8 @@ def TEST():
         img_file = ImageFile('..\\..\\doc\\web-if-progs-v01.jpg')
         print(img_file)
 
+        aud_file = AudioFile(r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3")
+        print(aud_file)
         
 class File(object):
     """
@@ -161,12 +163,13 @@ class AudioFile(File):
     def __init__(self, fname):
         import AI.toolbox.audio_tools as aud
         super().__init__(fname)
-        self.meta = aud.get_metadata_as_dict(fname)
+        self.meta = aud.get_audio_metadata(fname)
+        print(self.meta)
         
     def __str__(self):
         """ display the meta data from the audio file """
         txt = super().__str__()
-        txt += 'Song = ' + str(self.meta['song']) + ' by ' + str(self.meta['artist']) + '\n'
+        txt += 'Song = ' + str(self.meta['title']) + ' by ' + str(self.meta['artist']) + '\n'
         return txt
         
         
