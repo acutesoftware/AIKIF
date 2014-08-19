@@ -14,11 +14,11 @@ def TEST():
     """
     print(sys.argv)
     if len(sys.argv) > 1:
-        file1 = TextFile(sys.argv[1])
-        print(file1)
+        user_file = TextFile(sys.argv[1])
+        print(user_file)
     else:
-        file2 = TextFile('cls_file.py')
-        print(file2)
+        txt_file = TextFile('cls_file.py')
+        print(txt_file)
         
         img_file = ImageFile('..\\..\\doc\\web-if-progs-v01.jpg')
         print(img_file)
@@ -169,7 +169,7 @@ class AudioFile(File):
     def __str__(self):
         """ display the meta data from the audio file """
         txt = super().__str__()
-        txt += 'Song = ' + str(self.meta['title']) + ' by ' + str(self.meta['artist']) + '\n'
+        txt += 'Song = ' + str(self.meta['title'][0]) + ' by ' + str(self.meta['artist'][0]) + '\n'
         return txt
         
         
