@@ -17,7 +17,7 @@ class TestClassDataTable(unittest.TestCase):
 		
 		fle2 = cl.DataTable('Copy', 'file')
 		file_contents = fle2.load(fname)
-		self.assertEqual(len(file_contents), 34)  
+		self.assertEqual(len(file_contents), 67)  
 		fle2.drop(fname)
 		
 

@@ -28,7 +28,7 @@ class TestClassFile(unittest.TestCase):
     def test_02_multiple_file_result(self):
         """print("test2 - Collecting multiple file metadata")"""
         lst2 = fl.FileList([root_folder + os.sep + 'tests'], ['*.*'], [],  self.fname)
-        self.assertEqual(len(lst2.get_list()), 32) 
+        self.assertEqual(len(lst2.get_list()) > 50, True) 
         
     def test_03_exclude_files(self):
         """print("test2 - Collecting multiple file metadata")"""
