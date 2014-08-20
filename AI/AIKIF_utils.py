@@ -172,7 +172,7 @@ def log(fname, txt, prg=''):
 	ensure_dir(os.path.dirname(fname))
 
 	if prg == '':
-		prg = GetModuleName()  # note - if you do this here it always returns 'AIKIF_utils.LogCommand'
+		prg = 'AIKIF_utils.LogCommand' # GetModuleName() 
 	logEntry = q + dte + q + delim + q + usr + q + delim + q + hst + q + delim + q + prg + q + delim + q + txt + q + delim + '\n'
 	with open(fname, "a") as myfile:
 		myfile.write(logEntry)

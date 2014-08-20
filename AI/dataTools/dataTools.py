@@ -306,9 +306,13 @@ def GenerateSQL(csvFile, tblName, opFile, headerRow=1):
 
 def clean_column_heading(txt):
     """ make the column clean for databases """
-    c1 = txt.strip().replace(' ', '_').replace('.', '_').upper().strip()
-
-    return c1.strip('_')
+    clean_text = ''
+    for char in txt.strip().strip('_'):
+        if char in '!@#$%^&*()_+=-`~;:",./?>< ':
+            clean_text += '_'
+        else:
+            clean_text += char.upper()
+    return clean_text.strip('_')
         
 def GenerateSQL_CreateTable(tbl, cols):
     txt = 'DROP TABLE ' + tbl + '  CASCADE CONSTRAINTS;\n'
