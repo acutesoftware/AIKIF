@@ -36,7 +36,10 @@ class File(object):
         self.fullname = os.path.abspath(fname)
         self.name = os.path.basename(self.fullname)
         self.path = os.path.dirname(self.fullname)
-        self.size = os.path.getsize(self.fullname)
+        try:
+            self.size = os.path.getsize(self.fullname)
+        except:
+            self.size = 0
         self.date_modified = os.path.getmtime(self.fullname)  # self.GetDateAsString(os.path.getmtime(fname))
 
     def __str__(self):
