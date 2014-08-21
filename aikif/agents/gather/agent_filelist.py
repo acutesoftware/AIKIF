@@ -6,8 +6,8 @@ import sys
 import random
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 sys.path.append(root_folder)
-import AI.agents.agent as agt
-import AI.lib.cls_filelist as fl
+import aikif.agents.agent as agt
+import aikif.lib.cls_filelist as fl
 		
   
 class FileListAgent(agt.Agent):

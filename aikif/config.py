@@ -26,7 +26,7 @@ logs['logFileResult'] = fldrs['localPath'] + 'log' + os.sep + 'result.log'
 
 # useful folder locations used by programs - don't modify
 fldrs['root_path'] = os.path.dirname(os.path.abspath(__file__)) + os.sep + '..'
-fldrs['program_path'] = fldrs['root_path'] + os.sep + "AI"
+fldrs['program_path'] = fldrs['root_path'] + os.sep + "aikif"
 fldrs['public_data_path'] = fldrs['root_path'] + os.sep + "data"
 
 # index files

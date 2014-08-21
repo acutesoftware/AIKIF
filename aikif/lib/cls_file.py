@@ -163,7 +163,7 @@ class ImageFile(File):
     """
     
     def __init__(self, fname):
-        import AI.toolbox.image_tools as img
+        import aikif.toolbox.image_tools as img
         super().__init__(fname)
         self.meta = img.get_metadata_as_dict(fname)
         
@@ -181,7 +181,7 @@ class AudioFile(File):
     """
     
     def __init__(self, fname):
-        import AI.toolbox.audio_tools as aud
+        import aikif.toolbox.audio_tools as aud
         super().__init__(fname)
         self.meta = aud.get_audio_metadata(fname)
         print(self.meta)

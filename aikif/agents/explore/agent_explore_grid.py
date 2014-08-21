@@ -7,7 +7,7 @@ import random
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 sys.path.append(root_folder)
 print(root_folder)
-import AI.agents.agent as agt
+import aikif.agents.agent as agt
 
 		
 

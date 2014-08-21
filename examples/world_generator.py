@@ -7,8 +7,8 @@ from random import randint
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
 sys.path.append(root_folder)
-import AI.environments.worlds as my_world
-import AI.agents.explore.agent_explore_grid as agt
+import aikif.environments.worlds as my_world
+import aikif.agents.explore.agent_explore_grid as agt
 
 log_folder = 'T:\\user\\AIKIF\\log\\agents\\world_gen_logs'
 LOG_LEVEL = 2

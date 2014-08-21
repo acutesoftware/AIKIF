@@ -17,8 +17,8 @@
 #import sys
 #sys.path.append('..//..//AI')
 #sys.path.append('..//..//..//aspytk')
-#import AI.AIKIF_utils as aikif
-#import AI.fileMapping as filemap 
+#import aikif.AIKIF_utils as aikif
+#import aikif.fileMapping as filemap 
 		
 agent_status = [  	'NONE',				# agent was never instantiated (then how would it report this?)
 					'RUNNING', 			# agent is running

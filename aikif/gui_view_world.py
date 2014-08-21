@@ -15,7 +15,7 @@ from tkinter import Tk, Canvas, PhotoImage, mainloop
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 sys.path.append(root_folder)
 print(root_folder)
-#import AI.agents.agent as agt
+#import aikif.agents.agent as agt
 			
 def usage():
     print("gui_view_world.py - AIKIF script to view a saved map")

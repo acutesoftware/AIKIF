@@ -14,7 +14,7 @@ print("in test_cls_filelist : root_folder = " + root_folder)
 sys.path.append(root_folder)
 
 
-import AI.lib.cls_filelist as fl 
+import aikif.lib.cls_filelist as fl 
                     
 class TestClassFile(unittest.TestCase):
  
