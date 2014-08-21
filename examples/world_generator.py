@@ -5,12 +5,13 @@ import sys
 import math
 from random import randint 
 
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif") 
 sys.path.append(root_folder)
+print("Root folder = " + root_folder)
 import aikif.environments.worlds as my_world
-import aikif.agents.explore.agent_explore_grid as agt
+import agents.explore.agent_explore_grid as agt
 
-log_folder = 'T:\\user\\AIKIF\\log\\agents\\world_gen_logs'
+log_folder = 'T:\\user\\AIKIF\\log\\agents\\worlds'
 LOG_LEVEL = 2
 
 def main():
@@ -18,8 +19,8 @@ def main():
     generates a random world, sets terrain and runs agents in it
      TODO - need to change pieces in multiple places (see worlds.py, cls_grid, world_generator)
     """
-    width       =  400   # grid width  (takes about 5 minutes to generate 500x400 grid with 8% blockages)
-    height      =  300   # grid height
+    width       =  40   # grid width  (takes about 5 minutes to generate 500x400 grid with 8% blockages)
+    height      =  20   # grid height
     time_delay  = 0.3   # delay when printing on screen
     num_seeds   =  6   # number of seed points to start land generation
     perc_land   =  20   # % of world that is land
@@ -31,8 +32,8 @@ def main():
     myWorld.grd.save('test_world.txt')
     
     #Create some agents to walk the grid
-    iterations  = 200   # how many simulations to run
-    num_agents  =   9   # number of agents to enter the world
+    iterations  = 20   # how many simulations to run
+    num_agents  =   3   # number of agents to enter the world
     years       = 100   # how many times to run each simulation
     target_coords = [math.floor(myWorld.grd.grid_height/2) + randint(1, math.floor(myWorld.grd.grid_height/2)) - 3, \
                      math.floor(myWorld.grd.grid_width /2) + randint(1, math.floor(myWorld.grd.grid_width/2)) - 5]
