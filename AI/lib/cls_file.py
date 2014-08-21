@@ -34,13 +34,18 @@ class File(object):
     
     def __init__(self, fname):
         self.fullname = os.path.abspath(fname)
-        self.name = os.path.basename(self.fullname)
-        self.path = os.path.dirname(self.fullname)
+        self.name = fname
+        self.path = ''
+        self.size = 0
+        self.date_modified = None  # self.GetDateAsString(os.path.getmtime(fname))
         try:
+            self.fullname = os.path.abspath(fname)
+            self.name = os.path.basename(self.fullname)
+            self.path = os.path.dirname(self.fullname)
             self.size = os.path.getsize(self.fullname)
+            self.date_modified = os.path.getmtime(self.fullname)  # self.GetDateAsString(os.path.getmtime(fname))
         except:
-            self.size = 0
-        self.date_modified = os.path.getmtime(self.fullname)  # self.GetDateAsString(os.path.getmtime(fname))
+            pass
 
     def __str__(self):
         # when printing a file class it should print the name, size, date
@@ -95,20 +100,27 @@ class TextFile(File):
         
     def count_lines_in_file(self, fname):
         """ you wont believe what this method does """
-        with open(fname) as f:
-            for i, l in enumerate(f):
-                pass
-        return i + 1    
+        try:
+            with open(fname) as f:
+                for i, l in enumerate(f):
+                    pass
+            return i + 1    
+        except:
+            return 0
     
     def get_file_sample(self, numLines=10):
         """ retrieve a sample of the file """
         res = ''
-        with open(self.fullname, 'r') as f:
-            for line_num, line in enumerate(f):
-                res += str(line_num).zfill(5) + ' ' + line 
-                if line_num > numLines:
-                    break
+        try:
+            with open(self.fullname, 'r') as f:
+                for line_num, line in enumerate(f):
+                    res += str(line_num).zfill(5) + ' ' + line 
+                    if line_num > numLines:
+                        break
+        except:
+            pass
         return res
+        
     
     def append_text(self, txt):
         """ adds a line of text to a file """
@@ -126,18 +138,23 @@ class TextFile(File):
 
     def load_file_to_string(self):
         """ load a file to a string """
-        with open(self.fullname, 'r') as f:
-            txt = f.read()
-        return txt
+        try:
+            with open(self.fullname, 'r') as f:
+                txt = f.read()
+            return txt
+        except:
+            return ''
         
     def load_file_to_list(self):
         """ load a file to a list """
         lst = []
-        with open(self.fullname, 'r') as f:
-            for line in f:
-                lst.append(line) 
-        return lst	
-
+        try:
+            with open(self.fullname, 'r') as f:
+                for line in f:
+                    lst.append(line) 
+            return lst	
+        except:
+            return lst
         
 class ImageFile(File):
     """

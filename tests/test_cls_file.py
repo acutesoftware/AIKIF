@@ -5,13 +5,16 @@ import unittest
 import os
 import sys
 import csv
-sys.path.append("..\\AI\\lib")
-import cls_file as cl
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
+print("in test_cls_file : root_folder = " + root_folder)
+sys.path.append(root_folder)
+
+import AI.lib.cls_file as cl
 					
 class TestClassFile(unittest.TestCase):
  
 	def setUp(self):
-		self.fname = 'test_results/cls_file_test_data.txt'
+		self.fname = root_folder + os.sep + 'test' + os.sep + 'test_results' + os.sep + 'cls_file_test_data.txt'
 
 	def test_file_create(self):
 		self.assertEqual(1, 1)  # dummy
@@ -26,12 +29,12 @@ class TestClassFile(unittest.TestCase):
 		print(f)
 
 	def test_file_load_string(self):
-		f = cl.File(self.fname)
+		f = cl.TextFile(self.fname)
 		txt = f.load_file_to_string()
 		self.assertEqual(len(txt), 68) 
 
 	def test_file_load_list(self):
-		f = cl.File(self.fname)
+		f = cl.TextFile(self.fname)
 		lst = f.load_file_to_list()
 		self.assertEqual(len(lst), 3) 
 		

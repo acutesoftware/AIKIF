@@ -10,6 +10,7 @@ import os
 import sys
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
+print("in test_cls_filelist : root_folder = " + root_folder)
 sys.path.append(root_folder)
 
 
@@ -55,7 +56,7 @@ class TestClassFile(unittest.TestCase):
             self.assertEqual(file_dict["name"], 'test_cls_filelist.py') 
             self.assertTrue(file_dict["size"] > 2500) 
             self.assertTrue(file_dict["date"] > '2014-08-12 21:32:57') 
-            self.assertEqual(file_dict["path"], 'T:\\user\\dev\\src\\python\\AI\\tests') 
+            self.assertEqual(file_dict["path"], os.path.dirname(os.path.abspath(__file__))) 
     
     def test_06_check_duplicate_folders(self):
         """ not really a test but more checking the version of python works as expected """
