@@ -1,1 +1,8 @@
 v0.0.1, 20-Aug-2014 -- Initial release.
+
+v0.0.2, 21-Aug-2014 -- Bug fixes to get first version of package running
+- cls_goal_friendly.py: fixed indention, incorrect variable naming
+- setup.py: added prefix aikif to all packages to stop pip install 
+            placing files in root of lib\site-packages\
+- cls_file: catching errors where file doesnt exist
+            
