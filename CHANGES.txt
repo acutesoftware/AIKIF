@@ -5,4 +5,6 @@ v0.0.2, 21-Aug-2014 -- Bug fixes to get first version of package running
 - setup.py: added prefix aikif to all packages to stop pip install 
             placing files in root of lib\site-packages\
 - cls_file: catching errors where file doesnt exist
-            
+
+v0.0.3, 22-Aug-2014 -- folder layouts, removed tests
+- setup.py to setup layout excluding tests folder            
