@@ -11,9 +11,20 @@ class DataTable(object):
     def __init__(self, name, dataset_type):
         self.name = name
         self.dataset_type = dataset_type
+        self.arr = []
+        self.header = []
+        #self.load_to_array()
         
     def __str__(self):
-        return self.name
+        res = ''
+        for c in self.header:
+            res += c.ljust(15) 
+        res += '\n'
+        for row in self.arr:
+            for c in row:
+                res += c.ljust(15)
+            res += '\n'
+        return res
     
     def load(self, filename):
         """
@@ -49,5 +60,36 @@ class DataTable(object):
         elif self.dataset_type == 'table':
             print ("TODO - drop table")
             
+    def get_arr(self):
+        return self.arr
+    
+    def get_header(self):
+        """ returns a list of the first rows data """
         
+        return self.header
+        
+    def add_cols(self, col_list):
+        #print("BEFORE = " , self.arr)
+        self.arr.extend(col_list)
+        print("AFTER = " , self.arr)
+        
+    def load_to_array(self):
+        self.arr = []
+        with open (self.name, 'r') as f:
+            row = f.readline()
+            self.header = [r.strip('\n').strip('"') for r in row.split(self.dataset_type)]
+            #print (self.header)
+            for row in f:
+                if row:
+                    self.arr.append([r.strip('\n').strip('"') for r in row.split(self.dataset_type)])
+                #print('loading row : ', row)
+        #return self.arr
+        
+    def get_col_by_name(self, col_name): 
+        for num, c in enumerate(self.header):
+            #print (num, c)
+            if c == col_name:
+                return num
+        return 0
+          
             

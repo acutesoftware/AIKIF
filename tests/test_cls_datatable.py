@@ -2,7 +2,7 @@
 
 import unittest
 import sys
-sys.path.append("..\\AI\\dataTools")
+sys.path.append("..\\aikif\\dataTools")
 import cls_datatable as cl
 					
 class TestClassDataTable(unittest.TestCase):
@@ -12,7 +12,7 @@ class TestClassDataTable(unittest.TestCase):
 
 	def test_create_file(self):
 		fname = 'file1.csv'
-		fle = cl.DataTable('CSV Files', 'file')
+		fle = cl.DataTable(fname, 'file')
 		fle.save(fname, 'test data\nanother line\nfinal line\n')
 		
 		fle2 = cl.DataTable('Copy', 'file')
