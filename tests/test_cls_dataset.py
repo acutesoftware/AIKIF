@@ -10,7 +10,7 @@ class TestClassDataSet(unittest.TestCase):
 	def setUp(self):
 		pass
 
-	def test_create_folder(self):
+	def test_01_create_folder(self):
 		fldr = cl.DataSet('Folder of CSV Files', 'folder')
 		fldr.add('file1.csv')
 		fldr.add('file2.csv')
@@ -18,7 +18,7 @@ class TestClassDataSet(unittest.TestCase):
 		self.assertEqual(len(fldr.datatables), 2) 
 		self.assertEqual(len(fldr.list_tables('\n')), 19) 		
 		
-	def test_create_database(self):
+	def test_02_create_database(self):
 		schema = cl.DataSet('schema', 'database')
 		schema.add('C_CUSTOMERS')
 		schema.add('C_PRODUCTS')
