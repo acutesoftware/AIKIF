@@ -6,6 +6,7 @@ import sys
 import random
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 sys.path.append(root_folder)
+print('agent_filelist, root_folder = ', root_folder)
 import aikif.agents.agent as agt
 import aikif.lib.cls_filelist as fl
 		
@@ -47,7 +48,7 @@ class FileListAgent(agt.Agent):
         
     
 def main():
-	agt = FileListAgent('filelist_agent',  'T:\\user\\AIKIF', True, 3)
+	agt = FileListAgent('filelist_agent', root_folder, True, 1, 'T:\\user\\AIKIF')
 	print(agt.report())
 
  		
