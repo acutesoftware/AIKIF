@@ -42,6 +42,7 @@ TD {
 	font-size: 90%;
     text-align: justify;
 	color: black;
+    vertical-align: top;
 }
 
 #header {

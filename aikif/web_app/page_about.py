@@ -4,8 +4,11 @@
 import sys, os
 import web_utils as web
 
-sys.path.append('..\\..\\AI')
-import AIKIF_utils as aikif
+cur_folder = os.path.dirname(os.path.abspath(__file__)) 
+aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
+
+sys.path.append(aikif_folder)
+import AIKIF_utils as ai
 import fileMapping as filemap
 
 #from .AI import AIKIF_utils as aikif
@@ -28,7 +31,7 @@ def get_page(dataFile=''):
 	
 def get_aikif_structure():
 	txt = '<H3>AIKIF Data Structure</H3>\n<TABLE width=100% border=0 align=centre>\n'
-	AIKIF_FileList = aikif.build_AIKIF_structure()
+	AIKIF_FileList = ai.build_AIKIF_structure()
 	nme = ''
 	flds = ''
 	for j in range(len(AIKIF_FileList)):

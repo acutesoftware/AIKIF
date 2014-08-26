@@ -5,7 +5,7 @@ import sys
 import math
 from random import randint 
 
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif") 
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
 sys.path.append(root_folder)
 print("Root folder = " + root_folder)
 import aikif.environments.worlds as my_world

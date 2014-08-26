@@ -4,10 +4,11 @@
 import os
 import sys
 import csv
-sys.path.append('..//AI')
-import AIKIF_utils as aikif
+sys.path.append('..')
+import AIKIF_utils as ai
 import fileMapping as filemap
 import dataTools.dataTools as dt
+import lib.cls_filelist as mod_fl  # Note - prefix with aikif. once deployed
 
 import add
 
@@ -105,13 +106,13 @@ def ProcessData(subjectAreaSearch, lst, title):
 		text = ''
 		#print(dictRecord)
 		for k,v in dictRecord.items():  # this is the projects, tasks, contacts or goals
-			print('key=',k,', val=',v)
+			#print('key=',k,', val=',v)
 			#text = v['name']
 			if k == 'name': 
 				text = v
 			for e in aikif_events:
 				if e['table'] == title:
-					print('TESTING k=', k, ' == ', e['column'])
+					#print('TESTING k=', k, ' == ', e['column'])
 					if e['column'] in k:
 #						if text != '':
 						print('mapping ', text, ' to ', k) 
@@ -129,13 +130,13 @@ def ProcessData(subjectAreaSearch, lst, title):
 	appendToExistingFiles = False
 	if len(locationsList) > 1:
 		print('LOCATION :  ' + location_fileList + ' (' + str(len(locationsList)) + ') rows')
-		aikif.SaveFileDataToFile(locationsList, location_fileList, appendToExistingFiles)
+		ai.SaveFileDataToFile(locationsList, location_fileList, appendToExistingFiles)
 	if len(eventsList) > 1:	
 		print('EVENTS   :  ' + event_fileList + ' (' + str(len(eventsList)) + ') rows')
-		aikif.SaveFileDataToFile(eventsList, event_fileList, appendToExistingFiles)
+		ai.SaveFileDataToFile(eventsList, event_fileList, appendToExistingFiles)
 	if len(objectsList) > 1:	
 		print('OBJECTS  :  ' + object_fileList + ' (' + str(len(objectsList)) + ') rows')
-		aikif.SaveFileDataToFile(objectsList, object_fileList, appendToExistingFiles)
+		ai.SaveFileDataToFile(objectsList, object_fileList, appendToExistingFiles)
 
 
 	

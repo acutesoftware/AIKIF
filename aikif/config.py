@@ -8,11 +8,11 @@ fldrs = {}
 logs = {}
 params = {}
 
-# path for personal data location
+# path for personal data location  (TODO - you need to modify this line below!)
 fldrs['localPath'] = 'T:\\user\\AIKIF\\' 
 
 # user defined parameters 
-params['AIKIF_version'] = '0.1'
+params['AIKIF_version'] = '0.0.3'
 params['AIKIF_deploy'] = 'DEV'
 
 

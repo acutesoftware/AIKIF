@@ -3,7 +3,7 @@
 import sys
 import os
 
-sys.path.append('..\\AI')
+sys.path.append('..')
 
 print ("sys.version = ", sys.version)
 print ("os.getcwd() = ", os.getcwd())

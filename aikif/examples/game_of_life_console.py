@@ -8,8 +8,8 @@ import time
 import random
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
-lib_folder = os.path.abspath(cur_folder + os.sep + ".." + os.sep + "aikif" + os.sep + "toolbox" )
-aikif_folder = os.path.abspath(cur_folder + os.sep + ".." + os.sep + "aikif"  )
+lib_folder = os.path.abspath(cur_folder + os.sep + ".." +  os.sep + "toolbox" )
+aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 
 sys.path.append(lib_folder)
 import cls_grid_life

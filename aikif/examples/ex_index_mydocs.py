@@ -5,20 +5,21 @@
 
 import os
 import sys
-sys.path.append('..//..//aspytk')
-import lib_file as fle
 
-sys.path.append('..//AI')
+sys.path.append('..')
 import index as ndx
+import AIKIF_utils as ai
+import lib.cls_filelist as mod_fl
 
-local_folder = 'T:\\user\\AIKIF\\diary\\'
+  
+local_folder = ai.localPath + os.sep + 'diary' + os.sep
 diary_folder = 'C:\\APPS\\netDiary\\data'
 
 manual_files_to_index = [
-	local_folder + 'diary_Ent_duncan.txt',
-	local_folder + 'lf_folders.csv',
-	local_folder + 'lf_files.csv'
-	]
+    local_folder + 'diary_Ent_duncan.txt',
+    local_folder + 'lf_folders.csv',
+    local_folder + 'lf_files.csv'
+    ]
 
 delims = [' ', '\\', '/', '_']
 
@@ -26,32 +27,31 @@ ndxFile = 'T:\\user\\AIKIF\\pers_data\\ndx_temp.txt'
 ndxFile_final = 'T:\\user\\AIKIF\\pers_data\\ndx_final.txt'
 
 def main():
-	try:
-		os.remove(ndxFile)
-	except:
-		pass
-	all_files = add_diary_files_to_list(manual_files_to_index, diary_folder)	
-	numFiles = 0
-	for f in all_files:
-		try:
-			#totWords, totLines, indexedWords = ndx.getWordList(f, delims)
-			#print('words=', str(totWords), ',lines=', str(totLines), ',ndx=', str(len(indexedWords)), ' in ', f)
-			numFiles += 1
-			print('indexing ', str(numFiles) , ' of ', str(len(all_files)), ' : ', f)
-			ndx.buildIndex(f, ndxFile, 'Y', 'N')	# run the index routine
-		except:
-			print('ERROR - cant index file ', f)
+    try:
+        os.remove(ndxFile)
+    except:
+        pass
+    all_files = add_diary_files_to_list(manual_files_to_index, diary_folder)	
+    numFiles = 0
+    for f in all_files:
+        try:
+            numFiles += 1
+            print('indexing ', str(numFiles) , ' of ', str(len(all_files)), ' : ', f)
+            ndx.buildIndex(f, ndxFile, 'Y', 'N')	# run the index routine
+        except:
+            print('ERROR - cant index file ', f)
 
-	print('consolidating.... ')		
-	ndx.consolidate(ndxFile, ndxFile_final)	
-	print('Done!')		
+    print('consolidating.... ')		
+    ndx.consolidate(ndxFile, ndxFile_final)	
+    print('Done!')		
 
 def add_diary_files_to_list(lst, fldr):
-	""" adds all Diary files from folder to the lst   """
-	fl = fle.GetFileList([fldr], ['D2014*.DAT'], ["__pycache__", ".git"], True)
-	for f in fl:
-		lst.append(f)
-	return lst
-	
+    """ adds all Diary files from folder to the lst   """
+    fl = mod_fl.FileList([fldr], ['D2014*.DAT'], ["__pycache__", ".git"], "temp.csv")
+ 
+    for f in fl.get_list():
+        lst.append(f)
+    return lst
+    
 if __name__ == '__main__':		
-	main()
+    main()

@@ -9,9 +9,10 @@ from random import randint
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
 sys.path.append(root_folder)
+print(root_folder)
 #import aikif.environments.worlds as my_world
-import aikif.agents.gather.agent_filelist as agt
-import aikif.AIKIF_utils as aikif
+import agents.gather.agent_filelist as agt  # Note - when deployed, prefix with aikif.
+import AIKIF_utils as aikif                 # Note - when deployed, prefix with aikif.
 
 LOG_LEVEL = 2
 

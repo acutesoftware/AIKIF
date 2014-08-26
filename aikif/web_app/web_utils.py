@@ -43,8 +43,7 @@ def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
                         opFileList.append(filename)
     return opFileList
 
-# table_data	
-    
+  
 def filelist2html_div(lst, fldr):
     """ convert a list to html using DIV formatting """
     txt = ''
@@ -102,17 +101,13 @@ def filelist2html(lst, fldr, hasHeader='N'):
 def link_file(f, fldr):
     """ creates a html link for a file using folder fldr """
     fname = os.path.join(fldr,f)
-    #print('\nf = ', f, fname)
     if os.path.isfile(fname):
-        #if f.startswith('data/'):
         if 'data/' in request.path:
             return '<a href="' + f + '">' + f + '</a>'
         else:
             return '<a href="data/' + f + '">' + f + '</a>'
-            #return '<a href="' + f + '">' + f + '</a>'
     else:
         return f
-    #return '<a href="?' + f + '">' + f + '</a>'
     
 def dict_to_htmlrow(d):
     res = "<TR>\n"
@@ -121,7 +116,6 @@ def dict_to_htmlrow(d):
             res = res + '<TD>' + k + ':</TD><TD>' + v + '</TD>'
         else:
             res = res + '<TD>' + k + ':</TD><TD>' + str(v) + '</TD>'
-    #print res
     res += '</TR>\n'
     return res
 

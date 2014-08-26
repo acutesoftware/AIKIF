@@ -35,8 +35,8 @@ agent_list = [
 import os, sys
 #sys.path.append(os.path.split(sys.argv[0])[0])
 print(os.path.split(sys.argv[0])[0])
-import AIKIF_utils as aikif
-import fileMapping as filemap 
+import aikif.AIKIF_utils as aikif
+import aikif.fileMapping as filemap 
 
 
 			

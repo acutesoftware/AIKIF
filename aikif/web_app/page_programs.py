@@ -4,8 +4,9 @@
 
 import sys, os
 import web_utils as web
-sys.path.append('..\\..\\AI')
-
+cur_folder = os.path.dirname(os.path.abspath(__file__)) 
+aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
+root_folder = os.path.abspath(aikif_folder + os.sep + '..')
 
 def get_page():
 	txt = '<a href="/programs/rebuild">Rebuild Program List</a><BR>'
@@ -22,12 +23,11 @@ def rebuild():
 		f.write(get_program_list())
 	
 def get_program_list():
-	#colList = ['FullName', 'Path', 'FileName','FileSize','Functions', 'Imports']
 	colList = ['FileName','FileSize','Functions', 'Imports']
 
 	txt = '<TABLE width=90% border=0>'
 	txt += format_file_table_header(colList)
-	fl = web.GetFileList('..\\..\\AI', ['*.py'], 'N')
+	fl = web.GetFileList(aikif_folder, ['*.py'], 'N')
 	for f in fl:
 		txt += format_file_to_html_row(f, colList)
 	txt += '</TABLE>\n\n'
@@ -71,14 +71,11 @@ def format_file_to_html_row(fname, lstCols):
 
 def get_functions(fname):
 	""" get a list of functions from a Python program """
-	txt = '' # os.path.abspath(fname)
+	txt = '' 
 	numLines = 0
 	with open(fname, 'r') as f:
 		for line in f:
 			numLines += 1
-			#if numLines < 15:
-			#	txt += line + '<BR>\n' 
-			
 			if line.strip()[0:4] == 'def ':
 				txt += '<PRE>' + strip_text_after_string(strip_text_after_string(line, '#')[4:], ':') + '</PRE>\n'
 			if line[0:5] == 'class':

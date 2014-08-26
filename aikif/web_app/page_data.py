@@ -5,15 +5,20 @@
 import sys, os
 import web_utils as web
 
-sys.path.append('..\\..\\AI')
-import AIKIF_utils as aikif
-import fileMapping as filemap
+cur_folder = os.path.dirname(os.path.abspath(__file__)) 
+aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
+root_folder = os.path.abspath(aikif_folder + os.sep + '..')
+print('page_data.py: root_folder = ', root_folder)
+sys.path.append(aikif_folder)
+import AIKIF_utils as ai
+
+import aikif.AIKIF_utils as aikif
+import aikif.fileMapping as filemap
 
 #from .AI import AIKIF_utils as aikif
 #from ...AI import fileMapping as filemap
 
-dataFolder = '..\\data\\core\\'  
-dataFolder = 'T:\\user\\dev\\src\\python\\AI\\data\\core'
+dataFolder = root_folder + os.sep + 'data' + os.sep + 'core'
 
 def get_page(dataFile=''):
 	txt = '<div id="content">\n'

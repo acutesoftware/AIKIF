@@ -43,12 +43,12 @@ class DataTable(object):
     def __str__(self):
         res = ''
         for c in self.header:
-            res += c.ljust(15) 
+            res += c.ljust(8) 
         res += '\n'
         for row in self.arr:
             for c in row:
-                res += self.force_to_string(c).ljust(10)
-            res += '\n'
+                res += self.force_to_string(c).ljust(8)
+            res += '\n' 
         return res
 
     def describe_contents(self):
@@ -60,24 +60,52 @@ class DataTable(object):
         print('arr    = ', self.arr[0:2])
         #for num, itm in enumerate(self.get_header()):
         #    print('HEADER ', num, itm)
+        
 
+    def get_distinct_values_from_cols(self, l_col_list):
+        """
+        returns the list of distinct combinations in a dataset
+        based on the columns in the list. Note that this is 
+        currently implemented as MAX permutations of the combo
+        so it is not guarenteed to have values in each case.
+        """
+        uniq_vals = []
+        for l_col_name in l_col_list:
+            print('col_name: ' + l_col_name)   
+            uniq_vals.append(set(self.get_col_data_by_name(l_col_name)))
+            print(' unique values = ', uniq_vals)    
+        
+        print(' unique values[0] = ', uniq_vals[0])
+        print(' unique values[1] = ', uniq_vals[1])
+        
+        res = []
+        res = [(a, b) for a in uniq_vals[0] for b in uniq_vals[1]]
+        return res
+         
     def select_where(self, where_col_list, where_value_list):
         """ 
         selects rows from the array where col_list == val_list
         """
         res = []        # list of rows to be returned
         col_ids = []    # ids of the columns to check
-        
+        print('select_where  : arr = ',  len(self.arr), 'where_value_list = ',  where_value_list)
         for col_id, col in enumerate(self.header):
             if col in where_col_list:
                 col_ids.append([col_id, col])
-        #print('select_where    : col_ids = ',  col_ids)   # correctly prints [[0, 'TERM'], [2, 'ID']]
+        print('select_where    : col_ids = ',  col_ids)   # correctly prints [[0, 'TERM'], [2, 'ID']]
         
         for row_num, row in enumerate(self.arr):
             keep_this_row = True
+            #print('col_ids=', col_ids, ' row = ', row_num, row)
             for ndx, where_col in enumerate(col_ids):
+                #print('where_col[0]=', where_col[0], ' row[where_col[0]]=',row[where_col[0]], ', where_value_list[ndx]=', where_value_list[ndx], ', row=', row) 
+                #print('type where_value_list[ndx] = ', type(where_value_list[ndx]))
+                #print('type row[where_col[0]] = ', type(row[where_col[0]]))
+                
                 if row[where_col[0]] != where_value_list[ndx]:
                     keep_this_row = False
+                else:
+                    print('Match = where_col[0]=', where_col[0], ' where_col[1]=',where_col[1], ', where_value_list[ndx]=', where_value_list[ndx], ', row=', row) 
             if keep_this_row == True: 
                 res.append([row_num, row])
         return res
@@ -110,7 +138,7 @@ class DataTable(object):
         print('col_ndx = ', col_ndx    )
         print("updating " + col + " to " , value, " where " , where_col_list , " = " , where_value_list)
         new_arr = self.select_where(where_col_list, where_value_list)
-        
+        print('new_arr', new_arr)
         for r in new_arr:
             self.arr[r[0]][col_ndx] = value
         

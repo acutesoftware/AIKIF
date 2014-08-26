@@ -98,8 +98,10 @@ class TextFile(File):
         txt += self.get_file_sample()
         return txt
         
-    def count_lines_in_file(self, fname):
+    def count_lines_in_file(self, fname=''):
         """ you wont believe what this method does """
+        if fname == '':
+            fname = self.fullname
         try:
             with open(fname) as f:
                 for i, l in enumerate(f):
@@ -107,6 +109,22 @@ class TextFile(File):
             return i + 1    
         except:
             return 0
+    
+    def count_lines_of_code(self, fname=''):
+        """ counts non blank lines """
+        if fname == '':
+            fname = self.fullname
+        loc = 0    
+        try:
+            with open(fname) as f:
+                for i, l in enumerate(f):
+                    if l.strip() != '':
+                        loc += 1
+            return loc    
+        except:
+            return 0
+    
+    
     
     def get_file_sample(self, numLines=10):
         """ retrieve a sample of the file """

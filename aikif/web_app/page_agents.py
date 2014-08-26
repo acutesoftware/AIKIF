@@ -3,8 +3,17 @@
 
 import sys
 import web_utils as web
+"""
+cur_folder = os.path.dirname(os.path.abspath(__file__)) 
+aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
+root_folder = os.path.abspath(aikif_folder + os.sep + '..')
+
+
 sys.path.append('..\\..\\AI')
-import run_agents as agt
+"""
+
+
+import aikif.run_agents as agt
 
 def get_page():
 	txt = ''
