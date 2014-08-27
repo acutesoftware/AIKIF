@@ -71,12 +71,12 @@ class DataTable(object):
         """
         uniq_vals = []
         for l_col_name in l_col_list:
-            print('col_name: ' + l_col_name)   
+            #print('col_name: ' + l_col_name)   
             uniq_vals.append(set(self.get_col_data_by_name(l_col_name)))
-            print(' unique values = ', uniq_vals)    
+            #print(' unique values = ', uniq_vals)    
         
-        print(' unique values[0] = ', uniq_vals[0])
-        print(' unique values[1] = ', uniq_vals[1])
+        #print(' unique values[0] = ', uniq_vals[0])
+        #print(' unique values[1] = ', uniq_vals[1])
         
         res = []
         res = [(a, b) for a in uniq_vals[0] for b in uniq_vals[1]]
@@ -88,11 +88,11 @@ class DataTable(object):
         """
         res = []        # list of rows to be returned
         col_ids = []    # ids of the columns to check
-        print('select_where  : arr = ',  len(self.arr), 'where_value_list = ',  where_value_list)
+        #print('select_where  : arr = ',  len(self.arr), 'where_value_list = ',  where_value_list)
         for col_id, col in enumerate(self.header):
             if col in where_col_list:
                 col_ids.append([col_id, col])
-        print('select_where    : col_ids = ',  col_ids)   # correctly prints [[0, 'TERM'], [2, 'ID']]
+        #print('select_where    : col_ids = ',  col_ids)   # correctly prints [[0, 'TERM'], [2, 'ID']]
         
         for row_num, row in enumerate(self.arr):
             keep_this_row = True
@@ -139,14 +139,14 @@ class DataTable(object):
             col_ndx = self.get_col_by_name(col)
         else:
             col_ndx = col
-        print('col_ndx = ', col_ndx    )
-        print("updating " + col + " to " , value, " where " , where_col_list , " = " , where_value_list)
+        #print('col_ndx = ', col_ndx    )
+        #print("updating " + col + " to " , value, " where " , where_col_list , " = " , where_value_list)
         new_arr = self.select_where(where_col_list, where_value_list)
-        print('new_arr', new_arr)
+        #print('new_arr', new_arr)
         for r in new_arr:
             self.arr[r[0]][col_ndx] = value
         
-        print(self.arr)
+        #print(self.arr)
         
     def calc_percentiles(self, col_name, where_col_list, where_value_list):
         """ 
@@ -155,23 +155,27 @@ class DataTable(object):
         """
         #col_data = self.get_col_data_by_name(col_name)
         col_data = self.select_where(where_col_list, where_value_list, col_name)
-        print('calc_percentiles: col_data = ', col_data, ' where_col_list = ', where_col_list, ', where_value_list = ', where_value_list)
-        first  = self.percentile(col_data, .25)
-        third  = self.percentile(col_data, .75)
-        median = self.percentile(col_data, .50)
-        #print('CALC_PERCENTILES =  first, third, median ',  first, third, median )
-        return  first, third, median 
+        #print('calc_percentiles: col_data = ', col_data, ' where_col_list = ', where_col_list, ', where_value_list = ', where_value_list)
+        if len(col_data) == 0:
+            #print("Nothing to calculate")
+            return 0,0,0
+        else:
+            first  = self.percentile(col_data, .25)
+            third  = self.percentile(col_data, .75)
+            median = self.percentile(col_data, .50)
+            #print('CALC_PERCENTILES =  first, third, median ',  first, third, median )
+            return  first, third, median 
         
     def percentile(self, lst_data, percent , key=lambda x:x):
         """ calculates the 'num' percentile of the items in the list """
         new_list = sorted(lst_data)
-        print('new list = ' , new_list)
+        #print('new list = ' , new_list)
         n = float(len(lst_data))
         k = (len(new_list)-1) * percent
         f = math.floor(k)
         c = math.ceil(k)
         if f == c:
-            print(key(new_list[int(k)]))
+            #print(key(new_list[int(k)]))
             return key(new_list[int(k)])
         d0 = float(key(new_list[int(f)])) * (c-k)
         d1 = float(key(new_list[int(c)])) * (k-f)
@@ -195,7 +199,22 @@ class DataTable(object):
                 f.write('\n'.join([row for row in content]))
             else:
                 f.write(content)
-    
+
+    def save_csv(self, filename):
+        """
+        save the default array as a CSV file
+        """
+        txt = ''
+        #print("SAVING arr = ", self.arr)
+        
+        with open(filename, "w") as f:
+            f.write(','.join([c for c in self.header]) + '\n')
+            for row in self.arr:
+                #print('save_csv: saving row = ', row)
+                txt = ','.join([self.force_to_string(col) for col in row])
+                #print(txt)
+                f.write(txt + '\n')
+            f.write('\n')
         
     def drop(self, fname):
         """ 
@@ -225,7 +244,7 @@ class DataTable(object):
         self.header.extend(col_list)
         for r in self.arr:
             r.extend(['0' for c in col_list])
-        print("AFTER = " , self.arr)
+        #print("AFTER = " , self.arr)
         
     def load_to_array(self):
         self.arr = []
