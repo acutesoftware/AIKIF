@@ -82,7 +82,7 @@ class DataTable(object):
         res = [(a, b) for a in uniq_vals[0] for b in uniq_vals[1]]
         return res
          
-    def select_where(self, where_col_list, where_value_list):
+    def select_where(self, where_col_list, where_value_list, col_name=''):
         """ 
         selects rows from the array where col_list == val_list
         """
@@ -105,9 +105,13 @@ class DataTable(object):
                 if row[where_col[0]] != where_value_list[ndx]:
                     keep_this_row = False
                 else:
-                    print('Match = where_col[0]=', where_col[0], ' where_col[1]=',where_col[1], ', where_value_list[ndx]=', where_value_list[ndx], ', row=', row) 
-            if keep_this_row == True: 
-                res.append([row_num, row])
+                    pass
+                    #print('Match = where_col[0]=', where_col[0], ' where_col[1]=',where_col[1], ', where_value_list[ndx]=', where_value_list[ndx], ', row=', row) 
+            if keep_this_row == True:
+                if col_name == '':
+                    res.append([row_num, row])
+                else:   # extracting a single column only
+                    res.append(row[self.get_col_by_name(col_name)])
         return res
 
     def force_to_string(self,unknown):
@@ -144,10 +148,14 @@ class DataTable(object):
         
         print(self.arr)
         
-    def calc_percentiles(self, col_name):
-        """ calculates the percentiles for the appropriate cols """
-        col_data = self.get_col_data_by_name(col_name)
-        #print('col_data = ', col_data)
+    def calc_percentiles(self, col_name, where_col_list, where_value_list):
+        """ 
+        calculates the percentiles of col_name 
+        WHERE [where_col_list] = [where_value_list]
+        """
+        #col_data = self.get_col_data_by_name(col_name)
+        col_data = self.select_where(where_col_list, where_value_list, col_name)
+        print('calc_percentiles: col_data = ', col_data, ' where_col_list = ', where_col_list, ', where_value_list = ', where_value_list)
         first  = self.percentile(col_data, .25)
         third  = self.percentile(col_data, .75)
         median = self.percentile(col_data, .50)
@@ -157,16 +165,16 @@ class DataTable(object):
     def percentile(self, lst_data, percent , key=lambda x:x):
         """ calculates the 'num' percentile of the items in the list """
         new_list = sorted(lst_data)
-        #print('new list = ' , new_list)
+        print('new list = ' , new_list)
         n = float(len(lst_data))
         k = (len(new_list)-1) * percent
         f = math.floor(k)
         c = math.ceil(k)
         if f == c:
-            #print(key(new_list[int(k)]))
+            print(key(new_list[int(k)]))
             return key(new_list[int(k)])
-        d0 = key(new_list[int(f)]) * (c-k)
-        d1 = key(new_list[int(c)]) * (k-f)
+        d0 = float(key(new_list[int(f)])) * (c-k)
+        d1 = float(key(new_list[int(c)])) * (k-f)
         return d0+d1
 
         
