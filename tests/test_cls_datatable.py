@@ -1,24 +1,37 @@
 # test_cls_datatable.py		written by Duncan Murray 25/6/2014
 
 import unittest
+import os
 import sys
 sys.path.append("..\\aikif\\dataTools")
 import cls_datatable as cl
-                    
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
+fname = root_folder + os.sep + 'test_results' + os.sep + 'datatable_sample.csv'    
+fname2 = root_folder + os.sep + 'test_results' + os.sep + 'datatable_output.csv'                  
+fname3 = root_folder + os.sep + 'test_results' + os.sep + 'datatable_calcs.csv'                  
 class TestClassDataTable(unittest.TestCase):
- 
     def setUp(self):
-        pass
+        with open(fname, "w") as f:
+            f.writelines(
+"""TERM,GENDER,ID,tot1,tot2
+5300,F,00078,18,66
+7310,M,00078,10,12
+7310,M,00078,18,465
+7310,F,00078,30,2
+7310,F,00016,25,12
+5300,M,00016,31,0
+7310,F,00016,67,873""")
+                            
 
     def test_01_create_file(self):
-        fname = 'file1.csv'
-        fle = cl.DataTable(fname, 'file')
-        fle.save(fname, 'test data\nanother line\nfinal line\n')
         
-        fle2 = cl.DataTable('Copy', 'file')
+        fle2 = cl.DataTable(fname2, 'file')
+        fle2.save(fname2, ['test data','another line','final line'])
+        
+        fle3 = cl.DataTable(fname3, 'file')
         file_contents = fle2.load(fname)
-        self.assertEqual(len(file_contents), 67)  
-        fle2.drop(fname)
+        self.assertEqual(len(file_contents), 157)  
+        fle3.drop(fname)
         
     def test_02_percentile(self):
         fl3 = cl.DataTable('', '"')
@@ -29,6 +42,64 @@ class TestClassDataTable(unittest.TestCase):
         self.assertEqual(fl3.percentile([1,1,2], .5), 1)
         self.assertEqual(fl3.percentile([1,1,2], .25), 1)
         self.assertEqual(fl3.percentile([1,1,2], .75), 1.5)
+    
+    def test_03_get_distinct_values_from_cols1(self):
+        fle = cl.DataTable(fname, ',')
+        fle.load_to_array()
+        dist_cols = fle.get_distinct_values_from_cols(['GENDER'])
+        self.assertEqual(sorted(dist_cols), [{'F', 'M'}])
+
+    def test_03_get_distinct_values_from_cols2(self):
+        fle = cl.DataTable(fname, ',')
+        fle.load_to_array()
+        dist_cols = fle.get_distinct_values_from_cols(['TERM'])
+        self.assertEqual(sorted(dist_cols), [{'5300','7310'}])
+
+    def test_03_get_distinct_values_from_cols3(self):
+        fle = cl.DataTable(fname, ',')
+        fle.load_to_array()
+        dist_cols = fle.get_distinct_values_from_cols(['TERM', 'ID'])
+        self.assertEqual(sorted(dist_cols), sorted([('5300', '00016'), ('5300', '00078'), ('7310', '00016'), ('7310', '00078')]))
+
+    def test_04_add_cols(self):
+        fle = cl.DataTable(fname, ',')
+        fle.load_to_array()
+        fle.add_cols(['NEW1', 'NEW2'])
+        #fle.describe_contents()
+        self.assertEqual(fle.get_header(), ['TERM', 'GENDER', 'ID', 'tot1', 'tot2', 'NEW1', 'NEW2'])
+
+    def test_05_update_where1(self):
+        fle = cl.DataTable(fname, ',')
+        fle.load_to_array()
+        dist_cols = fle.get_distinct_values_from_cols(['TERM', 'ID'])
+        fle.add_cols(['RNK_tot1', 'RNK_tot2'])
+        for new_col in ['tot1', 'tot2']:
+            for i in dist_cols:
+                first, third, median = fle.calc_percentiles(new_col, ['TERM', 'ID'], [str(i[0]), str(i[1])])
+                fle.update_where('RNK_' + new_col, first, ['TERM', 'ID'], [str(i[0]), str(i[1])])
+        fle.save_csv(fname3)
+        """
+        ===========================================================
+        TERM    GENDER  ID      tot1    tot2    RNK_tot1RNK_tot2
+        5300    F       00078   18      66      18      66
+        7310    M       00078   10      12      14.0    7.0
+        7310    M       00078   18      465     14.0    7.0
+        7310    F       00078   30      2       14.0    7.0
+        7310    F       00016   25      12      35.5    227.25
+        5300    M       00016   31      0       31      0
+        7310    F       00016   67      873     35.5    227.25
+        """        
+        self.assertEqual(fle.get_header(), ['TERM', 'GENDER', 'ID', 'tot1', 'tot2', 'RNK_tot1', 'RNK_tot2'])
+        self.assertEqual(fle.arr[0][3],'18')
+        self.assertEqual(fle.arr[0][4],'66')
+        self.assertEqual(fle.arr[1][5],14.0)
+        self.assertEqual(fle.arr[1][6],7.0)
+        self.assertEqual(fle.arr[6][6],227.25)
+        #fle.describe_contents()
         
+
+
+
+    
 if __name__ == '__main__':
     unittest.main()

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # cls_datatable.py	written by Duncan Murray 25/6/2014
 
 #from cls_dataset import DataSet
@@ -77,10 +78,17 @@ class DataTable(object):
         
         #print(' unique values[0] = ', uniq_vals[0])
         #print(' unique values[1] = ', uniq_vals[1])
-        
-        res = []
-        res = [(a, b) for a in uniq_vals[0] for b in uniq_vals[1]]
-        return res
+        if len(l_col_list) == 0:
+            return []
+        elif len(l_col_list) == 1:
+            return sorted([v for v in uniq_vals])
+        elif len(l_col_list) == 2:
+            res = []
+            res = [(a, b) for a in uniq_vals[0] for b in uniq_vals[1]]
+            return res
+        else:
+            print ("TODO ")
+            return -44  # yes this will crash - fix this
          
     def select_where(self, where_col_list, where_value_list, col_name=''):
         """ 
@@ -111,7 +119,9 @@ class DataTable(object):
                 if col_name == '':
                     res.append([row_num, row])
                 else:   # extracting a single column only
-                    res.append(row[self.get_col_by_name(col_name)])
+                    l_dat = self.get_col_by_name(col_name)
+                    if l_dat is not None:
+                        res.append(row[l_dat])
         return res
 
     def force_to_string(self,unknown):
@@ -240,11 +250,12 @@ class DataTable(object):
         return self.header
         
     def add_cols(self, col_list):
-        #print("BEFORE = " , self.arr)
+        #print("col_list = " , len(col_list))
+        #print("BEFORE = " , len(self.arr[0]))
         self.header.extend(col_list)
         for r in self.arr:
             r.extend(['0' for c in col_list])
-        #print("AFTER = " , self.arr)
+        #print("AFTER = " , len(self.arr[0]))
         
     def load_to_array(self):
         self.arr = []
@@ -259,18 +270,27 @@ class DataTable(object):
         #return self.arr
         
     def get_col_by_name(self, col_name): 
+        #print('get_col_by_name: col_name = ', col_name, ' self.header = ', len(self.header))
         for num, c in enumerate(self.header):
             #print (num, c)
             if c == col_name:
+                #print('found = c =', c, ' num=', num)
                 return num
-        return 0
+        print(col_name, 'NOT found = returning None')
+        return None
         
     def get_col_data_by_name(self, col_name, WHERE_Clause=''):
         """ returns the values of col_name according to where """
+        #print('get_col_data_by_name: col_name = ', col_name, ' WHERE = ', WHERE_Clause)
         col_key = self.get_col_by_name(col_name)
+        if col_key is None:
+            print('get_col_data_by_name: col_name = ', col_name, ' NOT FOUND')
+            return []
+        #print('get_col_data_by_name: col_key =', col_key)
         res = []
         for row in self.arr:
-            res.append(int(row[col_key]))
+            #print('col_key=',col_key, ' len(row)=', len(row), ' row=', row)
+            res.append(row[col_key])  # need to convert to int for calcs but leave as string for lookups
         return res
           
 class DataStats(object):
