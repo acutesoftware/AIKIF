@@ -10,7 +10,7 @@ except:
 	
 import csv
 import ctypes
-from cls_database import Database
+from if_database import Database
 
 
 def TEST():

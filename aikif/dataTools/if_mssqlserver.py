@@ -17,7 +17,7 @@ except:
 	print('you need to install https://pypi.python.org/pypi/pypyodbc/ ')
 	exit(1)
 
-from cls_database import Database
+from if_database import Database
 
 
 def TEST():
