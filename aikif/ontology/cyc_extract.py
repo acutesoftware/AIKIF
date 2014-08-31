@@ -9,11 +9,13 @@ from rdflib import RDF
 from rdflib import RDFS
 
 def main():
-    fname = 'open-cyc.n3'   # 770,166 tuples
+    ip_folder =  'S:\\DATA\\opendata\\ontology\\OpenCyc\\'
+
+    fname = ip_folder + 'open-cyc.n3'   # 770,166 tuples
     #create_sample_file('open-cyc.n3', 'sample_open_cyc.n3', 5000)
     small_fname = 'sample_open_cyc.n3' #  6618 tuples
     
-    g = load_graph_from_rdf(small_fname)
+    g = load_graph_from_rdf(fname)
     show_graph_summary(g)
     export(g, fname + ".CSV")
 
