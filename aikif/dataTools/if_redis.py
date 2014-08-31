@@ -25,9 +25,30 @@ test server via client:
  
 useful redis commands:
     > INFO
-    >> (returns details of memory, usage, stats)
+        >> (returns details of memory, usage, stats)
     > KEYS *
-    >> (returns [often HUGE] complete list of keys)
+        >> (returns [often HUGE] complete list of keys)
+    > FLUSHBD
+        >> (wipes current database)
+    > DBSIZE
+        >> 319 (returns number of keys in the database)
+    > INFO MEMORY
+        # Memory
+        used_memory:4414184
+        used_memory_human:4.21M
+        used_memory_rss:4381296
+        used_memory_peak:125389080
+        used_memory_peak_human:119.58M
+        used_memory_lua:33792
+        mem_fragmentation_ratio:0.99
+        mem_allocator:dlmalloc-2.8
+    > BGSAVE
+        >> saves data in background without slowing prod access (ie dont use SAVE)
+    
+    > KEYS id*   -- returns all keys starting with id
+    > KEYS *Born* -- returns all keys containing Born field (like column select)
+    
+    
     
 To clean the database, simply kill the server and restart
 
@@ -96,7 +117,7 @@ class redis_server(Database):
         """ add data """
         res = []
         res = self.connection.set(key, val)
-        print(res)
+        #print(res)
      
     def import_datatable(self, l_datatable, schema='datatable', col_key=0):
         """
@@ -117,9 +138,11 @@ class redis_server(Database):
             for col_num, col in enumerate(row):
                 #print('col_num, col = ', col_num, col)
                 if col and col_num < len(hdr):
-                    key = schema_root_key + hdr[col_num] + ':' + row[col_key]
+                    key = schema_root_key + row[col_key] + ':' + hdr[col_num]
                     self.connection.set(key, col)
+                    #self.connection.lpush(key, col)
         print ('loaded ', str(row_num) , ' rows')
+        
         
     def export_to_CSV(fldr, printHeader = True):
         opFile = fldr + table + '.CSV'

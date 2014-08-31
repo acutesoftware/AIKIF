@@ -113,6 +113,8 @@ def load_lists(lst):
 	results = []	# will return a lists of dictionarys of lists (yes, that is right)
 	lists_to_load = {l for l in lst}	# get unique list of types so only loading them once each
 	for tpe in lists_to_load:
+		if tpe == 'STRING2':
+			results.append({'name': 'STRING', 'lst': get_list_string(40)})
 		if tpe == 'STRING':
 			results.append({'name': 'STRING', 'lst': get_list_string()})
 		if tpe == 'WORD':
@@ -131,8 +133,8 @@ def get_list_string_OLD():
 		lst.append(random_letters(10))
 	return lst
 
-def get_list_string():
-	return [random_letters(10) for i in range(0,100)]
+def get_list_string(num = 40):
+	return [random_letters(num) for i in range(0,100)]
 	
 def get_list_words_OLD():
 	lst = []
