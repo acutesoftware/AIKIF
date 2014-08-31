@@ -210,7 +210,7 @@ class DataTable(object):
             else:
                 f.write(content)
 
-    def save_csv(self, filename):
+    def save_csv(self, filename, write_header_separately=True):
         """
         save the default array as a CSV file
         """
@@ -218,7 +218,8 @@ class DataTable(object):
         #print("SAVING arr = ", self.arr)
         
         with open(filename, "w") as f:
-            f.write(','.join([c for c in self.header]) + '\n')
+            if write_header_separately:
+                f.write(','.join([c for c in self.header]) + '\n')
             for row in self.arr:
                 #print('save_csv: saving row = ', row)
                 txt = ','.join([self.force_to_string(col) for col in row])
