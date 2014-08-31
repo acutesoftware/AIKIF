@@ -46,9 +46,13 @@ except:
     exit(1)
 
 from if_database import Database
-
+import cls_datatable
 
 def TEST():
+    root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + '..' + os.sep + '..' + os.sep + 'data')
+    fname = root_folder + os.sep + 'core' + os.sep + 'OBJECT_INFO-COURSE.csv'    
+
+
     print('wrapper for redis databases')
     host = '127.0.0.1'
     port = 6379
@@ -59,6 +63,18 @@ def TEST():
     print(d.server)
     d.set('test123', 'this is a test')
     print(d.get('test123'))
+    
+    dt = cls_datatable.DataTable(fname, ',')
+    dt.load_to_array()
+    d.import_datatable(dt, 'aikif', 1)
+    
+    print(d.get("aikif:OBJECT_INFO-COURSE.csv:categories:Artificial Intelligence Planning"))
+    
+    """
+        127.0.0.1:6379> get "aikif:OBJECT_INFO-COURSE.csv:categories:Artificial Intelligence Planning"
+        "https://class.coursera.org/aiplan-002/"
+    """
+        
     
 class redis_server(Database):
     def __init__(self, host, port , db):
@@ -81,7 +97,29 @@ class redis_server(Database):
         res = []
         res = self.connection.set(key, val)
         print(res)
+     
+    def import_datatable(self, l_datatable, schema='datatable', col_key=0):
+        """
+        import a datatable (grid) by using the schema:table:column as keys.
+        e.g. Sample input ( via cls_database.py -> test.csv)
+        TERM,GENDER,ID,tot1,tot2
+        5320,M,78,18,66
+        1310,M,78,10,12
         
+        Loads the following:
+        """
+        key = ''
+        hdr = l_datatable.get_header()
+        schema_root_key = schema + ':' + os.path.basename(l_datatable.name) + ':'
+        print(hdr)
+        for row_num, row in enumerate(l_datatable.get_arr()):
+            #print(row)
+            for col_num, col in enumerate(row):
+                #print('col_num, col = ', col_num, col)
+                if col and col_num < len(hdr):
+                    key = schema_root_key + hdr[col_num] + ':' + row[col_key]
+                    self.connection.set(key, col)
+        print ('loaded ', str(row_num) , ' rows')
         
     def export_to_CSV(fldr, printHeader = True):
         opFile = fldr + table + '.CSV'
