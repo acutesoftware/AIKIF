@@ -3,7 +3,7 @@
 import unittest
 import sys
 import os
-lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "AI" + os.sep + "lib")
+lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" + os.sep + "lib")
 #print(lib_fldr)  # C:\DATA\Duncan\git\AIKIF\AI\lib  (on laptop)
 sys.path.append(lib_fldr)
 from cls_plan import Plan
