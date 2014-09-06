@@ -57,7 +57,7 @@ class Context:
     def __str__(self):  
         return 'Hello, ' + self.username + '! You are a ' + self.user + ' using the ' + self.host + ' "' + self.hostname + '"'
     
-    def dump_all(self):
+    def dump_all(self, silent='NO'):
         """ 
         prints all attributes and returns them as a dictionary 
         (mainly for testing how it will all integrate)
@@ -73,9 +73,9 @@ class Context:
         all.append(dict(name='mem_avail', val=self.host_mem_available))
         all.append(dict(name='mem_total', val=self.host_mem_total))
         #all.append(dict(name='', val=))
-        
-        for a in all:
-            print(a['name'].ljust(14) + '= ' + a['val'])
+        if silent != 'NO':
+            for a in all:
+                print(a['name'].ljust(14) + '= ' + a['val'])
     
         return all
         
@@ -180,7 +180,7 @@ def TEST():
     where_am_i = Context()
     #print(where_am_i)
     #print(where_am_i.summarise())
-    where_am_i.dump_all()
+    where_am_i.dump_all('yes')
     #print(where_am_i.get_host())
     #for k,v in os.environ.items():
     #    print(k,v)
