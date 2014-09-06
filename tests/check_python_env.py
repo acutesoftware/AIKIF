@@ -2,7 +2,9 @@
 
 import sys
 import os
-sys.path.append('..\\AI')
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
+sys.path.append(root_folder)
+
 import cls_collect_files as cl
 
 packages = ['os', 'sys', 'numpy', 'requests', 'pypyodbc', 'codecs', 're', 'csv' ,

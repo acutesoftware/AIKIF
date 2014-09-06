@@ -5,8 +5,10 @@ import unittest
 import os
 import sys
 import csv
-sys.path.append("..\\AI")
-from dataTools import dataTools as cl
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
+sys.path.append(root_folder)
+
+from aikif.dataTools import dataTools as cl
 					
 class TestClassDataTools(unittest.TestCase):
  
