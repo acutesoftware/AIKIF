@@ -94,7 +94,21 @@ class Context:
         
         return res
     
-     
+
+    def is_user_busy(self):
+        """ determines from user details if user is busy or not """
+        if self.phone_on_charge == True and self.user == 'Developer':
+            return False
+        else:
+            return True
+    
+    def is_host_busy(self):
+        """ determines from host details if computer is busy or not """
+        if self.host_cpu_pct > '25' or self.host_mem_available < '500000':
+            return False
+        else:
+            return True
+    
     def get_host(self):
         """ 
         returns the host computer running this program 
