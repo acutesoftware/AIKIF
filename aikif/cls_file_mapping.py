@@ -60,8 +60,6 @@ class FileMap:
         self.name = name
         self.fldr = fldr
 
-        #localPath = 'T:\\user\\AIKIF\\' # '..//data//' # os.getcwd()
-        logFileProcess = localPath + 'log\\process.log'
-        logFileSource = localPath + 'log\\source.log'
-        logFileCommand = localPath + 'log\\command.log'
-        logFileResult = localPath + 'log\\result.log'
+
+        
+        
