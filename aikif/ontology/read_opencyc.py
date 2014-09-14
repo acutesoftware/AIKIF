@@ -17,7 +17,7 @@ print ('op = ', op_folder)
 
 #files = ['open-cyc.n3', 'open-cyc.rdf', 'open-cyc.trig']
 files = ['open-cyc.n3.csv']
-#files = ['open-cyc_sample.n3.csv']
+files = ['open-cyc_sample.n3.csv']
 lookup = ['gauge', 'mind', 'post']
 
 
