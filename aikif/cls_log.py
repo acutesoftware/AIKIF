@@ -26,7 +26,11 @@ class Log:
 
     def __str__(self):
         return self.log_folder
+    
+    def get_folder_process(self):
+        return self.logFileProcess
         
+    
     def _log(self, fname, txt, prg=''):
         # logs an entry to fname along with standard date and user details
         if os.sep not in fname:
