@@ -14,14 +14,14 @@ class TestFileMap(unittest.TestCase):
 	def setUp(self):
 		self.filemap = mod_filemap.FileMap('.')
 
-	def test_count_dataFileTypes(self):
+	def test_01_count_dataFileTypes(self):
 		self.assertEqual( len(mod_filemap.dataFileTypes), 7)	
 
-	def test_count_dataSubjectAreas(self):
+	def test_02_count_dataSubjectAreas(self):
 		self.assertGreater( 20 , len(mod_filemap.dataFileTypes))	  # this list will increase
 
 		
-	def test_fileMap_find_type(self):
+	def test_03_fileMap_find_type(self):
 		self.assertEqual(self.filemap.find_type('thing'), 'THING')	
 		self.assertEqual(self.filemap.find_type('Event'), 'EVENT')	
 		self.assertEqual(self.filemap.find_type('LINK'), 'LINK')	
@@ -30,7 +30,7 @@ class TestFileMap(unittest.TestCase):
 		self.assertEqual(self.filemap.find_type('proces'), 'PROCESS')	
 		self.assertEqual(self.filemap.find_type('actor'), 'ACTOR')	
 
-	def test_fileMap_find_ontology(self):  # note, functions return a list (usually 1 item) of strings
+	def test_04_fileMap_find_ontology(self):  # note, functions return a list (usually 1 item) of strings
 		self.assertEqual(self.filemap.find_ontology('FILE-LECTURES'), ['SYSTEM-PC-FILE-LECTURES'])	
 		self.assertEqual(self.filemap.find_ontology(''), ['_TOP'])	
 		self.assertEqual(self.filemap.find_ontology('top'), ['_TOP'])	
@@ -54,9 +54,12 @@ class TestFileMap(unittest.TestCase):
 		self.assertEqual(self.filemap.find_ontology('GoOgle+'), ['INFO-SOCIAL-GOOGLE+'])	
 		self.assertEqual(self.filemap.find_ontology('social-other'), ['INFO-SOCIAL-OTHER'])	
 
-	def test_fileMap_get_filename(self):  
+	def test_05_fileMap_get_filename(self):  
 		self.assertEqual(self.filemap.get_filename('AAAAA', 'BBBBB'), 'AAAAA_BBBBB.CSV')	
 		self.assertEqual(self.filemap.get_filename('X', 'Y'), 'X_Y.CSV')	
+
+	def test_06_fileMap_get_full_filename(self):  
+		self.assertEqual(self.filemap.get_full_filename('AAAAA', 'BBBBB'), self.filemap.get_datapath() + os.sep + 'core' + os.sep  + 'AAAAA_BBBBB.CSV')	
 
 		
 		
