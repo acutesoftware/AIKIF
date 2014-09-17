@@ -6,59 +6,57 @@ import unittest
 import os
 import sys
 import csv
-sys.path.append('..//AI')
-import AIKIF_utils as aikif
-import fileMapping as filemap
+sys.path.append('..' + os.sep + 'aikif')
+import cls_file_mapping as mod_filemap
 
 class TestFileMap(unittest.TestCase):
  
 	def setUp(self):
-		pass
+		self.filemap = mod_filemap.FileMap('.')
 
 	def test_count_dataFileTypes(self):
-		self.assertEqual( len(filemap.dataFileTypes), 7)	
+		self.assertEqual( len(mod_filemap.dataFileTypes), 7)	
 
 	def test_count_dataSubjectAreas(self):
-		self.assertGreater( 20 , len(filemap.dataFileTypes))	  # this list will increase
+		self.assertGreater( 20 , len(mod_filemap.dataFileTypes))	  # this list will increase
 
 		
-	def test_fileMap_findtype(self):
-		self.assertEqual( filemap.FindType('thing'), 'THING')	
-		self.assertEqual( filemap.FindType('Event'), 'EVENT')	
-		self.assertEqual( filemap.FindType('LINK'), 'LINK')	
-		self.assertEqual( filemap.FindType('OBJECT'), 'OBJECT')	
-		self.assertEqual( filemap.FindType('loca'), 'LOCATION')	
-		self.assertEqual( filemap.FindType('proces'), 'PROCESS')	
-		self.assertEqual( filemap.FindType('actor'), 'ACTOR')	
+	def test_fileMap_find_type(self):
+		self.assertEqual(self.filemap.find_type('thing'), 'THING')	
+		self.assertEqual(self.filemap.find_type('Event'), 'EVENT')	
+		self.assertEqual(self.filemap.find_type('LINK'), 'LINK')	
+		self.assertEqual(self.filemap.find_type('OBJECT'), 'OBJECT')	
+		self.assertEqual(self.filemap.find_type('loca'), 'LOCATION')	
+		self.assertEqual(self.filemap.find_type('proces'), 'PROCESS')	
+		self.assertEqual(self.filemap.find_type('actor'), 'ACTOR')	
 
-	def test_fileMap_FindOntology(self):  # note, functions return a list (usually 1 item) of strings
-		self.assertEqual( filemap.FindOntology('FILE-LECTURES'), ['SYSTEM-PC-FILE-LECTURES'])	
-		self.assertEqual( filemap.FindOntology(''), ['_TOP'])	
-		self.assertEqual( filemap.FindOntology('top'), ['_TOP'])	
-		self.assertEqual( filemap.FindOntology('course'), ['INFO-COURSE'])	
-		self.assertEqual( filemap.FindOntology('dataset'), ['INFO-DATASET'])	
-		self.assertEqual( filemap.FindOntology('shop'), ['INFO-PIM-SHOPPING'])	
-		self.assertEqual( filemap.FindOntology('DIARY'), ['INFO-PIM-DIARY'])	
-		self.assertEqual( filemap.FindOntology('INFO-MESSAGE-EMAIL'), ['INFO-MESSAGE-EMAIL'])	
-		self.assertEqual( filemap.FindOntology('PC-FILE'), ['SYSTEM-PC-FILE', 'SYSTEM-PC-FILE-LECTURES', 'SYSTEM-PC-FILE-PROGRAM'])	# returns multiple
-		#self.assertEqual( filemap.FindOntology('Furniture'), ['OBJECT-ASSET-FURNITURE'])	
-		self.assertEqual( filemap.FindOntology('Task'), ['INFO-PIM-TASK'])	
-		self.assertEqual( filemap.FindOntology('Contact'), ['INFO-PIM-CONTACT'])	
-		self.assertEqual( filemap.FindOntology('Pim-Note'), ['INFO-PIM-NOTE'])	
-		self.assertEqual( filemap.FindOntology('PCusage'), ['INFO-PIM-PCUSAGE'])	
-		self.assertEqual( filemap.FindOntology('email'), ['INFO-MESSAGE-EMAIL'])	
-		self.assertEqual( filemap.FindOntology('message-sms'), ['INFO-MESSAGE-SMS'])	
-		self.assertEqual( filemap.FindOntology('phone'), ['INFO-MESSAGE-PHONE'])	
-		self.assertEqual( filemap.FindOntology('forum'), ['INFO-MESSAGE-FORUM'])	
-		self.assertEqual( filemap.FindOntology('letter'), ['INFO-MESSAGE-LETTER'])	
-		self.assertEqual( filemap.FindOntology('twitter'), ['INFO-SOCIAL-TWITTER'])	
-		self.assertEqual( filemap.FindOntology('FACEBOOK'), ['INFO-SOCIAL-FACEBOOK'])	
-		self.assertEqual( filemap.FindOntology('GoOgle+'), ['INFO-SOCIAL-GOOGLE+'])	
-		self.assertEqual( filemap.FindOntology('social-other'), ['INFO-SOCIAL-OTHER'])	
+	def test_fileMap_find_ontology(self):  # note, functions return a list (usually 1 item) of strings
+		self.assertEqual(self.filemap.find_ontology('FILE-LECTURES'), ['SYSTEM-PC-FILE-LECTURES'])	
+		self.assertEqual(self.filemap.find_ontology(''), ['_TOP'])	
+		self.assertEqual(self.filemap.find_ontology('top'), ['_TOP'])	
+		self.assertEqual(self.filemap.find_ontology('course'), ['INFO-COURSE'])	
+		self.assertEqual(self.filemap.find_ontology('dataset'), ['INFO-DATASET'])	
+		self.assertEqual(self.filemap.find_ontology('shop'), ['INFO-PIM-SHOPPING'])	
+		self.assertEqual(self.filemap.find_ontology('DIARY'), ['INFO-PIM-DIARY'])	
+		self.assertEqual(self.filemap.find_ontology('INFO-MESSAGE-EMAIL'), ['INFO-MESSAGE-EMAIL'])	
+		self.assertEqual(self.filemap.find_ontology('PC-FILE'), ['SYSTEM-PC-FILE', 'SYSTEM-PC-FILE-LECTURES', 'SYSTEM-PC-FILE-PROGRAM'])	# returns multiple
+		self.assertEqual(self.filemap.find_ontology('Task'), ['INFO-PIM-TASK'])	
+		self.assertEqual(self.filemap.find_ontology('Contact'), ['INFO-PIM-CONTACT'])	
+		self.assertEqual(self.filemap.find_ontology('Pim-Note'), ['INFO-PIM-NOTE'])	
+		self.assertEqual(self.filemap.find_ontology('PCusage'), ['INFO-PIM-PCUSAGE'])	
+		self.assertEqual(self.filemap.find_ontology('email'), ['INFO-MESSAGE-EMAIL'])	
+		self.assertEqual(self.filemap.find_ontology('message-sms'), ['INFO-MESSAGE-SMS'])	
+		self.assertEqual(self.filemap.find_ontology('phone'), ['INFO-MESSAGE-PHONE'])	
+		self.assertEqual(self.filemap.find_ontology('forum'), ['INFO-MESSAGE-FORUM'])	
+		self.assertEqual(self.filemap.find_ontology('letter'), ['INFO-MESSAGE-LETTER'])	
+		self.assertEqual(self.filemap.find_ontology('twitter'), ['INFO-SOCIAL-TWITTER'])	
+		self.assertEqual(self.filemap.find_ontology('FACEBOOK'), ['INFO-SOCIAL-FACEBOOK'])	
+		self.assertEqual(self.filemap.find_ontology('GoOgle+'), ['INFO-SOCIAL-GOOGLE+'])	
+		self.assertEqual(self.filemap.find_ontology('social-other'), ['INFO-SOCIAL-OTHER'])	
 
-	def test_fileMap_GetFilename(self):  
-		self.assertEqual( filemap.GetFilename('AAAAA', 'BBBBB'), 'AAAAA_BBBBB.CSV')	
-		self.assertEqual( filemap.GetFilename('X', 'Y'), 'X_Y.CSV')	
+	def test_fileMap_get_filename(self):  
+		self.assertEqual(self.filemap.get_filename('AAAAA', 'BBBBB'), 'AAAAA_BBBBB.CSV')	
+		self.assertEqual(self.filemap.get_filename('X', 'Y'), 'X_Y.CSV')	
 
 		
 		
