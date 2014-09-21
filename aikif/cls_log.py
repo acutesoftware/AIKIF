@@ -14,6 +14,9 @@ def TEST():
     lg = Log('T:\\user\\AIKIF')
     lg.record_command('test.txt', 'hello')
     print(lg)
+    sum = LogSummary(lg, 'T:\\user\\AIKIF')
+    print(sum)
+    
 
 class Log:
     def __init__(self, fldr):
@@ -71,8 +74,31 @@ class Log:
         #print('   result    = ', res)
         self._log(self.logFileResult , force_to_string(res), prg)
 
+class LogSummary:
+    """
+    Aggregating Logs 
+    """
+    def __init__(self, log_object, fldr):
+        self.process_file = log_object.logFileProcess
+        self.command_file = log_object.logFileCommand
+        self.result_file = log_object.logFileResult
+        self.source_file = log_object.logFileSource
+        print('process_file:' + self.process_file)
+    
+    def __str__(self):
+        txt = '---- LogSummary ---\n'
+        txt += 'self.process_file = ' + self.process_file + '\n'
+        txt += 'self.command_file = ' + self.command_file + '\n'
+        txt += 'self.result_file  = ' + self.result_file + '\n'
+        txt += 'self.source_file  = ' + self.source_file + '\n'
+        return txt
             
-            
+    def summarise_events(self, opFile):
+        """
+        takes the logfiles and produces an event summary matrix
+        """
+        print('summarising logFileCommand - ' + self.logFileCommand)
+        
 def ensure_dir(f):
     d = os.path.dirname(f)
     if not os.path.exists(d):
