@@ -27,11 +27,14 @@ class LogTest(unittest.TestCase):
         result = self.mylog.get_folder_process()
         self.assertEqual(result, 'T:\\user\\AIKIF\\log\\process.log')
     
-
+    def test_03_logsum_init(self):
+        sum = cls_log.LogSummary(self.mylog, 'T:\\user\\AIKIF')
+        self.assertTrue(len(str(sum)) > 10)
+        #print (sum)
     
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
-        print(str(self.mylog))
+        #print(str(self.mylog))
         pass
     
 if __name__ == '__main__':

@@ -146,5 +146,5 @@ def GetUserName():
 def GetHostName():
 	return socket.gethostname()
 	        
-    
-TEST()
+if __name__ == '__main__':     
+    TEST()
