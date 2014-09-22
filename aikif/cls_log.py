@@ -15,6 +15,7 @@ def TEST():
     lg.record_command('test.txt', 'hello')
     print(lg)
     sum = LogSummary(lg, 'T:\\user\\AIKIF')
+    #sum.summarise_events('.')
     print(sum)
     
 
@@ -83,7 +84,6 @@ class LogSummary:
         self.command_file = log_object.logFileCommand
         self.result_file = log_object.logFileResult
         self.source_file = log_object.logFileSource
-        print('process_file:' + self.process_file)
     
     def __str__(self):
         txt = '---- LogSummary ---\n'
@@ -97,7 +97,13 @@ class LogSummary:
         """
         takes the logfiles and produces an event summary matrix
         """
+        res = []
         print('summarising logFileCommand - ' + self.logFileCommand)
+        with open(self.logFileCommand, "r") as raw_log:
+            for line in raw_log:
+                cols = line.split(',')
+                d = dict(cols[0], cols[1])
+                res.append(d)
         
 def ensure_dir(f):
     d = os.path.dirname(f)
