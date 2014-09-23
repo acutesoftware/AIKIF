@@ -23,10 +23,10 @@ class Log:
     def __init__(self, fldr):
         """ pass the folder on command line """
         self.log_folder = fldr
-        self.logFileProcess = self.log_folder + os.sep + 'log' + os.sep + 'process.log'
-        self.logFileSource = self.log_folder + os.sep + 'log' + os.sep + 'source.log'
-        self.logFileCommand = self.log_folder + os.sep + 'log' + os.sep + 'command.log'
-        self.logFileResult = self.log_folder + os.sep + 'log' + os.sep + 'result.log'
+        self.logFileProcess = self.log_folder + os.sep + 'process.log'
+        self.logFileSource  = self.log_folder + os.sep + 'source.log'
+        self.logFileCommand = self.log_folder + os.sep + 'command.log'
+        self.logFileResult  = self.log_folder + os.sep + 'result.log'
 
     def __str__(self):
         return self.log_folder
@@ -44,6 +44,7 @@ class Log:
         dte = TodayAsString()
         usr = GetUserName()
         hst = GetHostName()
+        #print('_log : os.path.dirname(fname) = ', os.path.dirname(fname))
         ensure_dir(os.path.dirname(fname))
 
         if prg == '':
@@ -55,7 +56,7 @@ class Log:
     # -----------------------------------------
     # --   Logging Functions 
     # -----------------------------------------
-    def record_data_source(self, src, prg=''):
+    def record_source(self, src, prg=''):
         # function to collect raw data from the web and hard drive[ currently using documents on disk instead of web ]
         #print(' source  =', src)
         self._log(self.logFileSource , force_to_string(src), prg)
@@ -88,11 +89,17 @@ class LogSummary:
         self.log_sum = fldr + os.sep + 'log_sum.csv'
     
     def __str__(self):
-        txt = '---- LogSummary ---\n'
+        """txt = '---- LogSummary ---\n'
         txt += 'self.process_file = ' + self.process_file + '\n'
         txt += 'self.command_file = ' + self.command_file + '\n'
         txt += 'self.result_file  = ' + self.result_file + '\n'
         txt += 'self.source_file  = ' + self.source_file + '\n'
+        """
+        txt = ''
+        with open(self.log_sum, "r") as f:
+            txt = f.read()
+        return txt
+        
         return txt
             
     def summarise_events(self):
@@ -153,6 +160,8 @@ class LogSummary:
         reads a logfile and returns a dictionary by date
         showing the count of log entries
         """
+        if not os.path.isfile(fname):
+            return {}
         d_log_sum = {}
         with open(fname, "r") as raw_log:
             for line in raw_log:
@@ -166,6 +175,7 @@ class LogSummary:
         return d_log_sum
     
 def ensure_dir(f):
+    """ NOTE - not sure if this works exactly - needs a separate test """
     d = os.path.dirname(f)
     if not os.path.exists(d):
         os.makedirs(d)
