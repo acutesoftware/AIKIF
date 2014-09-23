@@ -5,7 +5,7 @@ import sys
 import time
 import getpass
 import socket
- 
+import collections 
 #localPath = 'T:\\user\\AIKIF\\' # '..//data//' # os.getcwd()
 
  
@@ -14,8 +14,8 @@ def TEST():
     lg = Log('T:\\user\\AIKIF')
     lg.record_command('test.txt', 'hello')
     print(lg)
-    sum = LogSummary(lg, 'T:\\user\\AIKIF')
-    #sum.summarise_events('.')
+    sum = LogSummary(lg, 'T:\\user\\AIKIF\\log')
+    sum.summarise_events()
     print(sum)
     
 
@@ -84,6 +84,8 @@ class LogSummary:
         self.command_file = log_object.logFileCommand
         self.result_file = log_object.logFileResult
         self.source_file = log_object.logFileSource
+        self.log_folder = fldr
+        self.log_sum = fldr + os.sep + 'log_sum.csv'
     
     def __str__(self):
         txt = '---- LogSummary ---\n'
@@ -93,18 +95,76 @@ class LogSummary:
         txt += 'self.source_file  = ' + self.source_file + '\n'
         return txt
             
-    def summarise_events(self, opFile):
+    def summarise_events(self):
         """
         takes the logfiles and produces an event summary matrix
+            date	    command	result	process	source
+            20140421	9	    40	    178	    9
+            20140423	0	    0	    6	    0
+            20140424	19	    1	    47	    19
+            20140425	24	    0	    117	    24
+            20140426	16	    0	    83	    16
+            20140427	1	    0	    6	    1
+            20140429	0	    0	    0	    4
+
         """
-        res = []
-        print('summarising logFileCommand - ' + self.logFileCommand)
-        with open(self.logFileCommand, "r") as raw_log:
+        print('summarising logfiles')
+        all_dates = []
+        d_command = self._count_by_date(self.command_file, all_dates)
+        d_result  = self._count_by_date(self.result_file,  all_dates)
+        d_process = self._count_by_date(self.process_file, all_dates)
+        d_source  = self._count_by_date(self.source_file,  all_dates)
+
+        with open(self.log_sum, "w") as sum_file:
+            sum_file.write('date,command,result,process,source\n')
+            for dte in sorted(set(all_dates)):
+                sum_file.write(dte + ',')
+                if dte in d_command:
+                    sum_file.write(str(d_command[dte]) + ',')
+                else:
+                    sum_file.write('0,')
+                if dte in d_result:
+                    sum_file.write(str(d_result[dte]) + ',')
+                else:
+                    sum_file.write('0,')
+                if dte in d_process:
+                    sum_file.write(str(d_process[dte]) + ',')
+                else:
+                    sum_file.write('0,')
+                if dte in d_source:
+                    sum_file.write(str(d_source[dte]) + ',')
+                else:
+                    sum_file.write('0,')
+                
+                sum_file.write('\n')
+        """
+        od = collections.OrderedDict(sorted(d_command.items()))        
+        with open(self.log_sum, "w") as sum_file:
+            sum_file.write('date,count_command\n')
+            for k,v in od.items():
+                sum_file.write(k + ',' + str(v) + '\n')
+                #print(k,v)
+        """        
+                
+                
+                
+    def _count_by_date(self, fname, all_dates):
+        """
+        reads a logfile and returns a dictionary by date
+        showing the count of log entries
+        """
+        d_log_sum = {}
+        with open(fname, "r") as raw_log:
             for line in raw_log:
                 cols = line.split(',')
-                d = dict(cols[0], cols[1])
-                res.append(d)
-        
+                dte = cols[0].strip('"')[0:10].replace('-', '')
+                all_dates.append(dte)
+                if dte in d_log_sum:
+                    d_log_sum[dte] += 1
+                else:
+                    d_log_sum[dte] = 1
+        return d_log_sum
+    
 def ensure_dir(f):
     d = os.path.dirname(f)
     if not os.path.exists(d):
