@@ -14,11 +14,11 @@
         # 	test.start()
         # 	print(test.check_status())
         # 	print(test.report())
-#import sys
-#sys.path.append('..//..//AI')
-#sys.path.append('..//..//..//aspytk')
-#import aikif.AIKIF_utils as aikif
-#import aikif.fileMapping as filemap 
+import os
+import sys
+root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
+sys.path.append(root_fldr)
+import cls_log
         
 agent_status = [  	'NONE',				# agent was never instantiated (then how would it report this?)
                     'RUNNING', 			# agent is running
@@ -39,7 +39,9 @@ class Agent(object):
         self.running = running
         self.results = []
         self.status = 'READY'
-        #print('Agent.py	: Creating Agent', self.name)
+        self.mylog = cls_log.Log(fldr)
+        
+        
         if self.running is True:
             self.start()
 
@@ -63,6 +65,7 @@ class Agent(object):
         """
         self.running = True
         self.status = 'RUNNING'
+        self.mylog.record_process('agent', self.name + ' - starting')
         #print('Agent.py	: starting', self.name)
         #self.do_your_job()	# starts the process
     
@@ -100,8 +103,8 @@ class Agent(object):
         
 
 def TEST():
-    myAgent = Agent('TEST Agent', 'T:\\user\\dev\\src\\python\\AI', True)
-    manualAgent = Agent('manual', 'T:\\user\\dev\\src\\python\\AI', False)
+    myAgent = Agent('TEST Agent', 'T:\\user\\dev\\src\\python\\AIKIF', True)
+    manualAgent = Agent('manual', 'T:\\user\\dev\\src\\python\\AIKIF', False)
     manualAgent.start()
     manualAgent.stop()
     print(manualAgent.check_status())
