@@ -139,11 +139,10 @@ class LogSummary:
                 else:
                     sum_file.write('0,')
                 if dte in d_source:
-                    sum_file.write(str(d_source[dte]) + ',')
+                    sum_file.write(str(d_source[dte]) + '\n')
                 else:
-                    sum_file.write('0,')
+                    sum_file.write('0\n')
                 
-                sum_file.write('\n')
         """
         od = collections.OrderedDict(sorted(d_command.items()))        
         with open(self.log_sum, "w") as sum_file:
