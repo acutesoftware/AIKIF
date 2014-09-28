@@ -76,7 +76,7 @@ class Agent(object):
     def do_your_job(self):
         """
         Main method which does the actual work required.
-        This method needs to be subclassed in your agents
+        This method needs to be sub-classed in your agents
         code, but should also call this for the logging and
         status updates.
         """
@@ -89,7 +89,6 @@ class Agent(object):
         """
         self.running = False
         self.status = 'STOPPED'
-        #print('Agent.py	: starting', self.name)
         
     def check_status(self):
         """
@@ -115,6 +114,5 @@ def TEST():
     
 if __name__ == '__main__':
     TEST()
-    print('Agent.py - TEST was about to be called')
     
     

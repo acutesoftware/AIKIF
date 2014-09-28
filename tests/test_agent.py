@@ -34,10 +34,6 @@ class AgentTest(unittest.TestCase):
         self.assertEqual(self.agt.status, 'STOPPED')
         self.assertEqual(self.agt.check_status(), 'STOPPED')
     
-    def test_99(self):
-        """ prints the test to screen to make sure all is ok """
-        #print(str(self.agt))
-        pass
     
 if __name__ == '__main__':
     unittest.main()
