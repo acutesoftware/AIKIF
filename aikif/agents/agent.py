@@ -106,8 +106,8 @@ class Agent(object):
         
 
 def TEST():
-    myAgent = Agent('TEST Agent', 'T:\\user\\dev\\src\\python\\AIKIF', True)
-    manualAgent = Agent('manual', 'T:\\user\\dev\\src\\python\\AIKIF', False)
+    myAgent = Agent('TEST Agent', 'T:\\user\\AIKIF\\log', True)
+    manualAgent = Agent('manual', 'T:\\user\\AIKIF\\log', False)
     manualAgent.start()
     manualAgent.stop()
     print(manualAgent.check_status())

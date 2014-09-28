@@ -23,6 +23,7 @@ class Log:
     def __init__(self, fldr):
         """ pass the folder on command line """
         self.log_folder = fldr
+        #print('class Log__init__(self, fldr)fldr = ' + fldr)
         self.logFileProcess = self.log_folder + os.sep + 'process.log'
         self.logFileSource  = self.log_folder + os.sep + 'source.log'
         self.logFileCommand = self.log_folder + os.sep + 'command.log'
