@@ -10,6 +10,7 @@ params = {}
 
 # path for personal data location  (TODO - you need to modify this line below!)
 fldrs['localPath'] = 'T:\\user\\AIKIF\\' 
+fldrs['log_folder'] = 'T:\\user\\AIKIF\\log' 
 
 # user defined parameters 
 params['AIKIF_version'] = '0.0.3'
