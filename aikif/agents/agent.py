@@ -19,6 +19,7 @@ import sys
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 sys.path.append(root_fldr)
 import cls_log
+import config as mod_cfg
         
 agent_status = [  	'NONE',				# agent was never instantiated (then how would it report this?)
                     'RUNNING', 			# agent is running
@@ -39,8 +40,13 @@ class Agent(object):
         self.running = running
         self.results = []
         self.status = 'READY'
+        if fldr == '':
+            fldr = mod_cfg.fldrs['log_folder']
+        if fldr == '':
+            print('ERROR - no log folder found')
+            exit(1)
         self.mylog = cls_log.Log(fldr)
-        
+        self.mylog.record_command('agent', self.name + ' - initilising')
         
         if self.running is True:
             self.start()
@@ -66,8 +72,6 @@ class Agent(object):
         self.running = True
         self.status = 'RUNNING'
         self.mylog.record_process('agent', self.name + ' - starting')
-        #print('Agent.py	: starting', self.name)
-        #self.do_your_job()	# starts the process
     
     def do_your_job(self):
         """
@@ -76,8 +80,7 @@ class Agent(object):
         code, but should also call this for the logging and
         status updates.
         """
-        #aikif.LogProcess(self.name, 'agent.py')
-        print('use aikif.LogProcess .... [buggy with module loading - TODO]')
+        self.mylog.record_process(self.name, 'agent.py')
 
     
     def stop(self):
