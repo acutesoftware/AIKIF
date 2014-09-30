@@ -26,6 +26,7 @@ class AgentMapDataFile(object):
         """
         self.name = list_name
         self.list = []
+        self.process = []
         self.mapping = mapping
         self.src_file = src_file
         
@@ -37,6 +38,8 @@ class AgentMapDataFile(object):
         txt += '------------------------------\n'
         for num, map in enumerate(self.mapping):
             txt += str(num).zfill(3) + ' ' + map + '\n'
+        for proc in self.process:
+            txt +=  proc + '\n'
         return txt
 
     def map_data(self):
@@ -49,6 +52,11 @@ class AgentMapDataFile(object):
                 cols = line.split(',')
                 print(cols)
                 
+    def add_process(self, proc):
+        """
+        adds to processes
+        """
+        self.process.append(proc)
         
 if __name__ == '__main__':    
     TEST()
