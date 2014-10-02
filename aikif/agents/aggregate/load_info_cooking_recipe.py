@@ -9,14 +9,29 @@ data_fldr = os.path.abspath(root_fldr + os.sep + 'data' + os.sep + 'ref'  )
 sys.path.append(agt_fldr)  # NOTE - remove this when publishing and use import aikif.agents.agent_map_data
 import agent_map_data as mod_map
 
-print('root_fldr = ' + root_fldr)
-print('agt_fldr  = ' + agt_fldr)
-print('data_fldr = ' + data_fldr)
-
-
 def main():
     """
     Script to load recipes into the aikif - PROTOTYPE
+    This program should contain mainly data about recipe mappings
+    and should be using the AgentMapDataFile class for all code.
+    
+    Not sure exactly how to implement yet: (c looks best)
+    a) force recipes to a standard format and parse (not too useful)
+    b) add ingredients and steps as per below (time consuming)
+    c) parse it out automatically. Take all the text of a recipe and
+    use this as the 'steps' that the human performs. Then parse out the
+    list of ingredients into an ingredient table and use that separately.
+    
+    How is the data saved?
+    - ingredients list
+    - steps (free form text)
+    
+    Mapping to aikif?
+    - Objects: recipe itself as outcome, plus list of ingredients + utensils
+    - Events: 'making the recipe', + individual things to do (eg +10min turn on oven)
+    - Locations: buying ingred. source of recipe. location of cooking
+    - People: how many to serve, cook, taster
+    
     """
     test_file = data_fldr + os.sep + 'recipes.csv'
     recipe_map = {
@@ -41,4 +56,5 @@ def main():
 
 if __name__ == '__main__':    
     main()
+
 
