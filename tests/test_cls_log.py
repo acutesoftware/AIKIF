@@ -13,7 +13,6 @@ class LogTest(unittest.TestCase):
     def setUp(self):
         """ Note, this gets called for EACH test """
         unittest.TestCase.setUp(self)
-        #print('saving log to ' + test_fldr)
         self.mylog = cls_log.Log(test_fldr)
         self.mylog.record_process('test', 'hello - recording process')
         self.mylog.record_command('test', 'hello - recording command')        
@@ -35,16 +34,10 @@ class LogTest(unittest.TestCase):
     def test_03_logsum_init(self):
         sum = cls_log.LogSummary(self.mylog, test_fldr)
         self.assertTrue(len(str(sum)) > 10)
-        #print (sum)
     
     def test_04_summarise_results(self):
         sum = cls_log.LogSummary(self.mylog, test_fldr)
         sum.summarise_events()
-    
-    def test_99(self):
-        """ prints the test to screen to make sure all is ok """
-        #print(str(self.mylog))
-        pass
     
 if __name__ == '__main__':
     unittest.main()
