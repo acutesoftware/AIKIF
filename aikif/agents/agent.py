@@ -34,7 +34,7 @@ class Agent(object):
     """
     Class for Agents in AIKIF, all agents base class this
     """
-    def __init__(self, name=None,  fldr='', running=False):
+    def __init__(self, name='',  fldr='', running=False):
         self.name = name
         self.fldr = fldr
         self.running = running
