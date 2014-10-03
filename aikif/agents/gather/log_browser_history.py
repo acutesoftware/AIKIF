@@ -14,6 +14,7 @@ import sys
 from os.path import expanduser
 
 #from datetime import datetime
+# NOTE - bug as at 3/10/2014 - 'no such table urls' when run from python 3.44868
 
 pattern = "(((http)|(https))(://)(www.)|().*?)\.[a-z]*/"
 SQL_STATEMENT = 'SELECT urls.url, urls.title, urls.visit_count, urls.typed_count, urls.last_visit_time, visits.visit_time, urls.hidden, visits.from_visit, urls.id, visits.transition  FROM urls, visits WHERE urls.id = visits.url;'
