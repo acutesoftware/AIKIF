@@ -54,27 +54,31 @@ class Log:
         with open(fname, "a") as myfile:
             myfile.write(logEntry)
 
-    # -----------------------------------------
-    # --   Logging Functions 
-    # -----------------------------------------
     def record_source(self, src, prg=''):
-        # function to collect raw data from the web and hard drive[ currently using documents on disk instead of web ]
-        #print(' source  =', src)
+        """
+        function to collect raw data from the web and hard drive
+        Examples - new source file for ontologiesm, email contacts list, folder for xmas photos
+        """
         self._log(self.logFileSource , force_to_string(src), prg)
 
     def record_process(self, process, prg=''):
-        # log a process or program
-        #print(' process = ', process)
+        """
+        log a process or program - log a physical program (.py, .bat, .exe)
+        """
         self._log(self.logFileProcess, force_to_string(process), prg)
 
     def record_command(self, cmd, prg=''):
-        # record the command passed
-        #print(' command = ', cmd)
+        """
+        record the command passed - this is usually the name of the program
+        being run or task being run
+        """
         self._log(self.logFileCommand , force_to_string(cmd), prg)
 
     def record_result(self, res, prg=''):
-        # record the output of the command
-        #print('   result    = ', res)
+        """
+        record the output of the command. Records the result, can have 
+        multiple results, so will need to work out a consistent way to aggregate this
+        """
         self._log(self.logFileResult , force_to_string(res), prg)
 
 class LogSummary:
@@ -90,12 +94,6 @@ class LogSummary:
         self.log_sum = fldr + os.sep + 'log_sum.csv'
     
     def __str__(self):
-        """txt = '---- LogSummary ---\n'
-        txt += 'self.process_file = ' + self.process_file + '\n'
-        txt += 'self.command_file = ' + self.command_file + '\n'
-        txt += 'self.result_file  = ' + self.result_file + '\n'
-        txt += 'self.source_file  = ' + self.source_file + '\n'
-        """
         txt = ''
         with open(self.log_sum, "r") as f:
             txt = f.read()
