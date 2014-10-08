@@ -12,26 +12,11 @@ except:
 from PIL import ImageTk, Image, ImageDraw
 from tkinter import Tk, Canvas, PhotoImage, mainloop
         	
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
-sys.path.append(root_folder)
-print(root_folder)
-#import aikif.agents.agent as agt
-			
-def usage():
-    print("gui_view_world.py - AIKIF script to view a saved map")
-    print("Usage:")
-    print("   gui_view_world.py filename")
-"""
-try:                                
-    opts, args = getopt.getopt(sys.argv[1:], "f", ["help"])
-    print (opts, args)
-except getopt.GetoptError:          
-	usage()                         
-	sys.exit(2)                     
-"""
-	
-fname = root_folder + os.sep + "examples" + os.sep + "test_world.txt"
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) ) 
+
+#fname = root_folder + os.sep + "examples" + os.sep + "test_world.txt"
 fname = root_folder + os.sep + "examples" + os.sep + "test_world_traversed.txt"    
+
 def main():
     """
     view a text file (map) in high resolution
@@ -60,7 +45,20 @@ def read_map(fname):
 
 
 class gui_view_tk(Tkinter.Tk):
+    """
+    Class to manage the display of a saved text based 
+    grid map in a GUI - useful for large grids
+    Grid text sample is below:
+        ..#......2#XXXXX.............X.X......X.
+        ..#......A#XXXX.............XX.......X..
+        ..#.A0000A#XXXX...X.XX......XXT......XXX
+        ......111A#XXXX....X..X...XXXXX........X
+        .....A1...#X..X..XXXXXXX...X.XX........X
+    """
     def __init__(self,parent):
+        """
+        initialise tkinter with default parameters
+        """
         Tkinter.Tk.__init__(self,parent)
         self.parent = parent
         self.appWidth = 1900   # initial values
@@ -83,8 +81,6 @@ class gui_view_tk(Tkinter.Tk):
         self.appWidth = 1900   # canvas.width
         self.appHeight = 1000
         self.canvas.pack()
-        self.update()
-
         
     def TEST_sin(self):    
         for x in range(4 * self.appWidth):
@@ -92,15 +88,6 @@ class gui_view_tk(Tkinter.Tk):
             self.img.put("#ffffff", (x//4,y))
         self.canvas.pack()
         
-    def update(self):
-        print("UPDATING GUI")
-        #self.pix = self.im.load()
-        #for i in range(n):
-        #    pix[x, y] = value
-        
-        self.canvas.pack()
-
-
     def show_grid_from_file(self, fname):
         """
         reads a saved grid file and paints it on the canvas
@@ -112,7 +99,9 @@ class gui_view_tk(Tkinter.Tk):
 
 
     def draw_cell(self, row, col, val):
-       # print("drawing cell: ", row, col, val)
+       """
+       draw a cell as position row, col containing val
+       """
         if val == 'T':
             self.paint_target(row,col)
         elif val == '#':
@@ -126,7 +115,11 @@ class gui_view_tk(Tkinter.Tk):
         elif val in ['1','2','3','4','5','6','7','8','9']:
             self.paint_agent_trail(row,col, val)
     
-    def put_standard_block(self, y, x, val): 
+    def put_standard_block(self, y, x, val):
+        """
+        prints a block, packing out around the y/x location
+        with pixels up to cell width and cell height
+        """
         for j in range(0,self.cell_height):
             for i in range(0,self.cell_width):
                 self.img.put(val, (x*self.cell_width+i, y*self.cell_height+j))
@@ -149,7 +142,7 @@ class gui_view_tk(Tkinter.Tk):
 
     def paint_agent_trail(self, y, x, val):
         """
-        paint an agent trail as ONE pixle to allow for multiple agent
+        paint an agent trail as ONE pixel to allow for multiple agent
         trails to be seen in the same cell
         """
         for j in range(1,self.cell_height-1):
