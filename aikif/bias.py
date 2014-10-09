@@ -62,7 +62,8 @@ class Bias:
         print('TODO calculating bias...')
         self.bias_rating = 0.863
         
-        
+    def get_bias_rating(self):
+        return self.bias_rating
     
 if __name__ == '__main__':
     TEST()
