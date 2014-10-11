@@ -68,6 +68,22 @@
 <PRE>GetFilename(dataType, subjectArea)</PRE>
 <PRE>AddFileToMappingList(fname, lst)</PRE>
 <BR></TD></TR>
+<TR><TD>cls_file_mapping.py</TD><TD>3,826</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>aikif.lib.cls_filelist</PRE>
+<BR></TD><TD><PRE>class FileMap</PRE>
+<PRE>def __init__(self, localPath)</PRE>
+<PRE>def get_root_folder(self)</PRE>
+<PRE>def get_localPath(self)</PRE>
+<PRE>def get_datapath(self)</PRE>
+<PRE>def find_ontology(self, txt)</PRE>
+<PRE>def find_type(self, txt)</PRE>
+<PRE>def get_full_filename(self, dataType, subjectArea)</PRE>
+<PRE>def get_filename(self, dataType, subjectArea)</PRE>
+<PRE>def add_file_to_mapping_list(self, fname, lst)</PRE>
+<BR></TD></TR>
 <TR><TD>tools.py</TD><TD>2,996</TD><TD><PRE>os
 </PRE>
 <PRE>sys
@@ -115,12 +131,12 @@
 <PRE>add_row(txt, tbl)</PRE>
 <PRE>add_dataset(dt)</PRE>
 <BR></TD></TR>
-<TR><TD>run_agents.py</TD><TD>2,614</TD><TD><PRE>sys, os
+<TR><TD>run_agents.py</TD><TD>2,626</TD><TD><PRE>sys, os
 </PRE>
 <PRE>os, sys
 </PRE>
-<PRE>AIKIF_utils</PRE>
-<PRE>fileMapping</PRE>
+<PRE>aikif.AIKIF_utils</PRE>
+<PRE>aikif.fileMapping</PRE>
 <BR></TD><TD><PRE>main()</PRE>
 <PRE>get_agent_list()</PRE>
 <PRE>verify_agents()</PRE>
@@ -306,6 +322,41 @@
 <PRE>ExtractCat(fname, opFile)</PRE>
 <PRE>GetOntologyExtract(fname, txt)</PRE>
 <BR></TD></TR>
+<TR><TD>cls_log.py</TD><TD>7,170</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>time
+</PRE>
+<PRE>getpass
+</PRE>
+<PRE>socket
+</PRE>
+<PRE>collections 
+</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class Log</PRE>
+<PRE>def __init__(self, fldr)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def get_folder_process(self)</PRE>
+<PRE>def _log(self, fname, txt, prg='')</PRE>
+<PRE>def record_source(self, src, prg='')</PRE>
+<PRE>def record_process(self, process, prg='')</PRE>
+<PRE>def record_command(self, cmd, prg='')</PRE>
+<PRE>def record_result(self, res, prg='')</PRE>
+<PRE>class LogSummary</PRE>
+<PRE>def __init__(self, log_object, fldr)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def summarise_events(self)</PRE>
+<PRE>def _count_by_date(self, fname, all_dates)</PRE>
+<PRE>ensure_dir(f)</PRE>
+<PRE>List2String(l)</PRE>
+<PRE>Dict2String(d)</PRE>
+<PRE>TodayAsString()</PRE>
+<PRE>force_to_string(unknown)</PRE>
+<PRE>GetUserName()</PRE>
+<PRE>GetHostName()</PRE>
+<BR></TD></TR>
 <TR><TD>cls_programs.py</TD><TD>2,059</TD><TD><PRE>AIKIF_utils</PRE>
 <PRE>fileMapping</PRE>
 <PRE>os
@@ -317,7 +368,7 @@
 <PRE> save(self, fname='')</PRE>
 <PRE> collect_program_info(fname)</PRE>
 <BR></TD></TR>
-<TR><TD>config.py</TD><TD>2,163</TD><TD><PRE>sys
+<TR><TD>config.py</TD><TD>2,258</TD><TD><PRE>sys
 </PRE>
 <PRE>os
 </PRE>
@@ -351,7 +402,7 @@
 <PRE>addSampleData(fname, content)</PRE>
 <BR></TD></TR>
 <TR><TD>__init__.py</TD><TD>0</TD><TD><BR></TD><TD><BR></TD></TR>
-<TR><TD>generateTestData.py</TD><TD>5,078</TD><TD><PRE>os
+<TR><TD>generateTestData.py</TD><TD>5,178</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -378,34 +429,28 @@
 <PRE>fill_colList_blanks(partialCols, numRequiredCols)</PRE>
 <PRE>load_lists(lst)</PRE>
 <PRE>get_list_string_OLD()</PRE>
-<PRE>get_list_string()</PRE>
+<PRE>get_list_string(num = 40)</PRE>
 <PRE>get_list_words_OLD()</PRE>
 <PRE>get_list_words()</PRE>
 <PRE>get_list_dates()</PRE>
 <PRE>get_list_places()</PRE>
 <PRE>get_list_people()</PRE>
 <BR></TD></TR>
-<TR><TD>cls_database.py</TD><TD>688</TD><TD><BR></TD><TD><PRE>class Database(object)</PRE>
-<PRE> __init__(self, cred, name=None)</PRE>
-<PRE> save(self)</PRE>
-<PRE> getData(self, sqlText)</PRE>
-<PRE> get_info(self)</PRE>
-<PRE> connect(self)</PRE>
-<BR></TD></TR>
-<TR><TD>cls_datatable.py</TD><TD>8,671</TD><TD><PRE>math
+<TR><TD>cls_datatable.py</TD><TD>11,725</TD><TD><PRE>math
 </PRE>
 <BR></TD><TD><PRE>class DataTable(object)</PRE>
 <PRE>def __init__(self, name, dataset_type)</PRE>
 <PRE>def __str__(self)</PRE>
 <PRE>def describe_contents(self)</PRE>
 <PRE>def get_distinct_values_from_cols(self, l_col_list)</PRE>
-<PRE>def select_where(self, where_col_list, where_value_list)</PRE>
+<PRE>def select_where(self, where_col_list, where_value_list, col_name='')</PRE>
 <PRE>def force_to_string(self,unknown)</PRE>
 <PRE>def update_where(self, col, value, where_col_list, where_value_list)</PRE>
-<PRE>def calc_percentiles(self, col_name)</PRE>
+<PRE>def calc_percentiles(self, col_name, where_col_list, where_value_list)</PRE>
 <PRE>def percentile(self, lst_data, percent , key=lambda x</PRE>
 <PRE>def load(self, filename)</PRE>
 <PRE>def save(self, filename, content)</PRE>
+<PRE>def save_csv(self, filename, write_header_separately=True)</PRE>
 <PRE>def drop(self, fname)</PRE>
 <PRE>def get_arr(self)</PRE>
 <PRE>def get_header(self)</PRE>
@@ -416,18 +461,25 @@
 <PRE>class DataStats(object)</PRE>
 <PRE>def __init__(self, arr)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_oracle.py</TD><TD>1,921</TD><TD><PRE>csv
+<TR><TD>if_redis.py</TD><TD>4,709</TD><TD><PRE>os
 </PRE>
-<PRE>ctypes
+<PRE>sys
+</PRE>
+<PRE>datetime
+</PRE>
+<PRE>csv
+</PRE>
+<PRE>cls_datatable
 </PRE>
 <BR></TD><TD><PRE>TEST()</PRE>
-<PRE>class Oracle(Database)</PRE>
-<PRE> GetListOfOracleTables(self, conn, tNameFilter)</PRE>
-<PRE> Oracle2CSV(self, conn, tblName, fldrLocation = '', printHeader = True)</PRE>
-<PRE> ConnectOracle(self, schema, dbase, usr, encryptedPasswd)</PRE>
-<PRE> DisconnectOracle(self, conn)</PRE>
+<PRE>class redis_server(Database)</PRE>
+<PRE>def __init__(self, host, port , db)</PRE>
+<PRE>def get(self, key)</PRE>
+<PRE>def set(self, key, val)</PRE>
+<PRE>def import_datatable(self, l_datatable, schema='datatable', col_key=0)</PRE>
+<PRE>def export_to_CSV(fldr, printHeader = True)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_mssqlserver.py</TD><TD>2,298</TD><TD><PRE>datetime
+<TR><TD>if_mssqlserver.py</TD><TD>2,297</TD><TD><PRE>datetime
 </PRE>
 <PRE>csv
 </PRE>
@@ -507,6 +559,44 @@
 <PRE>def extract_dimension(self, dim_name, dim_cols, dim_key, dim_stag_table, src_table, src_cols, grain_cols, where_clause)</PRE>
 <PRE>def aggregate(self, opTable, group_by_cols, meas)</PRE>
 <BR></TD></TR>
+<TR><TD>check_redis_limit.py</TD><TD>9,825</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>datetime
+</PRE>
+<PRE>csv
+</PRE>
+<PRE>cls_datatable
+</PRE>
+<PRE>if_redis
+</PRE>
+<PRE>generateTestData
+</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>load_random_tables(d)</PRE>
+<PRE>load_lots_of_strings(d)</PRE>
+<PRE>confirm_loadtesting()</PRE>
+<PRE>create_test_file(fname)</PRE>
+<BR></TD></TR>
+<TR><TD>if_oracle.py</TD><TD>1,920</TD><TD><PRE>csv
+</PRE>
+<PRE>ctypes
+</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class Oracle(Database)</PRE>
+<PRE> GetListOfOracleTables(self, conn, tNameFilter)</PRE>
+<PRE> Oracle2CSV(self, conn, tblName, fldrLocation = '', printHeader = True)</PRE>
+<PRE> ConnectOracle(self, schema, dbase, usr, encryptedPasswd)</PRE>
+<PRE> DisconnectOracle(self, conn)</PRE>
+<BR></TD></TR>
+<TR><TD>if_database.py</TD><TD>829</TD><TD><BR></TD><TD><PRE>class Database(object)</PRE>
+<PRE>def __init__(self, cred, name=None)</PRE>
+<PRE>def save(self)</PRE>
+<PRE>def getData(self, sqlText)</PRE>
+<PRE>def get_info(self)</PRE>
+<PRE>def connect(self)</PRE>
+<BR></TD></TR>
 <TR><TD>form_example_simple.py</TD><TD>2,382</TD><TD><PRE>os
 </PRE>
 <PRE>sys
@@ -555,14 +645,14 @@
 <BR></TD><TD><PRE>get_page(dataFile='')</PRE>
 <PRE>get_aikif_structure()</PRE>
 <BR></TD></TR>
-<TR><TD>page_agents.py</TD><TD>591</TD><TD><PRE>sys
+<TR><TD>page_agents.py</TD><TD>796</TD><TD><PRE>sys
 </PRE>
 <PRE>web_utils</PRE>
-<PRE>run_agents</PRE>
+<PRE>aikif.run_agents</PRE>
 <BR></TD><TD><PRE>get_page()</PRE>
 <PRE>get_agent_list()</PRE>
 <BR></TD></TR>
-<TR><TD>page_programs.py</TD><TD>3,060</TD><TD><PRE>sys, os
+<TR><TD>page_programs.py</TD><TD>3,024</TD><TD><PRE>sys, os
 </PRE>
 <PRE>web_utils</PRE>
 <BR></TD><TD><PRE>get_page()</PRE>
@@ -596,7 +686,7 @@
 <PRE>read_csv_to_html_table_using_CSV_module_OLD(csvFile, hasHeader='N')</PRE>
 <PRE>read_csv_to_html_list(csvFile)</PRE>
 <BR></TD></TR>
-<TR><TD>web_aikif.py</TD><TD>6,939</TD><TD><PRE>sys
+<TR><TD>web_aikif.py</TD><TD>6,935</TD><TD><PRE>sys
 </PRE>
 <PRE>os
 </PRE>
@@ -622,11 +712,13 @@
 <PRE>format_csv_to_html(csvFile, opHTML)</PRE>
 <PRE>DisplayImagesAsHTML(imageList)</PRE>
 <BR></TD></TR>
-<TR><TD>page_search.py</TD><TD>1,305</TD><TD><PRE>sys
+<TR><TD>page_search.py</TD><TD>2,252</TD><TD><PRE>os
+</PRE>
+<PRE>sys
 </PRE>
 <PRE>web_utils</PRE>
 <BR></TD><TD><PRE>get_page(search_text)</PRE>
-<PRE>search_aikif(txt)</PRE>
+<PRE>search_aikif(txt, formatHTML=True)</PRE>
 <PRE>format_result(file, line, line_num, txt)</PRE>
 <BR></TD></TR>
 <TR><TD>page_data.py</TD><TD>2,660</TD><TD><PRE>sys, os
@@ -647,13 +739,31 @@
 <PRE> do_your_job(self, *arg)</PRE>
 <PRE>main()</PRE>
 <BR></TD></TR>
-<TR><TD>agent.py</TD><TD>2,961</TD><TD><BR></TD><TD><PRE>class Agent(object)</PRE>
-<PRE> __init__(self, name=None,  fldr=None, running=False)</PRE>
-<PRE> start(self)</PRE>
-<PRE> do_your_job(self)</PRE>
-<PRE> stop(self)</PRE>
-<PRE> check_status(self)</PRE>
-<PRE> report(self)</PRE>
+<TR><TD>agent_map_data.py</TD><TD>1,854</TD><TD><PRE>os
+</PRE>
+<PRE>agent</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class AgentMapDataFile(object)</PRE>
+<PRE>def __init__(self, list_name, src_file, mapping)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def map_data(self)</PRE>
+<PRE>def add_process(self, proc)</PRE>
+<BR></TD></TR>
+<TR><TD>agent.py</TD><TD>3,948</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>cls_log
+</PRE>
+<PRE>config</PRE>
+<BR></TD><TD><PRE>class Agent(object)</PRE>
+<PRE>def __init__(self, name='',  fldr='', running=False)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def start(self)</PRE>
+<PRE>def do_your_job(self)</PRE>
+<PRE>def stop(self)</PRE>
+<PRE>def check_status(self)</PRE>
+<PRE>def report(self)</PRE>
 <PRE>TEST()</PRE>
 <BR></TD></TR>
 <TR><TD>__init__.py</TD><TD>0</TD><TD><BR></TD><TD><BR></TD></TR>
@@ -689,7 +799,7 @@
 <PRE>def check_last_updated(self)</PRE>
 <PRE>main()</PRE>
 <BR></TD></TR>
-<TR><TD>log_browser_history.py</TD><TD>2,786</TD><TD><PRE>os
+<TR><TD>log_browser_history.py</TD><TD>2,868</TD><TD><PRE>os
 </PRE>
 <PRE>datetime
 </PRE>
@@ -717,6 +827,13 @@
 <PRE>summarise_filelist(fname)</PRE>
 <PRE> saveListWithCounts(fname, lst)</PRE>
 <PRE> multi_split(line, split_chars)</PRE>
+<BR></TD></TR>
+<TR><TD>load_info_cooking_recipe.py</TD><TD>2,135</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>agent_map_data</PRE>
+<BR></TD><TD><PRE>main()</PRE>
 <BR></TD></TR>
 <TR><TD>load_PC_usage.py</TD><TD>2,081</TD><TD><PRE>sys
 </PRE>
@@ -837,13 +954,32 @@
 <PRE> find_best_plan(self)</PRE>
 <PRE> check_for_success(self)</PRE>
 <BR></TD></TR>
+<TR><TD>cls_context.py</TD><TD>7,039</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>aikif.lib.cls_filelist
+</PRE>
+<BR></TD><TD><PRE>class Context</PRE>
+<PRE>def __init__(self)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def dump_all(self, silent='NO')</PRE>
+<PRE>def summarise(self)</PRE>
+<PRE>def is_user_busy(self)</PRE>
+<PRE>def is_host_busy(self)</PRE>
+<PRE>def get_host(self)</PRE>
+<PRE>def get_user(self)</PRE>
+<PRE>def inspect_phone(self)</PRE>
+<PRE>def get_host_usage(self)</PRE>
+<PRE>TEST()</PRE>
+<BR></TD></TR>
 <TR><TD>cls_goal_money.py</TD><TD>1,609</TD><TD><BR></TD><TD><PRE>class GoalMoney(Goal)</PRE>
 <PRE>def __init__(self, maximise=True, current_val=0, target_val=0)</PRE>
 <PRE>def check_for_success(self)</PRE>
 <PRE>def run_plan(self, strategy)</PRE>
 <PRE>def find_best_plan(self)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_file.py</TD><TD>6,484</TD><TD><PRE>os
+<TR><TD>cls_file.py</TD><TD>6,967</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -859,7 +995,8 @@
 <PRE>class TextFile(File)</PRE>
 <PRE>def __init__(self, fname)</PRE>
 <PRE>def __str__(self)</PRE>
-<PRE>def count_lines_in_file(self, fname)</PRE>
+<PRE>def count_lines_in_file(self, fname='')</PRE>
+<PRE>def count_lines_of_code(self, fname='')</PRE>
 <PRE>def get_file_sample(self, numLines=10)</PRE>
 <PRE>def append_text(self, txt)</PRE>
 <PRE>def convert_to_csv(self, op_csv_file, delim)</PRE>
@@ -898,12 +1035,13 @@
 <PRE>set_random_starting_grid(lfe)</PRE>
 <PRE>print_there(x, y, text)</PRE>
 <BR></TD></TR>
-<TR><TD>document_AIKIF.py</TD><TD>2,665</TD><TD><PRE>sys
+<TR><TD>document_AIKIF.py</TD><TD>3,232</TD><TD><PRE>sys
 </PRE>
 <PRE>os
 </PRE>
 <PRE>cls_programs</PRE>
 <PRE>aikif.lib.cls_filelist</PRE>
+<PRE>aikif.lib.cls_file</PRE>
 <BR></TD><TD><BR></TD></TR>
 <TR><TD>ex_project_management.py</TD><TD>5,929</TD><TD><PRE>os
 </PRE>
@@ -1156,16 +1294,20 @@
 <PRE>SaveAsOWL(lst, fname)</PRE>
 <PRE> formatListItemOWL(itm)</PRE>
 <BR></TD></TR>
-<TR><TD>read_opencyc.py</TD><TD>1,755</TD><TD><PRE>os
+<TR><TD>read_opencyc.py</TD><TD>3,279</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
+<PRE>redis
+</PRE>
 <BR></TD><TD><PRE>main()</PRE>
+<PRE>load_data(fname)</PRE>
+<PRE>parse_n3(row, src='csv')</PRE>
 <PRE>create_html_summary()</PRE>
 <PRE>escape_html(s)</PRE>
 <PRE>summarise_file_as_html(fname)</PRE>
 <BR></TD></TR>
-<TR><TD>cyc_extract.py</TD><TD>2,805</TD><TD><PRE>rdflib
+<TR><TD>cyc_extract.py</TD><TD>2,873</TD><TD><PRE>rdflib
 </PRE>
 <BR></TD><TD><PRE>main()</PRE>
 <PRE>load_graph_from_rdf(fname)</PRE>
