@@ -59,7 +59,6 @@ class Bias:
         and then lookup the names and find the weightings
         
         """
-        print('TODO calculating bias...')
         self.bias_rating = 0.863
         
     def get_bias_rating(self):
