@@ -65,6 +65,19 @@ class Bias:
     def get_bias_rating(self):
         return self.bias_rating
     
+    def get_source_area(self):
+        return self.source_area
+
+    def get_source_type(self):
+        return self.source_type
+
+    def get_source_website(self):
+        return self.source_website
+
+    def get_source_person(self):
+        return self.source_person
+
+        
 if __name__ == '__main__':
     TEST()
            
