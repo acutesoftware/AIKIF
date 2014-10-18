@@ -6,6 +6,7 @@ import sys
 import web_utils as web
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
+root_folder = os.path.abspath(cur_folder + os.sep + ".." + os.sep + ".."  )
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 data_folder = os.path.abspath(aikif_folder + os.sep + '..' + os.sep  + 'data' + os.sep + 'core')
 
@@ -25,7 +26,7 @@ def search_aikif(txt, formatHTML=True):
     results = []
     num_found = 0
     import cls_collect_files as cl
-    my_files = cl.clsCollectFiles(data_folder, '*.*') 
+    my_files = cl.clsCollectFiles(root_folder, '*.*') 
     my_files.collect_filelist()
     files = my_files.get_filelist()
     for f in files:
@@ -52,7 +53,7 @@ def search_aikif(txt, formatHTML=True):
             results.append('problem with file ' + f)
     if len(results) == 0:
         results.append("No results")
-    print(results)
+    #print(results)
     return results
             
 def format_result(file, line, line_num, txt):

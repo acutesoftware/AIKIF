@@ -84,12 +84,10 @@
 <PRE>def get_filename(self, dataType, subjectArea)</PRE>
 <PRE>def add_file_to_mapping_list(self, fname, lst)</PRE>
 <BR></TD></TR>
-<TR><TD>tools.py</TD><TD>2,996</TD><TD><PRE>os
+<TR><TD>tools.py</TD><TD>3,037</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
-<PRE>AIKIF_utils</PRE>
-<PRE>fileMapping</PRE>
 <PRE>toolbox.Toolbox</PRE>
 <PRE>time
 </PRE>
@@ -143,19 +141,17 @@
 <PRE>run(scriptFile, logUsage='Y')</PRE>
 <PRE>is_agent_scheduled_to_start(agt)</PRE>
 <BR></TD></TR>
-<TR><TD>gui_view_world.py</TD><TD>6,346</TD><TD><PRE>os
+<TR><TD>gui_view_world.py</TD><TD>6,290</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
 <PRE>math
 </PRE>
-<BR></TD><TD><PRE>usage()</PRE>
-<PRE>main()</PRE>
+<BR></TD><TD><PRE>main()</PRE>
 <PRE>read_map(fname)</PRE>
 <PRE>class gui_view_tk(Tkinter.Tk)</PRE>
 <PRE>def __init__(self,parent)</PRE>
 <PRE>def TEST_sin(self)</PRE>
-<PRE>def update(self)</PRE>
 <PRE>def show_grid_from_file(self, fname)</PRE>
 <PRE>def draw_cell(self, row, col, val)</PRE>
 <PRE>def put_standard_block(self, y, x, val)</PRE>
@@ -257,6 +253,24 @@
 <PRE>LoadData_FileList(fname)</PRE>
 <PRE>FindLinks(lstA, lstB)</PRE>
 <PRE>DisplayShortListOutput(lst, title)</PRE>
+<BR></TD></TR>
+<TR><TD>bias.py</TD><TD>2,653</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>cls_log
+</PRE>
+<PRE>config</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class Bias</PRE>
+<PRE>def __init__(self, source_area, source_type, source_website, source_person)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def calculate_bias(self)</PRE>
+<PRE>def get_bias_rating(self)</PRE>
+<PRE>def get_source_area(self)</PRE>
+<PRE>def get_source_type(self)</PRE>
+<PRE>def get_source_website(self)</PRE>
+<PRE>def get_source_person(self)</PRE>
 <BR></TD></TR>
 <TR><TD>cls_collect_files.py</TD><TD>1,354</TD><TD><PRE>cls_collect
 </PRE>
@@ -772,6 +786,21 @@
 <PRE>SplitWinProcessLine(txt)</PRE>
 <PRE>GetWindowsProcesses_method1()</PRE>
 <PRE> foreach_window(hwnd, lParam)</PRE>
+<BR></TD></TR>
+<TR><TD>agent_email.py</TD><TD>1,902</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>random
+</PRE>
+<PRE>aikif.agents.agent</PRE>
+<PRE>cls_log</PRE>
+<PRE>config</PRE>
+<BR></TD><TD><PRE>class EmailAgent(agt.Agent)</PRE>
+<PRE>def __init__(self, name,  fldr, running, LOG_LEVEL)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def do_your_job(self, *arg)</PRE>
+<PRE>main()</PRE>
 <BR></TD></TR>
 <TR><TD>log_PC_usage.py</TD><TD>1,705</TD><TD><PRE>sys
 </PRE>
