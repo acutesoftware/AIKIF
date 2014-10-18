@@ -1,6 +1,8 @@
 # cls_collect_files.py	written by Duncan Murray 13/5/2014
 # class for filelist collections in AIKIF
 
+# NOTE - DO NOT USE THIS - should be replaced by agent_filelist.py
+
 import cls_collect
 import os
 import fnmatch
