@@ -15,6 +15,9 @@ print('page_search.py: data_folder  = ', data_folder)
 sys.path.append(aikif_folder)
 
 def get_page(search_text):
+    """
+    formats the entire search result in a table output
+    """
     lst = search_aikif(search_text)
     txt = '<table class="as-table as-table-zebra as-table-horizontal">'
     for result in lst:
@@ -23,10 +26,15 @@ def get_page(search_text):
     return txt
     
 def search_aikif(txt, formatHTML=True):
+    """
+    search for text - currently this looks in all folders in the
+    root of AIKIF but that also contains binaries so will need to 
+    use the agent_filelist.py to specify the list of folders.
+    """
     results = []
     num_found = 0
     import cls_collect_files as cl
-    my_files = cl.clsCollectFiles(root_folder, '*.*') 
+    my_files = cl.clsCollectFiles(root_folder, '*.*') # change this
     my_files.collect_filelist()
     files = my_files.get_filelist()
     for f in files:
