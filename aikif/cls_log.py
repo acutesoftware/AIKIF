@@ -83,7 +83,9 @@ class Log:
 
 class LogSummary:
     """
-    Aggregating Logs 
+    Aggregating Logs. The goal of this class is to allow for 
+    multiple usable aggregates to be automatically obtained 
+    from the standard AIKIF log files.
     """
     def __init__(self, log_object, fldr):
         self.process_file = log_object.logFileProcess
@@ -195,6 +197,9 @@ def TodayAsString():
 	
             
 def force_to_string(unknown):
+    """
+    converts and unknown type to string for display purposes
+    """
 	result = ''
 	if type(unknown) is str:
 		result = unknown
@@ -209,9 +214,16 @@ def force_to_string(unknown):
 	 
 
 def GetUserName():
+    """ 
+    return username of person logged onto host PC
+    """
+    
     return getpass.getuser()
 
 def GetHostName():
+    """
+    returns computer name, based on socket class
+    """
 	return socket.gethostname()
 	        
 if __name__ == '__main__':     
