@@ -1,0 +1,14 @@
+text,object,all
+text,event,all
+text,action,all
+text,relationship,all
+file,.py,program
+file,.c,program
+file,.php,program
+file,.docx,document
+file,.htm,document
+file,.html,document
+file,.xls,data_file
+file,.xlsx,data_file
+file,.csv,data_file
+file,.dat,data_file

@@ -47,10 +47,15 @@ class Mapper:
         """ 
         load the rules to file after web updates or program changes 
         """
-        with open(map_file + '.txt', 'w') as f:
+        with open(map_file, 'w') as f:
             for map in self.maps:
                 f.write(map.format_for_file_output())
-
+                
+    def process_data(self, type, raw_data):
+        """
+        top level function
+        """
+    
 class MapRule:
     """
     manages the parsing of rules in the mapping table
