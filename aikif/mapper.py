@@ -53,8 +53,48 @@ class Mapper:
                 
     def process_data(self, type, raw_data):
         """
-        top level function
+        top level function to decide how to process 
+        the raw data (which can be any format)
         """
+        formatted_data = self.format_raw_data(type, raw_data)
+        for m in self.maps:
+            if m.type == type:
+                self.process_rule(m, formatted_data, type)
+    
+    def process_rule(self, m, dict, type):
+        """ 
+        uses the MapRule 'm' to run through the 'dict'
+        and extract data based on the rule
+        """
+        print(type + ': applying rule ' + str(m) + ' to dict')
+    
+    def format_raw_data(self, type, raw_data):
+        """
+        uses type to format the raw information to a dictionary
+        usable by the mapper
+        """
+        
+        if type == 'text':
+            formatted_raw_data = self.parse_text_to_dict(raw_data)
+        elif type == 'file':
+            formatted_raw_data = self.parse_file_to_dict(raw_data)
+        else:
+            formatted_raw_data = {'ERROR':'unknown data type', 'data':[raw_data]}
+        return formatted_raw_data
+    
+    def parse_text_to_dict(self, txt):
+        """ 
+        takes a string and parses via NLP, ready for mapping
+        """
+        op = {}
+        print('TODO - import NLP, split into verbs / nouns')
+        op['nouns'] = txt
+        op['verbs'] = txt
+        
+        return op
+    
+    def parse_file_to_dict(self, fname):
+        pass
     
 class MapRule:
     """
@@ -85,6 +125,7 @@ def TEST():
     """
     map = Mapper()
     print(map)
+    map.process_data('text', 'the cat sat on the mat')
     # use this to clean up file or AFTER web updates map.save_rules()
   
  
