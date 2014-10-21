@@ -181,37 +181,35 @@ def ensure_dir(f):
         os.makedirs(d)
         
 def List2String(l):
-	res = ""
-	for v in l:
-		res = res + v
-	return res
+    res = ""
+    for v in l:
+        res = res + v
+    return res
     
 def Dict2String(d):
-	res = ","
-	for k, v in d: 
-		res = res + k + str(v) + ','
-	return res
+    res = ","
+    for k, v in d: 
+        res = res + k + str(v) + ','
+    return res
     
 def TodayAsString():
-	return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-	
-            
+    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
 def force_to_string(unknown):
     """
     converts and unknown type to string for display purposes
     """
-	result = ''
-	if type(unknown) is str:
-		result = unknown
-	if type(unknown) is int:
-		result = str(unknown)
-	if type(unknown) is dict:
-		result = Dict2String(unknown)
-	if type(unknown) is list:
-		result = List2String(unknown)
-	
-	return result
-	 
+    result = ''
+    if type(unknown) is str:
+        result = unknown
+    if type(unknown) is int:
+        result = str(unknown)
+    if type(unknown) is dict:
+        result = Dict2String(unknown)
+    if type(unknown) is list:
+        result = List2String(unknown)
+    return result
+     
 
 def GetUserName():
     """ 
@@ -224,7 +222,7 @@ def GetHostName():
     """
     returns computer name, based on socket class
     """
-	return socket.gethostname()
-	        
+    return socket.gethostname()
+            
 if __name__ == '__main__':     
     TEST()
