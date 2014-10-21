@@ -43,7 +43,7 @@ class EmailAgent(agt.Agent):
             
     def do_your_job(self, *arg):
         """
-        the goal of the filelist agent is to collect metadata on files
+        the goal of the email agent is to parse emails and index
         """ 
         lg = mod_log.Log(self.log_folder)
         lg.record_command('email_collect.txt', 'email agent - checking folder - ' + self.root_folder)
