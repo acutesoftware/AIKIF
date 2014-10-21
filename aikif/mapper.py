@@ -37,7 +37,7 @@ class Mapper:
         load the rules from file
         """
         self.maps = []
-        print("reading mapping table")
+        #print("reading mapping table")
         with open(map_file, 'r') as f:
             for line in f:
                 rule = MapRule(line)
@@ -69,7 +69,7 @@ class Mapper:
         uses the MapRule 'm' to run through the 'dict'
         and extract data based on the rule
         """
-        print(type + ': applying rule ' + str(m) + ' to dict')
+        print('TODO - ' + type + ' + applying rule ' + str(m).replace('\n', '') )
     
     def format_raw_data(self, type, raw_data):
         """

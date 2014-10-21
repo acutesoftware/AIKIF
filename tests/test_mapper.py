@@ -7,7 +7,7 @@ root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep 
 sys.path.append(root_fldr)
 import mapper as mod_map
 
-class PlanTest(unittest.TestCase):
+class MapTest(unittest.TestCase):
     
     def setUp(self):
         """ gets called for EACH test """
@@ -36,7 +36,7 @@ class PlanTest(unittest.TestCase):
      
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
-        print(str(self.mymap))
+        #print(str(self.mymap))
         pass
     
 if __name__ == '__main__':
