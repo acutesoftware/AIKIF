@@ -56,11 +56,14 @@ class Mapper:
         top level function to decide how to process 
         the raw data (which can be any format)
         """
+        num_applicable_rules = 0
         formatted_data = self.format_raw_data(type, raw_data)
         for m in self.maps:
             if m.type == type:
+                num_applicable_rules += 1
                 self.process_rule(m, formatted_data, type)
-    
+        return num_applicable_rules
+        
     def process_rule(self, m, dict, type):
         """ 
         uses the MapRule 'm' to run through the 'dict'
