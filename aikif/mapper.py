@@ -97,7 +97,15 @@ class Mapper:
         return op
     
     def parse_file_to_dict(self, fname):
-        pass
+        """
+        process the file according to the mapping rules.
+        The cols list must match the columns in the filename
+        """
+        for map in self.maps:
+            if map.type == 'file':
+                if map.key[0:3] == 'col':
+                    print('reading column..')
+
     
 class MapRule:
     """
