@@ -127,9 +127,13 @@ class Mapper:
         for row_num, col in enumerate(headers):
             if col != '':
                 vals = l_dataset.get_distinct_values_from_cols([col])
-                print(vals)
+                #print(vals)
                 l_map.append('column:count:distinct:' + str(row_num) + '=' + str(len(vals[0])) )
-
+                col_vals = l_dataset.count_unique_values(row_num, col, 4)
+                print('col_vals=', col_vals)
+                for val_num, v in enumerate(col_vals):
+                    l_map.append('column:values:' + col + ':' + str(val_num) + '=' + v )
+                #l_map.append('column:values:top5:' + str(row_num) + '=' + col_vals)
         return l_map
         
     def create_map_from_file(self, data_filename):
@@ -151,10 +155,20 @@ class Mapper:
             f.write('filename:source=' + data_filename + '\n')
             f.write('filename:rule=' + op_filename + '\n\n')
             for row in l_map:
-                f.write(row + '\n')
+                print('ROW = ' , row)
+                if type(row) is str:
+                    f.write(row + '\n')
+                else:
+                    for num, v in enumerate(row):
+                        f.write(v)
                 
             
         
+def List2String(l):
+	res = ""
+	for v in l:
+		res = res + v
+	return res
         
                     
 class MapRule:

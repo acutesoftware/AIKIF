@@ -3,6 +3,8 @@
 
 #from cls_dataset import DataSet
 import math
+import collections
+from collections import Counter
 
 class DataTable(object): 
     """
@@ -89,7 +91,19 @@ class DataTable(object):
         else:
             print ("TODO ")
             return -44  # yes this will crash - fix this
-         
+
+    def count_unique_values(self, colNum, colText, topN_values=10):
+        res = []
+        cols = collections.Counter()
+        for row in self.arr:
+            cols[row[colNum]] += 1
+        #print (colText, self.Dict2String(cols.most_common()[0:topN_values]))
+        res.append( colText + '=' +  self.Dict2String(cols.most_common()[0:topN_values]))
+        print(colText + ' = ' , cols.most_common()[0:topN_values])
+        #return self.dict2list(cols.most_common()[0:topN_values])
+        
+        return res
+            
     def select_where(self, where_col_list, where_value_list, col_name=''):
         """ 
         selects rows from the array where col_list == val_list
@@ -139,7 +153,13 @@ class DataTable(object):
         
         return result
         
+    def Dict2String(self, d):
+        res = ","
+        for k, v in d: # .iteritems():
+            res = res + k + str(v) + ','
+        return res
 
+    def dict2list(self, dct, keylist): return [dct[i] for i in keylist]
         
     def update_where(self, col, value, where_col_list, where_value_list):
         """ 

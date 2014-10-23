@@ -8,7 +8,12 @@ column:name:2=path
 column:name:3=size
 column:name:4=date
 column:count:distinct:0=183
+column:values:fullFilename:0=fullFilename=,T:\user\dev\src\python\AI\.git\hooks\post-receive.sample1,P:\events\Christmas2013\20131225_075940.jpg1,P:\events\Christmas2013\20131225_163743.jpg1,P:\events\Christmas2013\20131225_130915.jpg1,
 column:count:distinct:1=182
+column:values:name:0=name=,Thumbs.db2,nounList.txt1,20131225_161305.jpg1,20131225_084300.jpg1,
 column:count:distinct:2=8
+column:values:path:0=path=,P:\events\Christmas2013131,T:\user\dev\src\python\AI\data22,T:\user\dev\src\python\AI\.git\hooks11,T:\user\dev\src\python\AI\AI9,
 column:count:distinct:3=182
+column:values:size:0=size=,02,35402711,23829091,31866761,
 column:count:distinct:4=162
+column:values:date:0=date=,2013-09-03 22:33:2711,2014-03-16 14:55:443,2014-03-16 14:55:472,2014-03-16 14:55:432,
