@@ -98,10 +98,9 @@ class DataTable(object):
         for row in self.arr:
             cols[row[colNum]] += 1
         #print (colText, self.Dict2String(cols.most_common()[0:topN_values]))
-        res.append( colText + '=' +  self.Dict2String(cols.most_common()[0:topN_values]))
-        print(colText + ' = ' , cols.most_common()[0:topN_values])
-        #return self.dict2list(cols.most_common()[0:topN_values])
-        
+        for k,v in cols.most_common()[0:topN_values]:
+            res.append( self.force_to_string(k) + ' (' +  self.force_to_string(v) + ')')
+
         return res
             
     def select_where(self, where_col_list, where_value_list, col_name=''):

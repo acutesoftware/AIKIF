@@ -127,13 +127,16 @@ class Mapper:
         for row_num, col in enumerate(headers):
             if col != '':
                 vals = l_dataset.get_distinct_values_from_cols([col])
-                #print(vals)
-                l_map.append('column:count:distinct:' + str(row_num) + '=' + str(len(vals[0])) )
-                col_vals = l_dataset.count_unique_values(row_num, col, 4)
-                print('col_vals=', col_vals)
+                l_map.append('column:count:distinct:' + col + '=' + str(len(vals[0])) )
+                
+        for row_num, col in enumerate(headers):
+            if col != '':
+                col_vals = l_dataset.count_unique_values(row_num, col, 10)
                 for val_num, v in enumerate(col_vals):
-                    l_map.append('column:values:' + col + ':' + str(val_num) + '=' + v )
+                    l_map.append('column:topvalues:' + col + ':' + str(val_num) + '='  + v )
                 #l_map.append('column:values:top5:' + str(row_num) + '=' + col_vals)
+                
+                
         return l_map
         
     def create_map_from_file(self, data_filename):
