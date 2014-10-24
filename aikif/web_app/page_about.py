@@ -9,7 +9,6 @@ aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 
 sys.path.append(aikif_folder)
 import AIKIF_utils as ai
-import fileMapping as filemap
 
 #from .AI import AIKIF_utils as aikif
 #from ...AI import fileMapping as filemap
