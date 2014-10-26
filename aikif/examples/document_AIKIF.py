@@ -13,8 +13,10 @@ import aikif.lib.cls_file as mod_file
 # because we are calling it several times for testing, clean the files first
 #filemap.GetFullFilename(filemap.FindType('LOCATION'), filemap.FindOntology('FILE-PROGRAM')[0]))   	
 #filemap.GetFullFilename(filemap.FindType('OBJECT'), filemap.FindOntology('FILE-PROGRAM')[0]))   	
-os.remove('..\\..\\data\\core\\LOCATION_SYSTEM-PC-FILE-PROGRAM.CSV')   	
-os.remove('..\\..\\data\\core\\OBJECT_SYSTEM-PC-FILE-PROGRAM.CSV')   	
+
+
+#os.remove('..\\..\\data\\core\\LOCATION_SYSTEM-PC-FILE-PROGRAM.CSV')   	
+#os.remove('..\\..\\data\\core\\OBJECT_SYSTEM-PC-FILE-PROGRAM.CSV')   	
 
 
 
