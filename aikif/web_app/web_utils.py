@@ -10,7 +10,9 @@ import sys
 
 
 def list2html(lst):
-    """ convert a list to html using table formatting """
+    """ 
+    convert a list to html using table formatting 
+    """
     txt = '<TABLE width=100% border=0>'
     for l in lst:
         txt += '<TR>\n'
@@ -28,7 +30,9 @@ def list2html(lst):
     return txt
 
 def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
-    """ builds a list of files and returns as a list """
+    """ 
+    builds a list of files and returns as a list 
+    """
     numFiles = 0    
     opFileList = []
     for root, dirs, files in os.walk(rootPath):
@@ -41,11 +45,14 @@ def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
                         opFileList.append( os.path.basename(filename))
                     else:
                         opFileList.append(filename)
-    return opFileList
+                        
+    return sorted(opFileList)
 
   
 def filelist2html_div(lst, fldr):
-    """ convert a list to html using DIV formatting """
+    """ 
+    convert a list to html using DIV formatting 
+    """
     txt = ''
     for l in lst:
         if type(l) is str:
@@ -61,7 +68,9 @@ def filelist2html_div(lst, fldr):
     return txt
 
 def build_search_form():
-    """ returns the html for a simple search form """
+    """ 
+    returns the html for a simple search form 
+    """
     txt = '<form action="." method="POST">\n'
     txt += '  <input type="text" name="search_text">\n'
     txt += '  <input type="submit" name="my-form" value="Search">\n'
@@ -69,37 +78,42 @@ def build_search_form():
     return txt
     
 def filelist2html(lst, fldr, hasHeader='N'):
-    """ formats a standard filelist to htmk using table formats """
+    """ 
+    formats a standard filelist to htmk using table formats 
+    """
     txt = '<TABLE width=100% border=0>'
     numRows = 1
-    for l in lst:
-        if hasHeader == 'Y':
-            if numRows == 1:
-                td_begin = '<TH>'
-                td_end = '</TH>'
+    if lst:
+        for l in lst:
+            if hasHeader == 'Y':
+                if numRows == 1:
+                    td_begin = '<TH>'
+                    td_end = '</TH>'
+                else:
+                    td_begin = '<TD>'
+                    td_end = '</TD>'
             else:
                 td_begin = '<TD>'
                 td_end = '</TD>'
-        else:
-            td_begin = '<TD>'
-            td_end = '</TD>'
-        numRows += 1
-        txt += '<TR>'
-        if type(l) is str:
-            txt += td_begin + link_file(l, fldr) + td_end
-        elif type(l) is list:
-            txt += td_begin
-            for i in l:
-                txt+= link_file(i, fldr) + '; '
-            txt += td_end
-        else:
-            txt += td_begin + str(l) + td_end
-        txt += '</TR>\n'
+            numRows += 1
+            txt += '<TR>'
+            if type(l) is str:
+                txt += td_begin + link_file(l, fldr) + td_end
+            elif type(l) is list:
+                txt += td_begin
+                for i in l:
+                    txt+= link_file(i, fldr) + '; '
+                txt += td_end
+            else:
+                txt += td_begin + str(l) + td_end
+            txt += '</TR>\n'
     txt += '</TABLE><BR>\n'
     return txt
 
 def link_file(f, fldr):
-    """ creates a html link for a file using folder fldr """
+    """ 
+    creates a html link for a file using folder fldr 
+    """
     fname = os.path.join(fldr,f)
     if os.path.isfile(fname):
         if 'data/' in request.path:
@@ -110,6 +124,9 @@ def link_file(f, fldr):
         return f
     
 def dict_to_htmlrow(d):
+    """
+    converts a dictionary to a HTML table row
+    """
     res = "<TR>\n"
     for k, v in d.items():
         if type(v) == str:
@@ -120,6 +137,9 @@ def dict_to_htmlrow(d):
     return res
 
 def read_csv_to_html_table(csvFile, hasHeader='N'):
+    """
+    reads a CSV file and converts it to HTML
+    """
     txt = '<table class="as-table as-table-zebra as-table-horizontal">'
     with open(csvFile, "r") as file:  # 
         numRows = 1
