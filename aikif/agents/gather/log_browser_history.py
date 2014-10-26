@@ -49,8 +49,10 @@ def datetime_from_utc_to_local(utc_datetime):
 
 home = expanduser("~")
 basePath = home + r"\AppData\Local\Google\Chrome\User Data\Default" 
+#basePath = 'C:\\Users\\Duncan\\AppData\\Local\\Google\\Chrome\\User Data\\Default'
 print ("Reading Chrome history from " + basePath)
-paths = [basePath + "\Archived History", basePath + "\History"] 
+#paths = [basePath + "\\Archived History", basePath + "\\History"]  # causes error because no results found
+paths = [basePath + "\\History"] 
 
 
 def GetBrowserHistoryChrome():
