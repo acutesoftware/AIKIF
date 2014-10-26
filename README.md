@@ -12,7 +12,6 @@ Area | status
 | Code base version            | Pre-Alpha    |
 | Public package version | 0.0.3        |
 | Date notes updated     | 26/10/2014   |
- --- | --- |
 
 
 ###Quick Start
@@ -42,12 +41,14 @@ Data type | description |
  
 ##Programs
 ###Main Programs
-go_web_aikif.bat- starts the web server for the AIKIF admin interface
-index.py		- creates text indexes of all the files<br />
-search.py		- searches, using both indexes and ontologies<br />
-mapper.py       - applies business rules to map raw input to aikif data structures
-context.py      - determines user context
-bias.py         - user defined ranking of raw data by source / type / person / date
+|Filename | description |
+ --- | ---      
+|go_web_aikif.bat | starts the web server for the AIKIF admin interface|
+|index.py		| creates text indexes of all the files|
+|search.py		| searches, using both indexes and ontologies|
+|mapper.py       | applies business rules to map raw input to aikif data structures|
+|context.py      | determines user context|
+|bias.py         | user defined ranking of raw data by source / type / person / date|
 
 ###Toolbox
 Various modules which contain generic functions
