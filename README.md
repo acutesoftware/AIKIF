@@ -7,11 +7,12 @@ This is an example framework to capture the flow of information initially for pe
 The intent is to allow any type of raw data to be machine understandable using data collectors, ontologies, business mapping rules and embedded tags in programs.
 
 ###Progress
---- | --- |
-|Code status            | Pre-Alpha    |
-|Public package version | 0.0.3        |
-|Date notes updated     | 26/10/2014   |
---- | --- |
+Area | status
+ --- | --- |
+| Code base version            | Pre-Alpha    |
+| Public package version | 0.0.3        |
+| Date notes updated     | 26/10/2014   |
+ --- | --- |
 
 
 ###Quick Start
@@ -31,8 +32,8 @@ To start the web interface use `aikif/web_app/web_aikif.py` or the batch file `a
 
 
 ##Data Structures
-
-| --- | --- |                
+Data type | description |
+ --- | ---                
 | events     | any time or date based subset of information gets logged here  |
 | facts      | the text of the information |
 | contacts   | person details extracted and linked from text or column in table |
