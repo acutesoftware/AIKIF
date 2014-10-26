@@ -23,17 +23,33 @@ def rebuild():
 		f.write(get_program_list())
 	
 def get_program_list():
-	colList = ['FileName','FileSize','Functions', 'Imports']
+    """
+    get a HTML formatted view of all Python programs
+    in all subfolders of AIKIF, including imports and
+    lists of functions and classes
+    """
+    colList = ['FileName','FileSize','Functions', 'Imports']
 
-	txt = '<TABLE width=90% border=0>'
-	txt += format_file_table_header(colList)
-	fl = web.GetFileList(aikif_folder, ['*.py'], 'N')
-	for f in fl:
-		txt += format_file_to_html_row(f, colList)
-	txt += '</TABLE>\n\n'
-	return txt
+    txt = '<TABLE width=90% border=0>'
+    txt += format_file_table_header(colList)
+    fl = web.GetFileList(aikif_folder, ['*.py'], 'N')
+    for f in fl:
+        if '__init__.py' in f:
+            txt += '<TR><TD colspan=4><HR><H3>' + get_subfolder(f) + '</h3></td></tr>\n'
+        else:
+            txt += format_file_to_html_row(f, colList)
+    txt += '</TABLE>\n\n'
+    return txt
 
-	
+def get_subfolder(txt):
+    """
+    extracts a displayable subfolder name from full filename
+    """
+    root_folder = os.sep + 'aikif' + os.sep
+    ndx = txt.find(root_folder, 1)
+    return txt[ndx:].replace('__init__.py', '')
+
+    
 def format_file_table_header(lstCols):
 	txt = '<TR>'
 	if 'FullName' in lstCols: 
