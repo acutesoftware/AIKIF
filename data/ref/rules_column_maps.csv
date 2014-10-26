@@ -1,0 +1,111 @@
+table,column,data_type,aikif_map,aikif_map_name,extract,format,where,index
+D2014*.DAT,event_date,str,fact (not event),,*,yyyymmdd,,full
+D2014*.DAT,event_time,str,fact (not event),,,hhmm,,full
+D2014*.DAT,evt_datetime,date,event,,to_date(event_date + event_time),yyyy-mm-dd hh:mm,,none
+D2014*.DAT,details,str,object,,,,,full
+D2014*.DAT,details,str,fact,,,,in (NOUNS),full
+D2014*.DAT,remind_date,str,fact (not event),,,yyyymmdd,,none
+D2014*.DAT,remind_time,str,fact (not event),,,hhmm,,none
+D2014*.DAT,url,str,contact,,,,,full
+course.csv,title,str,object,,,,,full
+course.csv,title,str,fact,,,,,full
+course.csv,Uni,str,object,,,,,full
+course.csv,shortname,str,project,,,,,full
+course.csv,location,str,location,,,,,full
+course.csv,country,str,location,,,,,full
+course.csv,Instructor,str,contact,,,,,full
+course.csv,weblink,str,location,,,,,full
+,,,,,,,,
+filelist.csv,fullFilename,str,object ??,full filename,,,,full
+filelist.csv,name,str,object | project,file name,,,,full
+filelist.csv,path,str,object,file locations ???,,,,full
+filelist.csv,size,number,fact ??,size of file,,,,full
+filelist.csv,date,date,event,date modified,,,,full
+filelist.csv,path,str,location,location of file,,,,full
+,,,,,,,,
+emails_sent.csv,send_to,list of str: split = ' ; ',contact,email recipient,,,,full
+emails_sent.csv,send_from,str,contact,email sent as,,,,full
+emails_sent.csv,date,date,event,sent email,,yyyy-mm-dd hh:mm,,full
+emails_sent.csv,subject,str,fact,email subject,,,,full
+emails_sent.csv,body,BLOB - file,fact,email body,,,,full
+emails_sent.csv,attachments,list of files,fact,attachments sent,,,,full
+emails_sent.csv,system,str,fact,"which email - outlook work, gmail",,,,none
+emails_sent.csv,priority,str,fact,email priority,,,,none
+,,,,,,,,
+emails_in.csv,send_to,str,contact,email sent to name,,,,full
+emails_in.csv,send_from,list of str: split = ' ; ',contact,email sender,,,,full
+emails_in.csv,date,date,event,recieved email,,yyyy-mm-dd hh:mm,,full
+emails_in.csv,subject,str,fact,email subject,,,,full
+emails_in.csv,body,BLOB - file,fact,email body,,,,full
+emails_in.csv,attachments,list of files,fact,attachments recieved,,,,full
+emails_in.csv,priority,str,fact,email priority,,,,none
+,,,,,,,,
+chrome_hist.csv,url,str,location,url visited,,,,
+chrome_hist.csv,title,str,fact,web page visited,,,,
+chrome_hist.csv,visit_count,number,fact,number of visits,,,,
+chrome_hist.csv,typed_count,number,fact,count of visits ??,,,,
+chrome_hist.csv,last_visit_time,date,event,date last visited,,,,
+chrome_hist.csv,visit_time,date,event,?,,,,
+chrome_hist.csv,hidden,str,fact,is hidden,,,,
+chrome_hist.csv,from_visit,str,location,referring site,,,,
+chrome_hist.csv,id,str,fact,id of website,,,,
+chrome_hist.csv,transition,str,fact,no idea,,,,
+,,,,,,,,
+,,,,,,,,
+goog_cal.ics,DTSTART,date,event,,,,,
+goog_cal.ics,DTEND,date,NONE,,,,,
+goog_cal.ics,DTSTAMP,date,NONE,,,,,
+goog_cal.ics,UID,str,NONE,,,,,
+goog_cal.ics,CREATED,date,event,,,,,
+goog_cal.ics,LAST-MODIFIED,date,event,,,,,
+goog_cal.ics,LOCATION,str,location,,,,,
+goog_cal.ics,SEQUENCE,str,NONE,,,,,
+goog_cal.ics,STATUS,str,NONE,,,,,
+goog_cal.ics,SUMMARY,str,fact,,,,,
+goog_cal.ics,TRANSP,str,NONE,,,,,
+,,,,,,,,
+,,,,,,,,
+outlook_cal.isc,ATTENDEE_mailto,list of str. Split(';'),contact,,,,,
+outlook_cal.isc,ATTENDEE_name,list of str. Split(';'),contact,,,,,
+outlook_cal.isc,CLASS,,NONE,,,,,
+outlook_cal.isc,CREATED,,event,,,,,
+outlook_cal.isc,DESCRIPTION,,fact,,,,,
+outlook_cal.isc,DTEND,,NONE,,,,,
+outlook_cal.isc,DTSTAMP,,event,,,,,
+outlook_cal.isc,DTSTART,,event,,,,,
+outlook_cal.isc,LAST-MODIFIED,,event,,,,,
+outlook_cal.isc,LOCATION,,location,,,,,
+outlook_cal.isc,ORGANIZER_mailto,,contact,,,,,
+outlook_cal.isc,PRIORITY,,priority,,,,,
+outlook_cal.isc,SEQUENCE,,NONE,,,,,
+outlook_cal.isc,SUMMARY,,fact,,,,,
+outlook_cal.isc,TRANSP,,NONE,,,,,
+outlook_cal.isc,UID,,NONE,,,,,
+outlook_cal.isc,X-ALT-DESC,,NONE,,,,,
+outlook_cal.isc,X-MICROSOFT-CDO-BUSYSTATUS,,fact,,,,,
+outlook_cal.isc,X-MICROSOFT-CDO-IMPORTANCE,,fact,,,,,
+outlook_cal.isc,X-MICROSOFT-DISALLOW-COUNTER,,fact,,,,,
+outlook_cal.isc,X-MS-OLK-APPTLASTSEQUENCE,,fact,,,,,
+outlook_cal.isc,X-MS-OLK-CONFTYPE,,NONE,,,,,
+,,,,,,,,
+outlook_emails.csv,Date,date,event,,,,,
+outlook_emails.csv,Subject,str,fact,,,,,
+outlook_emails.csv,Body,BLOB,fact,,,,,
+outlook_emails.csv,From: (Name),str,contact,,,,,
+outlook_emails.csv,From: (Address),str,contact,,,,,
+outlook_emails.csv,From: (Type,str,,,,,,
+outlook_emails.csv,To: (Name),list of str. Split(';'),,,,,,
+outlook_emails.csv,To: (Address),list of str. Split(';'),,,,,,
+outlook_emails.csv,To: (Type),list of str. Split(';'),,,,,,
+outlook_emails.csv,CC: (Name),list of str. Split(';'),,,,,,
+outlook_emails.csv,CC: (Address),list of str. Split(';'),,,,,,
+outlook_emails.csv,CC: (Type),list of str. Split(';'),,,,,,
+outlook_emails.csv,BCC: (Name),list of str. Split(';'),,,,,,
+outlook_emails.csv,BCC: (Address),list of str. Split(';'),,,,,,
+outlook_emails.csv,BCC: (Type),list of str. Split(';'),,,,,,
+outlook_emails.csv,Billing Information,list of str. Split(';'),,,,,,
+outlook_emails.csv,Categories,list of str. Split(';'),,,,,,
+outlook_emails.csv,Importance,str,,,,,,
+outlook_emails.csv,Mileage,str,,,,,,
+outlook_emails.csv,Sensitivity,str,,,,,,
+outlook_emails.csv,attachments,list of BLOBS (files),,,,,,
