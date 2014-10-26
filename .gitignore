@@ -3,3 +3,6 @@ __pycache__/
 *.py[cod]
 Thumbs.db
 aikif/ontology/open-cyc.n3
+aikif/dump.rdb
+data/index/ndxFull.txt
+data/index/ndxWordsToFiles.txt
