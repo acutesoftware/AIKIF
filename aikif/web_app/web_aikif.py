@@ -50,7 +50,7 @@ def page_home():
 		txt += '<TR><TD><a href="' + m[0] + '">' + m[1] + '</a></td><td>' + m[2] + '</td></tr>\n'
 	txt += "</table><BR>\n"
 	txt += "<H3>Status</h3>\n"
-	txt += "TODO - update status\n"
+	txt += "Pre-Alpha stage\n"
 	txt += "<BR><BR>\n"
 	txt += get_footer()
 	return txt
