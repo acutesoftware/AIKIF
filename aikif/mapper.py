@@ -13,6 +13,7 @@ import cls_log as mod_log
 import config as mod_cfg
 import aikif.dataTools.cls_datatable as mod_datatable
 
+column_map_file = root_folder + os.sep + 'data' + os.sep +  'ref' + os.sep + 'rules_column_maps.csv'
 map_file = root_folder + os.sep + 'data' + os.sep +  'ref' + os.sep + 'mapping_rules.csv'
 sample_datafile = root_folder + os.sep + 'data' + os.sep +  'raw' + os.sep + 'sample-filelist-for-AIKIF.csv'
   
@@ -196,6 +197,37 @@ class MapRule:
     def format_for_file_output(self):
         return self.type + ',' + self.key + ',' + self.val + '\n'
  
+class MapColumns:
+    """
+    directly maps columns in tables to aikif structures
+    """
+    def __init__(self, col_file):
+        """
+        takes a raw row in the map file and extracts info
+        """
+        self.col_file = col_file
+        self.load_rules()
+    
+    def __str__(self):
+        res = ' -- List of Column Mappings -- \n'
+        print('self.col_file = ' + self.col_file)
+        for map in self.col_maps:
+            res += map
+            print(map)
+        return res
+
+    def load_rules(self):
+        """ 
+        load the rules from file
+        """
+        self.col_maps = []
+        #print("reading mapping table")
+        with open(self.col_file, 'r') as f:
+            for line in f:
+                rule = line  # class to parse here?
+                self.col_maps.append(rule)
+
+
         
 def TEST():
     """ 
@@ -206,5 +238,8 @@ def TEST():
     map.process_data('text', 'the cat sat on the mat')
     # use this to clean up file or AFTER web updates map.save_rules()
     map.create_map_from_file(sample_datafile)
+ 
+    col_map = MapColumns(column_map_file)
+    print(col_map)
  
 TEST()        
