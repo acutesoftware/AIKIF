@@ -41,19 +41,30 @@ def main():
     - read in rules list
     - create log events for AIKIF according to rules [map]
     - create new facts / reports based on rules [report]
+    
+    OUTPUT = 
+                AIKIF mapping  : Date_of_transaction => event
+                AIKIF mapping  : Amount => fact
+                AIKIF mapping  : Details => location
+                New column     : trans_type = DB WHERE amount > 0 ELSE CR
+                summing        : details contains "CALTEX" into Travel Expense
+                Done    
+    
     """
     print('AIKIF example: Processing Finance data\n')
     data = read_bank_statements('your_statement.csv')
     maps = load_column_maps()
     rules = load_rules()
-    for row in data:
-        print(row)  # load this
     
     for map in maps:
-        print(map['column_name'] + ' => ' + map['aikif_type'])
+        print('AIKIF mapping  : ' + map['column_name'] + ' => ' + map['aikif_type'])
 
     for rule in rules:
-        print(rule)
+        #print(rule)
+        if rule['type'] == 'agg':
+            print('summing        : ' + rule['condition'] + ' into ' +  rule['true'] )
+        elif rule['type'] == 'derive':
+            print('New column     : ' + rule['rule_name'] + ' = ' + rule['true'] + ' WHERE ' + rule['condition'] + ' ELSE ' + rule['false'] )
     
     print('Done\n')
     
@@ -89,8 +100,8 @@ def load_rules():
     this is added to AIKIF / data / ref / rules_process???.csv
     """
     return [  
-    { 'type':'new_col', 'rule_name':'trans_type', 'condition':'amount > 0', 'true': 'DB', 'false':'CR'},
-    { 'type':'tax_cat', 'rule_name':'travel', 'condition':'details contains "CALTEX"', 'true': 'Travel Expense', 'false':''},
+    { 'type':'derive', 'rule_name':'trans_type', 'condition':'amount > 0', 'true': 'DB', 'false':'CR'},
+    { 'type':'agg', 'rule_name':'travel', 'condition':'details contains "CALTEX"', 'true': 'Travel Expense', 'false':''},
 
     ]
  
