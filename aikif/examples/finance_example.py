@@ -11,12 +11,6 @@ Medium : import log bank statements and aggregate according to rules
 Complex: tracking of purchases linked to assets, auto generation of tax returns
 
 
-date => events
-amount => facts
-object => accounts
-person => account paid to or recieved from
-
-
 Full
 =====
 objects = items purchased,
@@ -51,20 +45,21 @@ def main():
                 Done    
     
     """
+    
     print('AIKIF example: Processing Finance data\n')
     data = read_bank_statements('your_statement.csv')
     maps = load_column_maps()
     rules = load_rules()
     
     for map in maps:
-        print('AIKIF mapping  : ' + map['column_name'] + ' => ' + map['aikif_type'])
+        print('AIKIF mapping  : ' + map[0] + ' => ' + map[1])
 
     for rule in rules:
         #print(rule)
-        if rule['type'] == 'agg':
-            print('summing        : ' + rule['condition'] + ' into ' +  rule['true'] )
-        elif rule['type'] == 'derive':
-            print('New column     : ' + rule['rule_name'] + ' = ' + rule['true'] + ' WHERE ' + rule['condition'] + ' ELSE ' + rule['false'] )
+        if rule[0] == 'agg':
+            print('summing        : ' + rule[1] + ' into ' +  rule[2] )
+        elif rule[0] == 'derive':
+            print('New column     : ' + rule[1] + ' = ' + rule[2] + ' WHERE ' + rule[1] + ' ELSE ' + rule[3] )
     
     print('Done\n')
     
@@ -87,22 +82,26 @@ def load_column_maps():
     """
     describe how to map the raw data and any transforms required
     this is added to AIKIF / data / ref / rules_column_maps.csv
+    HEADERS (this is normally in the mapping CSV file)
+    column_name  |   map_to_aikif_type  |  date_type 
     """
     return [  
-    {'column_id':0, 'column_name':'Date_of_transaction', 'data_type':'date', 'display':'Date','aikif_type':'event'},
-    {'column_id':1, 'column_name':'Amount', 'data_type':'number', 'display':'Amount','aikif_type':'fact'},
-    {'column_id':2, 'column_name':'Details', 'data_type':'str', 'display':'Details','aikif_type':'location'},
+    ['Date'   , 'event'   , 'date'  ],
+    ['Amount' , 'fact'    , 'number'],
+    ['Details', 'location', 'str'   ],
     ]
     
 def load_rules():    
     """
     describe how to transform data
     this is added to AIKIF / data / ref / rules_process???.csv
+    HEADERS
+    type | rule_name | condition | action_if_true | action_if_false
     """
     return [  
-    { 'type':'derive', 'rule_name':'trans_type', 'condition':'amount > 0', 'true': 'DB', 'false':'CR'},
-    { 'type':'agg', 'rule_name':'travel', 'condition':'details contains "CALTEX"', 'true': 'Travel Expense', 'false':''},
-
+    [ 'derive', 'trans_type', 'amount > 0' ,  'DB', 'CR'],
+    [ 'agg'   , 'travel'    , 'details contains "CALTEX"', 'Travel Expense', ''],
+    [ 'agg'   , 'income'    , 'details contains "RegNow" and CRDB = "DB"', 'Income', ''],
     ]
  
 
