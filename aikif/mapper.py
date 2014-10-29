@@ -241,5 +241,6 @@ def TEST():
  
     col_map = MapColumns(column_map_file)
     print(col_map)
- 
-TEST()        
+
+if __name__ == '__main__':
+    TEST()        

@@ -24,7 +24,7 @@ import sys
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 sys.path.append(root_folder) # TODO - remove this before publish to pypi
 import cls_log as mod_log    # TODO - change this before publish (prefix aikif. )
-
+import mapper as mod_map
 
 def main():
     """
