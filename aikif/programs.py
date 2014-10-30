@@ -5,9 +5,18 @@
 # of concept) which allow you to call things as a normal
 # command
 
-import AIKIF_utils as aikif
-import cls_file_mapping as mod_filemap 
 import os
+import cls_log as mod_log
+import config as mod_cfg
+import cls_file_mapping as mod_filemap 
+import aikif.lib.cls_file as mod_file
+
+def TEST():
+    """
+    local test function - see \tests\test_programs.py for full coverage
+    """
+    prg = Programs()
+    print(prg)
 
 class Programs(object):
     """
@@ -20,15 +29,25 @@ class Programs(object):
             self.lstPrograms = [] 
         else:
             self.lstPrograms = lst 
-        aikif.LogCommand('Programs - ' + name)
-        aikif.LogDataSource(fldr)
+        self.log_folder = mod_cfg.fldrs['log_folder']    
+        self.lg = mod_log.Log(self.log_folder)
+        self.lg.record_command('program', 'generating program list in - ' + self.log_folder)
+     
+    def __str__(self):
+        """
+        return a summary of programs
+        """
+        return 'list of programs in AIKIF'
+        
         
     def add(self, nme, desc):
         """
         Adds a program to the list, logs the reference and TODO - adds core link to processes
         """
         self.lstPrograms.append(nme)
-        aikif.LogProcess(desc, nme)
+        #aikif.LogProcess(desc, nme)
+        self.lg.record_process('program - generating program list in - ' + self.log_folder)
+
         
     def list(self):
         """
@@ -64,11 +83,20 @@ class Programs(object):
             for i in sorted(uniqueFolders):
                 f.write(i + '\n')
 
-    def collect_program_info(fname):
+    def collect_program_info(self, fname):
         """
         gets details on the program, size, date, list of functions
-        and returns a dictionary of data to be logged to the core folder
+        and produces a Markdown file for documentation
         """
-        pass
-
+        md = '#AIKIF Technical details\n'
+        for i in self.lstPrograms:
+            f = mod_file.File(i)
+            md += f.name + ' | ' + str(f.size) + ' | \n'
         
+        
+        # save the details an Markdown file 
+        with open(fname, 'w') as f:
+            f.write(md)
+ 
+if __name__ == '__main__': 
+    TEST()
