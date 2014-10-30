@@ -7,6 +7,7 @@ T:\user\dev\src\python\AIKIF\tests\test_cls_collect.py
 T:\user\dev\src\python\AIKIF\tests\test_agent.py
 T:\user\dev\src\python\AIKIF\tests\time_generateTestData.py
 T:\user\dev\src\python\AIKIF\tests\run_tests.py
+T:\user\dev\src\python\AIKIF\tests\test_programs.py
 T:\user\dev\src\python\AIKIF\tests\test_bias.py
 T:\user\dev\src\python\AIKIF\tests\test_toolbox_image_tools.py
 T:\user\dev\src\python\AIKIF\tests\test_goal.py
@@ -46,8 +47,8 @@ T:\user\dev\src\python\AIKIF\aikif\cls_collect.py
 T:\user\dev\src\python\AIKIF\aikif\loadInfoCourseLectures.py
 T:\user\dev\src\python\AIKIF\aikif\addRawData.py
 T:\user\dev\src\python\AIKIF\aikif\create_word_lists.py
+T:\user\dev\src\python\AIKIF\aikif\programs.py
 T:\user\dev\src\python\AIKIF\aikif\cls_log.py
-T:\user\dev\src\python\AIKIF\aikif\cls_programs.py
 T:\user\dev\src\python\AIKIF\aikif\config.py
 T:\user\dev\src\python\AIKIF\aikif\load_ABS_data.py
 T:\user\dev\src\python\AIKIF\aikif\AIKIF_create.py
@@ -100,8 +101,10 @@ T:\user\dev\src\python\AIKIF\aikif\lib\cls_goal.py
 T:\user\dev\src\python\AIKIF\aikif\lib\cls_context.py
 T:\user\dev\src\python\AIKIF\aikif\lib\cls_goal_money.py
 T:\user\dev\src\python\AIKIF\aikif\lib\cls_file.py
+T:\user\dev\src\python\AIKIF\aikif\examples\__init__.py
 T:\user\dev\src\python\AIKIF\aikif\examples\ex_index_mydocs.py
 T:\user\dev\src\python\AIKIF\aikif\examples\game_of_life_console.py
+T:\user\dev\src\python\AIKIF\aikif\examples\finance_example.py
 T:\user\dev\src\python\AIKIF\aikif\examples\document_AIKIF.py
 T:\user\dev\src\python\AIKIF\aikif\examples\ex_project_management.py
 T:\user\dev\src\python\AIKIF\aikif\examples\autobackup.py
