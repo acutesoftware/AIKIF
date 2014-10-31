@@ -11,7 +11,7 @@ import programs as mod_prg
 class TestPrograms(unittest.TestCase):
  
 	def setUp(self):
-		self.prg = mod_prg.Programs()
+		self.prg = mod_prg.Programs('test list', root_folder)
 
 	def test_01_instantiate(self):
 		#print(self.prg)
