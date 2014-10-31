@@ -28,26 +28,26 @@ def document_programs():
     Document a subset of all programs with purpose (and intent)
     """
     p = mod_prg.Programs('AIKIF Programs', 'T:\\user\\dev\\src\\python\\AIKIF')
-    p.comment('program.py', 'test program')
+    p.comment('program.py', 'collects list of aikif programs to show progress and allows comments to be added to each file')
     p.comment('cls_file_mapping.py', 'uses ontology to get list of files to save data')
     p.comment('index.py', 'rebuilds indexes')
     
-    """
-    p.add('view.py', 'view the data in AIKIF')
-    p.add('AIKIF_utils.py', 'utils for getting standard file structures (soon to be deprecated)')
-    p.add('AI.py', 'original main entry point - soon to be deprecated')
-    p.add('add.py', 'command line utility to add information - not yet implemented')
-    p.add('dataTools.py', 'data tools to manage database access')
-    p.add('AIKIF_create.py', 'creates default structures with test data')
-    p.add('generateTestData.py', 'Tool to generate various test data')
-    p.add('processRawData.py', 'calls various sub tasks to collect raw data')
-    p.add('loadInfoCourseLectures.py', 'loads course lecture notes into AIKIF')
-    p.add('loadPIM_Filelist.py', 'loads generic filelists into AIKIF - indexing not implemented')
-    p.add('loadCountry_Gdeltproject.py', 'sample load - loads country data into AIKIF')
-    p.add('loadPIM_shoppingList.py', 'sample data - loads a users shopping list into AIKIF')
-    p.add('security.py', 'future module to handle security and privacy settings')
 
-"""
+    p.comment('view.py', 'view the data in AIKIF')
+    p.comment('AIKIF_utils.py', 'utils for getting standard file structures (soon to be deprecated)')
+    p.comment('AI.py', 'original main entry point - soon to be deprecated')
+    p.comment('add.py', 'command line utility to add information - not yet implemented')
+    p.comment('dataTools.py', 'data tools to manage database access')
+    p.comment('AIKIF_create.py', 'creates default structures with test data')
+    p.comment('generateTestData.py', 'Tool to generate various test data')
+    p.comment('processRawData.py', 'calls various sub tasks to collect raw data')
+    p.comment('loadInfoCourseLectures.py', 'loads course lecture notes into AIKIF')
+    p.comment('loadPIM_Filelist.py', 'loads generic filelists into AIKIF - indexing not implemented')
+    p.comment('loadCountry_Gdeltproject.py', 'sample load - loads country data into AIKIF')
+    p.comment('loadPIM_shoppingList.py', 'sample data - loads a users shopping list into AIKIF')
+    p.comment('security.py', 'future module to handle security and privacy settings')
+
+
     p.list()	# get list of all programs
     p.save()
     p.collect_program_info('progress.md')
