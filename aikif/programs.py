@@ -109,7 +109,7 @@ class Programs(object):
         if fname != '':
             with open(fname, 'w') as f:
                 for i in self.lstPrograms:
-                    f.write(i[0] + ',' + i[1])
+                    f.write(i[0] + ',' + i[1] + '\n')
 
         
         # save to standard AIKIF structure

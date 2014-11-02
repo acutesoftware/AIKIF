@@ -8,6 +8,7 @@ import os
 sys.path.append('..')
 
 import programs as mod_prg
+import config as mod_cfg
 import aikif.lib.cls_filelist as mod_fl
 import aikif.lib.cls_file as mod_file
 
@@ -17,17 +18,15 @@ def main():
     Simply call functions like below to build an overview 
     which has metadata automatically updated.
     """
-    # Dont use - this is useless #get_list_of_applications()
-    document_programs()
-    #list_all_python_programs()
+    document_programs(mod_cfg.fldrs['root_path'])
     
     
     
-def document_programs():
+def document_programs(fldr):
     """
     Document a subset of all programs with purpose (and intent)
     """
-    p = mod_prg.Programs('AIKIF Programs', 'T:\\user\\dev\\src\\python\\AIKIF')
+    p = mod_prg.Programs('AIKIF Programs', fldr)
     p.comment('program.py', 'collects list of aikif programs to show progress and allows comments to be added to each file')
     p.comment('cls_file_mapping.py', 'uses ontology to get list of files to save data')
     p.comment('index.py', 'rebuilds indexes')
