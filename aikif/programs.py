@@ -72,7 +72,7 @@ class Programs(object):
         Adds a program to the list, with default desc
         """
         self.lstPrograms.append([nme,desc])
-        self.lg.record_process('program - generating program list in - ' + self.log_folder)
+        #self.lg.record_process('program - generating program list in - ' + self.log_folder)
 
     def comment(self, nme, desc):
         """
@@ -84,7 +84,7 @@ class Programs(object):
             print(i)
             if nme in i[0]:
                 i[1] = desc
-                print(i)
+                #print(nme, i)
                 program_exists = True
         
         if program_exists == False: # not there?
