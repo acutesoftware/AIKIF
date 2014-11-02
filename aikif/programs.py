@@ -53,12 +53,13 @@ class Programs(object):
         self.tot_loc = 0
         fl = mod_fl.FileList([self.fldr], ['*.py'], ["__pycache__", ".git"])
         for file in fl.get_list():
-            self.add(file, 'TODO - add comment')
-            f = mod_file.TextFile(file)
-            self.tot_lines += f.count_lines_in_file()
-            self.tot_loc += f.count_lines_of_code()
-            self.tot_bytes += f.size
-            self.tot_files += 1
+            if '__init__.py' not in file:
+                self.add(file, 'TODO - add comment')
+                f = mod_file.TextFile(file)
+                self.tot_lines += f.count_lines_in_file()
+                self.tot_loc += f.count_lines_of_code()
+                self.tot_bytes += f.size
+                self.tot_files += 1
  
         print('All Python Program Statistics')
         print('Files = ', self.tot_files, ' Bytes = ', self.tot_bytes, ' Lines = ', self.tot_lines, ' Lines of Code = ', self.tot_loc)

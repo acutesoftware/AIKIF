@@ -78,7 +78,7 @@ def document_programs(fldr):
     p.comment('form_example_simple.py', 'creates a TKinter form to show how sql generation works = TOK')
     p.comment('worlds.py', 'generates a 2d grid world')
     p.comment('autobackup.py', 'example showing automatic file backups via filelists')
-    p.comment('document_AIKIF.py.py', 'this program - collect a list of programs and add commments / progress on what is actually implemented rather than trust docstrings which show the intention of the class')
+    p.comment('document_AIKIF.py', 'this program - collect a list of programs and add commments / progress on what is actually implemented rather than trust docstrings which show the intention of the class')
     p.comment('ex_index_mydocs.py', 'example showing what to index')
     p.comment('ex_project_management.py', 'example on using aikif for project management (poor example - needs work)')
     p.comment('finance_example.py ', 'example of using aikif for finance logging - good concept, needs completion')
@@ -112,11 +112,12 @@ def document_programs(fldr):
     p.comment('web_utils.py', 'web_aikif - generates page using flask')
     p.comment('check_python_env.py', 'script to test imports to ensure all correct packages are available')
     p.comment('run_tests.py', 'runs all tests in /tests subfolder')
-    p.comment('', '')
+    p.comment('if_database.py', 'dataTools - interface base class to a database')
+    p.comment('if_mssqlserver.py', 'dataTools - interface class to a mssql database')
+    p.comment('if_oracle.py', 'dataTools - interface class to an oracle database')
+    p.comment('if_redis.py', 'dataTools - interface class to a redis database')
 
 
-  
-    
    # p.list()	# get list of all programs
     p.save()
     p.collect_program_info('progress.md')
