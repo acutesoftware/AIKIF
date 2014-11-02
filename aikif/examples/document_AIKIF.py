@@ -27,17 +27,14 @@ def document_programs(fldr):
     Document a subset of all programs with purpose (and intent)
     """
     p = mod_prg.Programs('AIKIF Programs', fldr)
-    p.comment('program.py', 'collects list of aikif programs to show progress and allows comments to be added to each file')
+    p.comment('programs.py', 'collects list of aikif programs to show progress and allows comments to be added to each file')
     p.comment('cls_file_mapping.py', 'uses ontology to get list of files to save data')
     p.comment('index.py', 'rebuilds indexes')
     
 
-    p.comment('view.py', 'view the data in AIKIF')
-    p.comment('AIKIF_utils.py', 'utils for getting standard file structures (soon to be deprecated)')
-    p.comment('AI.py', 'original main entry point - soon to be deprecated')
-    p.comment('add.py', 'command line utility to add information - not yet implemented')
+    p.comment('view.py', 'view the data in AIKIF - to be deprecated')
     p.comment('dataTools.py', 'data tools to manage database access')
-    p.comment('AIKIF_create.py', 'creates default structures with test data')
+    p.comment('AIKIF_create.py', 'creates default structures with test data - to be deprecated')
     p.comment('generateTestData.py', 'Tool to generate various test data')
     p.comment('processRawData.py', 'calls various sub tasks to collect raw data')
     p.comment('loadInfoCourseLectures.py', 'loads course lecture notes into AIKIF')
@@ -46,6 +43,25 @@ def document_programs(fldr):
     p.comment('loadPIM_shoppingList.py', 'sample data - loads a users shopping list into AIKIF')
     p.comment('security.py', 'future module to handle security and privacy settings')
 
+    p.comment('bias.py', 'weight the validity of source data based on location, person, timing')
+    p.comment('cls_collect_files.py', 'duplicate - see agent filelist collecting')
+    p.comment('config.py', 'central point for settings in AIKIF')
+    p.comment('cls_log.py', 'logging function to map to standard outputs. Almost provides auto aggregation')
+    p.comment('create_word_lists.py', 'read ontology files to generate list of nouns and verbs (to be deprecated)')
+    p.comment('mapper.py', 'maps business rules and columns of source data to standard aikif logs')
+    p.comment('search.py', 'command line search tool')
+    p.comment('tools.py', 'uses the toolbox class to create list of programs used by aikif')
+    p.comment('agents/agent.py', 'base agent class')
+    p.comment('agents/test_agent.py', 'test for agent class (why is this not in /tests root folder? TODO')
+    p.comment('agents/aggregate/agg_context.py', 'detects context of user and computer')
+    """
+    p.comment('.py', '')
+
+    p.comment('.py', '')
+    p.comment('.py', '')
+    p.comment('.py', '')
+    p.comment('.py', '')
+    """
 
     p.list()	# get list of all programs
     p.save()
