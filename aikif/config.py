@@ -26,9 +26,9 @@ logs['logFileResult'] = fldrs['localPath'] + 'log' + os.sep + 'result.log'
 
 
 # useful folder locations used by programs - don't modify
-fldrs['root_path'] = os.path.dirname(os.path.abspath(__file__)) + os.sep + '..'
-fldrs['program_path'] = fldrs['root_path'] + os.sep + "aikif"
-fldrs['public_data_path'] = fldrs['root_path'] + os.sep + "data"
+fldrs['root_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+fldrs['program_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
+fldrs['public_data_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'data') 
 
 # index files
 #                         fldrs['public_data_path'] + os.sep  + 'index' + os.sep + 'ndxWordsToFilesLecture.txt',
