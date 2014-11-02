@@ -99,14 +99,23 @@ def document_programs(fldr):
     p.comment('review_ontology.py', '[DATA] program to document details of ontology review')
     p.comment('run_agents.py', 'Top level function to run the agents')
     p.comment('Toolbox.py', 'class to manage the toolbox - list of programs and functions aikif can use')
-    p.comment('', '')
-    p.comment('', '')
-    p.comment('', '')
-    p.comment('', '')
-    p.comment('', '')
+    p.comment('cls_grid.py', 'base class for 2D grid for games - 2048, game of life, 2D terrain maps')
+    p.comment('cls_grid_life.py', 'game of life game')
+    p.comment('crypt_utils.py', 'scripts to encode / decode data')
+    p.comment('game_board_utils.py', 'board game rules')
+    p.comment('solve_knapsack.py ', 'toolbox - solves knapsack (using trivial algorithms)')
+    p.comment('test_tool.py', 'tesing toolbox (SHOULD BE IN TESTS)')
+    p.comment('page_about.py', 'web_aikif - generates page using flask')
+    p.comment('page_agents.py', 'web_aikif - generates page using flask')
+    p.comment('page_data.py', 'web_aikif - generates page using flask')
+    p.comment('web_aikif.py', 'web_aikif - generates page using flask')
+    p.comment('web_utils.py', 'web_aikif - generates page using flask')
+    p.comment('check_python_env.py', 'script to test imports to ensure all correct packages are available')
+    p.comment('run_tests.py', 'runs all tests in /tests subfolder')
     p.comment('', '')
 
-    
+
+  
     
    # p.list()	# get list of all programs
     p.save()

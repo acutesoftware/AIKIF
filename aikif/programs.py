@@ -79,18 +79,20 @@ class Programs(object):
         Adds a comment to the existing program in the list, 
         logs the reference and TODO - adds core link to processes
         """
-        program_exists = False
-        for i in self.lstPrograms:
-            print(i)
-            if nme in i[0]:
-                i[1] = desc
-                #print(nme, i)
-                program_exists = True
         
-        if program_exists == False: # not there?
-            self.lstPrograms.append([nme,desc + ' - FILE DOESNT EXIST'])
-        
-        self.lg.record_process('adding description to - ' + nme)
+        if nme != '':
+            program_exists = False
+            for i in self.lstPrograms:
+                print(i)
+                if nme in i[0]:
+                    i[1] = desc
+                    #print(nme, i)
+                    program_exists = True
+            
+            if program_exists == False: # not there?
+                self.lstPrograms.append([nme,desc + ' - FILE DOESNT EXIST'])
+            
+            self.lg.record_process('adding description to - ' + nme)
 
 
         
