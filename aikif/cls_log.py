@@ -28,7 +28,9 @@ class Log:
         self.logFileSource  = self.log_folder + os.sep + 'source.log'
         self.logFileCommand = self.log_folder + os.sep + 'command.log'
         self.logFileResult  = self.log_folder + os.sep + 'result.log'
+        ensure_dir(self.logFileCommand)  # need to pass file not the folder for this to work
 
+        
     def __str__(self):
         return self.log_folder
     
@@ -46,7 +48,7 @@ class Log:
         usr = GetUserName()
         hst = GetHostName()
         #print('_log : os.path.dirname(fname) = ', os.path.dirname(fname))
-        ensure_dir(os.path.dirname(fname))
+        #ensure_dir(os.path.dirname(fname))
 
         if prg == '':
             prg = 'cls_log.log' # GetModuleName() 
@@ -177,6 +179,7 @@ class LogSummary:
 def ensure_dir(f):
     """ NOTE - not sure if this works exactly - needs a separate test """
     d = os.path.dirname(f)
+    
     if not os.path.exists(d):
         os.makedirs(d)
         
