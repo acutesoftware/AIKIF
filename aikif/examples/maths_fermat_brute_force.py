@@ -26,7 +26,6 @@ def main():
     
     TODO
     - polish the log details to make easier aggregation
-    - call the LogSummary class to do the aggregation
     - Add logSummary method to show percent success based on param ranges
     
     """
@@ -91,6 +90,9 @@ def main():
     else:
         print('No matches found - total calculations = ' + str(tot_calcs))
         mylog.record_result(proj, 'FAILED with params: ' + format_vars_as_string(k,j,i,n) + ' after ' + str(tot_calcs) + ' calculations')    
+    
+    sum = mod_log.LogSummary(mylog, log_folder)
+    sum.summarise_events()
     
 def format_vars_as_string(x,y,z,n):
     """   return as a string for logging or printing """
