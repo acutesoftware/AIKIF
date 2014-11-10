@@ -37,7 +37,30 @@ class Log:
     def get_folder_process(self):
         return self.logFileProcess
         
-    
+    def estimate_complexity(self, x,y,z,n):
+        """ calculates a rough guess of runtime based on product of parameters """
+        num_calculations = x * y * z * n
+        run_time = num_calculations / 100000  # a 2014 PC does about 100k calcs in a second (guess based on prior logs)
+        return self.show_time_as_short_string(run_time) 
+
+            
+    def show_time_as_short_string(self, seconds):
+        """ 
+        converts seconds to a string in terms of 
+        seconds -> years to show complexity of algorithm
+        """
+        if seconds < 60:
+            return str(seconds) + ' seconds'
+        elif seconds < 3600:
+            return str(round(seconds/60, 1)) + ' minutes'
+        elif seconds < 3600*24:
+            return str(round(seconds/(60*24), 1)) + ' hours'
+        elif seconds < 3600*24*365:
+            return str(round(seconds/(3600*24), 1)) + ' days'
+        else:
+            print('WARNING - this will take ' + str(seconds/(60*24*365)) + ' YEARS to run' )
+            return str(round(seconds/(60*24*365), 1)) + ' years'
+
     def _log(self, fname, txt, prg=''):
         # logs an entry to fname along with standard date and user details
         if os.sep not in fname:

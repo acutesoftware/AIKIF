@@ -33,9 +33,9 @@ def main():
     log_folder = mod_cfg.fldrs['log_folder'] + os.sep + proj
     mod_log.ensure_dir(log_folder)
     mylog = mod_log.Log(log_folder)
-    #mode = 'QUICK'
+    mode = 'QUICK'
     mode = 'AVERAGE'
-    mode = 'HARD'  # assumes you have infinite time and CPU resources
+    #mode = 'HARD'  # assumes you have infinite time and CPU resources
     #mode = 'TEST_FAILURE_NOT_FERMAT'
     start_x = randint(1,9999999999999999999999999999999999)
     start_y = randint(1,9999999999999999999999999999999999)
@@ -70,7 +70,7 @@ def main():
         steps_y = 10
         steps_z = 10
         
-    mylog.record_command(proj, ' starting brute force program in mode ' + mode + ' - estim runtime = ' + estimate_complexity(steps_x,steps_y,steps_z,end_n - start_n))      
+    mylog.record_command(proj, ' starting brute force program in mode ' + mode + ' - estim runtime = ' + mylog.estimate_complexity(steps_x,steps_y,steps_z,end_n - start_n))      
     mylog.record_source(proj, mode + ' Start Params. steps: x=' + str(steps_x) + 'y=' + str(steps_y) + ',z=' + str(steps_z) + '. Start vals ='+ format_vars_as_string(start_x, start_y, start_z, start_n) )      
 
     fame_and_fortune = False
@@ -99,35 +99,13 @@ def format_vars_as_string(x,y,z,n):
     return 'x=' + str(x) + ', y=' + str(y) + ', z=' + str(z) + ', n=' + str(n)
     
     
-def format_vars_detailed(x,y,z,n):
+def format_vars_detailed(x,y,z,n): # + ' + str(n) + '
     """  return vars and proof as a string for logging or printing """
-    res = str(x) + '**n=' + str(x**n) + ' + ' + str(y) + '**n=' + str(y**n) + ' = ' + str(z) + '**n=' + str(z**n)
+    res = str(x) + '**' + str(n) + '=' + str(x**n) + ' + ' + str(y) + '**' + str(n) + '=' + str(y**n) + ' = ' + str(z) + '**' + str(n) + '=' + str(z**n)
     return res
 
 
-def estimate_complexity(x,y,z,n):
-    """ calculates a rough guess of runtime based on parameters """
-    num_calculations = x * y * z * n
-    run_time = num_calculations / 100000
-    return show_time_as_short_string(run_time) 
 
-def show_time_as_short_string(seconds):
-    """ 
-    converts seconds to a string in terms of 
-    seconds -> years to show complexity of algorithm
-    """
-    if seconds < 60:
-        return str(seconds) + ' seconds'
-    elif seconds < 3600:
-        return str(round(seconds/60, 1)) + ' minutes'
-    elif seconds < 3600*24:
-        return str(round(seconds/(60*24), 1)) + ' hours'
-    elif seconds < 3600*24*365:
-        return str(round(seconds/(3600*24), 1)) + ' days'
-    else:
-        print('WARNING - this will take ' + str(seconds/(60*24*365)) + ' YEARS to run' )
-        return str(round(seconds/(60*24*365), 1)) + ' years'
-    
     
 def fermat_test(x, y, z, n):
     """ check to see if the parameters pass the test """
