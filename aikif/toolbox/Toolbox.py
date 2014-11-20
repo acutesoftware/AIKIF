@@ -3,7 +3,6 @@
 # class to manage the functional toolbox of AIKIF
 
 import AIKIF_utils as aikif
-import fileMapping as filemap 
 import os
 
 class Toolbox():
