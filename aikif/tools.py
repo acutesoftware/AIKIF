@@ -4,6 +4,8 @@
 
 import os
 import sys
+#import cls_log as mod_log
+#import config
 import toolbox.Toolbox as tool
 import time
 from random import randint
@@ -19,10 +21,14 @@ def main():
     python programs.
     TODO - this should be registered via cls_log in the program source
     """
+    
+
     tl = tool.Toolbox()
 
-
     tl.add({'file':fldr + os.sep + 'test_tool.py', 'function':'sum_even_numbers', 'args':['list'], 'return':['int']})
+
+    tl.add({'file':fldr + os.sep + 'maths_ml_algorithms.py', 'function':'ml_entropy', 'args':['list'], 'return':['float']})
+    
     tl.add({'file':fldr + os.sep + 'test_tool.py', 'function':'get_min_even_num', 'args':['list'], 'return':['int']})
     tl.add({'file':fldr + os.sep + 'test_tool.py', 'function':'test_function', 'args':[], 'return':['int']})
     
@@ -32,8 +38,9 @@ def main():
     tl.add({'file':progName, 'function':'solve_expensive_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
     tl.add({'file':progName, 'function':'solve_value_density', 'args':['int', 'dict'], 'return':['int', 'list']})
     tl.add({'file':progName, 'function':'main', 'args':['int', 'dict'], 'return':['int', 'list']})
-    #tl.add({'file':'solve_knapsack.py', 'function':'', 'args':['int', 'dict'], 'return':['int', 'list']})
 
+    
+    
     progName = fldr + os.sep + 'game_board_utils.py'
     tl.add({'file':progName, 'function':'build_board_2048', 'args':[], 'return':['list']})
     tl.add({'file':progName, 'function':'build_board_checkers', 'args':[], 'return':['list']})
@@ -48,6 +55,7 @@ def main():
         print('Ran test on ', os.path.basename(tl.lstTools[ndx]['file']) + '->' + tl.lstTools[ndx]['function'], ' Result = ', testResult)
 
     run_multiple(tl, tl.lstTools[0], 500)
+    run_multiple(tl, tl.lstTools[1], 5)
     
 
 def run_multiple(t1, tool, numIterations, silent='Y'):
