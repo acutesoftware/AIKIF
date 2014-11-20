@@ -208,6 +208,9 @@ def LogResult(res, prg=''):
     log(logFileResult , force_to_string(res), prg)
 
 
+print('---------------------------------------------------------------------------')
+print('AIKIF_utils.py - WARNING - this file is deprecated - use cls_log.py instead')
+print('---------------------------------------------------------------------------')
  
 
 
