@@ -11,14 +11,7 @@ import math
 def TEST():
     """ local test  """
     ml_entropy([3,3])
-    ml_entropy([2,0])
-    ml_entropy([1,3])
-    ml_entropy([16,0,0,0,0,0,0,0])
-    ml_entropy([16,0,0,0,0,0,0,0])
-    ml_entropy([546,314])
-    ml_entropy([184,11])
-    ml_entropy([362,303])
-   
+
 
 def ml_entropy(lst):
     """
