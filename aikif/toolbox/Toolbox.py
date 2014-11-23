@@ -2,6 +2,11 @@
 # toolbox.py	written by Duncan Murray 20/3/2014	(C) Acute Software
 # class to manage the functional toolbox of AIKIF
 
+import os
+import sys
+aikif_dir = os.path.dirname(os.path.abspath(__file__)) + os.sep + '..'
+sys.path.append(aikif_dir)
+#print(aikif_dir)
 import cls_log
 import config
 import os
