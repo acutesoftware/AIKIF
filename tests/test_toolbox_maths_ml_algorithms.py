@@ -16,6 +16,9 @@ class LogTest(unittest.TestCase):
         self.assertEquals(ml.ml_entropy([16,0,0,0,0,0,0,0,0]), 0)
         self.assertEquals(ml.ml_entropy([546,314]), 0.946848)
         self.assertEquals(ml.ml_entropy([184,11]), 0.313027)
+        self.assertEquals(ml.ml_entropy([100,50]), 0.918296)
+        self.assertEquals(ml.ml_entropy([80,15]), 0.629249)
+        self.assertEquals(ml.ml_entropy([20,35]), 0.94566)
 
       
 if __name__ == '__main__':
