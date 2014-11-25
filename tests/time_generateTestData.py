@@ -4,7 +4,9 @@
 import sys
 import test_utils as tst
 
-sys.path.append('..//AI//dataTools')
+import os
+root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif"  + os.sep + "dataTools")
+sys.path.append(root_fldr)
 import generateTestData as src
 
 #
