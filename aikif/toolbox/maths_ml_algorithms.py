@@ -70,8 +70,14 @@ def ml_lift(lst):
 def ml_apriori(lst):
     pass
     
-
-  
+def ml_process_mining_alpha(lst):
+    """
+    Alpha Algorithm: A Process Discovery Algorithm
+    http://en.wikipedia.org/wiki/Alpha_algorithm
+    """
+    print('Alpha Algorithm: calculating footprint')
+    return [1]
+    
 if __name__ == '__main__':
     TEST()
     
