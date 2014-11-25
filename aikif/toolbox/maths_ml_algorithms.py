@@ -75,8 +75,13 @@ def ml_process_mining_alpha(lst):
     Alpha Algorithm: A Process Discovery Algorithm
     http://en.wikipedia.org/wiki/Alpha_algorithm
     """
-    print('Alpha Algorithm: calculating footprint')
-    return [1]
+    print('Alpha Algorithm: calculating footprint matrix')
+    if len(lst) == 0:
+        print('no logs passed')
+        return [0]
+    else:
+        """ TODO """
+        return [1]
     
 if __name__ == '__main__':
     TEST()
