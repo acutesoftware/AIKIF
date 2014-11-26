@@ -18,7 +18,7 @@ def main():
     Simply call functions like below to build an overview 
     which has metadata automatically updated.
     """
-    document_programs(mod_cfg.fldrs['root_path'])  #NOTE bug here on output
+    document_programs(mod_cfg.fldrs['program_path']) 
     
     
     
