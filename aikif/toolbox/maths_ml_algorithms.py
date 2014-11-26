@@ -1,4 +1,4 @@
-# ml_algorithms.py  written by Duncan Murray 20/11/2014
+# maths_ml_algorithms.py  written by Duncan Murray 20/11/2014
 # machine learning algorithms for toolbox in AIKIF
 
 # takes a list of items or table and does standard calculations

@@ -101,6 +101,7 @@ def document_programs(fldr):
     p.comment('Toolbox.py', 'class to manage the toolbox - list of programs and functions aikif can use')
     p.comment('cls_grid.py', 'base class for 2D grid for games - 2048, game of life, 2D terrain maps')
     p.comment('cls_grid_life.py', 'game of life game')
+    p.comment('maths_ml_algorithms.py', 'machine learning algorithms for toolbox in AIKIF')
     p.comment('crypt_utils.py', 'scripts to encode / decode data')
     p.comment('game_board_utils.py', 'board game rules')
     p.comment('solve_knapsack.py ', 'toolbox - solves knapsack (using trivial algorithms)')
