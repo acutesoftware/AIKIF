@@ -1,4 +1,5 @@
 T:\user\dev\src\python\AIKIF\aikif\toolbox\test_tool.py.sum_even_numbers
+T:\user\dev\src\python\AIKIF\aikif\toolbox\maths_ml_algorithms.py.ml_entropy
 T:\user\dev\src\python\AIKIF\aikif\toolbox\test_tool.py.get_min_even_num
 T:\user\dev\src\python\AIKIF\aikif\toolbox\test_tool.py.test_function
 T:\user\dev\src\python\AIKIF\aikif\toolbox\solve_knapsack.py.solve_greedy_trivial
