@@ -20,7 +20,7 @@ ontologyList = [  # links to various upper ontologies - http://en.wikipedia.org/
 	 'url': 'http://en.wikipedia.org/wiki/Cyc#OpenCyc', 
 	 'data': 'http://sourceforge.net/projects/texai/files/open-cyc-rdf/1.1/open-cyc.rdf.ZIP/download', 
 	 'localFile': 'S:\\DATA\\opendata\\ontology\\OpenCyc\\open-cyc.rdf', 
-	 'rating': 'Was proprietry, no open source. Fairly precise, this is the best bet for AI applications', 
+	 'rating': 'Was proprietry, now open source. Fairly precise, this is the best bet for AI applications', 
 	 'tested': 'Work in Progress'},
 	{'name': 'SUMO - Suggested Upper Merged Ontology', 
 	 'url': 'http://www.ontologyportal.org/', 
@@ -206,7 +206,7 @@ import sys
 def main():
 	ShowStatistics()
 	SaveHTML_File_Samples('review_file_samples.html')
-	#SaveHTML_Review('review_ontology.html')
+	SaveHTML_Review('review_ontology.html')
 	#SaveAsMarkup('review_ontology.txt')
 	#os.system('start review_ontology.html')
 	#os.system('start review_ontology.txt')
@@ -250,7 +250,7 @@ def SaveHTML_Review(htmlFile):
 	deleteFile(htmlFile)
 	AppendToFile(htmlFile, BuildHTMLHeader('Ontology Review', '\r\n', '0'))
 	AppendToFile(htmlFile, '</TABLE>')
-	AppendToFile(htmlFile, 'Updated 25/3/2014 - list of upper ontologies with comments/ratings for possible use in AI applications.<BR><BR>\r\n')
+	AppendToFile(htmlFile, 'Updated 3/12/2014 - list of upper ontologies with comments/ratings for possible use in AI applications.<BR><BR>\r\n')
 	AppendToFile(htmlFile, '<H2>Ontology Datasets</h2>\r\n')
 	for i in ontologyList:
 		AppendToFile(htmlFile, '<B>' + i['name']  + '</B><BR>')
@@ -292,8 +292,9 @@ def BuildHTMLHeader(title, linefeed='\n', border='1'):
     res = "<HTML><HEAD><title>" + linefeed
     res = res + title + "</title>" + linefeed
     res = res + CreateCssString("Arial", "10pt", linefeed ) + linefeed
-    res = res + "</HEAD><BODY><H1>"
-    res = res + title + "</H1><TABLE border=" + border + ">"
+    res = res + "</HEAD><BODY>"
+    res = res + "Back to <a href=http://www.acutesoftware.com.au>Acute Software homepage</a> or <a href=http://www.acutesoftware.com.au/aikif>AIKIF home</a><BR>" + linefeed
+    res = res + "<H1>" + title + "</H1><TABLE border=" + border + ">"
     return res
 	
 def CreateCssString(fontFamily, baseFontSize, linefeed='\n'):
@@ -391,20 +392,22 @@ def SaveHTML_Review_as_table(htmlFile):
 
 
 def SaveHTML_File_Samples(htmlFile):
-	# extracts samples of the ontology files into one single HTML file
-	# has bookmarked index at top of page
-	# get the first 10 lines + last 5 lines
-	deleteFile(htmlFile)
-	AppendToFile(htmlFile, '<H1>Ontology File Samples</h1>\n')
-	AppendToFile(htmlFile, 'Generated via <a href=https://github.com/acutesoftware/AIKIF/blob/master/aikif/ontology/review_ontology.py>https://github.com/acutesoftware/AIKIF/blob/master/aikif/ontology/review_ontology.py</a><BR>\n')
-	for i in ontologyList:
-		ontFile = i['localFile']
-		AppendToFile(htmlFile, '<h2>' + i['name'] + '</h2>\n' )
-		AppendToFile(htmlFile, 'Page info = <a href=' + i['url'] + '>' + i['url'] + '</a><BR>\n')
-		AppendToFile(htmlFile, 'source data = <a href=' + i['data'] + '>' + i['data'] + '</a><BR>\n')
-		AppendToFile(htmlFile, 'Sample from ' + ontFile + '<BR>\n')
-		AppendToFile(htmlFile, '<PRE>' + GetSampleData(ontFile) + '</PRE><BR><BR>')
-	
+    # extracts samples of the ontology files into one single HTML file
+    # has bookmarked index at top of page
+    # get the first 10 lines + last 5 lines
+    deleteFile(htmlFile)
+    AppendToFile(htmlFile, "Back to <a href=http://www.acutesoftware.com.au>Acute Software homepage</a> or <a href=http://www.acutesoftware.com.au/aikif>AIKIF home</a><BR>")
+    AppendToFile(htmlFile, '<H1>Ontology File Samples</h1>\n')
+    AppendToFile(htmlFile, 'Generated via <a href=https://github.com/acutesoftware/AIKIF/blob/master/aikif/ontology/review_ontology.py>https://github.com/acutesoftware/AIKIF/blob/master/aikif/ontology/review_ontology.py</a><BR>\n')
+    for i in ontologyList:
+        ontFile = i['localFile']
+        AppendToFile(htmlFile, '<h2>' + i['name'] + '</h2>\n' )
+        AppendToFile(htmlFile, 'Page info = <a href=' + i['url'] + '>' + i['url'] + '</a><BR>\n')
+        AppendToFile(htmlFile, 'source data = <a href=' + i['data'] + '>' + i['data'] + '</a><BR>\n')
+        AppendToFile(htmlFile, 'Sample from ' + ontFile + '<BR>\n')
+        AppendToFile(htmlFile, '<PRE>' + GetSampleData(ontFile) + '</PRE><BR><BR>')
+    AppendToFile(htmlFile, "<BR><BR><BR>Back to <a href=http://www.acutesoftware.com.au>Acute Software homepage</a> or <a href=http://www.acutesoftware.com.au/aikif>AIKIF home</a><BR>")
+    
 
 def GetSampleData(fname):
 	res = ''
