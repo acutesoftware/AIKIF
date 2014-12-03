@@ -16,6 +16,12 @@ ontologyList = [  # links to various upper ontologies - http://en.wikipedia.org/
 	 'localFile': 'S:\\DATA\\opendata\\ontology\\WordNet\\dict\\data.noun', 
 	 'rating': 'Best word list, not in OWL format, though qualifies as an upper ontology by including the most general concepts as well as more specialized concepts, related to each other not only by the subsumption relations, but by other semantic relations as well, such as part-of and cause. However, unlike Cyc, it has not been formally axiomatized so as to make the logical relations between the concepts precise. It has been widely used in Natural language processing research', 
 	 'tested': 'Untested'},
+	{'name': 'OpenCyc', 
+	 'url': 'http://en.wikipedia.org/wiki/Cyc#OpenCyc', 
+	 'data': 'http://sourceforge.net/projects/texai/files/open-cyc-rdf/1.1/open-cyc.rdf.ZIP/download', 
+	 'localFile': 'S:\\DATA\\opendata\\ontology\\OpenCyc\\open-cyc.rdf', 
+	 'rating': 'Was proprietry, no open source. Fairly precise, this is the best bet for AI applications', 
+	 'tested': 'Work in Progress'},
 	{'name': 'SUMO - Suggested Upper Merged Ontology', 
 	 'url': 'http://www.ontologyportal.org/', 
 	 'data': 'http://sigmakee.cvs.sourceforge.net/viewvc/sigmakee/KBs/?view=tar', 
@@ -82,12 +88,6 @@ ontologyList = [  # links to various upper ontologies - http://en.wikipedia.org/
 	 'localFile': 'S:\\DATA\\opendata\\ontology\\YAMATO\\YAMATO20120714.owl', 
 	 'rating': 'complex but very advanced', 
 	 'tested': 'Untested'}, 
-	{'name': 'OpenCyc', 
-	 'url': 'http://en.wikipedia.org/wiki/Cyc#OpenCyc', 
-	 'data': 'http://sourceforge.net/projects/texai/files/open-cyc-rdf/1.1/open-cyc.rdf.ZIP/download', 
-	 'localFile': 'S:\\DATA\\opendata\\ontology\\OpenCyc\\open-cyc.rdf', 
-	 'rating': 'Proprietry but fairly precise', 
-	 'tested': 'Untested'},
 	{'name': 'PROTON', 
 	 'url': 'http://www.ontotext.com/proton-ontology', 
 	 'data': 'http://www.ontotext.com/sites/default/files/proton/protontop.ttl', 
@@ -285,7 +285,7 @@ def SaveAsMarkup(htmlFile):
 		AppendToFile(htmlFile, '### ' + i['title'] + '\n' + '[' + i['url'] + '](' + i['url'] + ')\n')
 		AppendToFile(htmlFile, i['comment'] + '\n')
 	AppendToFile(htmlFile, '\n')
-	AppendToFile(htmlFile, '\n\n This report generated via [https://github.com/acutesoftware/AIKIF/blob/master/AI/review_ontology.py](https://github.com/acutesoftware/AIKIF/blob/master/AI/review_ontology.py)')
+	AppendToFile(htmlFile, '\n\n This report generated via [https://github.com/acutesoftware/AIKIF/blob/master/aikif/ontology/review_ontology.py](https://github.com/acutesoftware/AIKIF/blob/master/aikif/ontology/review_ontology.py)')
 
 	
 def BuildHTMLHeader(title, linefeed='\n', border='1'):
@@ -396,7 +396,7 @@ def SaveHTML_File_Samples(htmlFile):
 	# get the first 10 lines + last 5 lines
 	deleteFile(htmlFile)
 	AppendToFile(htmlFile, '<H1>Ontology File Samples</h1>\n')
-	AppendToFile(htmlFile, 'Generated via <a href=https://github.com/acutesoftware/AIKIF/blob/master/AI/ontology/review_ontology.py>https://github.com/acutesoftware/AIKIF/blob/master/AI/ontology/review_ontology.py</a><BR>\n')
+	AppendToFile(htmlFile, 'Generated via <a href=https://github.com/acutesoftware/AIKIF/blob/master/aikif/ontology/review_ontology.py>https://github.com/acutesoftware/AIKIF/blob/master/aikif/ontology/review_ontology.py</a><BR>\n')
 	for i in ontologyList:
 		ontFile = i['localFile']
 		AppendToFile(htmlFile, '<h2>' + i['name'] + '</h2>\n' )
