@@ -8,7 +8,8 @@
 import subprocess
 import sys
 import AIKIF_utils as aikif
-import fileMapping as filemap
+import cls_file_mapping as filemap
+print("WARNING - THIS FILE IS BEING DEPRECATED - see agents\aggregate\*")
 
 def main():
 	print('processRawData.py - process raw information to core tables in AIKIF')
@@ -27,7 +28,6 @@ def run(scriptFile, logUsage='Y'):
 	try:
 		retcode = call(scriptFile + ' Q', shell=True)   # Q tells program to run in silent mode
 		if retcode < 0:
-			#print("Child was terminated by signal", -retcode, file=sys.stderr)
 			aikif.LogResult(scriptFile + ' terminated by signal')
 		else:
 			#print("Child returned", retcode, file=sys.stderr)
