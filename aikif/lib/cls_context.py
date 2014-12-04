@@ -72,7 +72,6 @@ class Context:
         all.append(dict(name='num_proc', val=self.host_num_processes))
         all.append(dict(name='mem_avail', val=self.host_mem_available))
         all.append(dict(name='mem_total', val=self.host_mem_total))
-        #all.append(dict(name='', val=))
         if silent != 'NO':
             for a in all:
                 print(a['name'].ljust(14) + '= ' + a['val'])
@@ -89,9 +88,7 @@ class Context:
         elif self.user == 'User' and self.host == 'Home PC':
             res = 'Remote desktop into home PC'
         res += '\n'
-        
         res += self.transport
-        
         return res
     
 
@@ -178,15 +175,7 @@ class Context:
         import psutil
         process_names = [proc.name for proc in psutil.process_iter()]
         cpu_pct = psutil.cpu_percent(interval=1)
-        
-        #print(cpu_pct)
-        #for process in process_names:
-        #print(len(process_names))
-        
         mem = psutil.virtual_memory()
-        #print('mem.available=', mem.available)
-        #print('mem.total    =', mem.total)
-        
         return str(cpu_pct), str(len(process_names)), str(mem.available), str(mem.total)
         
 def TEST():
@@ -195,11 +184,11 @@ def TEST():
     #print(where_am_i)
     #print(where_am_i.summarise())
     where_am_i.dump_all('yes')
-    #print(where_am_i.get_host())
-    #for k,v in os.environ.items():
-    #    print(k,v)
-    #print(where_am_i.get_user()[0])
-    #where_am_i.get_host_usage()
+    print(where_am_i.get_host())
+    for k,v in os.environ.items():
+        print(k,v)
+    print(where_am_i.get_user()[0])
+    where_am_i.get_host_usage()
        
 if __name__ == '__main__':
 	TEST()
