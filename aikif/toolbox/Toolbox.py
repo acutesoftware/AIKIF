@@ -38,7 +38,7 @@ class Toolbox():
         """ returns list of tools """
         res = ''
         for tool in self.lstTools:
-            res += tool['file'] + '.' + tool['function']
+            res += tool['file'] + '.' + tool['function'] + '\n'
         return res
         
     def add(self, tool):
