@@ -14,21 +14,23 @@ class LogTest(unittest.TestCase):
         """ Note, this gets called for EACH test """
         unittest.TestCase.setUp(self)
         self.tb = mod_tool.Toolbox()
-        print(self.tb)
+        self.tb.add({'file':'test_tool.py', 'function':'sum_even_numbers', 'args':['list'], 'return':['int']})
+        
     def tearDown(self):
         """ called once at the end of this test class """
         unittest.TestCase.tearDown(self)
 
 
     def test_01_instantiate_class(self):
-        self.assertTrue(len(str(self.tb)) == 0)
-
-    def test_02_add_tool(self):
-        self.tb.add({'file':'test_tool.py', 'function':'sum_even_numbers', 'args':['list'], 'return':['int']})
         self.assertTrue(len(str(self.tb)) > 10)
 
-
-
-    
+    def test_02_add_tool(self):
+        self.tb.add({'file':'ANOTHER_tool.py', 'function':'do_stuff', 'args':['list'], 'return':['int']})
+        self.assertEqual(str(self.tb), 'test_tool.py.sum_even_numbers\nANOTHER_tool.py.do_stuff\n')
+        
+    def test_03_run_tool(self):
+        testResult = self.tb.run(self.tb.lstTools[0], [1,2,3,4,5,6,7], 'Y')
+        self.assertEqual(testResult, 12)
+        
 if __name__ == '__main__':
     unittest.main()

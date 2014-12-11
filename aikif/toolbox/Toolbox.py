@@ -6,7 +6,7 @@ import os
 import sys
 aikif_dir = os.path.dirname(os.path.abspath(__file__)) + os.sep + '..'
 sys.path.append(aikif_dir)
-print("Toolbox.py - aikif_dir = " + aikif_dir)
+#print("Toolbox.py - aikif_dir = " + aikif_dir)
 import cls_log
 import config
 import os
@@ -47,7 +47,7 @@ class Toolbox():
         """
         self.lstTools.append(tool)
         self.lg.record_process(tool['file'] + '.' + tool['function'])
-        print('Adding to toolbox : ', tool['file'] + '.' + tool['function'])
+        #print('Adding to toolbox : ', tool['file'] + '.' + tool['function'])
         
     def list(self):
         """
