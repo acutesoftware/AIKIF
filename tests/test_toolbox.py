@@ -25,12 +25,22 @@ class LogTest(unittest.TestCase):
         self.assertTrue(len(str(self.tb)) > 10)
 
     def test_02_add_tool(self):
-        self.tb.add({'file':'ANOTHER_tool.py', 'function':'do_stuff', 'args':['list'], 'return':['int']})
-        self.assertEqual(str(self.tb), 'test_tool.py.sum_even_numbers\nANOTHER_tool.py.do_stuff\n')
+        self.tb.add({'file':'tool2.py', 'function':'do_stuff', 'args':['list'], 'return':['int']})
+        self.assertEqual(str(self.tb), 'test_tool.py.sum_even_numbers\ntool2.py.do_stuff\n')
         
     def test_03_run_tool(self):
         testResult = self.tb.run(self.tb.lstTools[0], [1,2,3,4,5,6,7], 'Y')
         self.assertEqual(testResult, 12)
+
+    def test_04_run_wrong_tool(self):
+        print('TODO - appears adding tool in different tests loses data')
+        suspect_tool = {'file':'ANOTHER_tool.py', 'function':'do_stuff', 'args':['list'], 'return':['int']}
+        self.tb.add(suspect_tool)
+        if self.tb.verify(suspect_tool):
+            testResult = self.tb.run(self.tb.lstTools[1], ['this', 'should', 'fail'], 'Y')
+        else:
+            testResult = 555
+        self.assertEqual(testResult, 555)
         
 if __name__ == '__main__':
     unittest.main()
