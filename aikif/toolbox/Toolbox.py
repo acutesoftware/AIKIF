@@ -6,7 +6,6 @@ import os
 import sys
 aikif_dir = os.path.dirname(os.path.abspath(__file__)) + os.sep + '..'
 sys.path.append(aikif_dir)
-#print("Toolbox.py - aikif_dir = " + aikif_dir)
 import cls_log
 import config
 import os
@@ -35,7 +34,9 @@ class Toolbox():
         self.lg.record_source(fldr)
 
     def __str__(self):
-        """ returns list of tools """
+        """ 
+        returns list of tools 
+        """
         res = ''
         for tool in self.lstTools:
             res += tool['file'] + '.' + tool['function'] + '\n'
@@ -58,6 +59,9 @@ class Toolbox():
         return self.lstTools
     
     def tool_as_string(self, tool):
+        """
+        return the string of the filename and function to call
+        """
         return tool['file'] + '.' + tool['function'] + '\n'
     
     def save(self, fname=''):
@@ -69,9 +73,11 @@ class Toolbox():
                 for t in self.lstTools:
                     self.verify(t)
                     f.write(self.tool_as_string(t))
-                    #f.write('\n'.join([i for i in t]))
-
+ 
     def verify(self, tool):
+        """
+        check that the tool exists
+        """
         success = True
         if os.path.isfile(tool['file']):
             print('program exists = TOK')
@@ -82,6 +88,9 @@ class Toolbox():
         return success
         
     def run(self, tool, args, silent='Y'):
+        """
+        import the tool and call the function, passing the args.
+        """
         if silent == 'N':
             print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
         mod = __import__( os.path.basename(tool['file']).split('.')[0])
