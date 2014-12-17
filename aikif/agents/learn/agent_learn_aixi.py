@@ -26,7 +26,7 @@ except:
     sys.exit("you need to install pyaixi")
 
 def TEST():
-    agt = Aixi('pyaixi_tictactoe', log_folder)
+    agt = Aixi('pyaixi_coin_flip', log_folder)
     agt.do_your_job()
         
 class Aixi(mod_agt.Agent):
@@ -39,8 +39,25 @@ class Aixi(mod_agt.Agent):
         """
         mod_agt.Agent.__init__(self, name,  fldr)
         self.lg = mod_log.Log(fldr)
-        self.lg.record_command('Initialise pyaixi - tic tac toe', 'agent_learn_aixi.py')
-        #print(self.lg)
+        self.lg.record_command('Initialise pyaixi - coin_flip', 'agent_learn_aixi.py')
+
+        # options copied from - https://github.com/gkassel/pyaixi/blob/release-1.1.0/aixi.py
+        self.default_options = {}
+        self.default_options["agent"]             = "mc_aixi_ctw"
+        self.default_options["agent-horizon"]     = 5
+        self.default_options["ct-depth"]          = 30
+        self.default_options["compare"]           = ""
+        self.default_options["environment"]       = "coin_flip"
+        self.default_options["exploration"]       = 0.0    # Do not explore.
+        self.default_options["explore-decay"]     = 1.0    # Exploration rate does not decay.
+        self.default_options["learning-period"]   = 0      # Learn forever.
+        self.default_options["mc-simulations"]    = 300
+        self.default_options["non-learning-only"] = False  # Whether to record statistics gathered in the non-learning period only.
+        self.default_options["profile"]           = False  # Whether to profile code.
+        self.default_options["terminate-age"]     = 0      # Never die.
+        self.default_options["verbose"]           = False
+
+        
         self.start()
         
        
