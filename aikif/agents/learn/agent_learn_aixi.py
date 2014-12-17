@@ -13,7 +13,7 @@ import aikif.config as mod_cfg
 
 
 # setup logging at the top (same for all Agents)
-log_folder = mod_cfg.fldrs['public_data_path'] + os.sep + 'log'
+log_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + ".." + os.sep + 'data' + os.sep + 'log') 
 print('log_folder = ' + log_folder)
 
 try:		
@@ -27,7 +27,6 @@ except:
 
 def TEST():
     agt = Aixi('pyaixi_tictactoe', log_folder)
-    print(agt)
     agt.do_your_job()
         
 class Aixi(mod_agt.Agent):
@@ -40,7 +39,7 @@ class Aixi(mod_agt.Agent):
         """
         mod_agt.Agent.__init__(self, name,  fldr)
         self.lg = mod_log.Log(fldr)
-        self.lg.record_command('pyaixi.txt', 'Initialise pyaixi - tic tac toe')
+        self.lg.record_command('Initialise pyaixi - tic tac toe', 'agent_learn_aixi.py')
         #print(self.lg)
         self.start()
         
@@ -54,7 +53,14 @@ class Aixi(mod_agt.Agent):
         """
         overrides method in Agent class in agent.py
         """
-        print('Running Aixi agent')
+        self.lg.record_source('passing parameters NNNN', 'agent_learn_aixi.py')
+        
+        print('Running Aixi agent - TODO, actually *run* the agent here')
+        
+        
+        self.lg.record_result('result = ', 'agent_learn_aixi.py')
+        
+        
         sum = mod_log.LogSummary(self.lg, 'T:\\user\\AIKIF\\log')
         sum.summarise_events()
         print(sum)
