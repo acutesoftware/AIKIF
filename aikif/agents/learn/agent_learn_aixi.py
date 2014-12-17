@@ -14,7 +14,7 @@ import aikif.config as mod_cfg
 
 # setup logging at the top (same for all Agents)
 log_folder = mod_cfg.fldrs['public_data_path'] + os.sep + 'log'
-
+print('log_folder = ' + log_folder)
 
 try:		
     from pyaixi import agent, agents, environment, environments, util
@@ -39,7 +39,7 @@ class Aixi(mod_agt.Agent):
         First setup aikif logging then initialise pyaixi
         """
         mod_agt.Agent.__init__(self, name,  fldr)
-        self.lg = mod_log.Log('T:\\user\\AIKIF')
+        self.lg = mod_log.Log(fldr)
         self.lg.record_command('pyaixi.txt', 'Initialise pyaixi - tic tac toe')
         #print(self.lg)
         self.start()
