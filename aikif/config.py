@@ -30,6 +30,13 @@ fldrs['root_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) 
 fldrs['program_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
 fldrs['public_data_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'data') 
 
+# NOTE - original folder paths using dirname do NOT work once pip installed - fix this todo
+print('config.py : fldrs[root_path] = ' + fldrs['root_path'])
+if 'site-packages' in fldrs['root_path']:  
+    fldrs['root_path'] = fldrs['localPath'] 
+    fldrs['public_data_path'] = fldrs['log_folder']
+
+
 # index files
 #                         fldrs['public_data_path'] + os.sep  + 'index' + os.sep + 'ndxWordsToFilesLecture.txt',
 #                         fldrs['localPath'] + 'diary' + os.sep + 'filelister2014.csv',
