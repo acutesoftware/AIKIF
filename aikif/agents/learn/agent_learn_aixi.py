@@ -15,7 +15,10 @@ from subprocess import call
 
 # setup logging at the top (same for all Agents)
 log_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + ".." + os.sep + 'data' + os.sep + 'log') 
+current_folder = os.path.dirname(os.path.abspath(__file__))
+pyaixi_folder = 'T:\\user\\dev\\src\\python\\pyaixi'  # temp - using existing pyaixi main
 print('log_folder = ' + log_folder)
+print('current_folder = ' + current_folder)
 
 try:		
     from pyaixi import agent, agents, environment, environments, util
@@ -26,6 +29,10 @@ try:
 except:
     sys.exit("you need to install pyaixi")
 
+    
+    
+
+    
 def TEST():
     agt = Aixi('pyaixi_oscillator', log_folder)
     agt.do_your_job()
@@ -116,11 +123,11 @@ class Aixi(mod_agt.Agent):
         print('Running Aixi agent via BAT file..')
         with open('go.bat', 'w') as bat:
             bat.write('T:\n')
-            bat.write('cd T:\\user\\dev\\src\\python\\pyaixi\n')
+            bat.write('cd ' + pyaixi_folder + '\n')
             bat.write("python aixi.py -v conf/oscillator.conf -c aixi_uniform_random -o random-seed=0 > results_oscil.log\n")
         call(['go.bat'])
         self.lg.record_result('result = results_oscil.log', 'agent_learn_aixi.py')
-        sum = mod_log.LogSummary(self.lg, 'T:\\user\\AIKIF\\log')
+        sum = mod_log.LogSummary(self.lg, log_folder)
         sum.summarise_events()
         print(sum)
         
