@@ -28,10 +28,6 @@ try:
     from pyaixi.environments import *
 except:
     sys.exit("you need to install pyaixi")
-
-    
-    
-
     
 def TEST():
     agt = Aixi('pyaixi_oscillator', log_folder)
@@ -130,5 +126,6 @@ class Aixi(mod_agt.Agent):
         sum = mod_log.LogSummary(self.lg, log_folder)
         sum.summarise_events()
         print(sum)
-        
-TEST()
+
+if __name__ == '__main__':        
+    TEST()
