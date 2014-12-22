@@ -13,12 +13,14 @@ import aikif.config as mod_cfg
 from subprocess import call
 
 
+
 # setup logging at the top (same for all Agents)
 log_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + ".." + os.sep + 'data' + os.sep + 'log') 
+log_file = log_folder + os.sep + 'results_oscil.log'
 current_folder = os.path.dirname(os.path.abspath(__file__))
 pyaixi_folder = 'T:\\user\\dev\\src\\python\\pyaixi'  # temp - using existing pyaixi main
-print('log_folder = ' + log_folder)
-print('current_folder = ' + current_folder)
+#print('log_folder = ' + log_folder)
+#print('current_folder = ' + current_folder)
 
 try:		
     from pyaixi import agent, agents, environment, environments, util
@@ -43,7 +45,6 @@ class Aixi(mod_agt.Agent):
         """
         mod_agt.Agent.__init__(self, name,  fldr)
         self.lg = mod_log.Log(fldr)
-        self.lg.record_command('Initialise pyaixi - oscillator', 'agent_learn_aixi.py')
 
         """
         # options copied from - https://github.com/gkassel/pyaixi/blob/release-1.1.0/aixi.py
@@ -115,17 +116,19 @@ class Aixi(mod_agt.Agent):
             explore rate: 1.000000
         
         """
-        self.lg.record_source('pyaixi - oscillator.conf', 'agent_learn_aixi.py')
-        print('Running Aixi agent via BAT file..')
+        environment = 'oscillator'
+        self.lg.record_command('Initialise pyaixi - ' + environment, 'agent_learn_aixi.py')
+        self.lg.record_source('pyaixi - ' + environment, 'agent_learn_aixi.py')
+        #print('Running Aixi agent via BAT file..')
         with open('go.bat', 'w') as bat:
             bat.write('T:\n')
             bat.write('cd ' + pyaixi_folder + '\n')
-            bat.write("python aixi.py -v conf/oscillator.conf -c aixi_uniform_random -o random-seed=0 > results_oscil.log\n")
+            bat.write("python aixi.py -v conf/" + environment + ".conf -c aixi_uniform_random -o random-seed=0 > " + log_file + "\n")
         call(['go.bat'])
-        self.lg.record_result('result = results_oscil.log', 'agent_learn_aixi.py')
-        sum = mod_log.LogSummary(self.lg, log_folder)
-        sum.summarise_events()
-        print(sum)
+        self.lg.record_result('result = ' + log_file, 'agent_learn_aixi.py')
+        #sum = mod_log.LogSummary(self.lg, log_folder)
+        #sum.summarise_events()
+        #print(sum)
 
 if __name__ == '__main__':        
     TEST()

@@ -21,6 +21,15 @@ class AgentLearnAixiTest(unittest.TestCase):
     def test_01_instantiate_class(self):
         self.assertTrue(len(str(self.ax)) > 10)
 
+    def test_02_run_as_bat(self):
+        try:
+            print('deleting logfile - ' + mod_aixi.log_file)
+            os.remove(mod_aixi.log_file)
+        except: 
+            pass
+        self.ax.do_your_job()
+        self.assertTrue(os.path.getsize(mod_aixi.log_file) > 10000)
+
         
 if __name__ == '__main__':
     unittest.main()
