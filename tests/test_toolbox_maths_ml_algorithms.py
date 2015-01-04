@@ -19,6 +19,7 @@ class LogTest(unittest.TestCase):
         self.assertEquals(ml.ml_entropy([100,50]), 0.918296)
         self.assertEquals(ml.ml_entropy([80,15]), 0.629249)
         self.assertEquals(ml.ml_entropy([20,35]), 0.94566)
+        self.assertEquals(ml.ml_entropy([70,80]), 0.996792)
 
     def test_02_process_mining_alpha(self):
         self.assertEquals(ml.ml_process_mining_alpha([]), [0])
