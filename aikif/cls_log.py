@@ -6,12 +6,13 @@ import time
 import getpass
 import socket
 import collections 
+import config as cfg
 #localPath = 'T:\\user\\AIKIF\\' # '..//data//' # os.getcwd()
 
  
 def TEST():
     """ simple test function """
-    lg = Log('T:\\user\\AIKIF')
+    lg = Log(cfg.fldrs['localPath']) #'T:\\user\\AIKIF')
     lg.record_command('test.txt', 'hello')
     print(lg)
     sum = LogSummary(lg, 'T:\\user\\AIKIF\\log')
