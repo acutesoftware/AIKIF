@@ -1,13 +1,11 @@
-# cls_plan.py
+# cls_plan_BDI.py
 
 import datetime
 
-class Plan(object):
+class Plan_BDI(object):
     """ 
-    base class for handling various plans for AIKIF.
-    NOTE - this is a stub at this stage and i will need
-    to work out exactly how it is going to be implemented
-    
+    class for handling various plans for AIKIF using
+    Belief | Desires | Intentions
     """
         
     def __init__(self, name, dependency):
@@ -156,7 +154,7 @@ class Intentions(Thoughts):
         
 
 def TEST():        
-    myplan = Plan('new plan', '')
+    myplan = Plan_BDI('new plan', '')
     myplan.beliefs.add('belief0')
     myplan.beliefs.add('belief1')
     myplan.beliefs.add('belief2')
