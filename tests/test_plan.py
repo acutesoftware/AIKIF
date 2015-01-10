@@ -6,14 +6,14 @@ import os
 lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" + os.sep + "lib")
 #print(lib_fldr)  # C:\DATA\Duncan\git\AIKIF\AI\lib  (on laptop)
 sys.path.append(lib_fldr)
-from cls_plan import Plan
+from cls_plan_BDI import Plan_BDI
 
 class PlanTest(unittest.TestCase):
     
     def setUp(self):
         """ Note, this gets called for EACH test """
         unittest.TestCase.setUp(self)
-        self.myplan = Plan('New Plan', '')
+        self.myplan = Plan_BDI('New Plan', '')
         self.myplan.beliefs.add('The house contains 2 bedrooms, a hallway and a kitchen')
         self.myplan.beliefs.add('The kitchen is joined to the hallway and bedroom1')
         self.myplan.beliefs.add('bedroom2 is connected to the hallway')
@@ -55,12 +55,12 @@ class PlanTest(unittest.TestCase):
         self.myplan.save_plan('plan_test.txt')
     
     def test_11_reload_plan(self):
-        plan2 = Plan('', '')
+        plan2 = Plan_BDI('', '')
         plan2.load_plan('plan_test.txt')
         self.assertEqual(len(str(plan2)), 475)
     
     def test_20_check_random_thought_types(self):
-        from cls_plan import Thoughts
+        from cls_plan_BDI import Thoughts
         thought = Thoughts('bizzare_type')
         thought.add('I AM A BUS')
         thought.add('No - you are a test case')
