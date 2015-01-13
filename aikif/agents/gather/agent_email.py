@@ -71,7 +71,7 @@ class EmailAgent(agt.Agent):
 
 class EmailAccount:
     """
-    base class for email account
+    base class for email account - server details based when sub-classed
     """
     def __init__(self, username, password, send_server, rec_server):
         self.username = username
