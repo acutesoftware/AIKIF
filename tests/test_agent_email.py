@@ -75,7 +75,12 @@ class AgentEmailTest(unittest.TestCase):
         self.account.connect()
         self.assertEqual(self.account.status, 'CONNECTED')
         
-    def test_07_send(self):
+    def test_07_get_inbox_count(self):
+        tot_emails = self.account.get_inbox_count()
+        print('tot_emails = ' + str(tot_emails))
+        self.assertEqual(tot_emails > 9, True)
+        
+    def test_08_send(self):
         self.account.send('djmurray@gmail.com', subject='test from AIKIF ', msg='this is a test')
         self.assertEqual(self.account.status, 'CONNECTED')
         

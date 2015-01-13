@@ -92,7 +92,7 @@ class EmailAccount:
 
         self.receiveserver.login(username,password)
         self.status = 'CONNECTED'
-        print(self.account.status)
+        print(self.status)
     
     def disconnect(self):
         self.sendserver.quit()
@@ -111,7 +111,11 @@ class EmailAccount:
                    "Content-Type: text/html"]
         headers = "\r\n".join(headers)
         self.sendserver.sendmail(fromaddr, toaddr, headers + "\r\n\r\n" + msg)
-        
+    
+    def get_inbox_count(self):
+        return int(self.receiveserver.select('Inbox')[1][0])
+
+    
     def __str__(self):
         res = ' Account ---\n'
         res += 'username    = ' + self.username + '\n'
