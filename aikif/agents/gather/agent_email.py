@@ -4,6 +4,10 @@
 import os
 import sys
 import random
+import imaplib
+import smtplib
+import email
+
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 
 sys.path.append(root_folder + os.sep + "aikif")  # should not be needed once published
@@ -78,7 +82,36 @@ class EmailAccount:
         self.password = password
         self.send_server = send_server
         self.rec_server = rec_server
+        self.status = 'NONE'
+        self.sendserver = smtplib.SMTP(self.send_server)
+        self.receiveserver = imaplib.IMAP4_SSL(rec_server[0], rec_server[1])
 
+    def connect(self):
+        self.sendserver.starttls()
+        self.sendserver.login(self.username,self.password)
+
+        self.receiveserver.login(username,password)
+        self.status = 'CONNECTED'
+        print(self.account.status)
+    
+    def disconnect(self):
+        self.sendserver.quit()
+        self.receiveserver.close()
+        self.receiveserver.logout()
+        self.status = 'DISCONNECTED'
+        print(self.status)
+
+    def send(self, toaddr, subject='', msg=''):
+        fromaddr = self.username
+
+        headers = ["From: " + fromaddr,
+                   "Subject: " + subject,
+                   "To: " + toaddr,
+                   "MIME-Version: 1.0",
+                   "Content-Type: text/html"]
+        headers = "\r\n".join(headers)
+        self.sendserver.sendmail(fromaddr, toaddr, headers + "\r\n\r\n" + msg)
+        
     def __str__(self):
         res = ' Account ---\n'
         res += 'username    = ' + self.username + '\n'
