@@ -37,6 +37,7 @@ def TEST():
     account.connect()
     print('Total Emails = ', account.get_inbox_count())  # works if this is just after connect (20 emails)
     
+    account.send('djmurray@gmail.com', subject='test from AIKIF ', msg='this is a test')
 
             
 class EmailAgent(agt.Agent):
@@ -127,7 +128,7 @@ class EmailAccount:
                    "Content-Type: text/html"]
         headers = "\r\n".join(headers)
         #self.server_snd.ehlo()
-        self.server_snd.starttls()
+        #self.server_snd.starttls()
         #self.server_snd.ehlo()
         self.server_snd.sendmail(fromaddr, toaddr, headers + "\r\n\r\n" + msg)
     

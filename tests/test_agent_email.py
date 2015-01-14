@@ -48,48 +48,37 @@ import config as mod_cfg
 import agents.gather.agent_email as email_agt
                     
 class AgentEmailTest(unittest.TestCase):
-    def setUp(self):
+    def setUp(self): #setUp
         with open(mod_cfg.fldrs['localPath'] + 'ac.txt', 'r') as f:
             self.username = f.readline().strip('\n')
             self.password = f.readline().strip('\n')
         self.account = email_agt.GmailAccount(self.username, self.password)  
-        print(self.account)
         self.agt = email_agt.EmailAgent('TEST_email_agent', root_folder, True, 1 , self.account)
-          
-    def test_01_instantiation(self):
+        print('class instantiated for testing...')
+
+    def test_01_parameters(self):
         self.assertEqual(len(str(self.agt)),343)
-
-    def test_02_username(self):
         self.assertEqual(self.account.username, self.username)
-
-    def test_03_password(self):
         self.assertEqual(self.account.password, self.password)
-
-    def test_04_send_server(self):
         self.assertEqual(self.account.send_server_name, 'smtp.gmail.com:587')
-
-    def test_05_rec_server(self):
         self.assertEqual(self.account.rec_server_name[0], 'imap.gmail.com')
         self.assertEqual(self.account.rec_server_name[1],  993)
 
-    def test_06_connect(self):
+    def test_02_connect_and_disconnect(self):
+        # doing this in one test rather than logon and off 8 times (causing scope error)
+        print(self.account)
         self.account.connect()
         self.assertEqual(self.account.status, 'CONNECTED')
-        
-    def test_07_get_inbox_count(self):
         tot_emails = self.account.get_inbox_count()
         print('tot_emails = ' + str(tot_emails))
         self.assertEqual(tot_emails > 9, True)
         
-
-    def test_08_send(self):
         self.account.send('djmurray@gmail.com', subject='test from AIKIF ', msg='this is a test')
         self.assertEqual(self.account.status, 'CONNECTED')
-        
-    def test_99_disconnect(self):
         self.account.disconnect()
         self.assertEqual(self.account.status, 'DISCONNECTED')
-
         
+
+         
 if __name__ == '__main__':
     unittest.main()
