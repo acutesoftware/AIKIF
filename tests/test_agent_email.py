@@ -52,12 +52,13 @@ class AgentEmailTest(unittest.TestCase):
         with open(mod_cfg.fldrs['localPath'] + 'ac.txt', 'r') as f:
             self.username = f.readline().strip('\n')
             self.password = f.readline().strip('\n')
-        self.account = email_agt.GmailAccount(self.username, self.password)   
+        self.account = email_agt.GmailAccount(self.username, self.password)  
+        print(self.account)
         self.agt = email_agt.EmailAgent('TEST_email_agent', root_folder, True, 1 , self.account)
           
     def test_01_instantiation(self):
-        self.assertEqual(len(str(self.agt)),339)
-      
+        self.assertEqual(len(str(self.agt)),343)
+
     def test_02_username(self):
         self.assertEqual(self.account.username, self.username)
 
@@ -65,11 +66,11 @@ class AgentEmailTest(unittest.TestCase):
         self.assertEqual(self.account.password, self.password)
 
     def test_04_send_server(self):
-        self.assertEqual(self.account.send_server, 'smtp.gmail.com:587')
+        self.assertEqual(self.account.send_server_name, 'smtp.gmail.com:587')
 
     def test_05_rec_server(self):
-        self.assertEqual(self.account.rec_server[0], 'imap.gmail.com')
-        self.assertEqual(self.account.rec_server[1],  993)
+        self.assertEqual(self.account.rec_server_name[0], 'imap.gmail.com')
+        self.assertEqual(self.account.rec_server_name[1],  993)
 
     def test_06_connect(self):
         self.account.connect()
@@ -80,6 +81,7 @@ class AgentEmailTest(unittest.TestCase):
         print('tot_emails = ' + str(tot_emails))
         self.assertEqual(tot_emails > 9, True)
         
+
     def test_08_send(self):
         self.account.send('djmurray@gmail.com', subject='test from AIKIF ', msg='this is a test')
         self.assertEqual(self.account.status, 'CONNECTED')
@@ -87,7 +89,7 @@ class AgentEmailTest(unittest.TestCase):
     def test_99_disconnect(self):
         self.account.disconnect()
         self.assertEqual(self.account.status, 'DISCONNECTED')
-    
+
         
 if __name__ == '__main__':
     unittest.main()

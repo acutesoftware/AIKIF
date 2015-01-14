@@ -33,6 +33,10 @@ def TEST():
     
     agt = EmailAgent('email_agent', root_folder, True, 1 , account)
     print(agt)
+    
+    account.connect()
+    print('Total Emails = ', account.get_inbox_count())  # works if this is just after connect (20 emails)
+    
 
             
 class EmailAgent(agt.Agent):
@@ -77,27 +81,39 @@ class EmailAccount:
     """
     base class for email account - server details based when sub-classed
     """
-    def __init__(self, username, password, send_server, rec_server):
+    def __init__(self, username, password, send_server_name, rec_server_name):
         self.username = username
         self.password = password
-        self.send_server = send_server
-        self.rec_server = rec_server
+        self.send_server_name = send_server_name
+        self.rec_server_name = rec_server_name
         self.status = 'NONE'
-        self.sendserver = smtplib.SMTP(self.send_server)
-        self.receiveserver = imaplib.IMAP4_SSL(rec_server[0], rec_server[1])
-
+        self.server_snd = smtplib.SMTP(self.send_server_name)
+        self.server_snd.starttls()
+        self.server_rec = imaplib.IMAP4_SSL(self.rec_server_name[0], self.rec_server_name[1])
+        
+    def __str__(self):
+        res = ' Account ---\n'
+        res += 'username    = ' + self.username + '\n'
+        res += 'password    = ' + self.password + '\n'
+        res += 'send_server = ' + self.send_server_name + '\n'
+        res += 'rec_server  = ' + self.rec_server_name[0] + ':' + str(self.rec_server_name[1]) + '\n'
+        return res
+        
+        
     def connect(self):
-        self.sendserver.starttls()
-        self.sendserver.login(self.username,self.password)
+        print('connecting with ', self.username,self.password )
+        self.server_snd.login(self.username,self.password)
 
-        self.receiveserver.login(username,password)
+        self.server_rec.login(self.username,self.password)
+        #self.server_snd.ehlo()
+        #self.server_rec.ehlo()
         self.status = 'CONNECTED'
         print(self.status)
     
     def disconnect(self):
-        self.sendserver.quit()
-        self.receiveserver.close()
-        self.receiveserver.logout()
+        self.server_snd.quit()
+        self.server_rec.close()
+        self.server_rec.logout()
         self.status = 'DISCONNECTED'
         print(self.status)
 
@@ -110,19 +126,15 @@ class EmailAccount:
                    "MIME-Version: 1.0",
                    "Content-Type: text/html"]
         headers = "\r\n".join(headers)
-        self.sendserver.sendmail(fromaddr, toaddr, headers + "\r\n\r\n" + msg)
+        #self.server_snd.ehlo()
+        self.server_snd.starttls()
+        #self.server_snd.ehlo()
+        self.server_snd.sendmail(fromaddr, toaddr, headers + "\r\n\r\n" + msg)
     
     def get_inbox_count(self):
-        return int(self.receiveserver.select('Inbox')[1][0])
+        return int(self.server_rec.select('Inbox')[1][0])
 
-    
-    def __str__(self):
-        res = ' Account ---\n'
-        res += 'username    = ' + self.username + '\n'
-        res += 'password    = ' + self.password + '\n'
-        res += 'send_server = ' + self.send_server + '\n'
-        res += 'rec_server  = ' + self.rec_server[0] + '\n'
-        return res
+     
  
 class GmailAccount(EmailAccount):
     def __init__(self, username, password):
