@@ -6,7 +6,11 @@ import win32com
 
 def TEST():
     print('Testing Outlook - ', sys.version)
-    with open('E:\\backup\\MAIL\\outlook_emails.csv', 'w') as f:
+    #op_file = 'D:\\py\\emails\\outlook_emails.csv' 
+    op_file = 'E:\\backup\\MAIL\\outlook_emails.csv'
+    
+    
+    with open(op_file, 'w', encoding='utf-8', errors="surrogateescape") as f:
         export_all_emails(f)
 
 
@@ -23,8 +27,6 @@ def export_all_emails(f):
     Walks through all stores and folders in Outlook and extracts 
     emails to a CSV file
     """
-    
-    
     outlook = win32com.client.Dispatch('Outlook.Application')
     mapi = outlook.GetNamespace('MAPI')
     tot_stores = 0
@@ -37,7 +39,7 @@ def export_all_emails(f):
         tot_stores += 1
         print (store)
         for mail, path_list in get_mails(store.GetRootFolder()):
-            path_str = '/'.join([p.Name for p in path_list])
+            path_str = str(store) + '/' + '/'.join([p.Name for p in path_list])
             if path_str != old_path:
                 old_path = path_str
                 print(path_str + ' (' + str(num_emails) + ' emails)')
@@ -47,15 +49,18 @@ def export_all_emails(f):
             num_emails += 1
             #print (mail.size, path_str, mail.subject.encode('utf8'))
             m = Message(mail, path_str)
-            f.write(m.convert_csv())
-            
+            try:
+                f.write(m.convert_csv())
+            except:
+                print('ERROR writing email #' + str(tot_emails) + ' in ' + path_str)
+        
     print('Found ' , tot_emails , ' emails in ', tot_folders, ' folders')
 
 class Message:
     def __init__(self, msg, path):
         self.msg = msg
         self.path = path
-        
+         
     def __str__(self):
         return self.convert_csv()
         
@@ -99,6 +104,7 @@ class Message:
                 #print(attach.FileName )
                 if attach:
                     txt += attach.FileName + '; '
+                    attach.SaveASFile('E:\\backup\\MAIL\\_EXPORTED\\' + attach.FileName)
             txt += delim   
         except:
             txt += delim   
@@ -108,13 +114,13 @@ class Message:
         """
         
         try:
+            pass
            # txt += self.msg.Body.strip('\n').encode("utf-8") + delim
-            txt += self.msg.Body.strip('\n')[0:55] + delim
-           # txt += body + delim
+            #txt += self.msg.Body.strip('\n')[0:55] + delim
+            #txt += 'body' + delim
         except:
-            txt += delim
-                
-                
+            #txt += delim
+            pass
                 
         #print(txt.encode('utf8')  )  
         return txt + '"\n'
