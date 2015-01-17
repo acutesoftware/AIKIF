@@ -164,7 +164,7 @@ class Grid:
             return None
         row = random.randrange(0, self.grid_height)
         col = random.randrange(0, self.grid_width)
-        while self.grid[row][col] != 0:
+        while self.grid[row][col] != EMPTY:
             row = random.randrange(0, self.grid_height)
             col = random.randrange(0, self.grid_width)
         return row, col
