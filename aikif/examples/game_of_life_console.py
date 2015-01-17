@@ -30,9 +30,9 @@ def main():
     """
     iterations  = 10     # how many simulations to run
     years       = 100    # how many times to run each simulation
-    width = 22           # grid height
-    height = 78          # grid width
-    time_delay = 0.03    # delay when printing on screen
+    width       = 22     # grid height
+    height      = 78     # grid width
+    time_delay  = 0.03   # delay when printing on screen
     
     aikif.LogProcess('Game of Life', 'game_of_life_console.py')
     for i in range(iterations):
@@ -43,7 +43,6 @@ def run_game_of_life(years, width, height, time_delay, silent="N"):
     """
     run a single game of life for 'years' and log start and 
     end living cells to aikif
-    
     """
     lfe = cls_grid_life.GameOfLife(width, height, ['.', 'x'], 1)
     set_random_starting_grid(lfe)
