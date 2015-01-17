@@ -7,19 +7,22 @@ lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep +
 sys.path.append(lib_fldr)
 import cls_plan_search as mod_plan
 
+goal =  ['1','2','3','4','5','6','7','8','0']
+start = ['2','7','1','3','5','0','6','8','4']
+
 class PlanSearchTest(unittest.TestCase):
     
     def setUp(self):
         """ Note, this gets called for EACH test """
         unittest.TestCase.setUp(self)
-        self.myplan = mod_plan.Plan('New Plan', [[0,0],[1,2]], [1,2,3,4,67,3], 40, 0)
+        self.myplan = mod_plan.Plan('8 Puzzle', [], goal, start)
         
 
     """ 
     tests for plans go below - use myplan instantiated object
     """
     def test_01_new_plan(self):
-        self.assertEqual(self.myplan.nme, 'New Plan')
+        self.assertEqual(self.myplan.nme, '8 Puzzle')
 
  
     def test_99(self):

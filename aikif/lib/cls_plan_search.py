@@ -46,7 +46,8 @@ class PlanSearchAStar(Plan):
         heapq.heapify(self.opened)
         self.closed = set()
         self.came_from = []
-
+        self.current = start
+        self.num_loops = 0
         
     def __str__(self):
         #print(str(Plan))        # Prints <class '__main__.Plan'>
@@ -66,7 +67,13 @@ class PlanSearchAStar(Plan):
         
     def search(self):
         print('searching...')
-
+        if self.target == self.current:
+            print('starting point is target')
+            return 0
+        
+        while self.opened:
+            self.num_loops += 1
+            
     
 if __name__ == '__main__':
     TEST()	

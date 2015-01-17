@@ -30,7 +30,7 @@ fldrs['root_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) 
 fldrs['program_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
 fldrs['public_data_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'data') 
 
-# NOTE - original folder paths using dirname do NOT work once pip installed - fix this todo
+print('NOTE - original folder paths using dirname do NOT work once pip installed - todo\n')
 print('config.py : fldrs[root_path] = ' + fldrs['root_path'])
 if 'site-packages' in fldrs['root_path']:  
     fldrs['root_path'] = fldrs['localPath'] 
