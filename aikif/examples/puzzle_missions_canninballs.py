@@ -1,4 +1,4 @@
-# puzzle_missions_canninballs.py 
+# puzzle_missions_canninballs.py  written by Duncan Murray  18/1/2015
 
 """
 On one bank of a river are three missionaries (black triangles) 
@@ -183,6 +183,31 @@ def parse_miss_cann(node, m, c):
         c2=node[1]
     
     return m1, c1, m2, c2
+
+def pick_next_boat_trip(node, m, c):
+    """ 
+    based on current situation, pick who
+    gets transported next, and return the path
+    """
+    next_path = []
+    boat, mult = boat_on_left_bank(node)
+    m1, c1, m2, c2 = parse_miss_cann(node, m, c)
+    if (m1 - 1 >= c1 or m1 == 1) and (m2 + 1 >= c2) and (m1 > 0):
+        next_path.append((node[0]-mult,node[1],1-boat))
+         
+    if (m1 >= c1-1 or m1 == 0) and (m2 -1 >= c2 or m2 == 0) and ( c1 > 0):
+        next_path.append((node[0],node[1]-mult,1-boat))
+        
+    if (m1 >= c1) and (m2 >= c2) and (m1 > 0) and (c1 > 0):
+        next_path.append((node[0]-mult,node[1]-mult,1-boat))
+        
+    if (m1 - 2 >= c1 or m1 == 2) and (m2 >= c2 or m2 == 0) and (m1 > 1):
+        next_path.append((node[0]-(mult*2),node[1],1-boat))
+        
+    if (m1 >= c1 - 2 or m1 == 0) and (m2 >= c2 + 2 or m2 == 0) and (c1 > 1):
+        next_path.append((node[0],node[1]-(mult*2),1-boat))  
+    print(next_path)    
+    return next_path
     
 def solve(m,c):
     """
@@ -195,18 +220,7 @@ def solve(m,c):
         for node in hold:
             newnode=[]
             frontier.remove(node)
-            boat, mult = boat_on_left_bank(node)
-            m1, c1, m2, c2 = parse_miss_cann(node, m, c)
-            if (m1 - 1 >= c1 or m1 == 1) and (m2 + 1 >= c2) and (m1 > 0):
-                newnode.append((node[0]-mult,node[1],1-boat))
-            if (m1 >= c1-1 or m1 == 0) and (m2 -1 >= c2 or m2 == 0) and ( c1 > 0):
-                newnode.append((node[0],node[1]-mult,1-boat))
-            if (m1 >= c1) and (m2 >= c2) and (m1 > 0) and (c1 > 0):
-                newnode.append((node[0]-mult,node[1]-mult,1-boat))
-            if (m1 - 2 >= c1 or m1 == 2) and (m2 >= c2 or m2 == 0) and (m1 > 1):
-                newnode.append((node[0]-(mult*2),node[1],1-boat))
-            if (m1 >= c1 - 2 or m1 == 0) and (m2 >= c2 + 2 or m2 == 0) and (c1 > 1):
-                newnode.append((node[0],node[1]-(mult*2),1-boat))
+            newnode.extend(pick_next_boat_trip(node, m,c))
             for neighbor in newnode:
                 if neighbor not in G:
                     G[node].append(neighbor)
@@ -214,6 +228,6 @@ def solve(m,c):
                     frontier.append(neighbor)
     return find_path(G,(m,c,1),(0,0,0))
 
-
-main()
+if __name__ == '__main__':
+    main()
 
