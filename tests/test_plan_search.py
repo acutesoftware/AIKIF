@@ -7,8 +7,8 @@ lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep +
 sys.path.append(lib_fldr)
 import cls_plan_search as mod_plan
 
-goal =  ['1','2','3','4','5','6','7','8','0']
-start = ['2','7','1','3','5','0','6','8','4']
+goal =  [1,2,3,4,5,6,7,8,0]
+start = [1,2,3,4,5,6,7,0,8]
 
 class PlanSearchTest(unittest.TestCase):
     
@@ -24,6 +24,13 @@ class PlanSearchTest(unittest.TestCase):
     def test_01_new_plan(self):
         self.assertEqual(self.myplan.nme, '8 Puzzle')
 
+    def test_02_check_none_method(self):
+        self.assertEqual(self.myplan.nme, '8 Puzzle')
+        self.assertEqual(self.myplan.method, 'No method defined')
+ 
+    def test_03_astar_new(self):
+        myplan2 = mod_plan.PlanSearchAStar('8 Puzzle', [], goal, start)
+        self.assertEqual(myplan2.method, 'A*')
  
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
