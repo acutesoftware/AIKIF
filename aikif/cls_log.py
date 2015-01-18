@@ -7,6 +7,7 @@ import getpass
 import socket
 import collections 
 import config as cfg
+import random
 #localPath = 'T:\\user\\AIKIF\\' # '..//data//' # os.getcwd()
 
  
@@ -30,13 +31,38 @@ class Log:
         self.logFileCommand = self.log_folder + os.sep + 'command.log'
         self.logFileResult  = self.log_folder + os.sep + 'result.log'
         ensure_dir(self.logFileCommand)  # need to pass file not the folder for this to work
-
+        self.session_id = self.get_session_id()
         
     def __str__(self):
         return self.log_folder
     
     def get_folder_process(self):
         return self.logFileProcess
+     
+    def get_session_id(self):
+        """
+        get a unique id (shortish string) to allow simple aggregation
+        of log records from multiple sources. This id is used for the 
+        life of the running program to allow extraction from all logs.
+        WARING - this can give duplicate sessions when 2 apps hit it 
+        at the same time.
+        """
+        max_session = '0'
+        try:
+            with open(self.log_folder + os.sep + '_sessions.txt', 'r') as f:
+                for line in f:
+                    txt = f.readline()
+                    if txt.strip('\n') != '':
+                        max_session = txt
+        except:
+            max_session = '1'
+        
+        this_session = str(int(max_session) + random.randint(9,100)).zfill(9) # not a great way to ensure uniqueness - TODO FIX  
+        with open(self.log_folder + os.sep + '_sessions.txt', 'a') as f2:
+            f2.write(this_session + '\n')
+        return this_session
+        
+        
         
     def estimate_complexity(self, x,y,z,n):
         """ calculates a rough guess of runtime based on product of parameters """
@@ -71,12 +97,13 @@ class Log:
         dte = TodayAsString()
         usr = GetUserName()
         hst = GetHostName()
+        id = self.session_id
         #print('_log : os.path.dirname(fname) = ', os.path.dirname(fname))
         #ensure_dir(os.path.dirname(fname))
 
         if prg == '':
             prg = 'cls_log.log' # GetModuleName() 
-        logEntry = q + dte + q + delim + q + usr + q + delim + q + hst + q + delim + q + prg + q + delim + q + txt + q + delim + '\n'
+        logEntry = q + dte + q + delim + q + id + q + delim + q + usr + q + delim + q + hst + q + delim + q + prg + q + delim + q + txt + q + delim + '\n'
         with open(fname, "a") as myfile:
             myfile.write(logEntry)
 
