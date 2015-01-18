@@ -112,6 +112,13 @@ Took 20 trips for 7 missionaries and 4 canniballs
 |            | mmmmmmmcccc|
 """
 
+import sys
+import os
+lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "lib")
+sys.path.append(lib_fldr)
+import cls_plan_search as mod_plan
+
+
 def main():
     missionaries = 3 #9 
     canniballs = 3
@@ -149,27 +156,6 @@ def show_results(result, missionaries,canniballs):
         print(displ)
         #print(num, p)
         
-def find_path(Graph,n,m):
-    if m not in Graph:
-        return None
-    if n == m:
-        return [m]
-    path = [[n]]
-    searched = []
-    while True:
-        j = len(path)
-        k = len(Graph[n])
-        for i in range(j):
-            node = path[i][-1]
-            for neighbor in Graph[node]:
-                if neighbor not in searched:                    
-                    path.append(path[i]+[neighbor])  
-                    searched.append(neighbor)
-                    if neighbor==m:
-                        return path[-1]
-        for i in range(j):
-            path.pop(0)
-    return path
 
 def boat_on_left_bank(node):
     """
@@ -257,7 +243,7 @@ def solve(m,c):
                     G[node].append(neighbor)
                     G[neighbor]=[node]
                     frontier.append(neighbor)
-    return find_path(G,(m,c,1),(0,0,0))
+    return mod_plan.find_path_BFS(G,(m,c,1),(0,0,0))
 
 if __name__ == '__main__':
     main()

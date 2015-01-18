@@ -7,6 +7,8 @@ Various algorithms to do searches
 import os
 import sys
 import heapq
+import queue
+PriorityQueue = queue.PriorityQueue
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." )
 lib_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." +  os.sep + "toolbox" )
 sys.path.append(lib_folder)
@@ -26,6 +28,8 @@ def TEST():
     plan.search()    
     print(plan)
 
+    
+    
 class Plan(object):
     """ 
     base class for AI planners to implement standard logging
@@ -59,8 +63,8 @@ class PlanSearchAStar(Plan):
         self.current = start
         self.method = 'A*'
         self.num_loops = 0
-        self.lg.record_source('CLS_PLAN_SEARCH : Source = ', ', '.join(str(p) for p in self.start))
-        self.lg.record_source('CLS_PLAN_SEARCH : Target = ', ', '.join(str(p) for p in self.target))
+        self.lg.record_source(','.join(str(p) for p in self.start),  'CLS_PLAN_SEARCH : Source = ')
+        self.lg.record_source(','.join(str(p) for p in self.target), 'CLS_PLAN_SEARCH : Target = ')
     """    
     def __str__(self):
         #print(str(Plan))        # Prints <class '__main__.Plan'>
@@ -92,7 +96,37 @@ class PlanSearchAStar(Plan):
 
         self.lg.record_command('CLS_PLAN_SEARCH - Finished Plan', self.nme)
 
-            
+"""
+Utilities and Search Algorithms (used by examples/ folder)
+"""            
+
+def find_path_BFS(Graph,n,m):
+    """
+    Breadth first search
+    """
+    if m not in Graph:
+        return None
+    if n == m:
+        return [m]
+    path = [[n]]
+    searched = []
+    while True:
+        j = len(path)
+        k = len(Graph[n])
+        for i in range(j):
+            node = path[i][-1]
+            for neighbor in Graph[node]:
+                if neighbor not in searched:                    
+                    path.append(path[i]+[neighbor])  
+                    searched.append(neighbor)
+                    if neighbor==m:
+                        return path[-1]
+        for i in range(j):
+            path.pop(0)
+    return path
+
+
+
     
 if __name__ == '__main__':
     TEST()	
