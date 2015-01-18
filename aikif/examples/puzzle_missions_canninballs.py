@@ -23,24 +23,40 @@ STATE                       Set of <action, state>
 (L:2m,2c-R:1m,1c,b) ->  {<1m1c, (L:3m,3c,b-R:0m,0c)>,
                          <1m, (L:3m,2c,b-R:0m,1c)>}
 
-Took 14 trips for 4 missionaries and 4 canniballs
+
+[(3, 2, 0), (2, 2, 0), (3, 1, 0)]
+[(3, 3, 1)]
+[(3, 2, 1), (3, 3, 1)]
+[(3, 3, 1)]
+[(2, 2, 0), (3, 1, 0), (3, 0, 0)]
+[(3, 1, 1), (3, 2, 1)]
+[(3, 0, 0), (1, 1, 0)]
+[(2, 2, 1), (3, 1, 1)]
+[(1, 1, 0), (0, 2, 0)]
+[(0, 3, 1), (2, 2, 1)]
+[(0, 2, 0), (0, 1, 0)]
+[(1, 1, 1), (0, 2, 1), (0, 3, 1)]
+[(0, 1, 0), (0, 0, 0)]
+[(0, 1, 0)]
+[(0, 1, 1), (1, 1, 1), (0, 2, 1)]
+[(0, 0, 0)]
+Took 12 trips for 3 missionaries and 3 canniballs
  /-----------|-----------\
 | Left Bank  | Right Bank |
  \-----------|-----------/
-| mmmmcccc   |            |
-| mmmccc     | mc         |
-| mmmmccc    | c          |
-| mmmmc      | ccc        |
-| mmmmcc     | cc         |
-| mmmm       | cccc       |
-| mmmmc      | ccc        |
-| mmc        | mmccc      |
-| mmcc       | mmcc       |
-| cc         | mmmmcc     |
-| ccc        | mmmmc      |
-| c          | mmmmccc    |
-| mc         | mmmccc     |
-|            | mmmmcccc   |
+| mmmccc     |            |
+| mmcc       | mc         |
+| mmmcc      | c          |
+| mmm        | ccc        |
+| mmmc       | cc         |
+| mc         | mmcc       |
+| mmcc       | mc         |  <-- duplicate!! TO FIX
+| cc         | mmmc       |
+| ccc        | mmm        |
+| c          | mmmcc      |
+| mc         | mmcc       |
+|            | mmmccc     |
+
 
 Took 12 trips for 3 missionaries and 3 canniballs
  /-----------|-----------\
@@ -184,29 +200,44 @@ def parse_miss_cann(node, m, c):
     
     return m1, c1, m2, c2
 
-def pick_next_boat_trip(node, m, c):
+def pick_next_boat_trip(node, m, c, frontier):
     """ 
     based on current situation, pick who
     gets transported next, and return the path
+    NOTE - improvement here as there are often
+    duplicate paths or backtracking, e.g.
     """
     next_path = []
+    cur_path = []
     boat, mult = boat_on_left_bank(node)
+    shore = 1 - boat
     m1, c1, m2, c2 = parse_miss_cann(node, m, c)
     if (m1 - 1 >= c1 or m1 == 1) and (m2 + 1 >= c2) and (m1 > 0):
-        next_path.append((node[0]-mult,node[1],1-boat))
-         
+        cur_path = (node[0]-mult,node[1], shore)
+        if cur_path not in frontier:
+            next_path.append(cur_path)
+
     if (m1 >= c1-1 or m1 == 0) and (m2 -1 >= c2 or m2 == 0) and ( c1 > 0):
-        next_path.append((node[0],node[1]-mult,1-boat))
+        cur_path = (node[0],node[1]-mult, shore)
+        if cur_path not in frontier:
+            next_path.append(cur_path)
         
     if (m1 >= c1) and (m2 >= c2) and (m1 > 0) and (c1 > 0):
-        next_path.append((node[0]-mult,node[1]-mult,1-boat))
+        cur_path = (node[0]-mult,node[1]-mult, shore)
+        if cur_path not in frontier:
+            next_path.append(cur_path)
         
     if (m1 - 2 >= c1 or m1 == 2) and (m2 >= c2 or m2 == 0) and (m1 > 1):
-        next_path.append((node[0]-(mult*2),node[1],1-boat))
+        cur_path = (node[0]-(mult*2),node[1], shore)
+        if cur_path not in frontier:
+            next_path.append(cur_path)
         
     if (m1 >= c1 - 2 or m1 == 0) and (m2 >= c2 + 2 or m2 == 0) and (c1 > 1):
-        next_path.append((node[0],node[1]-(mult*2),1-boat))  
-    print(next_path)    
+        cur_path = (node[0],node[1]-(mult*2), shore)
+        if cur_path not in frontier:
+            next_path.append(cur_path)
+
+    #print(next_path)    
     return next_path
     
 def solve(m,c):
@@ -220,7 +251,7 @@ def solve(m,c):
         for node in hold:
             newnode=[]
             frontier.remove(node)
-            newnode.extend(pick_next_boat_trip(node, m,c))
+            newnode.extend(pick_next_boat_trip(node, m,c, frontier))
             for neighbor in newnode:
                 if neighbor not in G:
                     G[node].append(neighbor)
