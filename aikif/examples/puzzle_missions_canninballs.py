@@ -120,8 +120,8 @@ import cls_plan_search as mod_plan
 
 
 def main():
-    missionaries = 3 #9 
-    canniballs = 3
+    missionaries = int(input('how many missionaries (e.g. 1-9, start with 3)'))
+    canniballs =   int(input('how many canniballs  (e.g. 1-9, start with 3)'))
     result = solve(missionaries,canniballs)
     if not result: 
         print('No path found for ' + str(missionaries) + ' missionaries and '  + str(canniballs) + ' canniballs')
