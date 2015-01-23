@@ -32,6 +32,22 @@ class PlanSearchTest(unittest.TestCase):
         myplan2 = mod_plan.PlanSearchAStar('8 Puzzle', [], goal, start)
         self.assertEqual(myplan2.method, 'A*')
  
+    def test_10_util_BFS(self):
+        graph = {
+                'A': ['B', 'E'],
+                'B': ['H', 'C', 'D'],
+                'E': ['M'],
+                'H': ['J', 'M', 'F'],
+                'F': [ 'I'],
+                'M': [ 'J'],
+                'J': ['Z']
+                 }
+        self.assertEqual(mod_plan.find_path_BFS(graph, 'A', 'B'), ['A', 'B'])
+        self.assertEqual(mod_plan.find_path_BFS(graph, 'A', 'F'), ['A', 'B', 'H', 'F'])
+        self.assertEqual(mod_plan.find_path_BFS(graph, 'B', 'H'), ['B', 'H'])
+        self.assertEqual(mod_plan.find_path_BFS(graph, 'E', 'J'), ['E', 'M', 'J'])
+
+
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
         print(str(self.myplan))
