@@ -122,6 +122,9 @@ class Graph(object):
           'E': ['M']  }
         """
         self.graph = graph
+        self.nodes = []
+        self.links = []
+        self.adj_matrix = []
 
     def __str__(self):
         """ display as raw data """
@@ -139,28 +142,26 @@ class Graph(object):
         [0, 1, 0, 0, 0, 0]
         [0, 1, 0, 0, 0, 0]
         """
-        links = [[i,j] for i in self.graph for j in self.graph[i]]
-        node_list = []
-        unique_list = []
+        self.links = [[i,j] for i in self.graph for j in self.graph[i]]
+        all_nodes = []
         op = [] # 0 for i in self.graph for j in self.graph[i]]
         for node in self.graph:
-            node_list.append(node)  # to get the root node
+            all_nodes.append(node)  # to get the root node
             for connection in self.graph[node]:
-                node_list.append(connection)
-        unique_list = sorted(list(set(node_list)))
-        print (len(unique_list), 'nodes:', unique_list)
-        print (len(links), 'links:', links)
+                all_nodes.append(connection)
+        self.nodes = sorted(list(set(all_nodes)))
+        if show_in_console != False:
+            print (len(self.nodes), 'nodes:', self.nodes)
+            print (len(self.links), 'links:', self.links)
         
-        for y in range(len(unique_list)):
+        for y in range(len(self.nodes)):
             row = []
-            for x in range(len(unique_list)):
-                #print('checking for links unique_list[x]=', unique_list[x], ' and unique_list[y]=' ,unique_list[y]  )
+            for x in range(len(self.nodes)):
                 match = False
-                for l in links:
-                    #print('l = ', l)
-                    if unique_list[x] == l[0] and unique_list[y] == l[1]:
+                for l in self.links:
+                    if self.nodes[x] == l[0] and self.nodes[y] == l[1]:
                         match = True
-                    if unique_list[x] == l[1] and unique_list[y] == l[0]:
+                    if self.nodes[x] == l[1] and self.nodes[y] == l[0]:
                         match = True
                         
                 if match == True:
