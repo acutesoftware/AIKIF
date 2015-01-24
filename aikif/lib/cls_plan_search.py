@@ -27,7 +27,10 @@ def TEST():
     plan = PlanSearchAStar('8 Puzzle', environ, goal, start)
     plan.search()    
     print(plan)
-
+    
+    g = Graph({'1': ['2','3','4'], '2':['6','7']})
+    print('raw graph = ', g)
+    mat = g.get_adjacency_matrix(True)
     
     
 class Plan(object):
@@ -96,9 +99,90 @@ class PlanSearchAStar(Plan):
 
         self.lg.record_command('CLS_PLAN_SEARCH - Finished Plan', self.nme)
 
-"""
-Utilities and Search Algorithms (used by examples/ folder)
-"""            
+        
+        
+"""------------------------
+Classes for Data Structures
+"""   
+ 
+class Graph(object):
+    def __init__(self, graph):
+        """ takes a graph as input 
+        e.g. the following tree is encoded as follows:
+        
+                 A 
+               /   \ 
+              B     E 
+            / | \    \
+           H  C  D    M
+        
+        would be entered as 
+        { 'A': ['B', 'E'],
+          'B': ['H', 'C', 'D'],
+          'E': ['M']  }
+        """
+        self.graph = graph
+
+    def __str__(self):
+        """ display as raw data """
+        return str(self.graph)
+        
+    def get_adjacency_matrix(self, show_in_console=False):
+        """ return the matrix as a list of lists 
+        raw graph =  {'1': ['2', '3', '4'], '2': ['6', '7']}
+        6 nodes: ['1', '2', '3', '4', '6', '7']
+        5 links: [['1', '2'], ['1', '3'], ['1', '4'], ['2', '6'], ['2', '7']]
+        [0, 1, 1, 1, 0, 0]
+        [1, 0, 0, 0, 1, 1]
+        [1, 0, 0, 0, 0, 0]
+        [1, 0, 0, 0, 0, 0]
+        [0, 1, 0, 0, 0, 0]
+        [0, 1, 0, 0, 0, 0]
+        """
+        links = [[i,j] for i in self.graph for j in self.graph[i]]
+        node_list = []
+        unique_list = []
+        op = [] # 0 for i in self.graph for j in self.graph[i]]
+        for node in self.graph:
+            node_list.append(node)  # to get the root node
+            for connection in self.graph[node]:
+                node_list.append(connection)
+        unique_list = sorted(list(set(node_list)))
+        print (len(unique_list), 'nodes:', unique_list)
+        print (len(links), 'links:', links)
+        
+        for y in range(len(unique_list)):
+            row = []
+            for x in range(len(unique_list)):
+                #print('checking for links unique_list[x]=', unique_list[x], ' and unique_list[y]=' ,unique_list[y]  )
+                match = False
+                for l in links:
+                    #print('l = ', l)
+                    if unique_list[x] == l[0] and unique_list[y] == l[1]:
+                        match = True
+                    if unique_list[x] == l[1] and unique_list[y] == l[0]:
+                        match = True
+                        
+                if match == True:
+                    row.append(1)
+                else:
+                    row.append(0)
+                
+            op.append(row)
+            
+        if show_in_console != False:
+            for row in op:
+                print(row)
+            
+        return op
+        
+"""-----------------------------
+Utilities and Search Algorithms 
+(used by examples/ folder)
+
+"""   
+
+    
 
 def find_path_BFS(Graph,n,m):
     """
