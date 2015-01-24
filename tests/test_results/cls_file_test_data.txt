@@ -1,3 +1,0 @@
-# test file for cls_file
-this is the 2nd line
-this is the last line
