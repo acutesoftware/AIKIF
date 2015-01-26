@@ -11,9 +11,10 @@ params = {}
 # path for personal data location  (TODO - you need to modify this line below!)
 fldrs['localPath'] = 'T:\\user\\AIKIF\\' 
 fldrs['log_folder'] = 'T:\\user\\AIKIF\\log' 
+fldrs['pers_data'] = 'T:\\user\\AIKIF\\pers_data' 
 
 # user defined parameters 
-params['AIKIF_version'] = '0.0.3'
+params['AIKIF_version'] = '0.0.4'
 params['AIKIF_deploy'] = 'DEV'
 
 
@@ -30,8 +31,8 @@ fldrs['root_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) 
 fldrs['program_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
 fldrs['public_data_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'data') 
 
-print('NOTE - original folder paths using dirname do NOT work once pip installed - todo\n')
-print('config.py : fldrs[root_path] = ' + fldrs['root_path'])
+print('DEBUG:NOTE - origi folder paths may NOT work after pip install - todo\n')
+print('DEBUG:config.py : fldrs[root_path] = ' + fldrs['root_path'])
 if 'site-packages' in fldrs['root_path']:  
     fldrs['root_path'] = fldrs['localPath'] 
     fldrs['public_data_path'] = fldrs['log_folder']
