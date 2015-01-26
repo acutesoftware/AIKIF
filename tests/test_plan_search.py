@@ -49,13 +49,13 @@ class PlanSearchTest(unittest.TestCase):
 
 
     def test_20_graph_01(self):
-        g = mod_plan.Graph({'1': ['2','3','4'], '2':['6','7']})
+        g = mod_plan.ds.Graph({'1': ['2','3','4'], '2':['6','7']})
         mat = g.get_adjacency_matrix()
         self.assertEqual(g.nodes, ['1', '2', '3', '4', '6', '7'])
         self.assertEqual(g.links, sorted([['2', '6'], ['2', '7'], ['1', '2'], ['1', '3'], ['1', '4']])) # sometimes returned in diff order. check
         
     def test_20_graph_02(self):
-        g = mod_plan.Graph({'animal': ['bird','reptile','insect'], 'bird':['finch','owl'], 'reptile': ['snake', 'lizard'], 'insect': ['ladybird', 'moth']})
+        g = mod_plan.ds.Graph({'animal': ['bird','reptile','insect'], 'bird':['finch','owl'], 'reptile': ['snake', 'lizard'], 'insect': ['ladybird', 'moth']})
         mat = g.get_adjacency_matrix(True)
         self.assertEqual(g.nodes, ['animal', 'bird', 'finch', 'insect', 'ladybird', 'lizard', 'moth', 'owl', 'reptile', 'snake'])
 

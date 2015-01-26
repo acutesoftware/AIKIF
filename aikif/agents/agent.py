@@ -18,7 +18,7 @@ import os
 import sys
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 sys.path.append(root_fldr)
-print('agent.py - root folder = ' + root_fldr)
+print('DEBUG:agent.py - root folder = ' + root_fldr)
 import cls_log
 import config as mod_cfg
         

@@ -6,7 +6,7 @@ import sys
 import random
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 sys.path.append(root_folder)
-print('agent_filelist, root_folder = ', root_folder)
+print('DEBUG:agent_filelist - root = ', root_folder)
 import aikif.agents.agent as agt
 import aikif.lib.cls_filelist as fl
 		
