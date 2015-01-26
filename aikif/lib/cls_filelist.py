@@ -185,7 +185,7 @@ class FileList(object):
         """
         uses self parameters if no parameters passed - TODO - add test for this!!!!
         """
-        self.get_file_list(self.paths, self.xtn, self.excluded)
+        self.get_file_list(self, self.paths, self.xtn, self.excluded)
         
     def get_file_list(self, lstPaths, lstXtn, lstExcluded, VERBOSE = False):
         """
