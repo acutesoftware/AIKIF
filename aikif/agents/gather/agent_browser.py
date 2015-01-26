@@ -46,19 +46,19 @@ def TEST_DATE_CONV():
 		
 class BrowserCollectAgent(agt.Agent):
     """
-    agent that gathers file metadata. The purpose of this class 
-    is to manage when the filelist runs (calls cls_filelist.py)
-    and how the results are saved [using AIKIF logging].
+    agent that extracts history, passwords and bookmarks
+    from a web browser (currently Chrome only) and logs the
+    results using AIKIF logging
     """
     
     def __init__(self, name, fldr, browser, running, LOG_LEVEL, log_folder):
         agt.Agent.__init__(self, name, log_folder, running)
         """
-        takes a fldr which is a single folder as string and makes its
-        own instance of cls_filelist in do_your_job - not the best idea
+        takes a browser object (see below) to manage the collection - sub 
+        class browser for different ones (IE, Firefox, Safari)
         """
         self.LOG_LEVEL = LOG_LEVEL
-        self.root_folder = fldr # browser.browser_data_path
+        self.root_folder = fldr # used for logging, NOT the source of Chrome
         self.browser = browser
         self.results = []
         self.log_folder = log_folder
@@ -93,20 +93,25 @@ class BrowserCollectAgent(agt.Agent):
         self.mylog.record_source(self.name, 'Chrome Source = ' + str(self.browser.browser_data_path) )
 
         # Passwords
-        print('todo - export passwords (safely)')
         self.browser.get_passwords()
+        self.mylog.record_result(self.name, 'Exported ' + str(self.browser.num_passwords) + ' passwords to ' + self.browser.password_op)
+        print('Passwords        = ', self.browser.num_passwords)
         
         # History
         self.browser.get_browser_history_chrome()
         self.mylog.record_result(self.name, 'Exported ' + str(self.browser.num_history) + ' history to ' + self.browser.history_file)
+        print('History records  = ', self.browser.num_history)
 
         # Bookmarks
         self.browser.get_browser_bookmarks_chrome()
         self.mylog.record_result(self.name, 'Exported ' + str(self.browser.num_bookmarks) + ' bookmarks to ' + self.browser.bookmarks_file)
-
-        
         self.mylog.record_command(self.name, 'Done')
-        
+        print('Bookmarks        = ', self.browser.num_bookmarks)
+        print('Bookmark folders = ', self.browser.num_folders)
+        print('DONE!')
+
+
+ 
 class Browser(object):
     """
     base class for browser
@@ -120,6 +125,7 @@ class Browser(object):
         self.num_bookmarks = 0
         self.num_folders = 0
         self.num_history = 0
+        self.num_passwords = 0
         self.name = name
      
     def __str__(self):
@@ -172,7 +178,7 @@ class Browser(object):
         bookmark_data = json.load(json_file)
         op = codecs.open(self.bookmarks_file, 'w', encoding='utf-8')
         op.write('"Full Folder","Title","URL","Date Added"\n')
-        print('exporting bookmarks...')
+        #print('exporting bookmarks...')
         
         def format_bookmark(base_folder, entry, delim = ',', qu='"'):
             """ 
@@ -238,9 +244,6 @@ class Browser(object):
             self.num_folders += 1
             
         op.close()     
-        print('DONE!')
-        print('num_bookmarks = ', self.num_bookmarks)
-        print('num_folders = ', self.num_folders)
         
 
     def get_browser_history_chrome(self):
@@ -267,7 +270,7 @@ class Browser(object):
                 #try: urlc = url.group(0)
                 #except: urlc = "ERROR"
                 #storage.write(str(date_time)[0:19] + "\t" + urlc + "\n")
-        print('Exported ' + str(self.num_history) + ' records to ' + self.history_file)		
+        #print('Exported ' + str(self.num_history) + ' records to ' + self.history_file)		
 
     def get_passwords(self):
         """
@@ -304,12 +307,13 @@ class Browser(object):
         pass_field = ''
         form_url_split = urlparse.urlsplit(row[1])
         form_url = urlparse.urlunsplit((form_url_split.scheme, form_url_split.netloc, "", "", "")).strip('\n')
-        print('\nusername = ', row[3], ' password RAW = ', row[5])
+        #print('\nusername = ', row[3], ' password RAW = ', row[5])
         password = self.decode_password(row[5])
         try:
             username = row[3]
             try:
                 password = self.decode_password(row[5])
+                self.num_passwords += 1
                 pass
             except:
                 print('ERROR - password = ', row[5])
@@ -324,7 +328,7 @@ class Browser(object):
         
     def decode_password(self, raw):
         """ password from Chrome as byte arrays """
-        print("RAW = ", str(raw))
+        #print("RAW = ", str(raw))
         v1 = str(raw)
       #  v2 = base64.b64decode("".join(b for b in raw))
 
@@ -342,7 +346,7 @@ class Browser(object):
                 v4 += chr(int(b)) + ''
         
         res = v1
-        print("OP  = ", res)
+        #print("OP  = ", res)
         
         return res 
         
