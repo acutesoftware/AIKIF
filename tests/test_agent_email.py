@@ -49,10 +49,11 @@ import agents.gather.agent_email as email_agt
                     
 class AgentEmailTest(unittest.TestCase):
     def setUp(self): #setUp
+        save_folder = mod_cfg.fldrs['localPath'] + os.sep + 'email' + os.sep + 'gmail'
         with open(mod_cfg.fldrs['localPath'] + 'ac.txt', 'r') as f:
             self.username = f.readline().strip('\n')
             self.password = f.readline().strip('\n')
-        self.account = email_agt.GmailAccount(self.username, self.password)  
+        self.account = email_agt.GmailAccount(self.username, self.password, save_folder)  
         self.agt = email_agt.EmailAgent('TEST_email_agent', root_folder, True, 1 , self.account)
         print('class instantiated for testing...')
 
