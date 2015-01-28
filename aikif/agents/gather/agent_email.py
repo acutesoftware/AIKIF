@@ -28,8 +28,9 @@ def TEST():
         with open(mod_cfg.fldrs['localPath'] + email_credentials, 'r') as f:
             username = f.readline().strip('\n')
             password = f.readline().strip('\n')
-            
-    account = GmailAccount(username, password)   
+    
+    save_folder = mod_cfg.fldrs['pers_data'] + os.sep + 'email' + os.sep + 'gmail'
+    account = GmailAccount(username, password, save_folder)   
     
     agt = EmailAgent('email_agent', root_folder, True, 1 , account)
     print(agt)
@@ -83,9 +84,10 @@ class EmailAccount:
     """
     base class for email account - server details based when sub-classed
     """
-    def __init__(self, username, password, send_server_name, rec_server_name):
+    def __init__(self, username, password, save_folder, send_server_name, rec_server_name):
         self.username = username
         self.password = password
+        self.save_folder = save_folder
         self.send_server_name = send_server_name
         self.rec_server_name = rec_server_name
         self.status = 'NONE'
@@ -150,12 +152,12 @@ class EmailAccount:
             if count_emails > max_emails:
                 break
             print('Saving message # ', count_emails)
-            with open(mod_cfg.fldrs['localPath'] + 'pers_data' + os.sep + 'email' + os.sep + str(count_emails) + '.eml', 'wb') as f:
+            with open(self.save_folder + os.sep + self.username + '_' + str(count_emails).zfill(5) + '.eml', 'wb') as f:
                 f.write(data[0][1])
  
 class GmailAccount(EmailAccount):
-    def __init__(self, username, password):
-        EmailAccount.__init__(self, username, password, 'smtp.gmail.com:587', ['imap.gmail.com', 993])
+    def __init__(self, username, password, save_folder):
+        EmailAccount.__init__(self, username, password, save_folder, 'smtp.gmail.com:587', ['imap.gmail.com', 993])
         
     def __str__(self):
         return '--- Gmail' + str(EmailAccount.__str__(self))
