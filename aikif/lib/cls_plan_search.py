@@ -2,8 +2,8 @@
 
 """
 Various algorithms to do searches
-
 """
+
 import os
 import sys
 import heapq
@@ -30,6 +30,10 @@ def TEST():
     print(plan)
     my_prob = Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test1', 'test of problem')
     print(my_prob)
+    print('Goal test should pass with [1,2,3,4]: ', my_prob.goal_test([1,2,3,4]))
+    print('Goal test should fail with [3,2,1,4]: ', my_prob.goal_test([3,2,1,4]))
+    print('Goal test should fail with "BLAH": ', my_prob.goal_test('BLAH'))
+    print('Goal test should fail with 3.14159265359: ', my_prob.goal_test(3.14159265359))
     
 class Problem(object):
     """
@@ -72,11 +76,14 @@ class Problem(object):
         """
         return 1
         
-    def goal_test(self, search_node):
+    def goal_test(self, state_to_check):
         """
         Checks for success
         """
-        if search_node.state == self.goal:
+        if type(state_to_check) != type(self.goal):
+            return False
+            
+        if state_to_check == self.goal:
             return True
         else:
             return False
