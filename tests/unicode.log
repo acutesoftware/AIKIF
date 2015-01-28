@@ -1,0 +1,5 @@
+ERROR:test_unicode.main:Error decode(utf-8, strict)
+Traceback (most recent call last):
+  File "T:\user\dev\src\python\AIKIF\tests\test_unicode.py", line 25, in main
+    print(ip_data[3]['dat'].decode("utf-8", "strict")  )
+AttributeError: 'str' object has no attribute 'decode'
