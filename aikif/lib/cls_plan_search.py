@@ -28,8 +28,60 @@ def TEST():
     plan = PlanSearchAStar('8 Puzzle', environ, goal, start)
     plan.search()    
     print(plan)
+    my_prob = Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test1', 'test of problem')
+    print(my_prob)
     
-   
+class Problem(object):
+    """
+    Defines the planning problem. Must contain:
+    - goal state
+    - start state
+    - set of actions with outcomes
+    - path cost function
+    """
+    def __init__(self, goal, start, actions, name, description):
+        """
+        The Search Problem is defined by an initial state, a successor function,
+        and a goal state.  In lieu of a path cost function, a default one is
+        provided that depends on the depth of the node in the tree.
+        """
+        self.name = name
+        self.description = description
+        self.actions = actions
+        self.start = start
+        self.goal = goal
+        
+    
+    def __str__(self):
+        res = ' --- Problem Definition ---' '\n'
+        res += 'Problem Name : ' + self.name + '\n'
+        res += 'Description  : ' + self.description + '\n'
+        res += 'Start State  : ' + list_2_str(self.start) + '\n'
+        res += 'Goal State   : ' + list_2_str(self.goal) + '\n'
+        res += 'Actions List : ' + '\n'
+        if self.actions:
+            for num, action in enumerate(self.actions):
+                res += '          ' + str(num+1).zfill(2) + ' : ' +  action + '\n'
+        else:
+            res += 'No actions specified\n'
+        return res
+    
+    def path_cost(self):
+        """
+        return the cost of the function - this needs to be subclassed
+        """
+        return 1
+        
+    def goal_test(self, search_node):
+        """
+        Checks for success
+        """
+        if search_node.state == self.goal:
+            return True
+        else:
+            return False
+ 
+
     
 class Plan(object):
     """ 
@@ -104,7 +156,8 @@ Utilities and Search Algorithms
 
 """   
 
-    
+def list_2_str(lst): 
+    return ', '.join(str(i) for i in lst) 
 
 def find_path_BFS(Graph,n,m):
     """
