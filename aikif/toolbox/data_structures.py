@@ -23,10 +23,46 @@ import data_structures as ds
 myGraph = ds.Graph(...)
 
 """   
+
+
+class Node:
+    """
+    Node data structure
+    """
+    def __init__(self, name, data=None):
+        """ 
+        takes a name and optional data 
+        """
+        self.name = name
+        self.data = data
+        self.parent = None
+        self.depth = 0
+        self.links = []
+
+    def __str__(self):
+        return name + ' : (str(len(links)) + ' links)'
+        
+    def __eq__(self, other):
+        if not isinstance(other, Node):
+            return False
+        return self.name == other.name
+
+    def add_link(self, node):
+        self.links.append(node)
+        node.parent = self
+        
+    def get_children(self):
+        """ returns list of child nodes """
+        return self.links
+        
+    def get_parent(self):
+        """ returns list of child nodes """
+        return self.parent
+
  
 class Graph(object):
     def __init__(self, graph):
-        """ takes a graph as input 
+        """ takes a graph definition as input 
         e.g. the following tree is encoded as follows:
         
                  A 
