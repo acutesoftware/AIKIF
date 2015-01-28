@@ -40,7 +40,7 @@ class Node:
         self.links = []
 
     def __str__(self):
-        return name + ' : (str(len(links)) + ' links)'
+        return name + ' : ( ' + str(len(links)) + ' links)'
         
     def __eq__(self, other):
         if not isinstance(other, Node):

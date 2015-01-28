@@ -31,7 +31,21 @@ class PlanSearchTest(unittest.TestCase):
     def test_03_astar_new(self):
         myplan2 = mod_plan.PlanSearchAStar('8 Puzzle', [], goal, start)
         self.assertEqual(myplan2.method, 'A*')
- 
+
+
+    def test_05_problem_definition(self):
+        prob1 = mod_plan.Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test1', '')
+        self.assertEqual(prob1.goal_test([1,2,3,4]), True)
+        
+    def test_06_problem_goal_test(self):
+        prob2 = mod_plan.Problem([1,2,3,4],[3,2,1,4], [], 'test1', 'hello - this is a test')
+        self.assertEqual(prob2.name, 'test1')
+        self.assertEqual(prob2.description, 'hello - this is a test')
+        self.assertEqual(prob2.start, [3,2,1,4])
+        self.assertEqual(prob2.goal,  [1,2,3,4])
+        
+        
+        
     def test_10_util_BFS(self):
         graph = {
                 'A': ['B', 'E'],
@@ -52,7 +66,11 @@ class PlanSearchTest(unittest.TestCase):
         g = mod_plan.ds.Graph({'1': ['2','3','4'], '2':['6','7']})
         mat = g.get_adjacency_matrix()
         self.assertEqual(g.nodes, ['1', '2', '3', '4', '6', '7'])
-        self.assertEqual(g.links, sorted([['2', '6'], ['2', '7'], ['1', '2'], ['1', '3'], ['1', '4']])) # sometimes returned in diff order. check
+        
+        expected = [['1', '2'], ['1', '3'], ['1', '4'], ['2', '6'], ['2', '7']]
+      #  expected = [['2', '6'], ['2', '7'], ['1', '2'], ['1', '3'], ['1', '4']]
+        
+        self.assertEqual(g.links, sorted(expected)) # sometimes returned in diff order. check
         
     def test_20_graph_02(self):
         g = mod_plan.ds.Graph({'animal': ['bird','reptile','insect'], 'bird':['finch','owl'], 'reptile': ['snake', 'lizard'], 'insect': ['ladybird', 'moth']})

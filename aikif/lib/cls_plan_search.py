@@ -26,8 +26,8 @@ def TEST():
     start = [1,2,3,4,5,6,7,0,8] # easy
    # start =  [1,2,3,4,5,6,7,8,0]
     plan = PlanSearchAStar('8 Puzzle', environ, goal, start)
-    plan.search()    
     print(plan)
+    plan.search()    
     my_prob = Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test1', 'test of problem')
     print(my_prob)
     print('Goal test should pass with [1,2,3,4]: ', my_prob.goal_test([1,2,3,4]))
@@ -135,6 +135,7 @@ class PlanSearchAStar(Plan):
         return 'Method : ' + self.method + '\n' + str(Plan.__str__(self))  # works, but clunky
     """
     def heuristic_cost(self, start, target):
+        """ assumes start and target are an (x,y) grid """
         (x1, y1) = start
         (x2, y2) = target
         return abs(x1 - x2) + abs(y1 - y2)
