@@ -60,6 +60,7 @@ class PlanSearchTest(unittest.TestCase):
         self.assertEqual(mod_plan.find_path_BFS(graph, 'A', 'F'), ['A', 'B', 'H', 'F'])
         self.assertEqual(mod_plan.find_path_BFS(graph, 'B', 'H'), ['B', 'H'])
         self.assertEqual(mod_plan.find_path_BFS(graph, 'E', 'J'), ['E', 'M', 'J'])
+        self.assertEqual(mod_plan.find_path_BFS(graph, 'D', 'Z'), None)
 
 
     def test_20_graph_01(self):

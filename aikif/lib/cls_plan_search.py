@@ -88,7 +88,14 @@ class Problem(object):
         else:
             return False
  
-
+    def get_successors(self):
+        """
+        expand the children on the node (or successors)
+        to get the list of next nodes and their cost, 
+        [[x1, 50], [x2, 24], [x3,545], [x5,32.1]]
+        """
+        return [[x1, 50], [x2, 24], [x3,545], [x5,32.1]]
+        
     
 class Plan(object):
     """ 
