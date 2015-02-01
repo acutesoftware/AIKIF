@@ -32,6 +32,13 @@ Now, once we got this data, we can start running A* on the defined graph G, with
 Finding the actual path: A* will end when you develop the target state. [x_i=i in the terms we used earlier]. You will find your path to it by stepping back from the target to the source, using the parent field in each node.
 
 """
+
+
+import heapq
+import queue
+PriorityQueue = queue.PriorityQueue
+
+
 def main():
     puz = TilePuzzle([1, 0, 2, 3, 4, 5, 6, 7, 8], [0, 1, 2, 3, 4, 5, 6, 7, 8], 3, 3)
     print("Legal Moves = ", puz.legal_moves())   # ['down', 'left', 'right']
@@ -118,10 +125,25 @@ class TilePuzzle:
         new_puzzle.cells[newrow][newcol] = self.cells[row][col]
         new_puzzle.blank_location = newrow, newcol
         return new_puzzle
+        
 
     def solve(self):
         """ 
         main function to solve the tile puzzle
+        Notes on algorithm from AI planning course slides below:
+            function aStarTreeSearch(problem, h)
+            fringe <- priorityQueue(new searchNode(problem.initialState))
+            allNodes <- hashTable(fringe)
+            while (1)
+                if empty(fringe) then return failure
+                node <- selectFrom(fringe)
+                if problem.goalTest(node.state) then
+                    return pathTo(node)
+                for successor in expand(problem, node)
+                    if not allNodes.contains(successor) then
+                        fringe <- fringe + successor @ f(successor)
+                        allNodes.add(successor)
+        
         """
         path = []
         if self.start_state == self.goal_state:
