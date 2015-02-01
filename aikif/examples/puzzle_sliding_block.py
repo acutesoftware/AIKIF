@@ -35,9 +35,11 @@ Finding the actual path: A* will end when you develop the target state. [x_i=i i
 def main():
     puz = TilePuzzle([1, 0, 2, 3, 4, 5, 6, 7, 8], [0, 1, 2, 3, 4, 5, 6, 7, 8], 3, 3)
     print("Legal Moves = ", puz.legal_moves())   # ['down', 'left', 'right']
-    
-    puz2 = puz.result('down')
-    print("Legal Moves after moving right = ", puz2.legal_moves())
+
+    print("Legal Moves after moving down  = ", puz.result('down').legal_moves())
+    print("Legal Moves after moving down  = ", puz.result('down').legal_moves())
+    print("Legal Moves after moving right = ", puz.result('right').legal_moves())
+    print("Legal Moves after moving up    = ", puz.result('up').legal_moves())
     
     result = puz.solve()
     print(result)
