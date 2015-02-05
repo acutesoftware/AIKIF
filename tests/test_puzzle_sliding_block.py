@@ -7,9 +7,6 @@ lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep +
 sys.path.append(lib_fldr)
 import puzzle_sliding_block as mod_puz
 
-goal =  [1,2,3,4,5,6,7,8,0]
-start = [1,2,3,4,5,6,7,0,8]
-
 class PlanPuzzleSlidingBlock(unittest.TestCase):
     
     def test_01_print_puzzle(self):
@@ -20,6 +17,21 @@ class PlanPuzzleSlidingBlock(unittest.TestCase):
         puz = mod_puz.TilePuzzle([1, 0, 2, 3, 4, 5, 6, 7, 8], [0, 1, 2, 3, 4, 5, 6, 7, 8], 3, 3)
         self.assertEqual(puz.legal_moves(),['down', 'left', 'right'] )
         
-    
+    def test_03_legal_moves_b(self):
+        puz = mod_puz.TilePuzzle([1, 0, 2, 3, 4, 5, 6, 7, 8], [0, 1, 2, 3, 4, 5, 6, 7, 8], 3, 3)
+        puz2 = puz.result('right')
+        self.assertEqual(puz2.legal_moves(),['down', 'left'] )
+        
+    def test_03_legal_moves_c(self):
+        puz = mod_puz.TilePuzzle([1, 0, 2, 3, 4, 5, 6, 7, 8], [0, 1, 2, 3, 4, 5, 6, 7, 8], 3, 3)
+         
+        puz3 = puz.result('down')
+        self.assertEqual(puz3.legal_moves(),['up', 'down', 'left', 'right'] )
+        
+ #   print("Legal Moves after moving down  = ", puz.result('down').legal_moves())
+  #  print("Legal Moves after moving down  = ", puz.result('down').legal_moves())
+
+
+        
 if __name__ == '__main__':
     unittest.main()
