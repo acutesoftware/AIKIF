@@ -70,6 +70,21 @@ class TilePuzzle:
                 if self.cells[row][col] == 0:
                     self.blank_location = row, col
 
+    def __str__(self):
+    
+        res = '['
+        """
+        for row in self.cells:
+            res += '['
+            for col in row:
+                res += str(col) + ' ' 
+            res += '] '
+            
+        """
+        for cell in self.cells:
+            res += str(cell) + ' ' 
+        return res + ']'
+                    
     def legal_moves( self ):
         """
         Returns a list of legal moves from the current state.
