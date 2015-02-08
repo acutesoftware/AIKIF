@@ -1,19 +1,10 @@
 # example_solve_happiness.py   written by Duncan Murray 8/2/2015
 
 
-
 def main():
     all_people = []
     all_people.append(Person('Gand', {'tax_min':0.3, 'tax_max':0.5, 'tradition':0.2, 'equity':0.9}))
     all_people.append(Person('Murd', {'tax_min':0.0, 'tax_max':0.2,'tradition':0.5, 'equity':0.1}))
-    
-    all_worlds = []
-    all_worlds.append(World('Astr', 5000, 0.1, .2, 0.3))
-    all_worlds.append(World('Cryx', 1000, 0.3, .3, 0.5))
-
-    for people in all_people:
-        for world in all_worlds:
-            print(Happiness(people, world))
     
     utopia = WorldFinder(all_people)
     utopia.solve()
@@ -56,7 +47,9 @@ class WorldFinder():
         return res
         
     def solve(self, max_worlds=10000):
-        """ find the best world to make people happy """
+        """
+        find the best world to make people happy 
+        """
         num_worlds = 0
         for tax_rate in range(1,5, 1):
             for equity in range(3,8):
@@ -69,13 +62,10 @@ class WorldFinder():
                     for person in self.all_people:
                         wh = Happiness(person, w)
                         world_happiness += wh.rating
-                    #print('testing world - ' + w.nme + ' rating = ' + str(wh))
                     if world_happiness > self.net_happiness:
                         self.net_happiness = world_happiness
                         print('found better world - ' + w.nme + ' = ' + str(world_happiness))
-                    
-                    #print(num_worlds, w)
-        
+         
 class Happiness():
     """
     abstract to manage the happiness calculations
@@ -87,7 +77,9 @@ class Happiness():
         self.calculate()
         
     def __str__(self):
-        """ return happiness rating as string """
+        """ 
+        return happiness rating as description 
+        """
         res = self.person.nme + ' is ' 
         if self.rating > 50:
             res += 'Very Happy'
@@ -111,7 +103,6 @@ class Happiness():
         """
         calculates the estimated happiness of a person
         living in a world
-         tradition, equity
         """
         self.rating = 0
         self._update_pref(self.person.prefs['tax_min'], self.person.prefs['tax_max'], self.world.tax_rate)
@@ -124,19 +115,18 @@ class Happiness():
         If min max is a range (ie not equal) then add fixed value
         to rating depending if current value is in range, otherwise
         compare distance away from min/max (same value)
-        
         """
         if min == max:
-            self.rating += int(abs(min - cur)*10) + 10
+            self.rating -= int(abs(min - cur)*100) / 10
         else:
             if min <= cur:
-                self.rating += 15
+                self.rating += (int(abs(min - cur)*10)) + 10
             else:
-                self.rating -= 1
+                self.rating -= (int(abs(min - cur)*10)) + 10
             if max >= cur:
-                self.rating += 15
+                self.rating += (int(abs(max - cur)*10)) + 10
             else:
-                self.rating -= 50
+                self.rating -= (int(abs(max - cur)*10)) + 10
 
     
 class Person():
@@ -149,7 +139,6 @@ class Person():
         for k in self.prefs:
             res += k + '  = ' + str(self.prefs[k]) + '\n'
         return res
-
 
 
 if __name__ == '__main__':
