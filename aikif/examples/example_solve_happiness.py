@@ -39,25 +39,40 @@ class WorldFinder():
         self.all_people = all_people
         self.net_happiness = 0
         self.num_worlds = 0
+        self.unhappy_people = 0
+        self.tax_range = (0,7)
+        self.tradition_range = (1,9)
+        self.equity_range = (1,9)
+        
     
     def __str__(self):
         res = '\n   === World Finder Results ===\n'
         res += 'Worlds tested  = ' + str(self.num_worlds) + '\n'
         res += 'Best happiness = ' + str(self.net_happiness) + '\n'
+        res += 'Everyone happy = ' + self.is_everyone_happy() + '\n'
         return res
+
+    def is_everyone_happy(self):
+        """
+        returns text result iff everyone happy
+        """
+        if self.unhappy_people > 0:
+            return 'Yes'
+        else:
+            return 'False'
         
     def solve(self, max_worlds=10000):
         """
         find the best world to make people happy 
         """
-        num_worlds = 0
-        for tax_rate in range(1,5, 1):
-            for equity in range(3,8):
-                for tradition in range(3,8):
-                    num_worlds += 1
-                    if num_worlds > max_worlds:
+        self.num_worlds = 0
+        for tax_rate in range(self.tax_range[0],self.tax_range[1]):
+            for equity in range(self.equity_range[0],self.equity_range[1]):
+                for tradition in range(self.tradition_range[0],self.tradition_range[1]):
+                    self.num_worlds += 1
+                    if self.num_worlds > max_worlds:
                         break
-                    w = World(str(num_worlds).zfill(6), 5000, tax_rate/10, tradition/10, equity/10)
+                    w = World(str(self.num_worlds).zfill(6), 5000, tax_rate/10, tradition/10, equity/10)
                     world_happiness = 0
                     for person in self.all_people:
                         wh = Happiness(person, w)
