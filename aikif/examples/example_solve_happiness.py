@@ -56,7 +56,7 @@ class WorldFinder():
         """
         returns text result iff everyone happy
         """
-        if self.unhappy_people > 0:
+        if self.unhappy_people == 0:
             return 'Yes'
         else:
             return 'False'
@@ -66,6 +66,7 @@ class WorldFinder():
         find the best world to make people happy 
         """
         self.num_worlds = 0
+        num_unhappy = 0
         for tax_rate in range(self.tax_range[0],self.tax_range[1]):
             for equity in range(self.equity_range[0],self.equity_range[1]):
                 for tradition in range(self.tradition_range[0],self.tradition_range[1]):
@@ -74,12 +75,16 @@ class WorldFinder():
                         break
                     w = World(str(self.num_worlds).zfill(6), 5000, tax_rate/10, tradition/10, equity/10)
                     world_happiness = 0
+                    num_unhappy = 0
                     for person in self.all_people:
                         wh = Happiness(person, w)
                         world_happiness += wh.rating
+                        if wh.rating < 0:
+                            num_unhappy += 1
                     if world_happiness > self.net_happiness:
                         self.net_happiness = world_happiness
-                        print('found better world - ' + w.nme + ' = ' + str(world_happiness))
+                        self.unhappy_people = num_unhappy
+                        print('found better world - ' + w.nme + ' = ' + str(world_happiness) + ' - total unhappy_people = ' + str(self.unhappy_people))
          
 class Happiness():
     """
