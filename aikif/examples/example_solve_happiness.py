@@ -1,11 +1,15 @@
 # example_solve_happiness.py   written by Duncan Murray 8/2/2015
 
+people_list = []
+people_list.append(['Gand', {'tax_min':0.3, 'tax_max':0.5, 'tradition':0.2, 'equity':0.9}])
+people_list.append(['Trsa', {'tax_min':0.0, 'tax_max':0.9,'tradition':0.4, 'equity':0.9}])
+people_list.append(['Whtv', {'tax_min':0.1, 'tax_max':0.9,'tradition':0.1, 'equity':0.3}])
+people_list.append(['Mrdk', {'tax_min':0.0, 'tax_max':0.2,'tradition':0.8, 'equity':0.1}])
 
 def main():
     all_people = []
-    all_people.append(Person('Gand', {'tax_min':0.3, 'tax_max':0.5, 'tradition':0.2, 'equity':0.9}))
-    all_people.append(Person('Murd', {'tax_min':0.0, 'tax_max':0.2,'tradition':0.5, 'equity':0.1}))
-    
+    for p in people_list:
+        all_people.append(Person(p[0], p[1]))
     utopia = WorldFinder(all_people)
     utopia.solve()
     print(utopia)
