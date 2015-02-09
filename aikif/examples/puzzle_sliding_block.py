@@ -46,6 +46,7 @@ sys.path.append(lib_folder)
 sys.path.append(toolbox_folder)
 
 import cls_plan_search as mod_search
+import data_structures as ds
 
 def main():
     start_state = [1, 0, 2, 3, 4, 5, 6, 7, 8]
@@ -67,7 +68,7 @@ def main():
     
     
     result = puz.solve()
-    #print(result)
+    print(result)
     
 class TilePuzzle:
     """
@@ -215,11 +216,40 @@ class TilePuzzle:
         
         """
         path = []
+        visited = []
         if self.start_state == self.goal_state:
             path.append(self.goal_state)
             return path
+        fringe = priorityQueue(start_state)
+        while fringe:
+            cur_node = self.select_from(fringe)
+            print(cur_node)
+            if node == self.goal_state:
+                print('SUCCESS!')
+                path.append(self.goal_state)
+                return path
+            for successor in self.expand(node):
+                if successor not in visited:
+                    fringe.append(successor)
+                    visited.append(successor)
+        
+        
+        
+        return []    # failed to find a path
+        
         
         print('todo')
 
+        
+    def select_from(self, nodes):
+        """ part of Astar - get the next node """
+        return nodes.pop
+    
+    def expand(self, node):
+        """ 
+        part of Astar - expand the list of linked nodes in node
+        """
+        return []
+    
 if __name__ == '__main__':
     main()
