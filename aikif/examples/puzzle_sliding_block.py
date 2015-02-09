@@ -33,23 +33,41 @@ Finding the actual path: A* will end when you develop the target state. [x_i=i i
 
 """
 
-
+import os
+import sys
+import math
 import heapq
 import queue
 PriorityQueue = queue.PriorityQueue
 
+toolbox_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." +  os.sep + "toolbox" )
+lib_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." +  os.sep + "lib" )
+sys.path.append(lib_folder)
+sys.path.append(toolbox_folder)
+
+import cls_plan_search as mod_search
 
 def main():
-    puz = TilePuzzle([1, 0, 2, 3, 4, 5, 6, 7, 8], [0, 1, 2, 3, 4, 5, 6, 7, 8], 3, 3)
-    print("Legal Moves = ", puz.legal_moves())   # ['down', 'left', 'right']
+    start_state = [1, 0, 2, 3, 4, 5, 6, 7, 8]
+    goal_state = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    puz = TilePuzzle(start_state, goal_state, 3, 3)
 
-    print("Legal Moves after moving down  = ", puz.result('down').legal_moves())
-    print("Legal Moves after moving down  = ", puz.result('down').legal_moves())
-    print("Legal Moves after moving right = ", puz.result('right').legal_moves())
-    print("Legal Moves after moving up    = ", puz.result('up').legal_moves())
+    print('Heuristic = ', puz.heuristic(), 'Legal Moves = ', puz.legal_moves() )
+
+    puz = puz.result('down')
+    print('Heuristic = ', puz.heuristic(), 'Moved down  = ', puz.legal_moves() )
+   
+    puz = puz.result('right')
+    print( 'Heuristic = ', puz.heuristic(), 'Moved right  = ', puz.legal_moves())
+ 
+    puz = puz.result('down')
+    print('Heuristic = ', puz.heuristic(), 'Moved down  = ', puz.legal_moves())
+    
+    print(puz)
+    
     
     result = puz.solve()
-    print(result)
+    #print(result)
     
 class TilePuzzle:
     """
@@ -59,6 +77,8 @@ class TilePuzzle:
         """
         initialise the tile puzzle state
         """
+        self.rows = rows
+        self.cols = cols
         self.cells = []
         self.start_state = start_state[:] # Make a copy to stop side-effects.
         self.goal_state = goal_state[:]
@@ -73,18 +93,25 @@ class TilePuzzle:
     def __str__(self):
     
         res = '['
-        """
-        for row in self.cells:
-            res += '['
-            for col in row:
-                res += str(col) + ' ' 
-            res += '] '
-            
-        """
         for cell in self.cells:
             res += str(cell) + ' ' 
         return res + ']'
-                    
+    
+    def current_state_as_grid(self):
+        """ return the current state """
+        res = []
+        for cell in self.cells:
+            res.append(cell)
+        return res
+    
+    def current_state_as_list(self):
+        """ return the current state """
+        res = []
+        for row in self.cells:
+            for cell in row:
+                res.append(cell)
+        return res
+
     def legal_moves( self ):
         """
         Returns a list of legal moves from the current state.
@@ -142,6 +169,33 @@ class TilePuzzle:
         return new_puzzle
         
 
+    def heuristic(self):
+        """ heuristic for 8 tile puzzle        |-----------|
+            h1: number of misplaced tiles      | 7 | 2 | 4 | 
+            h2: Manhattan block distance       |---|---|---|
+            – example:                         | 5 |   | 6 |
+            • h1 = 8                           |---|---|---| 
+                    all 8 tiles are misplaced  | 8 | 3 | 1 |
+            • h2 = 3+1+2+2+2+3+3+2 = 18        |-----------|
+            
+        curr_state = list of tiles (integers)
+        target_state = goal tiles
+        
+        """
+        h = 0
+        cur_state = self.current_state_as_list()
+        print('cur_state = ', cur_state)
+        
+        if len(cur_state) == 0:
+            print('error - blank self.cells')
+            return 0
+        n = math.sqrt(len(cur_state))
+        for i, tile in enumerate(cur_state):
+            if tile > 0:
+                h += int(abs(tile - 1 - i) / n) + (abs(tile - 1 - i) % n)
+        return h
+
+        
     def solve(self):
         """ 
         main function to solve the tile puzzle
