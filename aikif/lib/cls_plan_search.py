@@ -132,15 +132,7 @@ class PlanSearchAStar(Plan):
         self.num_loops = 0
         self.lg.record_source(','.join(str(p) for p in self.start),  'CLS_PLAN_SEARCH : Source = ')
         self.lg.record_source(','.join(str(p) for p in self.target), 'CLS_PLAN_SEARCH : Target = ')
-    """    
-    def __str__(self):
-        #print(str(Plan))        # Prints <class '__main__.Plan'>
-        #print(super(PlanSearchAStar, self).__str__())  # works
-        #print(str(Plan.super())
-        #return str(super(PlanSearchAStar, self))  # fails - returns <super: <class 'PlanSearchAStar'>, <PlanSearchAStar object>>
-        #return 'Method : A*\n' + super(PlanSearchAStar, self).__str__()  # works, but only if Plan class NOT inherited from object
-        return 'Method : ' + self.method + '\n' + str(Plan.__str__(self))  # works, but clunky
-    """
+
     def heuristic_cost(self, start, target):
         """ assumes start and target are an (x,y) grid """
         (x1, y1) = start
