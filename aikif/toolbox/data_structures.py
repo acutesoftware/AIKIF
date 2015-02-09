@@ -6,10 +6,25 @@ def TEST():
     initially starting with planning structures.
     Not sure if this needs to be moved to aikif.dataTools ???
     """
+    print('  --== Graph Test ==--')
     g = Graph({'1': ['2','3','4'], '2':['6','7']})
     print('raw graph = ', g)
     mat = g.get_adjacency_matrix(True)
-     
+    print('\n  --== Node Test ==--')
+    trunk = Node('root node') 
+    branch1 = Node('1st branch')
+    branch2 = Node('2nd branch')
+    branch3 = Node('3rd branch')
+    trunk.add_link(branch1)
+    trunk.add_link(branch2)
+    trunk.add_link(branch3)
+    twig1 = Node('1st twig')
+    twig2 = Node('2nd twig')
+    branch1.add_link(twig1)
+    branch3.add_link(twig2)
+    
+    print(trunk)
+    print(branch3)
     
         
         
@@ -29,7 +44,7 @@ class Node:
     """
     Node data structure
     """
-    def __init__(self, name, data=None):
+    def __init__(self, name,  data=None):
         """ 
         takes a name and optional data 
         """
@@ -40,7 +55,10 @@ class Node:
         self.links = []
 
     def __str__(self):
-        return name + ' : ( ' + str(len(links)) + ' links)'
+        res = self.name + ' : ( ' + str(len(self.links)) + ' links)\n'
+        for link in self.links:
+            res += '  ' + link.name + ''
+        return res
         
     def __eq__(self, other):
         if not isinstance(other, Node):
@@ -99,7 +117,7 @@ class Graph(object):
         """
         self.links = [[i,j] for i in self.graph for j in self.graph[i]]
         all_nodes = []
-        op = [] # 0 for i in self.graph for j in self.graph[i]]
+        op = [] 
         for node in self.graph:
             all_nodes.append(node)  # to get the root node
             for connection in self.graph[node]:
