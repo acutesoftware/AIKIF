@@ -24,8 +24,10 @@ sys.path.append(lib_folder)
 sys.path.append(toolbox_folder)
 
 def main():
-    print(get_combinations([2,3,5,8]))
-    #solve(500,[75], [2,3,6,7,4])
+    #all = get_combinations([1,2,8,3])
+    #for a in all:
+    #    print(a)
+    solve(405,[50, 75], [7,3,5,10])
     
 def solve(target, big_numbers, small_numbers):
     """ 
@@ -33,24 +35,33 @@ def solve(target, big_numbers, small_numbers):
     number using a set of small numbers
     """
     all_results = []
-    tot1 = 0
-    tot2 = 0
-    for s in small_numbers:
-        for b in big_numbers:
-            tot1 += b * s
-            tot2 += b + s
-        all_results.append(tot1)
-        all_results.append(tot2)
+    tot = 0
+    for attempt in get_combinations(small_numbers):
+        tot = 0
+        for small in attempt:
+            for big in big_numbers:
+                tot += big
+                tot += small
+        if tot == target:
+            print('SUCCESS ' , attempt)
+        all_results.append(tot)
+        
     print(all_results)
 
 def get_combinations(lst):
     """
     get new generated sets of numbers by
     combining 2 at a time
+        new_list =  [5, 8]
+        all_combos  =  [[5, 8]]
+        new_list =  [3, 8]
+        all_combos  =  [[5, 8], [3, 8]]
+        new_list =  [3, 5]
+        all_combos  =  [[5, 8], [3, 8], [3, 5]]    
+    
     """
     all_combos = []
     multiples = []
-   # unique_set = []
     for a_ndx, a in enumerate(lst):
         for b_ndx, b in enumerate(lst):
             if a_ndx == b_ndx:
@@ -59,45 +70,26 @@ def get_combinations(lst):
             new_list.remove(b)
             if a != b:
                 new_list.remove(a)
-            all_combos.append(new_list)  # add the standard list
-            print('new_list = ', new_list)
-            print('all_combos  = ', all_combos)
-            """    
-            print('new_list (before get mult) = ', new_list)
             multiples = get_all_multiples(a,b,new_list)
-            print('\n\nmultiples=',multiples)
-            for m in multiples:
-                if m:
-                    all_combos.append(m)
-            """
+            all_combos.extend(multiples)  # add the standard list
     unique_set = [list(x) for x in set(tuple(x) for x in all_combos)]
+    unique_set.append(lst)  # include original list
     return unique_set
-
+    
+def add_combo(orig_list, c, val):
+    tmp = [l for l in orig_list]
+    tmp.append(val)
+    if tmp:
+        c.append(tmp)
+    
 def get_all_multiples(a, b, orig_list):
     combo = []
-    combo.append([l for l in orig_list].extend([a,b])) # add orig val to list
-    print('orig_list=', orig_list)
-    print('combo=', combo)
-    
-    tmp = [l for l in orig_list]
-    print('tmp=', tmp, 'a=',a,'b=',b,' orig_list = ', orig_list)
-    combo.append([tmp.append(a + b)])
-    tmp = [l for l in orig_list]
-    tmp.append(a - b)
-    print('tmp=', tmp)
-    combo.append(tmp)
-    
-    """
-    tmp = [l for l in orig_list]
-    combo.append([tmp.append(b - a)])
-    tmp = [l for l in orig_list]
-    combo.append([tmp.append(a * b)])
-    tmp = [l for l in orig_list]
-    combo.append([tmp.append(a / b)])  # check for null remainder
-    tmp = [l for l in orig_list]
-    combo.append([tmp.append(b / a)])  # check for null remainder
-    """
-    print('combo=', combo)
+    add_combo(orig_list, combo, a+b)
+    add_combo(orig_list, combo, a-b)    
+    add_combo(orig_list, combo, a*b)    
+    add_combo(orig_list, combo, a/b)    
+    add_combo(orig_list, combo, b/a)    
+    add_combo(orig_list, combo, b-a)    
     return combo
     
 
