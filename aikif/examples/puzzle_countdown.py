@@ -27,7 +27,8 @@ def main():
     #all = get_combinations([1,2,8,3])
     #for a in all:
     #    print(a)
-    solve(405,[50, 75], [7,3,5,10])
+  #  solve(405,[50, 75], [7,3,5,10])
+    solve(156,[20, 50], [1,2,5])
     
 def solve(target, big_numbers, small_numbers):
     """ 
@@ -38,12 +39,23 @@ def solve(target, big_numbers, small_numbers):
     tot = 0
     for attempt in get_combinations(small_numbers):
         tot = 0
-        for small in attempt:
+        desc = 'Solution for ' + str(target) + ': (' + attempt[0] + ')='
+        desc_big = ''
+        desc_comb = ''
+        desc_mult = ''
+        
+        for small in attempt[1]:
+            desc_mult = str(small) + ', so (' + str(small) + '*'
+            desc_big = ''
             for big in big_numbers:
                 tot += big
+                desc_big += '' + str(big) + ')+'
                 tot += small
+                desc_comb = ' (' + str(small) + '*' + str(small) + ')+' + str(small) + ''
+                
         if tot == target:
-            print('SUCCESS ' , attempt)
+            
+            print('SUCCESS', desc + desc_mult + desc_big + desc_comb)
         all_results.append(tot)
         
     print(all_results)
@@ -72,24 +84,25 @@ def get_combinations(lst):
                 new_list.remove(a)
             multiples = get_all_multiples(a,b,new_list)
             all_combos.extend(multiples)  # add the standard list
-    unique_set = [list(x) for x in set(tuple(x) for x in all_combos)]
-    unique_set.append(lst)  # include original list
-    return unique_set
+    return all_combos
+  #  unique_set = [list(x) for x in set(tuple(x) for x in all_combos)]
+  #  unique_set.append(['orig', lst])  # include original list
+  #  return unique_set
     
-def add_combo(orig_list, c, val):
+def add_combo(orig_list, c, val, desc):
     tmp = [l for l in orig_list]
     tmp.append(val)
     if tmp:
-        c.append(tmp)
+        c.append([desc, tmp])
     
 def get_all_multiples(a, b, orig_list):
     combo = []
-    add_combo(orig_list, combo, a+b)
-    add_combo(orig_list, combo, a-b)    
-    add_combo(orig_list, combo, a*b)    
-    add_combo(orig_list, combo, a/b)    
-    add_combo(orig_list, combo, b/a)    
-    add_combo(orig_list, combo, b-a)    
+    add_combo(orig_list, combo, a+b, str(a) + '+' + str(b))
+    add_combo(orig_list, combo, a-b, str(a) + '-' + str(b))    
+    add_combo(orig_list, combo, a*b, str(a) + '*' + str(b))    
+    add_combo(orig_list, combo, a/b, str(a) + '/' + str(b))    
+    add_combo(orig_list, combo, b/a, str(b) + '/' + str(a))    
+    add_combo(orig_list, combo, b-a, str(b) + '-' + str(a))    
     return combo
     
 
