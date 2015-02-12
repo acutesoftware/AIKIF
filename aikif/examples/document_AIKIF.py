@@ -61,13 +61,14 @@ def document_programs(fldr):
     
     p.comment('agent_map_data.py', 'maps columns to aikif structure - attempt#3 (may be depracated)')
 
+    
     p.comment('addRawData.py', 'original attempt at adding data (to be deprecated) ')
     p.comment('load_PC_usage.py', 'reads the logged data from agent collect PC info and logs to aikif')
     p.comment('load_info_cooking_recipe.py', 'toy attempt at adding domain specific info - to be improved or moved to business mappings')
     p.comment('agent_explore_grid.py', 'working prototype of agent to move through a grid world, using very simple path finding. Mainly an exercise in logging an agent moving through a generated world')
-    p.comment('agent_email.py', 'STUB - TODO - this is the agent that reads emails and parses to useful summary information (as well as working out which parts should be indexed')
+    p.comment('agent_email.py', 'Agent that reads emails (currently only gmail)')
     p.comment('agent_filelist.py', 'TOK - correctly scans and logs filelists from an agent')
-    p.comment('collect_Win_processes.py', 'script to collect windows processes. Currently not part of agent process, more an exercise on what can be loogged')
+    p.comment('collect_Win_processes.py', 'script to collect windows processes. Currently not part of agent process, more an exercise on what can be logged')
     p.comment('log_PC_usage.py', 'script to read current window title to be used as part of context to see what user is doing')
     p.comment('log_browser_history.py', 'script to dump chrome browser history to CSV - not used')
     p.comment('check_redis_limit.py', 'starts reddis database and tests limits by repeatedly adding data until it breaks')
@@ -117,6 +118,27 @@ def document_programs(fldr):
     p.comment('if_mssqlserver.py', 'dataTools - interface class to a mssql database')
     p.comment('if_oracle.py', 'dataTools - interface class to an oracle database')
     p.comment('if_redis.py', 'dataTools - interface class to a redis database')
+
+    p.comment('agent_browser.py', 'collects data from browser - bookmarks, visited sites')
+    p.comment('outlook_export.py', 'agent to connect to outlook and export emails')
+    p.comment('agent_learn_aixi.py', '')
+    p.comment('dummy_learn_1.py', 'sample (but stub only) learning algorithm to be called as test below')
+    p.comment('run_dummy_learn_1.py', 'sample code to call a learning algorithm')
+    p.comment('cls_collect.py', 'collect filelists')
+    p.comment('example_solve_happiness.py', 'toy problem - finding a world to keep all people happy (O^n^n^n complexity :) )')
+    p.comment('finance_example.py', 'toy problem - logging finance data [TODO]')
+    p.comment('maths_fermat_brute_force.py', 'sample script to calculate long running process')
+    p.comment('puzzle_N_queens.py', 'stub only - not implemented///')
+    p.comment('puzzle_missions_canninballs.py', 'calculates the path to solve problem')
+    p.comment('solve_travelling_salesman.py', 'stub only')
+    p.comment('cls_context.py', 'estimate what the user and PC are currently actively working on')
+    p.comment('cls_filelist.py', 'fileslist class')
+    p.comment('cls_plan_BDI.py', 'stub for planner based on belief, desire, intent')
+    p.comment('cls_plan_search.py', 'AI planner search functions')
+    p.comment('project.py', 'Core module to manage projects - meta self documentation')
+    p.comment('algebra.py', 'toolbox module for based evaluation of maths problems')
+    p.comment('data_structures.py', 'Node and Graph classes')
+    p.comment('solve_knapsack.py', 'functions to solve the knapsack problem')
 
 
    # p.list()	# get list of all programs
