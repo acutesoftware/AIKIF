@@ -11,7 +11,7 @@ def main():
     for p in people_list:
         all_people.append(Person(p[0], p[1]))
     utopia = WorldFinder(all_people)
-    utopia.solve()
+    utopia.solve(silent=True)
     print(utopia)
             
 class World():
@@ -63,9 +63,9 @@ class WorldFinder():
         if self.unhappy_people == 0:
             return 'Yes'
         else:
-            return 'False'
+            return 'No'
         
-    def solve(self, max_worlds=10000):
+    def solve(self, max_worlds=10000, silent=False):
         """
         find the best world to make people happy 
         """
@@ -88,7 +88,8 @@ class WorldFinder():
                     if world_happiness > self.net_happiness:
                         self.net_happiness = world_happiness
                         self.unhappy_people = num_unhappy
-                        print('found better world - ' + w.nme + ' = ' + str(world_happiness) + ' - total unhappy_people = ' + str(self.unhappy_people))
+                        if not silent:
+                            print('found better world - ' + w.nme + ' = ' + str(world_happiness) + ' - total unhappy_people = ' + str(self.unhappy_people))
          
 class Happiness():
     """
