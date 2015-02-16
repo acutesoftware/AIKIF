@@ -8,15 +8,13 @@ import socket
 import collections 
 import config as cfg
 import random
-#localPath = 'T:\\user\\AIKIF\\' # '..//data//' # os.getcwd()
 
- 
 def TEST():
     """ simple test function """
-    lg = Log(cfg.fldrs['localPath']) #'T:\\user\\AIKIF')
+    lg = Log(cfg.fldrs['localPath'])
     lg.record_command('test.txt', 'hello')
     print(lg)
-    sum = LogSummary(lg, 'T:\\user\\AIKIF\\log')
+    sum = LogSummary(lg, cfg.fldrs['log_folder'])
     sum.summarise_events()
     print(sum)
     
@@ -25,7 +23,6 @@ class Log:
     def __init__(self, fldr):
         """ pass the folder on command line """
         self.log_folder = fldr
-        #print('class Log__init__(self, fldr)fldr = ' + fldr)
         self.logFileProcess = self.log_folder + os.sep + 'process.log'
         self.logFileSource  = self.log_folder + os.sep + 'source.log'
         self.logFileCommand = self.log_folder + os.sep + 'command.log'
@@ -89,7 +86,9 @@ class Log:
             return str(round(seconds/(60*24*365), 1)) + ' years'
 
     def _log(self, fname, txt, prg=''):
-        # logs an entry to fname along with standard date and user details
+        """
+        logs an entry to fname along with standard date and user details
+        """
         if os.sep not in fname:
             fname = self.log_folder + os.sep + fname
         delim = ','
@@ -98,11 +97,9 @@ class Log:
         usr = GetUserName()
         hst = GetHostName()
         id = self.session_id
-        #print('_log : os.path.dirname(fname) = ', os.path.dirname(fname))
-        #ensure_dir(os.path.dirname(fname))
-
+ 
         if prg == '':
-            prg = 'cls_log.log' # GetModuleName() 
+            prg = 'cls_log.log' 
         logEntry = q + dte + q + delim + q + id + q + delim + q + usr + q + delim + q + hst + q + delim + q + prg + q + delim + q + txt + q + delim + '\n'
         with open(fname, "a") as myfile:
             myfile.write(logEntry)
