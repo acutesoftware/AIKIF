@@ -13,8 +13,6 @@
 
 import os
 import sys
-import csv
-sys.path.append('..//AI')
 import time
 
 class Timer:    
@@ -49,23 +47,18 @@ def time_function(modName, numTests, function_name_as_string, *args):
 	modNameAsString = modName
 	if modName == '':
 		modName = sys.modules[__name__]
-		modNameAsString = str(sys.modules[__name__]) # .string()
+		modNameAsString = str(sys.modules[__name__])
 	else:
 		modName = sys.modules[modName]
 	methodToCall = getattr(modName, function_name_as_string)
-	#print('Running', str(numTests), 'tests on function', function_name_as_string)
 	for testNum in range(1,numTests + 1):
 		with Timer() as t:
-			#f(*args)
 			result = methodToCall(*args)
-		#print('Testnum ',testNum, ' function %.03f sec.' %t.interval)
 		if t.interval > maxTime: maxTime = t.interval
 		if t.interval < minTime: minTime = t.interval
 		totTime += t.interval
 	avgTime = totTime / testNum
-	#print('Test results: totTime=', str(totTime), ' avg=', str(avgTime), 'min=', minTime, ' max=', maxTime)
 	print("{6}.{5} - ran {4} tests :\n tot={0} avg={1} min={2} max={3}".format( fmt_2(totTime, 2), fmt_2(avgTime, 3),  fmt_2(minTime, 3) , fmt_2(maxTime, 3), numTests, function_name_as_string, modNameAsString))
-	# {0:2d} 		 '{:.2f}'
 	return avgTime, totTime, minTime, maxTime
 	
 def main(): 	
