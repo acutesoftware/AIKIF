@@ -4,8 +4,12 @@
 
 import os
 import sys
-import AIKIF_utils as ai
-import fileMapping as filemap
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
+sys.path.append(root_folder)
+
+
+import cls_log as mod_log
+import config as mod_cfg
 import aikif.lib.cls_filelist as mod_fl
 
 silent = 'N'
@@ -13,7 +17,7 @@ if len(sys.argv) == 2:
     if sys.argv[1] == 'Q':
         silent = 'Y'
 
-ndxPath = filemap.GetDataPath() + os.sep + 'index'
+ndxPath = mod_cfg.fldrs['public_data_path'] + os.sep +  'index'
         
 def index():
     """
@@ -23,8 +27,8 @@ def index():
     # refAction.csv,    PhysicalType,   1
     # goals.csv,        Cleanliness,    11
     """
-    
-    ai.LogProcess('Starting indexing',  'index.py') # sys.modules[self.__module__].__file__)
+    lg = mod_log.Log(mod_cfg.fldrs['localPath'])
+    lg.record_command('Starting indexing',  'index.py') # sys.modules[self.__module__].__file__)
     if silent == 'N':
         print('------------------')
         print('Rebuilding Indexes')
@@ -35,7 +39,7 @@ def index():
     with open(ndxFile, "w") as ndx:
         ndx.write('filename, word, linenumbers\n')
 
-    files_to_index = mod_fl.FileList([filemap.GetDataPath() + '\\core'], ['*.csv'], ["__pycache__", ".git"], "files_to_index_filelist.csv")
+    files_to_index = mod_fl.FileList([mod_cfg.fldrs['public_data_path'] + os.sep + 'core'], ['*.csv'], ["__pycache__", ".git"], "files_to_index_filelist.csv")
     
     for f in files_to_index.get_list():
         buildIndex(f, ndxFile, silent)
@@ -43,7 +47,7 @@ def index():
     # now build the one big index file
     consolidate(ndxFile, opIndex )
 
-    ai.LogProcess('Finished indexing',  'index.py')   #, fle.GetModuleName())
+    lg.record_command('Finished indexing',  'index.py')   #, fle.GetModuleName())
     if silent == 'N':
         print('Done')
 
