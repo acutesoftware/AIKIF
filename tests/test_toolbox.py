@@ -33,7 +33,6 @@ class LogTest(unittest.TestCase):
         self.assertEqual(testResult, 12)
 
     def test_04_run_wrong_tool(self):
-        print('TODO - appears adding tool in different tests loses data')
         suspect_tool = {'file':'ANOTHER_tool.py', 'function':'do_stuff', 'args':['list'], 'return':['int']}
         self.tb.add(suspect_tool)
         if self.tb.verify(suspect_tool):

@@ -48,7 +48,6 @@ class Toolbox():
         """
         self.lstTools.append(tool)
         self.lg.record_process(tool['file'] + '.' + tool['function'])
-        #print('Adding to toolbox : ', tool['file'] + '.' + tool['function'])
         
     def list(self):
         """
@@ -80,9 +79,9 @@ class Toolbox():
         """
         success = True
         if os.path.isfile(tool['file']):
-            print('program exists = TOK')
+            print('Toolbox: program exists = TOK')
         else:
-            print('program exists = FAIL')
+            print('Toolbox: program exists = FAIL')
             success = False
         
         return success
