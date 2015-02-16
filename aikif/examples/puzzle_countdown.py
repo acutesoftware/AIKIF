@@ -28,7 +28,9 @@ def main():
     #for a in all:
     #    print(a)
   #  solve(405,[50, 75], [7,3,5,10])
-    solve(156,[20, 50], [1,2,5])
+ #   solve(156,[20, 50], [1,2,5])
+    solve(787,[75, 50, 25], [3,3,5])  # unsolved puzzle on 11/2/2015 http://www.sbs.com.au/shows/lettersandnumbers/watchonlineplaylist/page/i/1/h/Watch/
+    
     
 def solve(target, big_numbers, small_numbers):
     """ 
