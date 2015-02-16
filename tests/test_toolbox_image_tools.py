@@ -5,22 +5,13 @@ import os
 import sys
 import csv
 import PIL
-sys.path.append("..\\AI\\toolbox")
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+sys.path.append(root_folder + os.sep + 'aikif' + os.sep + 'toolbox' )
+
 import image_tools as cl
 
-test_file1 = "..\\doc\\web-if-progs-v01.jpg"
-test_file2 = "..\\doc\\web-if-v01.jpg"
-
-#test_files = get_sample_file_list()
-
-def get_sample_file_list():
-    """
-    returns a list of valid files to test
-    """
-    return [
-        "..\\doc\\web-if-progs-v01.jpg", 
-        "..\\doc\\web-if-v01.jpg"
-    ]
+test_file1 = root_folder + os.sep + 'doc' + os.sep + 'web-if-progs-v01.jpg'
+test_file2 = root_folder + os.sep + 'doc' + os.sep + 'web-if-v01.jpg'
 
                     
 class TestClassImageTools(unittest.TestCase):
