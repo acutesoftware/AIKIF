@@ -97,9 +97,21 @@ class TestClassDataTable(unittest.TestCase):
         self.assertEqual(fle.arr[6][6],227.25)
         #fle.describe_contents()
         
+    def test_06_create_blank_data_structure(self):
+        dat = cl.DataTable('sales.csv', ',', col_names=['date', 'amount', 'details'])
+        self.assertEqual(dat.col_names[0], 'date')
+        self.assertEqual(dat.col_names[1], 'amount')
+        self.assertEqual(dat.col_names[2], 'details')
 
+    def test_07_add_data(self):
+        dat = cl.DataTable('sales.csv', ',', col_names=['date', 'amount', 'details'])
+        dat.add(['2015-01-09', 24.95, 'Timer'])
+        dat.add(['2015-02-17', 45.00, 'Diary'])
+        dat.add(['2015-02-19', 24.95, 'Timer'])
+        self.assertEqual(len(dat.arr), 3)
+        self.assertEqual(len(dat.count_unique_values(0, 'date')), 3)
+        self.assertEqual(len(dat.count_unique_values(2, 'details')), 2)
 
-
-    
+        
 if __name__ == '__main__':
     unittest.main()
