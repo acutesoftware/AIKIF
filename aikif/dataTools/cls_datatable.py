@@ -36,11 +36,12 @@ class DataTable(object):
         arr    =  [['5320', 'M', '78', '18', '66'], ['1310', 'M', '78', '10', '12']]    
     """
 
-    def __init__(self, name, dataset_type):
+    def __init__(self, name, dataset_type, col_names = []):
         self.name = name
         self.dataset_type = dataset_type
         self.arr = []
         self.header = []
+        self.col_names = col_names
         #self.load_to_array()
         
     def __str__(self):
@@ -54,6 +55,10 @@ class DataTable(object):
             res += '\n' 
         return res
 
+    def add(self, row):
+        """ add a row to data table array """
+        self.arr.append(row)
+        
     def describe_contents(self):
         """ describes various contents of data table """
         print('======================================================================')
