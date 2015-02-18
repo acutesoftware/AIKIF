@@ -55,7 +55,7 @@ class TestSolveHappiness(unittest.TestCase):
      
     def test_06_worldfinder(self):
         utopia = mod_happy.WorldFinder(all_people)
-        self.assertEqual(len(str(utopia)) , 92)
+        self.assertEqual(len(str(utopia)) , 160)
         self.assertEqual(utopia.net_happiness , 0)  # initial state is zero
         utopia.solve(silent=True) # now the happiness should be calculated
         self.assertEqual(utopia.net_happiness , 14.200000000000003)
@@ -74,7 +74,21 @@ class TestSolveHappiness(unittest.TestCase):
         self.assertEqual(utopia.is_everyone_happy(), 'No')
         
  
+    def test_07_create_single_person_list(self):
+        list1 = mod_happy.create_random_population(num=1)
+        self.assertEqual(len(list1), 1)
+        self.assertEqual(list1[0].prefs['tax_min'] < 0.91, True)
+        self.assertEqual(list1[0].prefs['tax_min'] > 0.09, True)
 
-     
+    def test_08_create_10000_person_list(self):
+        list1 = mod_happy.create_random_population(num=10000)
+        self.assertEqual(len(list1), 10000)
+        self.assertEqual(list1[0].prefs['tax_min'] < 0.91, True)
+        self.assertEqual(list1[0].prefs['tax_min'] > 0.009, True)
+
+
+
+
+        
 if __name__ == '__main__':
     unittest.main()

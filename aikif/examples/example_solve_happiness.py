@@ -191,7 +191,7 @@ def create_random_population(num=100, diversity=0.4):
         equity = random.randint(1,100)/100
         pers = Person(nme, {'tax_min':tax_min, 'tax_max':tax_max, 'tradition':tradition, 'equity':equity})
         people.append(pers)
-        print(pers)
+        #print(pers)
 
     return people
 if __name__ == '__main__':
