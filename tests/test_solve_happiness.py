@@ -86,6 +86,12 @@ class TestSolveHappiness(unittest.TestCase):
         self.assertEqual(list1[0].prefs['tax_min'] < 1, True)
         self.assertEqual(list1[0].prefs['tax_min'] > 0.009, True)
 
+    def test_10_locations(self):
+        erth = mod_happy.World('Erth', 7000, 0.1, .2, 0.3)
+        country1 = mod_happy.WorldLocations('Ostraleu', 26, 0.3, 0.3, 0.4)
+        erth.add_location(country1)
+        self.assertEqual(len(str(country1)), 108)
+ 
 
 
 
