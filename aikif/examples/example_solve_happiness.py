@@ -34,6 +34,41 @@ class World():
         self.tax_rate = tax_rate
         self.tradition = tradition
         self.equity = equity
+        self.world_locations = []  
+        
+    def __str__(self):
+        res = '\n----- WORLD SUMMARY for : ' + self.nme + ' -----\n'
+        res += 'population = ' + str( self.population) + '\n'
+        res += 'tax_rate   = ' + str( self.tax_rate) + '\n'
+        res += 'tradition  = ' + str( self.tradition) + '\n'
+        res += 'equity     = ' + str( self.equity) #+ '\n'
+        return res
+    
+    def add_location(self, loc):
+        """
+        a world can have 0 or many locations - this adds one to the world
+        """
+        self.world_locations.append(loc)
+    
+    def get_population(self):
+        pop = 0
+        for loc in self.world_locations:
+            pop += loc.population
+        return pop
+
+class WorldLocations():
+    """
+    This is a subsection of the World with its own parameters
+    to allow people to experience maximum happiness (that's the idea anyway)
+    """
+    def __init__(self, nme, population, tax_rate, tradition, equity):
+        self.nme = nme
+        self.pos_x = 0     # may not use a grid, would be better as a graph
+        self.pos_y = 0     # to allow large populations to expand without effect
+        self.population = population
+        self.tax_rate = tax_rate
+        self.tradition = tradition
+        self.equity = equity
         
     def __str__(self):
         res = '\n----- WORLD SUMMARY for : ' + self.nme + ' -----\n'
