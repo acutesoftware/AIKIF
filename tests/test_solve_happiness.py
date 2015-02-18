@@ -58,9 +58,9 @@ class TestSolveHappiness(unittest.TestCase):
         self.assertEqual(len(str(utopia)) , 160)
         self.assertEqual(utopia.net_happiness , 0)  # initial state is zero
         utopia.solve(silent=True) # now the happiness should be calculated
-        self.assertEqual(utopia.net_happiness , 14.200000000000003)
+        self.assertEqual(utopia.net_happiness , 24.200000000000003)
         self.assertEqual(utopia.num_worlds , 448)
-        self.assertEqual(utopia.unhappy_people , 1)
+        self.assertEqual(utopia.unhappy_people , 0)
   
         self.assertEqual(utopia.tax_range[0], 0)
         self.assertEqual(utopia.tax_range[1], 7)
@@ -71,19 +71,19 @@ class TestSolveHappiness(unittest.TestCase):
         self.assertEqual(utopia.equity_range[0], 1)
         self.assertEqual(utopia.equity_range[1], 9)
         
-        self.assertEqual(utopia.is_everyone_happy(), 'No')
+        self.assertEqual(utopia.is_everyone_happy(), 'Yes')
         
  
     def test_07_create_single_person_list(self):
         list1 = mod_happy.create_random_population(num=1)
         self.assertEqual(len(list1), 1)
-        self.assertEqual(list1[0].prefs['tax_min'] < 0.91, True)
-        self.assertEqual(list1[0].prefs['tax_min'] > 0.09, True)
+        self.assertEqual(list1[0].prefs['tax_min'] < 1, True)
+        self.assertEqual(list1[0].prefs['tax_min'] > 0, True)
 
     def test_08_create_10000_person_list(self):
         list1 = mod_happy.create_random_population(num=10000)
         self.assertEqual(len(list1), 10000)
-        self.assertEqual(list1[0].prefs['tax_min'] < 0.91, True)
+        self.assertEqual(list1[0].prefs['tax_min'] < 1, True)
         self.assertEqual(list1[0].prefs['tax_min'] > 0.009, True)
 
 
