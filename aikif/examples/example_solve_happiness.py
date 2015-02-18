@@ -1,5 +1,7 @@
 # example_solve_happiness.py   written by Duncan Murray 8/2/2015
 
+import random
+
 people_list = []
 people_list.append(['Gand', {'tax_min':0.3, 'tax_max':0.5, 'tradition':0.2, 'equity':0.9}])
 people_list.append(['Trsa', {'tax_min':0.0, 'tax_max':0.9,'tradition':0.4, 'equity':0.9}])
@@ -10,9 +12,17 @@ def main():
     all_people = []
     for p in people_list:
         all_people.append(Person(p[0], p[1]))
+    all_people = create_random_population(num=20)
     utopia = WorldFinder(all_people)
-    utopia.solve(silent=True)
+    utopia.solve(silent=False)
     print(utopia)
+    """
+    print('people_list')
+    print(people_list)
+    print('ALL_PEOPLE')
+    print(all_people)
+    """
+    
             
 class World():
     """
@@ -51,9 +61,11 @@ class WorldFinder():
     
     def __str__(self):
         res = '\n   === World Finder Results ===\n'
-        res += 'Worlds tested  = ' + str(self.num_worlds) + '\n'
-        res += 'Best happiness = ' + str(self.net_happiness) + '\n'
-        res += 'Everyone happy = ' + self.is_everyone_happy() + '\n'
+        res += 'Worlds tested        = ' + str(self.num_worlds) + '\n'
+        res += 'Best happiness       = ' + str(self.net_happiness) + '\n'
+        res += 'Num Unhappy people   = ' + str(self.unhappy_people) + '\n'
+        res += 'Tot People in world  = ' + str(len(self.all_people)) + '\n'
+        res += 'Everyone happy       = ' + self.is_everyone_happy() + '\n'
         return res
 
     def is_everyone_happy(self):
@@ -165,6 +177,22 @@ class Person():
             res += k + '  = ' + str(self.prefs[k]) + '\n'
         return res
 
+############# Utility functions ############
+def create_random_population(num=100, diversity=0.4):
+    """
+    create a list of people with randomly generated names and stats
+    """
+    people = []
+    for _ in range(num):
+        nme = 'blah'
+        tax_min = random.randint(1,40)/100
+        tax_max = tax_min + random.randint(1,40)/100
+        tradition = random.randint(1,100)/100
+        equity = random.randint(1,100)/100
+        pers = Person(nme, {'tax_min':tax_min, 'tax_max':tax_max, 'tradition':tradition, 'equity':equity})
+        people.append(pers)
+        print(pers)
 
+    return people
 if __name__ == '__main__':
     main()
