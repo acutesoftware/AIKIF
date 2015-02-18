@@ -12,7 +12,7 @@ def main():
     all_people = []
     for p in people_list:
         all_people.append(Person(p[0], p[1]))
-    all_people = create_random_population(num=20)
+    all_people = create_random_population(num=100)
     utopia = WorldFinder(all_people)
     utopia.solve(silent=False)
     print(utopia)
@@ -105,7 +105,20 @@ class WorldFinder():
          
 class Happiness():
     """
-    abstract to manage the happiness calculations
+    abstract to manage the happiness calculations.
+    The purpose of this class is to attempt to assign a number 
+    to a persons happiness in a (limited parameters) world
+    Note - original calculation was flat out wrong - just 
+    because the tax_rate is not ideal doesn't mean the person 
+    is unhappy, rather that is a desire or preference.
+    It does have an influence but the influence needs to be 
+    scaled right back.
+    
+    Options
+    Need to have a class of preferences and their weightings, 
+    so things like death by starvation has high unhappiness but 
+    wishing you were a flying dragon has a low impact on happiness
+    
     """
     def __init__(self, person, world):
         self.person = person
@@ -153,17 +166,21 @@ class Happiness():
         to rating depending if current value is in range, otherwise
         compare distance away from min/max (same value)
         """
+        rate_of_change_positive = 10
+        rate_of_change_negative = 2
+        add_positive = 10
+        add_negative = 2
         if min == max:
             self.rating -= int(abs(min - cur)*100) / 10
         else:
             if min <= cur:
-                self.rating += (int(abs(min - cur)*10)) + 10
+                self.rating += (int(abs(min - cur)*rate_of_change_positive)) + add_positive
             else:
-                self.rating -= (int(abs(min - cur)*10)) + 10
+                self.rating -= (int(abs(min - cur)*rate_of_change_negative)) + add_negative
             if max >= cur:
-                self.rating += (int(abs(max - cur)*10)) + 10
+                self.rating += (int(abs(max - cur)*rate_of_change_positive)) + add_positive
             else:
-                self.rating -= (int(abs(max - cur)*10)) + 10
+                self.rating -= (int(abs(max - cur)*rate_of_change_negative)) + add_negative
 
     
 class Person():
