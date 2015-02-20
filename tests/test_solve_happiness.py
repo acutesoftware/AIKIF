@@ -7,13 +7,18 @@ lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep +
 sys.path.append(lib_fldr)
 import example_solve_happiness as mod_happy
 
+env_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" + os.sep + "environments")
+sys.path.append(env_fldr)
+
+import happiness as mod_env
+
 all_people = []
-all_people.append(mod_happy.Person('Gand', {'tax_min':0.3, 'tax_max':0.5, 'tradition':0.2, 'equity':0.9}))
-all_people.append(mod_happy.Person('Murd', {'tax_min':0.0, 'tax_max':0.2,'tradition':0.5, 'equity':0.1}))
+all_people.append(mod_env.Person('Gand', {'tax_min':0.3, 'tax_max':0.5, 'tradition':0.2, 'equity':0.9}))
+all_people.append(mod_env.Person('Murd', {'tax_min':0.0, 'tax_max':0.2,'tradition':0.5, 'equity':0.1}))
 
 all_worlds = []
-all_worlds.append(mod_happy.World('Astr', 5000, 0.1, .2, 0.3))
-all_worlds.append(mod_happy.World('Cryx', 1000, 0.3, .3, 0.5))
+all_worlds.append(mod_env.World('Astr', 5000, 0.1, .2, 0.3))
+all_worlds.append(mod_env.World('Cryx', 1000, 0.3, .3, 0.5))
 
 class TestSolveHappiness(unittest.TestCase):
     
@@ -54,7 +59,7 @@ class TestSolveHappiness(unittest.TestCase):
         self.assertEqual(all_worlds[1].equity, 0.5)
      
     def test_06_worldfinder(self):
-        utopia = mod_happy.WorldFinder(all_people)
+        utopia = mod_env.WorldFinder(all_people)
         self.assertEqual(len(str(utopia)) , 160)
         self.assertEqual(utopia.net_happiness , 0)  # initial state is zero
         utopia.solve(silent=True) # now the happiness should be calculated
@@ -87,8 +92,8 @@ class TestSolveHappiness(unittest.TestCase):
         self.assertEqual(list1[0].prefs['tax_min'] > 0.009, True)
 
     def test_10_locations(self):
-        erth = mod_happy.World('Erth', 7000, 0.1, .2, 0.3)
-        country1 = mod_happy.WorldLocations('Ostraleu', 26, 0.3, 0.3, 0.4)
+        erth = mod_env.World('Erth', 7000, 0.1, .2, 0.3)
+        country1 = mod_env.WorldLocations('Ostraleu', 26, 0.3, 0.3, 0.4)
         erth.add_location(country1)
         self.assertEqual(len(str(country1)), 108)
  
