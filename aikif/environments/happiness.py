@@ -124,7 +124,20 @@ class WorldFinder():
                         self.unhappy_people = num_unhappy
                         if not silent:
                             print('found better world - ' + w.nme + ' = ' + str(world_happiness) + ' - total unhappy_people = ' + str(self.unhappy_people))
-         
+
+class HappinessFactors():
+    """
+    class for parameters used to calculate happiness
+    h = Happiness(p, w)
+    h.add_factor(HappinessFactors('tax rate', 0.2, 0.5, 'hi'))
+    """
+    def __init__(self, name, type, min, max):
+        self.name = name
+        self.type = type
+        self.min = min
+        self.max = max
+        
+ 
 class Happiness():
     """
     abstract to manage the happiness calculations.
@@ -145,6 +158,7 @@ class Happiness():
     def __init__(self, person, world):
         self.person = person
         self.world = world
+        self.factors = []
         self.rating = 0
         self.calculate()
         
@@ -170,16 +184,22 @@ class Happiness():
             
         res += ' in ' + self.world.nme + ' (' + str(self.rating) + ')' 
         return res
-            
+    
+    def add_factor(self, factor):
+        self.factors.append(factor)
+        
+    
     def calculate(self):
         """
         calculates the estimated happiness of a person
         living in a world
-        """
-        self.rating = 0
         self._update_pref(self.person.prefs['tax_min'], self.person.prefs['tax_max'], self.world.tax_rate)
         self._update_pref(self.person.prefs['tradition'], self.person.prefs['tradition'], self.world.tradition)
         self._update_pref(self.person.prefs['equity'], self.person.prefs['equity'], self.world.equity)
+        """
+        self.rating = 0
+        for f in self.factors:
+            self._update_pref(f.min, f.max, self.world.tax_rate)
         
     def _update_pref(self, min, max, cur):
         """
