@@ -6,7 +6,6 @@ import random
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." )
 env_folder = root_folder + os.sep + 'environments' 
-#sys.path.append(root_folder)
 sys.path.append(env_folder)
 
 import happiness as mod_hap_env
@@ -25,13 +24,7 @@ def main():
     utopia = mod_hap_env.WorldFinder(all_people)
     utopia.solve(silent=False)
     print(utopia)
-    """
-    print('people_list')
-    print(people_list)
-    print('ALL_PEOPLE')
-    print(all_people)
-    """
-    
+ 
 
 ############# Utility functions ############
 def create_random_population(num=100, diversity=0.4):
