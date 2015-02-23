@@ -4,12 +4,39 @@ def TEST():
     """
     Modules for testing happiness of 'persons' in 'worlds'
     based on simplistic preferences. Just a toy - dont take seriously
+            
+        ----- WORLD SUMMARY for : Mars -----
+        population = 0
+        tax_rate   = 0.0
+        tradition  = 0.9
+        equity     = 0.0
+        Preferences for Rover
+        tax_min  = 0.0
+        equity  = 0.0
+        tax_max  = 0.9
+        tradition  = 0.9
+
+        Rover is Indifferent in Mars (0)
+        DETAILS
+                    tax: Economic = 0.1 -> 0.3
+              tradition: Personal = 0.3 -> 0.9
+                 equity: Personal = 0.1 -> 0.9
+                 growth: Economic = 0.01 -> 0.09    
+    
+    
     """
     w = World('Mars', 0, 0.0, 0.9, 0.0)
     print(w)
     p = Person('Rover', {'tax_min':0.0, 'tax_max':0.9,'tradition':0.9, 'equity':0.0})
     print(p)
-    print(Happiness(p,w))
+    
+    h = Happiness(p,w)
+    #h.add_factor(HappinessFactors(name, type, min, max))
+    h.add_factor(HappinessFactors('tax', 'Economic', 0.1, 0.3))
+    h.add_factor(HappinessFactors('tradition', 'Personal', 0.3, 0.9))
+    h.add_factor(HappinessFactors('equity', 'Personal', 0.1, 0.9))
+    h.add_factor(HappinessFactors('growth', 'Economic', 0.01, 0.09))
+    print(h.show_details())
     
 class World():
     """
@@ -136,6 +163,13 @@ class HappinessFactors():
         self.type = type
         self.min = min
         self.max = max
+    
+    def __str__(self):
+        res = self.name.rjust(15) + ': '
+        res += self.type + ' = '
+        res += str(self.min) + ' -> '
+        res += str(self.max) + '\n'
+        return res
         
  
 class Happiness():
@@ -183,6 +217,17 @@ class Happiness():
             res += 'Very Unhappy'
             
         res += ' in ' + self.world.nme + ' (' + str(self.rating) + ')' 
+        return res
+    
+    def show_details(self):
+        """
+        extended print details of happiness parameters
+        """
+        res = str(self)
+        res += '\nDETAILS\n'
+        for f in self.factors:
+            res += str(f)
+        
         return res
     
     def add_factor(self, factor):

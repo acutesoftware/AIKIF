@@ -5,7 +5,7 @@ import sys
 import os
 lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" + os.sep + "examples")
 sys.path.append(lib_fldr)
-import example_solve_happiness as mod_happy
+import happiness_solver as mod_happy
 
 env_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" + os.sep + "environments")
 sys.path.append(env_fldr)
@@ -99,8 +99,9 @@ class TestSolveHappiness(unittest.TestCase):
         erth.add_location(country1)
         self.assertEqual(len(str(country1)), 108)
  
-
-
+    def test_11_happiness_factors(self):
+        hf = mod_env.HappinessFactors('tax', 'Economic', 0.1, 0.3)
+        self.assertEqual(hf.name, 'tax')
 
         
 if __name__ == '__main__':
