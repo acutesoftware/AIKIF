@@ -10,8 +10,8 @@ The intent is to allow any type of raw data to be machine understandable using d
 Area | status
  --- | --- |
 | Code base version            | Pre-Alpha    |
-| Public package version | 0.0.3        |
-| Date notes updated     | 26/10/2014   |
+| Public package version | 0.0.4        |
+| Date notes updated     | 25/02/2015   |
 
 
 ###Quick Start
