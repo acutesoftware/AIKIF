@@ -1,4 +1,12 @@
-v0.0.1, 20-Aug-2014 -- Initial release.
+v0.0.4, 25-Feb-2015 -- agent updates, examples, lots of (partial) progress
+- setup.py: includes examples, agents.learn
+- agent_email.py: basic gmail wrapper - still issue with lots of emails
+- exampes/*.py: several examples of usage, many works in progress
+- cls_datatable.py: bug fixes, additional export function
+- mapper.py: initial cut of core mapping module for business rules
+
+v0.0.3, 22-Aug-2014 -- folder layouts, removed tests
+- setup.py to setup layout excluding tests folder      
 
 v0.0.2, 21-Aug-2014 -- Bug fixes to get first version of package running
 - cls_goal_friendly.py: fixed indention, incorrect variable naming
@@ -6,5 +14,6 @@ v0.0.2, 21-Aug-2014 -- Bug fixes to get first version of package running
             placing files in root of lib\site-packages\
 - cls_file: catching errors where file doesnt exist
 
-v0.0.3, 22-Aug-2014 -- folder layouts, removed tests
-- setup.py to setup layout excluding tests folder            
+v0.0.1, 20-Aug-2014 -- Initial release.
+
+      
