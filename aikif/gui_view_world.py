@@ -99,9 +99,9 @@ class gui_view_tk(Tkinter.Tk):
 
 
     def draw_cell(self, row, col, val):
-       """
-       draw a cell as position row, col containing val
-       """
+        """
+        draw a cell as position row, col containing val
+        """
         if val == 'T':
             self.paint_target(row,col)
         elif val == '#':
