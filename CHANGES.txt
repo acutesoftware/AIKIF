@@ -1,3 +1,7 @@
+v0.0.6, 26-Feb-2015 -- more formatting fixes for readme, bugfix
+
+v0.0.5, 26-Feb-2015 -- formatting fixes for readme for pypi
+
 v0.0.4, 25-Feb-2015 -- agent updates, examples, lots of (partial) progress
 - setup.py: includes examples, agents.learn
 - agent_email.py: basic gmail wrapper - still issue with lots of emails

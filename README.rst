@@ -11,8 +11,8 @@ Progress
 ========
 
 Code base version          Pre-Alpha   
-Public package version     0.0.5        
-Date notes updated         25/02/2015   
+Public package version     0.0.6        
+Date notes updated         26/02/2015   
 
 
 Quick Start
@@ -21,10 +21,7 @@ This github repository https://github.com/acutesoftware/AIKIF contains the lates
 
 >> pip install aikif
 
-There are some basic examples shown in the aikif/examples folder:
-	Project Management
-    Code Management
-    Personal Information Management
+There are some basic examples shown in the aikif/examples folder
 
 To start the web interface use 
 >>aikif/web_app/web_aikif.py
