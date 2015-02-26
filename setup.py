@@ -1,22 +1,15 @@
 from distutils.core import setup
 
-def readme():
-    with open('README.rst') as f:
-        return f.read()
-
 setup(
     name='AIKIF',
-    version='0.0.6',
+    version='0.0.7',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
     packages=['aikif', 'aikif.agents','aikif.agents.aggregate','aikif.agents.explore','aikif.agents.gather','aikif.agents.learn','aikif.dataTools','aikif.environments','aikif.examples','aikif.lib', 'aikif.ontology','aikif.toolbox', 'aikif.web_app'],
     url='https://github.com/acutesoftware/AIKIF',
     license='LICENSE.txt',
     description='Artificial Intelligence Knowledge Information Framework',
-    long_description=readme(),
-    install_requires=[
-      'markdown',
-    ],
+    long_description=open('README.txt').read(),
     classifiers = [
     'Development Status :: 2 - Pre-Alpha',
     'Environment :: Web Environment',

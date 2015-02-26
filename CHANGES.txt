@@ -1,3 +1,5 @@
+v0.0.7, 26-Feb-2015 -- simplified readme using text only
+
 v0.0.6, 26-Feb-2015 -- more formatting fixes for readme, bugfix
 
 v0.0.5, 26-Feb-2015 -- formatting fixes for readme for pypi

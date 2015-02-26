@@ -14,7 +14,7 @@ fldrs['log_folder'] = 'T:\\user\\AIKIF\\log'
 fldrs['pers_data'] = 'T:\\user\\AIKIF\\pers_data' 
 
 # user defined parameters 
-params['AIKIF_version'] = '0.0.6'
+params['AIKIF_version'] = '0.0.7'
 params['AIKIF_deploy'] = 'DEV'
 
 
