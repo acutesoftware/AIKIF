@@ -25,7 +25,6 @@ logs['logFileCommand'] = fldrs['localPath'] + 'log' + os.sep + 'command.log'
 logs['logFileResult'] = fldrs['localPath'] + 'log' + os.sep + 'result.log'
 
 
-
 # useful folder locations used by programs - don't modify
 fldrs['root_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 fldrs['program_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
