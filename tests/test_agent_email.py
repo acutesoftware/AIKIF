@@ -42,10 +42,9 @@ import os
 import sys
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
-sys.path.append(root_folder)
-import config as mod_cfg
 
-import agents.gather.agent_email as email_agt
+import aikif.config as mod_cfg
+import aikif.agents.gather.agent_email as email_agt
                     
 class AgentEmailTest(unittest.TestCase):
     def setUp(self): #setUp
@@ -55,7 +54,6 @@ class AgentEmailTest(unittest.TestCase):
             self.password = f.readline().strip('\n')
         self.account = email_agt.GmailAccount(self.username, self.password, save_folder)  
         self.agt = email_agt.EmailAgent('TEST_email_agent', root_folder, True, 1 , self.account)
-        print('class instantiated for testing...')
 
     def test_01_parameters(self):
         self.assertEqual(len(str(self.agt)),343)
@@ -67,7 +65,6 @@ class AgentEmailTest(unittest.TestCase):
 
     def test_02_connect_and_disconnect(self):
         # doing this in one test rather than logon and off 8 times (causing scope error)
-        print(self.account)
         self.account.connect()
         self.assertEqual(self.account.status, 'CONNECTED')
         tot_emails = self.account.get_inbox_count()
@@ -78,8 +75,6 @@ class AgentEmailTest(unittest.TestCase):
         self.assertEqual(self.account.status, 'CONNECTED')
         self.account.disconnect()
         self.assertEqual(self.account.status, 'DISCONNECTED')
-        
-
          
 if __name__ == '__main__':
     unittest.main()

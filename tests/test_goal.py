@@ -2,9 +2,11 @@
 
 import unittest
 import sys
-sys.path.append("..\\AI\\lib")
-from cls_goal import Goal
 
+from aikif.lib.cls_goal import Goal
+from aikif.lib.cls_goal_time import GoalTime
+from aikif.lib.cls_goal_money import GoalMoney
+				
 class GoalTest(unittest.TestCase):
 
 	def setUp(self):
@@ -28,13 +30,11 @@ class GoalTest(unittest.TestCase):
 		self.assertEqual(result, False)
 
 	def test_time_goal(self):
-		from cls_goal_time import GoalTime
 		timeGoal = GoalTime(True, 5,2)
 		result = timeGoal.check_for_success()
 		self.assertEqual(result, False)
 		
 	def test_money_goal(self):
-		from cls_goal_money import GoalMoney
 		moneyGoal = GoalMoney(True, 100,50)
 		result = moneyGoal.check_for_success()
 		self.assertEqual(result, False)

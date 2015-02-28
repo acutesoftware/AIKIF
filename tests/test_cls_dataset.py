@@ -2,8 +2,7 @@
 
 import unittest
 import sys
-sys.path.append("..\\AI\\dataTools")
-import cls_dataset as cl
+import aikif.dataTools.cls_dataset as cl
 					
 class TestClassDataSet(unittest.TestCase):
  
