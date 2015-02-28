@@ -7,7 +7,6 @@ aikif\cls_file_mapping.py
 aikif\cls_log.py
 aikif\config.py
 aikif\create_database.py
-aikif\create_word_lists.py
 aikif\gui_view_world.py
 aikif\index.py
 aikif\mapper.py
