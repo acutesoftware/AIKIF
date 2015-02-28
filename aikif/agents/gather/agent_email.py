@@ -10,13 +10,10 @@ import email
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 
-sys.path.append(root_folder + os.sep + "aikif")  # should not be needed once published
-import cls_log as mod_log
-import config as mod_cfg
-sys.path.append(root_folder)
-#print('agent_email, root_folder = ', root_folder)
+
+import aikif.cls_log as mod_log
+import aikif.config as mod_cfg
 import aikif.agents.agent as agt
-#print( mod_cfg.fldrs['log_folder'])
 
 def TEST():
     
@@ -105,11 +102,8 @@ class EmailAccount:
         
         
     def connect(self):
-        print('connecting with ', self.username,self.password )
         self.server_snd.login(self.username,self.password)
         self.server_rec.login(self.username,self.password)
-        #self.server_snd.ehlo()
-        #self.server_rec.ehlo()
         self.status = 'CONNECTED'
         print(self.status)
     
@@ -128,8 +122,6 @@ class EmailAccount:
                    "MIME-Version: 1.0",
                    "Content-Type: text/html"]
         headers = "\r\n".join(headers)
-        #self.server_snd.ehlo()
-        #self.server_snd.starttls()
         self.server_snd.sendmail(fromaddr, toaddr, headers + "\r\n\r\n" + msg)
     
     def get_inbox_count(self):

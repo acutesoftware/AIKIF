@@ -1,4 +1,4 @@
-<sup>processRawData.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-03-23</span></sup></sub>,<sup><sup>1405</sup></sup>,
+<sup>processRawData.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-04</span></sup></sub>,<sup><sup>1413</sup></sup>,
 
 <sup>mapper.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-29</span></sup></sub>,<sup><sup>8023</sup></sup>,
 
@@ -38,11 +38,13 @@
 
 <sup>create_word_lists.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-18</span></sup></sub>,<sup><sup>5975</sup></sup>,
 
+<sup>project.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-12</span></sup></sub>,<sup><sup>1301</sup></sup>,
+
 <sup>programs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-07</span></sup></sub>,<sup><sup>5635</sup></sup>,
 
-<sup>cls_log.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-11</span></sup></sub>,<sup><sup>8793</sup></sup>,
+<sup>cls_log.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-18</span></sup></sub>,<sup><sup>9967</sup></sup>,
 
-<sup>config.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-02</span></sup></sub>,<sup><sup>2393</sup></sup>,
+<sup>config.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-09</span></sup></sub>,<sup><sup>2746</sup></sup>,
 
 <sup>load_ABS_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-17</span></sup></sub>,<sup><sup>3992</sup></sup>,
 
@@ -92,17 +94,21 @@
 
 <sup>agent_map_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-09-30</span></sup></sub>,<sup><sup>1854</sup></sup>,
 
-<sup>agent.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-03</span></sup></sub>,<sup><sup>3948</sup></sup>,
+<sup>agent.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-26</span></sup></sub>,<sup><sup>4002</sup></sup>,
 
 <sup>collect_Win_processes.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-05-03</span></sup></sub>,<sup><sup>7829</sup></sup>,
 
-<sup>agent_email.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-21</span></sup></sub>,<sup><sup>1896</sup></sup>,
+<sup>agent_email.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-28</span></sup></sub>,<sup><sup>6525</sup></sup>,
 
 <sup>log_PC_usage.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-05-02</span></sup></sub>,<sup><sup>1705</sup></sup>,
 
-<sup>agent_filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>1842</sup></sup>,
+<sup>agent_filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-26</span></sup></sub>,<sup><sup>1842</sup></sup>,
+
+<sup>agent_browser.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-27</span></sup></sub>,<sup><sup>14676</sup></sup>,
 
 <sup>log_browser_history.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-26</span></sup></sub>,<sup><sup>3031</sup></sup>,
+
+<sup>outlook_export.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-16</span></sup></sub>,<sup><sup>3893</sup></sup>,
 
 <sup>agg_context.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-05-17</span></sup></sub>,<sup><sup>3570</sup></sup>,
 
@@ -110,37 +116,57 @@
 
 <sup>load_PC_usage.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-07</span></sup></sub>,<sup><sup>2081</sup></sup>,
 
+<sup>dummy_learn_1.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-07</span></sup></sub>,<sup><sup>1244</sup></sup>,
+
+<sup>agent_learn_aixi.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-22</span></sup></sub>,<sup><sup>5668</sup></sup>,
+
+<sup>run_dummy_learn_1.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-07</span></sup></sub>,<sup><sup>1220</sup></sup>,
+
 <sup>agent_explore_grid.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-21</span></sup></sub>,<sup><sup>10212</sup></sup>,
 
 <sup>cls_goal_friendly.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-21</span></sup></sub>,<sup><sup>1147</sup></sup>,
 
 <sup>cls_goal_time.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-07-30</span></sup></sub>,<sup><sup>1596</sup></sup>,
 
-<sup>cls_filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-17</span></sup></sub>,<sup><sup>16278</sup></sup>,
+<sup>cls_filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-20</span></sup></sub>,<sup><sup>16284</sup></sup>,
 
-<sup>cls_plan.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-04</span></sup></sub>,<sup><sup>5746</sup></sup>,
+<sup>cls_plan_search.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-09</span></sup></sub>,<sup><sup>6455</sup></sup>,
 
 <sup>cls_goal.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-23</span></sup></sub>,<sup><sup>1336</sup></sup>,
 
-<sup>cls_context.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-09-07</span></sup></sub>,<sup><sup>7039</sup></sup>,
+<sup>cls_context.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-04</span></sup></sub>,<sup><sup>6747</sup></sup>,
 
 <sup>cls_goal_money.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-23</span></sup></sub>,<sup><sup>1609</sup></sup>,
 
 <sup>cls_file.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>6967</sup></sup>,
 
+<sup>cls_plan_BDI.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-10</span></sup></sub>,<sup><sup>5671</sup></sup>,
+
+<sup>puzzle_countdown.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-11</span></sup></sub>,<sup><sup>4633</sup></sup>,
+
 <sup>ex_index_mydocs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>1646</sup></sup>,
 
-<sup>game_of_life_console.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>2624</sup></sup>,
+<sup>puzzle_missions_canninballs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-23</span></sup></sub>,<sup><sup>7942</sup></sup>,
+
+<sup>puzzle_N_queens.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-10</span></sup></sub>,<sup><sup>471</sup></sup>,
+
+<sup>game_of_life_console.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-17</span></sup></sub>,<sup><sup>2618</sup></sup>,
 
 <sup>finance_example.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-29</span></sup></sub>,<sup><sup>3575</sup></sup>,
 
-<sup>document_AIKIF.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-26</span></sup></sub>,<sup><sup>9154</sup></sup>,
+<sup>document_AIKIF.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-13</span></sup></sub>,<sup><sup>10677</sup></sup>,
+
+<sup>example_solve_happiness.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-09</span></sup></sub>,<sup><sup>6270</sup></sup>,
 
 <sup>ex_project_management.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>5929</sup></sup>,
 
 <sup>maths_fermat_brute_force.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-11</span></sup></sub>,<sup><sup>4571</sup></sup>,
 
 <sup>autobackup.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>2859</sup></sup>,
+
+<sup>puzzle_sliding_block.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-09</span></sup></sub>,<sup><sup>8834</sup></sup>,
+
+<sup>solve_travelling_salesman.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-20</span></sup></sub>,<sup><sup>857</sup></sup>,
 
 <sup>world_generator.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>2274</sup></sup>,
 
@@ -150,11 +176,15 @@
 
 <sup>image_tools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-17</span></sup></sub>,<sup><sup>13958</sup></sup>,
 
-<sup>Toolbox.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-23</span></sup></sub>,<sup><sup>2926</sup></sup>,
+<sup>Toolbox.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-13</span></sup></sub>,<sup><sup>3320</sup></sup>,
 
 <sup>crypt_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-18</span></sup></sub>,<sup><sup>4282</sup></sup>,
 
+<sup>data_structures.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-09</span></sup></sub>,<sup><sup>4633</sup></sup>,
+
 <sup>solve_knapsack.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-24</span></sup></sub>,<sup><sup>3733</sup></sup>,
+
+<sup>algebra.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-06</span></sup></sub>,<sup><sup>766</sup></sup>,
 
 <sup>audio_tools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-19</span></sup></sub>,<sup><sup>2793</sup></sup>,
 
@@ -162,9 +192,9 @@
 
 <sup>test_tool.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-30</span></sup></sub>,<sup><sup>377</sup></sup>,
 
-<sup>cls_grid.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-07-13</span></sup></sub>,<sup><sup>8893</sup></sup>,
+<sup>cls_grid.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-17</span></sup></sub>,<sup><sup>8897</sup></sup>,
 
-<sup>review_ontology.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-03-30</span></sup></sub>,<sup><sup>22952</sup></sup>,
+<sup>review_ontology.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-04</span></sup></sub>,<sup><sup>23650</sup></sup>,
 
 <sup>read_wordnet.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-14</span></sup></sub>,<sup><sup>2205</sup></sup>,
 

@@ -1,6 +1,6 @@
 # cls_goal_time.py
 
-from cls_goal import Goal
+from aikif.lib.cls_goal import Goal
 
 class GoalTime(Goal):
     """ 

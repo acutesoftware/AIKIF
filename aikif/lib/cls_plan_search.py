@@ -9,14 +9,11 @@ import sys
 import heapq
 import queue
 PriorityQueue = queue.PriorityQueue
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." )
-lib_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." +  os.sep + "toolbox" )
-sys.path.append(lib_folder)
-sys.path.append(root_folder)
-import cls_grid
-import data_structures as ds
-import config as mod_cfg
-import cls_log as mod_log
+
+import aikif.toolbox.cls_grid
+import aikif.toolbox.data_structures as ds
+import aikif.config as mod_cfg
+import aikif.cls_log as mod_log
 
 def TEST():
     # TODO later : environ = cls_grid.Grid(grid_height=8, grid_width=8, pieces=['X', 'O'], spacing=1) 
