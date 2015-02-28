@@ -2,10 +2,8 @@
 
 import sys
 import os
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
-sys.path.append(root_folder)
 
-import cls_collect_files as cl
+import aikif.lib.cls_filelist as cl
 
 packages = ['os', 'sys', 'numpy', 'requests', 'pypyodbc', 'codecs', 're', 'csv' ,
         'operator' , 'datetime' , 'xml' , 'platform' , 'cx_Oracle',
@@ -19,9 +17,8 @@ def check_environment_for_aikif():
     of the commonly used (in AIKIF) libraries are installed
     """
     print ("Python Version = " + sys.version)
-    lst_all_imports = get_import_list(os.getcwd())
-    lst_imports = test_libraries(lst_all_imports)  # no point testing this 
-    #print ('\n'.join(lst))
+    lst_all_imports = get_import_list(os.getcwd() + os.sep + '..')
+    lst_imports = test_libraries(lst_all_imports)
     tok, fail = test_libraries(packages)
     generate_report(lst_all_imports, tok, fail )
     
@@ -30,7 +27,8 @@ def generate_report(lst_imports, tok, fail ):
     """
     saves results of environment to local file
     """
-    with open("test_results\\environment.md", "w") as f:
+    op_file = "test_results\\environment.md"
+    with open(op_file, "w") as f:
         f.write("#environment.md\n")
         f.write("Details on development environment, imports, code fixes todo.\nCreated by check_python_env.py\n\n")
         f.write("\n###Python version\n")
@@ -46,6 +44,7 @@ def generate_report(lst_imports, tok, fail ):
         f.write("##List of all imports in all modules\n")
         for imp in lst_imports:
             f.write(imp + "<BR>\n")        
+    print('Done - see ' + op_file + ' for details')
 
 def get_import_list(root_folder):
     """
@@ -57,11 +56,12 @@ def get_import_list(root_folder):
     import_statements = []
     print("ROOT FOLDER = " + root_folder)
 #    py_files = cl.clsCollectFiles(os.path.join(os.path.dirname(root_folder), os.pardir), '*.py')  # test_cls_collect
-    py_files = cl.clsCollectFiles(os.path.join(root_folder, os.pardir), '*.py')  # test_cls_collect
-    py_files.collect_filelist()
-    for fname in py_files.get_filelist():
-        print(fname)
-        with open(fname, "r") as f:
+    
+    py_files = cl.FileList([root_folder], ['*.py'], [], "sample_filelist.csv")
+    for fname in py_files.fl_metadata:
+        #print(fl.print_file_details_in_line(f, ["fullfilename"]))
+        print(fname["fullfilename"])
+        with open(fname["fullfilename"], "r") as f:
             for line in f:
                 if line.strip()[0:6] == 'import':
                     import_statements.append(line.strip()[7:])
