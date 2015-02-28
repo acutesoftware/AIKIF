@@ -9,7 +9,7 @@ import unittest
 import os
 import sys
 
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
+root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
 print("in test_cls_filelist : root_folder = " + root_folder)
 sys.path.append(root_folder)
 
@@ -19,22 +19,22 @@ import aikif.lib.cls_filelist as fl
 class TestClassFile(unittest.TestCase):
  
     def setUp(self):
-        self.fname = 'test_results/cls_filelist_results1.csv'
+        self.fname = root_folder + os.sep + 'tests/test_results/cls_filelist_results1.csv'
         
     def test_01_file_result(self):
         """print("test1 - filelist with one file")"""
-        lst1 = fl.FileList([root_folder ], ['README.md'], [],  self.fname)
-        self.assertEqual(len(lst1.get_list()), 1) 
+        lst1 = fl.FileList([root_folder + os.sep + 'tests'], ['test_*.py'], [],  self.fname)
+        self.assertEqual(len(lst1.get_list()) > 18, True) 
         
     def test_02_multiple_file_result(self):
         """print("test2 - Collecting multiple file metadata")"""
         lst2 = fl.FileList([root_folder + os.sep + 'tests'], ['*.*'], [],  self.fname)
-        self.assertEqual(len(lst2.get_list()) > 50, True) 
+        self.assertEqual(len(lst2.get_list()) > 30, True) 
         
     def test_03_exclude_files(self):
         """print("test2 - Collecting multiple file metadata")"""
         lst3 = fl.FileList([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['*.*'], ['*.sql'],  self.fname)
-        self.assertEqual(len(lst3.get_list()), 12) 
+        self.assertEqual(len(lst3.get_list()), 22) 
         
     def test_04_save_filelist(self):
         """ test saving filelist  """
@@ -42,6 +42,7 @@ class TestClassFile(unittest.TestCase):
         if os.path.isfile(self.fname):
             os.remove(self.fname)
         aikif_fl = fl.FileList([root_folder + os.sep + 'tests'], ['*.py'], [],  self.fname)
+        #print('FL = ', aikif_fl.get_list())
         aikif_fl.save_filelist(self.fname, ["name", "path", "size", "date"])
         if os.path.isfile(self.fname):
             self.assertEqual("File Exists", "File Exists") 

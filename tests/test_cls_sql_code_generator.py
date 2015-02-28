@@ -2,8 +2,7 @@
 
 import unittest
 import sys
-sys.path.append("..\\AI\\dataTools")
-from cls_sql_code_generator import SQLCodeGenerator
+from aikif.dataTools.cls_sql_code_generator import SQLCodeGenerator
 class TestClassDataSet(unittest.TestCase):
  
     def setUp(self):
