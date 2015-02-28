@@ -4,8 +4,6 @@ import os
 import sys
 import time
 from datetime import datetime
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "..") 
-sys.path.append(root_folder)
 
 def TEST():
     """ test routines during development - will be part of unittest 
