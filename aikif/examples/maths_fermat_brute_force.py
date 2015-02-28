@@ -4,8 +4,8 @@ import os
 import sys
 from random import randint 
 sys.path.append('..')
-import config as mod_cfg
-import cls_log as mod_log
+import aikif.config as mod_cfg
+import aikif.cls_log as mod_log
 
 def main():
     """

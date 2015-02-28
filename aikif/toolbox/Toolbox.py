@@ -5,10 +5,9 @@
 import os
 import sys
 aikif_dir = os.path.dirname(os.path.abspath(__file__)) + os.sep + '..'
-sys.path.append(aikif_dir)
-import cls_log
-import config
-import os
+#sys.path.append(aikif_dir)
+import aikif.cls_log as mod_log
+import aikif.config as mod_cfg
 
 class Toolbox():
     """
@@ -25,7 +24,7 @@ class Toolbox():
     
     def __init__(self, fldr=None, lst=None):
         self.fldr = fldr
-        self.lg = cls_log.Log(config.fldrs['log_folder'])
+        self.lg = mod_log.Log(mod_cfg.fldrs['log_folder'])
         if lst is None:
             self.lstTools = [] 
         else:

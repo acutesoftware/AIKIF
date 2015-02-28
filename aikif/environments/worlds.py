@@ -6,7 +6,7 @@ from random import randint
 import math
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
-sys.path.append(root_folder)
+#sys.path.append(root_folder)
 import aikif.toolbox.cls_grid as grd
 
 TERRAIN_SEA = '.'  # TODO - need to change this in multiple places (see worlds.py, cls_grid, world_generator)

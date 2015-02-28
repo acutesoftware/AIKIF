@@ -5,10 +5,9 @@
 
 import sys
 import os
-sys.path.append('..')
 
-import programs as mod_prg
-import config as mod_cfg
+import aikif.programs as mod_prg
+import aikif.config as mod_cfg
 import aikif.lib.cls_filelist as mod_fl
 import aikif.lib.cls_file as mod_file
 

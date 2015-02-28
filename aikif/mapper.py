@@ -5,12 +5,12 @@
 import os
 import sys
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
-sys.path.append(root_folder)
+#sys.path.append(root_folder)
 print('mapper, root_folder = ', root_folder)
 import aikif.agents.agent as agt
 
-import cls_log as mod_log
-import config as mod_cfg
+import aikif.cls_log as mod_log
+import aikif.config as mod_cfg
 import aikif.dataTools.cls_datatable as mod_datatable
 
 column_map_file = root_folder + os.sep + 'data' + os.sep +  'ref' + os.sep + 'rules_column_maps.csv'

@@ -2,7 +2,7 @@
 # handles the agents display page for AIKIF web interface
 
 import sys
-import web_utils as web
+import aikif.web_app.web_utils as web
 """
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )

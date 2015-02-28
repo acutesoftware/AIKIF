@@ -1,7 +1,7 @@
 # agent_map_data.py   written by Duncan Murray 30/9/2014
 
 import os
-import agent as mod_agt
+import aikif.agents.agent as mod_agt
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + '..' + os.sep + '..'  )
 
 def TEST():

@@ -5,14 +5,12 @@
 
 import os
 import sys
-
-sys.path.append('..')
-import index as ndx
-import AIKIF_utils as ai
-import lib.cls_filelist as mod_fl
+import aikif.index as ndx
+import aikif.config as mod_cfg
+import aikif.lib.cls_filelist as mod_fl
 
   
-local_folder = ai.localPath + os.sep + 'diary' + os.sep
+local_folder = mod_cfg.fldrs['pers_data'] + os.sep + 'diary' + os.sep
 diary_folder = 'C:\\APPS\\netDiary\\data'
 
 manual_files_to_index = [

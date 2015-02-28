@@ -3,8 +3,6 @@
 import sys
 import os
 
-sys.path.append('..')
-
 print ("sys.version = ", sys.version)
 print ("os.getcwd() = ", os.getcwd())
 
@@ -14,7 +12,7 @@ from os import environ
 AIKIF_WEB_VERSION = "DEV"
 AIKIF_VERSION_NUM = "Version 0.1.1 (alpha) - updated 27-May-2014"
 
-import web_utils as web
+import aikif.web_app.web_utils as web
 
 import flask
 from flask import Flask

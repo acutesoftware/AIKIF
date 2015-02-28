@@ -14,10 +14,10 @@ import urllib.parse as urlparse
 from os.path import expanduser
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." ) 
-sys.path.append(root_folder)
+#sys.path.append(root_folder)
 print('DEBUG:agent_browser - root = ', root_folder, ' <== CHECK')
 import aikif.agents.agent as agt
-import config as mod_cfg
+import aikif.config as mod_cfg
 
 home = expanduser("~")
 browser_data_path = home + r"\AppData\Local\Google\Chrome\User Data\Default" 

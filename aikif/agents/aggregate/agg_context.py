@@ -20,9 +20,9 @@ import os, sys
 #sys.path.append('T:\\user\\dev\\src\\python\\AI\\AI')  # why is this needed when called from run_agents in root??
 aikif_dir = os.path.dirname(os.path.abspath(__file__))
 fldr = os.path.abspath(aikif_dir + os.sep + "..\\..\\" )
-sys.path.append(aikif_dir)
-sys.path.append(fldr)
-from agents.agent import Agent
+#sys.path.append(aikif_dir)
+#sys.path.append(fldr)
+from aikif.agents.agent import Agent
 
 if len(sys.argv) == 3:   # folder and filename passed on command line
 	localFolder = sys.argv[1] 

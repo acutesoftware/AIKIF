@@ -8,8 +8,8 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(root_folder)
 
 
-import cls_log as mod_log
-import config as mod_cfg
+import aikif.cls_log as mod_log
+import aikif.config as mod_cfg
 import aikif.lib.cls_filelist as mod_fl
 
 silent = 'N'

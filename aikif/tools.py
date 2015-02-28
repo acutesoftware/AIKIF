@@ -4,16 +4,16 @@
 
 import os
 import sys
-#import cls_log as mod_log
-#import config
-import toolbox.Toolbox as tool
 import time
 from random import randint
+import aikif.toolbox.Toolbox as tool
 
 aikif_dir = os.path.dirname(os.path.abspath(__file__))
 fldr = os.path.abspath(aikif_dir + os.sep + "toolbox" )
-sys.path.append(aikif_dir)
-sys.path.append(fldr)
+#sys.path.append(aikif_dir)
+#sys.path.append(fldr)
+
+print('tools.py : fldr = ' + fldr)
 
 def main():
     """

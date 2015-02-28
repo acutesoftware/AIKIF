@@ -158,10 +158,10 @@ except:
     print('you need to run pip install redis \nand also install the server via https://github.com/ServiceStack/redis-windows')
     exit(1)
 
-from if_database import Database
-import cls_datatable
-import if_redis
-import generateTestData
+from aikif.dataTools.if_database import Database
+import aikif.dataTools.cls_datatable as mod_dt
+import aikif.dataTools.if_redis as mod_redis
+import aikif.dataTools.generateTestData as mod_gen
     
 def main():
     if not confirm_loadtesting():
@@ -172,7 +172,7 @@ def main():
     port = 6379
     db = 0
         
-    d = if_redis.redis_server(host, port , db)
+    d = mod_redis.redis_server(host, port , db)
     d.connect()
   
     print('Current Memory = ', d.connection.info()['used_memory_human'])
@@ -183,7 +183,7 @@ def load_random_tables(d):
     root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + '..' + os.sep + '..' + os.sep + 'data')
     fname = root_folder + os.sep + 'temp' + os.sep + 'TEMP_LOAD_TESTING.csv'
     create_test_file(fname)
-    dt = cls_datatable.DataTable(fname, ',')
+    dt = mod_dt.DataTable(fname, ',')
     dt.load_to_array()
     num_loads = 400
     for load in range(20, 20 + num_loads):
@@ -219,8 +219,8 @@ def create_test_file(fname):
     colLabel = [ 'id2',     'DATE', 'name',   'surname',  'Born',  'Location',  'Quote', 'Score', 'Points']
     colTypes = [ 'STRING', 'DATE', 'PEOPLE', 'PEOPLE',   'PLACE', 'PLACE',     'WORD',  'INT',   'INT']
     
-    test_datatable = cls_datatable.DataTable(fname, ',')
-    test_datatable.arr = generateTestData.random_table(9,100000, colTypes, colLabel)
+    test_datatable = mod_dt.DataTable(fname, ',')
+    test_datatable.arr = mod_gen.random_table(9,100000, colTypes, colLabel)
     test_datatable.header = colLabel
     test_datatable.save_csv(fname, False)
     

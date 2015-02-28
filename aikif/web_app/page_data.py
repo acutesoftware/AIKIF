@@ -3,20 +3,15 @@
 # handles the data display page for AIKIF web interface
 
 import sys, os
-import web_utils as web
+import aikif.web_app.web_utils as web
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 root_folder = os.path.abspath(aikif_folder + os.sep + '..')
 print('page_data.py: root_folder = ', root_folder)
-sys.path.append(aikif_folder)
-import AIKIF_utils as ai
 
-import aikif.AIKIF_utils as aikif
-import aikif.fileMapping as filemap
-
-#from .AI import AIKIF_utils as aikif
-#from ...AI import fileMapping as filemap
+#import aikif.AIKIF_utils as aikif
+import aikif.cls_file_mapping as filemap
 
 dataFolder = root_folder + os.sep + 'data' + os.sep + 'core'
 
@@ -53,19 +48,7 @@ def showDataFile(fname):
 	
 def get_aikif_structure():
 	txt = '<H3>AIKIF Data Structure</H3>\n<TABLE width=100% border=0 align=centre>\n'
-	AIKIF_FileList = aikif.build_AIKIF_structure()
-	nme = ''
-	flds = ''
-	for j in range(len(AIKIF_FileList)):
-		txt += '<TR>\n'
-		for key in AIKIF_FileList[j]: 
-			if key == 'fname':
-				nme = AIKIF_FileList[j][key]
-			if key == 'fields':
-				flds = ''
-				for fld in AIKIF_FileList[j][key]:
-					flds +=  fld + ', '
-		txt += '<TR><TD>' + nme + '</TD><TD>' + flds + '</TD></TR>\n'
+	txt += '<TR><TD>TODO</TD><TD>test</TD></TR>\n'
 	txt += '</TABLE><BR><BR>'
 	return txt
 	

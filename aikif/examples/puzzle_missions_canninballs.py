@@ -114,9 +114,8 @@ Took 20 trips for 7 missionaries and 4 canniballs
 
 import sys
 import os
-lib_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "lib")
-sys.path.append(lib_fldr)
-import cls_plan_search as mod_plan
+
+import aikif.lib.cls_plan_search as mod_plan
 
 
 def main():

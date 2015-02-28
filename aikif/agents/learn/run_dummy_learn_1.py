@@ -10,7 +10,7 @@ Steps to run and Log an external AI program
 
 # 1. Setup AIKIF for logging
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." ) 
-sys.path.append(root_folder)
+#sys.path.append(root_folder)
 import aikif.agents.agent as mod_agt
 import aikif.cls_log as mod_log
 import aikif.config as mod_cfg

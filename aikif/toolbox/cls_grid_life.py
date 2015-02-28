@@ -1,10 +1,10 @@
 # cls_grid_life.py
 
-import cls_grid
+import aikif.toolbox.cls_grid
 import random
 import sys
 
-class GameOfLife(cls_grid.Grid):
+class GameOfLife(aikif.toolbox.cls_grid.Grid):
     """
     Extend Grid class to support Game of Life
     """

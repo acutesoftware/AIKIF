@@ -1,9 +1,6 @@
 # game_of_life_console.py
 import os
 import sys
-
-
-
 import time
 import random
 
@@ -11,14 +8,11 @@ cur_folder = os.path.dirname(os.path.abspath(__file__))
 lib_folder = os.path.abspath(cur_folder + os.sep + ".." +  os.sep + "toolbox" )
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 
-sys.path.append(lib_folder)
-import cls_grid_life
+import aikif.toolbox.cls_grid_life as mod_grid
+import aikif.cls_log as mod_log
+lg = mod_log.Log('')
 
-sys.path.append(aikif_folder)
-import AIKIF_utils as aikif
-
-aikif.LogProcess("TEST")
-
+lg.record_process("Running Game of Life Console...")
 os.system('cls' if os.name == 'nt' else 'clear')
 
 
@@ -33,20 +27,20 @@ def main():
     width       = 22     # grid height
     height      = 78     # grid width
     time_delay  = 0.03   # delay when printing on screen
-    
-    aikif.LogProcess('Game of Life', 'game_of_life_console.py')
+    lg = mod_log.Log('test')
+    lg.record_process('Game of Life', 'game_of_life_console.py')
     for i in range(iterations):
         s,e = run_game_of_life(years, width, height, time_delay, 'N') 
-        aikif.LogResult("Started with " +  str(s) + " cells and ended with " + str(e) + " cells")
+        lg.log_result("Started with " +  str(s) + " cells and ended with " + str(e) + " cells")
         
 def run_game_of_life(years, width, height, time_delay, silent="N"):
     """
     run a single game of life for 'years' and log start and 
     end living cells to aikif
     """
-    lfe = cls_grid_life.GameOfLife(width, height, ['.', 'x'], 1)
+    lfe = mod_grid.GameOfLife(width, height, ['.', 'x'], 1)
     set_random_starting_grid(lfe)
-    aikif.LogDataSource(lfe, 'game_of_life_console.py')
+    lg.log_source(lfe, 'game_of_life_console.py')
     print(lfe)
     start_cells = lfe.count_filled_positions()
     for ndx, dummy_idx in enumerate(range(years)):
@@ -64,7 +58,7 @@ def set_random_starting_grid(lfe):
     generate a random grid for game of life using a 
     set of patterns (just to make it interesting)
     """
-    cls_patterns = cls_grid_life.GameOfLifePatterns(25)
+    cls_patterns = mod_grid.GameOfLifePatterns(25)
     patterns = cls_patterns.get_patterns()
     for pattern in patterns:
         lfe.set_tile(pattern[0], pattern[1], 1)

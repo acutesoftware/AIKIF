@@ -4,9 +4,8 @@
 
 import os
 import sys
-import AIKIF_utils as aikif
-import fileMapping as filemap
-import config as cfg
+import aikif.cls_file_mapping as filemap
+import aikif.config as cfg
 
 import argparse
 
@@ -17,7 +16,6 @@ print("python search.py database\n")
   
 def search(search_string):
     """ main function to search using indexes """
-    aikif.LogProcess('Starting search',  'search.py') # sys.modules[self.__module__].__file__)
     print('-------------------')
     print('Searching for ', search_string)
     print('-------------------')	

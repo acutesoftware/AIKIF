@@ -1,344 +1,282 @@
-2014-04-18 22:12:28,AIKIF_create.py,11051,TODO - add comment
+<sup>setup.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1232</sup></sup>,
 
-2014-08-20 19:58:23,AIKIF_utils.py,7300,TODO - add comment
+<sup>test_agent_learn_aixi.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-22</span></sup></sub>,<sup><sup>1155</sup></sup>,
 
-2014-04-18 22:08:38,addRawData.py,2428,TODO - add comment
+<sup>test_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-16</span></sup></sub>,<sup><sup>2106</sup></sup>,
 
-2014-10-03 18:24:57,agent.py,3948,TODO - add comment
+<sup>test_toolbox.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-16</span></sup></sub>,<sup><sup>1757</sup></sup>,
 
-2014-09-30 22:12:24,agent_map_data.py,1854,TODO - add comment
+<sup>test_toolbox_grid.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-17</span></sup></sub>,<sup><sup>1221</sup></sup>,
 
-2014-05-17 00:22:24,agg_context.py,3570,TODO - add comment
+<sup>check_python_env.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>3263</sup></sup>,
 
-2014-06-07 00:52:15,load_PC_usage.py,2081,TODO - add comment
+<sup>test_plan_bdi.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-10</span></sup></sub>,<sup><sup>2814</sup></sup>,
 
-2014-10-03 00:01:01,load_info_cooking_recipe.py,2135,TODO - add comment
+<sup>test_agent.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-09-29</span></sup></sub>,<sup><sup>1266</sup></sup>,
 
-2014-08-21 22:21:00,agent_explore_grid.py,10212,TODO - add comment
+<sup>time_generateTestData.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-26</span></sup></sub>,<sup><sup>2290</sup></sup>,
 
-2014-10-21 23:08:31,agent_email.py,1896,TODO - add comment
+<sup>test_project.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-18</span></sup></sub>,<sup><sup>2063</sup></sup>,
 
-2014-08-26 06:24:38,agent_filelist.py,1842,TODO - add comment
+<sup>run_tests.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-20</span></sup></sub>,<sup><sup>303</sup></sup>,
 
-2014-05-03 15:33:36,collect_Win_processes.py,7829,TODO - add comment
+<sup>test_programs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-31</span></sup></sub>,<sup><sup>600</sup></sup>,
 
-2014-05-02 14:05:29,log_PC_usage.py,1705,TODO - add comment
+<sup>test_bias.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-16</span></sup></sub>,<sup><sup>1304</sup></sup>,
 
-2014-10-26 21:21:44,log_browser_history.py,3031,TODO - add comment
+<sup>test_toolbox_image_tools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-16</span></sup></sub>,<sup><sup>962</sup></sup>,
 
-2014-04-22 21:58:05,test_agent.py,800,TODO - add comment
+<sup>test_goal.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1095</sup></sup>,
 
-2014-10-17 00:12:54,bias.py,2653,TODO - add comment
+<sup>test_unicode.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-28</span></sup></sub>,<sup><sup>1492</sup></sup>,
 
-2014-06-28 21:27:46,cls_collect.py,397,TODO - add comment
+<sup>test_cls_sql_code_generator.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-27</span></sup></sub>,<sup><sup>3620</sup></sup>,
 
-2014-10-19 00:54:30,cls_collect_files.py,1424,TODO - add comment
+<sup>test_cls_datatable.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-17</span></sup></sub>,<sup><sup>5203</sup></sup>,
 
-2014-09-17 22:37:32,cls_file_mapping.py,3826,TODO - add comment
+<sup>test_solve_happiness.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>4127</sup></sup>,
 
-2014-10-21 20:08:18,cls_log.py,7602,TODO - add comment
+<sup>test_cls_file.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1053</sup></sup>,
 
-2014-11-02 22:03:03,config.py,2393,TODO - add comment
+<sup>test_cls_dataset.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>819</sup></sup>,
 
-2014-04-18 22:05:46,create_word_lists.py,5975,TODO - add comment
+<sup>test_cls_log.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>2408</sup></sup>,
 
-2014-08-31 21:47:51,check_redis_limit.py,9825,TODO - add comment
+<sup>test_mapper.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-22</span></sup></sub>,<sup><sup>1206</sup></sup>,
 
-2014-08-24 22:00:43,cls_data.py,289,TODO - add comment
+<sup>test_context.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-09-07</span></sup></sub>,<sup><sup>1788</sup></sup>,
 
-2014-06-25 23:06:52,cls_dataset.py,1429,TODO - add comment
+<sup>test_agent_email.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>3367</sup></sup>,
 
-2014-10-24 00:24:10,cls_datatable.py,12445,TODO - add comment
+<sup>test_toolbox_maths_ml_algorithms.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-23</span></sup></sub>,<sup><sup>1194</sup></sup>,
 
-2014-08-05 22:38:29,cls_sql_code_generator.py,14810,TODO - add comment
+<sup>test_cls_filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>3067</sup></sup>,
 
-2014-08-25 17:31:31,dataTools.py,13352,TODO - add comment
+<sup>test_fileMapping.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-09-18</span></sup></sub>,<sup><sup>3575</sup></sup>,
 
-2014-07-17 00:14:09,form_example_simple.py,2382,TODO - add comment
+<sup>test_index.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-16</span></sup></sub>,<sup><sup>2215</sup></sup>,
 
-2014-08-31 19:33:50,generateTestData.py,5178,TODO - add comment
+<sup>test_plan_search.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>3421</sup></sup>,
 
-2014-08-31 12:02:13,if_database.py,829,TODO - add comment
+<sup>mapper.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>8036</sup></sup>,
 
-2014-08-31 12:12:24,if_mssqlserver.py,2297,TODO - add comment
+<sup>cls_file_mapping.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-09-17</span></sup></sub>,<sup><sup>3826</sup></sup>,
 
-2014-08-31 12:12:32,if_oracle.py,1920,TODO - add comment
+<sup>tools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-20</span></sup></sub>,<sup><sup>3165</sup></sup>,
 
-2014-08-31 20:39:24,if_redis.py,4709,TODO - add comment
+<sup>create_database.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1936</sup></sup>,
 
-2014-08-21 20:12:48,worlds.py,12731,TODO - add comment
+<sup>run_agents.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>2626</sup></sup>,
 
-2014-08-26 07:55:28,autobackup.py,2859,TODO - add comment
+<sup>gui_view_world.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>6293</sup></sup>,
 
-2014-11-03 01:12:41,document_AIKIF.py,9083,TODO - add comment
+<sup>run.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1553</sup></sup>,
 
-2014-08-26 08:10:10,ex_index_mydocs.py,1646,TODO - add comment
+<sup>search.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-07-30</span></sup></sub>,<sup><sup>2035</sup></sup>,
 
-2014-08-26 08:01:10,ex_project_management.py,5929,TODO - add comment
+<sup>index.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>7871</sup></sup>,
 
-2014-10-29 23:22:48,finance_example.py,3575,TODO - add comment
+<sup>bias.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-17</span></sup></sub>,<sup><sup>2653</sup></sup>,
 
-2014-08-26 07:05:26,game_of_life_console.py,2624,TODO - add comment
+<sup>project.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-18</span></sup></sub>,<sup><sup>2680</sup></sup>,
 
-2014-08-26 07:53:54,world_generator.py,2274,TODO - add comment
+<sup>programs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>5715</sup></sup>,
 
-2014-10-08 17:45:59,gui_view_world.py,6290,TODO - add comment
+<sup>cls_log.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>9711</sup></sup>,
 
-2014-08-26 08:14:19,index.py,7669,TODO - add comment
+<sup>config.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>2743</sup></sup>,
 
-2014-09-07 09:50:44,cls_context.py,7039,TODO - add comment
+<sup>generateTestData.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-26</span></sup></sub>,<sup><sup>5870</sup></sup>,
 
-2014-08-26 12:38:27,cls_file.py,6967,TODO - add comment
+<sup>cls_datatable.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-17</span></sup></sub>,<sup><sup>12609</sup></sup>,
 
-2014-08-17 18:55:31,cls_filelist.py,16278,TODO - add comment
+<sup>if_redis.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-31</span></sup></sub>,<sup><sup>4709</sup></sup>,
 
-2014-06-23 21:29:09,cls_goal.py,1336,TODO - add comment
+<sup>if_mssqlserver.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-31</span></sup></sub>,<sup><sup>2297</sup></sup>,
 
-2014-08-21 18:06:05,cls_goal_friendly.py,1147,TODO - add comment
+<sup>cls_dataset.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-25</span></sup></sub>,<sup><sup>1429</sup></sup>,
 
-2014-06-23 23:26:37,cls_goal_money.py,1609,TODO - add comment
+<sup>cls_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-24</span></sup></sub>,<sup><sup>289</sup></sup>,
 
-2014-07-30 23:29:00,cls_goal_time.py,1596,TODO - add comment
+<sup>cls_sql_code_generator.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-05</span></sup></sub>,<sup><sup>14810</sup></sup>,
 
-2014-08-04 22:39:57,cls_plan.py,5746,TODO - add comment
+<sup>check_redis_limit.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-31</span></sup></sub>,<sup><sup>9825</sup></sup>,
 
-2014-04-18 22:18:27,loadCountry_Gdeltproject.py,2417,TODO - add comment
+<sup>if_oracle.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-31</span></sup></sub>,<sup><sup>1920</sup></sup>,
 
-2014-04-06 01:07:27,loadInfoCourseLectures.py,5843,TODO - add comment
+<sup>if_database.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-31</span></sup></sub>,<sup><sup>829</sup></sup>,
 
-2014-04-18 22:23:29,loadPIM_Filelist.py,6729,TODO - add comment
+<sup>form_example_simple.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-07-17</span></sup></sub>,<sup><sup>2382</sup></sup>,
 
-2014-04-18 22:00:36,loadPIM_shoppingList.py,2646,TODO - add comment
+<sup>happiness.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-24</span></sup></sub>,<sup><sup>10374</sup></sup>,
 
-2014-04-17 21:52:50,load_ABS_data.py,3992,TODO - add comment
+<sup>worlds.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-21</span></sup></sub>,<sup><sup>12731</sup></sup>,
 
-2014-10-29 23:23:35,mapper.py,8023,TODO - add comment
+<sup>page_about.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-25</span></sup></sub>,<sup><sup>1478</sup></sup>,
 
-2014-03-29 01:51:40,createMindOntology.py,6427,TODO - add comment
+<sup>page_agents.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>796</sup></sup>,
 
-2014-08-31 10:06:45,cyc_extract.py,2873,TODO - add comment
+<sup>page_programs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-27</span></sup></sub>,<sup><sup>3595</sup></sup>,
 
-2014-08-31 21:57:24,read_opencyc.py,3279,TODO - add comment
+<sup>web_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-27</span></sup></sub>,<sup><sup>6439</sup></sup>,
 
-2014-04-14 00:49:02,read_wordnet.py,2205,TODO - add comment
+<sup>web_aikif.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-26</span></sup></sub>,<sup><sup>6930</sup></sup>,
 
-2014-03-30 20:58:00,review_ontology.py,22952,TODO - add comment
+<sup>page_search.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-19</span></sup></sub>,<sup><sup>2632</sup></sup>,
 
-2014-03-23 23:52:33,processRawData.py,1405,TODO - add comment
+<sup>page_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>2660</sup></sup>,
 
-2014-11-05 00:43:01,programs.py,5384,TODO - add comment
+<sup>test_agent.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-22</span></sup></sub>,<sup><sup>800</sup></sup>,
 
-2014-08-26 10:12:18,run_agents.py,2626,TODO - add comment
+<sup>agent_map_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-09-30</span></sup></sub>,<sup><sup>1854</sup></sup>,
 
-2014-07-30 19:45:37,search.py,2035,TODO - add comment
+<sup>agent.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-26</span></sup></sub>,<sup><sup>4002</sup></sup>,
 
-2014-08-05 23:32:41,security.py,1771,TODO - add comment
+<sup>collect_Win_processes.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-05-03</span></sup></sub>,<sup><sup>7829</sup></sup>,
 
-2014-04-30 21:55:07,Toolbox.py,2513,TODO - add comment
+<sup>agent_email.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>6130</sup></sup>,
 
-2014-08-19 23:29:50,audio_tools.py,2793,TODO - add comment
+<sup>log_PC_usage.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-05-02</span></sup></sub>,<sup><sup>1705</sup></sup>,
 
-2014-07-13 19:47:59,cls_grid.py,8893,TODO - add comment
+<sup>agent_filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-26</span></sup></sub>,<sup><sup>1842</sup></sup>,
 
-2014-07-09 00:57:20,cls_grid_life.py,4738,TODO - add comment
+<sup>agent_browser.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-27</span></sup></sub>,<sup><sup>14676</sup></sup>,
 
-2014-06-18 01:07:48,crypt_utils.py,4282,TODO - add comment
+<sup>log_browser_history.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-26</span></sup></sub>,<sup><sup>3031</sup></sup>,
 
-2014-06-15 22:12:05,game_board_utils.py,1752,TODO - add comment
+<sup>outlook_export.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-16</span></sup></sub>,<sup><sup>3893</sup></sup>,
 
-2014-08-17 22:08:47,image_tools.py,13958,TODO - add comment
+<sup>agg_context.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-05-17</span></sup></sub>,<sup><sup>3570</sup></sup>,
 
-2014-04-24 19:47:23,solve_knapsack.py,3733,TODO - add comment
+<sup>load_info_cooking_recipe.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-03</span></sup></sub>,<sup><sup>2135</sup></sup>,
 
-2014-04-30 20:28:19,test_tool.py,377,TODO - add comment
+<sup>load_PC_usage.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-07</span></sup></sub>,<sup><sup>2081</sup></sup>,
 
-2014-10-07 23:32:00,tools.py,3037,TODO - add comment
+<sup>dummy_learn_1.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-07</span></sup></sub>,<sup><sup>1244</sup></sup>,
 
-2014-04-18 22:26:47,view.py,2109,TODO - add comment
+<sup>agent_learn_aixi.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-22</span></sup></sub>,<sup><sup>5668</sup></sup>,
 
-2014-10-25 09:11:31,page_about.py,1478,TODO - add comment
+<sup>run_dummy_learn_1.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-07</span></sup></sub>,<sup><sup>1220</sup></sup>,
 
-2014-08-26 10:10:01,page_agents.py,796,TODO - add comment
+<sup>agent_explore_grid.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-21</span></sup></sub>,<sup><sup>10212</sup></sup>,
 
-2014-08-26 10:06:50,page_data.py,2660,TODO - add comment
+<sup>cls_goal_friendly.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1157</sup></sup>,
 
-2014-10-27 00:06:35,page_programs.py,3595,TODO - add comment
+<sup>cls_goal_time.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1606</sup></sup>,
 
-2014-10-19 00:58:32,page_search.py,2632,TODO - add comment
+<sup>cls_filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-20</span></sup></sub>,<sup><sup>16284</sup></sup>,
 
-2014-10-26 19:30:22,web_aikif.py,6930,TODO - add comment
+<sup>cls_plan_search.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>6233</sup></sup>,
 
-2014-10-27 00:13:00,web_utils.py,6439,TODO - add comment
+<sup>cls_goal.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-23</span></sup></sub>,<sup><sup>1336</sup></sup>,
 
-2014-03-23 23:52:33,processRawData.py,1405,TODO - add comment
+<sup>cls_context.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-04</span></sup></sub>,<sup><sup>6747</sup></sup>,
 
-2014-10-29 23:23:35,mapper.py,8023,TODO - add comment
+<sup>cls_goal_money.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1619</sup></sup>,
 
-2014-08-20 19:58:23,AIKIF_utils.py,7300,TODO - add comment
+<sup>cls_file.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>6829</sup></sup>,
 
-2014-09-17 22:37:32,cls_file_mapping.py,3826,TODO - add comment
+<sup>cls_plan_BDI.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-10</span></sup></sub>,<sup><sup>5671</sup></sup>,
 
-2014-10-07 23:32:00,tools.py,3037,TODO - add comment
+<sup>happiness_solver.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-23</span></sup></sub>,<sup><sup>1660</sup></sup>,
 
-2014-04-18 22:26:47,view.py,2109,TODO - add comment
+<sup>ex_index_mydocs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>1646</sup></sup>,
 
-2014-08-26 10:12:18,run_agents.py,2626,TODO - add comment
+<sup>puzzle_missions_canninballs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-23</span></sup></sub>,<sup><sup>7942</sup></sup>,
 
-2014-10-08 17:45:59,gui_view_world.py,6290,TODO - add comment
+<sup>game_of_life_console.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-17</span></sup></sub>,<sup><sup>2618</sup></sup>,
 
-2014-07-30 19:45:37,search.py,2035,TODO - add comment
+<sup>finance_example.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-29</span></sup></sub>,<sup><sup>3575</sup></sup>,
 
-2014-04-18 22:00:36,loadPIM_shoppingList.py,2646,TODO - add comment
+<sup>document_AIKIF.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-13</span></sup></sub>,<sup><sup>10677</sup></sup>,
 
-2014-08-05 23:32:41,security.py,1771,TODO - add comment
+<sup>maths_fermat_brute_force.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-11</span></sup></sub>,<sup><sup>4571</sup></sup>,
 
-2014-04-18 22:18:27,loadCountry_Gdeltproject.py,2417,TODO - add comment
+<sup>world_generator.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>2274</sup></sup>,
 
-2014-08-26 08:14:19,index.py,7669,TODO - add comment
+<sup>processRawData.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-04</span></sup></sub>,<sup><sup>1413</sup></sup>,
 
-2014-04-18 22:23:29,loadPIM_Filelist.py,6729,TODO - add comment
+<sup>puzzle_countdown.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-11</span></sup></sub>,<sup><sup>4633</sup></sup>,
 
-2014-10-17 00:12:54,bias.py,2653,TODO - add comment
+<sup>AIKIF_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-20</span></sup></sub>,<sup><sup>7558</sup></sup>,
 
-2014-10-19 00:54:30,cls_collect_files.py,1424,TODO - add comment
+<sup>view.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-18</span></sup></sub>,<sup><sup>2109</sup></sup>,
 
-2014-06-28 21:27:46,cls_collect.py,397,TODO - add comment
+<sup>test_security.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-05</span></sup></sub>,<sup><sup>815</sup></sup>,
 
-2014-04-06 01:07:27,loadInfoCourseLectures.py,5843,TODO - add comment
+<sup>test_cls_collect.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-09-06</span></sup></sub>,<sup><sup>1595</sup></sup>,
 
-2014-04-18 22:08:38,addRawData.py,2428,TODO - add comment
+<sup>loadPIM_shoppingList.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-18</span></sup></sub>,<sup><sup>2646</sup></sup>,
 
-2014-04-18 22:05:46,create_word_lists.py,5975,TODO - add comment
+<sup>security.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-05</span></sup></sub>,<sup><sup>1771</sup></sup>,
 
-2014-11-05 00:43:01,programs.py,5384,TODO - add comment
+<sup>loadCountry_Gdeltproject.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-18</span></sup></sub>,<sup><sup>2417</sup></sup>,
 
-2014-10-21 20:08:18,cls_log.py,7602,TODO - add comment
+<sup>puzzle_N_queens.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-10</span></sup></sub>,<sup><sup>471</sup></sup>,
 
-2014-11-02 22:03:03,config.py,2393,TODO - add comment
+<sup>loadPIM_Filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-18</span></sup></sub>,<sup><sup>6729</sup></sup>,
 
-2014-04-17 21:52:50,load_ABS_data.py,3992,TODO - add comment
+<sup>test_dataTools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-09-06</span></sup></sub>,<sup><sup>1180</sup></sup>,
 
-2014-04-18 22:12:28,AIKIF_create.py,11051,TODO - add comment
+<sup>test_puzzle_sliding_block.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-06</span></sup></sub>,<sup><sup>1508</sup></sup>,
 
-2014-08-31 19:33:50,generateTestData.py,5178,TODO - add comment
+<sup>dataTools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-25</span></sup></sub>,<sup><sup>13352</sup></sup>,
 
-2014-10-24 00:24:10,cls_datatable.py,12445,TODO - add comment
+<sup>ex_project_management.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>5929</sup></sup>,
 
-2014-08-31 20:39:24,if_redis.py,4709,TODO - add comment
+<sup>cls_collect_files.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-10-19</span></sup></sub>,<sup><sup>1424</sup></sup>,
 
-2014-08-31 12:12:24,if_mssqlserver.py,2297,TODO - add comment
+<sup>cls_collect.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-28</span></sup></sub>,<sup><sup>397</sup></sup>,
 
-2014-08-25 17:31:31,dataTools.py,13352,TODO - add comment
+<sup>loadInfoCourseLectures.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-06</span></sup></sub>,<sup><sup>5843</sup></sup>,
 
-2014-06-25 23:06:52,cls_dataset.py,1429,TODO - add comment
+<sup>test_AIKIF.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-02-27</span></sup></sub>,<sup><sup>542</sup></sup>,
 
-2014-08-24 22:00:43,cls_data.py,289,TODO - add comment
+<sup>addRawData.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-18</span></sup></sub>,<sup><sup>2428</sup></sup>,
 
-2014-08-05 22:38:29,cls_sql_code_generator.py,14810,TODO - add comment
+<sup>autobackup.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-26</span></sup></sub>,<sup><sup>2859</sup></sup>,
 
-2014-08-31 21:47:51,check_redis_limit.py,9825,TODO - add comment
+<sup>puzzle_sliding_block.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-09</span></sup></sub>,<sup><sup>8834</sup></sup>,
 
-2014-08-31 12:12:32,if_oracle.py,1920,TODO - add comment
+<sup>create_word_lists.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-18</span></sup></sub>,<sup><sup>5975</sup></sup>,
 
-2014-08-31 12:02:13,if_database.py,829,TODO - add comment
+<sup>solve_travelling_salesman.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-20</span></sup></sub>,<sup><sup>857</sup></sup>,
 
-2014-07-17 00:14:09,form_example_simple.py,2382,TODO - add comment
+<sup>load_ABS_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-17</span></sup></sub>,<sup><sup>3992</sup></sup>,
 
-2014-08-21 20:12:48,worlds.py,12731,TODO - add comment
+<sup>AIKIF_create.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-18</span></sup></sub>,<sup><sup>11051</sup></sup>,
 
-2014-10-25 09:11:31,page_about.py,1478,TODO - add comment
+<sup>game_board_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-15</span></sup></sub>,<sup><sup>1752</sup></sup>,
 
-2014-08-26 10:10:01,page_agents.py,796,TODO - add comment
+<sup>cls_grid_life.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-07-09</span></sup></sub>,<sup><sup>4738</sup></sup>,
 
-2014-10-27 00:06:35,page_programs.py,3595,TODO - add comment
+<sup>image_tools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-17</span></sup></sub>,<sup><sup>13958</sup></sup>,
 
-2014-10-27 00:13:00,web_utils.py,6439,TODO - add comment
+<sup>Toolbox.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-16</span></sup></sub>,<sup><sup>3259</sup></sup>,
 
-2014-10-26 19:30:22,web_aikif.py,6930,TODO - add comment
+<sup>crypt_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-06-18</span></sup></sub>,<sup><sup>4282</sup></sup>,
 
-2014-10-19 00:58:32,page_search.py,2632,TODO - add comment
+<sup>data_structures.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-09</span></sup></sub>,<sup><sup>4633</sup></sup>,
 
-2014-08-26 10:06:50,page_data.py,2660,TODO - add comment
+<sup>solve_knapsack.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-24</span></sup></sub>,<sup><sup>3733</sup></sup>,
 
-2014-04-22 21:58:05,test_agent.py,800,TODO - add comment
+<sup>algebra.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-06</span></sup></sub>,<sup><sup>766</sup></sup>,
 
-2014-09-30 22:12:24,agent_map_data.py,1854,TODO - add comment
+<sup>audio_tools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-19</span></sup></sub>,<sup><sup>2793</sup></sup>,
 
-2014-10-03 18:24:57,agent.py,3948,TODO - add comment
+<sup>maths_ml_algorithms.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-11-26</span></sup></sub>,<sup><sup>2014</sup></sup>,
 
-2014-05-03 15:33:36,collect_Win_processes.py,7829,TODO - add comment
+<sup>test_tool.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-30</span></sup></sub>,<sup><sup>377</sup></sup>,
 
-2014-10-21 23:08:31,agent_email.py,1896,TODO - add comment
+<sup>cls_grid.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-01-17</span></sup></sub>,<sup><sup>8897</sup></sup>,
 
-2014-05-02 14:05:29,log_PC_usage.py,1705,TODO - add comment
+<sup>review_ontology.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-12-04</span></sup></sub>,<sup><sup>23650</sup></sup>,
 
-2014-08-26 06:24:38,agent_filelist.py,1842,TODO - add comment
+<sup>read_wordnet.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-04-14</span></sup></sub>,<sup><sup>2205</sup></sup>,
 
-2014-10-26 21:21:44,log_browser_history.py,3031,TODO - add comment
+<sup>createMindOntology.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-03-29</span></sup></sub>,<sup><sup>6427</sup></sup>,
 
-2014-05-17 00:22:24,agg_context.py,3570,TODO - add comment
+<sup>read_opencyc.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-31</span></sup></sub>,<sup><sup>3279</sup></sup>,
 
-2014-10-03 00:01:01,load_info_cooking_recipe.py,2135,TODO - add comment
-
-2014-06-07 00:52:15,load_PC_usage.py,2081,TODO - add comment
-
-2014-08-21 22:21:00,agent_explore_grid.py,10212,TODO - add comment
-
-2014-08-21 18:06:05,cls_goal_friendly.py,1147,TODO - add comment
-
-2014-07-30 23:29:00,cls_goal_time.py,1596,TODO - add comment
-
-2014-08-17 18:55:31,cls_filelist.py,16278,TODO - add comment
-
-2014-08-04 22:39:57,cls_plan.py,5746,TODO - add comment
-
-2014-06-23 21:29:09,cls_goal.py,1336,TODO - add comment
-
-2014-09-07 09:50:44,cls_context.py,7039,TODO - add comment
-
-2014-06-23 23:26:37,cls_goal_money.py,1609,TODO - add comment
-
-2014-08-26 12:38:27,cls_file.py,6967,TODO - add comment
-
-2014-08-26 08:10:10,ex_index_mydocs.py,1646,TODO - add comment
-
-2014-08-26 07:05:26,game_of_life_console.py,2624,TODO - add comment
-
-2014-10-29 23:22:48,finance_example.py,3575,TODO - add comment
-
-2014-11-03 01:12:41,document_AIKIF.py,9083,TODO - add comment
-
-2014-08-26 08:01:10,ex_project_management.py,5929,TODO - add comment
-
-2014-08-26 07:55:28,autobackup.py,2859,TODO - add comment
-
-2014-08-26 07:53:54,world_generator.py,2274,TODO - add comment
-
-2014-06-15 22:12:05,game_board_utils.py,1752,TODO - add comment
-
-2014-07-09 00:57:20,cls_grid_life.py,4738,TODO - add comment
-
-2014-08-17 22:08:47,image_tools.py,13958,TODO - add comment
-
-2014-04-30 21:55:07,Toolbox.py,2513,TODO - add comment
-
-2014-06-18 01:07:48,crypt_utils.py,4282,TODO - add comment
-
-2014-04-24 19:47:23,solve_knapsack.py,3733,TODO - add comment
-
-2014-08-19 23:29:50,audio_tools.py,2793,TODO - add comment
-
-2014-04-30 20:28:19,test_tool.py,377,TODO - add comment
-
-2014-07-13 19:47:59,cls_grid.py,8893,TODO - add comment
-
-2014-03-30 20:58:00,review_ontology.py,22952,TODO - add comment
-
-2014-04-14 00:49:02,read_wordnet.py,2205,TODO - add comment
-
-2014-03-29 01:51:40,createMindOntology.py,6427,TODO - add comment
-
-2014-08-31 21:57:24,read_opencyc.py,3279,TODO - add comment
-
-2014-08-31 10:06:45,cyc_extract.py,2873,TODO - add comment
+<sup>cyc_extract.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>14-08-31</span></sup></sub>,<sup><sup>2873</sup></sup>,
 
