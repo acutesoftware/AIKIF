@@ -33,6 +33,7 @@ class Project():
     def __init__(self, name, type='', fldr=None , desc=''):
         self.nme = name
         self.data_sources = []
+        self.datatables = []
         self.fldr = fldr
         self.type = type
         self.desc = desc
@@ -67,13 +68,38 @@ class Project():
         abstract to call the data sources in /lib and /dataTools
         """
         self.details.append([type, detail])
-        
+    
+    def log_table(self, datatable):
+        """
+        records a list of datatables used in the project
+        """
+        self.datatables.append(datatable)
+    
     def record(self, tbl, type, col_data):
         """
         takes a DataTable as param and adds a record
         TODO - log details here
         """
         tbl.add(col_data)
+        
+        
+    def build_report(self, op_file, type='md'):
+        """
+        create a report showing all project details
+        """
+        print('TODO - create report')
+        res = '#' + self.nme 
+        res += self.desc
+        res += self.fldr
+        
+        res += '\n\n##TABLES'
+        
+        for t in self.datatables:
+            res += str(t)
+        
+        
+        with open(op_file, 'w') as f:
+            f.write(res)
         
 if __name__ == '__main__':
     TEST()	

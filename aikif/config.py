@@ -34,7 +34,7 @@ fldrs['public_data_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__fi
 if 'site-packages' in fldrs['root_path']:  
     fldrs['root_path'] = fldrs['localPath'] 
     fldrs['public_data_path'] = fldrs['log_folder']
-print('DEBUG:config.py : fldrs[root_path] = ' + fldrs['root_path'])
+#print('DEBUG:config.py : fldrs[root_path] = ' + fldrs['root_path'])
 
 
 # index files
