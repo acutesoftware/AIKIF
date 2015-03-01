@@ -49,10 +49,12 @@ import cls_plan_search as mod_search
 import data_structures as ds
 
 def main():
-    start_state = [1, 0, 2, 3, 4, 5, 6, 7, 8]
+    start_state = [1, 0, 2, 3, 5, 4, 6, 7, 8]
+  #  start_state = [1, 5, 0, 2, 3, 8, 4, 6, 7]
     goal_state = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     puz = TilePuzzle(start_state, goal_state, 3, 3)
 
+    """
     print('Heuristic = ', puz.heuristic(), 'Legal Moves = ', puz.legal_moves() )
 
     puz = puz.result('down')
@@ -63,7 +65,7 @@ def main():
  
     puz = puz.result('down')
     print('Heuristic = ', puz.heuristic(), 'Moved down  = ', puz.legal_moves())
-    
+    """
     print(puz)
     
     
@@ -220,7 +222,7 @@ class TilePuzzle:
         if self.start_state == self.goal_state:
             path.append(self.goal_state)
             return path
-        fringe = priorityQueue(start_state)
+        fringe = PriorityQueue(self.start_state)
         while fringe:
             cur_node = self.select_from(fringe)
             print(cur_node)
@@ -243,13 +245,28 @@ class TilePuzzle:
         
     def select_from(self, nodes):
         """ part of Astar - get the next node """
-        return nodes.pop
+        return nodes.get()
     
     def expand(self, node):
         """ 
         part of Astar - expand the list of linked nodes in node
         """
-        return []
+        nodes = []
+        print('expand : ')
+        (x,y) = self.cur_node[row][col]
+        moves = self.legal_moves()
+        print('x,y  = ' , (x,y))
+        for m in moves:
+            if m == 'left':
+                nodes.append(self.cells[x-1][y])
+            if m == 'right':
+                nodes.append(self.cells[x+1][y])
+            if m == 'up':
+                nodes.append(self.cells[x][y-1])
+            if m == 'down':
+                nodes.append(self.cells[x][y+1])
+            
+        return nodes
     
 if __name__ == '__main__':
     main()
