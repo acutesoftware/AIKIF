@@ -88,18 +88,21 @@ class Project():
         create a report showing all project details
         """
         print('TODO - create report')
-        res = '#' + self.nme 
-        res += self.desc
-        res += self.fldr
+        res = '#' + self.nme  + '\n'
+        res += self.desc + '\n'
+        res += self.fldr + '\n'
         
-        res += '\n\n##TABLES'
+        res += '\n\n##TABLES\n' + '\n'
         
         for t in self.datatables:
-            res += str(t)
-        
+            res += '###' + t.name + '\n'
+            res += '-------------------------\n'
+            res += str(t) + '\n\n'
+            print(t)
         
         with open(op_file, 'w') as f:
             f.write(res)
+            
         
 if __name__ == '__main__':
     TEST()	
