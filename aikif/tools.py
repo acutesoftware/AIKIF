@@ -10,8 +10,6 @@ import aikif.toolbox.Toolbox as tool
 
 aikif_dir = os.path.dirname(os.path.abspath(__file__))
 fldr = os.path.abspath(aikif_dir + os.sep + "toolbox" )
-#sys.path.append(aikif_dir)
-#sys.path.append(fldr)
 
 print('tools.py : fldr = ' + fldr)
 

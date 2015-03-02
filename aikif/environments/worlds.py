@@ -5,7 +5,7 @@ import sys
 from random import randint
 import math
 
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
+#root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
 #sys.path.append(root_folder)
 import aikif.toolbox.cls_grid as grd
 

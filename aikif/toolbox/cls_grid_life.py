@@ -1,10 +1,23 @@
 # cls_grid_life.py
 
-import aikif.toolbox.cls_grid
+import os
 import random
 import sys
+cur_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
+lib_folder = os.path.abspath(cur_folder )
+aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
+import lib_folder
+import cls_grid as mod_grid # aikif.toolbox.
+ 
+sys.path.append(lib_folder)
+import cls_grid_life
 
-class GameOfLife(aikif.toolbox.cls_grid.Grid):
+
+print('cls_grid_life: sys.modules = ', sys.modules)
+exit(1)
+print('cls_grid_life: sys.modules[cls_grid_life] = ', sys.modules['cls_grid_life'])
+
+class GameOfLife(mod_grid.Grid):
     """
     Extend Grid class to support Game of Life
     """
@@ -49,7 +62,6 @@ class GameOfLifePatterns(object):
         self.patterns = []
         self.max_x = max_x
         self.max_y = max_y
-        
         self.pattern_list = ['block','beehive','loaf',          # stationary
                              'boat','blinker','toad','beacon',  # oscillators
                              'glider'                           # gliders
