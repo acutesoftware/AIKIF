@@ -1,208 +1,118 @@
-<sup>addRawData.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2428</sup></sup>,
-
-<sup>AIKIF_create.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>11051</sup></sup>,
-
-<sup>AIKIF_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>7558</sup></sup>,
-
-<sup>bias.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2653</sup></sup>,
-
-<sup>cls_collect.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>397</sup></sup>,
-
-<sup>cls_collect_files.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1424</sup></sup>,
-
-<sup>cls_file_mapping.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>3826</sup></sup>,
-
-<sup>cls_log.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>9711</sup></sup>,
-
-<sup>config.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>2743</sup></sup>,
-
-<sup>create_word_lists.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>5975</sup></sup>,
-
-<sup>gui_view_world.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>6293</sup></sup>,
-
-<sup>index.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>7871</sup></sup>,
-
-<sup>loadCountry_Gdeltproject.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2417</sup></sup>,
-
-<sup>loadInfoCourseLectures.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>5843</sup></sup>,
-
-<sup>loadPIM_Filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>6729</sup></sup>,
-
-<sup>loadPIM_shoppingList.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2646</sup></sup>,
-
-<sup>load_ABS_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>3992</sup></sup>,
-
-<sup>mapper.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>8036</sup></sup>,
-
-<sup>processRawData.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1413</sup></sup>,
-
-<sup>programs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>5715</sup></sup>,
-
-<sup>project.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2680</sup></sup>,
-
-<sup>run_agents.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2626</sup></sup>,
-
-<sup>search.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1927</sup></sup>,
-
-<sup>security.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1771</sup></sup>,
-
-<sup>tools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>3167</sup></sup>,
-
-<sup>view.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2109</sup></sup>,
-
-<sup>agent.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>4002</sup></sup>,
-
-<sup>agent_map_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>1867</sup></sup>,
-
-<sup>test_agent.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>800</sup></sup>,
-
-<sup>agg_context.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>3578</sup></sup>,
-
-<sup>load_info_cooking_recipe.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2135</sup></sup>,
-
-<sup>load_PC_usage.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2081</sup></sup>,
-
-<sup>agent_explore_grid.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>10213</sup></sup>,
-
-<sup>agent_browser.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>14683</sup></sup>,
-
-<sup>agent_email.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>6130</sup></sup>,
-
-<sup>agent_filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>1843</sup></sup>,
-
-<sup>collect_Win_processes.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>7829</sup></sup>,
-
-<sup>log_browser_history.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>3031</sup></sup>,
-
-<sup>log_PC_usage.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1705</sup></sup>,
-
-<sup>outlook_export.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>3893</sup></sup>,
-
-<sup>agent_learn_aixi.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>5669</sup></sup>,
-
-<sup>dummy_learn_1.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1244</sup></sup>,
-
-<sup>run_dummy_learn_1.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>1221</sup></sup>,
-
-<sup>check_redis_limit.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>9901</sup></sup>,
-
-<sup>cls_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>289</sup></sup>,
-
-<sup>cls_dataset.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1429</sup></sup>,
-
-<sup>cls_datatable.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>12609</sup></sup>,
-
-<sup>cls_sql_code_generator.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>14810</sup></sup>,
-
-<sup>dataTools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>13352</sup></sup>,
-
-<sup>form_example_simple.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2382</sup></sup>,
-
-<sup>generateTestData.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>5870</sup></sup>,
-
-<sup>if_database.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>829</sup></sup>,
-
-<sup>if_mssqlserver.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2297</sup></sup>,
-
-<sup>if_oracle.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1920</sup></sup>,
-
-<sup>if_redis.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>4709</sup></sup>,
-
-<sup>happiness.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>10374</sup></sup>,
-
-<sup>worlds.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>12732</sup></sup>,
-
-<sup>autobackup.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2859</sup></sup>,
-
-<sup>document_AIKIF.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>10677</sup></sup>,
-
-<sup>ex_index_mydocs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1646</sup></sup>,
-
-<sup>ex_project_management.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>5929</sup></sup>,
-
-<sup>finance_example.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>3575</sup></sup>,
-
-<sup>game_of_life_console.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>2568</sup></sup>,
-
-<sup>happiness_solver.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>1650</sup></sup>,
-
-<sup>maths_fermat_brute_force.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>4583</sup></sup>,
-
-<sup>puzzle_countdown.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>4633</sup></sup>,
-
-<sup>puzzle_missions_canninballs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>7822</sup></sup>,
-
-<sup>puzzle_N_queens.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>471</sup></sup>,
-
-<sup>puzzle_sliding_block.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>8834</sup></sup>,
-
-<sup>solve_travelling_salesman.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>857</sup></sup>,
-
-<sup>world_generator.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>2117</sup></sup>,
-
-<sup>cls_context.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>6747</sup></sup>,
-
-<sup>cls_file.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>6829</sup></sup>,
-
-<sup>cls_filelist.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>16284</sup></sup>,
-
-<sup>cls_goal.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1336</sup></sup>,
-
-<sup>cls_goal_friendly.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1157</sup></sup>,
-
-<sup>cls_goal_money.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1619</sup></sup>,
-
-<sup>cls_goal_time.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>1606</sup></sup>,
-
-<sup>cls_plan_BDI.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>5671</sup></sup>,
-
-<sup>cls_plan_search.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-28</span></sup></sub>,<sup><sup>6233</sup></sup>,
-
-<sup>createMindOntology.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>6427</sup></sup>,
-
-<sup>cyc_extract.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2873</sup></sup>,
-
-<sup>read_opencyc.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>3279</sup></sup>,
-
-<sup>read_wordnet.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2205</sup></sup>,
-
-<sup>review_ontology.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>23650</sup></sup>,
-
-<sup>algebra.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>766</sup></sup>,
-
-<sup>audio_tools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2793</sup></sup>,
-
-<sup>cls_grid.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>8897</sup></sup>,
-
-<sup>cls_grid_life.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>4766</sup></sup>,
-
-<sup>crypt_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>4282</sup></sup>,
-
-<sup>data_structures.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>4633</sup></sup>,
-
-<sup>game_board_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>1752</sup></sup>,
-
-<sup>image_tools.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>13958</sup></sup>,
-
-<sup>maths_ml_algorithms.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>2014</sup></sup>,
-
-<sup>solve_knapsack.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>3733</sup></sup>,
-
-<sup>test_tool.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>377</sup></sup>,
-
-<sup>Toolbox.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>3284</sup></sup>,
-
-<sup>page_about.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>552</sup></sup>,
-
-<sup>page_agents.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>810</sup></sup>,
-
-<sup>page_data.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>2197</sup></sup>,
-
-<sup>page_programs.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>3609</sup></sup>,
-
-<sup>page_search.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>2647</sup></sup>,
-
-<sup>web_aikif.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-03-01</span></sup></sub>,<sup><sup>6919</sup></sup>,
-
-<sup>web_utils.py</sup>,<sup>TODO - add comment</sup>,<sub><sup><span white-space:nowrap;>15-02-26</span></sup></sub>,<sup><sup>6439</sup></sup>,
-
+"mapper.py","maps business rules and columns of source data to standard aikif logs","15-02-28","8036",
+"cls_file_mapping.py","uses ontology to get list of files to save data","15-03-04","3741",
+"tools.py","[DATA] uses the toolbox class to create list of programs used by aikif","15-03-03","3114",
+"create_database.py","TODO - add comment","15-02-28","1936",
+"run_agents.py","Top level function to run the agents","14-08-26","2626",
+"gui_view_world.py","script to read a saved grid from world.py and show in gui. Good for seeing grids larger than 80x25","15-02-26","6293",
+"run.py","TODO - add comment","15-02-28","1553",
+"search.py","command line search tool","15-02-28","1927",
+"index.py","rebuilds indexes","15-02-28","7871",
+"bias.py","[DATA] weight the validity of source data based on location, person, timing","14-10-17","2653",
+"project.py","Core module to manage projects - meta self documentation","15-03-03","3501",
+"programs.py","collects list of aikif programs to show progress and allows comments to be added to each file","15-03-04","6123",
+"cls_log.py","logging function to map to standard outputs. Almost provides auto aggregation","15-02-28","9711",
+"config.py","[DATA] central point for settings in AIKIF","15-03-04","2274",
+"generateTestData.py","Tool to generate various test data","14-11-26","5870",
+"cls_datatable.py","functions for a single table - progress = TOK","15-02-17","12609",
+"if_redis.py","dataTools - interface class to a redis database","14-08-31","4709",
+"if_mssqlserver.py","dataTools - interface class to a mssql database","14-08-31","2297",
+"cls_dataset.py","functions for a schema table - progress = stub only","14-06-25","1429",
+"cls_data.py","base class for data","14-08-24","289",
+"cls_sql_code_generator.py","useful generation of SQL commands","14-08-05","14810",
+"check_redis_limit.py","starts reddis database and tests limits by repeatedly adding data until it breaks","15-03-01","9901",
+"if_oracle.py","dataTools - interface class to an oracle database","14-08-31","1920",
+"if_database.py","dataTools - interface base class to a database","14-08-31","829",
+"form_example_simple.py","creates a TKinter form to show how sql generation works = TOK","14-07-17","2382",
+"happiness.py","TODO - add comment","15-02-24","10374",
+"worlds.py","generates a 2d grid world","15-03-03","12733",
+"page_about.py","web_aikif - generates page using flask","15-03-01","552",
+"page_agents.py","web_aikif - generates page using flask","15-03-01","810",
+"page_programs.py","collects list of aikif programs to show progress and allows comments to be added to each file","15-03-01","3609",
+"web_utils.py","web_aikif - generates page using flask","14-10-27","6439",
+"web_aikif.py","web_aikif - generates page using flask","15-03-01","6919",
+"page_search.py","command line search tool","15-03-01","2647",
+"page_data.py","web_aikif - generates page using flask","15-03-01","2197",
+"test_agent.py","test for agent class (why is this not in /tests root folder? TODO","14-04-22","800",
+"agent_map_data.py","maps columns to aikif structure - attempt#3 (may be depracated)","15-03-01","1867",
+"agent.py","base agent class","15-01-26","4002",
+"collect_Win_processes.py","script to collect windows processes. Currently not part of agent process, more an exercise on what can be logged","14-05-03","7829",
+"agent_email.py","Agent that reads emails (currently only gmail)","15-02-28","6130",
+"log_PC_usage.py","script to read current window title to be used as part of context to see what user is doing","14-05-02","1705",
+"agent_filelist.py","TOK - correctly scans and logs filelists from an agent","15-03-01","1843",
+"agent_browser.py","collects data from browser - bookmarks, visited sites","15-03-01","14683",
+"log_browser_history.py","script to dump chrome browser history to CSV - not used","14-10-26","3031",
+"outlook_export.py","agent to connect to outlook and export emails","15-01-16","3893",
+"agg_context.py","detects context of user and computer","15-03-01","3578",
+"load_info_cooking_recipe.py","toy attempt at adding domain specific info - to be improved or moved to business mappings","14-10-03","2135",
+"load_PC_usage.py","reads the logged data from agent collect PC info and logs to aikif","14-06-07","2081",
+"dummy_learn_1.py","sample (but stub only) learning algorithm to be called as test below","15-01-07","1244",
+"agent_learn_aixi.py","","15-03-01","5669",
+"run_dummy_learn_1.py","sample code to call a learning algorithm","15-03-01","1221",
+"agent_explore_grid.py","working prototype of agent to move through a grid world, using very simple path finding. Mainly an exercise in logging an agent moving through a generated world","15-03-01","10213",
+"cls_goal_friendly.py","STUB - test if a goal is friendly (needs 10-40 years work to be implemented properly)","15-02-28","1157",
+"cls_goal_time.py","example based on cls_goal to manage time goals","15-02-28","1606",
+"cls_filelist.py","fileslist class","15-01-20","16284",
+"cls_plan_search.py","AI planner search functions","15-02-28","6233",
+"cls_goal.py","base class for managing goals","14-06-23","1336",
+"cls_context.py","estimate what the user and PC are currently actively working on","14-12-04","6747",
+"cls_goal_money.py","example based on cls_goal to manage money goals","15-02-28","1619",
+"cls_file.py","TOK - class for handling file details - has subclasses for test, pictures and audio","15-02-28","6829",
+"cls_plan_BDI.py","stub for planner based on belief, desire, intent","15-01-10","5671",
+"happiness_solver.py","TODO - add comment","15-03-01","1650",
+"ex_index_mydocs.py","example showing what to index","15-03-01","1653",
+"puzzle_missions_canninballs.py","calculates the path to solve problem","15-03-01","7822",
+"game_of_life_console.py","example showing a game of life = TOK","15-03-01","2635",
+"finance_example.py","toy problem - logging finance data [TODO]","15-03-01","3513",
+"document_AIKIF.py","this program - collect a list of programs and add commments / progress on what is actually implemented rather than trust docstrings which show the intention of the class","15-03-04","10724",
+"maths_fermat_brute_force.py","sample script to calculate long running process","15-03-01","4583",
+"world_generator.py","generates a 2D grid world with random terrain - land, sea, blockages","15-03-01","2117",
+"AIKIF_project.py","Core module to manage projects - meta self documentation","15-03-03","2375",
+"processRawData.py","calls various sub tasks to collect raw data","14-12-04","1413",
+"puzzle_countdown.py","TODO - add comment","15-02-11","4633",
+"AIKIF_utils.py","old file mapping - to be deprecated","14-11-20","7558",
+"view.py","view the data in AIKIF - to be deprecated","14-04-18","2109",
+"test_security.py","future module to handle security and privacy settings","14-08-05","815",
+"test_cls_collect.py","collect filelists","14-09-06","1595",
+"loadPIM_shoppingList.py","sample data - loads a users shopping list into AIKIF","14-04-18","2646",
+"security.py","future module to handle security and privacy settings","14-08-05","1771",
+"loadCountry_Gdeltproject.py","Core module to manage projects - meta self documentation","14-04-18","2417",
+"puzzle_N_queens.py","stub only - not implemented///","15-01-10","471",
+"loadPIM_Filelist.py","loads generic filelists into AIKIF - indexing not implemented","14-04-18","6729",
+"test_dataTools.py","data tools to manage database access","14-09-06","1180",
+"test_puzzle_sliding_block.py","TODO - add comment","15-02-06","1508",
+"dataTools.py","data tools to manage database access","14-08-25","13352",
+"ex_project_management.py","example on using aikif for project management (poor example - needs work)","14-08-26","5929",
+"cls_collect_files.py","duplicate - see agent filelist collecting","14-10-19","1424",
+"cls_collect.py","collect filelists","14-06-28","397",
+"loadInfoCourseLectures.py","loads course lecture notes into AIKIF","14-04-06","5843",
+"test_AIKIF.py","TODO - add comment","14-02-27","542",
+"addRawData.py","original attempt at adding data (to be deprecated) ","14-04-18","2428",
+"autobackup.py","example showing automatic file backups via filelists","14-08-26","2859",
+"puzzle_sliding_block.py","TODO - add comment","15-03-01","9417",
+"create_word_lists.py","read ontology files to generate list of nouns and verbs (to be deprecated)","14-04-18","5975",
+"solve_travelling_salesman.py","stub only","15-01-20","857",
+"load_ABS_data.py","old example showing how to map reading a file to the aikif","14-04-17","3992",
+"AIKIF_create.py","creates default structures with test data - to be deprecated","14-04-18","11051",
+"game_board_utils.py","board game rules","14-06-15","1752",
+"cls_grid_life.py","game of life game","15-03-01","5171",
+"image_tools.py","[DATA] uses the toolbox class to create list of programs used by aikif","14-08-17","13958",
+"Toolbox.py","class to manage the toolbox - list of programs and functions aikif can use","15-03-01","3284",
+"crypt_utils.py","scripts to encode / decode data","14-06-18","4282",
+"data_structures.py","Node and Graph classes","15-02-09","4633",
+"solve_knapsack.py","functions to solve the knapsack problem","14-04-24","3733",
+"algebra.py","toolbox module for based evaluation of maths problems","15-01-06","766",
+"audio_tools.py","[DATA] uses the toolbox class to create list of programs used by aikif","14-08-19","2793",
+"maths_ml_algorithms.py","machine learning algorithms for toolbox in AIKIF","14-11-26","2014",
+"test_tool.py","tesing toolbox (SHOULD BE IN TESTS)","14-04-30","377",
+"cls_grid.py","base class for 2D grid for games - 2048, game of life, 2D terrain maps","15-01-17","8897",
+"review_ontology.py","[DATA] program to document details of ontology review","14-12-04","23650",
+"read_wordnet.py","script to read WordNet dataset","14-04-14","2205",
+"createMindOntology.py","script to parse website wiki page of OpenCog into a simple CSV structure","14-03-29","6427",
+"read_opencyc.py","script to read OpenCyc dataset","14-08-31","3279",
+"cyc_extract.py","script to read OpenCyc dataset and extract data (STUB only)","14-08-31","2873",
+"finance_example.py","toy problem - logging finance data [TODO]","15-03-01","3513",
+"cls_plan.py","STUB only at this stage - this should provide the link from goals to toolbox (somewhat tricky to say the least) - <span style="color:red;"> FILE DOESNT EXIST</span>","","0",
+"solve_knapsack.py","functions to solve the knapsack problem","","0",
+"check_python_env.py","script to test imports to ensure all correct packages are available - <span style="color:red;"> FILE DOESNT EXIST</span>","","0",
+"run_tests.py","runs all tests in /tests subfolder - <span style="color:red;"> FILE DOESNT EXIST</span>","","0",
+"example_solve_happiness.py","toy problem - finding a world to keep all people happy (O^n^n^n complexity :) ) - <span style="color:red;"> FILE DOESNT EXIST</span>","","0",
