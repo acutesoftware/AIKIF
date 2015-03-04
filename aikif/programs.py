@@ -132,8 +132,9 @@ class Programs(object):
         """
         txt = ''
         f = mod_file.File(fname[0])
-        txt += '"' + f.name + '"'  + delim 
-        txt += '"' + fname[1] + '"' + delim
+        txt += '"' + f.fullname + '"' + delim 
+        txt += '"' + f.name + '"' + delim 
+        txt += '"' + f.path + '"' + delim
         txt += '"' + f.GetDateAsString(f.date_modified)[2:10] + '"' + delim
         txt += '"' + str(f.size) + '"' + delim
         return txt  + '\n'

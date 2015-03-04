@@ -2,6 +2,7 @@
 # All Python Program Statistics
 # 26/08/2014 : Files =  110  Bytes =  377221  Lines =  10694  Lines of Code =  8836
 # 30/10/2014 : Files =  127  Bytes =  444760  Lines =  12595  Lines of Code =  10409
+# 04/03/2015 : Files =  142  Bytes =  572245  Lines =  15947  Lines of Code =  13181
 
 import sys
 import os
@@ -26,7 +27,7 @@ def document_programs(fldr):
     Document a subset of all programs with purpose (and intent)
     """
     p = mod_prg.Programs('AIKIF Programs', fldr)
-    print(fldr)
+   # print(fldr)
     
     p.comment('programs.py', 'collects list of aikif programs to show progress and allows comments to be added to each file')
     p.comment('cls_file_mapping.py', 'uses ontology to get list of files to save data')
@@ -141,7 +142,7 @@ def document_programs(fldr):
 
 
    # p.list()	# get list of all programs
-    p.save()
+    p.save(fldr + os.sep + 'examples' + os.sep + 'document_AIKIF.csv')
     p.collect_program_info('progress.md')
 
 
