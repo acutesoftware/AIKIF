@@ -13,7 +13,6 @@ import aikif.lib.cls_filelist as mod_fl
 import aikif.lib.cls_file as mod_file
 
 root_folder = os.path.abspath(mod_cfg.fldrs['root_path'] + os.sep  ) 
-root_folder = os.path.abspath(os.getcwd() + os.sep + '..' ) 
 
 
 def TEST():
@@ -22,7 +21,9 @@ def TEST():
     """
     prg = Programs('AIKIF Programs', root_folder)
     prg.list_all_python_programs()
-    print(prg)
+   # print(prg)
+    prg.save(root_folder + os.sep + 'aikif' + os.sep + 'programs.csv')
+    print('Done')
 
 class Programs(object):
     """
