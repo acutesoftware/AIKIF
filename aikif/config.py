@@ -13,8 +13,14 @@ fldrs['localPath'] = 'T:\\user\\AIKIF\\'
 fldrs['log_folder'] = 'T:\\user\\AIKIF\\log' 
 fldrs['pers_data'] = 'T:\\user\\AIKIF\\pers_data' 
 
+# FOR DEVELOPMENT
+core_folder = 'T:\\user\\dev\\src\\python\\AIKIF'
+fldrs['root_path'] = core_folder
+fldrs['public_data_path'] = core_folder + os.sep + 'data'
+fldrs['program_path'] = os.path.abspath(core_folder + os.sep + 'aikif') 
+
 # user defined parameters 
-params['AIKIF_version'] = '0.0.8'
+params['AIKIF_version'] = '0.0.9'
 params['AIKIF_deploy'] = 'DEV'
 
 
@@ -23,19 +29,6 @@ logs['logFileProcess'] = fldrs['localPath'] + 'log' + os.sep + 'process.log'
 logs['logFileSource'] = fldrs['localPath'] + 'log' + os.sep + 'source.log'
 logs['logFileCommand'] = fldrs['localPath'] + 'log' + os.sep + 'command.log'
 logs['logFileResult'] = fldrs['localPath'] + 'log' + os.sep + 'result.log'
-
-
-# useful folder locations used by programs - don't modify
-fldrs['root_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
-fldrs['program_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
-fldrs['public_data_path'] = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'data') 
-
-#print('DEBUG:NOTE - origi folder paths may NOT work after pip install - todo\n')
-if 'site-packages' in fldrs['root_path']:  
-    fldrs['root_path'] = fldrs['localPath'] 
-    fldrs['public_data_path'] = fldrs['log_folder']
-#print('DEBUG:config.py : fldrs[root_path] = ' + fldrs['root_path'])
-
 
 # index files
 #                         fldrs['public_data_path'] + os.sep  + 'index' + os.sep + 'ndxWordsToFilesLecture.txt',

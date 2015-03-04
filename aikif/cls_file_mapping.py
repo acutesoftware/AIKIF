@@ -3,8 +3,9 @@
 import os
 import sys
 import aikif.lib.cls_filelist as mod_fl
+import aikif.config as mod_cfg
 
-root_folder   = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+root_folder   = mod_cfg.fldrs['root_path']
 dataPath      = root_folder + os.sep + "data"
 dataFiles     = []  # complete mapping of file types to physical CSV files
 dataFileTypes = [
@@ -56,7 +57,7 @@ class FileMap:
     Provides mapping to file names
     """
     def __init__(self, localPath):
-        self.root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+        self.root_folder = root_folder
         self.dataPath    = root_folder + os.sep + "data"
         self.localPath   = localPath
         self.dataFiles   = []

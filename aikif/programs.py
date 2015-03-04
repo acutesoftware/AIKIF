@@ -12,7 +12,7 @@ import aikif.cls_file_mapping as mod_filemap
 import aikif.lib.cls_filelist as mod_fl
 import aikif.lib.cls_file as mod_file
 
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep  ) 
+root_folder = os.path.abspath(mod_cfg.fldrs['root_path'] + os.sep  ) 
 root_folder = os.path.abspath(os.getcwd() + os.sep + '..' ) 
 
 
@@ -65,10 +65,7 @@ class Programs(object):
         print('All Python Program Statistics')
         print('Files = ', self.tot_files, ' Bytes = ', self.tot_bytes, ' Lines = ', self.tot_lines, ' Lines of Code = ', self.tot_loc)
             
-        self.save('all_programs.csv')
-
-        
-        
+         
     def add(self, nme, desc):
         """
         Adds a program to the list, with default desc
@@ -113,7 +110,7 @@ class Programs(object):
         if fname != '':
             with open(fname, 'w') as f:
                 for i in self.lstPrograms:
-                    f.write(self.get_file_info_line(i, ',') + '\n')
+                    f.write(self.get_file_info_line(i, ','))
 
         
         # save to standard AIKIF structure
@@ -129,6 +126,18 @@ class Programs(object):
 
 
     def get_file_info_line(self, fname, delim):
+        """
+        gathers info on a python program in list and formats as string
+        """
+        txt = ''
+        f = mod_file.File(fname[0])
+        txt += '"' + f.name + '"'  + delim 
+        txt += '"' + fname[1] + '"' + delim
+        txt += '"' + f.GetDateAsString(f.date_modified)[2:10] + '"' + delim
+        txt += '"' + str(f.size) + '"' + delim
+        return txt  + '\n'
+     
+    def get_file_info_web(self, fname, delim):
         """
         gathers info on a python program in list and formats as string
         """
