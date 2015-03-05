@@ -86,11 +86,10 @@ class Programs(object):
                 print(i)
                 if nme in i[0]:
                     i[1] = desc
-                    #print(nme, i)
                     program_exists = True
             
             if program_exists == False: # not there?
-                self.lstPrograms.append([nme,desc + ' - <span style="color:red;"> FILE DOESNT EXIST</span>'])
+                self.lstPrograms.append([nme,desc + ' - <I>FILE DOESNT EXIST</I>'])
             
             self.lg.record_process('adding description to - ' + nme)
 

@@ -22,7 +22,6 @@ class TestClassDataTable(unittest.TestCase):
 5300,M,00016,31,0
 7310,F,00016,67,873""")
                             
-
     def test_01_create_file(self):
         
         fle2 = cl.DataTable(fname2, 'file')
