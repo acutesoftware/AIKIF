@@ -11,7 +11,7 @@ Area | status
  --- | --- |
 | Code base version            | Pre-Alpha    |
 | Public package version | 0.0.9        |
-| Date notes updated     | 3rd-Mar-2015   |
+| Date notes updated     | 5th-Mar-2015   |
 
 
 ###Quick Start

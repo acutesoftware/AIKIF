@@ -20,7 +20,6 @@ T:\user\dev\src\python\AIKIF\aikif\cls_file_mapping.py
 T:\user\dev\src\python\AIKIF\aikif\cls_log.py
 T:\user\dev\src\python\AIKIF\aikif\config.py
 T:\user\dev\src\python\AIKIF\aikif\create_database.py
-T:\user\dev\src\python\AIKIF\aikif\create_word_lists.py
 T:\user\dev\src\python\AIKIF\aikif\dataTools\check_redis_limit.py
 T:\user\dev\src\python\AIKIF\aikif\dataTools\cls_data.py
 T:\user\dev\src\python\AIKIF\aikif\dataTools\cls_dataset.py
@@ -34,6 +33,7 @@ T:\user\dev\src\python\AIKIF\aikif\dataTools\if_oracle.py
 T:\user\dev\src\python\AIKIF\aikif\dataTools\if_redis.py
 T:\user\dev\src\python\AIKIF\aikif\environments\happiness.py
 T:\user\dev\src\python\AIKIF\aikif\environments\worlds.py
+T:\user\dev\src\python\AIKIF\aikif\examples\AIKIF_project\AIKIF_project.py
 T:\user\dev\src\python\AIKIF\aikif\examples\document_AIKIF.py
 T:\user\dev\src\python\AIKIF\aikif\examples\ex_index_mydocs.py
 T:\user\dev\src\python\AIKIF\aikif\examples\finance_example.py
@@ -90,6 +90,7 @@ T:\user\dev\src\python\AIKIF\aikif\z_prototype\addRawData.py
 T:\user\dev\src\python\AIKIF\aikif\z_prototype\autobackup.py
 T:\user\dev\src\python\AIKIF\aikif\z_prototype\cls_collect.py
 T:\user\dev\src\python\AIKIF\aikif\z_prototype\cls_collect_files.py
+T:\user\dev\src\python\AIKIF\aikif\z_prototype\create_word_lists.py
 T:\user\dev\src\python\AIKIF\aikif\z_prototype\dataTools.py
 T:\user\dev\src\python\AIKIF\aikif\z_prototype\ex_project_management.py
 T:\user\dev\src\python\AIKIF\aikif\z_prototype\loadCountry_Gdeltproject.py
@@ -109,3 +110,9 @@ T:\user\dev\src\python\AIKIF\aikif\z_prototype\test_dataTools.py
 T:\user\dev\src\python\AIKIF\aikif\z_prototype\test_puzzle_sliding_block.py
 T:\user\dev\src\python\AIKIF\aikif\z_prototype\test_security.py
 T:\user\dev\src\python\AIKIF\aikif\z_prototype\view.py
+check_python_env.py
+cls_plan.py
+example_solve_happiness.py
+finance_example.py 
+run_tests.py
+solve_knapsack.py 
