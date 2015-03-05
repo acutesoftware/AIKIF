@@ -3,12 +3,12 @@
 import unittest
 import os
 import sys
-sys.path.append("..\\aikif\\dataTools")
-import cls_datatable as cl
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
-fname = root_folder + os.sep + 'test_results' + os.sep + 'datatable_sample.csv'    
-fname2 = root_folder + os.sep + 'test_results' + os.sep + 'datatable_output.csv'                  
-fname3 = root_folder + os.sep + 'test_results' + os.sep + 'datatable_calcs.csv'                  
+import aikif.dataTools.cls_datatable as cl
+#root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
+fname =  'test_results' + os.sep + 'datatable_sample.csv'    
+fname2 =  'test_results' + os.sep + 'datatable_output.csv'                  
+fname3 =  'test_results' + os.sep + 'datatable_calcs.csv'     
+             
 class TestClassDataTable(unittest.TestCase):
     def setUp(self):
         with open(fname, "w") as f:
