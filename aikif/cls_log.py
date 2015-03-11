@@ -20,8 +20,23 @@ def TEST():
     
 
 class Log:
+    """
+    Main logging class for AIKIF should record appropriate
+    actions and summarise to useful information.
+    
+    STATUS: currently logs to 4 log files and does simple
+            aggregation, but still in alpha 
+            
+    TODO:
+        - should use python logger
+        - work out how to pass rules for each logfile to 
+          identify useful information for that program
+          
+    """
     def __init__(self, fldr):
-        """ pass the folder on command line """
+        """
+        pass the folder on command line 
+        """
         self.log_folder = fldr
         self.logFileProcess = self.log_folder + os.sep + 'process.log'
         self.logFileSource  = self.log_folder + os.sep + 'source.log'
@@ -62,7 +77,9 @@ class Log:
         
         
     def estimate_complexity(self, x,y,z,n):
-        """ calculates a rough guess of runtime based on product of parameters """
+        """ 
+        calculates a rough guess of runtime based on product of parameters 
+        """
         num_calculations = x * y * z * n
         run_time = num_calculations / 100000  # a 2014 PC does about 100k calcs in a second (guess based on prior logs)
         return self.show_time_as_short_string(run_time) 
