@@ -35,9 +35,8 @@ agent_list = [
 import os, sys
 #sys.path.append(os.path.split(sys.argv[0])[0])
 print(os.path.split(sys.argv[0])[0])
-import aikif.AIKIF_utils as aikif
-import aikif.fileMapping as filemap 
-
+import aikif.cls_log as mod_log
+import aikif.cls_file_mapping as mod_filemap
 
 			
 def main():
@@ -64,18 +63,18 @@ def verify_agents():
 def run(scriptFile, logUsage='Y'):
 	from subprocess import call
 	print('  ... running ' + scriptFile)
-	aikif.LogProcess(scriptFile)
+	mod_log.record_process(scriptFile)
 	try:
 		retcode = call(scriptFile + ' Q', shell=True)   # Q tells program to run in silent mode
 		if retcode < 0:
 			#print("Child was terminated by signal", -retcode, file=sys.stderr)
-			aikif.LogResult(scriptFile + ' terminated by signal')
+			mod_log.record_result(scriptFile + ' terminated by signal')
 		else:
 			#print("Child returned", retcode, file=sys.stderr)
-			aikif.LogResult(scriptFile + ' success')
+			mod_log.record_result(scriptFile + ' success')
 	except OSError as e:
 		#print("Execution failed:", e, file=sys.stderr)	
-		aikif.LogResult(scriptFile + ' error')
+		mod_log.record_result(scriptFile + ' error')
 	
 			
 def is_agent_scheduled_to_start(agt):

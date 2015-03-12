@@ -130,9 +130,9 @@ def dict_to_htmlrow(d):
     res = "<TR>\n"
     for k, v in d.items():
         if type(v) == str:
-            res = res + '<TD>' + k + ':</TD><TD>' + v + '</TD>'
+            res = res + '<TD><p>' + k + ':</p></TD><TD><p>' + v + '</p></TD>'
         else:
-            res = res + '<TD>' + k + ':</TD><TD>' + str(v) + '</TD>'
+            res = res + '<TD><p>' + k + ':</p></TD><TD><p>' + str(v) + '</p></TD>'
     res += '</TR>\n'
     return res
 
