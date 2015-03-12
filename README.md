@@ -27,7 +27,7 @@ There are some basic examples shown in the aikif/examples folder:<br />
 
 To start the web interface use `aikif/web_app/web_aikif.py` or the batch file `aikif\go_web_aikif`
  
-![screenshot of web interface](https://github.com/acutesoftware/AIKIF/blob/master/doc/web-if-v01.jpg "Screenshot of web interface") 
+![screenshot of web interface](https://github.com/acutesoftware/AIKIF/blob/master/doc/web-if-v02.jpg "Screenshot of web interface") 
  
 
 
