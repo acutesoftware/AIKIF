@@ -7,7 +7,16 @@
 ----------------------------------*/
 
 body {
-	font-family:  Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-size: 80%;
+  font-family: "Lucida Console", Monaco, monospace;
+
+/*  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+  background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+  background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+  background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+*/
+    
 }
 
 h1 {
@@ -29,19 +38,18 @@ h4 {
 }
 
 p  {
-	font-size: 100%;
+	font-size: 90%;
     text-align:justify;
 }
 
 TD a {
-	font-size: 100%;
+	font-size: 90%;
     text-align:justify;
 }
 
 TD {
 	font-size: 90%;
     text-align: justify;
-	color: black;
     vertical-align: top;
 }
 
@@ -70,10 +78,9 @@ TD {
 
 /*Layout of the web page */
 #container {   
-	width: 100%; /*1200px; */ 
-	margin: 0px auto;   
-  	overflow:hidden;
-  	padding: 0px;  
+	width: 90%;
+	margin: 30px 20px 0px 0px auto;   
+  	padding: 10px;  
   	text-align: left;
 }
 
@@ -85,7 +92,7 @@ TD {
 }
 
 #header img {
-		width: 100%; /*1200px; */ 
+		width: 100%; 
 }
 
 /*Menu */
@@ -111,8 +118,6 @@ pre {
 }
 
 #content {     
-	/*height: 460px;   */ 
-	/*width: 980px;*/
 	width: 100%;
 	float: center;  
 	overflow: auto; 
@@ -174,36 +179,34 @@ pre {
 }
 
 
-
 /*--------------------------------
 			Colour
 ----------------------------------*/
-/* Standard colour values - rgb(255, 255, 255)*/
-
 
 body {   	 
-	background-color: rgb(255, 255, 255); 
-	vertical-align: top;
+  background-color: #000;
+  font-color: #00FF00; 
+  color: #00FF00; 
 }
 
 #container { 
-	background-color: rgb(255, 255, 255); 
+	background-color: rgb(0, 0, 0); 
 }
 
 #header { 
-	color: rgb(176, 176, 176); /*#B0B0B0 ;*/
+	color: rgb(176, 176, 176); 
 }
 
 #footer {
-	color: rgb(128, 128, 128); /*gray;*/
+	color: rgb(128, 128, 128); 
 }
 
 #menu_list a {	
-	#color: rgb(0, 0, 0); /*#000 ; 	*/
-	color: grey; /*#000 ; 	*/
+	#color: rgb(0, 0, 0);
+	color: grey; 
 }
 #top_menu_selected a {
-	#color: rgb(192, 48, 0); /*#C30 ; */
-	color: black; /*#C30 ; */
+	#color: rgb(192, 48, 0); 
+	color: white; 
 }
 
