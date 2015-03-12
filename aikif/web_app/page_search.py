@@ -30,21 +30,20 @@ def search_aikif(txt, formatHTML=True):
     search for text - currently this looks in all folders in the
     root of AIKIF but that also contains binaries so will need to 
     use the agent_filelist.py to specify the list of folders.
+    
+    NOTE - this needs to use indexes rather than full search each time
     """
     results = []
     num_found = 0
-    import cls_collect_files as cl
-    my_files = cl.clsCollectFiles(root_folder, '*.*') # change this
-    my_files.collect_filelist()
-    files = my_files.get_filelist()
+    import aikif.lib.cls_filelist as mod_fl
+    my_files = mod_fl.FileList([root_folder + os.sep + 'data', root_folder + os.sep + 'aikif'], ['*.*'], ['*.pyc'])
+    files = my_files.get_list()
     for f in files:
-        #print(f)
         try:
             num_found = 0
             with open(f, 'r') as cur:
                 line_num = 0
                 for line in cur:
-                    #print(line)
                     line_num += 1
                     if txt in line:
                         num_found += 1
@@ -61,7 +60,6 @@ def search_aikif(txt, formatHTML=True):
             results.append('problem with file ' + f)
     if len(results) == 0:
         results.append("No results")
-    #print(results)
     return results
             
 def format_result(file, line, line_num, txt):
