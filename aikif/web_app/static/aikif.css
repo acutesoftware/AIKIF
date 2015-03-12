@@ -8,7 +8,7 @@
 
 body {
   text-align: center;
-  font-size: 80%;
+  font-size: 70%;
   font-family: "Lucida Console", Monaco, monospace;
 
 /*  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
@@ -30,7 +30,7 @@ h1 {
 }
 
 h4 {
-	font-size: 90%;
+	font-size: 80%;
 	font-weight: normal;
 	text-align:justify;
     text-align:left;
@@ -38,17 +38,17 @@ h4 {
 }
 
 p  {
-	font-size: 80%;
+	font-size: 70%;
     text-align:justify;
 }
 
 TD a {
-	font-size: 90%;
+	font-size: 100%;
     text-align:justify;
 }
 
 TD {
-	font-size: 90%;
+	font-size: 80%;
     text-align: justify;
     vertical-align: top;
 }
@@ -185,8 +185,8 @@ pre {
 
 body {   	 
   background-color: #000;
-  font-color: #00FF00; 
-  color: #00FF00; 
+  font-color: #228B22; 
+  color: #228B22; 
 }
 
 #container { 

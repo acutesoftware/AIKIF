@@ -10,7 +10,7 @@ from os import environ
 
 #AIKIF_WEB_VERSION = "PROD"
 AIKIF_WEB_VERSION = "DEV"
-AIKIF_VERSION_NUM = "Version 0.1.1 (alpha) - updated 27-May-2014"
+AIKIF_VERSION_NUM = "Version 0.0.9 (pre-alpha) - updated 13-Mar-2015"
 
 import aikif.web_app.web_utils as web
 
@@ -68,16 +68,17 @@ def page_todo():
 	txt = aikif_web_menu('Todo')
 	txt += web.build_search_form()
 	txt += "<H3>Dev Tasks</h3>\n"
-	txt += "<LI>get basic web functionality working in this app web_aikif</LI>\n"
-	txt += "<LI>Split to standard MVC layout once implemention works</LI>\n"
-	txt += "<LI>check install of Python 2.7 and 3.3, ensure startup checks this</LI>\n"
+	txt += "<LI>implement mapping functionality of business rules</LI>\n"
+	txt += "<LI>web interface to control agents, including feedback status</LI>\n"
+	txt += "<LI></LI>\n"
 	txt += "<H3>Data Tasks</h3>\n"
-	txt += "<LI>confirm overwrite of existing data files by checking source of creation (ok to overwrite if done via Create_AIKIF.py)</LI>\n"
+	txt += "<LI>define structures for core tables: events, people, facts, locations</LI>\n"
+	txt += "<LI>define flexible structure for raw data to knowledge to learning</LI>\n"
 	txt += "<LI>collect data output from existing proc_*.py needs to be properly integrated</LI>\n"
 	txt += "<LI>finish function to completely import random spreadsheet</LI>\n"
 	txt += "<H3>Config Tasks</h3>\n"
+	txt += "<LI>setup for users to auto build database</LI>\n"
 	txt += "<LI>get webserver running, deploy to restricted site</LI>\n"
-	txt += "<LI>schedule collection tasks to run daily</LI>\n"
 	txt += "<BR><BR>\n"
 	txt += get_footer()
 	return txt
