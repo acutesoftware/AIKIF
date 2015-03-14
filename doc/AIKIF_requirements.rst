@@ -18,10 +18,19 @@ Goals
 Goal 1 - Framework to collect and map information to knowledge
 ------------------------------
 map data to knowledge using your own rules
+``````````````
+map data to knowledge using your own rules
 
 store disparate data locally, backup globally
+``````````````
+store disparate data locally, backup globally
+
 
 understanding of bias to monitor data inputs and sources
+``````````````
+understanding of bias to monitor data inputs and sources
+
+
 
 
 
