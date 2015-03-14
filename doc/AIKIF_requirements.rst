@@ -13,15 +13,22 @@ Note that these are fluid and still very much a work in progress.
 Overall Goals
 =============
 There are 4 main goals:
+
 - Framework to collect and map information to knowledge
+
 - Process Automation
+
 - Control of Personal data
+
 - AI monitoring 
+
 
 Intentions
 ----------
 The intention of AIKIF is to allow **all** of your information to be locally accessible, searchable and managed by yourself.
+
 This includes the general high level information, processes and metadata around it, as well as the content of the data.
+
 
 If everything is specified in a machine readable format, then rather than manually perform computer related tasks, the methods can be catalogued and structured so they can be automated.
 
@@ -54,8 +61,11 @@ automatic collection, validation and processing of data
 Context Monitor
 ``````````````
 watches what you do, where you are and automatically provides ALL info for that thing.
+
 eg.. fixing a fence, driving to shops, working on AIKIF, reading reddit
+
 Methods of detection
+
 - Mobile GPS coords
 - Ip address lookup
 - Pc name (user list of locations)
