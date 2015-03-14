@@ -10,22 +10,47 @@ Rather than manually run scripts to perform tasks, these are catalogued and stru
 
 Goals
 =====
-- Framework to store information from any source
-- Log intent, progress and outcomes of all AI / Data processing tasks.
+- Framework to collect and map information to knowledge
+- Process Automation
+- Control of Personal data
+- AI monitoring 
 
-
-Goal 1 - Framework to store information
+Goal 1 - Framework to collect and map information to knowledge
 ------------------------------
-- requirement 1
-- requirement 2
-- requirement 3
+map data to knowledge using your own rules
+
+store disparate data locally, backup globally
+
+understanding of bias to monitor data inputs and sources
 
 
-Goal 2 - Log AI / Data processing tasks
+
+Goal 2 - Process Automation
 ------------------------------------
-- requirement 1
-- requirement 2
-- requirement 3
+automatic documentation of program development
+
+Log intent, progress and outcomes of all AI / Data processing tasks.
+
+automatic collection, validation and processing of data
 
 
+Goal 3 - Control of Personal data
+------------------------------------
+get your data off the cloud and under your control
+
+agents to download data from various cloud hosts and store locally
+
+index data locally for simple unified search across all sources (facebook, email, documents, photo metadata, web favourites)
+
+Goal 4 - AI monitoring (future)
+-----------------------------------
+Define methods an AI can use (aikif.toolbox)
+
+Log all results with useful milestones and checkpoints
+
+Regulate processes to allow automation
+
+black box monitoring of unknown software agents
+
+Monitor for friendliness (unlikely to be achievable)
 
