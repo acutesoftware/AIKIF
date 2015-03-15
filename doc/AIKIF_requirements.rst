@@ -60,7 +60,7 @@ Agents (internal to aikif or external) are used to collect information from vari
 
 The will be stored in a local data store (text, database, XML - users choice), and indexed to allow full searching.
 
-Agents include: 
+Agents include:
 - Email
 - Browser favourites
 - File metadata
@@ -89,15 +89,15 @@ Use the AIKIF to completely manage projects, as it stores not only details on pr
 
     from aikif import codeDocData as doc
     from aikif import businessRules as bus
-    proj = doc.Project(‘Read Datafiles’)
-    proj.RegisterProgram(‘importTools.py’, ‘program to read in a datafile’, ‘T:\user...’)
-    proj.Task(‘document columns’)
-    proj.Folder(‘WORKING’, ‘T:\...’)
-    proj.Folder(‘MASTER’, T:\...)
+    proj = doc.Project('Read Datafiles')
+    proj.RegisterProgram('importTools.py', 'program to read in a datafile', 'T:\user')
+    proj.Task('document columns')
+    proj.Folder(‘WORKING’, 'T:\user')
+    proj.Folder('BACKUP', 'E:\backup\user')
     proj.Contact(‘djmurray’)
     
     backups = bus.BackupRules()
-    backups.Source(‘t:\...’)
+    backups.Source(‘t:\user’)
     backups.Dest(‘NAS’)
     backups.Schedule(‘DAILY’)
 
@@ -114,7 +114,7 @@ Option 2
     csvProject.folder.add('master folder', 'T:\projects\csvProject')
     csvProject.folder.add('backup folder', 'z:\BK_projects\csvProject')
     csvProject.folder.add('deploy folder', 'T:\projects\csvProject\deploy')
-    csvProject.link('task', 'requirement', 'dl' , 'todo1') # ??? NO 
+    csvProject.link('task', 'requirement', 'dl' , 'todo1')
 
 
 
@@ -141,7 +141,7 @@ Document a business
     -- Now setup some data structures to hold information -- 
     import aikif.dataTools.cls_data_table
     import aikif.cls_log
-    lg =Log(‘Acute Software’, ‘T:\\user\\docs\\business’)
+    lg =Log('Acute Software', 'T:\user\docs\business')
     tbl_sales = DataTable(‘Sales’, cols=[‘Date’, ‘Amount’, ‘Cust’])
     tbl_expenses = DataTable(‘Expenses’, cols=[‘Date’, ‘Amount’, ‘Cust’])
     
