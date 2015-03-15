@@ -61,10 +61,12 @@ Agents (internal to aikif or external) are used to collect information from vari
 The will be stored in a local data store (text, database, XML - users choice), and indexed to allow full searching.
 
 Agents include:
+
 - Email
 - Browser favourites
 - File metadata
 - datasets
+
 
 The data can be linked to a standard upper ontology, (not sure which one or how)
 See - http://www.acutesoftware.com.au/aikif/ontology.html
