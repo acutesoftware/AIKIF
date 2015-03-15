@@ -1,89 +1,7 @@
 <TABLE width=90% border=0><TR><TD>File Name</TD><TD>Size</TD><TD>Imports</TD><TD>List of Functions</TD></TR>
-<TR><TD>AI.py</TD><TD>1,661</TD><TD><PRE>os 
-</PRE>
-<PRE>sys
-</PRE>
-<PRE>AIKIF_utils</PRE>
-<PRE>platform
-</PRE>
-<BR></TD><TD><PRE>BlackBoxAI(command, sourceInfo)</PRE>
-<BR></TD></TR>
-<TR><TD>AIKIF_create.py</TD><TD>11,051</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<PRE>csv
-</PRE>
-<PRE>as_util_data</PRE>
-<PRE>AIKIF_utils</PRE>
-<BR></TD><TD><PRE>wipeSampleFiles()</PRE>
-<PRE>createSampleFile(fname, header)</PRE>
-<PRE>addSampleData(fname, content)</PRE>
-<BR></TD></TR>
-<TR><TD>AIKIF_utils.py</TD><TD>7,300</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<PRE>csv
-</PRE>
-<PRE>time
-</PRE>
-<PRE>getpass
-</PRE>
-<PRE>socket
-</PRE>
-<PRE>lib_data</PRE>
-<PRE>lib_file</PRE>
-<BR></TD><TD><PRE>build_AIKIF_structure()</PRE>
-<PRE>print_no_newline(string)</PRE>
-<PRE>countLinesInFile(fname)</PRE>
-<PRE>showColumnStructures(AIKIF_FileList)</PRE>
-<PRE>debugPrintFileStructures(AIKIF_FileList)</PRE>
-<PRE>printFileList(l)</PRE>
-<PRE>getFileList(l)</PRE>
-<PRE>SaveFileList(fl, filename)</PRE>
-<PRE>GetElementsAsString(lst, delim, quote='"')</PRE>
-<PRE>SaveFileDataToFile(lst, filename, append=False)</PRE>
-<PRE>ensure_dir(f)</PRE>
-<PRE>List2String(l)</PRE>
-<PRE>Dict2String(d)</PRE>
-<PRE>TodayAsString()</PRE>
-<PRE>force_to_string(unknown)</PRE>
-<PRE>log(fname, txt, prg='')</PRE>
-<PRE>GetUserName()</PRE>
-<PRE>GetHostName()</PRE>
-<PRE>LogDataSource(src, prg='')</PRE>
-<PRE>LogProcess(process, prg='')</PRE>
-<PRE>LogCommand(cmd, prg='')</PRE>
-<PRE>LogResult(res, prg='')</PRE>
-<BR></TD></TR>
 <TR><TD colspan=4><HR><H3>\aikif\</h3></td></tr>
-<TR><TD>add.py</TD><TD>1,328</TD><TD><PRE>sys
-</PRE>
-<PRE>AIKIF_utils</PRE>
-<PRE>fileMapping</PRE>
-<PRE>getopt
-</PRE>
-<BR></TD><TD><PRE>usage()</PRE>
-<PRE>main()</PRE>
-<PRE>add_string(txt)</PRE>
-<PRE>add_row(txt, tbl)</PRE>
-<PRE>add_dataset(dt)</PRE>
-<BR></TD></TR>
-<TR><TD>addRawData.py</TD><TD>2,428</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<PRE>csv
-</PRE>
-<PRE>as_util_data</PRE>
-<PRE>AIKIF_utils</PRE>
-<BR></TD><TD><PRE>TEST()</PRE>
-<PRE>addData(src, method, rawString)</PRE>
-<PRE>parseRawString(rawString)</PRE>
-<BR></TD></TR>
 <TR><TD colspan=4><HR><H3>\aikif\agents\</h3></td></tr>
-<TR><TD>agent.py</TD><TD>3,948</TD><TD><PRE>os
+<TR><TD>agent.py</TD><TD>4,002</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -100,9 +18,9 @@
 <PRE>def report(self)</PRE>
 <PRE>TEST()</PRE>
 <BR></TD></TR>
-<TR><TD>agent_map_data.py</TD><TD>1,854</TD><TD><PRE>os
+<TR><TD>agent_map_data.py</TD><TD>1,867</TD><TD><PRE>os
 </PRE>
-<PRE>agent</PRE>
+<PRE>aikif.agents.agent</PRE>
 <BR></TD><TD><PRE>TEST()</PRE>
 <PRE>class AgentMapDataFile(object)</PRE>
 <PRE>def __init__(self, list_name, src_file, mapping)</PRE>
@@ -111,7 +29,7 @@
 <PRE>def add_process(self, proc)</PRE>
 <BR></TD></TR>
 <TR><TD colspan=4><HR><H3>\aikif\agents\aggregate\</h3></td></tr>
-<TR><TD>agg_context.py</TD><TD>3,570</TD><TD><PRE>os, sys
+<TR><TD>agg_context.py</TD><TD>3,578</TD><TD><PRE>os, sys
 </PRE>
 <BR></TD><TD><PRE>main()</PRE>
 <PRE>class AggContext(Agent)</PRE>
@@ -141,7 +59,7 @@
 <BR></TD><TD><PRE>main()</PRE>
 <BR></TD></TR>
 <TR><TD colspan=4><HR><H3>\aikif\agents\explore\</h3></td></tr>
-<TR><TD>agent_explore_grid.py</TD><TD>10,212</TD><TD><PRE>os
+<TR><TD>agent_explore_grid.py</TD><TD>10,213</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -159,22 +77,85 @@
 <PRE>main()</PRE>
 <BR></TD></TR>
 <TR><TD colspan=4><HR><H3>\aikif\agents\gather\</h3></td></tr>
-<TR><TD>agent_email.py</TD><TD>1,896</TD><TD><PRE>os
+<TR><TD>agent_browser.py</TD><TD>14,683</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>time
+</PRE>
+<PRE>datetime
+</PRE>
+<PRE>sqlite3
+</PRE>
+<PRE>codecs, re
+</PRE>
+<PRE>json
+</PRE>
+<PRE>cgi
+</PRE>
+<PRE>base64
+</PRE>
+<PRE>urllib.parse</PRE>
+<PRE>aikif.agents.agent</PRE>
+<PRE>aikif.config</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>TEST_DATE_CONV()</PRE>
+<PRE>class BrowserCollectAgent(agt.Agent)</PRE>
+<PRE>def __init__(self, name, fldr, browser, running, LOG_LEVEL, log_folder)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def do_your_job(self, *arg)</PRE>
+<PRE>class Browser(object)</PRE>
+<PRE>def __init__(self, browser_data_path, op_folder, name='Chrome', )</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def DateConv(self, webkit_timestamp)</PRE>
+<PRE>def DateConvBookmark(self, webkit_timestamp)</PRE>
+<PRE>def date_from_webkit_ORIG_RETURNS_GMT_TIME(self, webkit_timestamp)</PRE>
+<PRE>def date_from_webkit(self, webkit_timestamp)</PRE>
+<PRE>def datetime_from_utc_to_local(self, utc_datetime)</PRE>
+<PRE>def get_browser_bookmarks_chrome(self)</PRE>
+<PRE>    def format_bookmark(base_folder, entry, delim = ',', qu='"')</PRE>
+<PRE>    def format_bookmark_folder(base_folder, entry, delim = ',', qu='"')</PRE>
+<PRE>    def get_bookmarks(fldr, base_folder)</PRE>
+<PRE>def get_browser_history_chrome(self)</PRE>
+<PRE>def get_passwords(self)</PRE>
+<PRE>def extract_password_row(self, row)</PRE>
+<PRE>def decode_password(self, raw)</PRE>
+<PRE>def format_list_csv(self, lst, qu='"',delim=',')</PRE>
+<BR></TD></TR>
+<TR><TD>agent_email.py</TD><TD>6,130</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
 <PRE>random
 </PRE>
+<PRE>imaplib
+</PRE>
+<PRE>smtplib
+</PRE>
+<PRE>email
+</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.config</PRE>
 <PRE>aikif.agents.agent</PRE>
-<PRE>cls_log</PRE>
-<PRE>config</PRE>
-<BR></TD><TD><PRE>class EmailAgent(agt.Agent)</PRE>
-<PRE>def __init__(self, name,  fldr, running, LOG_LEVEL)</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class EmailAgent(agt.Agent)</PRE>
+<PRE>def __init__(self, name,  fldr, running, LOG_LEVEL, account)</PRE>
 <PRE>def __str__(self)</PRE>
 <PRE>def do_your_job(self, *arg)</PRE>
-<PRE>main()</PRE>
+<PRE>class EmailAccount</PRE>
+<PRE>def __init__(self, username, password, save_folder, send_server_name, rec_server_name)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def connect(self)</PRE>
+<PRE>def disconnect(self)</PRE>
+<PRE>def send(self, toaddr, subject='', msg='')</PRE>
+<PRE>def get_inbox_count(self)</PRE>
+<PRE>def get_all_emails_containing(self, max_emails, search_criteria="ALL")</PRE>
+<PRE>class GmailAccount(EmailAccount)</PRE>
+<PRE>def __init__(self, username, password, save_folder)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>class Message()</PRE>
 <BR></TD></TR>
-<TR><TD>agent_filelist.py</TD><TD>1,842</TD><TD><PRE>os
+<TR><TD>agent_filelist.py</TD><TD>1,843</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -224,7 +205,50 @@
 <PRE>datetime_from_utc_to_local(utc_datetime)</PRE>
 <PRE>GetBrowserHistoryChrome()</PRE>
 <BR></TD></TR>
+<TR><TD>outlook_export.py</TD><TD>3,893</TD><TD><PRE>os, sys
+</PRE>
+<PRE>codecs, win32com.client
+</PRE>
+<PRE>win32com
+</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>get_mails(folder, path=[])</PRE>
+<PRE>export_all_emails(f)</PRE>
+<PRE>class Message</PRE>
+<PRE>def __init__(self, msg, path)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def convert_csv(self)</PRE>
+<BR></TD></TR>
 <TR><TD colspan=4><HR><H3>\aikif\agents\learn\</h3></td></tr>
+<TR><TD>agent_learn_aixi.py</TD><TD>5,669</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>random
+</PRE>
+<PRE>aikif.agents.agent</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.config</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class Aixi(mod_agt.Agent)</PRE>
+<PRE>def __init__(self, name,  fldr)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def do_your_job(self)</PRE>
+<BR></TD></TR>
+<TR><TD>dummy_learn_1.py</TD><TD>1,244</TD><TD><BR></TD><TD><PRE>main(arg1=55, arg2='test', arg3=[5,6,7,5,4,])</PRE>
+<PRE>API_option_1_get_best_result()</PRE>
+<BR></TD></TR>
+<TR><TD>run_dummy_learn_1.py</TD><TD>1,221</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>random
+</PRE>
+<PRE>aikif.agents.agent</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.config</PRE>
+<PRE>dummy_learn_1</PRE>
+<BR></TD><TD><BR></TD></TR>
 <TR><TD>test_agent.py</TD><TD>800</TD><TD><BR></TD><TD><PRE>class TestAgent(Agent)</PRE>
 <PRE> __init__(self, *arg)</PRE>
 <PRE> do_your_job(self, *arg)</PRE>
@@ -248,30 +272,12 @@
 <PRE>def get_source_website(self)</PRE>
 <PRE>def get_source_person(self)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_collect.py</TD><TD>397</TD><TD><BR></TD><TD><PRE>class clsCollect(object)</PRE>
-<PRE> __init__(self, name=None,  fldr=None)</PRE>
-<PRE> log(self, msg)</PRE>
-<BR></TD></TR>
-<TR><TD>cls_collect_files.py</TD><TD>1,424</TD><TD><PRE>cls_collect
-</PRE>
-<PRE>os
-</PRE>
-<PRE>fnmatch
-</PRE>
-<BR></TD><TD><PRE>class clsCollectFiles(cls_collect.clsCollect)</PRE>
-<PRE> __init__(self, fldr=None, pattern="*.*")</PRE>
-<PRE> collect_filelist(self)</PRE>
-<PRE> get_tot_fldrs(self)</PRE>
-<PRE> get_tot_files(self)</PRE>
-<PRE> get_tot_bytes(self)</PRE>
-<PRE> get_filelist(self)</PRE>
-<PRE> get_folders(self)</PRE>
-<BR></TD></TR>
-<TR><TD>cls_file_mapping.py</TD><TD>3,826</TD><TD><PRE>os
+<TR><TD>cls_file_mapping.py</TD><TD>3,741</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
 <PRE>aikif.lib.cls_filelist</PRE>
+<PRE>aikif.config</PRE>
 <BR></TD><TD><PRE>class FileMap</PRE>
 <PRE>def __init__(self, localPath)</PRE>
 <PRE>def get_root_folder(self)</PRE>
@@ -283,7 +289,7 @@
 <PRE>def get_filename(self, dataType, subjectArea)</PRE>
 <PRE>def add_file_to_mapping_list(self, fname, lst)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_log.py</TD><TD>7,602</TD><TD><PRE>os
+<TR><TD>cls_log.py</TD><TD>10,177</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -295,11 +301,17 @@
 </PRE>
 <PRE>collections 
 </PRE>
+<PRE>random
+</PRE>
+<PRE>aikif.config</PRE>
 <BR></TD><TD><PRE>TEST()</PRE>
 <PRE>class Log</PRE>
 <PRE>def __init__(self, fldr)</PRE>
 <PRE>def __str__(self)</PRE>
 <PRE>def get_folder_process(self)</PRE>
+<PRE>def get_session_id(self)</PRE>
+<PRE>def estimate_complexity(self, x,y,z,n)</PRE>
+<PRE>def show_time_as_short_string(self, seconds)</PRE>
 <PRE>def _log(self, fname, txt, prg='')</PRE>
 <PRE>def record_source(self, src, prg='')</PRE>
 <PRE>def record_process(self, process, prg='')</PRE>
@@ -318,40 +330,24 @@
 <PRE>GetUserName()</PRE>
 <PRE>GetHostName()</PRE>
 <BR></TD></TR>
-<TR><TD>cls_programs.py</TD><TD>2,485</TD><TD><PRE>AIKIF_utils</PRE>
-<PRE>cls_file_mapping</PRE>
-<PRE>os
-</PRE>
-<BR></TD><TD><PRE>class Programs(object)</PRE>
-<PRE>def __init__(self, name=None, fldr=None, lst=None)</PRE>
-<PRE>def add(self, nme, desc)</PRE>
-<PRE>def list(self)</PRE>
-<PRE>def save(self, fname='')</PRE>
-<PRE>def collect_program_info(fname)</PRE>
-<BR></TD></TR>
-<TR><TD>config.py</TD><TD>2,258</TD><TD><PRE>sys
+<TR><TD>config.py</TD><TD>2,274</TD><TD><PRE>sys
 </PRE>
 <PRE>os
 </PRE>
 <BR></TD><TD><PRE>show_config()</PRE>
 <PRE>fldr_root()</PRE>
 <BR></TD></TR>
-<TR><TD>create_word_lists.py</TD><TD>5,975</TD><TD><PRE>os
+<TR><TD>create_database.py</TD><TD>1,936</TD><TD><PRE>sys, os
 </PRE>
-<PRE>sys
+<PRE>datetime
 </PRE>
-<PRE>xml
-</PRE>
-<PRE>lib_data</PRE>
-<PRE>lib_file</PRE>
-<PRE>xml.etree.ElementTree</PRE>
-<BR></TD><TD><PRE>SaveListFirstWordOnly(msg, ipfile, opFile)</PRE>
-<PRE>ExtractListOfWords()</PRE>
-<PRE>ExtractCat(fname, opFile)</PRE>
-<PRE>GetOntologyExtract(fname, txt)</PRE>
+<PRE>aikif.dataTools.cls_datatable</PRE>
+<PRE>aikif.config</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>make_table(f_all, tbl, cols)</PRE>
 <BR></TD></TR>
 <TR><TD colspan=4><HR><H3>\aikif\dataTools\</h3></td></tr>
-<TR><TD>check_redis_limit.py</TD><TD>9,825</TD><TD><PRE>os
+<TR><TD>check_redis_limit.py</TD><TD>9,901</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -359,12 +355,9 @@
 </PRE>
 <PRE>csv
 </PRE>
-<PRE>cls_datatable
-</PRE>
-<PRE>if_redis
-</PRE>
-<PRE>generateTestData
-</PRE>
+<PRE>aikif.dataTools.cls_datatable</PRE>
+<PRE>aikif.dataTools.if_redis</PRE>
+<PRE>aikif.dataTools.generateTestData</PRE>
 <BR></TD><TD><PRE>main()</PRE>
 <PRE>load_random_tables(d)</PRE>
 <PRE>load_lots_of_strings(d)</PRE>
@@ -383,13 +376,14 @@
 <PRE> list_tables(self, delim='\n')</PRE>
 <PRE> add(self, table)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_datatable.py</TD><TD>12,445</TD><TD><PRE>math
+<TR><TD>cls_datatable.py</TD><TD>12,609</TD><TD><PRE>math
 </PRE>
 <PRE>collections
 </PRE>
 <BR></TD><TD><PRE>class DataTable(object)</PRE>
-<PRE>def __init__(self, name, dataset_type)</PRE>
+<PRE>def __init__(self, name, dataset_type, col_names = [])</PRE>
 <PRE>def __str__(self)</PRE>
+<PRE>def add(self, row)</PRE>
 <PRE>def describe_contents(self)</PRE>
 <PRE>def get_distinct_values_from_cols(self, l_col_list)</PRE>
 <PRE>def count_unique_values(self, colNum, colText, topN_values=10)</PRE>
@@ -438,38 +432,6 @@
 <PRE>def extract_dimension(self, dim_name, dim_cols, dim_key, dim_stag_table, src_table, src_cols, grain_cols, where_clause)</PRE>
 <PRE>def aggregate(self, opTable, group_by_cols, meas)</PRE>
 <BR></TD></TR>
-<TR><TD>dataTools.py</TD><TD>13,352</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<PRE>csv
-</PRE>
-<PRE>string
-</PRE>
-<BR></TD><TD><PRE>TEST()</PRE>
-<PRE>delete_file(f)</PRE>
-<PRE>csv_from_excel(excel_file, pth)</PRE>
-<PRE>DownloadFile(url, fname)</PRE>
-<PRE>addSampleData(fname, content)</PRE>
-<PRE>CreateRandomCSVFile(fname)</PRE>
-<PRE>CreateRandomIndentedCSVFile(fname)</PRE>
-<PRE>IntentifyColumns(fname)</PRE>
-<PRE>DataSet(fname)</PRE>
-<PRE>MapTo(opFile)</PRE>
-<PRE>GetColumnList(csvFile)</PRE>
-<PRE>GetCountUniqueValues(fname, colNum, colText, topN_values, opFile)</PRE>
-<PRE>AnalyseCSV_File(datafile, opFolder)</PRE>
-<PRE>split_CSV_by_Column_names(inputfilename)</PRE>
-<PRE>split_CSV_by_Column_Values(ipFile, colName)</PRE>
-<PRE>ExtractTable(fname, opFile, opCols, startRow=1, startCol=1, endRow=5, endCol=5)</PRE>
-<PRE>AutoFillCSV(fname, opFile, colList, autoFillCols)</PRE>
-<PRE>RemoveBlankRecs(fname, opFile, masterCol)</PRE>
-<PRE>GenerateSQL(csvFile, tblName, opFile, headerRow=1)</PRE>
-<PRE>clean_column_heading(txt)</PRE>
-<PRE>GenerateSQL_CreateTable(tbl, cols)</PRE>
-<PRE>GenerateSQL_Insert(tbl, row, cols)</PRE>
-<PRE>head(fip, fop, numRows)</PRE>
-<BR></TD></TR>
 <TR><TD>form_example_simple.py</TD><TD>2,382</TD><TD><PRE>os
 </PRE>
 <PRE>sys
@@ -483,7 +445,7 @@
 <BR></TD><TD><PRE>main()</PRE>
 <PRE>generate_sql(text_box, fname, proj_id, tbl_name, cols)</PRE>
 <BR></TD></TR>
-<TR><TD>generateTestData.py</TD><TD>5,178</TD><TD><PRE>os
+<TR><TD>generateTestData.py</TD><TD>5,870</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -565,7 +527,35 @@
 <PRE>def export_to_CSV(fldr, printHeader = True)</PRE>
 <BR></TD></TR>
 <TR><TD colspan=4><HR><H3>\aikif\environments\</h3></td></tr>
-<TR><TD>worlds.py</TD><TD>12,731</TD><TD><PRE>os
+<TR><TD>happiness.py</TD><TD>10,374</TD><TD><BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class World()</PRE>
+<PRE>def __init__(self, nme, population, tax_rate, tradition, equity)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def add_location(self, loc)</PRE>
+<PRE>def get_population(self)</PRE>
+<PRE>class WorldLocations()</PRE>
+<PRE>def __init__(self, nme, population, tax_rate, tradition, equity)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>class WorldFinder()</PRE>
+<PRE>def __init__(self, all_people)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def is_everyone_happy(self)</PRE>
+<PRE>def solve(self, max_worlds=10000, silent=False)</PRE>
+<PRE>class HappinessFactors()</PRE>
+<PRE>def __init__(self, name, type, min, max)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>class Happiness()</PRE>
+<PRE>def __init__(self, person, world)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def show_details(self)</PRE>
+<PRE>def add_factor(self, factor)</PRE>
+<PRE>def calculate(self)</PRE>
+<PRE>def _update_pref(self, min, max, cur)</PRE>
+<PRE>class Person()</PRE>
+<PRE>def __init__(self, nme, prefs)</PRE>
+<PRE>def __str__(self)</PRE>
+<BR></TD></TR>
+<TR><TD>worlds.py</TD><TD>12,733</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -590,69 +580,52 @@
 <PRE>def highlight_cell_surroundings(self, target_y, target_x)</PRE>
 <PRE>def start_all_agents(self)</PRE>
 <BR></TD></TR>
-<TR><TD colspan=4><HR><H3>\aikif\examples\</h3></td></tr>
-<TR><TD>autobackup.py</TD><TD>2,859</TD><TD><PRE>os
-</PRE>
-<PRE>shutil
+<TR><TD>AIKIF_project.py</TD><TD>2,375</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
-<PRE>math
-</PRE>
-<PRE>agents.gather.agent_filelist</PRE>
-<PRE>AIKIF_utils</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.project</PRE>
+<PRE>aikif.dataTools.cls_datatable</PRE>
 <BR></TD><TD><PRE>main()</PRE>
-<PRE>autobackup(nme, fldr, ignore_root, dest_folder, log_folder, ndx_file)</PRE>
-<PRE>backup_file(fname, dest_root_folder, base_path_ignore)</PRE>
+<PRE>project_setup(p)</PRE>
+<PRE>read_table()</PRE>
 <BR></TD></TR>
-<TR><TD>document_AIKIF.py</TD><TD>3,238</TD><TD><PRE>sys
+<TR><TD colspan=4><HR><H3>\aikif\examples\</h3></td></tr>
+<TR><TD>document_AIKIF.py</TD><TD>10,811</TD><TD><PRE>sys
 </PRE>
 <PRE>os
 </PRE>
-<PRE>cls_programs</PRE>
+<PRE>aikif.programs</PRE>
+<PRE>aikif.config</PRE>
 <PRE>aikif.lib.cls_filelist</PRE>
 <PRE>aikif.lib.cls_file</PRE>
-<BR></TD><TD><BR></TD></TR>
-<TR><TD>ex_index_mydocs.py</TD><TD>1,646</TD><TD><PRE>os
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>document_programs(fldr)</PRE>
+<PRE>get_list_of_applications()</PRE>
+<BR></TD></TR>
+<TR><TD>ex_index_mydocs.py</TD><TD>1,653</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
-<PRE>index</PRE>
-<PRE>AIKIF_utils</PRE>
-<PRE>lib.cls_filelist</PRE>
+<PRE>aikif.index</PRE>
+<PRE>aikif.config</PRE>
+<PRE>aikif.lib.cls_filelist</PRE>
 <BR></TD><TD><PRE>main()</PRE>
 <PRE>add_diary_files_to_list(lst, fldr)</PRE>
 <BR></TD></TR>
-<TR><TD>ex_project_management.py</TD><TD>5,929</TD><TD><PRE>os
+<TR><TD>finance_example.py</TD><TD>3,513</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
-<PRE>csv
-</PRE>
-<PRE>AIKIF_utils</PRE>
-<PRE>fileMapping</PRE>
-<PRE>dataTools.dataTools</PRE>
-<PRE>lib.cls_filelist</PRE>
-<PRE>add
-</PRE>
-<BR></TD><TD><PRE>main()</PRE>
-<PRE>ProcessData(subjectAreaSearch, lst, title)</PRE>
-<PRE>ShowData()</PRE>
-<PRE> show_goals()</PRE>
-<PRE> show_projects()</PRE>
-<PRE> show_tasks()</PRE>
-<BR></TD></TR>
-<TR><TD>finance_example.py</TD><TD>3,102</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<PRE>cls_log</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.mapper</PRE>
 <BR></TD><TD><PRE>main()</PRE>
 <PRE>read_bank_statements(fname)</PRE>
 <PRE>load_column_maps()</PRE>
 <PRE>load_rules()</PRE>
 <BR></TD></TR>
-<TR><TD>game_of_life_console.py</TD><TD>2,624</TD><TD><PRE>os
+<TR><TD>game_of_life_console.py</TD><TD>2,635</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -660,25 +633,58 @@
 </PRE>
 <PRE>random
 </PRE>
-<PRE>cls_grid_life
-</PRE>
-<PRE>AIKIF_utils</PRE>
+<PRE>aikif.toolbox.cls_grid_life</PRE>
+<PRE>aikif.cls_log</PRE>
 <BR></TD><TD><PRE>main()</PRE>
 <PRE>run_game_of_life(years, width, height, time_delay, silent="N")</PRE>
 <PRE>set_random_starting_grid(lfe)</PRE>
 <PRE>print_there(x, y, text)</PRE>
 <BR></TD></TR>
-<TR><TD>world_generator.py</TD><TD>2,274</TD><TD><PRE>os
+<TR><TD>happiness_solver.py</TD><TD>1,650</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>random
+</PRE>
+<PRE>aikif.environments.happiness</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>create_random_population(num=100, diversity=0.4)</PRE>
+<BR></TD></TR>
+<TR><TD>maths_fermat_brute_force.py</TD><TD>4,583</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>aikif.config</PRE>
+<PRE>aikif.cls_log</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>format_vars_as_string(x,y,z,n)</PRE>
+<PRE>format_vars_detailed(x,y,z,n)</PRE>
+<PRE>fermat_test(x, y, z, n)</PRE>
+<BR></TD></TR>
+<TR><TD>puzzle_missions_canninballs.py</TD><TD>7,822</TD><TD><PRE>sys
+</PRE>
+<PRE>os
+</PRE>
+<PRE>aikif.lib.cls_plan_search</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>decode_paths_from_results(result, m,c)</PRE>
+<PRE>show_results(result, missionaries,canniballs)</PRE>
+<PRE>boat_on_left_bank(node)</PRE>
+<PRE>parse_miss_cann(node, m, c)</PRE>
+<PRE>pick_next_boat_trip(node, m, c, frontier)</PRE>
+<PRE>solve(m,c)</PRE>
+<BR></TD></TR>
+<TR><TD>world_generator.py</TD><TD>2,117</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
 <PRE>math
 </PRE>
 <PRE>aikif.environments.worlds</PRE>
-<PRE>agents.explore.agent_explore_grid</PRE>
+<PRE>aikif.agents.explore.agent_explore_grid</PRE>
 <BR></TD><TD><PRE>main()</PRE>
 <BR></TD></TR>
-<TR><TD>gui_view_world.py</TD><TD>6,290</TD><TD><PRE>os
+<TR><TD>gui_view_world.py</TD><TD>6,293</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -700,12 +706,12 @@
 <PRE>def paint_agent_location(self, y, x)</PRE>
 <PRE>def agent_color(self, val)</PRE>
 <BR></TD></TR>
-<TR><TD>index.py</TD><TD>7,669</TD><TD><PRE>os
+<TR><TD>index.py</TD><TD>7,871</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
-<PRE>AIKIF_utils</PRE>
-<PRE>fileMapping</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.config</PRE>
 <PRE>aikif.lib.cls_filelist</PRE>
 <BR></TD><TD><PRE>index()</PRE>
 <PRE>buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y')</PRE>
@@ -717,8 +723,15 @@
 <PRE>consolidate(ipFile, opFile)</PRE>
 <PRE>DebugIndexing(curFile, curWord, curLineNums, line)</PRE>
 <BR></TD></TR>
+<TR><TD>knowledge.py</TD><TD>1,007</TD><TD><BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class Knowledge()</PRE>
+<PRE>def __init__(self, name, type='', desc='')</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>class Fact()</PRE>
+<PRE>class RawData()</PRE>
+<BR></TD></TR>
 <TR><TD colspan=4><HR><H3>\aikif\lib\</h3></td></tr>
-<TR><TD>cls_context.py</TD><TD>7,039</TD><TD><PRE>os
+<TR><TD>cls_context.py</TD><TD>6,747</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -737,7 +750,7 @@
 <PRE>def get_host_usage(self)</PRE>
 <PRE>TEST()</PRE>
 <BR></TD></TR>
-<TR><TD>cls_file.py</TD><TD>6,967</TD><TD><PRE>os
+<TR><TD>cls_file.py</TD><TD>6,829</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
@@ -767,7 +780,7 @@
 <PRE>def __init__(self, fname)</PRE>
 <PRE>def __str__(self)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_filelist.py</TD><TD>16,278</TD><TD><PRE>os
+<TR><TD>cls_filelist.py</TD><TD>16,284</TD><TD><PRE>os
 </PRE>
 <PRE>shutil
 </PRE>
@@ -817,27 +830,27 @@
 <PRE> find_best_plan(self)</PRE>
 <PRE> check_for_success(self)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_goal_friendly.py</TD><TD>1,147</TD><TD><BR></TD><TD><PRE>class GoalFriendly(Goal)</PRE>
+<TR><TD>cls_goal_friendly.py</TD><TD>1,157</TD><TD><BR></TD><TD><PRE>class GoalFriendly(Goal)</PRE>
 <PRE>def __init__(self, acceptable_damage=10)</PRE>
 <PRE>def check_for_success(self)</PRE>
 <PRE>def run_plan(self, strategy)</PRE>
 <PRE>def find_best_plan(self)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_goal_money.py</TD><TD>1,609</TD><TD><BR></TD><TD><PRE>class GoalMoney(Goal)</PRE>
+<TR><TD>cls_goal_money.py</TD><TD>1,619</TD><TD><BR></TD><TD><PRE>class GoalMoney(Goal)</PRE>
 <PRE>def __init__(self, maximise=True, current_val=0, target_val=0)</PRE>
 <PRE>def check_for_success(self)</PRE>
 <PRE>def run_plan(self, strategy)</PRE>
 <PRE>def find_best_plan(self)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_goal_time.py</TD><TD>1,596</TD><TD><BR></TD><TD><PRE>class GoalTime(Goal)</PRE>
+<TR><TD>cls_goal_time.py</TD><TD>1,606</TD><TD><BR></TD><TD><PRE>class GoalTime(Goal)</PRE>
 <PRE>def __init__(self, maximise=True, current_val=0, target_val=0)</PRE>
 <PRE>def check_for_success(self)</PRE>
 <PRE>def run_plan(self, strategy)</PRE>
 <PRE>def find_best_plan(self)</PRE>
 <BR></TD></TR>
-<TR><TD>cls_plan.py</TD><TD>5,746</TD><TD><PRE>datetime
+<TR><TD>cls_plan_BDI.py</TD><TD>5,671</TD><TD><PRE>datetime
 </PRE>
-<BR></TD><TD><PRE>class Plan(object)</PRE>
+<BR></TD><TD><PRE>class Plan_BDI(object)</PRE>
 <PRE>def __init__(self, name, dependency)</PRE>
 <PRE>def __str__(self)</PRE>
 <PRE>def get_name(self)</PRE>
@@ -859,6 +872,669 @@
 <PRE>class Intentions(Thoughts)</PRE>
 <PRE>def __init__(self, parent_plan)</PRE>
 <PRE>TEST()</PRE>
+<BR></TD></TR>
+<TR><TD>cls_plan_search.py</TD><TD>6,233</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>heapq
+</PRE>
+<PRE>queue
+</PRE>
+<PRE>aikif.toolbox.cls_grid
+</PRE>
+<PRE>aikif.toolbox.data_structures</PRE>
+<PRE>aikif.config</PRE>
+<PRE>aikif.cls_log</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class Problem(object)</PRE>
+<PRE>def __init__(self, goal, start, actions, name, description)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def path_cost(self)</PRE>
+<PRE>def goal_test(self, state_to_check)</PRE>
+<PRE>def get_successors(self)</PRE>
+<PRE>class Plan(object)</PRE>
+<PRE>def __init__(self, nme, environ,  target, start)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>class PlanSearchAStar(Plan)</PRE>
+<PRE>def __init__(self, nme, environ, target, start)</PRE>
+<PRE>def heuristic_cost(self, start, target)</PRE>
+<PRE>def get_min_f_score(self)</PRE>
+<PRE>def search(self)</PRE>
+<PRE>list_2_str(lst)</PRE>
+<PRE>find_path_BFS(Graph,n,m)</PRE>
+<BR></TD></TR>
+<TR><TD>mapper.py</TD><TD>8,036</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>aikif.agents.agent</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.config</PRE>
+<PRE>aikif.dataTools.cls_datatable</PRE>
+<BR></TD><TD><PRE>class Mapper</PRE>
+<PRE>def __init__(self)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def load_rules(self)</PRE>
+<PRE>def save_rules(self)</PRE>
+<PRE>def process_data(self, type, raw_data)</PRE>
+<PRE>def process_rule(self, m, dict, type)</PRE>
+<PRE>def format_raw_data(self, type, raw_data)</PRE>
+<PRE>def parse_text_to_dict(self, txt)</PRE>
+<PRE>def parse_file_to_dict(self, fname)</PRE>
+<PRE>def generate_map_from_dataset(self, l_dataset)</PRE>
+<PRE>def create_map_from_file(self, data_filename)</PRE>
+<PRE>List2String(l)</PRE>
+<PRE>class MapRule</PRE>
+<PRE>def __init__(self, raw_line)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def format_for_file_output(self)</PRE>
+<PRE>class MapColumns</PRE>
+<PRE>def __init__(self, col_file)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def load_rules(self)</PRE>
+<PRE>TEST()</PRE>
+<BR></TD></TR>
+<TR><TD colspan=4><HR><H3>\aikif\ontology\</h3></td></tr>
+<TR><TD>createMindOntology.py</TD><TD>6,427</TD><TD><PRE>urllib.request 
+</PRE>
+<PRE>csv
+</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>ExtractPageLinks(url, searchText)</PRE>
+<PRE>ExtractCategoryLinks(txt, divID)</PRE>
+<PRE>GetWebPage(url)</PRE>
+<PRE>ExtractContent(rawText, divID)</PRE>
+<PRE>SaveAsTXT(lst, fname)</PRE>
+<PRE> formatListItemText(itm)</PRE>
+<PRE>SaveAsCSV(lst, fname)</PRE>
+<PRE> formatListItemCSV(itm)</PRE>
+<PRE>f StripLineBreaks(txt)</PRE>
+<PRE>SaveAsXML(lst, fname)</PRE>
+<PRE> formatListItemXML(itm)</PRE>
+<PRE>f FixTextForXML(txt)</PRE>
+<PRE>f StripHexChars(txt)</PRE>
+<PRE>SaveAsOWL(lst, fname)</PRE>
+<PRE> formatListItemOWL(itm)</PRE>
+<BR></TD></TR>
+<TR><TD>cyc_extract.py</TD><TD>2,873</TD><TD><PRE>rdflib
+</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>load_graph_from_rdf(fname)</PRE>
+<PRE>show_graph_summary(g)</PRE>
+<PRE>export(g, csv_fname)</PRE>
+<PRE>get_string_from_rdf(src)</PRE>
+<PRE>create_sample_file(ip, op, num_lines)</PRE>
+<BR></TD></TR>
+<TR><TD>read_opencyc.py</TD><TD>3,279</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>redis
+</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>load_data(fname)</PRE>
+<PRE>parse_n3(row, src='csv')</PRE>
+<PRE>create_html_summary()</PRE>
+<PRE>escape_html(s)</PRE>
+<PRE>summarise_file_as_html(fname)</PRE>
+<BR></TD></TR>
+<TR><TD>read_wordnet.py</TD><TD>2,205</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>Lookup(txt, wrdList)</PRE>
+<PRE>GetWordForIndex(ndxToFind, lst)</PRE>
+<PRE>PrintLineForIndex(i, wrdList)</PRE>
+<PRE>ParseLine(line)</PRE>
+<BR></TD></TR>
+<TR><TD>review_ontology.py</TD><TD>23,650</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>ShowStatistics()</PRE>
+<PRE>ShowConclusion()</PRE>
+<PRE>ShowData()</PRE>
+<PRE>SaveHTML_Review(htmlFile)</PRE>
+<PRE>SaveAsMarkup(htmlFile)</PRE>
+<PRE>BuildHTMLHeader(title, linefeed='\n', border='1')</PRE>
+<PRE>CreateCssString(fontFamily, baseFontSize, linefeed='\n')</PRE>
+<PRE>deleteFile(f)</PRE>
+<PRE>AppendToFile(fname, txt)</PRE>
+<PRE>GetFileSize(localFile)</PRE>
+<PRE>GetTotalNumFiles(localFile)</PRE>
+<PRE>GetTotalFileSizesForFolder(localFile)</PRE>
+<PRE>DoesFileExist(localFile)</PRE>
+<PRE>TestLocalFile(localFile)</PRE>
+<PRE>SaveHTML_Review_as_table(htmlFile)</PRE>
+<PRE>SaveHTML_File_Samples(htmlFile)</PRE>
+<PRE>GetSampleData(fname)</PRE>
+<BR></TD></TR>
+<TR><TD>programs.py</TD><TD>6,106</TD><TD><PRE>os
+</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.config</PRE>
+<PRE>aikif.cls_file_mapping</PRE>
+<PRE>aikif.lib.cls_filelist</PRE>
+<PRE>aikif.lib.cls_file</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class Programs(object)</PRE>
+<PRE>def __init__(self, name, fldr)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def list_all_python_programs(self)</PRE>
+<PRE>def add(self, nme, desc)</PRE>
+<PRE>def comment(self, nme, desc)</PRE>
+<PRE>def list(self)</PRE>
+<PRE>def save(self, fname='')</PRE>
+<PRE>def get_file_info_line(self, fname, delim)</PRE>
+<PRE>def get_file_info_web(self, fname, delim)</PRE>
+<PRE>def collect_program_info(self, fname)</PRE>
+<BR></TD></TR>
+<TR><TD>project.py</TD><TD>3,501</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class Project()</PRE>
+<PRE>def __init__(self, name, type='', fldr=None , desc='')</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def add_src(self, nme, location)</PRE>
+<PRE>def add_detail(self, type, detail)</PRE>
+<PRE>def log_table(self, datatable)</PRE>
+<PRE>def record(self, tbl, type, col_data)</PRE>
+<PRE>def build_report(self, op_file, type='md')</PRE>
+<BR></TD></TR>
+<TR><TD>run.py</TD><TD>1,553</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>configure()</PRE>
+<PRE>ask_for_folder()</PRE>
+<PRE>get_local_config()</PRE>
+<PRE>start_aikif()</PRE>
+<BR></TD></TR>
+<TR><TD>run_agents.py</TD><TD>2,654</TD><TD><PRE>sys, os
+</PRE>
+<PRE>os, sys
+</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.cls_file_mapping</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>get_agent_list()</PRE>
+<PRE>verify_agents()</PRE>
+<PRE>run(scriptFile, logUsage='Y')</PRE>
+<PRE>is_agent_scheduled_to_start(agt)</PRE>
+<BR></TD></TR>
+<TR><TD>search.py</TD><TD>1,927</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>aikif.cls_file_mapping</PRE>
+<PRE>aikif.config</PRE>
+<PRE>argparse
+</PRE>
+<BR></TD><TD><PRE>search(search_string)</PRE>
+<BR></TD></TR>
+<TR><TD>Toolbox.py</TD><TD>3,284</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>aikif.cls_log</PRE>
+<PRE>aikif.config</PRE>
+<BR></TD><TD><PRE>class Toolbox()</PRE>
+<PRE>def __init__(self, fldr=None, lst=None)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def add(self, tool)</PRE>
+<PRE>def list(self)</PRE>
+<PRE>def tool_as_string(self, tool)</PRE>
+<PRE>def save(self, fname='')</PRE>
+<PRE>def verify(self, tool)</PRE>
+<PRE>def run(self, tool, args, silent='Y')</PRE>
+<BR></TD></TR>
+<TR><TD colspan=4><HR><H3>\aikif\toolbox\</h3></td></tr>
+<TR><TD>algebra.py</TD><TD>766</TD><TD><PRE>math
+</PRE>
+<PRE>parser
+</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>evalFunction(formula, n, verbose = 'verbose')</PRE>
+<BR></TD></TR>
+<TR><TD>audio_tools.py</TD><TD>2,793</TD><TD><PRE>sys
+</PRE>
+<PRE>os
+</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>get_audio_metadata(fname)</PRE>
+<PRE>get_audio_metadata_old(fname)</PRE>
+<BR></TD></TR>
+<TR><TD>cls_grid.py</TD><TD>8,897</TD><TD><PRE>random
+</PRE>
+<BR></TD><TD><PRE>class Grid</PRE>
+<PRE>def __init__(self, grid_height, grid_width, pieces, spacing=6)</PRE>
+<PRE>def reset(self)</PRE>
+<PRE>def clear(self)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def save(self, fname)</PRE>
+<PRE>def load(self, fname)</PRE>
+<PRE>def get_grid_height(self)</PRE>
+<PRE>def get_grid_width(self)</PRE>
+<PRE>def is_empty(self, row, col)</PRE>
+<PRE>def extract_col(self, col)</PRE>
+<PRE>def extract_row(self,  row)</PRE>
+<PRE>def replace_row(self, line, ndx)</PRE>
+<PRE>def replace_col(self, line, ndx)</PRE>
+<PRE>def reverse_line(self, line)</PRE>
+<PRE>def new_tile(self, num=1)</PRE>
+<PRE>def count_blank_positions(self)</PRE>
+<PRE>def count_filled_positions(self)</PRE>
+<PRE>def find_random_blank_cell(self)</PRE>
+<PRE>def set_tile(self, row, col, value)</PRE>
+<PRE>def get_tile(self, row, col)</PRE>
+<PRE>def set_empty(self, row, col)</PRE>
+<PRE>def set_full(self, row, col)</PRE>
+<PRE>def four_neighbors(self, row, col)</PRE>
+<PRE>def eight_neighbors(self, row, col)</PRE>
+<PRE>def get_index(self, point, cell_size)</PRE>
+<PRE>def replace_grid(self, updated_grid)</PRE>
+<PRE>def find_safe_starting_point(self)</PRE>
+<BR></TD></TR>
+<TR><TD>cls_grid_life.py</TD><TD>5,171</TD><TD><PRE>os
+</PRE>
+<PRE>random
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>lib_folder
+</PRE>
+<PRE>cls_grid</PRE>
+<PRE>cls_grid_life
+</PRE>
+<BR></TD><TD><PRE>class GameOfLife(mod_grid.Grid)</PRE>
+<PRE>def update_gol(self)</PRE>
+<PRE>def update_cell(self, row, col)</PRE>
+<PRE>class GameOfLifePatterns(object)</PRE>
+<PRE>def __init__(self, num_patterns, max_x=77, max_y=21)</PRE>
+<PRE>def get_patterns(self)</PRE>
+<PRE>def bitmap_pattern_to_list(self, bmp_pat)</PRE>
+<PRE>def random_offset(self, lst)</PRE>
+<PRE>block()</PRE>
+<PRE>beehive()</PRE>
+<PRE>loaf()</PRE>
+<PRE>boat()</PRE>
+<PRE>blinker()</PRE>
+<PRE>toad()</PRE>
+<PRE>beacon()</PRE>
+<PRE>glider()</PRE>
+<PRE>_BLANK()</PRE>
+<BR></TD></TR>
+<TR><TD>crypt_utils.py</TD><TD>4,282</TD><TD><PRE>random
+</PRE>
+<PRE>math
+</PRE>
+<PRE>binascii
+</PRE>
+<PRE>string
+</PRE>
+<PRE>sys
+</PRE>
+<BR></TD><TD><PRE>solve(encrypted_text)</PRE>
+<PRE>check_for_words(txt)</PRE>
+<PRE>test_base64(msg)</PRE>
+<PRE>test_caeser(txt)</PRE>
+<PRE>test_crypto(msg)</PRE>
+<PRE>encode64(visible_text)</PRE>
+<PRE>decode64(poorly_hidden_text)</PRE>
+<PRE>reverse(txt)</PRE>
+<PRE>reverse_slow(txt)</PRE>
+<PRE>jumble_words(txt)</PRE>
+<PRE>caesar(msg, shift)</PRE>
+<PRE>caeser2(msg, shift)</PRE>
+<PRE>encrypt_AES(key, plain_text, IV456)</PRE>
+<PRE>decrypt_AEX(key, ciphertext, IV456)</PRE>
+<PRE>txt2bin(txt)</PRE>
+<PRE>bin2txt(bin)</PRE>
+<PRE>test_full_range()</PRE>
+<PRE>pprint_binary(txt)</PRE>
+<BR></TD></TR>
+<TR><TD>data_structures.py</TD><TD>4,633</TD><TD><PRE>data_structures</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>class Node</PRE>
+<PRE>def __init__(self, name,  data=None)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def __eq__(self, other)</PRE>
+<PRE>def add_link(self, node)</PRE>
+<PRE>def get_children(self)</PRE>
+<PRE>def get_parent(self)</PRE>
+<PRE>class Graph(object)</PRE>
+<PRE>def __init__(self, graph)</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def get_adjacency_matrix(self, show_in_console=False)</PRE>
+<BR></TD></TR>
+<TR><TD>game_board_utils.py</TD><TD>1,752</TD><TD><BR></TD><TD><PRE>build_board_2048()</PRE>
+<PRE>build_board_checkers()</PRE>
+<PRE>TEST()</PRE>
+<BR></TD></TR>
+<TR><TD>image_tools.py</TD><TD>13,958</TD><TD><PRE>sys
+</PRE>
+<PRE>os
+</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>get_exif_data(image)</PRE>
+<PRE>_get_if_exist(data, key)</PRE>
+<PRE>_convert_to_degress(value)</PRE>
+<PRE>get_lat_lon(exif_data)</PRE>
+<PRE>resize(fname, basewidth, opFilename)</PRE>
+<PRE>print_stats(img)</PRE>
+<PRE>print_exif_data(img)</PRE>
+<PRE>print_all_metadata(fname)</PRE>
+<PRE>metadata_header()</PRE>
+<PRE>get_metadata_as_dict(fname)</PRE>
+<PRE>get_metadata_as_csv(fname)</PRE>
+<PRE>List2String(l, delim)</PRE>
+<PRE>Dict2String(d)</PRE>
+<PRE>is_number(s)</PRE>
+<PRE>auto_contrast(img, opFile)</PRE>
+<PRE>add_text_to_image(fname, txt, opFilename)</PRE>
+<PRE>add_crosshair_to_image(fname, opFilename)</PRE>
+<PRE>filter_contour(imageFile, opFile)</PRE>
+<PRE>detect_face(fname, opFile)</PRE>
+<PRE>check_image_duplicates(file_list)</PRE>
+<PRE>hamming_distance(s1, s2)</PRE>
+<PRE>get_img_hash(image, hash_size = 8)</PRE>
+<PRE>load_image(fname)</PRE>
+<PRE>dump_img(fname)</PRE>
+<BR></TD></TR>
+<TR><TD>maths_ml_algorithms.py</TD><TD>2,014</TD><TD><PRE>math
+</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>ml_entropy(lst)</PRE>
+<PRE>ml_weighted_average(lst)</PRE>
+<PRE>ml_information_gain(lst)</PRE>
+<PRE>ml_gini_index(lst)</PRE>
+<PRE>ml_weighted_average(lst)</PRE>
+<PRE>ml_support(lst)</PRE>
+<PRE>ml_confidence(lst)</PRE>
+<PRE>ml_lift(lst)</PRE>
+<PRE>ml_apriori(lst)</PRE>
+<PRE>ml_process_mining_alpha(lst)</PRE>
+<BR></TD></TR>
+<TR><TD>solve_knapsack.py</TD><TD>3,733</TD><TD><PRE>sys
+</PRE>
+<BR></TD><TD><PRE>describe_problem(capacity, items)</PRE>
+<PRE>solve_greedy_trivial(capacity, items)</PRE>
+<PRE>solve_smallest_items_first(capacity, items)</PRE>
+<PRE>solve_expensive_items_first(capacity, items)</PRE>
+<PRE>solve_value_density(capacity, items)</PRE>
+<PRE>main()</PRE>
+<BR></TD></TR>
+<TR><TD>test_tool.py</TD><TD>377</TD><TD><BR></TD><TD><PRE>test_function()</PRE>
+<PRE>sum_even_numbers(numbers)</PRE>
+<PRE>get_min_even_num(numbers)</PRE>
+<BR></TD></TR>
+<TR><TD>tools.py</TD><TD>3,114</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>time
+</PRE>
+<PRE>aikif.toolbox.Toolbox</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>run_multiple(t1, tool, numIterations, silent='Y')</PRE>
+<BR></TD></TR>
+<TR><TD colspan=4><HR><H3>\aikif\web_app\</h3></td></tr>
+<TR><TD>page_about.py</TD><TD>552</TD><TD><PRE>sys, os
+</PRE>
+<PRE>aikif.web_app.web_utils</PRE>
+<BR></TD><TD><PRE>get_page(dataFile='')</PRE>
+<BR></TD></TR>
+<TR><TD>page_agents.py</TD><TD>810</TD><TD><PRE>sys
+</PRE>
+<PRE>aikif.web_app.web_utils</PRE>
+<PRE>aikif.run_agents</PRE>
+<BR></TD><TD><PRE>get_page()</PRE>
+<PRE>get_agent_list()</PRE>
+<BR></TD></TR>
+<TR><TD>page_data.py</TD><TD>2,197</TD><TD><PRE>sys, os
+</PRE>
+<PRE>aikif.web_app.web_utils</PRE>
+<PRE>aikif.cls_file_mapping</PRE>
+<BR></TD><TD><PRE>get_page(dataFile='')</PRE>
+<PRE>showDataFile(fname)</PRE>
+<PRE>get_aikif_structure()</PRE>
+<PRE>get_list_data_files()</PRE>
+<PRE>get_ontology()</PRE>
+<BR></TD></TR>
+<TR><TD>page_programs.py</TD><TD>3,609</TD><TD><PRE>sys, os
+</PRE>
+<PRE>aikif.web_app.web_utils</PRE>
+<BR></TD><TD><PRE>get_page()</PRE>
+<PRE>show_program_list()</PRE>
+<PRE>rebuild()</PRE>
+<PRE>get_program_list()</PRE>
+<PRE>get_subfolder(txt)</PRE>
+<PRE>format_file_table_header(lstCols)</PRE>
+<PRE>format_file_to_html_row(fname, lstCols)</PRE>
+<PRE>get_functions(fname)</PRE>
+<PRE>strip_text_after_string(txt, junk)</PRE>
+<PRE>get_imports(fname)</PRE>
+<BR></TD></TR>
+<TR><TD>page_search.py</TD><TD>2,671</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>aikif.web_app.web_utils</PRE>
+<BR></TD><TD><PRE>get_page(search_text)</PRE>
+<PRE>search_aikif(txt, formatHTML=True)</PRE>
+<PRE>format_result(file, line, line_num, txt)</PRE>
+<BR></TD></TR>
+<TR><TD>web_aikif.py</TD><TD>6,894</TD><TD><PRE>sys
+</PRE>
+<PRE>os
+</PRE>
+<PRE>aikif.web_app.web_utils</PRE>
+<PRE>flask
+</PRE>
+<BR></TD><TD><PRE>start_server()</PRE>
+<PRE>page_home()</PRE>
+<PRE>search_post()</PRE>
+<PRE>page_todo()</PRE>
+<PRE>page_data()</PRE>
+<PRE>page_data_show(dataFile)</PRE>
+<PRE>page_agents()</PRE>
+<PRE>page_programs()</PRE>
+<PRE>page_programs_rebuild()</PRE>
+<PRE>page_about()</PRE>
+<PRE>page_error(calling_page)</PRE>
+<PRE>aikif_web_menu(cur='')</PRE>
+<PRE>get_header(pge='')</PRE>
+<PRE>get_footer(pge='')</PRE>
+<PRE>escape_html(s)</PRE>
+<PRE>format_list_as_html_table_row(lst)</PRE>
+<PRE>format_csv_to_html(csvFile, opHTML)</PRE>
+<PRE>DisplayImagesAsHTML(imageList)</PRE>
+<BR></TD></TR>
+<TR><TD>web_utils.py</TD><TD>6,467</TD><TD><PRE>csv
+</PRE>
+<PRE>os
+</PRE>
+<PRE>glob
+</PRE>
+<PRE>fnmatch
+</PRE>
+<PRE>sys
+</PRE>
+<BR></TD><TD><PRE>list2html(lst)</PRE>
+<PRE>GetFileList(rootPath, lstXtn, shortNameOnly='Y')</PRE>
+<PRE>filelist2html_div(lst, fldr)</PRE>
+<PRE>build_search_form()</PRE>
+<PRE>filelist2html(lst, fldr, hasHeader='N')</PRE>
+<PRE>link_file(f, fldr)</PRE>
+<PRE>dict_to_htmlrow(d)</PRE>
+<PRE>read_csv_to_html_table(csvFile, hasHeader='N')</PRE>
+<PRE>read_csv_to_html_table_using_CSV_module_OLD(csvFile, hasHeader='N')</PRE>
+<PRE>read_csv_to_html_list(csvFile)</PRE>
+<BR></TD></TR>
+<TR><TD>AIKIF_create.py</TD><TD>11,051</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>csv
+</PRE>
+<PRE>as_util_data</PRE>
+<PRE>AIKIF_utils</PRE>
+<BR></TD><TD><PRE>wipeSampleFiles()</PRE>
+<PRE>createSampleFile(fname, header)</PRE>
+<PRE>addSampleData(fname, content)</PRE>
+<BR></TD></TR>
+<TR><TD>AIKIF_utils.py</TD><TD>7,558</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>csv
+</PRE>
+<PRE>time
+</PRE>
+<PRE>getpass
+</PRE>
+<PRE>socket
+</PRE>
+<PRE>lib_data</PRE>
+<PRE>lib_file</PRE>
+<BR></TD><TD><PRE>build_AIKIF_structure()</PRE>
+<PRE>print_no_newline(string)</PRE>
+<PRE>countLinesInFile(fname)</PRE>
+<PRE>showColumnStructures(AIKIF_FileList)</PRE>
+<PRE>debugPrintFileStructures(AIKIF_FileList)</PRE>
+<PRE>printFileList(l)</PRE>
+<PRE>getFileList(l)</PRE>
+<PRE>SaveFileList(fl, filename)</PRE>
+<PRE>GetElementsAsString(lst, delim, quote='"')</PRE>
+<PRE>SaveFileDataToFile(lst, filename, append=False)</PRE>
+<PRE>ensure_dir(f)</PRE>
+<PRE>List2String(l)</PRE>
+<PRE>Dict2String(d)</PRE>
+<PRE>TodayAsString()</PRE>
+<PRE>force_to_string(unknown)</PRE>
+<PRE>log(fname, txt, prg='')</PRE>
+<PRE>GetUserName()</PRE>
+<PRE>GetHostName()</PRE>
+<PRE>LogDataSource(src, prg='')</PRE>
+<PRE>LogProcess(process, prg='')</PRE>
+<PRE>LogCommand(cmd, prg='')</PRE>
+<PRE>LogResult(res, prg='')</PRE>
+<BR></TD></TR>
+<TR><TD>addRawData.py</TD><TD>2,428</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>csv
+</PRE>
+<PRE>as_util_data</PRE>
+<PRE>AIKIF_utils</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>addData(src, method, rawString)</PRE>
+<PRE>parseRawString(rawString)</PRE>
+<BR></TD></TR>
+<TR><TD>autobackup.py</TD><TD>2,859</TD><TD><PRE>os
+</PRE>
+<PRE>shutil
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>math
+</PRE>
+<PRE>agents.gather.agent_filelist</PRE>
+<PRE>AIKIF_utils</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>autobackup(nme, fldr, ignore_root, dest_folder, log_folder, ndx_file)</PRE>
+<PRE>backup_file(fname, dest_root_folder, base_path_ignore)</PRE>
+<BR></TD></TR>
+<TR><TD>cls_collect.py</TD><TD>397</TD><TD><BR></TD><TD><PRE>class clsCollect(object)</PRE>
+<PRE> __init__(self, name=None,  fldr=None)</PRE>
+<PRE> log(self, msg)</PRE>
+<BR></TD></TR>
+<TR><TD>cls_collect_files.py</TD><TD>1,424</TD><TD><PRE>cls_collect
+</PRE>
+<PRE>os
+</PRE>
+<PRE>fnmatch
+</PRE>
+<BR></TD><TD><PRE>class clsCollectFiles(cls_collect.clsCollect)</PRE>
+<PRE> __init__(self, fldr=None, pattern="*.*")</PRE>
+<PRE> collect_filelist(self)</PRE>
+<PRE> get_tot_fldrs(self)</PRE>
+<PRE> get_tot_files(self)</PRE>
+<PRE> get_tot_bytes(self)</PRE>
+<PRE> get_filelist(self)</PRE>
+<PRE> get_folders(self)</PRE>
+<BR></TD></TR>
+<TR><TD>create_word_lists.py</TD><TD>5,975</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>xml
+</PRE>
+<PRE>lib_data</PRE>
+<PRE>lib_file</PRE>
+<PRE>xml.etree.ElementTree</PRE>
+<BR></TD><TD><PRE>SaveListFirstWordOnly(msg, ipfile, opFile)</PRE>
+<PRE>ExtractListOfWords()</PRE>
+<PRE>ExtractCat(fname, opFile)</PRE>
+<PRE>GetOntologyExtract(fname, txt)</PRE>
+<BR></TD></TR>
+<TR><TD>dataTools.py</TD><TD>13,352</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>csv
+</PRE>
+<PRE>string
+</PRE>
+<BR></TD><TD><PRE>TEST()</PRE>
+<PRE>delete_file(f)</PRE>
+<PRE>csv_from_excel(excel_file, pth)</PRE>
+<PRE>DownloadFile(url, fname)</PRE>
+<PRE>addSampleData(fname, content)</PRE>
+<PRE>CreateRandomCSVFile(fname)</PRE>
+<PRE>CreateRandomIndentedCSVFile(fname)</PRE>
+<PRE>IntentifyColumns(fname)</PRE>
+<PRE>DataSet(fname)</PRE>
+<PRE>MapTo(opFile)</PRE>
+<PRE>GetColumnList(csvFile)</PRE>
+<PRE>GetCountUniqueValues(fname, colNum, colText, topN_values, opFile)</PRE>
+<PRE>AnalyseCSV_File(datafile, opFolder)</PRE>
+<PRE>split_CSV_by_Column_names(inputfilename)</PRE>
+<PRE>split_CSV_by_Column_Values(ipFile, colName)</PRE>
+<PRE>ExtractTable(fname, opFile, opCols, startRow=1, startCol=1, endRow=5, endCol=5)</PRE>
+<PRE>AutoFillCSV(fname, opFile, colList, autoFillCols)</PRE>
+<PRE>RemoveBlankRecs(fname, opFile, masterCol)</PRE>
+<PRE>GenerateSQL(csvFile, tblName, opFile, headerRow=1)</PRE>
+<PRE>clean_column_heading(txt)</PRE>
+<PRE>GenerateSQL_CreateTable(tbl, cols)</PRE>
+<PRE>GenerateSQL_Insert(tbl, row, cols)</PRE>
+<PRE>head(fip, fop, numRows)</PRE>
+<BR></TD></TR>
+<TR><TD>ex_project_management.py</TD><TD>5,929</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>csv
+</PRE>
+<PRE>AIKIF_utils</PRE>
+<PRE>fileMapping</PRE>
+<PRE>dataTools.dataTools</PRE>
+<PRE>lib.cls_filelist</PRE>
+<PRE>add
+</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>ProcessData(subjectAreaSearch, lst, title)</PRE>
+<PRE>ShowData()</PRE>
+<PRE> show_goals()</PRE>
+<PRE> show_projects()</PRE>
+<PRE> show_tasks()</PRE>
 <BR></TD></TR>
 <TR><TD>loadCountry_Gdeltproject.py</TD><TD>2,417</TD><TD><PRE>os
 </PRE>
@@ -946,145 +1622,52 @@
 <PRE>MapFilesToOntology(fname, itm)</PRE>
 <PRE>LoadAustPostcodeFile(ipFile, opFile)</PRE>
 <BR></TD></TR>
-<TR><TD>mapper.py</TD><TD>7,992</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<PRE>aikif.agents.agent</PRE>
-<PRE>cls_log</PRE>
-<PRE>config</PRE>
-<PRE>aikif.dataTools.cls_datatable</PRE>
-<BR></TD><TD><PRE>class Mapper</PRE>
-<PRE>def __init__(self)</PRE>
-<PRE>def __str__(self)</PRE>
-<PRE>def load_rules(self)</PRE>
-<PRE>def save_rules(self)</PRE>
-<PRE>def process_data(self, type, raw_data)</PRE>
-<PRE>def process_rule(self, m, dict, type)</PRE>
-<PRE>def format_raw_data(self, type, raw_data)</PRE>
-<PRE>def parse_text_to_dict(self, txt)</PRE>
-<PRE>def parse_file_to_dict(self, fname)</PRE>
-<PRE>def generate_map_from_dataset(self, l_dataset)</PRE>
-<PRE>def create_map_from_file(self, data_filename)</PRE>
-<PRE>List2String(l)</PRE>
-<PRE>class MapRule</PRE>
-<PRE>def __init__(self, raw_line)</PRE>
-<PRE>def __str__(self)</PRE>
-<PRE>def format_for_file_output(self)</PRE>
-<PRE>class MapColumns</PRE>
-<PRE>def __init__(self, col_file)</PRE>
-<PRE>def __str__(self)</PRE>
-<PRE>def load_rules(self)</PRE>
-<PRE>TEST()</PRE>
-<BR></TD></TR>
-<TR><TD colspan=4><HR><H3>\aikif\ontology\</h3></td></tr>
-<TR><TD>createMindOntology.py</TD><TD>6,427</TD><TD><PRE>urllib.request 
-</PRE>
-<PRE>csv
-</PRE>
-<BR></TD><TD><PRE>main()</PRE>
-<PRE>ExtractPageLinks(url, searchText)</PRE>
-<PRE>ExtractCategoryLinks(txt, divID)</PRE>
-<PRE>GetWebPage(url)</PRE>
-<PRE>ExtractContent(rawText, divID)</PRE>
-<PRE>SaveAsTXT(lst, fname)</PRE>
-<PRE> formatListItemText(itm)</PRE>
-<PRE>SaveAsCSV(lst, fname)</PRE>
-<PRE> formatListItemCSV(itm)</PRE>
-<PRE>f StripLineBreaks(txt)</PRE>
-<PRE>SaveAsXML(lst, fname)</PRE>
-<PRE> formatListItemXML(itm)</PRE>
-<PRE>f FixTextForXML(txt)</PRE>
-<PRE>f StripHexChars(txt)</PRE>
-<PRE>SaveAsOWL(lst, fname)</PRE>
-<PRE> formatListItemOWL(itm)</PRE>
-<BR></TD></TR>
-<TR><TD>cyc_extract.py</TD><TD>2,873</TD><TD><PRE>rdflib
-</PRE>
-<BR></TD><TD><PRE>main()</PRE>
-<PRE>load_graph_from_rdf(fname)</PRE>
-<PRE>show_graph_summary(g)</PRE>
-<PRE>export(g, csv_fname)</PRE>
-<PRE>get_string_from_rdf(src)</PRE>
-<PRE>create_sample_file(ip, op, num_lines)</PRE>
-<BR></TD></TR>
-<TR><TD>read_opencyc.py</TD><TD>3,279</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<PRE>redis
-</PRE>
-<BR></TD><TD><PRE>main()</PRE>
-<PRE>load_data(fname)</PRE>
-<PRE>parse_n3(row, src='csv')</PRE>
-<PRE>create_html_summary()</PRE>
-<PRE>escape_html(s)</PRE>
-<PRE>summarise_file_as_html(fname)</PRE>
-<BR></TD></TR>
-<TR><TD>read_wordnet.py</TD><TD>2,205</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<BR></TD><TD><PRE>main()</PRE>
-<PRE>Lookup(txt, wrdList)</PRE>
-<PRE>GetWordForIndex(ndxToFind, lst)</PRE>
-<PRE>PrintLineForIndex(i, wrdList)</PRE>
-<PRE>ParseLine(line)</PRE>
-<BR></TD></TR>
-<TR><TD>review_ontology.py</TD><TD>22,952</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<BR></TD><TD><PRE>main()</PRE>
-<PRE>ShowStatistics()</PRE>
-<PRE>ShowConclusion()</PRE>
-<PRE>ShowData()</PRE>
-<PRE>SaveHTML_Review(htmlFile)</PRE>
-<PRE>SaveAsMarkup(htmlFile)</PRE>
-<PRE>BuildHTMLHeader(title, linefeed='\n', border='1')</PRE>
-<PRE>CreateCssString(fontFamily, baseFontSize, linefeed='\n')</PRE>
-<PRE>deleteFile(f)</PRE>
-<PRE>AppendToFile(fname, txt)</PRE>
-<PRE>GetFileSize(localFile)</PRE>
-<PRE>GetTotalNumFiles(localFile)</PRE>
-<PRE>GetTotalFileSizesForFolder(localFile)</PRE>
-<PRE>DoesFileExist(localFile)</PRE>
-<PRE>TestLocalFile(localFile)</PRE>
-<PRE>SaveHTML_Review_as_table(htmlFile)</PRE>
-<PRE>SaveHTML_File_Samples(htmlFile)</PRE>
-<PRE>GetSampleData(fname)</PRE>
-<BR></TD></TR>
-<TR><TD>processRawData.py</TD><TD>1,405</TD><TD><PRE>subprocess
+<TR><TD>processRawData.py</TD><TD>1,413</TD><TD><PRE>subprocess
 </PRE>
 <PRE>sys
 </PRE>
 <PRE>AIKIF_utils</PRE>
-<PRE>fileMapping</PRE>
+<PRE>cls_file_mapping</PRE>
 <BR></TD><TD><PRE>main()</PRE>
 <PRE>run(scriptFile, logUsage='Y')</PRE>
 <BR></TD></TR>
-<TR><TD>run_agents.py</TD><TD>2,626</TD><TD><PRE>sys, os
-</PRE>
-<PRE>os, sys
-</PRE>
-<PRE>aikif.AIKIF_utils</PRE>
-<PRE>aikif.fileMapping</PRE>
-<BR></TD><TD><PRE>main()</PRE>
-<PRE>get_agent_list()</PRE>
-<PRE>verify_agents()</PRE>
-<PRE>run(scriptFile, logUsage='Y')</PRE>
-<PRE>is_agent_scheduled_to_start(agt)</PRE>
-<BR></TD></TR>
-<TR><TD>search.py</TD><TD>2,035</TD><TD><PRE>os
+<TR><TD>puzzle_N_queens.py</TD><TD>471</TD><TD><BR></TD><TD><BR></TD></TR>
+<TR><TD>puzzle_countdown.py</TD><TD>4,633</TD><TD><PRE>os
 </PRE>
 <PRE>sys
 </PRE>
-<PRE>AIKIF_utils</PRE>
-<PRE>fileMapping</PRE>
-<PRE>config</PRE>
-<PRE>argparse
+<PRE>math
 </PRE>
-<BR></TD><TD><PRE>search(search_string)</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>solve(target, big_numbers, small_numbers)</PRE>
+<PRE>get_combinations(lst)</PRE>
+<PRE>add_combo(orig_list, c, val, desc)</PRE>
+<PRE>get_all_multiples(a, b, orig_list)</PRE>
+<BR></TD></TR>
+<TR><TD>puzzle_sliding_block.py</TD><TD>9,417</TD><TD><PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>math
+</PRE>
+<PRE>heapq
+</PRE>
+<PRE>queue
+</PRE>
+<PRE>cls_plan_search</PRE>
+<PRE>data_structures</PRE>
+<BR></TD><TD><PRE>main()</PRE>
+<PRE>class TilePuzzle</PRE>
+<PRE>def __init__( self, start_state, goal_state, rows=3, cols=3 )</PRE>
+<PRE>def __str__(self)</PRE>
+<PRE>def current_state_as_grid(self)</PRE>
+<PRE>def current_state_as_list(self)</PRE>
+<PRE>def legal_moves( self )</PRE>
+<PRE>def result(self, move)</PRE>
+<PRE>def heuristic(self)</PRE>
+<PRE>def solve(self)</PRE>
+<PRE>def select_from(self, nodes)</PRE>
+<PRE>def expand(self, node)</PRE>
 <BR></TD></TR>
 <TR><TD>security.py</TD><TD>1,771</TD><TD><PRE>os
 </PRE>
@@ -1096,168 +1679,78 @@
 <PRE>show_security()</PRE>
 <PRE>main()</PRE>
 <BR></TD></TR>
-<TR><TD>Toolbox.py</TD><TD>2,513</TD><TD><PRE>AIKIF_utils</PRE>
-<PRE>fileMapping</PRE>
-<PRE>os
-</PRE>
-<BR></TD><TD><PRE>class Toolbox()</PRE>
-<PRE> __init__(self, fldr=None, lst=None)</PRE>
-<PRE> add(self, tool)</PRE>
-<PRE> list(self)</PRE>
-<PRE> tool_as_string(self, tool)</PRE>
-<PRE> save(self, fname='')</PRE>
-<PRE> verify(self, tool)</PRE>
-<PRE> run(self, tool, args, silent='Y')</PRE>
+<TR><TD>solve_travelling_salesman.py</TD><TD>857</TD><TD><BR></TD><TD><PRE>main()</PRE>
+<PRE>read_distance()</PRE>
 <BR></TD></TR>
-<TR><TD colspan=4><HR><H3>\aikif\toolbox\</h3></td></tr>
-<TR><TD>audio_tools.py</TD><TD>2,793</TD><TD><PRE>sys
+<TR><TD>test_AIKIF.py</TD><TD>542</TD><TD><PRE>unittest
 </PRE>
 <PRE>os
 </PRE>
-<BR></TD><TD><PRE>TEST()</PRE>
-<PRE>get_audio_metadata(fname)</PRE>
-<PRE>get_audio_metadata_old(fname)</PRE>
-<BR></TD></TR>
-<TR><TD>cls_grid.py</TD><TD>8,893</TD><TD><PRE>random
-</PRE>
-<BR></TD><TD><PRE>class Grid</PRE>
-<PRE>def __init__(self, grid_height, grid_width, pieces, spacing=6)</PRE>
-<PRE>def reset(self)</PRE>
-<PRE>def clear(self)</PRE>
-<PRE>def __str__(self)</PRE>
-<PRE>def save(self, fname)</PRE>
-<PRE>def load(self, fname)</PRE>
-<PRE>def get_grid_height(self)</PRE>
-<PRE>def get_grid_width(self)</PRE>
-<PRE>def is_empty(self, row, col)</PRE>
-<PRE>def extract_col(self, col)</PRE>
-<PRE>def extract_row(self,  row)</PRE>
-<PRE>def replace_row(self, line, ndx)</PRE>
-<PRE>def replace_col(self, line, ndx)</PRE>
-<PRE>def reverse_line(self, line)</PRE>
-<PRE>def new_tile(self, num=1)</PRE>
-<PRE>def count_blank_positions(self)</PRE>
-<PRE>def count_filled_positions(self)</PRE>
-<PRE>def find_random_blank_cell(self)</PRE>
-<PRE>def set_tile(self, row, col, value)</PRE>
-<PRE>def get_tile(self, row, col)</PRE>
-<PRE>def set_empty(self, row, col)</PRE>
-<PRE>def set_full(self, row, col)</PRE>
-<PRE>def four_neighbors(self, row, col)</PRE>
-<PRE>def eight_neighbors(self, row, col)</PRE>
-<PRE>def get_index(self, point, cell_size)</PRE>
-<PRE>def replace_grid(self, updated_grid)</PRE>
-<PRE>def find_safe_starting_point(self)</PRE>
-<BR></TD></TR>
-<TR><TD>cls_grid_life.py</TD><TD>4,738</TD><TD><PRE>cls_grid
-</PRE>
-<PRE>random
-</PRE>
 <PRE>sys
 </PRE>
-<BR></TD><TD><PRE>class GameOfLife(cls_grid.Grid)</PRE>
-<PRE>def update_gol(self)</PRE>
-<PRE>def update_cell(self, row, col)</PRE>
-<PRE>class GameOfLifePatterns(object)</PRE>
-<PRE>def __init__(self, num_patterns, max_x=77, max_y=21)</PRE>
-<PRE>def get_patterns(self)</PRE>
-<PRE>def bitmap_pattern_to_list(self, bmp_pat)</PRE>
-<PRE>def random_offset(self, lst)</PRE>
-<PRE>block()</PRE>
-<PRE>beehive()</PRE>
-<PRE>loaf()</PRE>
-<PRE>boat()</PRE>
-<PRE>blinker()</PRE>
-<PRE>toad()</PRE>
-<PRE>beacon()</PRE>
-<PRE>glider()</PRE>
-<PRE>_BLANK()</PRE>
+<PRE>csv
+</PRE>
+<PRE>AIKIF_utils</PRE>
+<BR></TD><TD><PRE>class TestAIKIF(unittest.TestCase)</PRE>
+<PRE>def setUp(self)</PRE>
+<PRE>def test_numbers_3_4(self)</PRE>
+<PRE>def test_build_AIKIF_structure(self)</PRE>
 <BR></TD></TR>
-<TR><TD>crypt_utils.py</TD><TD>4,282</TD><TD><PRE>random
-</PRE>
-<PRE>math
-</PRE>
-<PRE>binascii
-</PRE>
-<PRE>string
-</PRE>
-<PRE>sys
-</PRE>
-<BR></TD><TD><PRE>solve(encrypted_text)</PRE>
-<PRE>check_for_words(txt)</PRE>
-<PRE>test_base64(msg)</PRE>
-<PRE>test_caeser(txt)</PRE>
-<PRE>test_crypto(msg)</PRE>
-<PRE>encode64(visible_text)</PRE>
-<PRE>decode64(poorly_hidden_text)</PRE>
-<PRE>reverse(txt)</PRE>
-<PRE>reverse_slow(txt)</PRE>
-<PRE>jumble_words(txt)</PRE>
-<PRE>caesar(msg, shift)</PRE>
-<PRE>caeser2(msg, shift)</PRE>
-<PRE>encrypt_AES(key, plain_text, IV456)</PRE>
-<PRE>decrypt_AEX(key, ciphertext, IV456)</PRE>
-<PRE>txt2bin(txt)</PRE>
-<PRE>bin2txt(bin)</PRE>
-<PRE>test_full_range()</PRE>
-<PRE>pprint_binary(txt)</PRE>
-<BR></TD></TR>
-<TR><TD>game_board_utils.py</TD><TD>1,752</TD><TD><BR></TD><TD><PRE>build_board_2048()</PRE>
-<PRE>build_board_checkers()</PRE>
-<PRE>TEST()</PRE>
-<BR></TD></TR>
-<TR><TD>image_tools.py</TD><TD>13,958</TD><TD><PRE>sys
+<TR><TD>test_cls_collect.py</TD><TD>1,595</TD><TD><PRE>unittest
 </PRE>
 <PRE>os
 </PRE>
-<BR></TD><TD><PRE>TEST()</PRE>
-<PRE>get_exif_data(image)</PRE>
-<PRE>_get_if_exist(data, key)</PRE>
-<PRE>_convert_to_degress(value)</PRE>
-<PRE>get_lat_lon(exif_data)</PRE>
-<PRE>resize(fname, basewidth, opFilename)</PRE>
-<PRE>print_stats(img)</PRE>
-<PRE>print_exif_data(img)</PRE>
-<PRE>print_all_metadata(fname)</PRE>
-<PRE>metadata_header()</PRE>
-<PRE>get_metadata_as_dict(fname)</PRE>
-<PRE>get_metadata_as_csv(fname)</PRE>
-<PRE>List2String(l, delim)</PRE>
-<PRE>Dict2String(d)</PRE>
-<PRE>is_number(s)</PRE>
-<PRE>auto_contrast(img, opFile)</PRE>
-<PRE>add_text_to_image(fname, txt, opFilename)</PRE>
-<PRE>add_crosshair_to_image(fname, opFilename)</PRE>
-<PRE>filter_contour(imageFile, opFile)</PRE>
-<PRE>detect_face(fname, opFile)</PRE>
-<PRE>check_image_duplicates(file_list)</PRE>
-<PRE>hamming_distance(s1, s2)</PRE>
-<PRE>get_img_hash(image, hash_size = 8)</PRE>
-<PRE>load_image(fname)</PRE>
-<PRE>dump_img(fname)</PRE>
-<BR></TD></TR>
-<TR><TD>solve_knapsack.py</TD><TD>3,733</TD><TD><PRE>sys
+<PRE>sys
 </PRE>
-<BR></TD><TD><PRE>describe_problem(capacity, items)</PRE>
-<PRE>solve_greedy_trivial(capacity, items)</PRE>
-<PRE>solve_smallest_items_first(capacity, items)</PRE>
-<PRE>solve_expensive_items_first(capacity, items)</PRE>
-<PRE>solve_value_density(capacity, items)</PRE>
-<PRE>main()</PRE>
+<PRE>csv
+</PRE>
+<PRE>aikif.cls_collect_files</PRE>
+<BR></TD><TD><PRE>class TestClassCollect(unittest.TestCase)</PRE>
+<PRE>def setUp(self)</PRE>
+<PRE>def test_collect(self)</PRE>
+<PRE>def test_filesize_cwd(self)</PRE>
+<PRE>def test_folders_AI(self)</PRE>
+<PRE>def test_local_list_python_folder(self)</PRE>
 <BR></TD></TR>
-<TR><TD>test_tool.py</TD><TD>377</TD><TD><BR></TD><TD><PRE>test_function()</PRE>
-<PRE>sum_even_numbers(numbers)</PRE>
-<PRE>get_min_even_num(numbers)</PRE>
-<BR></TD></TR>
-<TR><TD>tools.py</TD><TD>3,037</TD><TD><PRE>os
+<TR><TD>test_dataTools.py</TD><TD>1,180</TD><TD><PRE>unittest
+</PRE>
+<PRE>os
 </PRE>
 <PRE>sys
 </PRE>
-<PRE>toolbox.Toolbox</PRE>
-<PRE>time
+<PRE>csv
 </PRE>
-<BR></TD><TD><PRE>main()</PRE>
-<PRE>run_multiple(t1, tool, numIterations, silent='Y')</PRE>
+<BR></TD><TD><PRE>class TestClassDataTools(unittest.TestCase)</PRE>
+<PRE> setUp(self)</PRE>
+<PRE> test_clean_col_upper(self)</PRE>
+<PRE> test_clean_col_bad_chars(self)</PRE>
+<PRE> test_clean_col_spaces(self)</PRE>
+<BR></TD></TR>
+<TR><TD>test_puzzle_sliding_block.py</TD><TD>1,508</TD><TD><PRE>unittest
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>os
+</PRE>
+<PRE>puzzle_sliding_block</PRE>
+<BR></TD><TD><PRE>class PlanPuzzleSlidingBlock(unittest.TestCase)</PRE>
+<PRE>def test_01_print_puzzle(self)</PRE>
+<PRE>def test_02_legal_moves_a(self)</PRE>
+<PRE>def test_03_legal_moves_b(self)</PRE>
+<PRE>def test_03_legal_moves_c(self)</PRE>
+<BR></TD></TR>
+<TR><TD>test_security.py</TD><TD>815</TD><TD><PRE>unittest
+</PRE>
+<PRE>os
+</PRE>
+<PRE>sys
+</PRE>
+<PRE>security</PRE>
+<BR></TD><TD><PRE>class TestSecurity(unittest.TestCase)</PRE>
+<PRE>def test_01_private_files(self)</PRE>
+<PRE>def test_02_work_files(self)</PRE>
+<PRE>def test_03_security_mappings(self)</PRE>
+<PRE>def test_04_show_security(self)</PRE>
 <BR></TD></TR>
 <TR><TD>view.py</TD><TD>2,109</TD><TD><PRE>os
 </PRE>
@@ -1272,103 +1765,6 @@
 <PRE>ShowMenu()</PRE>
 <PRE>ProcessInputUntilUserQuits(AIKIF_FileList)</PRE>
 <PRE>ShowStatistics(AIKIF_FileList)</PRE>
-<BR></TD></TR>
-<TR><TD colspan=4><HR><H3>\aikif\web_app\</h3></td></tr>
-<TR><TD>page_about.py</TD><TD>1,478</TD><TD><PRE>sys, os
-</PRE>
-<PRE>web_utils</PRE>
-<PRE>AIKIF_utils</PRE>
-<BR></TD><TD><PRE>get_page(dataFile='')</PRE>
-<PRE>get_aikif_structure()</PRE>
-<BR></TD></TR>
-<TR><TD>page_agents.py</TD><TD>796</TD><TD><PRE>sys
-</PRE>
-<PRE>web_utils</PRE>
-<PRE>aikif.run_agents</PRE>
-<BR></TD><TD><PRE>get_page()</PRE>
-<PRE>get_agent_list()</PRE>
-<BR></TD></TR>
-<TR><TD>page_data.py</TD><TD>2,660</TD><TD><PRE>sys, os
-</PRE>
-<PRE>web_utils</PRE>
-<PRE>AIKIF_utils</PRE>
-<PRE>aikif.AIKIF_utils</PRE>
-<PRE>aikif.fileMapping</PRE>
-<BR></TD><TD><PRE>get_page(dataFile='')</PRE>
-<PRE>showDataFile(fname)</PRE>
-<PRE>get_aikif_structure()</PRE>
-<PRE>get_list_data_files()</PRE>
-<PRE>get_ontology()</PRE>
-<BR></TD></TR>
-<TR><TD>page_programs.py</TD><TD>3,595</TD><TD><PRE>sys, os
-</PRE>
-<PRE>web_utils</PRE>
-<BR></TD><TD><PRE>get_page()</PRE>
-<PRE>show_program_list()</PRE>
-<PRE>rebuild()</PRE>
-<PRE>get_program_list()</PRE>
-<PRE>get_subfolder(txt)</PRE>
-<PRE>format_file_table_header(lstCols)</PRE>
-<PRE>format_file_to_html_row(fname, lstCols)</PRE>
-<PRE>get_functions(fname)</PRE>
-<PRE>strip_text_after_string(txt, junk)</PRE>
-<PRE>get_imports(fname)</PRE>
-<BR></TD></TR>
-<TR><TD>page_search.py</TD><TD>2,632</TD><TD><PRE>os
-</PRE>
-<PRE>sys
-</PRE>
-<PRE>web_utils</PRE>
-<BR></TD><TD><PRE>get_page(search_text)</PRE>
-<PRE>search_aikif(txt, formatHTML=True)</PRE>
-<PRE>format_result(file, line, line_num, txt)</PRE>
-<BR></TD></TR>
-<TR><TD>web_aikif.py</TD><TD>6,930</TD><TD><PRE>sys
-</PRE>
-<PRE>os
-</PRE>
-<PRE>web_utils</PRE>
-<PRE>flask
-</PRE>
-<BR></TD><TD><PRE>start_server()</PRE>
-<PRE>page_home()</PRE>
-<PRE>search_post()</PRE>
-<PRE>page_todo()</PRE>
-<PRE>page_data()</PRE>
-<PRE>page_data_show(dataFile)</PRE>
-<PRE>page_agents()</PRE>
-<PRE>page_programs()</PRE>
-<PRE>page_programs_rebuild()</PRE>
-<PRE>page_about()</PRE>
-<PRE>page_error(calling_page)</PRE>
-<PRE>aikif_web_menu(cur='')</PRE>
-<PRE>get_header(pge='')</PRE>
-<PRE>get_footer(pge='')</PRE>
-<PRE>escape_html(s)</PRE>
-<PRE>format_list_as_html_table_row(lst)</PRE>
-<PRE>format_csv_to_html(csvFile, opHTML)</PRE>
-<PRE>DisplayImagesAsHTML(imageList)</PRE>
-<BR></TD></TR>
-<TR><TD>web_utils.py</TD><TD>6,439</TD><TD><PRE>csv
-</PRE>
-<PRE>os
-</PRE>
-<PRE>glob
-</PRE>
-<PRE>fnmatch
-</PRE>
-<PRE>sys
-</PRE>
-<BR></TD><TD><PRE>list2html(lst)</PRE>
-<PRE>GetFileList(rootPath, lstXtn, shortNameOnly='Y')</PRE>
-<PRE>filelist2html_div(lst, fldr)</PRE>
-<PRE>build_search_form()</PRE>
-<PRE>filelist2html(lst, fldr, hasHeader='N')</PRE>
-<PRE>link_file(f, fldr)</PRE>
-<PRE>dict_to_htmlrow(d)</PRE>
-<PRE>read_csv_to_html_table(csvFile, hasHeader='N')</PRE>
-<PRE>read_csv_to_html_table_using_CSV_module_OLD(csvFile, hasHeader='N')</PRE>
-<PRE>read_csv_to_html_list(csvFile)</PRE>
 <BR></TD></TR>
 </TABLE>
 
