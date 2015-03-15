@@ -85,24 +85,27 @@ automatic documentation of program development
 
 Use the AIKIF to completely manage projects, as it stores not only details on programs (as objects having events such as created, ran, copied to prod), but also datasets (such as size, date loaded, etc) and simply have an overall ‘Task’ / Contact / Event template to manage the overall projects
 
-
 .. code:: python
+
     from aikif import codeDocData as doc
     from aikif import businessRules as bus
-    proj = doc.Project(‘Read Datafiles’)   
+    proj = doc.Project(‘Read Datafiles’)
     proj.RegisterProgram(‘importTools.py’, ‘program to read in a datafile’, ‘T:\user...’)
     proj.Task(‘document columns’)
     proj.Folder(‘WORKING’, ‘T:\...’)
     proj.Folder(‘MASTER’, T:\...)
     proj.Contact(‘djmurray’)
-
+    
     backups = bus.BackupRules()
     backups.Source(‘t:\...’)
     backups.Dest(‘NAS’)
     backups.Schedule(‘DAILY’)
 
+
 Option 2
+
 .. code:: python
+
     csvProject = aikif.project.Project('csvProject', 'Download CSV file and load to database', 'T:\projects\csvProject')
     csvProject.add_requirement('dl', 'dl the file from the web')
     csvProject.add_requirement('sched', 'schedule refresh each day at 6am')
