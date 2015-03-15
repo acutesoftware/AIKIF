@@ -179,9 +179,8 @@ automatic collection, validation and processing of data
 This section shows various examples of setting up emails, folder locations ready to help automate business tasks
 
 .. code:: python
-
     import aikif.agent.gather.agent_emails
-    account = GmailAccount(username, password, save_folder)   
+    account = GmailAccount(username, password, save_folder)
     agt = EmailAgent('email_agent', ‘.’, True, 1 , account)
     
 Automatically Collect Sales from emails
@@ -189,12 +188,12 @@ The method shows a function to automatically sales from RegNow emails
 
 .. code:: python
 
-    sales_search_string = "(SUBJECT Order Item) AND (FROM RegNow)" 
+    sales_search_string = "(SUBJECT Order Item) AND (FROM RegNow)"
     sales_emails = account.get_all_emails_containing(100, sales_search_string)
-    for sales_email in sales_emails: 
-        cust, date, amount = aikif.parse(sales.email)
-        my_biz.record(tbl_sales, type=‘Online Sales’, cols=[date, amount, cust])
-        
+    for sales_email in sales_emails:
+    cust, date, amount = aikif.parse(sales.email)
+    my_biz.record(tbl_sales, type=‘Online Sales’, cols=[date, amount, cust])
+    
 
 Context Monitor
 ``````````````
