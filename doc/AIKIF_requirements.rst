@@ -124,15 +124,16 @@ This section shows actual usage of AIKIF to manage business processes - example 
 Document a business
 
 .. code:: python
+
     import aikif.project
     my_biz = Project(name=‘Acute Software’, type=’business’, desc=‘Custom Software development’)
     my_biz.add_detail(‘website’, ‘http://www.acutesoftware.com.au’)
     my_biz.add_detail(email, ‘djmurray@acutesoftware.com.au ’)
-
+    
     my_biz.add_type(type=‘Cash Sale’, category=’Taxable_income’, desc=’Manual sales over counter - no customer details recorded’)
-
+    
     my_biz.add_type(type=‘Online Sale’, category=’Taxable_income’, desc=’Online sales orders from RegNow’)
-
+    
 
     -- Now setup some data structures to hold information -- 
     import aikif.dataTools.cls_data_table
@@ -140,36 +141,37 @@ Document a business
     lg =Log(‘Acute Software’, ‘T:\\user\\docs\\business’)
     tbl_sales = DataTable(‘Sales’, cols=[‘Date’, ‘Amount’, ‘Cust’])
     tbl_expenses = DataTable(‘Expenses’, cols=[‘Date’, ‘Amount’, ‘Cust’])
-
+    
 
 Record Cash Sales
 Record a single sale (no customer details available)
+
 .. code:: python
+
     amount = input(‘Amount of Sale’)
     my_biz.record(tbl_sales, type=‘Cash Sale’, cols=[sysdate, amount, ‘cash sale’])
-
-    Record Expenses for tax purposes
+    
+    #Record Expenses for tax purposes
     date    = input(‘Date of Purchase’)
     amount  = input(‘Amount’)
     details = input(‘Details’)
     my_biz.record(tbl_expenses, type=‘Purchases’, cols=[date, amount, details])
-
+    
     Generate Profit and Loss Statement
     # simple summary
     print( ‘Total profit = ‘, sum(sales.amount) / sum(expenses.amount))
-
+    
     # summary by day
     sales_by_day = tbl_sales.aggregate(’amount’, ’Date’)
     exp_by_date  = tbl_expenses.aggregate(’amount’, ’Date’)
-
+    
     #profit = [[‘Day’, ‘Type’, ‘Amount’]]
     profit = DataType(‘Profit’, [‘Day’, ‘Type’, ‘Amount’])
     for row in sales_by_day:
         profit.append([row.date, ‘Sales’, row.amount])
     for row in exp_by_date :
-        profit.append([row.date, ‘Expense’, row.amount])
-
-
+    profit.append([row.date, ‘Expense’, row.amount])
+    
 
 automatic collection, validation and processing of data
 ``````````````
@@ -177,20 +179,22 @@ automatic collection, validation and processing of data
 This section shows various examples of setting up emails, folder locations ready to help automate business tasks
 
 .. code:: python
+
     import aikif.agent.gather.agent_emails
     account = GmailAccount(username, password, save_folder)   
     agt = EmailAgent('email_agent', ‘.’, True, 1 , account)
-
+    
 Automatically Collect Sales from emails
 The method shows a function to automatically sales from RegNow emails
 
 .. code:: python
+
     sales_search_string = "(SUBJECT Order Item) AND (FROM RegNow)" 
     sales_emails = account.get_all_emails_containing(100, sales_search_string)
     for sales_email in sales_emails: 
         cust, date, amount = aikif.parse(sales.email)
         my_biz.record(tbl_sales, type=‘Online Sales’, cols=[date, amount, cust])
-
+        
 
 Context Monitor
 ``````````````
@@ -223,33 +227,6 @@ agents to download data from various cloud hosts and store locally
 ``````````````
 The aikif toolbox can setup a daily agent to run tasks
 
-.. code:: python
-    agent_list = [
-        {'name': 'Download Mail', 
-         'file': 'T:\\user\\AIKIF\\collect_email.py', 
-         'args': '',
-         'schedule_type':'day'
-        },
-        {'name': 'Collect FileList', 
-         'file': 'T:\\user\\AIKIF\\filelister.py', 
-         'args': '',
-         'schedule_type':'day'
-        },
-        {'name': 'Summarise FileList', 
-         'file': 'T:\\user\\AIKIF\\filelist_summary.py', 
-         'args': '',
-         'schedule_type':'day'
-        },
-        {'name': 'Backup Files', 
-         'file': 'T:\\user\\AIKIF\\filelist_backup.py', 
-         'args': '',
-         'schedule_type':'day'
-        {'name': 'Aggregate Context', 
-         'file': agentCodeFolder + 'agents\\aggregate\\agg_context.py', 
-         'args':  'T:\\user\\AIKIF\\diary\\filelister2014.csv',
-         'schedule_type':'hour' 
-        }
-    ]
 
 index data locally for simple unified search across all sources (facebook, email, documents, photo metadata, web favourites)
 ``````````````
@@ -259,7 +236,7 @@ Goal 4 - AI monitoring (future)
 -----
 Define methods an AI can use (aikif.toolbox)
 ``````````````
-
+The Toolbox function maps programs (internal and external) to a standard format to all computers to identify tools and run them
 
 Automated Goal planning
 ``````````````
@@ -277,12 +254,16 @@ AIKIF suggests methods on how to achieve the tasks - usually manually with remin
 
 Log all results with useful milestones and checkpoints
 ``````````````
+The log aggregates should show useful summaries
+
 
 Regulate processes to allow automation
 ``````````````
 
 black box monitoring of unknown software agents
 ``````````````
+Detection of agents, either through logfiles, virus scanner like tools or interactions
 
 Monitor for friendliness (unlikely to be achievable)
 ``````````````
+for future work
