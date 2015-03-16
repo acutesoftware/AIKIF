@@ -5,6 +5,16 @@ This document is a scratch pad area for design notes during the development of A
 
 .. contents::
 
+Logging
+------------------------------
+This is the main part of AIKIF and the idea is to be able to log any level of detail such as
+- high level events (Christmas Party) 
+- local events (buy milk)
+- detailed project info (meeting for projectX on Thursday)
+- low level functions (eg iterations of a genetic algorithm)
+
+The main program is aikif/cls_log and at the moment this simply appends to a text file.
+
 
 Mapper
 ------------------------------
@@ -115,8 +125,4 @@ Agents are run to do the collection and aggregation of source data
 Environments
 ------------------------------
 This is a data structure which allows agents to run in worlds
-
-Logging
-------------------------------
-This is the main part of AIKIF
 
