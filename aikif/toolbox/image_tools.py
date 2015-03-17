@@ -24,17 +24,14 @@ except ImportError:
 def TEST():
     """ local test to demo usage - see unittests for full functionality """
     print("Local test of image_tools.py")
-    print_all_metadata('..\\..\\doc\\web-if-progs-v01.jpg')
+    print_all_metadata('..\\..\\doc\\web-if-v02.jpg')
     
     # save CSV file of metadata
     with open('..\\..\\tests\\test_results\\image_metadata.csv', 'w') as f:
         f.write(List2String(metadata_header(), ", ") + '\n')
-        f.write(get_metadata_as_csv('..\\..\\doc\\web-if-progs-v01.jpg') + '\n')
+        f.write(get_metadata_as_csv('..\\..\\doc\\web-if-v02.jpg') + '\n')
         f.write(get_metadata_as_csv('..\\..\\doc\\AIKIF-Overview.jpg') + '\n')
-        f.write(get_metadata_as_csv('..\\..\\doc\\AIKIF-data-structure.jpg') + '\n')
-        f.write(get_metadata_as_csv('..\\..\\doc\\AIKIF-learning.jpg') + '\n')
-        f.write(get_metadata_as_csv('..\\..\\doc\\AIKIF-ProcessFlow.jpg') + '\n')
-
+ 
 
 
 def get_exif_data(image):
