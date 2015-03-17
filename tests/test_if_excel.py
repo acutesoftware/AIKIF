@@ -66,7 +66,7 @@ class DataIfEmailTest(unittest.TestCase):
         Used for Toolbox functionality
         """
         csv_filename = mod_xl.xls_to_csv(dummy_file)
-        
+        self.assertEqual(csv_filename.lower(), test_folder.lower() + os.sep + 'dummy.csv')
         
 if __name__ == '__main__':
     unittest.main()        

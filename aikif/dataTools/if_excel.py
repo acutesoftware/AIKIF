@@ -25,7 +25,7 @@ def xls_to_csv(xls_filename):
     definition (so it can be added as normal)
     """
     xls = Excel(xls_filename)
-    op_file = xls.get_base_filename('')
+    op_file = xls.get_base_filename('') + '.csv'
     xls.csv_from_excel(op_folder='', first_sheet_only=True) 
     return op_file
     
