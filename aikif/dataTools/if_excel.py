@@ -19,6 +19,15 @@ def create_blank_xls_file(fname):
     print('WARNING - doesnt work in all systems\n saving dataframe to Excel = ', fname)
     df.to_excel(fname, sheet_name='sheet1', index=False)
 
+def xls_to_csv(xls_filename):
+    """
+    function to be used by Toolbox to allow for easy 
+    definition (so it can be added as normal)
+    """
+    xls = Excel(xls_filename)
+    op_file = xls.get_base_filename('')
+    xls.csv_from_excel(op_folder='', first_sheet_only=True) 
+    return op_file
     
 class Excel():
     """
@@ -60,8 +69,9 @@ class Excel():
                 base_csv = op_folder + os.sep + base_csv
         
         return base_csv
-        
-    def csv_from_excel(self, op_folder=''):
+    
+    
+    def csv_from_excel(self, op_folder='', first_sheet_only=False):
         """
         uses pandas to convert Excel workbooks to CSV
         If multiple sheets are in the excel file exist
@@ -71,7 +81,7 @@ class Excel():
         
         base_csv = self.get_base_filename(op_folder)
         
-        if len(self.xl_file.sheet_names) == 1:
+        if len(self.xl_file.sheet_names) == 1 or first_sheet_only == True:
             xls = pd.read_excel(self.excel_filename)
             xls.to_csv(base_csv + '.csv', encoding='utf-8')
         

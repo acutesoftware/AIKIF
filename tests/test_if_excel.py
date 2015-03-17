@@ -8,6 +8,7 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 
 test_folder = os.getcwd() + os.sep + 'test_results'
 test_file = test_folder + os.sep + 'test_pandas.xlsx'
+dummy_file = test_folder + os.sep + 'dummy.xlsx'
 
 import aikif.dataTools.if_excel as mod_xl
                     
@@ -20,9 +21,10 @@ class DataIfEmailTest(unittest.TestCase):
         TODO - pandas installed ok, running Python 3.4 but 
         complains of missing xlwt (xls) or openpyxl (xlsx)
         """
-        dummy_file = test_folder + os.sep + 'dummy.xls'
+        
         try:
-            os.remove(dummy_file)
+            #os.remove(dummy_file)
+            pass
         except:
             pass
         # doesnt work      xls = mod_xl.create_blank_xls_file(dummy_file)
@@ -56,6 +58,14 @@ class DataIfEmailTest(unittest.TestCase):
         self.assertEqual(os.path.isfile(op_csv1),  True)
         self.assertEqual(os.path.isfile(op_csv2),  True)
         self.assertEqual(os.path.isfile(op_csv3),  True)
+     
+    def test_04_single_csv_from_excel_for_toolbox(self):
+        """
+        create a CSV from the first sheet in the xls
+        file and returns the name of the CSV file.
+        Used for Toolbox functionality
+        """
+        csv_filename = mod_xl.xls_to_csv(dummy_file)
         
         
 if __name__ == '__main__':
