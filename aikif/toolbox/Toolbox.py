@@ -78,9 +78,9 @@ class Toolbox():
         """
         success = True
         if os.path.isfile(tool['file']):
-            print('Toolbox: program exists = TOK')
+            print('Toolbox: program exists = TOK  :: ' + tool['file'])
         else:
-            print('Toolbox: program exists = FAIL')
+            print('Toolbox: program exists = FAIL :: ' + tool['file'])
             success = False
         
         return success
@@ -91,7 +91,8 @@ class Toolbox():
         """
         if silent == 'N':
             print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
-        mod = __import__( os.path.basename(tool['file']).split('.')[0])
+        mod = __import__( os.path.basename(tool['file']).split('.')[0]) # for absolute folder names
+       # mod = __import__( tool['file'][:-2]) # for aikif folders (doesnt work)
         func = getattr(mod, tool['function'])
         tool['return'] = func(args)
         return tool['return']

@@ -8,6 +8,7 @@
 
 import math
 
+
 def TEST():
     """ local test  """
     ml_entropy([3,3])
@@ -83,8 +84,8 @@ def ml_process_mining_alpha(lst):
         """ TODO """
         return [1]
     
-if __name__ == '__main__':
-    TEST()
+#if __name__ == '__main__':
+#    TEST()
     
     
     
