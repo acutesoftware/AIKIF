@@ -6,25 +6,18 @@ import csv
 import string
 import pandas as pd
 
-def TEST():
+def create_blank_xls_file(fname):
     """
-    Test functions to go into test_if_excel.py
+    create a blank dummy XLS file (buggy)
     """
-    df = pd.DataFrame({'AAA' : [4,5,6,7], 'BBB' : [10,20,30,40],'CCC' : [100,50,-30,-50]})
+    
+    df = pd.DataFrame({'Col1' : [32,0,-6,7], 'Col2' : [9,66,30,73],'Col3' : [89,50,-31,-50]})
     print(df)
- #   df.to_excel('pandas.xls', sheet_name='Pandas_test')   # NOTE - xlsx not supported
- #   df.to_excel('pandas.xls')   # NOTE - xlsx not supported
-#    df.to_csv('pandas.csv')  # works
-
-    xls_small = Excel('test.xlsx')
-    print(xls_small)
-    print(xls_small.get_base_filename(os.getcwd()))
-    
-    for num, tab in enumerate(xls_small.get_sheets()):
-        print('Worksheet #', num, ' = ', tab)
-    
-    xls_small.csv_from_excel()
-    
+ #  df.to_excel('pandas.xls', sheet_name='Pandas_test')   # NOTE - xlsx not supported
+ #  df.to_excel('pandas.xls')   # NOTE - xlsx not supported
+ #  df.to_csv('pandas.csv')  # works
+    print('WARNING - doesnt work in all systems\n saving dataframe to Excel = ', fname)
+    df.to_excel(fname, sheet_name='sheet1', index=False)
 
     
 class Excel():
@@ -87,3 +80,4 @@ class Excel():
                 xls = pd.read_excel(self.excel_filename, worksheet)
                 xls.to_csv(base_csv + '_' + worksheet + '.csv', encoding='utf-8')
                 
+#create_blank_xls_file('test2.xlsx')
