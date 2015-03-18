@@ -23,7 +23,21 @@ def TEST():
     my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
     print(my_biz)
 
-
+class Projects():
+    """
+    handles the ontologies for all your projects to 
+    avoid replication of data entry
+    """
+    def __init__(self):
+        self.ontology = []
+    
+    def add_ontology(self, name):
+        """
+        handles the data sources used in projects, mainly as an 
+        abstract to call the data sources in /lib and /dataTools
+        """
+        self.ontology.append(name)
+    
  
 class Project():
     """
@@ -32,8 +46,11 @@ class Project():
     """
     def __init__(self, name, type='', fldr=None , desc=''):
         self.nme = name
+        self.goals = []
         self.data_sources = []
         self.datatables = []
+        self.ontology = []
+        self.links = []
         self.fldr = fldr
         self.type = type
         self.desc = desc
@@ -54,13 +71,33 @@ class Project():
             for d in self.data_sources:
                 res += d[0] + '\t ' + d[1] + '\n'
         return res
+
+    def add_goal(self, id, name, due_date=None, priority=None):
+        """
+        adds a goal for the project
+        """
+        self.goals.append([id, name, due_date, priority])
+        
+    def add_task(self, id, name, due_date=None, priority=None):
+        """
+        adds a task for the project
+        """
     
-    def add_src(self, nme, location):
+    def add_link(self, src_id, dest_id, src_type='Goal', dest_type='Task'):  
+        """
+        creates links for the projects, mainly for tasks to goals
+        but also for folders to projects
+        """
+        self.links.append([src_id, dest_id, src_type, dest_type])
+        
+    def add_source(self, name, location, schedule='Daily', op=''):
         """
         handles the data sources used in projects, mainly as an 
         abstract to call the data sources in /lib and /dataTools
         """
-        self.data_sources.append([nme, location])
+        if op == '':
+            op = name + '.log'
+        self.data_sources.append([name, location, schedule, op])
 
     def add_detail(self, type, detail):
         """
