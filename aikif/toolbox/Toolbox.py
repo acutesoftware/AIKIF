@@ -38,15 +38,28 @@ class Toolbox():
         """
         res = ''
         for tool in self.lstTools:
-            res += tool['file'] + '.' + tool['function'] + '\n'
+            res += self._get_tool_str(tool)
         return res
+    
+    def _get_tool_str(self, tool):
+        """
+        get a string representation of the tool
+        """
+        res = tool['file'] 
+        try:
+            res += '.' + tool['function']
+        except:
+            pass
+        res += '\n'
+        return res
+        
         
     def add(self, tool):
         """
         Adds a Tool to the list, logs the reference and TODO
         """
         self.lstTools.append(tool)
-        self.lg.record_process(tool['file'] + '.' + tool['function'])
+        self.lg.record_process(self._get_tool_str(tool))
         
     def list(self):
         """
@@ -60,7 +73,7 @@ class Toolbox():
         """
         return the string of the filename and function to call
         """
-        return tool['file'] + '.' + tool['function'] + '\n'
+        return self._get_tool_str(tool)
     
     def save(self, fname=''):
         """
