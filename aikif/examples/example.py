@@ -28,16 +28,31 @@ Step 3 - setup your projects with goals / targets
 ----------------------------------------------------------
 """
 
+
+
 proj_dev_aikif = prj.Project('AIKIF development')   # development project
 proj_script_mgt = prj.Project('Script management')  # logging of projects
 proj_acute = prj.Project('Acute Software Business') # business project
-proj_research = prj.Project('Personal Research')     # study / research project
+proj_research = prj.Project('Personal Research')    # study / research project
 
 proj_dev_aikif.add_goal(id='REL_ALPHA', name='Milestone - Alpha Release', due_date='2015/06/01', priority='High')
 proj_dev_aikif.add_goal(id='REL_BETA', name='Milestone - Beta Release', due_date='2016/01/01', priority='High')
 proj_dev_aikif.add_goal(id='TEST', name='User testing', due_date='2015/06/01', priority='High')
 
 proj_script_mgt.add_goal(id='SCRIPT_LOG', name='Log of script runs')
+
+my_projects.add(proj_acute)
+my_projects.add(proj_script_mgt)
+my_projects.add(proj_acute)
+my_projects.add(proj_research)
+
+# a new project can be defined directly into Projects but shown here after for simplicity
+my_projects.add(prj.Project(name='Another Project', desc='created adhoc'))
+
+another_project = my_projects.get_by_name('Another Project')
+
+print(another_project)
+
 
 """
 Step 4 - define your data sources
