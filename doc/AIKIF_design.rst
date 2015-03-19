@@ -1,12 +1,13 @@
+.. contents::
+
 ====================
  AIKIF Design
 ====================
+
 Last updated 19-Mat-2015
 AIKIF Dev version 0.0.10
 
 This document is a scratch pad area for design notes during the development of AIKIF
-
-.. contents::
 
 Design Overview
 ---------------
@@ -51,10 +52,13 @@ Everything is defined , coded and run *by* the computer rather than you doing it
 
 This way all results can be re-run at any stage
 
-
-
+========================
 Logging
---------
+========================
+
+
+Logging Overview
+-----------------
 This is the main part of AIKIF and the idea is to be able to log any level of detail such as
 
 - high level events (Christmas Party)
@@ -113,6 +117,9 @@ find the best run (eg solvers)
 find the shortest / longest / average run time for a session
 determine whether run in DEV / PROD (based on folder from config and location of libraries)
 
+===========================
+Mapping and Business Rules
+===========================
 
 Mapper 
 ---------------
@@ -222,6 +229,9 @@ Should there be a bias network for all people or groups of people
 
 If groups - who decides on the group boundaries
 
+========================
+Agents and Environments
+========================
 
 Agents [testing]
 ------------------------------
