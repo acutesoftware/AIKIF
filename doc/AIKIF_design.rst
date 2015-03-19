@@ -4,18 +4,23 @@
 
 .. contents::
 
-Overview
---------
+Design Overview
+---------------
 This document is a scratch pad area for design notes during the development of AIKIF
 
 
 As areas are completed, the contents will be copied to a users manual
 
 *tags for progress are*
+
 [unresolved]  = not sure how to do this
+
 [in progress] = work may have started but early stages
+
 [testing]     = key parts developed, testing results
+
 [completed]   = tests passed and contents copied to users manual / ext paper
+
 
 
 
@@ -47,10 +52,10 @@ This way all results can be re-run at any stage
 
 
 Logging [testing]
-======
+==================
 
-Overview
-------------------------------
+Logging Overview
+----------------
 This is the main part of AIKIF and the idea is to be able to log any level of detail such as
 
 - high level events (Christmas Party)
@@ -70,12 +75,12 @@ The main methods of the cls_log.py are below
 
 .. code:: python
 
-class Log:
-    def __init__(self, fldr):
-    def record_source(self, src, prg=''):
-    def record_process(self, process, prg=''):
-    def record_command(self, cmd, prg=''):
-    def record_result(self, res, prg=''):
+    class Log:
+        def __init__(self, fldr):
+        def record_source(self, src, prg=''):
+        def record_process(self, process, prg=''):
+        def record_command(self, cmd, prg=''):
+        def record_result(self, res, prg=''):
 
 This is used as follows
 
@@ -86,7 +91,7 @@ import aikif.cls_log as mod_log
 mylog = mod_log.Log(test_fldr)
 mylog.record_process('test', 'hello - recording process')
 mylog.record_command('test', 'hello - recording command')
-mylog.record_source('test', 'hello - recording source') 
+mylog.record_source('test', 'hello - recording source')
 mylog.record_result('test', 'hello - recording result')
 
 
@@ -113,9 +118,9 @@ determine whether run in DEV / PROD (based on folder from config and location of
 
 
 Mapper [in progress]
-========
+====================
 
-Overview
+Mapper Overview
 ------------------------------
 The mapping class contains the business rules engine to control how information is passed
 
@@ -149,7 +154,7 @@ Core Domains
 ``````````````
 These are generic core domains that many other things are based on - they have presetup rules so you dont need to manually add everything.
 
-Note that for these domains it might be easier to extract data from big ontology rather than type it all in 
+Note that for these domains it might be easier to extract data from big ontology rather than type it all in
 
 *Business* - the act of running a business to make a profit
 
@@ -163,7 +168,7 @@ Note that for these domains it might be easier to extract data from big ontology
 
 *Tools* - anything that is needed or will help do a task
 
-*Tradeskill* - a recognised group of skills, such as woodworking, plumber, programmer the uses physical tools and materials to produce things 
+*Tradeskill* - a recognised group of skills, such as woodworking, plumber, programmer the uses physical tools and materials to produce things
 
 *Task* - in instance of a job to do - may involve materials, special tradeskills
 
@@ -181,13 +186,13 @@ how to get to the goal?
 
 plan = build products, get customers, make sales, reduce costs
 
-tasks (linked to goals) 
+tasks (linked to goals)
 
 build products -> research competition, work out demand, prototype, test, manufacture
 
 get customers -> plan campaign, write flyers, build website, social media, cold calling
 
-make sales -> 
+make sales ->
 
 reduce costs -> rank expenses
 
@@ -237,17 +242,17 @@ The base agent code has the following methods
 
 .. code:: python
 
-class Agent(object):
-    """
-    Class for Agents in AIKIF, all agents base class this
-    """
-    def __init__(self, name='',  fldr='', running=False):
-    def __str__(self):
-    def start(self):
-    def do_your_job(self):
-    def stop(self):
-    def check_status(self):
-    def report(self):
+    class Agent(object):
+        """
+        Class for Agents in AIKIF, all agents base class this
+        """
+        def __init__(self, name='',  fldr='', running=False):
+        def __str__(self):
+        def start(self):
+        def do_your_job(self):
+        def stop(self):
+        def check_status(self):
+        def report(self):
 
 You need to subclass the methods do_your_job and optionally others such as check_status
 
@@ -260,25 +265,25 @@ The explore agent looks like the following
 
 .. code:: python
 
-class ExploreAgent(agt.Agent):
-    """
-    agent that explores a world (2D grid)
-    """
-    def __init__(self, name,  fldr, running, LOG_LEVEL):
-        agt.Agent.__init__(self, name,  fldr, running)
-        self.LOG_LEVEL = LOG_LEVEL
-        self.num_steps = 0
-        self.num_climbs = 0
-        
-    def set_world(self, grd, start_y, start_x, y, x):
+    class ExploreAgent(agt.Agent):
         """
-        tell the agent to move to location y,x 
+        agent that explores a world (2D grid)
         """
-    def do_your_job(self, *arg):
-# code to actually do stuff
+        def __init__(self, name,  fldr, running, LOG_LEVEL):
+            agt.Agent.__init__(self, name,  fldr, running)
+            self.LOG_LEVEL = LOG_LEVEL
+            self.num_steps = 0
+            self.num_climbs = 0
 
-    def show_status(self):
-	# code to show agent status
+        def set_world(self, grd, start_y, start_x, y, x):
+            """
+            tell the agent to move to location y,x
+            """
+        def do_your_job(self, *arg):
+    # code to actually do stuff
+
+        def show_status(self):
+        # code to show agent status
 
 
 Testing an Agent
@@ -287,12 +292,12 @@ The following code shows how to start and stop agents
 
 .. code:: python
 
-myAgent = Agent('TEST Agent', os.getcwd(), True)  # auto run immediately
-manualAgent = Agent('manual', os.getcwd(), False)  # initialises in stopped status
-manualAgent.start()
-manualAgent.stop()
-print(manualAgent.check_status())
-print(manualAgent.report())
+    myAgent = Agent('TEST Agent', os.getcwd(), True)  # auto run immediately
+    manualAgent = Agent('manual', os.getcwd(), False)  # initialises in stopped status
+    manualAgent.start()
+    manualAgent.stop()
+    print(manualAgent.check_status())
+    print(manualAgent.report())
 
 
 
@@ -328,23 +333,23 @@ In the World.py environment here is a  WorldSimulation class which takes a World
 
 .. code:: python
 
-class WorldSimulation(object):
-    """
-    takes a world object and number of agents, objects
-    and runs a simulation
-    
-    """
-    def __init__(self, cls_world, agent_list, LOG_LEVEL):
-        self.world = cls_world
-        self.agent_list = agent_list
-        self.LOG_LEVEL = LOG_LEVEL
-    
-    def run(self, num_runs, show_trails, log_file_base):
+    class WorldSimulation(object):
         """
-        Run each agent in the world for 'num_runs' iterations
-        Optionally saves grid results to file if base name is
-        passed to method.
+        takes a world object and number of agents, objects
+        and runs a simulation
+
         """
+        def __init__(self, cls_world, agent_list, LOG_LEVEL):
+            self.world = cls_world
+            self.agent_list = agent_list
+            self.LOG_LEVEL = LOG_LEVEL
+
+        def run(self, num_runs, show_trails, log_file_base):
+            """
+            Run each agent in the world for 'num_runs' iterations
+            Optionally saves grid results to file if base name is
+            passed to method.
+            """
 
 It is not required to have a class [YourWorld]Simulation() as part of the environment but it makes it simpler to manage the process.
 
@@ -355,29 +360,29 @@ An environment can be used as follows:
 
 .. code:: python
 
-# see - aikif.examples.world_generator.py
-import aikif.environments.worlds as my_world
-import aikif.agents.explore.agent_explore_grid as agt
+    # see - aikif.examples.world_generator.py
+    import aikif.environments.worlds as my_world
+    import aikif.agents.explore.agent_explore_grid as agt
 
-myWorld = my_world.World( height, width, ['.','X','#']) 
-myWorld.build_random( num_seeds, perc_land, perc_sea, perc_blocked)
-agt_list = []
-for agt_num in range(0,num_agents):
-    ag = agt.ExploreAgent( 'exploring_agent' + str(agt_num),  log_folder, False, LOG_LEVEL)
-    start_y, start_x = myWorld.grd.find_safe_starting_point()
-    ag.set_world(myWorld.grd, start_y, start_x, target_coords[0], target_coords[1])
-    agt_list.append(ag)
-sim = my_world.WorldSimulation(myWorld, agt_list, LOG_LEVEL)
-sim.run(iterations, 'Y', log_folder + '\\agt_run')
-sim.world.grd.save('test_world_traversed.txt')
-
-
+    myWorld = my_world.World( height, width, ['.','X','#'])
+    myWorld.build_random( num_seeds, perc_land, perc_sea, perc_blocked)
+    agt_list = []
+    for agt_num in range(0,num_agents):
+        ag = agt.ExploreAgent( 'exploring_agent' + str(agt_num),  log_folder, False, LOG_LEVEL)
+        start_y, start_x = myWorld.grd.find_safe_starting_point()
+        ag.set_world(myWorld.grd, start_y, start_x, target_coords[0], target_coords[1])
+        agt_list.append(ag)
+    sim = my_world.WorldSimulation(myWorld, agt_list, LOG_LEVEL)
+    sim.run(iterations, 'Y', log_folder + '\\agt_run')
+    sim.world.grd.save('test_world_traversed.txt')
 
 
 
 
 
-Memory / Knowledge 
+
+
+Memory / Knowledge
 ===============
 This section has thoughts (not yet implemented) on how to handle memory and transfer of knowledge from information and raw data.
 
@@ -388,7 +393,7 @@ Startup (Wake up)
 ``````````````
 identify context
 check self - folders
-load last short term memory 
+load last short term memory
 
 Read (loading selected files to memory)
 ``````````````
@@ -414,7 +419,7 @@ meaning / aggregate result of day
 KEY parts from logfiles (any peaks, max/min, patterns)
 
 What is defined as not useful
-- duplicate raw data from temporary files 
+- duplicate raw data from temporary files
 
 
 Data Structures for Memory [in progress]
@@ -535,10 +540,7 @@ You can also run tasks such as "Tailor my resume for [work_type]” which shows 
 
 
 Business Plan [unresolved]
-
 ``````````````
-
-
 
 "Prepare a business plan to sell 'bling' software"
 This is an example of template driven plans with good naming conventions
