@@ -59,10 +59,6 @@ This way all results can be re-run at any stage
 Logging
 ========================
 
-
-Logging Overview
------------------
-
 This is the main part of AIKIF and the idea is to be able to log any level of detail such as
 
 - high level events (Christmas Party)
@@ -74,7 +70,8 @@ This is the main part of AIKIF and the idea is to be able to log any level of de
 - low level functions (eg iterations of a genetic algorithm)
 
 Logging Events
-``````````````
+-----------------
+
 The main program is aikif/cls_log and at the moment this simply appends to a text file.
 
 
@@ -93,18 +90,19 @@ This is used as follows
 
 .. code:: python
 
-import aikif.cls_log as mod_log
+    import aikif.cls_log as mod_log
 
-mylog = mod_log.Log(test_fldr)
-mylog.record_process('test', 'hello - recording process')
-mylog.record_command('test', 'hello - recording command')
-mylog.record_source('test', 'hello - recording source')
-mylog.record_result('test', 'hello - recording result')
+    mylog = mod_log.Log(test_fldr)
+    mylog.record_process('test', 'hello - recording process')
+    mylog.record_command('test', 'hello - recording command')
+    mylog.record_source('test', 'hello - recording source')
+    mylog.record_result('test', 'hello - recording result')
 
 
 
 Log aggregation [in progress]
-``````````````````````````````````````
+------------------------------
+
 To do the log aggregation run the command
 
 .. code:: python
@@ -125,10 +123,12 @@ determine whether run in DEV / PROD (based on folder from config and location of
 Mapping and Business Rules
 ===========================
 
+The mapping class contains the business rules engine to control how information is passed
+
+
 Mapper 
 ---------------
 
-The mapping class contains the business rules engine to control how information is passed
 
 Mapper.py will be the main method to read the rules from CSV (or YAML) and apply them
 
