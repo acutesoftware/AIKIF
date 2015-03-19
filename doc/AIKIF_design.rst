@@ -1,12 +1,15 @@
 ====================
  AIKIF Design
 ====================
+Last updated 19-Mat-2015
+AIKIF Dev version 0.0.10
+
+This document is a scratch pad area for design notes during the development of AIKIF
 
 .. contents::
 
 Design Overview
 ---------------
-This document is a scratch pad area for design notes during the development of AIKIF
 
 
 As areas are completed, the contents will be copied to a users manual
@@ -51,8 +54,8 @@ This way all results can be re-run at any stage
 
 
 
-Logging [testing]
-==================
+Logging
+========
 
 Logging Overview
 ----------------
@@ -117,7 +120,7 @@ determine whether run in DEV / PROD (based on folder from config and location of
 
 
 
-Mapper [in progress]
+Mapper
 ====================
 
 Mapper Overview
@@ -378,12 +381,9 @@ An environment can be used as follows:
 
 
 
-
-
-
-
 Memory / Knowledge
-===============
+===================
+
 This section has thoughts (not yet implemented) on how to handle memory and transfer of knowledge from information and raw data.
 
 High Level Processes  [unresolved]
@@ -440,12 +440,14 @@ CSV files
 Databases
 
 
-Outputs (what do you get for doing all this?)
-===============================
+Outputs
+==============
+
 What can you automatically create when you have all this information and meta data stored in AIKIF?
 
 Overview
 -------------
+
 This section describes how various outputs are generated - see AIKIF_requirements.rst for full list of requirements
 
 
@@ -484,7 +486,7 @@ updates are kept as new datasets, so database can be reproduced
 
 
 Project Management Outputs
----------------------
+-------------------------------
 
 Project Plan
 ``````````````
@@ -502,7 +504,7 @@ uses project mappings to identify projects
 
 
 Other Outputs [unresolved]
----------------------
+--------------------------
 
 Automating Database Updates [testing]
 ``````````````
@@ -516,7 +518,6 @@ Automating Database Updates [testing]
 (AND - it should generate ALL of this automatically, allow you to review, then just do it)
 
 Routine Computer Tasks [testing]
-
 ``````````````
 
 "Backup my working documents to the server each week"
@@ -527,7 +528,7 @@ Routine Computer Tasks [testing]
 
 
 Resume [unresolved]
-``````````````
+````````````````````````
 
   - list of events where you worked
   - list of courses online you did
@@ -540,7 +541,7 @@ You can also run tasks such as "Tailor my resume for [work_type]” which shows 
 
 
 Business Plan [unresolved]
-``````````````
+`````````````````````````````
 
 "Prepare a business plan to sell 'bling' software"
 This is an example of template driven plans with good naming conventions
