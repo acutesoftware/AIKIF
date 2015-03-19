@@ -9,12 +9,12 @@ sys.path.append(aikif_dir)
 
 def TEST():
     print('starting project')
-    proj_diary = Project('Diary', fldr=aikif_dir, desc='Diary database for PIM application')
-    proj_diary.add_src('Calendar', aikif_dir)
-    proj_diary.add_src('Bookmarks', aikif_dir)
-    proj_diary.add_src('File Usage', aikif_dir)
-    proj_diary.add_src('PC Usage', aikif_dir)
-    proj_diary.add_src('TODO List', aikif_dir)
+    proj_diary = Project(name='Diary', fldr=aikif_dir, desc='Diary database for PIM application')
+    proj_diary.add_source('Calendar', aikif_dir)
+    proj_diary.add_source('Bookmarks', aikif_dir)
+    proj_diary.add_source('File Usage', aikif_dir)
+    proj_diary.add_source('PC Usage', aikif_dir)
+    proj_diary.add_source('TODO List', aikif_dir)
 
     print(proj_diary)
  
@@ -22,6 +22,13 @@ def TEST():
     my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
     my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
     print(my_biz)
+    
+    
+    all_projects = Projects()
+    all_projects.add_project(proj_diary)
+    all_projects.add_project(my_biz)
+    print(all_projects)
+    
 
 class Projects():
     """
@@ -30,6 +37,17 @@ class Projects():
     """
     def __init__(self):
         self.ontology = []
+        self.project_list = []
+     
+    def __str__(self):
+        res = '-- List of All Projects --\n'
+        for p in self.project_list:
+            res += p.nme.ljust(22) + p.desc + '\n'
+            
+        return res
+    
+    def add_project(self, proj):
+        self.project_list.append(proj)
     
     def add_ontology(self, name):
         """
@@ -38,6 +56,13 @@ class Projects():
         """
         self.ontology.append(name)
     
+    def get_by_name(self, name):
+        """ returns an object Project which matches name """
+        for p in self.project_list:
+            if p.nme == name:
+                return p
+        return None
+        
  
 class Project():
     """
