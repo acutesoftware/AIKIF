@@ -53,12 +53,8 @@ This way all results can be re-run at any stage
 
 
 
-
 Logging
-========
-
-Logging Overview
-----------------
+--------
 This is the main part of AIKIF and the idea is to be able to log any level of detail such as
 
 - high level events (Christmas Party)
@@ -118,13 +114,8 @@ find the shortest / longest / average run time for a session
 determine whether run in DEV / PROD (based on folder from config and location of libraries)
 
 
-
-
-Mapper
-====================
-
-Mapper Overview
-------------------------------
+Mapper 
+---------------
 The mapping class contains the business rules engine to control how information is passed
 
 Mapper.py will be the main method to read the rules from CSV (or YAML) and apply them
@@ -380,7 +371,7 @@ An environment can be used as follows:
     sim.world.grd.save('test_world_traversed.txt')
 
 
-
+===================
 Memory / Knowledge
 ===================
 
@@ -440,6 +431,7 @@ CSV files
 Databases
 
 
+==============
 Outputs
 ==============
 
