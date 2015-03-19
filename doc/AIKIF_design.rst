@@ -1,6 +1,7 @@
-#################
+
+====================
 AIKIF Design
-#################
+====================
 
 Last updated 19-March-2015
 AIKIF Dev version 0.0.10
@@ -10,9 +11,9 @@ This document is a scratch pad area for design notes during the development of A
 .. contents::
 
 
-====================
+
 Design Overview 
-====================
+---------------
 
 
 As areas are completed, the contents will be copied to a users manual
