@@ -1,16 +1,18 @@
-.. contents::
+#################
+AIKIF Design
+#################
 
-====================
- AIKIF Design
-====================
-
-Last updated 19-Mat-2015
+Last updated 19-March-2015
 AIKIF Dev version 0.0.10
 
 This document is a scratch pad area for design notes during the development of AIKIF
 
-Design Overview
----------------
+.. contents::
+
+
+====================
+Design Overview 
+====================
 
 
 As areas are completed, the contents will be copied to a users manual
@@ -59,6 +61,7 @@ Logging
 
 Logging Overview
 -----------------
+
 This is the main part of AIKIF and the idea is to be able to log any level of detail such as
 
 - high level events (Christmas Party)
@@ -100,7 +103,7 @@ mylog.record_result('test', 'hello - recording result')
 
 
 Log aggregation [in progress]
-``````````````
+``````````````````````````````````````
 To do the log aggregation run the command
 
 .. code:: python
@@ -123,6 +126,7 @@ Mapping and Business Rules
 
 Mapper 
 ---------------
+
 The mapping class contains the business rules engine to control how information is passed
 
 Mapper.py will be the main method to read the rules from CSV (or YAML) and apply them
@@ -134,7 +138,8 @@ A domain can get based on other domains so that it uses those rules and informat
 
 
 Mapping Hierarchies
-``````````````
+``````````````````````
+
 physics - rules that SHALL be obeyed according to natural law (eg drop something -> it will fall)
 
 law - rules that are governed by law. e.g. All sales must be reported to IRS / ATO
@@ -149,10 +154,12 @@ situational - e.g. Work mode -> hide Reddit, Game mode -> turn off notifications
 
 Domains (Mapping Examples)
 ------------------------------
+
 The idea is to have everything mapped that you do in your world. A full ontology contains roughly 98% of items that do not appear in your horizon, so it is not infeasible to record the things YOU do.
 
 Core Domains
 ``````````````
+
 These are generic core domains that many other things are based on - they have presetup rules so you dont need to manually add everything.
 
 Note that for these domains it might be easier to extract data from big ontology rather than type it all in
@@ -178,7 +185,8 @@ Note that for these domains it might be easier to extract data from big ontology
 *Methods* - functions that actually do something, which can be automated logged. Initially most methods are manual with links to doco, but it is still important to link them here so that they can be tracked on the web application and logged. In the future as methods are broken down you will be able to implement with python OR outsource to other people
 
 Domain - Small business
-``````````````
+``````````````````````````````
+
 see examples in aikif - this is sort of a ROOT domain which many other things can be derived from
 
 goal = make money, build reputation, sell business
@@ -205,13 +213,15 @@ Note that initially ALL the methods will default to ‘manual’ with a link to 
 tables (info) - this is where you store [LINKED to ontologies] information for your domain
 
 Domain - Graphic Designer
-``````````````
+``````````````````````````````
+
 derives from small business
 
 derives from artist
 
 Domain - Carpenter
-``````````````
+`````````````````````````````
+
 derives from small business
 
 derives from tradeskill
@@ -219,6 +229,7 @@ derives from tradeskill
 
 Bias [unresolved]
 ------------------------------
+
 The Bias network has weightings based on sources which determine the probable accuracy of the source data
 
 BIAS Sources
@@ -235,12 +246,13 @@ Agents and Environments
 
 Agents [testing]
 ------------------------------
+
 Agents are run to do collection and aggregation of source data and can be used to manage any external process (ie call your own software)
 
 
 
 Base Agent Class
-``````````````
+``````````````````````
 
 The base agent code has the following methods
 
@@ -291,7 +303,8 @@ The explore agent looks like the following
 
 
 Testing an Agent
-``````````````
+``````````````````````
+
 The following code shows how to start and stop agents
 
 .. code:: python
@@ -315,7 +328,7 @@ They contain methods to self generate randomly so you can create a set of worlds
 
 
 Sample Environments
-``````````````
+``````````````````````
 
  - Location based (see World example)
 This is a simple grid world used to generate a random terrain to allow agents to explore it.
@@ -330,7 +343,7 @@ This is a toy sample and does not have an actual structure for the environment -
 
 
 Process for Environments
-``````````````
+``````````````````````````````
 As part of the environment module there can be one or many helper classes for the environment and these are setup to run agents or simulations in the world.
 
 In the World.py environment here is a  WorldSimulation class which takes a World object and a list of agents (of type Agent) and needs a *run* method to allow the agents to interact with the world
@@ -358,7 +371,7 @@ In the World.py environment here is a  WorldSimulation class which takes a World
 It is not required to have a class [YourWorld]Simulation() as part of the environment but it makes it simpler to manage the process.
 
 Running Agents in Environments [testing]
-``````````````
+``````````````````````````````````````````````
 
 An environment can be used as follows:
 
@@ -388,21 +401,30 @@ Memory / Knowledge
 This section has thoughts (not yet implemented) on how to handle memory and transfer of knowledge from information and raw data.
 
 High Level Processes  [unresolved]
------------------------------
+-----------------------------------
+
+List of the processes showing how information is loaded at various stages.
+
+Not all data is loaded at once, and it is expected that agents run at various times to refresh certain sections.
+
+The wakeup/learn areas are only set out this way to allow for flexible options for the future - this application will not actually do any learning.
 
 Startup (Wake up)
-``````````````
+``````````````````````
+
 identify context
 check self - folders
 load last short term memory
 
 Read (loading selected files to memory)
-``````````````
+``````````````````````````````````````````````
+
 load short term memory from disk cache to reddis
 
 
 Learn ( use short term memory to find new facts) [unresolved]
-``````````````
+``````````````````````````````````````````````````````````````
+
 how to decide what memory is useful?
 
 might leave this out - getting out of scope here. The goal of AIKIF it to provide data structures and processes to manage information, not to actually learn.
@@ -410,7 +432,8 @@ might leave this out - getting out of scope here. The goal of AIKIF it to provid
 
 
 Sleep (Save useful short term memory to disk) [unresolved]
-``````````````
+``````````````````````````````````````````````````````````````
+
 When the sleep function is called this saves data in reddis to disk.
 
 What is defined as useful
@@ -424,10 +447,13 @@ What is defined as not useful
 
 
 Data Structures for Memory [in progress]
------------------------------
+-----------------------------------------
+
+How is the information stored
 
 Short Term Memory (REDDIS)
-``````````````
+``````````````````````````````
+
 Mapper list
 knowledge table
 ref tables
@@ -435,7 +461,8 @@ goals
 
 
 Long Term Memory (DISK) [in progress]
-``````````````
+``````````````````````````````````````
+
 RDF Files
 CSV files
 Databases
@@ -459,6 +486,7 @@ PIM Outputs
 
 Diary
 ``````````````
+
 Looks at the events logs
 
 groups by 15 minute intervals
@@ -471,12 +499,14 @@ aggregates and adds diary entries to new table
 
 TODO lists
 ``````````````
+
 shows tasks for you (or team member) for all projects with priority
 
 can include estimations and suggested sequence (if you use the ai_search.py planner)
 
 Contacts Lists
 ``````````````
+
 toolbox method to read emails, phone, document lists of contacts
 
 agent to get distinct names / emails / nicknames and add to list of alias
@@ -497,6 +527,7 @@ shows the proposed list of tasks in order for any project
 
 Timesheets
 ``````````````
+
 Looks at the events logs
 
 groups by 15 minute intervals
@@ -509,7 +540,8 @@ Other Outputs [unresolved]
 --------------------------
 
 Automating Database Updates [testing]
-``````````````
+``````````````````````````````````````````````
+
 "Add country region from UN database to our customer address dimension"
 
 - find agent - looks for data table on regions with countries
@@ -520,7 +552,7 @@ Automating Database Updates [testing]
 (AND - it should generate ALL of this automatically, allow you to review, then just do it)
 
 Routine Computer Tasks [testing]
-``````````````
+``````````````````````````````````````
 
 "Backup my working documents to the server each week"
 - agent to find working doc folder (needs to be a MAPPING set of rules)
