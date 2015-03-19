@@ -9,7 +9,47 @@ Overview
 This document is a scratch pad area for design notes during the development of AIKIF
 
 
-Logging
+As areas are completed, the contents will be copied to a users manual
+
+*tags for progress are*
+[unresolved]  = not sure how to do this
+[in progress] = work may have started but early stages
+[testing]     = key parts developed, testing results
+[completed]   = tests passed and contents copied to users manual / ext paper
+
+
+
+Key Concepts
+``````````````
+
+
+create data structures to hold information
+
+define mappings to populate data structures
+
+define / use toolbox to populate data
+
+build agents to collect and aggregate
+
+optional build environments for test areas  (eg File System?)
+
+build controller to manage agents (currently tools.py)
+
+monitor and update on web interface and via collection agents / mappers
+
+
+The key principle here is along the lines of “Reproducible Research”
+Everything is defined , coded and run *by* the computer rather than you doing it.
+
+This way all results can be re-run at any stage
+
+
+
+
+Logging [testing]
+======
+
+Overview
 ------------------------------
 This is the main part of AIKIF and the idea is to be able to log any level of detail such as
 
@@ -21,11 +61,61 @@ This is the main part of AIKIF and the idea is to be able to log any level of de
 
 - low level functions (eg iterations of a genetic algorithm)
 
-
+Logging Events
+``````````````
 The main program is aikif/cls_log and at the moment this simply appends to a text file.
 
 
-Mapper
+The main methods of the cls_log.py are below
+
+.. code:: python
+
+class Log:
+    def __init__(self, fldr):
+    def record_source(self, src, prg=''):
+    def record_process(self, process, prg=''):
+    def record_command(self, cmd, prg=''):
+    def record_result(self, res, prg=''):
+
+This is used as follows
+
+.. code:: python
+
+import aikif.cls_log as mod_log
+
+mylog = mod_log.Log(test_fldr)
+mylog.record_process('test', 'hello - recording process')
+mylog.record_command('test', 'hello - recording command')
+mylog.record_source('test', 'hello - recording source') 
+mylog.record_result('test', 'hello - recording result')
+
+
+
+Log aggregation [in progress]
+``````````````
+To do the log aggregation run the command
+
+.. code:: python
+
+mod_log.LogSummary(self.mylog, test_fldr)
+
+This currently produces a simple count by session ID, but will need to extract key events from the data.
+
+**Key Events to Extract**
+Depending of the type of log file, you can do the following
+
+find max/min results and show parameters used for that run
+find the best run (eg solvers)
+find the shortest / longest / average run time for a session
+determine whether run in DEV / PROD (based on folder from config and location of libraries)
+
+
+
+
+Mapper [in progress]
+========
+
+Overview
 ------------------------------
 The mapping class contains the business rules engine to control how information is passed
 
@@ -121,17 +211,341 @@ derives from small business
 derives from tradeskill
 
 
-Bias
+Bias [unresolved]
 ------------------------------
 The Bias network has weightings based on sources which determine the probable accuracy of the source data
 
+BIAS Sources
 
-Agents
+How should the sources of data be mapped / ranked?
+
+Should there be a bias network for all people or groups of people
+
+If groups - who decides on the group boundaries
+
+
+Agents [testing]
 ------------------------------
-Agents are run to do the collection and aggregation of source data
+Agents are run to do collection and aggregation of source data and can be used to manage any external process (ie call your own software)
 
 
-Environments
+
+Base Agent Class
+``````````````
+
+The base agent code has the following methods
+
+.. code:: python
+
+class Agent(object):
+    """
+    Class for Agents in AIKIF, all agents base class this
+    """
+    def __init__(self, name='',  fldr='', running=False):
+    def __str__(self):
+    def start(self):
+    def do_your_job(self):
+    def stop(self):
+    def check_status(self):
+    def report(self):
+
+You need to subclass the methods do_your_job and optionally others such as check_status
+
+
+
+Sample Agents
+``````````````
+
+The explore agent looks like the following
+
+.. code:: python
+
+class ExploreAgent(agt.Agent):
+    """
+    agent that explores a world (2D grid)
+    """
+    def __init__(self, name,  fldr, running, LOG_LEVEL):
+        agt.Agent.__init__(self, name,  fldr, running)
+        self.LOG_LEVEL = LOG_LEVEL
+        self.num_steps = 0
+        self.num_climbs = 0
+        
+    def set_world(self, grd, start_y, start_x, y, x):
+        """
+        tell the agent to move to location y,x 
+        """
+    def do_your_job(self, *arg):
+# code to actually do stuff
+
+    def show_status(self):
+	# code to show agent status
+
+
+Testing an Agent
+``````````````
+The following code shows how to start and stop agents
+
+.. code:: python
+
+myAgent = Agent('TEST Agent', os.getcwd(), True)  # auto run immediately
+manualAgent = Agent('manual', os.getcwd(), False)  # initialises in stopped status
+manualAgent.start()
+manualAgent.stop()
+print(manualAgent.check_status())
+print(manualAgent.report())
+
+
+
+
+
+Environments [testing]
 ------------------------------
-This is a data structure which allows agents to run in worlds
+This is a data structure / parameter set which allows agents to run in worlds
+
+They contain methods to self generate randomly so you can create a set of worlds with different layouts / parameters and simulate the agents running in them.
+
+
+Sample Environments
+``````````````
+
+ - Location based (see World example)
+This is a simple grid world used to generate a random terrain to allow agents to explore it.
+
+It has no functionality apart from generating itself from random data, loading and saving maps
+
+
+
+- Parameter based (see Happiness example)
+This is a toy sample and does not have an actual structure for the environment - it is simple a set of parameters used to see how “happy” types of people would be in that instance of the world.
+
+
+
+Process for Environments
+``````````````
+As part of the environment module there can be one or many helper classes for the environment and these are setup to run agents or simulations in the world.
+
+In the World.py environment here is a  WorldSimulation class which takes a World object and a list of agents (of type Agent) and needs a *run* method to allow the agents to interact with the world
+
+.. code:: python
+
+class WorldSimulation(object):
+    """
+    takes a world object and number of agents, objects
+    and runs a simulation
+    
+    """
+    def __init__(self, cls_world, agent_list, LOG_LEVEL):
+        self.world = cls_world
+        self.agent_list = agent_list
+        self.LOG_LEVEL = LOG_LEVEL
+    
+    def run(self, num_runs, show_trails, log_file_base):
+        """
+        Run each agent in the world for 'num_runs' iterations
+        Optionally saves grid results to file if base name is
+        passed to method.
+        """
+
+It is not required to have a class [YourWorld]Simulation() as part of the environment but it makes it simpler to manage the process.
+
+Running Agents in Environments [testing]
+``````````````
+
+An environment can be used as follows:
+
+.. code:: python
+
+# see - aikif.examples.world_generator.py
+import aikif.environments.worlds as my_world
+import aikif.agents.explore.agent_explore_grid as agt
+
+myWorld = my_world.World( height, width, ['.','X','#']) 
+myWorld.build_random( num_seeds, perc_land, perc_sea, perc_blocked)
+agt_list = []
+for agt_num in range(0,num_agents):
+    ag = agt.ExploreAgent( 'exploring_agent' + str(agt_num),  log_folder, False, LOG_LEVEL)
+    start_y, start_x = myWorld.grd.find_safe_starting_point()
+    ag.set_world(myWorld.grd, start_y, start_x, target_coords[0], target_coords[1])
+    agt_list.append(ag)
+sim = my_world.WorldSimulation(myWorld, agt_list, LOG_LEVEL)
+sim.run(iterations, 'Y', log_folder + '\\agt_run')
+sim.world.grd.save('test_world_traversed.txt')
+
+
+
+
+
+
+
+Memory / Knowledge 
+===============
+This section has thoughts (not yet implemented) on how to handle memory and transfer of knowledge from information and raw data.
+
+High Level Processes  [unresolved]
+-----------------------------
+
+Startup (Wake up)
+``````````````
+identify context
+check self - folders
+load last short term memory 
+
+Read (loading selected files to memory)
+``````````````
+load short term memory from disk cache to reddis
+
+
+Learn ( use short term memory to find new facts) [unresolved]
+``````````````
+how to decide what memory is useful?
+
+might leave this out - getting out of scope here. The goal of AIKIF it to provide data structures and processes to manage information, not to actually learn.
+
+
+
+Sleep (Save useful short term memory to disk) [unresolved]
+``````````````
+When the sleep function is called this saves data in reddis to disk.
+
+What is defined as useful
+list of tasks done during day
+location of all files, including temp files
+meaning / aggregate result of day
+KEY parts from logfiles (any peaks, max/min, patterns)
+
+What is defined as not useful
+- duplicate raw data from temporary files 
+
+
+Data Structures for Memory [in progress]
+-----------------------------
+
+Short Term Memory (REDDIS)
+``````````````
+Mapper list
+knowledge table
+ref tables
+goals
+
+
+Long Term Memory (DISK) [in progress]
+``````````````
+RDF Files
+CSV files
+Databases
+
+
+Outputs (what do you get for doing all this?)
+===============================
+What can you automatically create when you have all this information and meta data stored in AIKIF?
+
+Overview
+-------------
+This section describes how various outputs are generated - see AIKIF_requirements.rst for full list of requirements
+
+
+
+PIM Outputs
+---------------------
+
+Diary
+``````````````
+Looks at the events logs
+
+groups by 15 minute intervals
+
+uses context to identify location
+
+aggregates and adds diary entries to new table
+5/5/2015 - 10am 2hrs, Meeting with John about design
+7/7/2015 -  2pm 30min, released AIKIF v0.0.12 to pypi
+
+TODO lists
+``````````````
+shows tasks for you (or team member) for all projects with priority
+
+can include estimations and suggested sequence (if you use the ai_search.py planner)
+
+Contacts Lists
+``````````````
+toolbox method to read emails, phone, document lists of contacts
+
+agent to get distinct names / emails / nicknames and add to list of alias
+
+build contacts database
+
+updates are kept as new datasets, so database can be reproduced
+
+
+
+Project Management Outputs
+---------------------
+
+Project Plan
+``````````````
+shows the proposed list of tasks in order for any project
+
+
+Timesheets
+``````````````
+Looks at the events logs
+
+groups by 15 minute intervals
+
+uses project mappings to identify projects
+
+
+
+Other Outputs [unresolved]
+---------------------
+
+Automating Database Updates [testing]
+``````````````
+"Add country region from UN database to our customer address dimension"
+
+- find agent - looks for data table on regions with countries
+- toolbox to download and save data
+- mapping to update dimension based on UN data
+- schedule to do routine updates
+
+(AND - it should generate ALL of this automatically, allow you to review, then just do it)
+
+Routine Computer Tasks [testing]
+
+``````````````
+
+"Backup my working documents to the server each week"
+- agent to find working doc folder (needs to be a MAPPING set of rules)
+	- if file modified date less than week old, backup folder TREE
+	- if folder NAME == project_NAME then backup folder TREE
+
+
+
+Resume [unresolved]
+``````````````
+
+  - list of events where you worked
+  - list of courses online you did
+  - high level summary of study plan
+  - employement contacts
+
+You can also run tasks such as "Tailor my resume for [work_type]” which shows those work experiences first where overlaps occur
+
+
+
+
+Business Plan [unresolved]
+
+``````````````
+
+
+
+"Prepare a business plan to sell 'bling' software"
+This is an example of template driven plans with good naming conventions
+- NLP to find what 'bling' means in ontology
+- agent to create marketing stuff around bling (sales . demand . samples of advertys from google ads)
+- finance app estimates cost to build
+- show profit and loss
+- prepares full business plan
+
 
