@@ -7,28 +7,6 @@ import sys
 aikif_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(aikif_dir)
 
-def TEST():
-    print('starting project')
-    proj_diary = Project(name='Diary', fldr=aikif_dir, desc='Diary database for PIM application')
-    proj_diary.add_source('Calendar', aikif_dir)
-    proj_diary.add_source('Bookmarks', aikif_dir)
-    proj_diary.add_source('File Usage', aikif_dir)
-    proj_diary.add_source('PC Usage', aikif_dir)
-    proj_diary.add_source('TODO List', aikif_dir)
-
-    print(proj_diary)
- 
-    my_biz = Project(name='Acute Software', type='business', desc='Custom Software development', fldr='')
-    my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
-    my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
-    print(my_biz)
-    
-    
-    all_projects = Projects()
-    all_projects.add_project(proj_diary)
-    all_projects.add_project(my_biz)
-    print(all_projects)
-    
 
 class Projects():
     """

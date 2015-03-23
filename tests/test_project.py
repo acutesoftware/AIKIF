@@ -18,7 +18,6 @@ class TestProject(unittest.TestCase):
         proj1 = project.Project(name='Acute Software', type='business', desc='Custom Software development', fldr='')
         proj1.add_detail('website', 'http://www.acutesoftware.com.au')
         proj1.add_detail('email', 'djmurray@acutesoftware.com.au')
-        print(proj1)
         self.assertEqual(proj1.nme, 'Acute Software')
         self.assertEqual(proj1.details[0][0],'website')
         self.assertEqual(proj1.details[0][1],'http://www.acutesoftware.com.au')
@@ -37,7 +36,29 @@ class TestProject(unittest.TestCase):
         proj2.record(tbl_exp, 'Expense', ['2015-02-17', 89.95, 'fringe tickets'])
         self.assertEqual(len(tbl_exp.arr), 3)
         self.assertEqual(tbl_exp.arr[1][2], 'petrol')
+ 
+    
+    def test_03_projects_init(self):
+        proj_diary = project.Project(name='Diary', fldr=root_folder, desc='Diary database for PIM application')
+        proj_diary.add_source('Calendar', root_folder)
+        proj_diary.add_source('Bookmarks', root_folder)
+        proj_diary.add_source('File Usage', root_folder)
+        proj_diary.add_source('PC Usage', root_folder)
+        proj_diary.add_source('TODO List', root_folder)
+
+        my_biz = project.Project(name='Acute Software', type='business', desc='Custom Software development', fldr='')
+        my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
+        my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
+
         
+        all_projects = project.Projects()
+        all_projects.add_project(proj_diary)
+        all_projects.add_project(my_biz)
+        
+        self.assertEqual(len(all_projects.project_list), 2)
+        self.assertEqual(len(str(all_projects)), 134)
+   
+ 
       
 if __name__ == '__main__':
     unittest.main()
