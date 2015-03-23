@@ -68,8 +68,7 @@ Agents include:
 - datasets
 
 
-The data can be linked to a standard upper ontology, (not sure which one or how)
-See - http://www.acutesoftware.com.au/aikif/ontology.html
+Initially, a small self contained ontology will be used to handle AIKIF processes and data, but  may later be linked to a standard upper ontology, (not sure which one or how) See - http://www.acutesoftware.com.au/aikif/ontology.html
 
 
 understanding of bias to monitor data inputs and sources
