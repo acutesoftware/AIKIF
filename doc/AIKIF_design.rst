@@ -153,10 +153,12 @@ situational - e.g. Work mode -> hide Reddit, Game mode -> turn off notifications
 
 [YOUR_MAPPING] = add all own mappings which if duplicated, override above
 
-Domains (Mapping Examples)
-------------------------------
+Domains (Ontology Examples) [unresolved]
+-----------------------------------------
 
-The idea is to have everything mapped that you do in your world. A full ontology contains roughly 98% of items that do not appear in your horizon, so it is not infeasible to record the things YOU do.
+Originally, the plan was  to have everything mapped that you do in your world. A full ontology contains roughly 98% of items that do not appear in your horizon, so rather than link to an external Ontology at this stage, there will be a local Ontology you can modify for your own use.
+
+TODO = think about a local ontology - look at the original ones
 
 Core Domains
 ``````````````
@@ -555,7 +557,8 @@ Automating Database Updates [testing]
 Routine Computer Tasks [testing]
 ``````````````````````````````````````
 
-"Backup my working documents to the server each week"
+Backup my working documents to the server each week
+
 - agent to find working doc folder (needs to be a MAPPING set of rules)
 	- if file modified date less than week old, backup folder TREE
 	- if folder NAME == project_NAME then backup folder TREE
