@@ -8,50 +8,28 @@ import aikif.config as mod_cfg
 root_folder   = mod_cfg.fldrs['root_path']
 dataPath      = root_folder + os.sep + "data"
 dataFiles     = []  # complete mapping of file types to physical CSV files
-dataFileTypes = [
-    'EVENT',    # when
-    'LINK',     # how	'relationship', <- relationship is a TYPE of link
-    'OBJECT',   # reference file lookup to get heirachy
-    'THING',    # what
-    'LOCATION', # where
-    'PROCESS',  # another what?
-    'ACTOR'     # who
-    ]
+
+
+"""
+Load the ontology lookup files externally
+See issue #22 for details on moving to local ontology
+https://github.com/acutesoftware/AIKIF/issues/22
+"""
+subject_file = root_folder + os.sep + "data" + os.sep + "ref" + os.sep + "ONTOLOGY_SUBJECT_AREA.txt"
+file_type_file = root_folder + os.sep + "data" + os.sep + "ref" + os.sep + "ONTOLOGY_FILE_TYPE.txt"
+
+
+dataFileTypes = []
+with open(file_type_file, 'r') as f:
+    for line in f:
+        dataFileTypes.append(line.strip())
     
-dataSubjectAreas = [
-    '_TOP', 		# this is the top level ontology for all subject areas
-    'INFO-COURSE', 
-    'INFO-DATASET', 
-    'INFO-PIM', 
-    'INFO-PIM-SHOPPING', 
-    'INFO-PIM-DIARY',
-    'INFO-PIM-PROJECT',
-    'INFO-PIM-TASK',
-    'INFO-PIM-CONTACT',
-    'INFO-PIM-NOTE',
-    'INFO-PIM-PCUSAGE',
-    'INFO-MESSAGE',
-    'INFO-MESSAGE-EMAIL',
-    'INFO-MESSAGE-SMS',
-    'INFO-MESSAGE-PHONE',
-    'INFO-MESSAGE-FORUM',
-    'INFO-MESSAGE-LETTER',
-    'INFO-SOCIAL-TWITTER',
-    'INFO-SOCIAL-FACEBOOK',
-    'INFO-SOCIAL-GOOGLE+',
-    'INFO-SOCIAL-OTHER',
-    'OBJECT-ASSET', 
-    'OBJECT-ASSET-COMPUTER', 
-    'OBJECT-ASSET-FURNITURE', 
-    'OBJECT-ASSET-CAR', 
-    'OBJECT-ASSET-RESOURCE', 
-    'SYSTEM-PC-LOG', 
-    'SYSTEM-PC-FILE', 
-    'SYSTEM-PC-FILE-LECTURES', 
-    'SYSTEM-PC-FILE-PROGRAM', 
-    ]
+dataSubjectAreas = []
+with open(subject_file, 'r') as f:
+    for line in f:
+        dataSubjectAreas.append(line.strip())
 
-
+        
 class FileMap:
     """
     Provides mapping to file names
