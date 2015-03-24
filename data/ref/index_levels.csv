@@ -1,0 +1,5 @@
+index_code,desc,what does this mean
+none,do not index this column (in this particular mapping),"dont index this column - eg for measures with floats, or encrypted data"
+proj,only index strings which exist in project,get the key elements - this index is the HIGHEST lookup
+core,"only index strings which already exist in aikif index (ie main things like projects, programs, events, contacts)",get any element already referred. So you need to run these indexes last. Also - this is the 2nd highest lookup
+full,full text index of column,"to catch all fact data - lowest lookup, used for full text search of programs, notes, wikis"
