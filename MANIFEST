@@ -9,6 +9,7 @@ aikif\config.py
 aikif\create_database.py
 aikif\gui_view_world.py
 aikif\index.py
+aikif\knowledge.py
 aikif\mapper.py
 aikif\programs.py
 aikif\project.py
@@ -47,6 +48,7 @@ aikif\dataTools\cls_sql_code_generator.py
 aikif\dataTools\form_example_simple.py
 aikif\dataTools\generateTestData.py
 aikif\dataTools\if_database.py
+aikif\dataTools\if_excel.py
 aikif\dataTools\if_mssqlserver.py
 aikif\dataTools\if_oracle.py
 aikif\dataTools\if_redis.py

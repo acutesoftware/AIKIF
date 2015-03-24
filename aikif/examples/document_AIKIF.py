@@ -34,26 +34,18 @@ def document_programs(fldr):
     p.comment('index.py', 'rebuilds indexes')
     
 
-    p.comment('view.py', 'view the data in AIKIF - to be deprecated')
     p.comment('dataTools.py', 'data tools to manage database access')
     p.comment('AIKIF_create.py', 'creates default structures with test data - to be deprecated')
     p.comment('AIKIF_utils.py', 'old file mapping - to be deprecated')
     
     p.comment('generateTestData.py', 'Tool to generate various test data')
-    p.comment('processRawData.py', 'calls various sub tasks to collect raw data')
-    p.comment('loadInfoCourseLectures.py', 'loads course lecture notes into AIKIF')
-    p.comment('loadPIM_Filelist.py', 'loads generic filelists into AIKIF - indexing not implemented')
-    p.comment('loadCountry_Gdeltproject.py', 'sample load - loads country data into AIKIF')
-    p.comment('loadPIM_shoppingList.py', 'sample data - loads a users shopping list into AIKIF')
-    p.comment('security.py', 'future module to handle security and privacy settings')
 
     p.comment('bias.py', '[DATA] weight the validity of source data based on location, person, timing')
     p.comment('cls_collect_files.py', 'duplicate - see agent filelist collecting')
     p.comment('config.py', '[DATA] central point for settings in AIKIF')
     p.comment('cls_log.py', 'logging function to map to standard outputs. Almost provides auto aggregation')
-    p.comment('create_word_lists.py', 'read ontology files to generate list of nouns and verbs (to be deprecated)')
     p.comment('mapper.py', 'maps business rules and columns of source data to standard aikif logs')
-    p.comment('search.py', 'command line search tool')
+    p.comment('search.py', 'command line search tool [deprecated, but will be redone]')
     p.comment('tools.py', '[DATA] uses the toolbox class to create list of programs used by aikif')
     p.comment('agent.py', 'base agent class')
     p.comment('test_agent.py', 'test for agent class (why is this not in /tests root folder? TODO')
@@ -61,10 +53,6 @@ def document_programs(fldr):
     
     p.comment('agent_map_data.py', 'maps columns to aikif structure - attempt#3 (may be depracated)')
 
-    
-    p.comment('addRawData.py', 'original attempt at adding data (to be deprecated) ')
-    p.comment('load_PC_usage.py', 'reads the logged data from agent collect PC info and logs to aikif')
-    p.comment('load_info_cooking_recipe.py', 'toy attempt at adding domain specific info - to be improved or moved to business mappings')
     p.comment('agent_explore_grid.py', 'working prototype of agent to move through a grid world, using very simple path finding. Mainly an exercise in logging an agent moving through a generated world')
     p.comment('agent_email.py', 'Agent that reads emails (currently only gmail)')
     p.comment('agent_filelist.py', 'TOK - correctly scans and logs filelists from an agent')
