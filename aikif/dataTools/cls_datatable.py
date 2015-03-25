@@ -343,8 +343,6 @@ class DataTable(object):
         for _ in range(num_cols):
             res += ''.join(['=' for _ in range(col_width - 1)]) + ' ' 
         res += '\n'
-        print('HELLO', num_cols)
-        print(res)
         return res
  
 class DataStats(object):

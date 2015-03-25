@@ -127,7 +127,46 @@ class Project():
         """
         create a report showing all project details
         """
-        print('TODO - create report')
+        if type == 'md':
+            res = self.get_report_md()
+        elif type == 'rst':
+            res = self.get_report_rst()
+        else:
+            res = 'Unknown report type passed to project.build_report'
+        
+        with open(op_file, 'w') as f:
+            f.write(res)
+    
+    def get_report_rst(self):
+        """
+        formats the project into a report in RST format
+        """
+        res = ''
+        res += '-----------------------------------\n' 
+        res += self.nme  + '\n'
+        res += '-----------------------------------\n\n'
+        res += '::\n'
+        res += '     ' + self.desc + '\n\n'
+        res += '     ' + self.fldr + '\n\n'
+        res += '.. contents:: \n\n\n'
+
+        res += 'Overview\n' + '===========================================\n\n'
+        res += 'This document contains details on the project : ' + self.nme + '\n\n'
+        res += 'TABLES\n' + '===========================================\n\n'
+        
+        for t in self.datatables:
+            res +=  t.name + '\n'
+            res += '-------------------------\n\n'
+            res += t.format_rst() + '\n\n'
+        
+        
+        
+        return res
+
+    def get_report_md(self):
+        """
+        formats the project into a report in MD format - WARNING - tables missing BR
+        """
         res = '#' + self.nme  + '\n'
         res += self.desc + '\n'
         res += self.fldr + '\n'
@@ -138,11 +177,11 @@ class Project():
             res += '###' + t.name + '\n'
             res += '-------------------------\n'
             res += str(t) + '\n\n'
-            print(t)
         
-        with open(op_file, 'w') as f:
-            f.write(res)
-            
+        
+        return res
+
+
         
 if __name__ == '__main__':
     TEST()	
