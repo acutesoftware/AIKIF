@@ -36,8 +36,9 @@ class DataTable(object):
         arr    =  [['5320', 'M', '78', '18', '66'], ['1310', 'M', '78', '10', '12']]    
     """
 
-    def __init__(self, name, dataset_type, col_names = []):
+    def __init__(self, name, dataset_type, col_names = [], delim = ','):
         self.name = name
+        self.delim = ','
         self.dataset_type = dataset_type
         self.arr = []
         self.header = []
@@ -51,7 +52,7 @@ class DataTable(object):
         res += '\n'
         for row in self.arr:
             for c in row:
-                res += self.force_to_string(c).ljust(8)
+                res += self.force_to_string(c).ljust(8) + self.delim
             res += '\n' 
         return res
 
