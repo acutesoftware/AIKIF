@@ -43,6 +43,7 @@ class DataTable(object):
         self.arr = []
         self.header = []
         self.col_names = col_names
+        self.header = col_names  # possible dupe but work in progress
         #self.load_to_array()
         
     def __str__(self):
@@ -318,7 +319,34 @@ class DataTable(object):
             #print('col_key=',col_key, ' len(row)=', len(row), ' row=', row)
             res.append(row[col_key])  # need to convert to int for calcs but leave as string for lookups
         return res
-          
+ 
+    def format_rst(self):
+        """
+        return table in RST format
+        """
+        res = ''
+        num_cols = len(self.header)
+        col_width = 25
+        for _ in range(num_cols):
+            res += ''.join(['=' for _ in range(col_width - 1)]) + ' ' 
+        res += '\n'
+        for c in self.header:
+            res += c.ljust(col_width) 
+        res += '\n'
+        for _ in range(num_cols):
+            res += ''.join(['=' for _ in range(col_width - 1)]) + ' ' 
+        res += '\n'
+        for row in self.arr:
+            for c in row:
+                res += self.force_to_string(c).ljust(col_width)
+            res += '\n' 
+        for _ in range(num_cols):
+            res += ''.join(['=' for _ in range(col_width - 1)]) + ' ' 
+        res += '\n'
+        print('HELLO', num_cols)
+        print(res)
+        return res
+ 
 class DataStats(object):
     """ class to do statistics on an array """
     def __init__(self, arr):
