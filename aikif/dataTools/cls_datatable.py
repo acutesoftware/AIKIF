@@ -324,3 +324,13 @@ class DataStats(object):
     def __init__(self, arr):
         self.arr = arr
                    
+                   
+# Utility
+
+def TodayAsString():	
+    """
+    returns current date and time like oracle
+    """
+    import time
+    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    
