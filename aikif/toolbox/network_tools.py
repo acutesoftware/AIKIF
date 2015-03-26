@@ -35,6 +35,3 @@ def download_file_no_logon(url, filename):
 	output.write(request.urlopen(url).read())
 	output.close()
 
-    
-if __name__ == '__main__': 
-    TEST()    
