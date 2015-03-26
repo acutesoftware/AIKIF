@@ -12,26 +12,23 @@ except:
 import getpass
 import socket
 
-
-	
-
 def get_user_name():
     """
     get the username of the person logged on
     """
-	return getpass.getuser()
+    return getpass.getuser()
 
 def get_host_name():
     """
     get the computer name
     """
-	return socket.gethostname()
-	
+    return socket.gethostname()
+
 def download_file_no_logon(url, filename):
     """
     download a file from a public website with no logon required
     """
-	output = open(filename,'wb')
-	output.write(request.urlopen(url).read())
-	output.close()
+    output = open(filename,'wb')
+    output.write(request.urlopen(url).read())
+    output.close()
 
