@@ -12,6 +12,7 @@ params = {}
 fldrs['localPath'] = 'T:\\user\\AIKIF\\' 
 fldrs['log_folder'] = 'T:\\user\\AIKIF\\log' 
 fldrs['pers_data'] = 'T:\\user\\AIKIF\\pers_data' 
+fldrs['pers_credentials'] = 'T:\\user\\AIKIF\\pers_data\\credentials' 
 
 # FOR DEVELOPMENT
 core_folder = 'T:\\user\\dev\\src\\python\\AIKIF'
@@ -40,6 +41,17 @@ params['index_files'] = [fldrs['public_data_path'] + os.sep  + 'index' + os.sep 
                         ]
 
 
+def read_credentials(fname):
+    """
+    read a simple text file from a private location to get
+    username and password
+    """
+    with open(fname, 'r') as f:
+            username = f.readline().strip('\n')
+            password = f.readline().strip('\n')
+    return username, password
+
+    
 def show_config():
     """
     module intended to be imported in most AIKIF utils
