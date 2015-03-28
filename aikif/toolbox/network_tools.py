@@ -2,7 +2,7 @@
 
 import os
 import sys
-
+import aikif.config as mod_cfg
 
 try:
 	import urllib.request as request
@@ -11,6 +11,13 @@ except:
 	
 import getpass
 import socket
+
+def load_username_password(fname):
+    """
+    use the config class to read credentials
+    """
+    username, password = mod_cfg.read_credentials(fname)
+    return username, password  # load_username_password
 
 def get_user_name():
     """
