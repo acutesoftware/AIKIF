@@ -58,6 +58,7 @@ aikif\environments\worlds.py
 aikif\examples\__init__.py
 aikif\examples\document_AIKIF.py
 aikif\examples\ex_index_mydocs.py
+aikif\examples\example.py
 aikif\examples\finance_example.py
 aikif\examples\game_of_life_console.py
 aikif\examples\happiness_solver.py
@@ -91,6 +92,7 @@ aikif\toolbox\data_structures.py
 aikif\toolbox\game_board_utils.py
 aikif\toolbox\image_tools.py
 aikif\toolbox\maths_ml_algorithms.py
+aikif\toolbox\network_tools.py
 aikif\toolbox\solve_knapsack.py
 aikif\toolbox\test_tool.py
 aikif\web_app\__init__.py
