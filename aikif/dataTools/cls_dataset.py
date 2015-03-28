@@ -4,17 +4,18 @@
 class DataSet(object):
 	"""
 	A dataset contains a list of data tables. This can be
-	a database schema, Excel spreadsheet with multiple tabs,
-	a folder on an operating system containing a list of files.
+	a database schema, website, a folder on an operating 
+    system containing a list of files. (Excel files are 
+    handled separately - probably not worth wrapping them
+    here as well.
 	"""
 	def __init__(self, name, dataset_type, creds=[]):
 		"""
 		a dataset_type can be the following:
-		folder = folder on hard drive
-		table = database table
+		folder  = folder on hard drive
+		table   = database table
 		website = a list of pages (each page can also be a dataset)
 		dataset = can be a recursive call for folders or webpages
-		
 		"""
 		self.name = name
 		self.dataset_type = dataset_type

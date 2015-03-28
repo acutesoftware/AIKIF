@@ -13,7 +13,7 @@ class TestClassDataSet(unittest.TestCase):
 		fldr = cl.DataSet('Folder of CSV Files', 'folder')
 		fldr.add('file1.csv')
 		fldr.add('file2.csv')
-		print("test 1")
+		print("test 1 - folder")
 		self.assertEqual(len(fldr.datatables), 2) 
 		self.assertEqual(len(fldr.list_tables('\n')), 19) 		
 		
@@ -22,7 +22,7 @@ class TestClassDataSet(unittest.TestCase):
 		schema.add('C_CUSTOMERS')
 		schema.add('C_PRODUCTS')
 		schema.add('C_SALES')
-		print("test 1")
+		print("test 2 - database")
 		self.assertEqual(len(schema.datatables), 3)  
 		self.assertEqual(len(schema.list_tables('')), 28)  
 
