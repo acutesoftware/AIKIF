@@ -4,8 +4,11 @@ import unittest
 import sys
 import os
 import time
+import aikif.config as mod_cfg
 
 from aikif.toolbox import network_tools as mod_net
+
+creditionals_file = mod_cfg.fldrs['pers_credentials'] + os.sep + 'dummy.cred'
 				
 class NetworkToolsTest(unittest.TestCase):
 
@@ -26,21 +29,33 @@ class NetworkToolsTest(unittest.TestCase):
         url = 'http://gdeltproject.org/data/lookups/CAMEO.country.txt'
         mod_net.download_file_no_logon(url, fname)
         self.assertEqual(os.path.isfile(fname), True)
-        time.sleep(2)
+        time.sleep(1)
         os.remove(fname)
         
+    def test_04_read_username_password(self):
+        username, password = mod_net.load_username_password(creditionals_file)
+        self.assertEqual(username, 'dummy_username')
+        self.assertEqual(password, 'dummy_password')
 
-"""
-def TEST():
-	print(" \n --- Testing network functions  --- ")
-	print(" ---------------------------------- ")
-	print('username = ' + get_user_name())
-	print('hostname = ' + get_host_name())
-	print('downloading file http://gdeltproject.org/data/lookups/CAMEO.country.txt to test_country.txt')
-	download_file_no_logon('http://gdeltproject.org/data/lookups/CAMEO.country.txt', 'test_country.txt')
-	print('done')
-"""
-
+    def test_05_download_file_password_protected(self):
+        """
+        download a file from a password protected site
+        """
+        print('NOTE - replace line below with your own creditionals file')
+        private_file = mod_cfg.fldrs['pers_credentials'] + os.sep + 'regnow.cred' 
+        username, password = mod_net.load_username_password(private_file)
+        #self.assertEqual(username, '3580')
+        url = 'https://admin.mycommerce.com/vendorpriv/orders.cgi'
+        login_page = 'https://admin.mycommerce.com/app/cp/login/vendor'
+        op_file = mod_cfg.fldrs['pers_credentials'] + os.sep + 'regnow.html'
+        try:
+            os.remove(op_file)
+        except:
+            pass
+        print('downloading....')
+        mod_net.download_file('regnow', url, op_file, username, password, login_page)
+        self.assertEqual(os.path.isfile(op_file), True)
+        
 
 		
 if __name__ == '__main__':
