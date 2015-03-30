@@ -2,6 +2,7 @@
 
 import sys
 import os
+import random
 import aikif.cls_log as mod_log
 import aikif.project as mod_prj
 
@@ -73,5 +74,14 @@ class Battle():
         """
         runs a series of fights
         """
-        pass
+        for i in range(1, moves):
+            roll_1 = random.randint(2,200)
+            roll_2 = random.randint(2,200)
+            if roll_1 > roll_2:
+                print(self.c1.name + ' hits ' + self.c2.name + ' for damage ' + str(roll_1))
+            else:
+                print(self.c2.name + ' hits ' + self.c1.name + ' for damage ' + str(roll_2))
+            
+        
+        
 main()
