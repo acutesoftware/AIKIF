@@ -42,15 +42,18 @@ def download_file_no_logon(url, filename):
 def download_file(p_realm, p_url, p_op_file, p_username, p_password, p_logon_url=''):
     # https://docs.python.org/3/library/urllib.request.html#examples
     # Create an OpenerDirector with support for Basic HTTP Authentication...
-    auth_handler = urllib.request.HTTPBasicAuthHandler()
+    auth_handler = request.HTTPBasicAuthHandler()
     auth_handler.add_password(realm=p_realm,
                               uri=p_url,
                               user=p_username,
                               passwd=p_password)
-    opener = urllib.request.build_opener(auth_handler)
+    opener = request.build_opener(auth_handler)
     # ...and install it globally so it can be used with urlopen.
-    urllib.request.install_opener(opener)
+    request.install_opener(opener)
     if p_logon_url == '':
         p_logon_url = p_url
-    urllib.request.urlopen(p_logon_url)
-
+    print('p_logon_url = ', p_logon_url)
+    web = request.urlopen(p_logon_url)
+    with open(p_op_file, 'w') as f:
+        f.write(web.read().decode('utf-8'))
+        
