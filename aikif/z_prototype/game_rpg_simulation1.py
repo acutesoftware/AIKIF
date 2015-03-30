@@ -22,8 +22,8 @@ def main():
     """
     p = mod_prj.Project('RPG Simulation', 'Game', 'Testing character simulation in game', os.getcwd())
     
-    character1 = Character('Albogh', str=4,int=7,sta=5)
-    character2 = Character('Zoltor', str=6,int=3,sta=7)
+    character1 = Character('Albogh', str=4,int=7,sta=50)
+    character2 = Character('Zoltor', str=6,int=6,sta=70)
     print(character1)
     b = Battle(character1, character2)
     print(b)
@@ -64,7 +64,7 @@ class Battle():
         self.fight()
     
     def __str__(self):
-        res = 'Battle Status : ' + self.status + '\n'
+        res  = 'Battle Status : ' + self.status + '\n'
         res += 'Character 1 =  ' + self.c1.name + '\n'
         res += 'Character 2 =  ' + self.c2.name + '\n'
         return res
@@ -75,13 +75,38 @@ class Battle():
         runs a series of fights
         """
         for i in range(1, moves):
-            roll_1 = random.randint(2,200)
-            roll_2 = random.randint(2,200)
-            if roll_1 > roll_2:
-                print(self.c1.name + ' hits ' + self.c2.name + ' for damage ' + str(roll_1))
-            else:
-                print(self.c2.name + ' hits ' + self.c1.name + ' for damage ' + str(roll_2))
+            # player 1
+            result, dmg = self.calc_move(self.c1, self.c2)
+            print (self.c1.name + ' ' + result + ' for ' + str(dmg))
+            self.c1.sta = self.c1.sta - dmg
+            if self.is_character_dead(self.c1):
+                print(self.c1.name + ' has died')
+                exit(0)
+            # player 2
+            result, dmg = self.calc_move(self.c2, self.c1)
+            print (self.c2.name + ' ' + result + ' for ' + str(dmg))
+            self.c2.sta = self.c2.sta - dmg
+            if self.is_character_dead(self.c2):
+                print(self.c2.name + ' has died')
+                exit(0)
             
-        
-        
+    def calc_move(self, c1, c2):
+        chance_hit = random.randint(2,c1.int)
+        amount_dmg = random.randint(2,c1.str+3) * (c1.int/2)
+       # print('chance_hit  =',chance_hit  , 'amount_dmg = ',amount_dmg  )
+        if chance_hit > 6:
+            return 'Crit', amount_dmg
+        elif chance_hit < 3:
+            return 'Miss', 0
+        else:
+            return 'Hit', amount_dmg
+            
+    def is_character_dead(self, c):
+        """
+        check to see if a character is dead
+        """
+        if c.sta < 1:
+            return True
+        else:
+            return False
 main()
