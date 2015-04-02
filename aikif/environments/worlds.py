@@ -176,6 +176,27 @@ class World(object):
             self.refresh_stats()
             print(self.show_grid_stats())
  
+    def add_mountains(self):
+        """
+        instead of the add_blocks function which was to produce
+        line shaped walls for blocking path finding agents, this
+        function creates more natural looking blocking areas like
+        mountains
+        """
+        from noise import pnoise2
+        import random
+        random.seed()
+        octaves = (random.random() * 0.5) + 0.5
+        freq = 16.0 * octaves
+        for y in range(self.grd.grid_height - 1):
+            for x in range(self.grd.grid_width - 1):
+                pixel = self.grd.get_tile(y,x)
+                if pixel == 'X':     # denoise blocks of mountains
+                    n = int(pnoise2(x/freq, y / freq, 1)*10+3)
+                    if n < 1:
+                        self.grd.set_tile(y, x, '#')
+        
+        
  
     def add_block(self):
         """ adds a random size block to the map """

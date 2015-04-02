@@ -14,19 +14,24 @@ from tkinter import Tk, Canvas, PhotoImage, mainloop
         	
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) ) 
 
-#fname = root_folder + os.sep + "examples" + os.sep + "test_world.txt"
-fname = root_folder + os.sep + "examples" + os.sep + "test_world_traversed.txt"    
+default_fname = root_folder + os.sep + "examples" + os.sep + "test_world_traversed.txt"
 
 def main():
+    display_map(default_fname)
+    
+def display_map(fname):
     """
     view a text file (map) in high resolution
     """
     print("viewing ", fname)
+    
     wrld = read_map(fname)
     for row in wrld:
         #for col in row:
         print(row)
     app = gui_view_tk(None)
+    app.add_file(fname)
+    app.show_grid_from_file(fname)
     app.title('Map View')
     app.mainloop()
     
@@ -65,6 +70,7 @@ class gui_view_tk(Tkinter.Tk):
         self.appHeight = 1000
         self.cell_width = 4
         self.cell_height = 3
+        self.fname = ''
         self.screenWidth = self.winfo_screenwidth()
         self.screenHeight = self.winfo_screenheight()
         self.configure(bg='black')
@@ -77,7 +83,6 @@ class gui_view_tk(Tkinter.Tk):
         self.img = PhotoImage(width=WIDTH, height=HEIGHT)
         self.canvas.create_image(( WIDTH/2,  HEIGHT/2), image=self.img, state="normal")
         #self.TEST_sin()   # testing - draws a sin wave
-        self.show_grid_from_file(fname)
         self.appWidth = 1900   # canvas.width
         self.appHeight = 1000
         self.canvas.pack()
@@ -87,7 +92,10 @@ class gui_view_tk(Tkinter.Tk):
             y = int(self.appHeight/2 + self.appHeight/4 * math.sin(x/80.0))
             self.img.put("#ffffff", (x//4,y))
         self.canvas.pack()
-        
+    
+    def add_file(self, fname):
+        self.fname = fname
+    
     def show_grid_from_file(self, fname):
         """
         reads a saved grid file and paints it on the canvas
