@@ -6,7 +6,6 @@ import random
 EMPTY = '.'   # TODO - need to change this in multiple places (see worlds.py, cls_grid, world_generator)
 FULL = 'X'     
 
-print("LOADING cls_grid module")
 
 class Grid:
     """
@@ -22,7 +21,6 @@ class Grid:
         self.grid = [[EMPTY for dummy_col in range(self.grid_width)] 
                        for dummy_row in range(self.grid_height)]
 
-        print("INITIAILISING GRID")
         
                        
     def reset(self):

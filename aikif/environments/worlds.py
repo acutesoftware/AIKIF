@@ -71,13 +71,13 @@ class World(object):
         that hits perc_blocked.
         """
         rnge = math.floor(num_seeds/2)
-        self.show_grid_stats()
+       # self.show_grid_stats()
         seeds = [[randint(0,self.grd.grid_height-1), randint(0,self.grd.grid_width-1)] for y in range(rnge) for x in range(rnge)]
         for seed in seeds:
              self.expand_seed(seed, (self.grd.grid_height * self.grd.grid_width)/(perc_sea),  TERRAIN_LAND)
         
         self.refresh_stats()
-        print(self.show_grid_stats())
+     #   print(self.show_grid_stats())
         expand = 1
         old_land = self.tot_land
         while (100*self.tot_land)/self.tot_pix < perc_land - 1:
@@ -85,7 +85,7 @@ class World(object):
             
             self.denoise_grid(TERRAIN_LAND, expand)
             self.refresh_stats()
-            print(expand, self.show_grid_stats())
+          #  print(expand, self.show_grid_stats())
             if old_land == self.tot_land:   # no extra expansion, so add another seed
                 self.expand_seed(self.add_new_seed(), 50, TERRAIN_LAND)
             else:
@@ -170,11 +170,11 @@ class World(object):
         random sea/land features - blocks are default 5x2
         """
         self.refresh_stats()
-        print(self.show_grid_stats())
+        #print(self.show_grid_stats())
         while (100*(self.tot_blocked-10))/self.tot_pix < perc_blocked - 1:
             self.add_block()
             self.refresh_stats()
-            print(self.show_grid_stats())
+            #print(self.show_grid_stats())
  
     def add_mountains(self):
         """
