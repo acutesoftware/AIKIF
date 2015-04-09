@@ -11,13 +11,32 @@ import aikif.config as cfg
 
 def TEST():
     """ simple test function """
-    lg = Log(cfg.fldrs['localPath'])
-    lg.record_command('test.txt', 'hello')
+    print('cfg.fldrs[localPath] = ', cfg.fldrs['localPath'])
+    print('cfg.fldrs[log_folder] = ', cfg.fldrs['log_folder'])
+    
+    
+    lg = Log(cfg.fldrs['log_folder'])
+    lg.record_process('prog1.py', 'prog1.py - recording process')
+    lg.record_source('prog1.py', 'prog1.py - recording source')
+    lg.record_command('prog1.py', 'prog1.py - recording command')
+    lg.record_result('prog1.py', 'prog1.py - recording result')
+    
+    lg.record_process('prog2.py', 'prog2.py - recording process')
+    lg.record_source('prog2.py', 'prog2.py - recording source')
+    lg.record_command('prog2.py', 'prog2.py - recording command')
+    lg.record_result('prog2.py', 'prog2.py - recording result')
+    
     print(lg)
     sum = LogSummary(lg, cfg.fldrs['log_folder'])
     sum.summarise_events()
     print(sum)
     
+    
+    # check extract by program
+    sum.filter_by_program('test.txt', cfg.fldrs['log_folder'] + os.sep + 'test_log.txt')
+    sum.filter_by_program('prog1.py', cfg.fldrs['log_folder'] + os.sep + 'prog1.txt')
+    sum.filter_by_program('prog2.py', cfg.fldrs['log_folder'] + os.sep + 'prog2.txt')
+  
 
 class Log:
     """
@@ -38,10 +57,20 @@ class Log:
         pass the folder on command line 
         """
         self.log_folder = fldr
-        self.logFileProcess = self.log_folder + os.sep + 'process.log'
-        self.logFileSource  = self.log_folder + os.sep + 'source.log'
-        self.logFileCommand = self.log_folder + os.sep + 'command.log'
-        self.logFileResult  = self.log_folder + os.sep + 'result.log'
+        
+        print('fldr[-1]', fldr[-1])
+        
+        # shitty fix to make sure os.sep isnt added twice
+        if fldr[-1] == os.sep:
+            file_delim = ''
+        else:
+            file_delim = os.sep
+        
+        
+        self.logFileProcess = self.log_folder + file_delim + 'process.log'
+        self.logFileSource  = self.log_folder + file_delim + 'source.log'
+        self.logFileCommand = self.log_folder + file_delim + 'command.log'
+        self.logFileResult  = self.log_folder + file_delim + 'result.log'
         ensure_dir(self.logFileCommand)  # need to pass file not the folder for this to work
         self.session_id = self.get_session_id()
         
@@ -168,8 +197,48 @@ class LogSummary:
             txt = f.read()
         return txt
         
-        return txt
-            
+   
+    def filter_by_program(self, prg, opFile):
+        """
+        parse the log files and extract entries from all 
+        logfiles to one file per program (program is the 
+        2nd to last entry each logfile)
+        """
+        log_1 = open(self.process_file, 'r')
+        log_2 = open(self.command_file, 'r')
+        log_3 = open(self.result_file, 'r')
+        log_4 = open(self.source_file, 'r')
+        
+        with open(opFile, 'a') as f:
+            for line in log_1:
+                if prg in line:
+                    f.write('PROCESS, ' + line)
+            for line in log_2:
+                if prg in line:
+                    f.write('COMMAND, ' + line)
+            for line in log_3:
+                if prg in line:
+                    f.write('RESULT, ' + line)
+            for line in log_4:
+                if prg in line:
+                    f.write('SOURCE, ' + line)
+                    
+        log_1.close()
+        log_2.close()
+        log_3.close()
+        log_4.close()
+   
+    def extract_logs(fname, prg):
+        """
+        read a logfile and return entries for a program
+        """
+        op = []
+        with open(fname, 'r') as f:
+            for line in f:
+                if prg in line:
+                    op.append(line)
+        return op
+    
     def summarise_events(self):
         """
         takes the logfiles and produces an event summary matrix
