@@ -6,6 +6,7 @@ import os
 import time
 test_fldr = os.getcwd() + os.sep + 'test_results'
 import aikif.cls_log as mod_log
+import aikif.config as cfg
 
 class LogTest(unittest.TestCase):
     
@@ -57,6 +58,34 @@ class LogTest(unittest.TestCase):
     def test_11_summarise_results(self):
         sum = mod_log.LogSummary(self.mylog, test_fldr)
         sum.summarise_events()
+
+
+    def test_12_filter_by_program(self):
+        # first create some sample log entries from separate programs
+        lg = mod_log.Log(cfg.fldrs['log_folder'])
+        lg.record_process('test_prog1.py', 'test_prog1.py - recording process')
+        lg.record_source('test_prog1.py', 'test_prog1.py - recording source')
+        lg.record_command('test_prog1.py', 'test_prog1.py - recording command')
+        lg.record_result('test_prog1.py', 'test_prog1.py - recording result')
+        
+        lg.record_process('test_prog2.py', 'test_prog2.py - recording process')
+        lg.record_source('test_prog2.py', 'test_prog2.py - recording source')
+        lg.record_command('test_prog2.py', 'test_prog2.py - recording command')
+        lg.record_result('test_prog2.py', 'test_prog2.py - recording result')
+        
+        # summarise by program
+        sum = mod_log.LogSummary(lg, cfg.fldrs['log_folder'])
+        sum.filter_by_program('prog1.py', cfg.fldrs['log_folder'] + os.sep + 'prog1.txt')
+        sum.filter_by_program('prog2.py', cfg.fldrs['log_folder'] + os.sep + 'prog2.txt')
     
+        self.assertEqual(os.path.isfile(cfg.fldrs['log_folder'] + os.sep + 'prog1.txt'), True)
+        self.assertEqual(os.path.isfile(cfg.fldrs['log_folder'] + os.sep + 'prog2.txt'), True)
+    
+    
+    def test_13_check_missing_logs_doesnt_break_sum(self):
+        print("TODO = test_13_check_missing_logs_doesnt_break_sum (will fail)")
+        
+
+        
 if __name__ == '__main__':
     unittest.main()

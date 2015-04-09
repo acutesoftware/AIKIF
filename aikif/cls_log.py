@@ -57,9 +57,6 @@ class Log:
         pass the folder on command line 
         """
         self.log_folder = fldr
-        
-        print('fldr[-1]', fldr[-1])
-        
         # shitty fix to make sure os.sep isnt added twice
         if fldr[-1] == os.sep:
             file_delim = ''
@@ -252,7 +249,6 @@ class LogSummary:
             20140429	0	    0	    0	    4
 
         """
-        print('summarising logfiles')
         all_dates = []
         d_command = self._count_by_date(self.command_file, all_dates)
         d_result  = self._count_by_date(self.result_file,  all_dates)
