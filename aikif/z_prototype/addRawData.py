@@ -8,17 +8,17 @@
 import os
 import sys
 import csv
-sys.path.append('..//..//_AS_LIB')
-import as_util_data as dat
-import AIKIF_utils as aikif
 
+ref_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + '..' + os.sep + '..' + os.sep + 'data' + os.sep + 'ref')
 
-verbList = dat.ReadFileToList('..//data//ref//verbList.txt')
-nounList = dat.ReadFileToList('..//data//ref//nounList.txt')
-adjectiveList = dat.ReadFileToList('..//data//ref//adjList.txt')
-adverbList = dat.ReadFileToList('..//data//ref//advList.txt')
+import aikif.lib.cls_file as mod_file
+import aikif.config as cfg
+verbList = mod_file.TextFile(ref_folder + os.sep + 'verbList.txt').load_file_to_list()
+nounList = mod_file.TextFile(ref_folder + os.sep + 'nounList.txt').load_file_to_list()
+adjectiveList = mod_file.TextFile(ref_folder + os.sep + 'adjList.txt').load_file_to_list()
+adverbList = mod_file.TextFile(ref_folder + os.sep + 'advList.txt').load_file_to_list()
 
-#print(adjectiveList)
+#print(nounList)
 
 def TEST():
     addData('duncan', 'sees', 'the lazy dog chases the faster cat')
@@ -34,10 +34,10 @@ def addData(src, method, rawString):
     # adds the raw string to the dataset
     print('\n' + rawString + ' (src:' + src + ', method: ' + method + ')'  )
     n, v, a, j = parseRawString(rawString)
-    print ('nouns      : ' + dat.listToString(n, ', '))
-    print ('verbs      : ' + dat.listToString(v, ', '))
-    print ('adverbs    : ' + dat.listToString(a, ', '))
-    print ('adjectives : ' + dat.listToString(j, ', '))
+    print ('nouns      : ', n)
+    print ('verbs      : ', v)
+    print ('adverbs    : ', a)
+    print ('adjectives : ', j)
     
 def parseRawString(rawString):
     nouns = []
