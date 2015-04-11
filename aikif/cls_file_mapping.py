@@ -34,10 +34,10 @@ class FileMap:
     """
     Provides mapping to file names
     """
-    def __init__(self, localPath):
+    def __init__(self, localPath = '.'):
         self.root_folder = root_folder
         self.dataPath    = root_folder + os.sep + "data"
-        self.localPath   = localPath
+        self.localPath   = localPath  # not used, so why is this here? TODO - check
         self.dataFiles   = []
  
     def get_root_folder(self):
