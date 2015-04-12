@@ -28,7 +28,7 @@ class CoreData():
         define an object with a name
         """
         self.name = name
-        self.node = None    # this is the node in the graph
+        self.data = data    # can be as detailed or simple as needed
         self.parent = parent
         self.child = []
         self.links = []
@@ -36,6 +36,16 @@ class CoreData():
     def __str__(self):
         return self.name
     
+    def format_csv(self, delim=',', qu='"'):
+        """
+        Prepares the data in CSV format for appending
+        to the main events file
+        """
+        res = qu + self.name + qu + delim
+        for d in self.data:
+            res += qu + d + qu + delim
+        return res
+        
     def drill_down(self):
         """ 
         this WALKS down the tree to get the LIST of 
