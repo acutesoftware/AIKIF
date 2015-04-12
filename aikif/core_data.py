@@ -38,12 +38,21 @@ class CoreData():
     
     def format_csv(self, delim=',', qu='"'):
         """
-        Prepares the data in CSV format for appending
-        to the main events file
+        Prepares the data in CSV format
         """
         res = qu + self.name + qu + delim
         for d in self.data:
             res += qu + d + qu + delim
+        return res
+        
+    def format_dict(self, delim=':', qu="'"):
+        """
+        Prepares the data as a dictionary with column headers
+        TODO - get variable names of data[] as strings for hdr
+        """
+        res = 'name' + delim + qu + self.name + qu + ','
+        for num, d in enumerate(self.data):
+            res += 'col' + str(num) + delim + qu + d + qu + ','
         return res
         
     def drill_down(self):
@@ -131,7 +140,6 @@ class Event(CoreData):
         Events have a simple data structure
         date, category, remind_time, event
         """
-        
         data = [date, category, details]
         
         CoreData.__init__(self, name, data, parent)
