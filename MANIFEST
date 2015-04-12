@@ -6,6 +6,7 @@ aikif\bias.py
 aikif\cls_file_mapping.py
 aikif\cls_log.py
 aikif\config.py
+aikif\core_data.py
 aikif\create_database.py
 aikif\gui_view_world.py
 aikif\index.py
@@ -56,6 +57,8 @@ aikif\environments\__init__.py
 aikif\environments\happiness.py
 aikif\environments\worlds.py
 aikif\examples\__init__.py
+aikif\examples\core_data_usage.py
+aikif\examples\diary.py
 aikif\examples\document_AIKIF.py
 aikif\examples\ex_index_mydocs.py
 aikif\examples\example.py
