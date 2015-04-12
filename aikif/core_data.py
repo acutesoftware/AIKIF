@@ -14,11 +14,16 @@ def TEST():
     print(f)
     print(f.drill_down()[1])
 
+    # Events
+    e = Event('Sales Meeting', '2015-04-11', 'Office', 'Meet with client to discuss custom software')
+    print(e)
+    
+    
 class CoreData():
     """
     Base class for all core data objects
     """
-    def __init__(self, name, parent=None):
+    def __init__(self, name, data=None, parent=None):
         """ 
         define an object with a name
         """
@@ -103,12 +108,24 @@ class CoreData():
         
 
 class Object(CoreData):
-    def __init__(self, name, parent=None):
-        #print('class Object(CoreData)')
-        CoreData.__init__(self, name, parent)
+    def __init__(self, name, data=None, parent=None):
+        """
+        Objects currently dont have any additional 
+        data properties
+        """
+        CoreData.__init__(self, name, data, parent)
     
 class Event(CoreData):
-    pass
+    def __init__(self, name, date, category, details, data=None, parent=None):
+        """
+        Events have a simple data structure
+        date, category, remind_time, event
+        """
+        
+        data = [date, category, details]
+        
+        CoreData.__init__(self, name, data, parent)
+    
     
 class Location(CoreData):
     pass
