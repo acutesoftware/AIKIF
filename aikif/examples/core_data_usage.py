@@ -35,3 +35,9 @@ print('Shelf = ', shelf)
 print('Shelf can be contracted to ')
 shelf.contract('')
 
+# Events
+e = c.Event('Sales Meeting', '2015-04-11', 'Office', 'Meet with client to discuss custom software')
+print(e.format_csv())
+print(e.format_dict())
+
+
