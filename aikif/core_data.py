@@ -43,7 +43,7 @@ class CoreData():
         res = qu + self.name + qu + delim
         for d in self.data:
             res += qu + d + qu + delim
-        return res
+        return res + '\n'
         
     def format_dict(self, delim=':', qu="'"):
         """
