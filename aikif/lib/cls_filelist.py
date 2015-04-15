@@ -339,8 +339,10 @@ class FileList(object):
                 try:
                     fout.write (line + '\n')
                 except:
-                    print("Cant print line - cls_filelist line 304")
-                    
+                    #print("Cant print line - cls_filelist line 304")
+                    pass
+
+            
             #print ("Finished saving " , opFile)
 
 	
