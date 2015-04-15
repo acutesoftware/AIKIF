@@ -233,6 +233,13 @@ class FileList(object):
         return self.filelist
 
     def add_file_metadata(self, fname):
+        """
+        collects the files metadata - note that this will fail
+        with strange errors if network connection drops out to
+        shared folder, but it is better to stop the program 
+        rather than do a try except otherwise you will get an 
+        incomplete set of files.
+        """
         file_dict = {}
         file_dict["fullfilename"] = fname
         file_dict["name"] = os.path.basename(fname)
