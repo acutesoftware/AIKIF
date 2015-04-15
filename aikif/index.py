@@ -18,7 +18,10 @@ if len(sys.argv) == 2:
         silent = 'Y'
 
 ndxPath = mod_cfg.fldrs['public_data_path'] + os.sep +  'index'
-        
+ndxFile = ndxPath + os.sep + 'ndxFull.txt'
+opIndex = ndxPath + os.sep + 'ndxWordsToFiles.txt'
+ignore_files = ["__pycache__", ".git"]   
+     
 def index():
     """
     main function - outputs in following format BEFORE consolidation (which is TODO)
@@ -34,12 +37,10 @@ def index():
         print('Rebuilding Indexes')
         print('------------------')	
 
-    ndxFile = ndxPath + '\\ndxFull.txt'
-    opIndex = ndxPath + '\\ndxWordsToFiles.txt'
     with open(ndxFile, "w") as ndx:
         ndx.write('filename, word, linenumbers\n')
 
-    files_to_index = mod_fl.FileList([mod_cfg.fldrs['public_data_path'] + os.sep + 'core'], ['*.csv'], ["__pycache__", ".git"], "files_to_index_filelist.csv")
+    files_to_index = mod_fl.FileList([mod_cfg.fldrs['public_data_path'] + os.sep + 'core'], ['*.csv'], ignore_files, "files_to_index_filelist.csv")
     
     for f in files_to_index.get_list():
         buildIndex(f, ndxFile, silent)
@@ -147,10 +148,8 @@ def getWordList(ipFile, delim, headersOnly='N'):
         for word in words:
             cleanedWord = word.lower().strip()
             if cleanedWord not in indexedWords:
-                #indexedWords[cleanedWord] = cleanedWord + ' ' + str(totLines)
                 indexedWords[cleanedWord] =  str(totLines)
             else:
-                #indexedWords[cleanedWord] = indexedWords[cleanedWord] + ' ' + str(totLines)
                 indexedWords[cleanedWord] = indexedWords[cleanedWord] + ' ' + str(totLines)
     f.close()
     #print ('total words = ' + str(len(indexedWords)))
@@ -204,9 +203,7 @@ def consolidate(ipFile, opFile):
                     op.write(str(line_num))
             op.write('\n')
     
-
-
-    
+ 
 
 def DebugIndexing(curFile, curWord, curLineNums, line):
     print('line = ' + line)
