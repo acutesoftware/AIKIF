@@ -32,6 +32,7 @@ aikif\agents\gather\__init__.py
 aikif\agents\gather\agent_browser.py
 aikif\agents\gather\agent_email.py
 aikif\agents\gather\agent_filelist.py
+aikif\agents\gather\agent_image_metadata.py
 aikif\agents\gather\collect_Win_processes.py
 aikif\agents\gather\log_PC_usage.py
 aikif\agents\gather\log_browser_history.py
