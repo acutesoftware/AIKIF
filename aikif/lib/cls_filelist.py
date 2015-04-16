@@ -239,9 +239,6 @@ class FileList(object):
         shared folder, but it is better to stop the program 
         rather than do a try except otherwise you will get an 
         incomplete set of files.
-        
-        TODO - try catch for EACH atribute 
-        
         """
         file_dict = {}
         try:
@@ -252,19 +249,23 @@ class FileList(object):
         try:        
             file_dict["name"] = os.path.basename(fname)
         except:
-
+            file_dict["name"] = 'Unknown basename'
+            
         try:        
             file_dict["date"] = self.GetDateAsString(os.path.getmtime(fname))
         except:
             file_dict["date"] = 'Unknown date'
+            
         try:        
             file_dict["size"] = os.path.getsize(fname)
         except:
             file_dict["size"] = 'Unknown size'
+            
         try:        
             file_dict["path"] = os.path.dirname(fname)
         except:
             file_dict["path"] = 'Unknown path'
+            
         self.fl_metadata.append(file_dict)
 
     def print_file_details_in_line(self, fname, col_headers):
