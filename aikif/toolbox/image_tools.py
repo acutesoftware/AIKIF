@@ -11,8 +11,7 @@ try:
     from PIL.ExifTags import TAGS, GPSTAGS
     from PIL import ImageStat
     from PIL import ImageOps
-    
-    print("PIL imported OK")
+
 except ImportError:
     print("--------------------------------------------------------------------------")
     print("Error: Cant import PIL")
