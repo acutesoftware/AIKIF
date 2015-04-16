@@ -9,13 +9,13 @@ import aikif.toolbox.image_tools as mod_img
 
 def TEST():
     ip_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'cur_files.txt'
-    ip_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'all_pics.txt'
-    #ip_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'lst.txt'
-    op_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'all_pics_metadata.csv'
+    #ip_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'all_pics.txt'
+    ip_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'lst.txt'
+    #op_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'all_pics_metadata.csv'
+    op_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'lst_metadata.csv'
     agt = ImageMetadataAgent('image_metadata_agent', ip_file, op_file)
     print(agt.report())
 
- 	
 		
 class ImageMetadataAgent(agt.Agent):
     """
@@ -45,13 +45,14 @@ class ImageMetadataAgent(agt.Agent):
                 for line in ip:
                     #fname = line.replace('\\', '\\\\').strip()
                     fname = line.strip()
-                    #print(fname)
-                    if os.path.isfile(os.path.abspath(fname)):
-                        dat = mod_img.get_metadata_as_csv(fname)
-                        #print(dat)
-                        op.write(dat + '\n')
-                    else:
-                        print('error - not a file ' , fname)
+                    try:
+                        if os.path.isfile(os.path.abspath(fname)):
+                            dat = mod_img.get_metadata_as_csv(fname)
+                            op.write(dat + '\n')
+                        else:
+                            pass
+                    except:
+                        pass
     
     
     def check_last_updated(self):
