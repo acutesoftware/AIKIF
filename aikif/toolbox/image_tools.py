@@ -259,7 +259,7 @@ def get_metadata_as_csv(fname):
         res = res + q + str(img.format) + q + d
         res = res + q + str(img.palette) + q + d
         stat = ImageStat.Stat(img)
-         
+        print(fname, width, height) 
         #res = res + q + str(stat.extrema) + q + d
         res = res + q + List2String(stat.count, ",") + q + d
         res = res + q + List2String(stat.sum, ",") + q + d
