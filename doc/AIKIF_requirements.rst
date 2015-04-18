@@ -60,12 +60,12 @@ Each program registers it's functions as follows
 
 .. code:: python
 
-t = aikif.Toolbox()
-t.add({'file':'knapsack.py', 'function':'solve_greedy_trivial', 'args':['int', 'dict'], 'return':['int', 'list']})
+    t = aikif.Toolbox()
+    t.add({'file':'knapsack.py', 'function':'solve_greedy_trivial', 'args':['int', 'dict'], 'return':['int', 'list']})
 
-t.add({'file':'knapsack.py', 'function':'solve_smallest_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
-t.add({'file':'knapsack.py', 'function':'solve_expensive_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
-t.add({'file':'knapsack.py', 'function':'solve_value_density', 'args':['int', 'dict'], 'return':['int', 'list']})
+    t.add({'file':'knapsack.py', 'function':'solve_smallest_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
+    t.add({'file':'knapsack.py', 'function':'solve_expensive_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
+    t.add({'file':'knapsack.py', 'function':'solve_value_density', 'args':['int', 'dict'], 'return':['int', 'list']})
  
 
 store disparate data locally linked to common ontology
@@ -253,34 +253,76 @@ Goal 4 - AI monitoring (future)
 -----
 Define methods an AI can use (aikif.toolbox)
 ``````````````
-The Toolbox function maps programs (internal and external) to a standard format to all computers to identify tools and run them
+The Toolbox function maps programs (internal and external) to a standard format to all computers to identify tools and run them.
 
-Automated Goal planning
+The benefit of an AI using methods via the framework to is log times and results to see the outcomes of various algorithms. This provides a central place to manage and track the success and types of results.
+
+Automated Goal planning [Unresolved]
 ``````````````
 
-You enter a goal like ‘be happy, make money
+You enter a generic goal like 'be happy', 'make money', 
 
 You then add specific milestones for that goal (happy=8/10, money=$5000)
 
-You then add (AIKIF offers suggestions) plans on how to get that goal
+You then add specific details / plans on how to get each milestone
 
-You then add tasks on how to achieve the plans
+Recursively break down plans into specific tasks and sub tasks until each milestone has a clear path that can be met.
 
-AIKIF suggests methods on how to achieve the tasks - usually manually with reminders or automatic if possible
+Once specific tasks are defined, AIKIF suggests methods to help achieve the tasks.
 
 
 Log all results with useful milestones and checkpoints
 ``````````````
+
 The log aggregates should show useful summaries
 
 
-Regulate processes to allow automation
+Specify and regulate processes to allow automation (Unresolved)
 ``````````````
+Mapping processes into sub tasks (with sub-sub tasks if needed) and linking to an ontology that AIKIF knows about will allow new task automation to be discoverable.
+
+For example, if methods include: web.download.file, data.import.file, data.quality.fix 
+and you specify a new task
+
+download the latest country data from http://blah and load it into the reference table C_REF_COUNTRY
+
+This task can be discoverable and automated IFF you specify the details before hand
+data_table="C_REF_COUNTRY"
+source("C_REF_COUNTRY") = ontology.reference.country
+update_location="http://blah"   # wait - this is wrong 
+
+
 
 black box monitoring of unknown software agents
 ``````````````
 Detection of agents, either through logfiles, virus scanner like tools or interactions
 
+To monitor an unknown software agent is very likely out of scope of the first 54 versions of this project, but it would probably look like the following...
+
+1. make a virtual environment for the software to run
+2. snapshot data
+3. work out a set of parameters to pass as input
+4. select a set of data inputs
+5. Run the software for EACH data input FOR each parameter
+6. log results of each
+7. parse results and extract highlights from each iteration including overall best performer
+
 Monitor for friendliness (unlikely to be achievable)
 ``````````````
-for future work
+Investigate how a mapped ontology can be used to track unfriendliness.
+
+Ontology can be a mapping of processes or things that are known to be harmful or risky
+destroy_planet=-500000000
+mess_with_nanoparticles=-300000
+mess_with_fission=-20000
+harm_humans_directly=-100000
+
+dangerous_substance_anything={uranium}
+dangerous_substance_anything={uranium}
+dangerous_substance_human={arsenic, poison, spider venom}
+
+
+For example, an Agent needs to build a device.
+
+Friendliness is increased by : not using radioactive materials, minimising resources
+Friendliness is decreased by : killing or harming humans, hurting animals, injuries, potential harmful or risky processes
