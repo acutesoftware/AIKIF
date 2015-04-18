@@ -46,13 +46,27 @@ what table is this for [tblName] | Any Table | Any Table in [schema]
 
 A generic business rules engine which defines many parts of the day to day operation. This is likely to be a core category used by mapper.py to get the appropriate rules list, eg RULES_DATA_COUNTRY, RULES_TOP_PROJECT, RULES_SYSTEM_FILE_BACKUP
 
-The structure of the rules MUST be generic enough to handle any type of business rule, including detailed data mappings (eg change China (excl Mongolia)  to China in country ref file, copy all source code to NAS each night at 10pm, download funny pictures from Reddit at 5pm))
+The structure of the rules MUST be generic enough to handle any type of automated task, for example - 
+Data updates   - detailed data mappings (eg change China (excl Mongolia)  to China in country ref file
+PC Admin tasks - copy all source code to NAS each night at 10pm 
+Web scraping   - download funny pictures from Reddit at 5pm | check for online orders
 
 aikif programs using rules
-ANY program in AIKIF can add to the rules table and there is a column in rules to show which program added it. So that program can then read all its own rules, eg Tax.py reads the finance rules and doesnt care about engineering tolerance rules.
+``````````````
+Any program in AIKIF can add to the rules table and there is a column in rules to show which program added it. So that program can then read all its own rules, eg Tax.py reads the finance rules and doesn't care about engineering tolerance rules.
 In addition there are numerous categories that can optionally be applied to each rule - may not be a table format, possibly json or dictionary.
 
-Each program registers itself as follows (data stored in table, like the toolbox [or replaces toolbox?])
+Each program registers it's functions as follows 
+
+.. code:: python
+
+t = aikif.Toolbox()
+t.add({'file':'knapsack.py', 'function':'solve_greedy_trivial', 'args':['int', 'dict'], 'return':['int', 'list']})
+
+t.add({'file':'knapsack.py', 'function':'solve_smallest_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
+t.add({'file':'knapsack.py', 'function':'solve_expensive_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
+t.add({'file':'knapsack.py', 'function':'solve_value_density', 'args':['int', 'dict'], 'return':['int', 'list']})
+ 
 
 store disparate data locally linked to common ontology
 ``````````````
