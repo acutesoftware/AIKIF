@@ -287,9 +287,13 @@ and you specify a new task
 download the latest country data from http://blah and load it into the reference table C_REF_COUNTRY
 
 This task can be discoverable and automated IFF you specify the details before hand
-data_table="C_REF_COUNTRY"
-source("C_REF_COUNTRY") = ontology.reference.country
-update_location="http://blah"   # wait - this is wrong 
+
+
+.. code:: python
+
+    data_table="C_REF_COUNTRY"
+    source("C_REF_COUNTRY") = ontology.reference.country
+    update_location="http://blah"   
 
 
 
@@ -312,17 +316,22 @@ Monitor for friendliness (unlikely to be achievable)
 Investigate how a mapped ontology can be used to track unfriendliness.
 
 Ontology can be a mapping of processes or things that are known to be harmful or risky
-destroy_planet=-500000000
-mess_with_nanoparticles=-300000
-mess_with_fission=-20000
-harm_humans_directly=-100000
 
-dangerous_substance_anything={uranium}
-dangerous_substance_anything={uranium}
-dangerous_substance_human={arsenic, poison, spider venom}
+
+.. code:: python
+
+    destroy_planet=-500000000
+    mess_with_nanoparticles=-300000
+    mess_with_fission=-20000
+    harm_humans_directly=-100000
+
+    dangerous_substance_anything={uranium}
+    dangerous_substance_anything={uranium}
+    dangerous_substance_human={arsenic, poison, spider venom}
 
 
 For example, an Agent needs to build a device.
 
 Friendliness is increased by : not using radioactive materials, minimising resources
+
 Friendliness is decreased by : killing or harming humans, hurting animals, injuries, potential harmful or risky processes
