@@ -32,6 +32,9 @@ def main():
     print('Diary file = ', diary_file)
     today = '20150411'
     add_event(diary_file, today, 'Testing aikif.examples.diary.py')
+    add_event(diary_file, today, 'random diary entry')
+    add_event(diary_file, '2015-05-17', 'deposit bank cheque for custom software', cat='tax')
+    add_event(diary_file, '2015-10-22', 'Book car in for major service', remindme='20151021')
   #  add_event(diary_file, today, 'Remember to fix shelf', remindme='20150422')
     
 def add_event(fname, dte, details, remindme='', cat='Diary', url=''):
