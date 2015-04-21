@@ -10,6 +10,7 @@ aikif\core_data.py
 aikif\create_database.py
 aikif\gui_view_world.py
 aikif\index.py
+aikif\install_data.py
 aikif\knowledge.py
 aikif\mapper.py
 aikif\programs.py
