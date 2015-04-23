@@ -4,56 +4,81 @@ import os
 import aikif.config as cfg
 import aikif.cls_log as mod_log
 cur_path = os.getcwd()
-
+config_file = cur_path + os.sep + 'data' + os.sep + 'pers_config.py'
 def main():
     """
     script to setup folder structures for AIKIF 
     and prepare data tables.
     """
-    print('\n\n --------- AIKIF Installation --------')
-    print(' s. show current setup')
-    print(' f. setup folder structures')
-    print(' c. create sample data')
-    print(' w. wipe data and install everything from scratch')
-    print(' q. quit')
+    print('\n\n /------- AIKIF Installation --------\\')
+    print(' |  s. show current setup            |')
+    print(' |  f. setup folder structures       |')
+    print(' |  c. create sample data            |')
+    # not yet - wait for beta release print(' w. wipe data and install everything from scratch')
+    print(' |  q. quit                          |')
+    print(' \\-----------------------------------/')
     cmd = input('?')
     if cmd == 's':
         show_setup()   
     elif cmd == 'f':
-        setup_folders(cur_path)
+        setup_folders()
     elif cmd == 'c':
         create_sample_data()   
-    elif cmd == 'w':
-        setup_folders()
-        create_sample_data()   
+    #elif cmd == 'w':
+    #    wipe_and_rebuild_all()
     elif cmd == 'q':
         exit(0)
     main()
- 
-def show_setup():
-    print(' -= Current Setup =- ')
-    
-def setup_folders(cur_path):
-    print('creating folders..')
-    create_folder(cur_path + os.sep + 'data')
-    create_folder(cur_path + os.sep + 'data' + os.sep + 'core')
-    create_folder(cur_path + os.sep + 'data' + os.sep + 'index')
-    create_folder(cur_path + os.sep + 'data' + os.sep + 'log')
-    create_folder(cur_path + os.sep + 'data' + os.sep + 'raw')
-    create_folder(cur_path + os.sep + 'data' + os.sep + 'ref')
-    create_folder(cur_path + os.sep + 'data' + os.sep + 'temp')
-    
 
-def create_sample_data():
-    print('creating sample data')
+def wipe_and_rebuild_all():
+    setup_folders()
+    create_sample_data()   
+    
+def setup_folders():
+    print('creating folders..')
+    create_folder('data')
+    os.chdir('data')
+    create_folder('core')
+    create_folder('log')
+    create_folder('raw')
+    create_folder('ref')
+    create_folder('temp')
+
 
 def create_folder(fldr):
-    print('creating folder ' + fldr)
-    ensure_dir(fldr)
+    try:
+        os.mkdir(fldr) 
+        print('creating folder ' + fldr)
+    except:
+        print(os.getcwd() + os.sep + fldr + ' already exists')
 
-def ensure_dir(f):
-    d = os.path.dirname(f)
-    #print('ensure_dir=' + d)
-    if not os.path.exists(d):
-        os.makedirs(d) 
-main()    
+def show_setup():
+    print(' -= Current Setup =- ')
+    try:
+        with open(config_file, 'r') as cfg_file:
+            print(cfg_file.read())
+            #for line in cfg_file:
+            #    print(line)
+    except:
+        print('No config file - press c to create sample data\n')
+    
+def create_sample_data():
+    if os.path.isfile(config_file):
+        print('== WARNING - CONFIG DATA ALREADY EXISTS ==\n')
+        show_setup()
+        print('== ENTER OK to wipe this data and reset ==\n')
+        if input() != 'OK':
+            print('Aborting create sample data')
+            return
+    print('creating sample data')
+    with open(config_file, 'w') as f:
+        f.write('# pers_config.py  - created by aikif.install_data.py\n')
+        f.write('# Modify this file after running create sample data\n')
+        f.write('LOG_LEVEL = ERROR\n')
+        f.write('username = your_name\n')
+        f.write("fldrs['localPath'] = " + cur_path + "\n")
+        f.write("fldrs['data_folder'] = fldrs['localPath'] + os.sep + 'data'\n")
+        f.write('\n')
+  
+if __name__ == '__main__':  
+    main()    
