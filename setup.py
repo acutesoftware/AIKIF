@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='AIKIF',
-    version='0.0.9',
+    version='0.1.0',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
     packages=['aikif', 'aikif.agents','aikif.agents.aggregate','aikif.agents.explore','aikif.agents.gather','aikif.agents.learn','aikif.dataTools','aikif.environments','aikif.examples','aikif.lib', 'aikif.ontology','aikif.toolbox', 'aikif.web_app'],
