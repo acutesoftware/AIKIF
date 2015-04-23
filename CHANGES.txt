@@ -1,4 +1,7 @@
-v0.0.10, 19-Mar-2015 -- detailed example 
+v0.1.0, 23-Apr-2015 -- detailed examples 
+- removed many old prototypes (still available on github in aikif.z_prototypes)
+- better examples of usage
+- agent to collect image metadata
 
 v0.0.9, 05-Mar-2015 -- additional tests, 
 - test_cls_dataset.py: tests for database
