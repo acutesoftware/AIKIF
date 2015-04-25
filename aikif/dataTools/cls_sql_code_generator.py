@@ -1,14 +1,14 @@
 # cls_sql_code_generator.py written by Duncan Murray June 2014
 
-"""
-usage from other programs:
+def TEST():
+    """
+    usage from other programs:
     from sql_code_generator import SQLCodeGenerator
-    tst = SQLCodeGenerator('C_FACT_TABLE')
+    """
+    import aikif.dataTools.cls_sql_code_generator as sql
+    tst = sql.SQLCodeGenerator('C_FACT_TABLE')
     print(tst)
-
-"""
-
-
+ 
 class SQLCodeGenerator(object):
     """ generates SQL based on a table  """
     def __init__(self, fact_table):
@@ -18,6 +18,7 @@ class SQLCodeGenerator(object):
         self.col_list = []
         self.date_updated_col = 'REC_EXTRACT_DATE'
         self.date_updated_col = 'UPDATE_DATE'
+        self.undo_text = ''     # for the backout script
 
     def __str__(self):
         txt = self.fact_table + '\n'
@@ -35,6 +36,11 @@ class SQLCodeGenerator(object):
     def save_ddl(self, fname):
         with open(fname, "w") as f:
             f.write(self.ddl_text)
+            
+    def save_undo(self, fname):
+        with open(fname, "w") as f:
+            f.write(self.undo_text)
+
     
     def set_column_list(self, col_list):
         """ 
@@ -325,4 +331,7 @@ class SQLCodeGenerator(object):
         self.sql_text += "    SELECT " + group_by_cols + ", " + meas + " AS result \n"
         self.sql_text += "    FROM " + self.fact_table + " GROUP BY " + group_by_cols + "\n"
         self.sql_text += ");\n"        
-        
+
+if __name__ == '__main__':
+    TEST()    
+ 
