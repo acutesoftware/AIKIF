@@ -39,7 +39,10 @@ class LogTest(unittest.TestCase):
 
 
     def test_05_append_log_result(self):
-        self.mylog.record_result('test', 'hello - recording result')        
+        self.mylog.record_result('test', 'Minor Success = cool')        
+        self.mylog.record_result('test', 'Massive Success = JACKPOT')        
+        self.mylog.record_result('test', 'Minor Failure = meh')        
+        self.mylog.record_result('test', 'Massive Failure = AAUURRGHH')        
         self.assertEqual(self.mylog.logFileResult, os.getcwd() + os.sep + 'test_results' + os.sep + 'result.log')
         self.assertEqual(os.path.isfile(self.mylog.logFileResult), True)
 
@@ -49,6 +52,19 @@ class LogTest(unittest.TestCase):
         self.assertEqual(self.mylog.logFileSource, os.getcwd() + os.sep + 'test_results' + os.sep + 'source.log')
         self.assertEqual(os.path.isfile(self.mylog.logFileSource), True)
 
+    def test_07_add_watch_point(self):
+        self.mylog.add_watch_point('cool', 7,1)
+        self.mylog.add_watch_point('JACKPOT', 9,9)
+        self.mylog.add_watch_point('meh', 3,1)
+        self.mylog.add_watch_point('AAUURRGHH', 1,9)
+        self.assertEqual(len(self.mylog.watch_points), 4)   # 4 entries in watchpoints
+        self.assertEqual(len(str(self.mylog.watch_points)), 207)   # 215 characters in watchpoints
+        self.assertEqual(self.mylog.watch_points[0]['string'], 'cool')  
+        self.assertEqual(self.mylog.watch_points[0]['rating'], 7)  
+        self.assertEqual(self.mylog.watch_points[0]['importance'], 1)  
+        self.assertEqual(self.mylog.watch_points[3]['string'], 'AAUURRGHH')  
+        self.assertEqual(self.mylog.watch_points[3]['rating'], 1)  
+        self.assertEqual(self.mylog.watch_points[3]['importance'], 9)  
         
     def test_10_logsum_init(self):
         time.sleep(4)  # warning - fails first time this is run if no logs exist

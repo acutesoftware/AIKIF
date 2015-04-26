@@ -89,7 +89,7 @@ class Log:
         dict = {}
         dict['string'] = string
         dict['rating'] = rating
-        dict['importance'] = str(importance)
+        dict['importance'] = importance
         self.watch_points.append(dict)
     
     def get_folder_process(self):
