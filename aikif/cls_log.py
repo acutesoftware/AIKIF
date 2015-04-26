@@ -19,14 +19,16 @@ def TEST():
     lg.record_process('prog1.py', 'prog1.py - recording process')
     lg.record_source('prog1.py', 'prog1.py - recording source')
     lg.record_command('prog1.py', 'prog1.py - recording command')
-    lg.record_result('prog1.py', 'prog1.py - recording result')
+    lg.record_result('prog1.py', 'prog1.py - OUCH - massive failure')
     
     lg.record_process('prog2.py', 'prog2.py - recording process')
     lg.record_source('prog2.py', 'prog2.py - recording source')
     lg.record_command('prog2.py', 'prog2.py - recording command')
-    lg.record_result('prog2.py', 'prog2.py - recording result')
+    lg.record_result('prog2.py', 'prog2.py - JACKPOT')
     
     print(lg)
+    lg.add_watch_point('JACKPOT', 9, 8)
+    lg.add_watch_point('OUCH - massive failure', 1, 8)
     sum = LogSummary(lg, cfg.fldrs['log_folder'])
     sum.summarise_events()
     print(sum)
@@ -70,9 +72,25 @@ class Log:
         self.logFileResult  = self.log_folder + file_delim + 'result.log'
         ensure_dir(self.logFileCommand)  # need to pass file not the folder for this to work
         self.session_id = self.get_session_id()
+        self.watch_points = []   # watch points list of dicts to watch for which represent key results
         
     def __str__(self):
         return self.log_folder
+    
+    def add_watch_point(self, string, rating, importance=5):
+        """
+        For a log session you can add as many watch points 
+        which are used in the aggregation and extraction of
+        key things that happen.
+        Each watch point has a rating (up to you and can range 
+        from success to total failure and an importance for 
+        finer control of display
+        """
+        dict = {}
+        dict['string'] = string
+        dict['rating'] = rating
+        dict['importance'] = str(importance)
+        self.watch_points.append(dict)
     
     def get_folder_process(self):
         return self.logFileProcess
