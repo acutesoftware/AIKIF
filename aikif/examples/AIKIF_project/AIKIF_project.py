@@ -31,6 +31,7 @@ def main():
     p = mod_prj.Project(name, type, desc, fldr)
     project_setup(p)
 
+
     requirements = mod_dt.DataTable('requirements.csv', ',', col_names=['id', 'dep_id', 'name', 'details'])
     p.log_table(requirements)
     p.record(requirements, '', ['a', '', 'process data', 'automatically process source files to tables based on rules'])
@@ -42,9 +43,17 @@ def main():
     p.record(requirements, '', ['a03', 'a', 'find blank rows in CSV', 'read CSV file and count DQ issues'])
     p.record(requirements, '', ['a04', 'a', 'aggregate table', 'summarise Database table by col(n)'])
 
+    progress = mod_dt.DataTable('progress.csv', ',', col_names=['program', 'percent', 'details'])
+    p.log_table(progress)
+    p.record(progress, '', ['knowledge', '1%',  'class to manage raw data to information'])
+    p.record(progress, '', ['mapper', '20%', 'mapping columns to data structures, with business rules'])
+    p.record(progress, '', ['sql_code_generator', '90%', 'generates SQL to transform data external to AIKIF'])
+    
     issues = mod_dt.DataTable('issues.csv', ',', col_names=['id', 'name', 'details'])
     p.log_table(issues)
-    p.record(issues, '', ['01', 'todo', 'implement AIKIF project logging'])
+    p.record(issues, '', ['01', 'In Progress', 'implement AIKIF project logging'])
+    p.record(issues, '', ['02', 'todo', 'implement Knowledge mapping'])
+    p.record(issues, '', ['03', 'Testing', 'data mapping of columns'])
     
     
   #  p.build_report(report_file_base + '.md', type='md')
