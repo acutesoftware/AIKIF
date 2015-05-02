@@ -35,9 +35,25 @@ class Fact():
     pass
     
 class RawData():
-    pass
+    def add(self, raw):
+        """
+        Add 'raw' to the raw data section
+        """
+        pass
+        
+    def verify(self):
+        """
+        verify raw data and assign bias results
+        """
+        pass
+        
+    def process(self, dat):
+        """
+        take the raw data subset 'dat' and process
+        into appropriate information structures
+        """
+        pass
 
-    
         
 if __name__ == '__main__':
     TEST()	
