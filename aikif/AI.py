@@ -22,7 +22,7 @@ def main():
     welcome()
     while cmd not in all_commands['exit'][0]:
         cmd = get_command(mode)
-        #print(cmd)
+        print('MAIN - cmd, mode = ', cmd, mode)
         result, mode = process(cmd, mode)
         show_output(result)
 
@@ -62,12 +62,15 @@ def process(txt, mode):
     in all_commamnds
     """
     result = ''
+    print('process - txt, mode = ', txt, mode)
+        
     if mode == 'ADD':  # already in add mode, so add data
         if txt in all_commands['cmd'][0]:
             show_output('Returning to Command mode')
             mode = 'COMMAND'
             prompt = '> '
         else:
+            show_output('Adding Text : ', txt)
             cmd_add(txt)
     elif mode == 'QUERY':
         if txt in all_commands['cmd'][0]:
@@ -75,6 +78,7 @@ def process(txt, mode):
             mode = 'COMMAND'
             prompt = '> '
         else:
+            show_output('Query : ', txt)
             cmd_query(txt)
     else:   
         if txt in all_commands['exit'][0]:
