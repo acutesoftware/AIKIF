@@ -11,6 +11,7 @@ all_commands['exit'] = [[':q', '/q', 'exit', 'quit'], 'Exit the application']
 all_commands['help'] = [[':h', '/h', 'help'], 'Show help']
 all_commands['cmd'] =  [[':!', '/!', 'cmd', 'command'], 'Return to Command mode']
 all_commands['add'] =  [[':a', '/a', 'add'], 'Enter Add mode']
+all_commands['query'] =  [[':s', '/s', 'query', 'find', 'search'], 'Enter Query mode']
 
 modes = ['COMMAND', 'ADD', 'QUERY']
 
@@ -21,7 +22,7 @@ def main():
     welcome()
     while cmd not in all_commands['exit'][0]:
         cmd = get_command(mode)
-        print(cmd)
+        #print(cmd)
         result, mode = process(cmd, mode)
         show_output(result)
 
@@ -37,6 +38,8 @@ def get_command(mode):
         prompt = '> '
     elif mode == 'ADD':
         prompt = 'ADD > '
+    elif mode == 'QUERY':
+        prompt = '?? > '
     txt = input(prompt)
     return txt 
  
@@ -59,24 +62,44 @@ def process(txt, mode):
     in all_commamnds
     """
     result = ''
-    if txt in all_commands['exit'][0]:
-        cmd_exit()
-    elif txt in all_commands['help'][0]:
-        cmd_help()
-    elif txt in all_commands['cmd'][0]:
-        show_output('Returning to Command mode')
-        mode = 'COMMAND'
-        prompt = '> '
-        
-    elif txt in all_commands['add'][0]:
-        if mode == 'ADD':  # already here, so add data
+    if mode == 'ADD':  # already in add mode, so add data
+        if txt in all_commands['cmd'][0]:
+            show_output('Returning to Command mode')
+            mode = 'COMMAND'
+            prompt = '> '
+        else:
             cmd_add(txt)
-        else:   # enter add mode
+    elif mode == 'QUERY':
+        if txt in all_commands['cmd'][0]:
+            show_output('Returning to Command mode')
+            mode = 'COMMAND'
+            prompt = '> '
+        else:
+            cmd_query(txt)
+    else:   
+        if txt in all_commands['exit'][0]:
+            cmd_exit()
+            
+        elif txt in all_commands['help'][0]:
+            cmd_help()
+            
+            
+        elif txt in all_commands['cmd'][0]:
+            show_output('Returning to Command mode')
+            mode = 'COMMAND'
+            prompt = '> '
+            
+        elif txt in all_commands['add'][0]:
             show_output('Entering Add mode')
             mode = 'ADD'
             prompt = 'ADD > '
         
-    return result, mode
+        elif txt in all_commands['query'][0]:
+            show_output('Entering Query mode')
+            mode = 'QUERY'
+            prompt = '?? > '
+
+        return result, mode
     
 #####################################################
 #  COMMAND PROCESSING FUNCTIONS
@@ -108,8 +131,13 @@ def cmd_add(txt):
     Enter add mode - all text entered now will be 
     processed as adding information until cancelled
     """
-    show_output('Adding ' + txt)
+    show_output('Adding ', txt)
 
+def cmd_query(txt):
+    """
+    search and query the AIKIF
+    """
+    show_output('Searching for ', txt)
     
 if __name__ == '__main__':        
     main()
