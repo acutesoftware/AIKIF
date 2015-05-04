@@ -345,6 +345,9 @@ class DataTable(object):
         res += '\n'
         return res
  
+    def get_col_width(self, col_name):
+        pass
+        
 class DataStats(object):
     """ class to do statistics on an array """
     def __init__(self, arr):
