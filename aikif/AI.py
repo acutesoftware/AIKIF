@@ -2,6 +2,7 @@
 
 import os
 import sys
+import aikif.knowledge
 
 # commands are structured as [lst_VALID_PROMPTS, str_FUNCTION_TO_CALL, str_DESCRIPTION]
 all_commands = {}  
@@ -131,6 +132,9 @@ def cmd_add(txt):
     processed as adding information until cancelled
     """
     show_output('Adding ', txt)
+    raw = aikif.knowledge.RawData('test')
+    raw.add(txt)
+    print(raw)
     return 'Added ' + txt
     
 

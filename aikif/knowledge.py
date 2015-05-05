@@ -35,11 +35,24 @@ class Fact():
     pass
     
 class RawData():
+    def __init__(self, src):
+        self.data = []
+        self.src = src
+        
+    def __str__(self):
+        res = ' /---- Raw Data ------------------------------- \n' 
+        res += '|  source = ' + self.src + '\n'
+        for d in self.data:
+            res += '|           ' + d + '\n'
+        res += '\---------------------------------------------\n'
+        return res
+    
+        
     def add(self, raw):
         """
         Add 'raw' to the raw data section
         """
-        pass
+        self.data.append(raw)
         
     def verify(self):
         """
