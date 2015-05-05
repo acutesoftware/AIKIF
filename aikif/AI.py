@@ -3,8 +3,6 @@
 import os
 import sys
 
-prompt = '> '
-
 # commands are structured as [lst_VALID_PROMPTS, str_FUNCTION_TO_CALL, str_DESCRIPTION]
 all_commands = {}  
 all_commands['exit'] = [[':q', '/q', 'exit', 'quit'], 'Exit the application']
@@ -22,7 +20,7 @@ def main():
     welcome()
     while cmd not in all_commands['exit'][0]:
         cmd = get_command(mode)
-        print('MAIN - cmd, mode = ', cmd, mode)
+        #print('MAIN - cmd, mode = ', cmd, mode)
         result, mode = process(cmd, mode)
         show_output(result)
 
@@ -62,8 +60,6 @@ def process(txt, mode):
     in all_commamnds
     """
     result = ''
-    print('process - txt, mode = ', txt, mode)
-        
     if mode == 'ADD':  # already in add mode, so add data
         if txt in all_commands['cmd'][0]:
             show_output('Returning to Command mode')
@@ -71,7 +67,7 @@ def process(txt, mode):
             prompt = '> '
         else:
             show_output('Adding Text : ', txt)
-            cmd_add(txt)
+            result = cmd_add(txt)
     elif mode == 'QUERY':
         if txt in all_commands['cmd'][0]:
             show_output('Returning to Command mode')
@@ -79,7 +75,7 @@ def process(txt, mode):
             prompt = '> '
         else:
             show_output('Query : ', txt)
-            cmd_query(txt)
+            result = cmd_query(txt)
     else:   
         if txt in all_commands['exit'][0]:
             cmd_exit()
@@ -87,23 +83,24 @@ def process(txt, mode):
         elif txt in all_commands['help'][0]:
             cmd_help()
             
-            
         elif txt in all_commands['cmd'][0]:
-            show_output('Returning to Command mode')
+            result = 'Returning to Command mode'
             mode = 'COMMAND'
             prompt = '> '
             
         elif txt in all_commands['add'][0]:
-            show_output('Entering Add mode')
+            result = 'Entering Add mode'
             mode = 'ADD'
             prompt = 'ADD > '
         
         elif txt in all_commands['query'][0]:
-            show_output('Entering Query mode')
+            result = 'Entering Query mode'
             mode = 'QUERY'
             prompt = '?? > '
+        else:
+            result = 'Unknown command - type help for list of commands'
 
-        return result, mode
+    return result, mode
     
 #####################################################
 #  COMMAND PROCESSING FUNCTIONS
@@ -122,9 +119,7 @@ def cmd_help():
     for k,v in all_commands.items():
         txt += k.ljust(6) + '= ' 
         txt += v[1].ljust(25)
-        #print('v[0]= ' ,v[0])
         for cmd in v[0]:
-            #print('cmd = ', cmd)
             txt += cmd + ', '
         txt += '\n'
     show_output(txt)
@@ -136,12 +131,15 @@ def cmd_add(txt):
     processed as adding information until cancelled
     """
     show_output('Adding ', txt)
+    return 'Added ' + txt
+    
 
 def cmd_query(txt):
     """
     search and query the AIKIF
     """
     show_output('Searching for ', txt)
+    return 'Search results for ' + txt
     
 if __name__ == '__main__':        
     main()
