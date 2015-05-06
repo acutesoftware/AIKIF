@@ -40,11 +40,9 @@ class RawData():
         self.src = src
         
     def __str__(self):
-        res = ' /---- Raw Data ------------------------------- \n' 
-        res += '|  source = ' + self.src + '\n'
-        for d in self.data:
-            res += '|           ' + d + '\n'
-        res += '\---------------------------------------------\n'
+        res = 'raw_data: ' + self.src + ' (' + str(len(self.data)+1) + ' entries)\n'
+        for num, d in enumerate(self.data):
+            res +=  str(num+1).ljust(3) + ' ' + d + '\n'
         return res
     
         
@@ -53,6 +51,16 @@ class RawData():
         Add 'raw' to the raw data section
         """
         self.data.append(raw)
+    
+    def find(self, txt):
+        """
+        returns a list of records containing text
+        """
+        result = []
+        for d in self.data:
+            if txt in d:
+                result.append(d)
+        return result
         
     def verify(self):
         """
