@@ -22,7 +22,7 @@ class AICLI(object):
         self.all_commands['query'] =  [[':s', '/s', 'query', 'find', 'search'], 'Enter Query mode']
         self.cmd = '?'
         self.mode = 'COMMAND'
-        self.raw = []
+        self.raw = aikif.knowledge.RawData('test')
         self.welcome()
         if auto_start == True:
             self.start()
@@ -144,9 +144,8 @@ class AICLI(object):
         processed as adding information until cancelled
         """
         self.show_output('Adding ', txt)
-        raw = aikif.knowledge.RawData('test')
-        raw.add(txt)
-        print(raw)
+        self.raw.add(txt)
+        print(self.raw)
         return 'Added ' + txt
         
 
@@ -155,7 +154,10 @@ class AICLI(object):
         search and query the AIKIF
         """
         self.show_output('Searching for ', txt)
-        return 'Search results for ' + txt
+        res = self.raw.find(txt)
+        for d in res:
+            self.show_output(d)
+        return str(len(res)) + ' results for ' + txt
     
 if __name__ == '__main__':        
     cli = AICLI('test')
