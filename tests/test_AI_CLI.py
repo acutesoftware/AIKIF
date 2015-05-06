@@ -64,7 +64,8 @@ class AiCliTest(unittest.TestCase):
         self.cli.process('The sky is blue', 'ADD')
         self.cli.process('The grass is green', 'ADD')
         self.cli.process('water flows down', 'ADD')
-        
+        self.assertEqual(self.cli.raw.find('blue'), ['The sky is blue'])
+        self.assertEqual(self.cli.raw.find(' is '), ['The sky is blue','The grass is green'])
         
         
 if __name__ == '__main__':
