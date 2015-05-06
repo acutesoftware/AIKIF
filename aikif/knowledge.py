@@ -7,9 +7,22 @@ def TEST():
     of raw data to knowledge, tapered by the bias network
     """
     print('stub for knowledge module')
+    r = RawData('test')
+    r.add('the dog chases the cat')
+    r.add('the cat eats the fish')
+    r.add('the fish is out of luck')
+    print(r)
     k = Knowledge('test')
     print(k)
     
+class BaseData():
+    """
+    TODO - base class for each of the classes to handle
+    standard add/find in lists. Though may be using data
+    class in dataTools
+    """
+    pass
+
     
 class Knowledge():
     def __init__(self, name, type='', desc=''):
@@ -40,7 +53,7 @@ class RawData():
         self.src = src
         
     def __str__(self):
-        res = 'raw_data: ' + self.src + ' (' + str(len(self.data)+1) + ' entries)\n'
+        res = 'raw_data: ' + self.src + ' (' + str(len(self.data)) + ' entries)\n'
         for num, d in enumerate(self.data):
             res +=  str(num+1).ljust(3) + ' ' + d + '\n'
         return res
