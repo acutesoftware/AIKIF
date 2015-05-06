@@ -10,8 +10,8 @@ The intent is to allow any type of raw data to be machine understandable using d
 Area | status
  --- | --- |
 | Code base version            | Pre-Alpha    |
-| Public package version | 0.0.9        |
-| Date notes updated     | 5th-Mar-2015   |
+| Public package version | 0.1.1        |
+| Date notes updated     | 7th-May-2015   |
 
 
 ###Quick Start
@@ -45,11 +45,12 @@ Data type | description |
 |Filename | description |
  --- | ---      
 |go_web_aikif.bat | starts the web server for the AIKIF admin interface|
-|index.py		| creates text indexes of all the files|
-|search.py		| searches, using both indexes and ontologies|
-|mapper.py       | applies business rules to map raw input to aikif data structures|
-|context.py      | determines user context|
-|bias.py         | user defined ranking of raw data by source / type / person / date|
+|AI_CLI.py		  | Command Line interface to add and query data|
+|index.py		  | creates text indexes of all the files|
+|search.py		  | searches, using both indexes and ontologies|
+|mapper.py        | applies business rules to map raw input to aikif data structures|
+|context.py       | determines user context|
+|bias.py          | user defined ranking of raw data by source / type / person / date|
 
 
 
