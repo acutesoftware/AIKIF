@@ -1,3 +1,10 @@
+v0.1.2, 10-May-2015 -- Knowledge class
+- knowledge class to add/query raw data
+
+v0.1.1, 7-May-2015 -- CLI
+- Command Line Interface for AIKIF
+- watch points for logging
+
 v0.1.0, 23-Apr-2015 -- detailed examples 
 - removed many old prototypes (still available on github in aikif.z_prototypes)
 - better examples of usage
