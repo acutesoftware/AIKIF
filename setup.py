@@ -2,12 +2,12 @@ from distutils.core import setup
 
 setup(
     name='AIKIF',
-    version='0.1.1',
+    version='0.1.2',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
     packages=['aikif', 'aikif.agents','aikif.agents.aggregate','aikif.agents.explore','aikif.agents.gather','aikif.agents.learn','aikif.dataTools','aikif.environments','aikif.examples','aikif.lib', 'aikif.ontology','aikif.toolbox', 'aikif.web_app'],
     url='https://github.com/acutesoftware/AIKIF',
-    license='LICENSE.txt',
+    license='GNU General Public License v3 (GPLv3)',
     description='Artificial Intelligence Knowledge Information Framework',
     long_description=open('README.txt').read(),
     classifiers = [
