@@ -5,11 +5,8 @@ import os
 import sys
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
-sys.path.append(root_folder)
-data_tools_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif' + os.sep + 'dataTools') 
-sys.path.append(data_tools_fldr)
-import project
-import cls_datatable
+import aikif.project as project
+import aikif.dataTools.cls_datatable as cls_datatable
 
 class TestProject(unittest.TestCase):
 
@@ -58,7 +55,14 @@ class TestProject(unittest.TestCase):
         self.assertEqual(len(all_projects.project_list), 2)
         self.assertEqual(len(str(all_projects)), 134)
    
- 
+    def test_04_project_tasks(self):
+        proj04 = project.Project(name='TODO List', fldr=root_folder, desc='List of things to do')
+        proj04.add_task(1, 'task1')
+        proj04.add_task(2, 'task2')
+        proj04.add_task(3, 'task3')
+        self.assertEqual(len(proj04.tasks), 3)
+        
+        
       
 if __name__ == '__main__':
     unittest.main()

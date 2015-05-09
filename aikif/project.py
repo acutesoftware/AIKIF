@@ -54,6 +54,7 @@ class Project():
         self.datatables = []
         self.ontology = []
         self.links = []
+        self.tasks = []
         self.fldr = fldr
         self.type = type
         self.desc = desc
@@ -85,6 +86,8 @@ class Project():
         """
         adds a task for the project
         """
+        self.tasks.append([id, name, due_date, priority])
+        
     
     def add_link(self, src_id, dest_id, src_type='Goal', dest_type='Task'):  
         """
