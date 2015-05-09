@@ -55,6 +55,7 @@ class Project():
         self.ontology = []
         self.links = []
         self.tasks = []
+        self.params = []
         self.fldr = fldr
         self.type = type
         self.desc = desc
@@ -111,6 +112,20 @@ class Project():
         abstract to call the data sources in /lib and /dataTools
         """
         self.details.append([type, detail])
+
+    def add_param(self, task_id, param_key, param_val):
+        """
+        adds parameters as key value pairs
+        """
+        self.params.append([task_id, param_key, param_val])
+        
+    def execute(self):
+        """
+        executes all automatic tasks in order of task id
+        """
+        print('running tasks...')
+        for t in self.tasks:
+            print('task ' + t[1])
     
     def log_table(self, datatable):
         """
