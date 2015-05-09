@@ -62,7 +62,19 @@ class TestProject(unittest.TestCase):
         proj04.add_task(3, 'task3')
         self.assertEqual(len(proj04.tasks), 3)
         
-        
+ 
+    def test_11_task(self):
+        p = project.Project('update Country reference', type='Auto', fldr='c:\test')
+        p.add_task(1, 'download file', 'aikif.toolbox.web_download')
+        p.add_task(2, 'extract zip', 'aikif.toolbox.zip_util')
+        p.add_task(3, 'overwrite TXT to database staging', 'aikif.toolbox.data_load')
+
+        p.add_param(task_id=1, param_key='url', param_val='http://www.')
+        p.add_param(task_id=1, param_key='dest_zip',  param_val= 'T:\\data\download\country')
+        p.add_param(task_id=3, param_key='tbl', param_val='S_REF_COUNTRY')
+        p.execute()
+        print(p)
+    
       
 if __name__ == '__main__':
     unittest.main()
