@@ -9,7 +9,7 @@ class TestClassDataSet(unittest.TestCase):
         pass
         self.results_folder = 'test_results/'
 
-    def test_full_sql_generation(self):
+    def test_01_full_sql_generation(self):
         
         tst = SQLCodeGenerator('C_FACT_TABLE')
         tst.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
@@ -30,14 +30,14 @@ class TestClassDataSet(unittest.TestCase):
         self.assertEqual(len(tst.get_sql()), 1060) 		
     
 
-    def test_sql_code_agg_single_col(self):
+    def test_02_sql_code_agg_single_col(self):
         t2 = SQLCodeGenerator('C_SALES')
         t2.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
         t2.aggregate('C_AGG_PRODUCT', 'PRODUCT', 'sum(AMOUNT)')
         t2.save(self.results_folder + 'test_sql_code_agg_single_col.sql')
         self.assertEqual(len(t2.get_sql()), 138) 		
 
-    def test_aggregate_multiple_cols(self):
+    def test_03_aggregate_multiple_cols(self):
         t3 = SQLCodeGenerator('C_SALES')
         t3.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
         t3.aggregate('C_AGG_PRODUCT', 'PRODUCT, CUSTOMER_NAME', 'sum(AMOUNT)')
@@ -45,21 +45,21 @@ class TestClassDataSet(unittest.TestCase):
         self.assertEqual(len(t3.get_sql()), 168) 		
 
 
-    def test_reverse_pivot(self):
+    def test_04_reverse_pivot(self):
         t4 = SQLCodeGenerator('C_SALES_UNPIVOT')
         meas_cols = ['Sales', 'Expenses']
         t4.reverse_pivot_to_fact('C_SALES_UNPIVOT', 'Question' , ['Q1', 'Q2'], ['YEAR', 'Person'], meas_cols, meas_cols, '\n')
         t4.save(self.results_folder + 'test_sql_code_test_rev_piv.sql')
         self.assertEqual(len(t4.get_sql()), 401) 		
 
-    def test_reverse_pivot_simple(self):
+    def test_05_reverse_pivot_simple(self):
         t4 = SQLCodeGenerator('C_TEST_UNPIVOT')
         meas_cols = ['Car', 'Home', 'Travel', 'Study']
         t4.reverse_pivot_to_fact('C_TEST_UNPIVOT', 'Category' , meas_cols, meas_cols, meas_cols, meas_cols, '\n')
         t4.save(self.results_folder + 'test_sql_code_test_rev_piv_simple.sql')
         self.assertEqual(len(t4.get_sql()), 689) 		
 
-    def test_get_column_list_from_select(self) :
+    def test_06_get_column_list_from_select(self) :
         t5 = SQLCodeGenerator('BLAH')
         cols = t5.get_column_list_from_select('col1, col2, col3' , ',')
         self.assertEqual(len(cols), 3) 	
@@ -74,6 +74,23 @@ class TestClassDataSet(unittest.TestCase):
         cols = t5.get_column_list_from_select('my_column:2nd_col, not a col' , ':')
         self.assertEqual(cols[0], 'my_column') 	
         
+    def test_07_create_staging_table(self) :
+        t7 = SQLCodeGenerator('BLAH')
+        t7.create_script_staging_table('test07', ['col1', 'col2', 'col3']) 
+        #print('t7 staging = ', t7.ddl_text) # Note - one trailing space at end of col lines
+        expected_result = """---------------------------------------------
+-- CREATE Staging Table - test07
+---------------------------------------------
+DROP TABLE test07 CASCADE CONSTRAINTS;
+CREATE TABLE test07 (
+  col1 VARCHAR2(200), 
+  col2 VARCHAR2(200), 
+  col3 VARCHAR2(200), 
+  UPDATE_DATE DATE 
+);
+"""
+        self.assertEqual(t7.ddl_text, expected_result) 	
 
+        
 if __name__ == '__main__':
     unittest.main()
