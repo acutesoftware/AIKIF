@@ -1,5 +1,6 @@
 # core_data.py
-
+import os
+import sys
 
 """
 This contains the models for the core data for AIKIF
@@ -17,6 +18,19 @@ def TEST():
     # Events
     e = Event('Sales Meeting', '2015-04-11', 'Office', 'Meet with client to discuss custom software')
     print(e)
+    
+    # save a table
+    ev = CoreTable(fldr=os.getcwd(), type='Events', user='user01', header=['date', 'category', 'details'])
+    ev.add(Event('Sales Meeting', '2014-01-11', 'Office', 'Catchup with client'))
+    ev.add(Event('Sales Meeting#3', '2015-03-11', 'Office', 'Catchup with client'))
+    ev.add(Event('DEV AIKIF - core data', '2015-05-11', 'Software', 'update TEST - no test for CORE_DATA'))
+    ev.add(Event('DEV LifePim - core data', '2015-03-11', 'Software', 'use data for LifePim'))
+    ev.add(Event('DEV AIKIF - data tools', '2015-05-11', 'Software', 'fix data tools '))
+    print(ev)
+    
+    ev.save()
+    
+    
     
     
 class CoreData():
@@ -143,7 +157,9 @@ class Event(CoreData):
         data = [date, category, details]
         
         CoreData.__init__(self, name, data, parent)
-    
+        
+    def __str__(self):
+        return CoreData.__str__(self)
     
 class Location(CoreData):
     pass
@@ -154,7 +170,58 @@ class Charater(CoreData):
 class Process(CoreData):
     pass
     
+class CoreTable():
+    """
+    Class to manage the collection of multiple CoreData 
+    objects. Keeps everything as a list of objects such
+    as Events, Locations, Objects, etc and handles the 
+    saving, loading and searching of information.
+    """
+    def __init__(self, fldr, type, user, header):
+        self.type = type
+        self.user = user
+        self.fldr = fldr
+        self.table = []    # list of data - eg events, locations, etc
+        self.header = header # mod_core.Event('Name', 'Date', 'Journal', 'Details')
+        
+    def __str__(self):
+        res = ''
+        res += ' type = ' + self.type + '\n'
+        res += ' user = ' + self.user + '\n'
+        res += ' fldr = ' + self.fldr + '\n'
+        for e in self.table:
+            res += e.format_csv()
+        return res
+    
+    def get_filename(self, year):
+        """
+        returns the filename
+        """
+        return self.fldr + os.sep + self.type + year + '.' + self.user 
+    
+    def add(self, e):
+        self.table.append(e)
 
+    def find(self, txt):
+        result = []
+        for e in self.table:
+            if txt in e.data[0]:
+                result.append(e)
+                #print(e)
+        return result
+    
+    def save(self):
+        """
+        save table to folder in appropriate files
+        NOTE - ONLY APPEND AT THIS STAGE - THEN USE DATABASE
+        """
+            
+        for e in self.table: 
+            print('e',e)
+            fname = self.get_filename('2015')
+            with open(fname, 'a') as f:
+                f.write(e.format_csv())
+    
 
 if __name__ == '__main__':
     TEST()    
