@@ -84,9 +84,9 @@ class SQLCodeGenerator(object):
         self.ddl_text += '-- CREATE Staging Table - ' + output_table + '\n'
         self.ddl_text += '---------------------------------------------\n'
         self.ddl_text += 'DROP TABLE ' + output_table + ' CASCADE CONSTRAINTS;\n'
-        self.ddl_text += 'CREATE TABLE ' + output_table + ' (\n'
-        self.ddl_text += ' '.join([col + ' VARCHAR2(200), \n' for col in col_list])
-        self.ddl_text += ' ' + self.date_updated_col + '  DATE \n' # + src_table + '; \n'
+        self.ddl_text += 'CREATE TABLE ' + output_table + ' (\n  '
+        self.ddl_text += '  '.join([col + ' VARCHAR2(200), \n' for col in col_list])
+        self.ddl_text += '  ' + self.date_updated_col + ' DATE \n' # + src_table + '; \n'
         self.ddl_text += ');\n'
     
     def create_index(self, tbl, col_list ):
