@@ -1,9 +1,16 @@
 AIKIF - Artificial Intelligence Knowledge Information Framework
 
+This is an information classification framework that maps structured or freeform data to 
+a standard knowledge store.
 
-This is an example framework to capture the flow of information initially for personal data management, but ultimately useful for AI applications.
+Raw data is collected via Agents and the Mapper uses your business rules to convert and 
+store the information in a machine usable format (by linking to ontologies).
 
-The intent is to allow any type of raw data to be machine understandable using data collectors, ontologies, business mapping rules and embedded tags in programs.
+Your AI software can link to AIKIF by setting up logging watch-points to define success / 
+failure along with the range of input parameters. Goals and plans are defined by breaking 
+them down to smaller tasks until the task can be run by a tool in the Toolbox.
+
+A tool is any python wrapped function or application and is easily extensible.
 
 
 Quick Start
