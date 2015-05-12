@@ -72,10 +72,10 @@ my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
 ####Logging data
 You can use AIKIF as a database to manage adhoc data logging tasks
 ```
-proj2 = project.Project(name='Sales Log', type='business', desc='Record list of sales', fldr='T:\docs\business\sales')
+proj2 = project.Project(name='Sales Log', desc='Record list of sales')
 proj2.add_detail('Note', 'List of sales taken from manual entries in test program')
 
-tbl_exp = cls_datatable.DataTable('expenses.csv', delim=',', col_names=['date', 'amount', 'details'])
+tbl_exp = cls_datatable.DataTable('expenses.csv', col_names=['date', 'amount', 'details'])
 proj2.record(tbl_exp, 'Expense', ['2015-02-13', 49.94, 'restaurant'])
 proj2.record(tbl_exp, 'Expense', ['2015-02-15', 29.00, 'petrol'])
 proj2.record(tbl_exp, 'Expense', ['2015-02-17', 89.95, 'fringe tickets'])
@@ -87,7 +87,7 @@ proj2.record(tbl_exp, 'Expense', ['2015-02-17', 89.95, 'fringe tickets'])
 p = aikif.project.Project('update Country reference', type='Auto')
 p.add_task(1, 'download file', aikif.toolbox.web_download)
 p.add_task(2, 'extract zip', aikif.toolbox.zip_util)  # not implemented
-p.add_task(3, 'overwrite TXT to database staging', aikif.toolbox.data_load)  # not implemented
+p.add_task(3, 'overwrite TXT to database staging', aikif.toolbox.data_load) 
 
 p.add_param(task=1, url='http://www.')
 p.add_param(task=1, dest_zip = 'T:\data\download\country')
@@ -125,7 +125,7 @@ p2.execute()  # with no parameters, data outputs to console
 ```
 
 ###More Information
-Requirements Documentation = https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_requirements.rst
-Design Notes = https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_design.rst
-Overview Diagram = https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg
+[Requirements Documentation](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_requirements.rst)<br />
+[Design Notes](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_design.rst)<br />
+[Overview Diagram](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg)<br />
 
