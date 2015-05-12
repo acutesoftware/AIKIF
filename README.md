@@ -1,7 +1,6 @@
 #AIKIF
-#####Artificial Intelligence Knowledge Information Framework
+#####Artificial Intelligence Knowledge Information Framework (PRE-Alpha)
 
-##Overview
 This is an information classification framework that maps structured or freeform data to 
 a standard knowledge store.<br />
 
