@@ -62,55 +62,70 @@ To start the web interface use `aikif/web_app/web_aikif.py` or the batch file `a
 ![screenshot of web interface](https://github.com/acutesoftware/AIKIF/blob/master/doc/web-if-v02.jpg "Screenshot of web interface") 
  
 ####Simple Usage
+In its simplest form AIKIF can be used to manage your projects and tasks, by updating information from scripts and tracking via the web application
 ```
-    p = aikif.project.Project('update Country reference')
+my_biz = project.Project(name='Acute Software', type='business', desc='Custom Software development', fldr='')
+my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
+my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
 ```
 
+####Logging data
+You can use AIKIF as a database to manage adhoc data logging tasks
+```
+proj2 = project.Project(name='Sales Log', type='business', desc='Record list of sales', fldr='T:\docs\business\sales')
+proj2.add_detail('Note', 'List of sales taken from manual entries in test program')
+
+tbl_exp = cls_datatable.DataTable('expenses.csv', delim=',', col_names=['date', 'amount', 'details'])
+proj2.record(tbl_exp, 'Expense', ['2015-02-13', 49.94, 'restaurant'])
+proj2.record(tbl_exp, 'Expense', ['2015-02-15', 29.00, 'petrol'])
+proj2.record(tbl_exp, 'Expense', ['2015-02-17', 89.95, 'fringe tickets'])
+```
 
 ####Data Collection Usage
-```
-    p = aikif.project.Project('update Country reference', type='Auto')
-    p.add_task(1, 'download file', aikif.toolbox.web_download)
-    p.add_task(2, 'extract zip', aikif.toolbox.zip_util)
-    p.add_task(3, 'overwrite TXT to database staging', aikif.toolbox.data_load)
 
-    p.add_param(task=1, url='http://www.')
-    p.add_param(task=1, dest_zip = 'T:\\data\download\country')
-    p.add_param(task=3, tbl='S_REF_COUNTRY')
-    p.execute()
 ```
-Now, you run this and it works and loads in the data
+p = aikif.project.Project('update Country reference', type='Auto')
+p.add_task(1, 'download file', aikif.toolbox.web_download)
+p.add_task(2, 'extract zip', aikif.toolbox.zip_util)  # not implemented
+p.add_task(3, 'overwrite TXT to database staging', aikif.toolbox.data_load)  # not implemented
+
+p.add_param(task=1, url='http://www.')
+p.add_param(task=1, dest_zip = 'T:\data\download\country')
+p.add_param(task=3, tbl='S_REF_COUNTRY')
+p.execute()
+```
+This will execute the methods for each task using the specified parameters to update the table from the web
 
 
 ####Map information
+Define how columns in raw data should be mapped
 ```
-    m = aikif.mapper('custom mapper for countries', tbl = 'S_REF_COUNTRY')
-    m.add_col('code', data_type='STR', map_to_col='COUNTRY_CODE')
-    m.add_col('Name', data_type='STR', map_to_col='COUNTRY_NAME')
-    m.add_col('Continent', data_type='STR', map_to_col='CONTINENT')
-    m.add_col('Population', data_type='NUMBER', map_to_col='POPULATION')
+m = aikif.mapper('custom mapper for countries', tbl = 'S_REF_COUNTRY')
+m.add_col('code', data_type='STR', map_to_col='COUNTRY_CODE')
+m.add_col('Name', data_type='STR', map_to_col='COUNTRY_NAME')
+m.add_col('Continent', data_type='STR', map_to_col='CONTINENT')
+m.add_col('Population', data_type='NUMBER', map_to_col='POPULATION')
 ```
 
 
 ####Define your own Toolbox methods
+Say you have a program 'my_average.py' which calculates averages that you want to include in the toolbox methods
 ```
-    # you have a program 'my_average.py' which calculates averages
+t = aikif.toolbox.Toolbox()
+t.add_tool(1, 'Calc Average', src=T:\dev\src\python\my_tools\my_average.py')
 
-    t = aikif.toolbox.Toolbox()
-    t.add_tool(1, 'Calc Average', src=T:\dev\src\python\my_tools\my_average.py')
+p2 = aikif.project.Project('Aggregate Country by Continent')
+p2.add_task(1, 'Fetch source data', aikif.toolbox.data_view)
+p2.add_task(2, 'Aggregate Population', t['Calc Average'])
 
-    p2 = aikif.project.Project('Aggregate Country by Continent')
-    p2.add_task(1, 'Fetch source data', aikif.toolbox.data_view)
-    p2.add_task(2, 'Aggregate Population', t['Calc Average'])
+p2.add_param(task=1, tbl = 'S_REF_COUNTRY' )
+p2.add_param(task=2, group_by_col = 'CONTINENT', measure_col='POPULATION' )
 
-    p2.add_param(task=1, tbl = 'S_REF_COUNTRY' )
-    p2.add_param(task=2, group_by_col = 'CONTINENT', measure_col='POPULATION' )
-
-
-    p2.execute()  # with no parameters, data outputs to console
+p2.execute()  # with no parameters, data outputs to console
 ```
 
 ###More Information
-Requirements Documentation
-Design Notes
+Requirements Documentation = https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_requirements.rst
+Design Notes = https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_design.rst
+Overview Diagram = https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg
 
