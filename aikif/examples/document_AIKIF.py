@@ -128,6 +128,13 @@ def document_programs(fldr):
     p.comment('data_structures.py', 'Node and Graph classes')
     p.comment('solve_knapsack.py', 'functions to solve the knapsack problem')
 
+    # updates for 12/5/2015
+    p.comment('agent_image_metadata.py', 'agent to collect file picture metadata')
+    p.comment('knowledge.py', 'processs raw data to information')
+    p.comment('core_data.py', 'classes to manage the core data types')
+    p.comment('if_excel.py', 'data interface to excel')
+    p.comment('network_tools.py', 'toolbox method to download files')
+ 
 
    # p.list()	# get list of all programs
     p.save(fldr + os.sep + 'examples' + os.sep + 'document_AIKIF.csv')
