@@ -64,7 +64,7 @@ To start the web interface use `aikif/web_app/web_aikif.py` or the batch file `a
 ####Simple Usage
 In its simplest form AIKIF can be used to manage your projects and tasks, by updating information from scripts and tracking via the web application
 ```
-my_biz = project.Project(name='Acute Software', type='business', desc='Custom Software development', fldr='')
+my_biz = project.Project(name='Acute Software', type='business', desc='Custom Software')
 my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
 my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
 ```
