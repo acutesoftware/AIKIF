@@ -134,8 +134,11 @@ def document_programs(fldr):
     p.comment('core_data.py', 'classes to manage the core data types')
     p.comment('if_excel.py', 'data interface to excel')
     p.comment('network_tools.py', 'toolbox method to download files')
+    p.comment('AI_CLI.py', 'Command Line Interface (IN PROGRESS)')
+    p.comment('install_data.py', 'script to setup data files (IN PROGRESS)')
  
 
+ 
    # p.list()	# get list of all programs
     p.save(fldr + os.sep + 'examples' + os.sep + 'document_AIKIF.csv')
     p.collect_program_info('progress.md')
