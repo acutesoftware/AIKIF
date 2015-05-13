@@ -5,9 +5,8 @@ import sys
 import aikif.config as mod_cfg
 
 try:
-	import urllib.request as request
+	import urllib.request
 except:
-	#import urllib2 as request
     print('cant import urllib')
     exit(1)
     
@@ -51,22 +50,29 @@ def download_file_no_logon(url, filename):
         f.write(response.read())
 
 def download_file(p_realm, p_url, p_op_file, p_username, p_password):
+    """
+    Currently not working...
     # https://docs.python.org/3/library/urllib.request.html#examples
     # Create an OpenerDirector with support for Basic HTTP Authentication...
-    auth_handler = request.HTTPBasicAuthHandler()
+    """
+    auth_handler = urllib.request.HTTPBasicAuthHandler()
     auth_handler.add_password(realm=p_realm,
                               uri=p_url,
                               user=p_username,
                               passwd=p_password)
-    opener = request.build_opener(auth_handler)
+    opener = urllib.request.build_opener(auth_handler)
     # ...and install it globally so it can be used with urlopen.
-    request.install_opener(opener)
+    urllib.request.install_opener(opener)
 
-    web = request.urlopen(p_url)
+    web = urllib.request.urlopen(p_url)
     with open(p_op_file, 'w') as f:
         f.write(web.read().decode('utf-8'))
         
 def download_file_proxy(p_realm, p_url, p_op_file, p_username, p_password, proxies):
+    """
+    Currently fails behind proxy...
+    # https://docs.python.org/3/library/urllib.request.html#examples
+    """
     print('downloading file ', p_url)
     print('with credentials : ', p_username, p_password)
     r = requests.get(p_url, auth=(p_username, p_password), proxies=proxies)
@@ -74,4 +80,3 @@ def download_file_proxy(p_realm, p_url, p_op_file, p_username, p_password, proxi
     with open(p_op_file, 'wb') as fd:
         for chunk in r.iter_content(chunk_size):
             fd.write(chunk)    
-	# currently fails at work, 

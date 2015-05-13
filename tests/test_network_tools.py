@@ -53,7 +53,7 @@ class NetworkToolsTest(unittest.TestCase):
         except:
             pass
         print('downloading....')
-        mod_net.download_file('regnow', url, op_file, username, password, login_page)
+        mod_net.download_file('regnow', url, op_file, username, password)
         self.assertEqual(os.path.isfile(op_file), True)
         
 
