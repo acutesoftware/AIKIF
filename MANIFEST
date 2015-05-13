@@ -57,7 +57,9 @@ aikif\dataTools\if_mssqlserver.py
 aikif\dataTools\if_oracle.py
 aikif\dataTools\if_redis.py
 aikif\environments\__init__.py
+aikif\environments\environment.py
 aikif\environments\happiness.py
+aikif\environments\internet.py
 aikif\environments\worlds.py
 aikif\examples\__init__.py
 aikif\examples\core_data_usage.py

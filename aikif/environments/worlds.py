@@ -5,8 +5,6 @@ import sys
 from random import randint
 import math
 
-#root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
-#sys.path.append(root_folder)
 import aikif.toolbox.cls_grid as grd
 
 TERRAIN_SEA = '.'  # TODO - need to change this in multiple places (see worlds.py, cls_grid, world_generator)
@@ -16,6 +14,9 @@ TERRAIN_BLOCKED = '#'
 class World(object):
     """
     base class for a simple virtual environment
+    
+    TODO = derive this on the Environment class and fix the rubbish functions
+    
     """
     def __init__(self, width, height, terrain):
         self.grd = grd.Grid(width, height, terrain, 1)
