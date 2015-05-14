@@ -1,18 +1,22 @@
+# coding: utf-8
 # network_tools.py  written by Duncan Murray 26/3/2015
 
 import os
 import sys
 import aikif.config as mod_cfg
 
-try:
-	import urllib.request
-except:
-    print('cant import urllib')
-    exit(1)
+import urllib
+import urllib.request
+
     
 #import urllib2 as request	
 import getpass
 import socket
+
+
+def TEST():
+    url = 'http://www.google.com'
+    print('downloaded ' + str(len(get_web_page(url))) + ' bytes from ' + url)
 
 def load_username_password(fname):
     """
@@ -33,6 +37,15 @@ def get_host_name():
     """
     return socket.gethostname()
 
+def get_web_page(url):
+	txtString = '404'
+	try:
+		rawText = urllib.request.urlopen(url).read()
+		txtString =  str( rawText, encoding='utf8' )
+	except:
+		pass
+	return txtString
+    
 def download_file_no_logon(url, filename):
     """
     download a file from a public website with no logon required
@@ -80,3 +93,7 @@ def download_file_proxy(p_realm, p_url, p_op_file, p_username, p_password, proxi
     with open(p_op_file, 'wb') as fd:
         for chunk in r.iter_content(chunk_size):
             fd.write(chunk)    
+
+if __name__ == '__main__':
+    TEST()    
+    
