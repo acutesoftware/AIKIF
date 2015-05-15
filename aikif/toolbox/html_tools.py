@@ -3,21 +3,21 @@
 
 import os
 import sys
-import aikif.toolbox.network_tools as mod_net
 from bs4 import BeautifulSoup
 
 def TEST():
     print('html extraction tools')
+    import aikif.toolbox.network_tools as mod_net
     url = 'http://xkcd.com/292'
-    links = extract_page_links(url, '')
+    raw_text = mod_net.get_web_page(url)
+    links = extract_page_links(raw_text, '')
     for l in links:
         print(l)
     
     print(extract_content(mod_net.get_web_page(url), ''))
     
-def extract_page_links(url, searchText):	
+def extract_page_links(rawText, searchText):	
     links = []
-    rawText = mod_net.get_web_page(url)
     soup = BeautifulSoup(rawText)
     for link in soup.findAll('a'):
         #print(link)
