@@ -62,6 +62,22 @@ def download_file_no_logon(url, filename):
         #print (response.read().decode('utf-8'))
         f.write(response.read())
 
+def get_protected_page(url, user, pwd, filename):
+    """
+    having problems with urllib on a specific site so trying requests
+    """
+    import requests
+    r = requests.get(url, auth=(user, pwd))
+    print(r.status_code)
+    print(len(str(r)))
+    if r.status_code == 200:
+        print('success')
+        with open(filename, 'wb') as fd:
+            for chunk in r.iter_content(4096):
+                fd.write(chunk)
+    else:
+        print('failed = ' + STR(r.status_code))
+        
 def download_file(p_realm, p_url, p_op_file, p_username, p_password):
     """
     Currently not working...
