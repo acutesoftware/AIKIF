@@ -98,6 +98,7 @@ aikif\toolbox\cls_grid_life.py
 aikif\toolbox\crypt_utils.py
 aikif\toolbox\data_structures.py
 aikif\toolbox\game_board_utils.py
+aikif\toolbox\html_tools.py
 aikif\toolbox\image_tools.py
 aikif\toolbox\maths_ml_algorithms.py
 aikif\toolbox\network_tools.py
