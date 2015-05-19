@@ -1,8 +1,6 @@
 # internet.py     written by Duncan Murray 14//5/2014
 
 import random
-import aikif.cls_log 
-import aikif.config
 import aikif.environments.environment as mod_env
 
 def TEST():  
@@ -28,11 +26,11 @@ class Internet(mod_env.Environment):
         self.log.record_command('enviroment.py', 'Initilising base environment - ' + self.name)
         
         """
-        super().__init__(name, desc)
+        super(Internet, self).__init__(name, desc)
         self.websites = []
     
     def __str__(self):
-        res = super().__str__()
+        res = super(Internet, self).__str__()
         res += ' Internet class \n'
         for num, w in enumerate(self.websites):
             res += str(num+1).ljust(3) + str(w) + '  (' + str(len(w.pages)) + ' pages)\n'
@@ -43,9 +41,9 @@ class Internet(mod_env.Environment):
         Creates the environment
         Code in Base class = self.log.record_process('enviroment.py', 'Creating environment - ' + self.name)
         """
-        super().create()
+        super(Internet, self).create()
         print('building websites')
-        for s in range(0,num_sites):
+        for _ in range(0,num_sites):
             self.websites.append(Website())
         
     def destroy(self):
@@ -53,9 +51,9 @@ class Internet(mod_env.Environment):
         Call this when the environment is no longer needed
         Code in Base class = self.log.record_process('enviroment.py', 'Destroying environment - ' + self.name)
         """
-        super().destroy()
+        super(Internet, self).destroy()
 
-class Website():
+class Website(object):
     """
     manage the creation of a simulated website
     """
@@ -63,14 +61,14 @@ class Website():
         self.url = '127.0.' + str(random.randint(1,255)) + '.' + str(random.randint(1,255)) + ':' + str(random.randint(3000,4000))
         self.pages = []
         
-        for p in range(0,random.randint(3,8)):
+        for _ in range(0,random.randint(3,8)):
             self.pages.append(WebPage)
             
     def __str__(self):
         return self.url
     
 
-class WebPage():
+class WebPage(object):
     """
     this is a random page in a site
     """
