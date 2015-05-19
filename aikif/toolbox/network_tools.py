@@ -1,13 +1,9 @@
 # coding: utf-8
 # network_tools.py  written by Duncan Murray 26/3/2015
 
-import os
-import sys
-import aikif.config as mod_cfg
-
 import urllib
 import urllib.request
-
+import aikif.config as mod_cfg
     
 #import urllib2 as request	
 import getpass
@@ -42,7 +38,7 @@ def get_web_page(url):
 	try:
 		rawText = urllib.request.urlopen(url).read()
 		txtString =  str( rawText, encoding='utf8' )
-	except:
+	except UnicodeError:
 		pass
 	return txtString
     
@@ -76,7 +72,7 @@ def get_protected_page(url, user, pwd, filename):
             for chunk in r.iter_content(4096):
                 fd.write(chunk)
     else:
-        print('failed = ' + STR(r.status_code))
+        print('failed = ' + str(r.status_code))
         
 def download_file(p_realm, p_url, p_op_file, p_username, p_password):
     """
@@ -97,13 +93,15 @@ def download_file(p_realm, p_url, p_op_file, p_username, p_password):
     with open(p_op_file, 'w') as f:
         f.write(web.read().decode('utf-8'))
         
-def download_file_proxy(p_realm, p_url, p_op_file, p_username, p_password, proxies):
+def download_file_proxy(p_url, p_op_file, p_username, p_password, proxies):
     """
     Currently fails behind proxy...
     # https://docs.python.org/3/library/urllib.request.html#examples
     """
+    chunk_size=4096
     print('downloading file ', p_url)
     print('with credentials : ', p_username, p_password)
+    import requests
     r = requests.get(p_url, auth=(p_username, p_password), proxies=proxies)
     print(r.status_code)
     with open(p_op_file, 'wb') as fd:

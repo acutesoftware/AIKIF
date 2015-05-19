@@ -15,10 +15,6 @@ Example of using AIKIF to record diary events.
    external sources.
    
 """
-import os
-import sys
-import aikif.config as mod_cfg
-import aikif.cls_log as mod_log
 import aikif.cls_file_mapping as mod_filemap
 import aikif.core_data as c
 
@@ -35,14 +31,14 @@ def main():
     add_event(diary_file, today, 'random diary entry')
     add_event(diary_file, '2015-05-17', 'deposit bank cheque for custom software', cat='tax')
     add_event(diary_file, '2015-10-22', 'Book car in for major service', remindme='20151021')
-  #  add_event(diary_file, today, 'Remember to fix shelf', remindme='20150422')
+    #  add_event(diary_file, today, 'Remember to fix shelf', remindme='20150422')
     
-def add_event(fname, dte, details, remindme='', cat='Diary', url=''):
+def add_event(fname, dte, details, remindme='', cat='Diary'):
     """
     function to take a diary / calendar or reminder note and
     add to AIKIF raw data store.
     """
-    print("Adding event:", dte, details)
+    print("Adding event:", dte, remindme, details)
     
     e = c.Event('Diary', dte, cat, details)
     

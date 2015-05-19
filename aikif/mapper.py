@@ -3,21 +3,15 @@
 
 
 import os
-import sys
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
-#sys.path.append(root_folder)
-print('mapper, root_folder = ', root_folder)
-import aikif.agents.agent as agt
 
-import aikif.cls_log as mod_log
-import aikif.config as mod_cfg
 import aikif.dataTools.cls_datatable as mod_datatable
 
 column_map_file = root_folder + os.sep + 'data' + os.sep +  'ref' + os.sep + 'rules_column_maps.csv'
 map_file = root_folder + os.sep + 'data' + os.sep +  'ref' + os.sep + 'mapping_rules.csv'
 sample_datafile = root_folder + os.sep + 'data' + os.sep +  'raw' + os.sep + 'sample-filelist-for-AIKIF.csv'
   
-class Mapper:    
+class Mapper(object):    
     """
     Main class to map input information to aikif data structures
     based on a mapping table
@@ -31,8 +25,8 @@ class Mapper:
 
     def __str__(self):
         res = ' -- List of Mapping Business Rules -- \n'
-        for map in self.maps:
-            res += str(map)
+        for m in self.maps:
+            res += str(m)
         return res
 
     def load_rules(self):
@@ -51,8 +45,8 @@ class Mapper:
         load the rules to file after web updates or program changes 
         """
         with open(map_file, 'w') as f:
-            for map in self.maps:
-                f.write(map.format_for_file_output())
+            for m in self.maps:
+                f.write(m.format_for_file_output())
                 
     def process_data(self, type, raw_data):
         """
@@ -67,22 +61,22 @@ class Mapper:
                 self.process_rule(m, formatted_data, type)
         return num_applicable_rules
         
-    def process_rule(self, m, dict, type):
+    def process_rule(self, m, dict, tpe):
         """ 
         uses the MapRule 'm' to run through the 'dict'
         and extract data based on the rule
         """
-        print('TODO - ' + type + ' + applying rule ' + str(m).replace('\n', '') )
+        print('TODO - ' + tpe + ' + applying rule ' + str(m).replace('\n', '') )
     
-    def format_raw_data(self, type, raw_data):
+    def format_raw_data(self, tpe, raw_data):
         """
         uses type to format the raw information to a dictionary
         usable by the mapper
         """
         
-        if type == 'text':
+        if tpe == 'text':
             formatted_raw_data = self.parse_text_to_dict(raw_data)
-        elif type == 'file':
+        elif tpe == 'file':
             formatted_raw_data = self.parse_file_to_dict(raw_data)
         else:
             formatted_raw_data = {'ERROR':'unknown data type', 'data':[raw_data]}
@@ -104,9 +98,10 @@ class Mapper:
         process the file according to the mapping rules.
         The cols list must match the columns in the filename
         """
-        for map in self.maps:
-            if map.type == 'file':
-                if map.key[0:3] == 'col':
+        print('TODO - parse_file_to_dict' + fname)
+        for m in self.maps:
+            if m.type == 'file':
+                if m.key[0:3] == 'col':
                     print('reading column..')
 
 
@@ -163,19 +158,19 @@ class Mapper:
                 if type(row) is str:
                     f.write(row + '\n')
                 else:
-                    for num, v in enumerate(row):
+                    for v in row:
                         f.write(v)
                 
             
         
 def List2String(l):
-	res = ""
-	for v in l:
-		res = res + v
-	return res
+    res = ""
+    for v in l:
+        res = res + v
+    return res
         
                     
-class MapRule:
+class MapRule(object):
     """
     manages the parsing of rules in the mapping table
     """
@@ -197,7 +192,7 @@ class MapRule:
     def format_for_file_output(self):
         return self.type + ',' + self.key + ',' + self.val + '\n'
  
-class MapColumns:
+class MapColumns(object):
     """
     directly maps columns in tables to aikif structures
     """
@@ -211,9 +206,9 @@ class MapColumns:
     def __str__(self):
         res = ' -- List of Column Mappings -- \n'
         print('self.col_file = ' + self.col_file)
-        for map in self.col_maps:
-            res += map
-            print(map)
+        for m in self.col_maps:
+            res += m
+            print(m)
         return res
 
     def load_rules(self):
@@ -233,11 +228,11 @@ def TEST():
     """ 
     local test function for mapper
     """
-    map = Mapper()
-    print(map)
-    map.process_data('text', 'the cat sat on the mat')
+    m = Mapper()
+    print(m)
+    m.process_data('text', 'the cat sat on the mat')
     # use this to clean up file or AFTER web updates map.save_rules()
-    map.create_map_from_file(sample_datafile)
+    m.create_map_from_file(sample_datafile)
  
     col_map = MapColumns(column_map_file)
     print(col_map)
