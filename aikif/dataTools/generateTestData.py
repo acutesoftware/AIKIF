@@ -43,7 +43,7 @@ def random_hex_string(sze=30):
 def random_block(cols=40, rows=5):
     return ''.join([random_letters(cols) + '\n' for _ in range(0,rows)])
 
-def random_table(cols=3, rows=10, colSpecs, hdr):
+def random_table(cols, rows, colSpecs, hdr):
     # verify the colSpecs required and assign defaults to empty sets
     colTypes = fill_colList_blanks(colSpecs, cols)
     print('Generating columns - ', colTypes)
