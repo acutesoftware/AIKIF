@@ -2,15 +2,17 @@
 
 
 import os
-import sys
-import random
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 #sys.path.append(root_folder)
-print('DEBUG:agent_filelist - root = ', root_folder)
+#print('DEBUG:agent_filelist - root = ', root_folder)
 import aikif.agents.agent as agt
 import aikif.lib.cls_filelist as fl
 		
-  
+def TEST():
+    agt = FileListAgent('filelist_agent', root_folder, True, 1, 'T:\\user\\AIKIF', [])
+    print(agt.report())
+
+ 	  
 class FileListAgent(agt.Agent):
     """
     agent that gathers file metadata. The purpose of this class 
@@ -18,7 +20,7 @@ class FileListAgent(agt.Agent):
     and how the results are saved [using AIKIF logging].
     """
     
-    def __init__(self, name,  fldr, running, LOG_LEVEL, log_folder, col_list=[]):
+    def __init__(self, name,  fldr, running, LOG_LEVEL, log_folder, col_list):
         agt.Agent.__init__(self, name,  fldr, running)
         """
         takes a fldr which is a single folder as string and makes its
@@ -32,7 +34,7 @@ class FileListAgent(agt.Agent):
         if running == True:
             self.do_your_job()
 
-    def do_your_job(self, *arg):
+    def do_your_job(self):
         """
         the goal of the filelist agent is to collect metadata on files
         """ 
@@ -47,13 +49,9 @@ class FileListAgent(agt.Agent):
         pass
         
     
-def main():
-	agt = FileListAgent('filelist_agent', root_folder, True, 1, 'T:\\user\\AIKIF')
-	print(agt.report())
-
- 		
+	
 		
 if __name__ == '__main__':
-	main()
+	TEST()
 	
 	

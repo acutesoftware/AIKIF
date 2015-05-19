@@ -2,7 +2,6 @@
 
 import os
 import sys
-import time
 from datetime import datetime
 
 def TEST():
@@ -18,7 +17,7 @@ def TEST():
         txt_file = TextFile('cls_file.py')
         print(txt_file)
         
-        img_file = ImageFile('..\\..\\doc\\web-if-progs-v01.jpg')
+        img_file = ImageFile('..\\..\\doc\\web-if-v02.jpg')
         print(img_file)
 
         aud_file = AudioFile(r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3")
@@ -42,7 +41,7 @@ class File(object):
             self.path = os.path.dirname(self.fullname)
             self.size = os.path.getsize(self.fullname)
             self.date_modified = os.path.getmtime(self.fullname)  # self.GetDateAsString(os.path.getmtime(fname))
-        except:
+        except IOError:
             pass
 
     def __str__(self):
@@ -59,7 +58,7 @@ class File(object):
         
     def launch(self, params=''):
         """ launch a file using os.system() - used for starting html pages """
-        os.system("start " + self.fullname)    
+        os.system("start " + self.fullname + " " + params)    
 
     def delete(self):
         """ delete a file, don't really care if it doesn't exist """
@@ -68,7 +67,7 @@ class File(object):
         else:
             try:
                 os.remove(self.fullname)
-            except:
+            except IOError:
                 print("Cant delete ",self.fullname)
 
     def GetDateAsString(self, t):
@@ -86,26 +85,27 @@ class TextFile(File):
     """
     
     def __init__(self, fname):
-        super().__init__(fname)
+        super(TextFile, self).__init__(fname)
         self.lines = self.count_lines_in_file(fname)
 
     def __str__(self):
         """ display the text file sample """
-        txt = super().__str__()
+        txt = super(TextFile, self).__str__()
         txt += 'TextFile contains ' + str(self.lines) + ' lines\n'
         txt += self.get_file_sample()
         return txt
         
     def count_lines_in_file(self, fname=''):
         """ you wont believe what this method does """
+        i = 0
         if fname == '':
             fname = self.fullname
         try:
             with open(fname) as f:
-                for i, l in enumerate(f):
+                for i, _ in enumerate(f):
                     pass
             return i + 1    
-        except:
+        except IOError:
             return 0
     
     def count_lines_of_code(self, fname=''):
@@ -115,11 +115,11 @@ class TextFile(File):
         loc = 0    
         try:
             with open(fname) as f:
-                for i, l in enumerate(f):
+                for l in f:
                     if l.strip() != '':
                         loc += 1
             return loc    
-        except:
+        except IOError:
             return 0
     
     
@@ -133,7 +133,7 @@ class TextFile(File):
                     res += str(line_num).zfill(5) + ' ' + line 
                     if line_num > numLines:
                         break
-        except:
+        except IOError:
             pass
         return res
         
@@ -143,8 +143,10 @@ class TextFile(File):
         with open(self.fullname, "a") as myfile:
             myfile.write(txt)
 
+            
     def convert_to_csv(self, op_csv_file, delim):
-        """ function to simply convert the diary files to csv - testing """
+        # function to simply convert the diary files to csv - testing
+        import csv
         in_txt = csv.reader(open(self.fullname, "r"), delimiter = delim)
         ofile  = open(op_csv_file, 'w', newline='')
         out_csv = csv.writer(ofile, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
@@ -158,7 +160,7 @@ class TextFile(File):
             with open(self.fullname, 'r') as f:
                 txt = f.read()
             return txt
-        except:
+        except IOError:
             return ''
         
     def load_file_to_list(self):
@@ -169,7 +171,7 @@ class TextFile(File):
                 for line in f:
                     lst.append(line) 
             return lst	
-        except:
+        except IOError:
             return lst
         
 class ImageFile(File):
@@ -180,13 +182,13 @@ class ImageFile(File):
     
     def __init__(self, fname):
         import aikif.toolbox.image_tools as img
-        super().__init__(fname)
+        super(ImageFile, self).__init__(fname)
         self.meta = img.get_metadata_as_dict(fname)
         
     def __str__(self):
         """ display the text file sample """
         #txt = self.name + '\n'
-        txt = super().__str__()
+        txt = super(ImageFile, self).__str__()
         txt += 'Image size =  ' + str(self.meta['width']) + ' x ' + str(self.meta['height']) + '\n'
         return txt
         
@@ -198,13 +200,13 @@ class AudioFile(File):
     
     def __init__(self, fname):
         import aikif.toolbox.audio_tools as aud
-        super().__init__(fname)
+        super(AudioFile, self).__init__(fname)
         self.meta = aud.get_audio_metadata(fname)
         print(self.meta)
         
     def __str__(self):
         """ display the meta data from the audio file """
-        txt = super().__str__()
+        txt = super(AudioFile, self).__str__()
         txt += 'Song = ' + str(self.meta['title'][0]) + ' by ' + str(self.meta['artist'][0]) + '\n'
         return txt
         

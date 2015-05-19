@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # outlook_export.py   written by Duncan Murray 15/1/2015
-import os, sys
-import codecs, win32com.client
+import sys
+import codecs
 import win32com
 
 def TEST():
@@ -15,7 +15,7 @@ def TEST():
 
 
 
-def get_mails(folder, path=[]):
+def get_mails(folder, path = ''):
     for mail in folder.Items:
         yield mail, path
     for subfolder in folder.Folders:
@@ -29,7 +29,6 @@ def export_all_emails(f):
     """
     outlook = win32com.client.Dispatch('Outlook.Application')
     mapi = outlook.GetNamespace('MAPI')
-    tot_stores = 0
     tot_folders = 0
     tot_emails = 0
     num_emails = 0
@@ -51,12 +50,12 @@ def export_all_emails(f):
             m = Message(mail, path_str)
             try:
                 f.write(m.convert_csv())
-            except:
+            except IOError:
                 print('ERROR writing email #' + str(tot_emails) + ' in ' + path_str)
         
     print('Found ' , tot_emails , ' emails in ', tot_folders, ' folders')
 
-class Message:
+class Message(object):
     def __init__(self, msg, path):
         self.msg = msg
         self.path = path
@@ -72,32 +71,32 @@ class Message:
         
         try:
             txt += str(self.msg.ReceivedTime) + delim
-        except:
+        except UnicodeError:
             txt += delim
 
         try:
             txt += str(self.msg.SenderEmailAddress) + delim
-        except:
+        except UnicodeError:
             txt += delim
 
         try:
             txt += self.msg.SenderName + delim
-        except:
+        except UnicodeError:
             txt += delim
             
         try:
             txt += self.msg.To + delim
-        except:
+        except UnicodeError:
             txt += delim
         
         txt += self.msg.Categories + delim
         
         try:
             txt += self.msg.Subject.decode("utf-8") + delim  # encode('utf8')
-        except:
+        except UnicodeError:
             try:
                 txt += str(self.msg.Subject) + delim
-            except:
+            except UnicodeError:
                 txt += delim
         try:
             for attach in self.msg.Attachments:
@@ -106,25 +105,15 @@ class Message:
                     txt += attach.FileName + '; '
                     attach.SaveASFile('E:\\backup\\MAIL\\_EXPORTED\\' + attach.FileName)
             txt += delim   
-        except:
+        except UnicodeError:
             txt += delim   
         """
         TODO - save attachments
         attach.SaveASFile( C:\\folder\\' + attach.FileName)
         """
         
-        try:
-            pass
-           # txt += self.msg.Body.strip('\n').encode("utf-8") + delim
-            #txt += self.msg.Body.strip('\n')[0:55] + delim
-            #txt += 'body' + delim
-        except:
-            #txt += delim
-            pass
-                
-        #print(txt.encode('utf8')  )  
+
         return txt + '"\n'
-    
-    
+ 
 if __name__ == '__main__':
     TEST()	
