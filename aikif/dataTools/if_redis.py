@@ -57,12 +57,12 @@ To save database:
  
 """
 import os
-import sys
-import datetime
-import csv
+#import sys
+#import datetime
+#import csv
 try:
     import redis 
-except:
+except ImportError:
     print('you need to run pip install redis \nand also install the server via https://github.com/ServiceStack/redis-windows')
     exit(1)
 
@@ -91,10 +91,8 @@ def TEST():
     
     print(d.get("aikif:OBJECT_INFO-COURSE.csv:categories:Artificial Intelligence Planning"))
     
-    """
-        127.0.0.1:6379> get "aikif:OBJECT_INFO-COURSE.csv:categories:Artificial Intelligence Planning"
-        "https://class.coursera.org/aiplan-002/"
-    """
+    #127.0.0.1:6379> get #"aikif:OBJECT_INFO-COURSE.csv:categories:Artificial Intelligence Planning"
+    #    "https://class.coursera.org/aiplan-002/"
         
     
 class redis_server(Database):
@@ -103,21 +101,20 @@ class redis_server(Database):
         connection string to a local redis server 
         (this is not how class will be implemented - just testing for now)
         """
+#        super(Database, self).__init__([host + ':' + str(port), str(db), '', ''])
         super().__init__([host + ':' + str(port), str(db), '', ''])
         self.connection = redis.StrictRedis(host, port , db);
 
     def get(self, key):  
         """ get a set of keys from redis """
-        res = []
         res = self.connection.get(key)
         print(res)
         return res
         
     def set(self, key, val):  
         """ add data """
-        res = []
-        res = self.connection.set(key, val)
-        #print(res)
+        self.connection.set(key, val)
+        
      
     def import_datatable(self, l_datatable, schema='datatable', col_key=0):
         """
@@ -133,6 +130,7 @@ class redis_server(Database):
         hdr = l_datatable.get_header()
         schema_root_key = schema + ':' + os.path.basename(l_datatable.name) + ':'
         print(hdr)
+        row_num = 0
         for row_num, row in enumerate(l_datatable.get_arr()):
             #print(row)
             for col_num, col in enumerate(row):
@@ -145,10 +143,12 @@ class redis_server(Database):
         
         
     def export_to_CSV(fldr, printHeader = True):
-        opFile = fldr + table + '.CSV'
-        print ('Saving ' + table + ' to ' + opFile)
+        opFile = fldr + 'test' + '.CSV'
+        if printHeader == True:
+            print('saving header')
+        print ('Saving to ' + opFile)
         #cred = [server, database, username, password]
-        print(connection_string)
+        print(connection)
 
     
 if __name__ == '__main__':

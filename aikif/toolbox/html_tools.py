@@ -1,13 +1,12 @@
 # coding: utf-8
 # html_tools.py
 
-import os
-import sys
 from bs4 import BeautifulSoup
+import aikif.toolbox.network_tools as mod_net
 
 def TEST():
     print('html extraction tools')
-    import aikif.toolbox.network_tools as mod_net
+    
     url = 'http://xkcd.com/292'
     raw_text = mod_net.get_web_page(url)
     links = extract_page_links(raw_text, '')
@@ -23,9 +22,9 @@ def extract_page_links(rawText, searchText):
         #print(link)
         l = str(link.get('href'))
         if searchText in l:
-            a = link.attrs
+            #a = link.attrs
             content = str(link.string)
-            t = str(link.get('title'))
+            #t = str(link.get('title'))
             if l != '/':
                 links.append(l)
                 #print(l)
@@ -39,7 +38,7 @@ def extract_page_links_OLD(url, searchText):
         #print(link)
         l = str(link.get('href'))
         if searchText in l:
-            a = link.attrs
+            #a = link.attrs
             content = str(link.string)
             t = str(link.get('title'))
             links.append({'name': content, 'url': l, 'title': t, 'txt': '', 'html': '', 'catList': []})

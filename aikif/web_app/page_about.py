@@ -1,8 +1,8 @@
 # page_about.py	written by Duncan Murray 31/5/2014
 # handles the about page for AIKIF web interface
 
-import sys, os
-import aikif.web_app.web_utils as web
+import os
+#import aikif.web_app.web_utils as web
 
 def get_page(dataFile=''):
 	txt = ''

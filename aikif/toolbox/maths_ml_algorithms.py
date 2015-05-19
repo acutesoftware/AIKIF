@@ -48,28 +48,28 @@ def ml_entropy(lst):
 
 def ml_weighted_average(lst):
     """ calculate weighted average """
-    pass
+    print('TODO = ', lst)
     
 def ml_information_gain(lst):
-    pass
+    print('TODO = ', lst)
     
 def ml_gini_index(lst):
-    pass
+    print('TODO = ', lst)
     
 def ml_weighted_average(lst):
-    pass
+    print('TODO = ', lst)
     
 def ml_support(lst):
-    pass
+    print('TODO = ', lst)
     
 def ml_confidence(lst):
-    pass
+    print('TODO = ', lst)
     
 def ml_lift(lst):
-    pass
+    print('TODO = ', lst)
     
 def ml_apriori(lst):
-    pass
+    print('TODO = ', lst)
     
 def ml_process_mining_alpha(lst):
     """
@@ -81,7 +81,6 @@ def ml_process_mining_alpha(lst):
         print('no logs passed')
         return [0]
     else:
-        """ TODO """
         return [1]
     
 #if __name__ == '__main__':

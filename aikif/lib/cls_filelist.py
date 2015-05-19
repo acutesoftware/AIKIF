@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # cls_filelist.py
 import os
-import shutil
-import csv
-import glob
+#import shutil
+#import csv
+#import glob
 import fnmatch
 import time
 from datetime import datetime
@@ -97,7 +97,7 @@ class FileList(object):
     def get_failed_backups(self):
         return self.failed_backups
 
-    def add_failed_file(self, fname, dest_folder):
+    def add_failed_file(self, fname):
         """ this file failed to backup, so log it for future retry """
         self.failed_backups.append(fname)
         
@@ -126,25 +126,25 @@ class FileList(object):
         try:
             if os.path.isfile(dest_file) == False:
                 return True  # no backup exists, so needs backing up
-        except:
+        except IOError:
             pass
 
         try:
             if src_file_dict["size"] != os.path.getsize(dest_file):
                 return True  # file size has changed, so backup
-        except:
+        except IOError:
             pass
         
         try:
             if self.compare_file_date(src_file_dict["date"], dest_file, date_accuracy) == False:
                 return True  # file date is different so MAYBE backup
-        except:
+        except IOError:
             pass
          
         try:
             if self.get_file_hash(src_file_dict["fullfilename"]) != self.get_file_hash(dest_file):
                 return True   # file contents changed so backup (e.g. fixed file sizes)
-        except:
+        except IOError:
             pass
         
         # all tests pass, so assume file is ok and doesn't need syncing    
@@ -153,6 +153,7 @@ class FileList(object):
     
     def get_file_hash(self, fname):
         """ returns a file hash of the file """
+        print('WARNING - get_file_hash not implemented - no hash for ' + fname)
         return 1  # not implemented obviously - should used saved results anyway
     
     def compare_file_date(self, dte, dest_file, date_accuracy):
@@ -181,16 +182,9 @@ class FileList(object):
             return False
         return True
         
-    def get_file_list(self):
-        """
-        uses self parameters if no parameters passed - TODO - add test for this!!!!
-        """
-        self.get_file_list(self, self.paths, self.xtn, self.excluded)
-        
     def get_file_list(self, lstPaths, lstXtn, lstExcluded, VERBOSE = False):
         """
         builds a list of files and returns as a list 
-        originally from lib_file.py in aspytk
         """
         if VERBOSE:
             print("Generating list of Files...")
@@ -216,7 +210,7 @@ class FileList(object):
                             if includeThisFile == "Y":
                                 if VERBOSE:
                                     try:
-                                        print(os.path.basename(filename), '\t', os.path.getsize(filename))
+                                        print(os.path.basename(filename), '\t', os.path.getsize(filename), '\t', dirs)
                                     except:
                                         print("ERROR printing UniCode filename")
                                 numFiles = numFiles + 1
@@ -226,7 +220,7 @@ class FileList(object):
                             try:
                                 #print("file not matched " + basename)
                                 pass
-                            except:
+                            except UnicodeError:
                                 print("file not matched, but cant print basename")
         if VERBOSE:
             print("Found ", numFiles, " files")
@@ -243,27 +237,27 @@ class FileList(object):
         file_dict = {}
         try:
             file_dict["fullfilename"] = fname
-        except:
+        except IOError:
             file_dict["fullfilename"] = 'Unknown filename'  # should never get here
         
         try:        
             file_dict["name"] = os.path.basename(fname)
-        except:
+        except IOError:
             file_dict["name"] = 'Unknown basename'
             
         try:        
             file_dict["date"] = self.GetDateAsString(os.path.getmtime(fname))
-        except:
+        except IOError:
             file_dict["date"] = 'Unknown date'
             
         try:        
             file_dict["size"] = os.path.getsize(fname)
-        except:
+        except IOError:
             file_dict["size"] = 'Unknown size'
             
         try:        
             file_dict["path"] = os.path.dirname(fname)
-        except:
+        except IOError:
             file_dict["path"] = 'Unknown path'
             
         self.fl_metadata.append(file_dict)
@@ -296,7 +290,7 @@ class FileList(object):
             if fld == "fullfilename":
                 try:
                     line = line + qu + fname + qu + d
-                except:
+                except IOError:
                     line = line + qu + 'ERROR_FILENAME' + qu + d
             if fld == "name":
                 try:
@@ -306,27 +300,26 @@ class FileList(object):
             if fld == "date":
                 try:
                     line = line + qu + self.GetDateAsString(os.path.getmtime(fname)) + qu + d
-                except:
+                except IOError:
                     line = line + qu + 'ERROR_DATE' + qu + d
             if fld == "size":
                 try:
                     line = line + qu + str(os.path.getsize(fname)) + qu + d
-                except:
+                except IOError:
                     line = line + qu + 'ERROR_SIZE' + qu + d
             if fld == "path":
                 try:
                     line = line + qu + os.path.dirname(fname) + qu + d 
-                except:
+                except IOError:
                     line = line + qu + 'ERROR_PATH' + qu + d
-                   
-        #line += '\n'
+
         return line
         
     def GetDateAsString(self, t):
         res = ''
         try:
             res = str(datetime.fromtimestamp(t).strftime("%Y-%m-%d %H:%M:%S"))
-        except:
+        except IOError:
             pass
         return res     
         
@@ -361,11 +354,11 @@ class FileList(object):
                             line = line + qu + str(os.path.getsize(f)) + qu + delim
                         if fld == "path":
                             line = line + qu + os.path.dirname(f) + qu + delim
-                except:
+                except IOError:
                     line += '\n'   # no metadata
                 try:
                     fout.write (line + '\n')
-                except:
+                except IOError:
                     #print("Cant print line - cls_filelist line 304")
                     pass
 
@@ -389,7 +382,7 @@ class FileList(object):
             for fname in self.get_dirty_filelist():
                 try:
                     f.write(fname + '\n')
-                except:
+                except IOError:
                     print("FAILED LOGGING FILENAME to file_copied")
                 
         if os.path.isfile(file_failed):
@@ -399,7 +392,7 @@ class FileList(object):
             for fname in self.get_failed_backups():
                 try:
                     f.write(fname + '\n')
-                except:
+                except IOError:
                     print("FAILED LOGGING FILENAME to file_failed")
                 
         if os.path.isfile(file_data):
@@ -409,14 +402,14 @@ class FileList(object):
             for fname in self.get_list():
                 try:
                     f.write(self.print_file_details_as_csv(fname, ["name", "size", "date", "path"] ) + '\n')
-                except:
+                except IOError:
                     print("FAILED LOGGING FILENAME to file_data")
             
         with open(file_usage, 'a', encoding='utf-8') as f:
             for fname in self.get_dirty_filelist():
                 try:
                     f.write(self.TodayAsString() + ', ' + fname + ' (' + str(os.path.getsize(fname)) + ' bytes)\n')
-                except:
+                except IOError:
                     print("FAILED LOGGING FILENAME to file_usage")
 
  
