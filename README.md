@@ -1,9 +1,7 @@
 #AIKIF
 #####Artificial Intelligence Knowledge Information Framework (PRE-Alpha)
 
-[![Coverage Status](https://coveralls.io/repos/acutesoftware/AIKIF/badge.svg)](https://coveralls.io/r/acutesoftware/AIKIF)
-
-[![Join the chat at https://gitter.im/acutesoftware/AIKIF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/acutesoftware/AIKIF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Coverage Status](https://coveralls.io/repos/acutesoftware/AIKIF/badge.svg)](https://coveralls.io/r/acutesoftware/AIKIF) [![Join the chat at https://gitter.im/acutesoftware/AIKIF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/acutesoftware/AIKIF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This is an information classification framework that maps structured or freeform data to 
 a standard knowledge store.<br />
