@@ -35,7 +35,6 @@ def export_all_emails(f):
     old_path = ''
     for store in mapi.Stores:
         if not store.IsDataFileStore: continue
-        tot_stores += 1
         print (store)
         for mail, path_list in get_mails(store.GetRootFolder()):
             path_str = str(store) + '/' + '/'.join([p.Name for p in path_list])

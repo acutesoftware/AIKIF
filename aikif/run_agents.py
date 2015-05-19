@@ -2,7 +2,7 @@
 # manages the agents schedules and calls programs as needed
 
 
-import sys, os
+import os
 import aikif.cls_log as mod_log
 
 schedule_types = ['once', 'year', 'month', 'fortnight', 'week', 'weekday', 'day', 'hour', 'minute', 'second', 'always']

@@ -2,8 +2,6 @@
 
 
 import os
-import sys
-import csv
 import random
 import binascii
 import string
@@ -28,10 +26,11 @@ def TEST():
     save_table(tbl, '..//..//data//temp//test123.csv')
     print('password generator = ', generate_password(10))
     
-def random_int(min=0, max=100): return random.randrange(min, max)
+def random_int(min_v=0, max_v=100):
+    return random.randrange(min_v, max_v)
     
 def random_letters(sze=20):
-    lst = [random.choice(string.ascii_letters + string.digits) for n in range(sze)]
+    lst = [random.choice(string.ascii_letters + string.digits) for _ in range(sze)]
     return "".join(lst)
 
 def generate_password(sze=18):
@@ -42,16 +41,16 @@ def random_hex_string(sze=30):
     return binascii.b2a_hex(os.urandom(sze))
     
 def random_block(cols=40, rows=5):
-    return ''.join([random_letters(cols) + '\n' for r in range(0,rows)])
+    return ''.join([random_letters(cols) + '\n' for _ in range(0,rows)])
 
-def random_table(cols=3, rows=10, colSpecs =[], hdr=[]):
+def random_table(cols=3, rows=10, colSpecs, hdr):
     # verify the colSpecs required and assign defaults to empty sets
     colTypes = fill_colList_blanks(colSpecs, cols)
     print('Generating columns - ', colTypes)
     wordLists = load_lists(colTypes)
     tbl = []
     tbl.insert(0, hdr) # column headers
-    for r in range(0,rows):
+    for _ in range(0,rows):
         thisRow = []
         txt = ''
         for c in range(0, cols):
@@ -87,23 +86,16 @@ def show_table(tbl):
 
 def save_table(tbl, fname, delim=',', qu='"'):
     with open(fname, "wt") as f:
-        f.write('\n'.join(','.join([qu + col + qu if type(col) is str else qu + str(col) + qu for col in row]) for row in tbl))
+        f.write('\n'.join(delim.join([qu + col + qu if type(col) is str else qu + str(col) + qu for col in row]) for row in tbl))
 
 def get_rand_text_from_list(lst):
-    try:
-        return lst[random.randrange(0, len(lst))]
-    except:
-        return 'ERROR getting list'
+    return lst[random.randrange(0, len(lst))]
     
 def fill_colList_blanks(partialCols, numRequiredCols):
     colWord = []
     num = 0
-    for c in range(0, numRequiredCols):
-        try:
-            tpe = partialCols[num]
-        except:
-            tpe = 'STRING'
-        #print('num = ', num, ' type = ', tpe)
+    for _ in range(0, numRequiredCols):
+        tpe = partialCols[num]
         if tpe == '': 
             tpe = 'STRING'
         colWord.append(tpe)
@@ -131,12 +123,12 @@ def load_lists(lst):
 
 def get_list_string_OLD():
     lst = []
-    for i in range(0,100):
+    for _ in range(0,100):
         lst.append(random_letters(10))
     return lst
 
 def get_list_string(num = 40):
-    return [random_letters(num) for i in range(0,100)]
+    return [random_letters(num) for _ in range(0,100)]
     
 def get_list_words_OLD():
     lst = []

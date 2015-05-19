@@ -30,16 +30,16 @@ def TEST():
     
 class MSSQL_server(Database):
 
-    def CreateAccessDatabase(fname):
+    def CreateAccessDatabase(self, fname):
         pypyodbc.win_create_mdb(fname)
         connection = pypyodbc.win_connect_mdb(fname)
         connection.cursor().execute('CREATE TABLE t1 (id COUNTER PRIMARY KEY, name CHAR(25));').commit()
         connection.close()
 
-    def CompactAccessDatabase(fname):
+    def CompactAccessDatabase(self, fname):
         pypyodbc.win_compact_mdb(fname,'D:\\compacted.mdb')
 
-    def SQLServer_to_CSV(cred, schema, table, fldr, printHeader = True):
+    def SQLServer_to_CSV(self, cred, schema, table, fldr, printHeader = True):
         opFile = fldr + table + '.CSV'
         print ('Saving ' + table + ' to ' + opFile)
         #cred = [server, database, username, password]
@@ -53,7 +53,7 @@ class MSSQL_server(Database):
         if printHeader: # add column headers if requested
             txt = ''
             for col in cur.description:
-             txt += '"' + self.force_string(col[0]) + '",'
+                txt += '"' + self.force_string(col[0]) + '",'
             op.write(txt + '\n')
         for row_data in cur: # add table rows			.encode('utf-8')
             txt = ''
@@ -64,7 +64,7 @@ class MSSQL_server(Database):
         cur.close()
         conn.close()
 
-    def force_string(obj):
+    def force_string(self, obj):
         if type(obj) is str:
             return obj
         else:
