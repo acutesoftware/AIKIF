@@ -2,14 +2,12 @@
 # agent_browser.py		written by Duncan Murray	26/1/2015
 
 import os
-import sys
 import time
 import datetime
 import sqlite3
-import codecs, re
+import codecs
 import json
 import cgi
-import base64
 import urllib.parse as urlparse
 from os.path import expanduser
 
@@ -29,21 +27,18 @@ op_folder = mod_cfg.fldrs['pers_data']
 def TEST():
     """ self test for browser agent """
     my_browser = Browser(browser_data_path, op_folder, 'Chrome')
-    my_agent = BrowserCollectAgent('Duncans Browser', root_folder, my_browser, False, 1, log_folder)
+    my_agent = BrowserCollectAgent('Duncans Browser', root_folder, my_browser, False, log_folder)
     
     print('browser object = ', my_browser)
     print('agent object   = ', my_agent)
    
-    my_agent.do_your_job()
-
-
-def TEST_DATE_CONV():
     print('\nDATE CONVERTER CHECK - input = 13027566429814640')
     print(my_browser.DateConvBookmark(13027566429814640))
     print('\nDATE CONVERTER CHECK - input = 13027566429814640')
     print(my_browser.DateConvBookmark(13003923471387000))
+    my_agent.do_your_job()
+
      
-		
 class BrowserCollectAgent(agt.Agent):
     """
     agent that extracts history, passwords and bookmarks
@@ -51,18 +46,17 @@ class BrowserCollectAgent(agt.Agent):
     results using AIKIF logging
     """
     
-    def __init__(self, name, fldr, browser, running, LOG_LEVEL, log_folder):
-        agt.Agent.__init__(self, name, log_folder, running)
+    def __init__(self, name, fldr, browser, running, log_folder):
         """
         takes a browser object (see below) to manage the collection - sub 
         class browser for different ones (IE, Firefox, Safari)
         """
-        self.LOG_LEVEL = LOG_LEVEL
+        agt.Agent.__init__(self, name, log_folder, running)
         self.root_folder = fldr # used for logging, NOT the source of Chrome
         self.browser = browser
         self.results = []
         self.log_folder = log_folder
-        if running == True:
+        if running is True:
             self.do_your_job()
 
     def __str__(self):
@@ -85,7 +79,7 @@ class BrowserCollectAgent(agt.Agent):
     
         return txt
         
-    def do_your_job(self, *arg):
+    def do_your_job(self):
         """
         the goal of the browser agent is to collect bookmarks 
         and history from the browser (currently Chrome only)
@@ -149,7 +143,7 @@ class Browser(object):
             dte_as_date = datetime.datetime(1601, 1, 1) + datetime.timedelta(days, seconds, micros)
             dte_as_str = str(dte_as_date)[0:19]    # for ISO standard date string yyyy-mm-dd hh:mm:ss
             #dte_as_str = dte_as_date.strftime( '%a, %d %B %Y %H:%M:%S %Z' )   # for long date string 
-        except:
+        except Exception:
             dte_as_str = ''
         return dte_as_str
 
@@ -192,10 +186,7 @@ class Browser(object):
             res += qu + entry['name'] + qu + delim
             res += qu + cgi.escape(entry['url']) + qu + delim
             res += qu + self.DateConvBookmark(int(entry['date_added'])) + qu + delim
-            try:
-                pass
-            except:
-                res += qu + 'no date' + qu + delim
+            res += qu + 'no date' + qu + delim
             return res + '\n'
             
         def format_bookmark_folder(base_folder, entry, delim = ',', qu='"'):
@@ -205,14 +196,14 @@ class Browser(object):
             res = qu + base_folder + qu + delim
             try:
                 res += qu + str(entry['name']) + qu + delim
-            except:
+            except Exception:
                 res += qu + str(entry) + qu + delim  # first entry is string bookmark_bar
                 
             # print dummy empty entry name because this is a folder, not a bookmark
             res += qu + 'Folder' + qu + delim
             try:
                 res += qu + self.DateConvBookmark(entry['date_added']) + qu + delim
-            except:
+            except Exception:
                 res += qu + '' + qu + delim  # may not be a dict, so no indexes 
             return res + '\n'
         
@@ -239,7 +230,7 @@ class Browser(object):
             try:
                 get_bookmarks(roots[entry]['children'], 'ROOT:')
                 self.num_folders += 1
-            except:
+            except Exception:
                 pass
             self.num_folders += 1
             
@@ -252,9 +243,13 @@ class Browser(object):
         by reading the SQLite3 database
         """
         paths = [browser_data_path + "\\History"] 
-        pattern = "(((http)|(https))(://)(www.)|().*?)\.[a-z]*/"
-        SQL_STATEMENT = 'SELECT urls.url, urls.title, urls.visit_count, urls.typed_count, urls.last_visit_time, visits.visit_time, urls.hidden, visits.from_visit, urls.id, visits.transition  FROM urls, visits WHERE urls.id = visits.url;'
-
+        #pattern = "(((http)|(https))(://)(www.)|().*?)\.[a-z]*/"
+        SQL_STATEMENT = 'SELECT '
+        SQL_STATEMENT += 'urls.url, urls.title, urls.visit_count, urls.typed_count, urls.last_visit_time, '
+        SQL_STATEMENT += 'visits.visit_time, urls.hidden, visits.from_visit, urls.id, visits.transition '
+        SQL_STATEMENT += 'FROM urls, visits '
+        SQL_STATEMENT += 'WHERE urls.id = visits.url;'
+        
         storage = codecs.open(self.history_file, 'w', 'utf-8')
     
         self.num_history = 0
@@ -263,7 +258,7 @@ class Browser(object):
             c = sqlite3.connect(path)
             for row in c.execute(SQL_STATEMENT):
                 #storage.write( row[0] + ", " + row[1] + ", " + str(row[2])+ ", ")
-                storage.write( '"' + row[0] + '","' + str(row[2]) + '","' + str(row[3]) + '","' + str(self.DateConv(row[4]))[0:21]  + '","' + str(self.DateConv(row[5]))[0:21] + '","' + str(row[6]) + '","' + str(row[7]) + '","' + str(row[8]) + '","' + str(row[9]) + '","' + row[1] + '"\n'  )
+                storage.write(format_history_row(row))
                 self.num_history += 1
                 #date_time = date_from_webkit(row[1])
                 #url = re.search(pattern, row[0])
@@ -272,6 +267,23 @@ class Browser(object):
                 #storage.write(str(date_time)[0:19] + "\t" + urlc + "\n")
         #print('Exported ' + str(self.num_history) + ' records to ' + self.history_file)		
 
+    def format_history_row(self, row):
+        """
+        format a chrome bookmark for csv
+        """
+        txt = '"'
+        txt += row[0] + '","' 
+        txt += str(row[2]) + '","'
+        txt += str(row[3]) + '","'
+        txt += str(self.DateConv(row[4]))[0:21]  + '","'
+        txt += str(self.DateConv(row[5]))[0:21] + '","'
+        txt += str(row[6]) + '","'
+        txt += str(row[7]) + '","'
+        txt += str(row[8]) + '","'
+        txt += str(row[9]) + '","'
+        txt += row[1] + '"\n'
+        return txt
+        
     def get_passwords(self):
         """
         exports the logins and passwords from Chrome
@@ -315,12 +327,12 @@ class Browser(object):
                 password = self.decode_password(row[5])
                 self.num_passwords += 1
                 pass
-            except:
+            except Exception:
                 print('ERROR - password = ', row[5])
             
             user_field = row[2]
             pass_field = row[4]
-        except:
+        except Exception:
             print('non password entry (blacklists - ignoring)')
         res = self.format_list_csv([website, username, form_url, user_field, pass_field, password])
         return res
@@ -330,14 +342,14 @@ class Browser(object):
         """ password from Chrome as byte arrays """
         #print("RAW = ", str(raw))
         v1 = str(raw)
-      #  v2 = base64.b64decode("".join(b for b in raw))
+        #  v2 = base64.b64decode("".join(b for b in raw))
 
         #password = "".join(map(chr, row[5]))
         #password = row[5].decode("windows-1252")
         #password = "".join( chr( val ) for val in row[5] )
         #import binascii
         btes = [b for b in raw]
-        v3 = ' '.join(str(b) for b in btes)
+        #v3 = ' '.join(str(b) for b in btes)
         
         
         v4 = ''

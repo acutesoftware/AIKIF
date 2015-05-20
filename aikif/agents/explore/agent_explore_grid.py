@@ -40,7 +40,8 @@ class ExploreAgent(agt.Agent):
         self.backtrack = [0,0]   # set only if blocked and agent needs to go back
         self.prefer_x = 0        # set only if backtracked as preferred direction x
         self.prefer_y = 0        # set only if backtracked as preferred direction y
-    def do_your_job(self, *arg):
+        
+    def do_your_job(self):
         """
         the goal of the explore agent is to move to the 
         target while avoiding blockages on the grid.
@@ -50,8 +51,6 @@ class ExploreAgent(agt.Agent):
         previously backtracked in that direction for those coords, ie
         keep track of cells visited and number of times visited?
         """
-        direction = ''
-            
         y,x = self.get_intended_direction()  # first find out where we should go
         if self.target_x == self.current_x and self.target_y == self.current_y:
             #print(self.name + " : TARGET ACQUIRED")
@@ -62,21 +61,6 @@ class ExploreAgent(agt.Agent):
             return
         
         self.num_steps += 1   
-        
-        # check for backtracking from prior move and change intended direction
-        if self.backtrack[0] == 1:  # need to backtrack y axis
-            self.lg_mv(3, self.name + ": have to backtrack on y axis" )
-            #y = -y
-            self.prefer_y = y
-            self.backtrack[0] == 0
-            
-        if self.backtrack[1] == 1:  # need to backtrack y axis
-            self.lg_mv(3, self.name + ": have to backtrack on x axis" )
-            #x = -x
-            self.prefer_x = x
-            self.backtrack[1] == 0
-        
- 
         # first try is to move on the x axis in a simple greedy search
         accessible = ['\\', '-', '|', '/', '.']
         blocked = '#'
@@ -88,14 +72,7 @@ class ExploreAgent(agt.Agent):
                     self.current_y += y
                     self.lg_mv(3, self.name + ": randomly moving Y axis " + str(self.num_steps)  )
                     return
-                
-        if self.prefer_x != 0:  # already backtracked TWICE so go perpendicular
-            y = 0
-            x = self.prefer_y
-        if self.prefer_y != 0:  # already backtracked TWICE so go perpendicular
-            x = 0
-            y = self.prefer_y
-            
+                            
             
         if x == 1:
             if self.grd.get_tile(self.current_y, self.current_x + 1) in accessible:
@@ -117,79 +94,6 @@ class ExploreAgent(agt.Agent):
                 self.current_y -= 1
                 self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - moving North")
                 return
-
-        # damn - we are still here, so there are no simple paths in both directions
-        # Repeat by going over mountains (takes double time)
-        self.num_climbs += 1
-        if x == 1:
-            if self.grd.get_tile(self.current_y, self.current_x + 1) not in blocked:
-                self.current_x += 1
-                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing West" )
-                return
-            else:
-                self.lg_mv(4, "The way East is shut")
-        elif x == -1:
-            if self.grd.get_tile(self.current_y, self.current_x - 1) not in blocked:
-                self.current_x -= 1
-                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing East" )
-                return
-            else:
-                self.lg_mv(4, "The way West is shut")
-        elif y == 1:
-            if self.grd.get_tile(self.current_y + 1, self.current_x) not in blocked:
-                self.current_y += 1
-                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing South" )
-                return
-            else:
-                self.lg_mv(4, "The way South is shut")
-        elif y == -1:
-            if self.grd.get_tile(self.current_y - 1, self.current_x) not in blocked:
-                self.current_y -= 1
-                self.lg_mv(3, self.name + ": move# " + str(self.num_steps) + " - climbing North")
-                return
-            else:
-                self.lg_mv(4, "The way North is shut")        
-
-        # damn - we are still here, so there are no simple paths in both directions
-        # Repeat by going over mountains (takes double time)
-        if self.backtrack[1] == 1:
-            if self.prefer_y == y:   # already did this before
-                self.prefer_x == y   # so try wandering perpendicular
-            else:
-                self.prefer_y = y
-            if self.prefer_x == x:   # already did this before
-                self.prefer_y == x   # so try wandering perpendicular
-            else:
-                self.prefer_x = x
-                
-            if self.backtrack[0] == 1:
-                self.lg_mv(3, self.name + ": trapped on all sides " )
-            else:
-                self.lg_mv(3, self.name + ": Backtracking on X axis" )
-                self.backtrack[0] == 0
-        else:
-            self.lg_mv(3, self.name + ": Backtracking on Y axis" )
-            self.backtrack[1] == 1
-            
-        if self.backtrack[0] == 1:
-            if self.prefer_x == x:   # already did this before
-                self.prefer_y == x   # so try wandering perpendicular
-            else:
-                self.prefer_x = x
-            if self.prefer_y == x:   # already did this before
-                self.prefer_x == y   # so try wandering perpendicular
-            else:
-                self.prefer_y = y
-                
-            if self.backtrack[1] == 1:
-                self.lg_mv(3, self.name + ": trapped on all sides " )
-            else:
-                self.lg_mv(3, self.name + ": Backtracking on X axis" )
-                self.backtrack[1] == 0
-        else:
-            self.lg_mv(3, self.name + ": Backtracking on Y axis" )
-            self.backtrack[0] == 1
-            
         
         self.grd.set_tile(self.start_y, self.start_x, 'A')
         self.grd.save(root_folder + os.sep + 'agent.txt')
