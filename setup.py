@@ -13,7 +13,7 @@ setup(
     long_description=open('README.txt').read(),
     install_requires=[
           'nose >= 1.0',
-          'bs4 >= 1.0',
+          'beautifulsoup4 >= 1.0',
           'PIL >= 1.0',
           'pandas >= 1.0'
     ],
