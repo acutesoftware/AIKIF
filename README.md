@@ -16,13 +16,6 @@ them down to smaller tasks until the task can be run by a tool in the Toolbox.<b
 A tool is any python wrapped function or application and is easily extensible.<br />
 
 
-###Progress
-Area | status
- --- | --- |
-| Code base version            | Pre-Alpha    |
-| Public package version | 0.1.2        |
-| Date notes updated     | 12th-May-2015   |
-
 ###Core Data
 Data type | description |
  --- | ---                

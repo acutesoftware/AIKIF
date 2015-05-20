@@ -6,13 +6,11 @@
 #    https://pypi.python.org/pypi/mutagenx
 # https://musicbrainz.org/doc/MusicBrainz_Picard/Tags/Mapping
 # 
-import sys
-import os
 
 try:
     import mutagenx
     import mutagenx.id3
-except:
+except ImportError:
     print("Error: cant import mutagen")
     
 def TEST():
@@ -44,17 +42,17 @@ def get_audio_metadata(fname):
     
     try:
         artist = audio["artist"]
-    except:
+    except KeyError:
         artist = ''
         
     try:    
         title = audio["title"]
-    except:
+    except KeyError:
         print("Cant get title")
         
     try:
         album = audio["album"]
-    except:
+    except KeyError:
         album = ''
         
     
@@ -79,22 +77,22 @@ def get_audio_metadata_old(fname):
     
     try:
         audio_dict["title"] = audio["title"]
-    except:
+    except KeyError:
         print("No title")
         
     try:
         audio_dict["artist"] = audio["artist"] # tags['TPE1'] 
-    except:
+    except KeyError:
         print("No artist")
         
     try:
         audio_dict["album"] = audio["album"]
-    except:
+    except KeyError:
         print("No album")
         
     try:
         audio_dict["length"] = audio["length"]
-    except:
+    except KeyError:
         print("No length")
         
     #pprint.pprint(audio.tags)

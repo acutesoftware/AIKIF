@@ -1,19 +1,36 @@
-<RDF><RDF_ROW>
-  <COL_NAME>MindOntology:AGI R&D Efforts</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:AGI_R%26D_Efforts</COL_URL>
-  <COL_TXT></COL_TXT>
-  <COL_HTML></COL_HTML></RDF_ROW>
-<RDF_ROW>
-  <COL_NAME>MindOntology:AI Prizes</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:AI_Prizes</COL_URL>
-  <COL_TXT> The Loebner Prize in Artificial Intelligence
+<?xml version="1.0"?>
+<mindOntology>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:AGI R&D Efforts]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:AGI_R%26D_Efforts]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+
+]]>
+</COL_TXT>
+  <COL_HTML>
+<![CDATA[
+
+]]>
+</COL_HTML>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:AI Prizes]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:AI_Prizes]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+ The Loebner Prize in Artificial Intelligence
  DARPA Grand Challenge
  Lifeboat Foundation A-Prize
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><ul><li> <a class="external text" href="http://www.loebner.net/Prizef/loebner-prize.html" rel="nofollow">The Loebner Prize in Artificial Intelligence</a>
+  <COL_HTML>
+<![CDATA[
+<ul><li> <a class="external text" href="http://www.loebner.net/Prizef/loebner-prize.html" rel="nofollow">The Loebner Prize in Artificial Intelligence</a>
 </li><li> <a class="external text" href="http://en.wikipedia.org/wiki/DARPA_Grand_Challenge" rel="nofollow">DARPA Grand Challenge</a>
 </li><li> <a class="external text" href="https://lifeboat.com/ex/a-prize" rel="nofollow">Lifeboat Foundation A-Prize</a>
 </li></ul>
@@ -31,19 +48,28 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:412-0!*!*!*!*!*!* and timestamp 20150520030638 
 
 
-</COL_HTML></RDF_ROW>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Attention Codelet</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Attention_Codelet</COL_URL>
-  <COL_TXT>A Codelet that attempts to train Attention on some particular kind of Information
+
+]]>
+</COL_HTML>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Attention Codelet]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Attention_Codelet]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Codelet that attempts to train Attention on some particular kind of Information
 
   Mind Ontology Links 
 Associated: Attention
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="new" href="/wikihome/index.php?title=Codelet&amp;action=edit&amp;redlink=1" title="Codelet (page does not exist)">Codelet</a> that attempts to train <a class="mw-redirect" href="/w/Attention" title="Attention">Attention</a> on some particular kind of <a class="mw-redirect" href="/w/Information" title="Information">Information</a>
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="new" href="/wikihome/index.php?title=Codelet&amp;action=edit&amp;redlink=1" title="Codelet (page does not exist)">Codelet</a> that attempts to train <a class="mw-redirect" href="/w/Attention" title="Attention">Attention</a> on some particular kind of <a class="mw-redirect" href="/w/Information" title="Information">Information</a>
 </p>
 
 
@@ -66,17 +92,26 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:422-0!*!0!*!*!*!* and timestamp 20150520030639 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Codelet</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Autonomous Agent</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Autonomous_Agent</COL_URL>
-  <COL_TXT>A system situated in, and part of, an environment, which senses that environment, and acts on it, over time, in pursuit of its own agenda, so as to affect what it senses in the future. (http://ccrg.cs.memphis.edu/tutorial/glossary.html)
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Codelet]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Autonomous Agent]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Autonomous_Agent]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A system situated in, and part of, an environment, which senses that environment, and acts on it, over time, in pursuit of its own agenda, so as to affect what it senses in the future. (http://ccrg.cs.memphis.edu/tutorial/glossary.html)
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A system situated in, and part of, an environment, which senses that environment, and acts on it, over time, in pursuit of its own agenda, so as to affect what it senses in the future. (<a class="external free" href="http://ccrg.cs.memphis.edu/tutorial/glossary.html" rel="nofollow">http://ccrg.cs.memphis.edu/tutorial/glossary.html</a>)
+  <COL_HTML>
+<![CDATA[
+<p>A system situated in, and part of, an environment, which senses that environment, and acts on it, over time, in pursuit of its own agenda, so as to affect what it senses in the future. (<a class="external free" href="http://ccrg.cs.memphis.edu/tutorial/glossary.html" rel="nofollow">http://ccrg.cs.memphis.edu/tutorial/glossary.html</a>)
 </p>
 
 
@@ -92,17 +127,26 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:424-0!*!*!*!*!*!* and timestamp 20150520030641 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Properties of Whole Minds</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Behavior Codelet</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Behavior_Codelet</COL_URL>
-  <COL_TXT>A Codelet that can execute some particular, specialized Behavior
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Properties of Whole Minds]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Behavior Codelet]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Behavior_Codelet]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Codelet that can execute some particular, specialized Behavior
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="new" href="/wikihome/index.php?title=Codelet&amp;action=edit&amp;redlink=1" title="Codelet (page does not exist)">Codelet</a> that can execute some particular, specialized <a class="new" href="/wikihome/index.php?title=Behavior&amp;action=edit&amp;redlink=1" title="Behavior (page does not exist)">Behavior</a>
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="new" href="/wikihome/index.php?title=Codelet&amp;action=edit&amp;redlink=1" title="Codelet (page does not exist)">Codelet</a> that can execute some particular, specialized <a class="new" href="/wikihome/index.php?title=Behavior&amp;action=edit&amp;redlink=1" title="Behavior (page does not exist)">Behavior</a>
 </p>
 
 
@@ -118,12 +162,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:426-0!*!0!*!*!*!* and timestamp 20150520030642 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Codelet</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Cagegory:Scientific and Philosophical Theories Relevant to Cognition</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Cagegory:Scientific_and_Philosophical_Theories_Relevant_to_Cognition</COL_URL>
-  <COL_TXT>This page is a bit of a placeholder.  It is intended to be the head of a large subontology describing various areas of science and philosophy that are relevant to cognition.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Codelet]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Cagegory:Scientific and Philosophical Theories Relevant to Cognition]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Cagegory:Scientific_and_Philosophical_Theories_Relevant_to_Cognition]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+This page is a bit of a placeholder.  It is intended to be the head of a large subontology describing various areas of science and philosophy that are relevant to cognition.
 Of course, there is no need to simply replicate the existing literature on these topics within the Mind Ontology.  The intended use of this subontology is to present information on these areas of science and philosophy specifically as related to Cognition and AGI.   For example, this may be a useful place to gather together "reading lists" of relevant references in various scientific domains.
 A highly non-exhaustive list, intended as a "starter" only, is as follows:
 
@@ -171,8 +220,12 @@ Contents
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>This page is a bit of a placeholder.  It is intended to be the head of a large subontology describing various areas of science and philosophy that are relevant to cognition.<br/>
+  <COL_HTML>
+<![CDATA[
+<p>This page is a bit of a placeholder.  It is intended to be the head of a large subontology describing various areas of science and philosophy that are relevant to cognition.<br/>
 </p>
 <p>Of course, there is no need to simply replicate the existing literature on these topics within the Mind Ontology.  The intended use of this subontology is to present information on these areas of science and philosophy specifically as related to <a class="mw-redirect" href="/w/Cognition" title="Cognition">Cognition</a> and <a class="mw-redirect" href="/w/AGI" title="AGI">AGI</a>.   For example, this may be a useful place to gather together "reading lists" of relevant references in various scientific domains.<br/>
 </p>
@@ -260,11 +313,16 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:429-0!*!0!!en!*!* and timestamp 20150519112459 
 
 
-</COL_HTML></RDF_ROW>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Category:AGI Projects</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Category:AGI_Projects</COL_URL>
-  <COL_TXT>For the purpose of the Mind Ontology, we use the term "AGI Project" to refer to an Artificial General Intelligence research project that satisfies all the following criteria:
+
+]]>
+</COL_HTML>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Category:AGI Projects]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Category:AGI_Projects]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+For the purpose of the Mind Ontology, we use the term "AGI Project" to refer to an Artificial General Intelligence research project that satisfies all the following criteria:
 
 	The project is based on a theory about “intelligence” as a whole (which may encompass intelligence as displayed by the human brain/mind, or may specifically refer to a class of non-human-like systems intended to display intelligence with a generality of scope at least roughly equalling that of the human brain/mind)
 	There is an engineering plan to implement the above conception of intelligence in a computer system.
@@ -280,8 +338,12 @@ Strictly speaking, the software systems currently existing within the AGI Projec
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>For the purpose of the <a class="mw-redirect" href="/w/Mind_Ontology" title="Mind Ontology">Mind Ontology</a>, we use the term "AGI Project" to refer to an <a href="/w/Artificial_General_Intelligence" title="Artificial General Intelligence">Artificial General Intelligence</a> research project that satisfies all the following criteria:
+  <COL_HTML>
+<![CDATA[
+<p>For the purpose of the <a class="mw-redirect" href="/w/Mind_Ontology" title="Mind Ontology">Mind Ontology</a>, we use the term "AGI Project" to refer to an <a href="/w/Artificial_General_Intelligence" title="Artificial General Intelligence">Artificial General Intelligence</a> research project that satisfies all the following criteria:
 </p>
 
 
@@ -317,12 +379,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:406-0!*!0!*!*!*!* and timestamp 20150520030645 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind Ontology</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Category:Codelet</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Category:Codelet</COL_URL>
-  <COL_TXT>A Procedure within a mind that, when it achieves sufficient Activation, carries out some specific Process within the mind. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind Ontology]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Category:Codelet]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Category:Codelet]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Procedure within a mind that, when it achieves sufficient Activation, carries out some specific Process within the mind. 
 Typically, the term "codelet" is used to refer to a small and simple procedure; complex procedures are understood to be carried out via Codelet Coalitions.
 
   Mind Ontology 
@@ -330,8 +397,12 @@ Typically, the term "codelet" is used to refer to a small and simple procedure; 
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="mw-redirect" href="/w/Procedure" title="Procedure">Procedure</a> within a mind that, when it achieves sufficient <a class="new" href="/wikihome/index.php?title=Activation&amp;action=edit&amp;redlink=1" title="Activation (page does not exist)">Activation</a>, carries out some specific <a class="new" href="/wikihome/index.php?title=Process&amp;action=edit&amp;redlink=1" title="Process (page does not exist)">Process</a> within the mind. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="mw-redirect" href="/w/Procedure" title="Procedure">Procedure</a> within a mind that, when it achieves sufficient <a class="new" href="/wikihome/index.php?title=Activation&amp;action=edit&amp;redlink=1" title="Activation (page does not exist)">Activation</a>, carries out some specific <a class="new" href="/wikihome/index.php?title=Process&amp;action=edit&amp;redlink=1" title="Process (page does not exist)">Process</a> within the mind. <br/>
 </p>
 <p>Typically, the term "codelet" is used to refer to a small and simple procedure; complex procedures are understood to be carried out via <a class="new" href="/wikihome/index.php?title=Codelet_Coalition&amp;action=edit&amp;redlink=1" title="Codelet Coalition (page does not exist)">Codelet Coalitions</a>.
 </p>
@@ -356,14 +427,19 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:431-0!*!0!*!*!*!* and timestamp 20150520030646 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind Ontology</COL_CATEGORY>
-  <COL_CATEGORY>Cognitive Structure</COL_CATEGORY>
-  <COL_CATEGORY>Procedure</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Category:Cognitive Developmental Stages</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Category:Cognitive_Developmental_Stages</COL_URL>
-  <COL_TXT>Jean PIaget identified a series of cognitive developmental stages characterizing human childhood development. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind Ontology]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[Cognitive Structure]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[Procedure]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Category:Cognitive Developmental Stages]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Category:Cognitive_Developmental_Stages]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Jean PIaget identified a series of cognitive developmental stages characterizing human childhood development. 
 The idea of a "developmental stage" is that there are natural stages that a mind passes through in its history, as it ascends from infancy to adulthood (and beyond typical adulthood to various forms of self-mastery and self-transcendence). 
 These stages should not be thought of as discrete entities, but rather as phases that are gradually entered into and out of, and may overlap to some extent.
 
@@ -372,8 +448,12 @@ In a paper titled Stages of Cognitive Development in Uncertain Inference Based A
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Jean PIaget identified a series of cognitive developmental stages characterizing human childhood development. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>Jean PIaget identified a series of cognitive developmental stages characterizing human childhood development. <br/>
 The idea of a "developmental stage" is that there are natural stages that a mind passes through in its history, as it ascends from infancy to adulthood (and beyond typical adulthood to various forms of self-mastery and self-transcendence). <br/>
 These stages should not be thought of as discrete entities, but rather as phases that are gradually entered into and out of, and may overlap to some extent.
 </p>
@@ -398,14 +478,19 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:438-0!*!0!*!*!*!* and timestamp 20150520030647 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind Ontology</COL_CATEGORY>
-  <COL_CATEGORY>MindOntology:Cognitive Structure</COL_CATEGORY>
-  <COL_CATEGORY>MindOntology:Properties of Whole Minds</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Category:Cognitive Process</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Category:Cognitive_Process</COL_URL>
-  <COL_TXT>A Process Category that is a Cognitive Structure within some Mind.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind Ontology]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Structure]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[MindOntology:Properties of Whole Minds]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Category:Cognitive Process]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Category:Cognitive_Process]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Process Category that is a Cognitive Structure within some Mind.
 To be pedantic, it could be called a Cognitive Process Category.  To refer to the instance of a cognitive process inside a particular mind, we would use Cognitive Process Instance.  We suggest to use the general term Cognitive Process to refer to the category rather than instance usage.
 
 Contents
@@ -468,8 +553,12 @@ Supercategory: Cognitive Structure
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="new" href="/wikihome/index.php?title=Process_Category&amp;action=edit&amp;redlink=1" title="Process Category (page does not exist)">Process Category</a> that is a <a class="mw-redirect" href="/w/Cognitive_Structure" title="Cognitive Structure">Cognitive Structure</a> within some <a class="new" href="/wikihome/index.php?title=Mind&amp;action=edit&amp;redlink=1" title="Mind (page does not exist)">Mind</a>.<br/>
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="new" href="/wikihome/index.php?title=Process_Category&amp;action=edit&amp;redlink=1" title="Process Category (page does not exist)">Process Category</a> that is a <a class="mw-redirect" href="/w/Cognitive_Structure" title="Cognitive Structure">Cognitive Structure</a> within some <a class="new" href="/wikihome/index.php?title=Mind&amp;action=edit&amp;redlink=1" title="Mind (page does not exist)">Mind</a>.<br/>
 </p>
 <p>To be pedantic, it could be called a Cognitive Process Category.  To refer to the instance of a cognitive process inside a particular mind, we would use Cognitive Process Instance.  We suggest to use the general term Cognitive Process to refer to the category rather than instance usage.
 </p>
@@ -566,12 +655,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:440-0!*!0!!en!*!* and timestamp 20150520030649 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind Ontology</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Category:Intelligence</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Category:Intelligence</COL_URL>
-  <COL_TXT>What is intelligence?
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind Ontology]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Category:Intelligence]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Category:Intelligence]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+What is intelligence?
 This is a very polysemous word, and to avoid confusion, it seems sensible to decompose it into Specialized Intelligence  versus General Intelligence.  
 Artificial General Intelligence is concerned with the latter, whereas Narrow AI is concerned with the former.
 
@@ -582,8 +676,12 @@ Artificial General Intelligence is concerned with the latter, whereas Narrow AI 
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>What is intelligence?
+  <COL_HTML>
+<![CDATA[
+<p>What is intelligence?
 </p>
 <p>This is a very polysemous word, and to avoid confusion, it seems sensible to decompose it into <a class="mw-redirect" href="/w/Specialized_Intelligence" title="Specialized Intelligence">Specialized Intelligence</a>  versus <a href="/w/General_Intelligence" title="General Intelligence">General Intelligence</a>.  
 </p>
@@ -612,12 +710,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:492-0!*!0!*!*!*!* and timestamp 20150520030650 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind Ontology</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Category:Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Category:Mind</COL_URL>
-  <COL_TXT>  What is a mind? 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind Ontology]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Category:Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Category:Mind]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+  What is a mind? 
 Many definitions of "mind" exist.  For example: 
 
  According to Ben Goertzel in The Hidden Pattern, it is "the set of Patterns associated with an intelligent system," meaning a System with General Intelligence
@@ -664,8 +767,12 @@ Orthogonal:
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><h2> <span class="mw-headline" id="What_is_a_mind.3F"> What is a mind? </span></h2>
+  <COL_HTML>
+<![CDATA[
+<h2> <span class="mw-headline" id="What_is_a_mind.3F"> What is a mind? </span></h2>
 
 
 <p>Many definitions of "mind" exist.  For example: <br/>
@@ -738,19 +845,28 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:512-0!*!0!!*!*!* and timestamp 20150519133901 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind Ontology</COL_CATEGORY>
-  <COL_CATEGORY>Properties of Whole Minds</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Category:Philosophical Ontologies Relevant to Cognition</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Category:Philosophical_Ontologies_Relevant_to_Cognition</COL_URL>
-  <COL_TXT>This page at present is a bit of a placeholder. It is intended to eventually point to a large subontology describing various philosophical ontologies relevant to cognition.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind Ontology]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[Properties of Whole Minds]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Category:Philosophical Ontologies Relevant to Cognition]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Category:Philosophical_Ontologies_Relevant_to_Cognition]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+This page at present is a bit of a placeholder. It is intended to eventually point to a large subontology describing various philosophical ontologies relevant to cognition.
 A few examples of such philosophical ontologies are given in the Mind Ontology Links section, but at the moment most of these are not fleshed out thoroughly.
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>This page at present is a bit of a placeholder. It is intended to eventually point to a large subontology describing various philosophical ontologies relevant to cognition.
+  <COL_HTML>
+<![CDATA[
+<p>This page at present is a bit of a placeholder. It is intended to eventually point to a large subontology describing various philosophical ontologies relevant to cognition.
 </p>
 <p>A few examples of such philosophical ontologies are given in the Mind Ontology Links section, but at the moment most of these are not fleshed out thoroughly.
 </p>
@@ -768,12 +884,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:544-0!*!*!*!*!*!* and timestamp 20150520030653 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind Ontology</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Components of Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Components_of_Mind</COL_URL>
-  <COL_TXT>This page groups together a number of different pages, each of which refers to a certain collection of related aspects of minds.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind Ontology]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Components of Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Components_of_Mind]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+This page groups together a number of different pages, each of which refers to a certain collection of related aspects of minds.
 
   Mind Ontology Links 
 Subcategory: Functionally Specialized Components 
@@ -784,8 +905,12 @@ Subcategory: Memory
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>This page groups together a number of different pages, each of which refers to a certain collection of related aspects of minds.
+  <COL_HTML>
+<![CDATA[
+<p>This page groups together a number of different pages, each of which refers to a certain collection of related aspects of minds.
 </p>
 
 
@@ -812,12 +937,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:446-0!*!0!*!*!*!* and timestamp 20150520030654 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Properties of Whole Minds</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Concretely Implemented Novamente Structure</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Concretely_Implemented_Novamente_Structure</COL_URL>
-  <COL_TXT>A Cognitive Structure that exists explicitly within the codebase of the Novamente Cognition Engine.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Properties of Whole Minds]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Concretely Implemented Novamente Structure]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Concretely_Implemented_Novamente_Structure]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Cognitive Structure that exists explicitly within the codebase of the Novamente Cognition Engine.
 Only a subset of the cognitively relevant structures and dynamics associated with the Novamente system fall into this category; others fall into the category of Emergent Novamente Structures.
 
   Mind Ontology Links 
@@ -857,8 +987,12 @@ Only a subset of the cognitively relevant structures and dynamics associated wit
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="mw-redirect" href="/w/Cognitive_Structure" title="Cognitive Structure">Cognitive Structure</a> that exists explicitly within the codebase of the <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine">Novamente Cognition Engine</a>.<br/>
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="mw-redirect" href="/w/Cognitive_Structure" title="Cognitive Structure">Cognitive Structure</a> that exists explicitly within the codebase of the <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine">Novamente Cognition Engine</a>.<br/>
 Only a subset of the cognitively relevant structures and dynamics associated with the Novamente system fall into this category; others fall into the category of <a class="new" href="/wikihome/index.php?title=Emergent_Novamente_Structure&amp;action=edit&amp;redlink=1" title="Emergent Novamente Structure (page does not exist)">Emergent Novamente Structures</a>.
 </p>
 
@@ -914,13 +1048,18 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:451-0!*!0!*!*!*!* and timestamp 20150520030656 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-  <COL_CATEGORY>MindOntology:Cognitive Structure</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Conscious Content</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Conscious_Content</COL_URL>
-  <COL_TXT>The fuzzy set of information, within a Mind, that is associated with the Structured Consciousness of that mind at a certain point in time.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Structure]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Conscious Content]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Conscious_Content]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+The fuzzy set of information, within a Mind, that is associated with the Structured Consciousness of that mind at a certain point in time.
 
   Conscious Contents and Maps 
 One hypothesis is that the conscious content of a mind is a kind of short-lifespan Cognitive Map, often formed from the seed of a long-lifespan Cognitive Map.  I.e., the items in the conscious focus are inter-reinforcing while they are in the conscious focus; and often many of them were inter-reinforcing in long-term memory before they rose into intense conscious focus.
@@ -933,8 +1072,12 @@ Associated: Structured Consciousness
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>The fuzzy set of information, within a <a class="new" href="/wikihome/index.php?title=Mind&amp;action=edit&amp;redlink=1" title="Mind (page does not exist)">Mind</a>, that is associated with the <a class="new" href="/wikihome/index.php?title=Structured_Consciousness&amp;action=edit&amp;redlink=1" title="Structured Consciousness (page does not exist)">Structured Consciousness</a> of that mind at a certain point in time.
+  <COL_HTML>
+<![CDATA[
+<p>The fuzzy set of information, within a <a class="new" href="/wikihome/index.php?title=Mind&amp;action=edit&amp;redlink=1" title="Mind (page does not exist)">Mind</a>, that is associated with the <a class="new" href="/wikihome/index.php?title=Structured_Consciousness&amp;action=edit&amp;redlink=1" title="Structured Consciousness (page does not exist)">Structured Consciousness</a> of that mind at a certain point in time.
 </p>
 
 
@@ -967,20 +1110,29 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:452-0!*!0!!*!*!* and timestamp 20150520030657 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Cognitive Structure</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Deliberation</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Deliberation</COL_URL>
-  <COL_TXT>A cognitive process within which options may be constructed and evaluated, and Plans created
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Structure]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Deliberation]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Deliberation]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A cognitive process within which options may be constructed and evaluated, and Plans created
 
   Mind Ontology Links 
 Supercategory: Focused Cognitive Process
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A cognitive process within which options may be constructed and evaluated, and <a class="mw-redirect" href="/w/Plan" title="Plan">Plans</a> created
+  <COL_HTML>
+<![CDATA[
+<p>A cognitive process within which options may be constructed and evaluated, and <a class="mw-redirect" href="/w/Plan" title="Plan">Plans</a> created
 </p>
 
 
@@ -1003,18 +1155,27 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:455-0!*!0!*!*!*!* and timestamp 20150520030659 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Cognitive Process</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Developmental Stages of Uncertain Logic Based AI Systems</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Developmental_Stages_of_Uncertain_Logic_Based_AI_Systems</COL_URL>
-  <COL_TXT>In the paper Stages of Cognitive Development in Uncertain-Logic-Based AI Systems, Ben Goertzel and Stephan Vladimir Bugaj present a modification of the Piagetan particularly appropriate to the development of uncertain logic-based AI systems.   
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Cognitive Process]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Developmental Stages of Uncertain Logic Based AI Systems]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Developmental_Stages_of_Uncertain_Logic_Based_AI_Systems]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+In the paper Stages of Cognitive Development in Uncertain-Logic-Based AI Systems, Ben Goertzel and Stephan Vladimir Bugaj present a modification of the Piagetan particularly appropriate to the development of uncertain logic-based AI systems.   
 While inspired by the hypothetical future development of the Novamente Cognition Engine, the theory is designed to be applicable more generally.
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>In the paper <a class="external text" href="http://www.novamente.net/file/WCCI06_Stages.pdf" rel="nofollow">Stages of Cognitive Development in Uncertain-Logic-Based AI Systems</a>, Ben Goertzel and Stephan Vladimir Bugaj present a modification of the Piagetan particularly appropriate to the development of uncertain logic-based AI systems.  <br/> <br/>
+  <COL_HTML>
+<![CDATA[
+<p>In the paper <a class="external text" href="http://www.novamente.net/file/WCCI06_Stages.pdf" rel="nofollow">Stages of Cognitive Development in Uncertain-Logic-Based AI Systems</a>, Ben Goertzel and Stephan Vladimir Bugaj present a modification of the Piagetan particularly appropriate to the development of uncertain logic-based AI systems.  <br/> <br/>
 While inspired by the hypothetical future development of the <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine">Novamente Cognition Engine</a>, the theory is designed to be applicable more generally.
 </p>
 
@@ -1031,12 +1192,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:456-0!*!0!*!*!*!* and timestamp 20150520030700 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Cognitive Developmental Stages</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:EstimationOfDistributionAlgorithms</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:EstimationOfDistributionAlgorithms</COL_URL>
-  <COL_TXT>  Estimation of Distribution Algorithms 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Developmental Stages]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:EstimationOfDistributionAlgorithms]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:EstimationOfDistributionAlgorithms]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+  Estimation of Distribution Algorithms 
 The somewhat awkward term Estimation of Distribution Algorithm refers to an approach to optimization and program learning that combines aspects of evolutionary learning algorithms like genetic algorithms with probabilistic modeling, thus retaining the breadth and flexibility of typical evolutionary algorithms but achieving greater learning efficiency and greater ease of integration. 
 While EDA algorithms are quite different from Genetic Algorithms and Genetic Programming, conceptually they derive largely from this tradition, and the reader will have an easier time understanding them if he has familiarity with GA and GP as obtained e.g. from reading Goldberg's (1984) and Koza's (1991) classic texts. 
 The essential idea of EDAs is to replace the crossover and mutation involved in evolution with a probabilistic inference process that explicitly analyzes an evolving population, observing which patterns in the genetic material of individuals tend to correlate with fitness, and then creating new entities that display these fitness-encouraging patterns.  
@@ -1058,8 +1224,12 @@ For example, this is what the Bayesian Optimization Algorithm (BOA; Pelikan, 200
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><h3> <span class="mw-headline" id="Estimation_of_Distribution_Algorithms"> Estimation of Distribution Algorithms </span></h3>
+  <COL_HTML>
+<![CDATA[
+<h3> <span class="mw-headline" id="Estimation_of_Distribution_Algorithms"> Estimation of Distribution Algorithms </span></h3>
 
 
 <p>The somewhat awkward term Estimation of Distribution Algorithm refers to an approach to optimization and program learning that combines aspects of evolutionary learning algorithms like genetic algorithms with probabilistic modeling, thus retaining the breadth and flexibility of typical evolutionary algorithms but achieving greater learning efficiency and greater ease of integration. 
@@ -1110,11 +1280,16 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:288-0!*!0!*!*!*!* and timestamp 20150520030701 
 
 
-</COL_HTML></RDF_ROW>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Ethical Properties of Minds</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Ethical_Properties_of_Minds</COL_URL>
-  <COL_TXT>Nearly everyone involved in building AGI's agrees that it is important for them to have agreeable ethical properties.  But there is much less agreement on which ethical properties are agreeable, and on whether it's practical or even possible to formalize ethical properties in a way that's useful for AGI development.
+
+]]>
+</COL_HTML>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Ethical Properties of Minds]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Ethical_Properties_of_Minds]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Nearly everyone involved in building AGI's agrees that it is important for them to have agreeable ethical properties.  But there is much less agreement on which ethical properties are agreeable, and on whether it's practical or even possible to formalize ethical properties in a way that's useful for AGI development.
 A reading list with many entries relevant to this topic is here:
 http://www.singinst.org/reading/artificialgeneralintelligence/ (this link is obsolete)
 
@@ -1126,8 +1301,12 @@ Subcategory: Friendly AI
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Nearly everyone involved in building AGI's agrees that it is important for them to have agreeable ethical properties.  But there is much less agreement on which ethical properties are agreeable, and on whether it's practical or even possible to formalize ethical properties in a way that's useful for AGI development.
+  <COL_HTML>
+<![CDATA[
+<p>Nearly everyone involved in building AGI's agrees that it is important for them to have agreeable ethical properties.  But there is much less agreement on which ethical properties are agreeable, and on whether it's practical or even possible to formalize ethical properties in a way that's useful for AGI development.
 </p>
 <p>A reading list with many entries relevant to this topic is here:
 </p>
@@ -1161,18 +1340,27 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:465-0!*!0!!*!*!* and timestamp 20150520030703 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Properties of Whole Minds</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Flexibly Embodied Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Flexibly_Embodied_Mind</COL_URL>
-  <COL_TXT>A mind that may have zero, one or more bodies, and may move between bodies at will.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Properties of Whole Minds]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Flexibly Embodied Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Flexibly_Embodied_Mind]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A mind that may have zero, one or more bodies, and may move between bodies at will.
 This will likely be the default among AGI Systems, and will make their psychology quite different from that of humans or other Singly Embodied Minds.
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A mind that may have zero, one or more bodies, and may move between bodies at will.
+  <COL_HTML>
+<![CDATA[
+<p>A mind that may have zero, one or more bodies, and may move between bodies at will.
 </p>
 <p>This will likely be the default among <a class="new" href="/wikihome/index.php?title=AGI_Systems&amp;action=edit&amp;redlink=1" title="AGI Systems (page does not exist)">AGI Systems</a>, and will make their psychology quite different from that of humans or other <a class="new" href="/wikihome/index.php?title=Singly_Embodied_Mind&amp;action=edit&amp;redlink=1" title="Singly Embodied Mind (page does not exist)">Singly Embodied Minds</a>.
 </p>
@@ -1190,12 +1378,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:469-0!*!0!*!*!*!* and timestamp 20150520030704 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Focused Cognitive Process</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Focused_Cognitive_Process</COL_URL>
-  <COL_TXT>A general class of Cognitive Processes, encompassing all such processes that operate by 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Focused Cognitive Process]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Focused_Cognitive_Process]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A general class of Cognitive Processes, encompassing all such processes that operate by 
 
  beginning with a relatively small set of Knowledge Components, then 
  doing processing aimed at enhancing the Mind's understanding of these components
@@ -1225,8 +1418,12 @@ Subcategory: Short Term Memory
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A general class of <a href="/w/Cognitive_Process" title="Cognitive Process">Cognitive Processes</a>, encompassing all such processes that operate by <br/>
+  <COL_HTML>
+<![CDATA[
+<p>A general class of <a href="/w/Cognitive_Process" title="Cognitive Process">Cognitive Processes</a>, encompassing all such processes that operate by <br/>
 </p>
 
 
@@ -1276,12 +1473,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:470-0!*!0!*!*!*!* and timestamp 20150520030705 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Cognitive Process</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Frame</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Frame</COL_URL>
-  <COL_TXT>A Frame is a classical GOFAI notion: it consists of Slots and default values for the slots, used to capture expectations about a frequently encountered class of situations.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Cognitive Process]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Frame]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Frame]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Frame is a classical GOFAI notion: it consists of Slots and default values for the slots, used to capture expectations about a frequently encountered class of situations.
 For instance, the Frame for a family might include slots for the mother, the father, the son, the daughter, the home they live in, the family pet, the family car, etc.
 
   Implicit Frames 
@@ -1313,8 +1515,12 @@ In the near future, ML techniques should help in disambiguating and differentiat
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <strong class="selflink">Frame</strong> is a classical <a class="mw-redirect" href="/w/GOFAI" title="GOFAI">GOFAI</a> notion: it consists of <a class="new" href="/wikihome/index.php?title=Slot&amp;action=edit&amp;redlink=1" title="Slot (page does not exist)">Slots</a> and default values for the slots, used to capture expectations about a frequently encountered class of situations.
+  <COL_HTML>
+<![CDATA[
+<p>A <strong class="selflink">Frame</strong> is a classical <a class="mw-redirect" href="/w/GOFAI" title="GOFAI">GOFAI</a> notion: it consists of <a class="new" href="/wikihome/index.php?title=Slot&amp;action=edit&amp;redlink=1" title="Slot (page does not exist)">Slots</a> and default values for the slots, used to capture expectations about a frequently encountered class of situations.
 </p>
 <p>For instance, the <strong class="selflink">Frame</strong> for a family might include slots for the mother, the father, the son, the daughter, the home they live in, the family pet, the family car, etc.
 </p>
@@ -1379,12 +1585,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:473-0!*!0!!*!*!* and timestamp 20150520030707 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>AGI Glossary</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Friendly AI</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Friendly_AI</COL_URL>
-  <COL_TXT>"Friendly AI" is a nontechnical term introduced by Eliezer Yudkowsky to refer to an AI that is "benevolent to humans" -- not killing us nor torturing us, but helping us and basically letting us live happily, perhaps even helping us to do so. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[AGI Glossary]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Friendly AI]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Friendly_AI]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+"Friendly AI" is a nontechnical term introduced by Eliezer Yudkowsky to refer to an AI that is "benevolent to humans" -- not killing us nor torturing us, but helping us and basically letting us live happily, perhaps even helping us to do so. 
 Guaranteeing AGI Friendliness in the situation where AGI's are undergoing Strong Self-Modification and rapidly improving their own intelligence beyond the human level, is a tough problem to say the least. 
 
 Contents
@@ -1410,8 +1621,12 @@ Supercategory: Ethical Properties of Minds
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>"Friendly AI" is a nontechnical term introduced by Eliezer Yudkowsky to refer to an AI that is "benevolent to humans" -- not killing us nor torturing us, but helping us and basically letting us live happily, perhaps even helping us to do so. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>"Friendly AI" is a nontechnical term introduced by Eliezer Yudkowsky to refer to an AI that is "benevolent to humans" -- not killing us nor torturing us, but helping us and basically letting us live happily, perhaps even helping us to do so. <br/>
 </p>
 <p>Guaranteeing AGI Friendliness in the situation where AGI's are undergoing <a class="mw-redirect" href="/w/Strong_Self-Modification" title="Strong Self-Modification">Strong Self-Modification</a> and rapidly improving their own intelligence beyond the human level, is a tough problem to say the least. <br/>
 </p>
@@ -1468,12 +1683,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:475-0!*!0!!en!*!* and timestamp 20150520030708 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>AGI Glossary</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:General Intelligence</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:General_Intelligence</COL_URL>
-  <COL_TXT> Psychology
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[AGI Glossary]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:General Intelligence]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:General_Intelligence]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+ Psychology
 In psychology, the notion of "general intelligence" is associated with the concept of the "g-factor." It is somewhat controversial how robustly this exists as apart from various specialized intelligences.
 
  Mathematical Theory of General Intelligence
@@ -1486,8 +1706,12 @@ C. Spearman's 1904 essay, General Intelligence: Objectively Determined and Measu
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><h2> <span class="mw-headline" id="Psychology">Psychology</span></h2>
+  <COL_HTML>
+<![CDATA[
+<h2> <span class="mw-headline" id="Psychology">Psychology</span></h2>
 
 
 <p>In psychology, the notion of "general intelligence" is associated with the concept of the "g-factor." It is somewhat controversial how robustly this exists as apart from various specialized intelligences.
@@ -1523,12 +1747,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:476-0!*!*!!*!*!* and timestamp 20150520030710 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>AGI Glossary</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Goal</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Goal</COL_URL>
-  <COL_TXT>To put it semi-mathematically: A Goal is a mathematical function that a system seeks to maximize. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[AGI Glossary]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Goal]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Goal]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+To put it semi-mathematically: A Goal is a mathematical function that a system seeks to maximize. 
 Or, just about equivalently: A Goal is a state of affairs that a system seeks to cause to occur. 
 
   Trickiness of Defining "Goal" 
@@ -1562,8 +1791,12 @@ Orthogonal:
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>To put it semi-mathematically: A Goal is a mathematical function that a system seeks to maximize. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>To put it semi-mathematically: A Goal is a mathematical function that a system seeks to maximize. <br/>
 </p>
 <p>Or, just about equivalently: A Goal is a state of affairs that a system seeks to cause to occur. <br/>
 </p>
@@ -1630,12 +1863,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:478-0!*!0!!*!*!* and timestamp 20150520030711 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Cognitive Structure</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Goal Driven Declarative to Procedural Conversion</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Goal_Driven_Declarative_to_Procedural_Conversion</COL_URL>
-  <COL_TXT>A Backward Synthesis process that takes in a (current or hypothetical) Goal and finds a relevant set of Statements and uses them to generate a set of Procedures whose execution is judge likely to lead to the achievement of the goal.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Structure]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Goal Driven Declarative to Procedural Conversion]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Goal_Driven_Declarative_to_Procedural_Conversion]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Backward Synthesis process that takes in a (current or hypothetical) Goal and finds a relevant set of Statements and uses them to generate a set of Procedures whose execution is judge likely to lead to the achievement of the goal.
 
  Mind Ontology Links
 Supercategory: Focused Cognitive Process
@@ -1646,8 +1884,12 @@ Supercategory: Focused Cognitive Process
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="new" href="/wikihome/index.php?title=Backward_Synthesis&amp;action=edit&amp;redlink=1" title="Backward Synthesis (page does not exist)">Backward Synthesis</a> process that takes in a (current or hypothetical) <a href="/w/Goal" title="Goal">Goal</a> and finds a relevant set of <a class="new" href="/wikihome/index.php?title=Statement&amp;action=edit&amp;redlink=1" title="Statement (page does not exist)">Statements</a> and uses them to generate a set of <a class="mw-redirect" href="/w/Procedure" title="Procedure">Procedures</a> whose execution is judge likely to lead to the achievement of the goal.
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="new" href="/wikihome/index.php?title=Backward_Synthesis&amp;action=edit&amp;redlink=1" title="Backward Synthesis (page does not exist)">Backward Synthesis</a> process that takes in a (current or hypothetical) <a href="/w/Goal" title="Goal">Goal</a> and finds a relevant set of <a class="new" href="/wikihome/index.php?title=Statement&amp;action=edit&amp;redlink=1" title="Statement (page does not exist)">Statements</a> and uses them to generate a set of <a class="mw-redirect" href="/w/Procedure" title="Procedure">Procedures</a> whose execution is judge likely to lead to the achievement of the goal.
 </p>
 
 
@@ -1676,12 +1918,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:481-0!*!0!*!*!*!* and timestamp 20150519061203 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Cognitive Process</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Greedy Stochastic Pattern Mining</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Greedy_Stochastic_Pattern_Mining</COL_URL>
-  <COL_TXT>A class of algorithms that search for patterns in data.  
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Cognitive Process]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Greedy Stochastic Pattern Mining]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Greedy_Stochastic_Pattern_Mining]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A class of algorithms that search for patterns in data.  
 The distinguishing feature of such algorithms is that they find simple patterns very fast.  They generally can't find complex patterns at all, and don't even guarantee a complete search of the space of simple patterns.
 A simple example would be a faster, stochastic variant of a Frequent Itemset Mining algorithm.
 
@@ -1692,8 +1939,12 @@ Supercategory: Concretely Implemented Novamente Structure
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A class of algorithms that search for patterns in data.  <br/>
+  <COL_HTML>
+<![CDATA[
+<p>A class of algorithms that search for patterns in data.  <br/>
 The distinguishing feature of such algorithms is that they find simple patterns very fast.  They generally can't find complex patterns at all, and don't even guarantee a complete search of the space of simple patterns.<br/>
 A simple example would be a faster, stochastic variant of a <a class="new" href="/wikihome/index.php?title=Frequent_Itemset_Mining&amp;action=edit&amp;redlink=1" title="Frequent Itemset Mining (page does not exist)">Frequent Itemset Mining</a> algorithm.
 </p>
@@ -1721,18 +1972,27 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:482-0!*!0!*!*!*!* and timestamp 20150520030714 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-  <COL_CATEGORY>Structure mining</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Information Codelet</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Information_Codelet</COL_URL>
-  <COL_TXT>Codelets that carry Information and participate in coalitions that compete for Attention
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[Structure mining]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Information Codelet]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Information_Codelet]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Codelets that carry Information and participate in coalitions that compete for Attention
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p><a class="new" href="/wikihome/index.php?title=Codelet&amp;action=edit&amp;redlink=1" title="Codelet (page does not exist)">Codelets</a> that carry <a class="mw-redirect" href="/w/Information" title="Information">Information</a> and participate in coalitions that compete for <a class="mw-redirect" href="/w/Attention" title="Attention">Attention</a>
+  <COL_HTML>
+<![CDATA[
+<p><a class="new" href="/wikihome/index.php?title=Codelet&amp;action=edit&amp;redlink=1" title="Codelet (page does not exist)">Codelets</a> that carry <a class="mw-redirect" href="/w/Information" title="Information">Information</a> and participate in coalitions that compete for <a class="mw-redirect" href="/w/Attention" title="Attention">Attention</a>
 </p>
 
 
@@ -1748,12 +2008,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:490-0!*!0!*!*!*!* and timestamp 20150520030715 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Codelet</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Integrative AGI Projects</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Integrative_AGI_Projects</COL_URL>
-  <COL_TXT>An integrative AGI project, as considered here, is one that has no single AI algorithm and knowledge representation at its core, but relies for its very essence on a combination of algorithms and representations.  
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Codelet]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Integrative AGI Projects]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Integrative_AGI_Projects]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+An integrative AGI project, as considered here, is one that has no single AI algorithm and knowledge representation at its core, but relies for its very essence on a combination of algorithms and representations.  
 Thus, for instance, an AGI system that has formal logic theorem proving as its core cognition method, but uses non-logical methods for peripheral purposes like visual perception and calculating the trajectories of robot limbs, would not be considered "integrative" by the present definition.
 On the other hand, an AGI system that carried ot the majority of its cognitive acts using a combination of formal logic theorem proving with activation spreading in an attractor neural net, would be considered "integrative" by the present definition.
 Some integrated AGI systems are strictly modular in nature, others combine their component methods in subtler and more complex ways.
@@ -1765,8 +2030,12 @@ Examples of current integrative AGI projects are:
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>An integrative AGI project, as considered here, is one that has no single AI algorithm and knowledge representation at its core, but relies for its very essence on a combination of algorithms and representations.  <br/>
+  <COL_HTML>
+<![CDATA[
+<p>An integrative AGI project, as considered here, is one that has no single AI algorithm and knowledge representation at its core, but relies for its very essence on a combination of algorithms and representations.  <br/>
 </p>
 <p>Thus, for instance, an AGI system that has formal logic theorem proving as its core cognition method, but uses non-logical methods for peripheral purposes like visual perception and calculating the trajectories of robot limbs, would not be considered "integrative" by the present definition.<br/>
 </p>
@@ -1796,17 +2065,26 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:491-0!*!0!*!*!*!* and timestamp 20150520030716 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:AGI Projects</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Intention Codelet</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Intention_Codelet</COL_URL>
-  <COL_TXT>An Attention Codelet that watches for information relevant to achieving some particular Goal
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:AGI Projects]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Intention Codelet]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Intention_Codelet]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+An Attention Codelet that watches for information relevant to achieving some particular Goal
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>An <a class="new" href="/wikihome/index.php?title=Attention_Codelet&amp;action=edit&amp;redlink=1" title="Attention Codelet (page does not exist)">Attention Codelet</a> that watches for information relevant to achieving some particular <a href="/w/Goal" title="Goal">Goal</a>
+  <COL_HTML>
+<![CDATA[
+<p>An <a class="new" href="/wikihome/index.php?title=Attention_Codelet&amp;action=edit&amp;redlink=1" title="Attention Codelet (page does not exist)">Attention Codelet</a> that watches for information relevant to achieving some particular <a href="/w/Goal" title="Goal">Goal</a>
 </p>
 
 
@@ -1822,12 +2100,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:494-0!*!0!*!*!*!* and timestamp 20150520030718 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Codelet</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Logic Based AGI Projects</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Logic_Based_AGI_Projects</COL_URL>
-  <COL_TXT>Some major logic-based AGI projects include:
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Codelet]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Logic Based AGI Projects]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Logic_Based_AGI_Projects]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Some major logic-based AGI projects include:
 
  Cyc, led by Doug Lenat; see http://www.cyc.com or http://en.wikipedia.org/wiki/Cyc
  NARS, Pei Wang's system based on uncertain term logic; see http://www.cogsci.indiana.edu/farg/peiwang/papers.html
@@ -1839,8 +2122,12 @@ Associated: Logic
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Some major logic-based AGI projects include:
+  <COL_HTML>
+<![CDATA[
+<p>Some major logic-based AGI projects include:
 </p>
 
 
@@ -1870,12 +2157,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:502-0!*!0!*!*!*!* and timestamp 20150520030719 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:AGI Projects</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Measures of Complexity</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Measures_of_Complexity</COL_URL>
-  <COL_TXT>Minds are Complex Systems.  But how can "complexity" be quantified? 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:AGI Projects]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Measures of Complexity]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Measures_of_Complexity]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Minds are Complex Systems.  But how can "complexity" be quantified? 
 Various measures exist, including 
 
  Logical Depth
@@ -1893,8 +2185,12 @@ Associated: Complex Systems
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Minds are <a class="new" href="/wikihome/index.php?title=Complex_System&amp;action=edit&amp;redlink=1" title="Complex System (page does not exist)">Complex Systems</a>.  But how can "complexity" be quantified? <br/>
+  <COL_HTML>
+<![CDATA[
+<p>Minds are <a class="new" href="/wikihome/index.php?title=Complex_System&amp;action=edit&amp;redlink=1" title="Complex System (page does not exist)">Complex Systems</a>.  But how can "complexity" be quantified? <br/>
 </p>
 <p>Various measures exist, including <br/>
 </p>
@@ -1931,20 +2227,29 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:505-0!*!0!*!*!*!* and timestamp 20150520030720 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Properties of Whole Minds</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Memetics</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Memetics</COL_URL>
-  <COL_TXT>Memetics is the study of Memes
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Properties of Whole Minds]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Memetics]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Memetics]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Memetics is the study of Memes
 
   Mind Ontology Links 
 Subcategory: Meme
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Memetics is the study of <a class="new" href="/wikihome/index.php?title=Meme&amp;action=edit&amp;redlink=1" title="Meme (page does not exist)">Memes</a>
+  <COL_HTML>
+<![CDATA[
+<p>Memetics is the study of <a class="new" href="/wikihome/index.php?title=Meme&amp;action=edit&amp;redlink=1" title="Meme (page does not exist)">Memes</a>
 </p>
 
 
@@ -1967,12 +2272,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:506-0!*!0!*!*!*!* and timestamp 20150520030722 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Concepts for Describing Aspects of Minds</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Memory Subsystem</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Memory_Subsystem</COL_URL>
-  <COL_TXT>A Cognitive Structure devoted to enabling Memory of particular sorts of Patterns. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Concepts for Describing Aspects of Minds]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Memory Subsystem]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Memory_Subsystem]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Cognitive Structure devoted to enabling Memory of particular sorts of Patterns. 
 The specialization to particular sorts of patterns provides the potential to use an appropriately specialized Knowledge Representation. 
 
 Contents
@@ -2022,8 +2332,12 @@ Orthogonal:
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="mw-redirect" href="/w/Cognitive_Structure" title="Cognitive Structure">Cognitive Structure</a> devoted to enabling <a class="mw-redirect" href="/w/Memory" title="Memory">Memory</a> of particular sorts of <a class="mw-redirect" href="/w/Pattern" title="Pattern">Patterns</a>. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="mw-redirect" href="/w/Cognitive_Structure" title="Cognitive Structure">Cognitive Structure</a> devoted to enabling <a class="mw-redirect" href="/w/Memory" title="Memory">Memory</a> of particular sorts of <a class="mw-redirect" href="/w/Pattern" title="Pattern">Patterns</a>. <br/>
 The specialization to particular sorts of patterns provides the potential to use an appropriately specialized <a class="mw-redirect" href="/w/Knowledge_Representation" title="Knowledge Representation">Knowledge Representation</a>. <br/>
 </p>
 
@@ -2107,12 +2421,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:508-0!*!0!!en!*!* and timestamp 20150520030723 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Cognitive Structure</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:MindDB</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:MindDB</COL_URL>
-  <COL_TXT>The MindDB is a special part of the Novamente Cognitive Architecture which serves as a global repository of Atoms, spanning the different functionally specialized Novamente Units. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Structure]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:MindDB]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:MindDB]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+The MindDB is a special part of the Novamente Cognitive Architecture which serves as a global repository of Atoms, spanning the different functionally specialized Novamente Units. 
 It does not contain all Atoms in the whole system, but contains all Atoms that any Unit thought were interesting enough to share with other Units. 
 Cognitive Processes in different Units communicate information by means of the MindDB, whereas different Cognitive Processes in the same Unit communicate information more directly, via intra-Unit message passing (e.g. acting on the Atoms in the Unit's AtomTable).
 
@@ -2121,8 +2440,12 @@ Supercategory: Concretely Implemented Novamente Structure
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>The <a class="new" href="/wikihome/index.php?title=MindDB&amp;action=edit&amp;redlink=1" title="MindDB (page does not exist)">MindDB</a> is a special part of the <a class="new" href="/wikihome/index.php?title=Novamente_Cognitive_Architecture&amp;action=edit&amp;redlink=1" title="Novamente Cognitive Architecture (page does not exist)">Novamente Cognitive Architecture</a> which serves as a global repository of <a class="new" href="/wikihome/index.php?title=Atoms&amp;action=edit&amp;redlink=1" title="Atoms (page does not exist)">Atoms</a>, spanning the different functionally specialized <a class="new" href="/wikihome/index.php?title=Novamente_Unit&amp;action=edit&amp;redlink=1" title="Novamente Unit (page does not exist)">Novamente Units</a>. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>The <a class="new" href="/wikihome/index.php?title=MindDB&amp;action=edit&amp;redlink=1" title="MindDB (page does not exist)">MindDB</a> is a special part of the <a class="new" href="/wikihome/index.php?title=Novamente_Cognitive_Architecture&amp;action=edit&amp;redlink=1" title="Novamente Cognitive Architecture (page does not exist)">Novamente Cognitive Architecture</a> which serves as a global repository of <a class="new" href="/wikihome/index.php?title=Atoms&amp;action=edit&amp;redlink=1" title="Atoms (page does not exist)">Atoms</a>, spanning the different functionally specialized <a class="new" href="/wikihome/index.php?title=Novamente_Unit&amp;action=edit&amp;redlink=1" title="Novamente Unit (page does not exist)">Novamente Units</a>. <br/>
 It does not contain all <a href="/w/Atom" title="Atom">Atoms</a> in the whole system, but contains all <a href="/w/Atom" title="Atom">Atoms</a> that any Unit thought were interesting enough to share with other <a class="mw-redirect" href="/w/Unit" title="Unit">Units</a>. <br/>
 <a href="/w/Cognitive_Process" title="Cognitive Process">Cognitive Processes</a> in different Units communicate information by means of the <a class="new" href="/wikihome/index.php?title=MindDB&amp;action=edit&amp;redlink=1" title="MindDB (page does not exist)">MindDB</a>, whereas different <a href="/w/Cognitive_Process" title="Cognitive Process">Cognitive Processes</a> in the same Unit communicate information more directly, via intra-Unit message passing (e.g. acting on the <a href="/w/Atom" title="Atom">Atoms</a> in the Unit's AtomTable).
 </p>
@@ -2147,12 +2470,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:515-0!*!0!*!*!*!* and timestamp 20150520030724 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Mind Ontology</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Mind_Ontology</COL_URL>
-  <COL_TXT>A systematic ontology of concepts, projects and resources relevant to Artificial General Intelligence
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Mind Ontology]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Mind_Ontology]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A systematic ontology of concepts, projects and resources relevant to Artificial General Intelligence
 Browse the sub-ontologies (below) for the actual contents!
 
 Contents
@@ -2242,8 +2570,12 @@ For an earlier draft of a Mind Ontology, based on a different organizational pri
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A systematic ontology of concepts, projects and resources relevant to <a href="/w/Artificial_General_Intelligence" title="Artificial General Intelligence">Artificial General Intelligence</a>
+  <COL_HTML>
+<![CDATA[
+<p>A systematic ontology of concepts, projects and resources relevant to <a href="/w/Artificial_General_Intelligence" title="Artificial General Intelligence">Artificial General Intelligence</a>
 </p>
 <p>Browse the sub-ontologies (below) for the actual contents!
 </p>
@@ -2405,11 +2737,16 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:513-0!*!0!!en!*!* and timestamp 20150520030726 
 
 
-</COL_HTML></RDF_ROW>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Mindplex</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Mindplex</COL_URL>
-  <COL_TXT>A mind that comprises a community of sub-minds, yet also has a powerful holistic, emergent-level intelligence in itself.
+
+]]>
+</COL_HTML>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Mindplex]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Mindplex]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A mind that comprises a community of sub-minds, yet also has a powerful holistic, emergent-level intelligence in itself.
 The Global Brain could one day be an example of this.
 
   Mind Ontology Links 
@@ -2417,8 +2754,12 @@ Subcategory: Global Brain
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A mind that comprises a community of sub-minds, yet also has a powerful holistic, emergent-level intelligence in itself.
+  <COL_HTML>
+<![CDATA[
+<p>A mind that comprises a community of sub-minds, yet also has a powerful holistic, emergent-level intelligence in itself.
 </p>
 <p>The <a class="new" href="/wikihome/index.php?title=Global_Brain&amp;action=edit&amp;redlink=1" title="Global Brain (page does not exist)">Global Brain</a> could one day be an example of this.
 </p>
@@ -2443,18 +2784,27 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:516-0!*!0!*!*!*!* and timestamp 20150520030727 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Modest-Resources Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Modest-Resources_Mind</COL_URL>
-  <COL_TXT>Any mind you will ever encounter will, most likely be a modest-resources mind!!  
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Modest-Resources Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Modest-Resources_Mind]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Any mind you will ever encounter will, most likely be a modest-resources mind!!  
 Without unrealistically  much computing power, intelligence becomes all about quelling combinatorial explosions, about managing computational resources.
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Any mind you will ever encounter will, most likely be a modest-resources mind!!  
+  <COL_HTML>
+<![CDATA[
+<p>Any mind you will ever encounter will, most likely be a modest-resources mind!!  
 </p>
 <p>Without unrealistically  much computing power, intelligence becomes all about quelling combinatorial explosions, about managing computational resources.
 </p>
@@ -2472,12 +2822,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:517-0!*!*!*!*!*!* and timestamp 20150520030729 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Neural Net Based AGI Projects</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Neural_Net_Based_AGI_Projects</COL_URL>
-  <COL_TXT>Major neural net based AGI projects include:
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Neural Net Based AGI Projects]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Neural_Net_Based_AGI_Projects]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Major neural net based AGI projects include:
 
  Numenta, Jeff Hawkins' project.
  Ccortex, a massive brain simulation project intended to "replicate primary characteristics of human intelligence"
@@ -2487,8 +2842,12 @@ Associated: Formal Neural Network
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Major neural net based AGI projects include:
+  <COL_HTML>
+<![CDATA[
+<p>Major neural net based AGI projects include:
 </p>
 
 
@@ -2516,20 +2875,29 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:520-0!*!0!*!*!*!* and timestamp 20150520030730 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:AGI Projects</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Non-Adaptive System</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Non-Adaptive_System</COL_URL>
-  <COL_TXT>A System that proceeds without substantially modifying its internals based on its interactions with other systems.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:AGI Projects]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Non-Adaptive System]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Non-Adaptive_System]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A System that proceeds without substantially modifying its internals based on its interactions with other systems.
 
   Relationship to Cognitive Development 
 In the theory of Developmental Stages of Uncertain Logic Based AI Systems, it is hypothesized that in the Infantile Stage, Inference Control is a Non-Adaptive System.
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="new" href="/wikihome/index.php?title=System&amp;action=edit&amp;redlink=1" title="System (page does not exist)">System</a> that proceeds without substantially modifying its internals based on its interactions with other systems.
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="new" href="/wikihome/index.php?title=System&amp;action=edit&amp;redlink=1" title="System (page does not exist)">System</a> that proceeds without substantially modifying its internals based on its interactions with other systems.
 </p>
 
 
@@ -2552,16 +2920,25 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:522-0!*!0!*!*!*!* and timestamp 20150520030731 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Systems</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Non Tool Dependent Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Non_Tool_Dependent_Mind</COL_URL>
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Systems]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Non Tool Dependent Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Non_Tool_Dependent_Mind]]></COL_URL>
   <COL_TXT>
+<![CDATA[
 
 
+
+
+]]>
 </COL_TXT>
   <COL_HTML>
+<![CDATA[
+
 
  
 NewPP limit report
@@ -2575,16 +2952,25 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:521-0!*!*!*!*!*!* and timestamp 20150520030733 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Nonsocial Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Nonsocial_Mind</COL_URL>
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Nonsocial Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Nonsocial_Mind]]></COL_URL>
   <COL_TXT>
+<![CDATA[
 
 
+
+
+]]>
 </COL_TXT>
   <COL_HTML>
+<![CDATA[
+
 
  
 NewPP limit report
@@ -2598,12 +2984,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:523-0!*!*!*!*!*!* and timestamp 20150520030734 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Novamente</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Novamente</COL_URL>
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Novamente]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Novamente]]></COL_URL>
   <COL_TXT>
+<![CDATA[
+
 
   Project 
 The [informal] Novamente Project is a combination of commercial, academic and non-profit activities in the pursuit of Artificial General Intelligence.
@@ -2743,8 +3134,12 @@ Novamente LLC
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p><br/>
+  <COL_HTML>
+<![CDATA[
+<p><br/>
 </p>
 
 
@@ -3069,12 +3464,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:524-0!*!0!!*!*!* and timestamp 20150520030736 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:AGI Projects</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Novamente Atom</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Novamente_Atom</COL_URL>
-  <COL_TXT>Novamente Atoms come in two species: Nodes and Links.  These are the basic mechanism by which knowledge is represented in the Novamente AI Engine; they are Novamente's lowest-level Knowledge Components.  An individual Atom generally contains very little knowledge; some do contain meaningful knowledge on their own, but in most cases useful knowledge is contained in sets of interconnected Atoms, or Novamente Cognitive Maps formed from large numbers of Atoms.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:AGI Projects]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Novamente Atom]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Novamente_Atom]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Novamente Atoms come in two species: Nodes and Links.  These are the basic mechanism by which knowledge is represented in the Novamente AI Engine; they are Novamente's lowest-level Knowledge Components.  An individual Atom generally contains very little knowledge; some do contain meaningful knowledge on their own, but in most cases useful knowledge is contained in sets of interconnected Atoms, or Novamente Cognitive Maps formed from large numbers of Atoms.
 
 Contents
 
@@ -3142,8 +3542,12 @@ Associated: Knowledge Representation
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p><a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">Novamente Atoms</a> come in two species: Nodes and Links.  These are the basic mechanism by which knowledge is represented in the <a class="new" href="/wikihome/index.php?title=Novamente_AI_Engine&amp;action=edit&amp;redlink=1" title="Novamente AI Engine (page does not exist)">Novamente AI Engine</a>; they are Novamente's lowest-level <a class="mw-redirect" href="/w/Knowledge_Component" title="Knowledge Component">Knowledge Components</a>.  An individual <a href="/w/Atom" title="Atom">Atom</a> generally contains very little knowledge; some do contain meaningful knowledge on their own, but in most cases useful knowledge is contained in sets of interconnected Atoms, or <a class="new" href="/wikihome/index.php?title=Novamente_Cognitive_Map&amp;action=edit&amp;redlink=1" title="Novamente Cognitive Map (page does not exist)">Novamente Cognitive Maps</a> formed from large numbers of Atoms.
+  <COL_HTML>
+<![CDATA[
+<p><a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">Novamente Atoms</a> come in two species: Nodes and Links.  These are the basic mechanism by which knowledge is represented in the <a class="new" href="/wikihome/index.php?title=Novamente_AI_Engine&amp;action=edit&amp;redlink=1" title="Novamente AI Engine (page does not exist)">Novamente AI Engine</a>; they are Novamente's lowest-level <a class="mw-redirect" href="/w/Knowledge_Component" title="Knowledge Component">Knowledge Components</a>.  An individual <a href="/w/Atom" title="Atom">Atom</a> generally contains very little knowledge; some do contain meaningful knowledge on their own, but in most cases useful knowledge is contained in sets of interconnected Atoms, or <a class="new" href="/wikihome/index.php?title=Novamente_Cognitive_Map&amp;action=edit&amp;redlink=1" title="Novamente Cognitive Map (page does not exist)">Novamente Cognitive Maps</a> formed from large numbers of Atoms.
 </p>
 
 
@@ -3247,12 +3651,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:525-0!*!0!!en!*!* and timestamp 20150520030737 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Novamente Attentional Focus</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Novamente_Attentional_Focus</COL_URL>
-  <COL_TXT>This is a word for the collection of Atoms possessing a high STICurrency wealth at a given point in time.  
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Novamente Attentional Focus]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Novamente_Attentional_Focus]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+This is a word for the collection of Atoms possessing a high STICurrency wealth at a given point in time.  
 These are the Atoms that are generally the focus of Deliberation, because the computational processes involved in Deliberation are 
 
  computationally expensive, so they don't act on very many Atoms at once
@@ -3262,8 +3671,12 @@ Crudely, this could be equated with the Novamente system's "focus of Consciousne
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>This is a word for the collection of <a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">Atoms</a> possessing a high <a class="new" href="/wikihome/index.php?title=STICurrency&amp;action=edit&amp;redlink=1" title="STICurrency (page does not exist)">STICurrency</a> wealth at a given point in time.  
+  <COL_HTML>
+<![CDATA[
+<p>This is a word for the collection of <a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">Atoms</a> possessing a high <a class="new" href="/wikihome/index.php?title=STICurrency&amp;action=edit&amp;redlink=1" title="STICurrency (page does not exist)">STICurrency</a> wealth at a given point in time.  
 </p>
 <p>These are the Atoms that are generally the focus of <a class="new" href="/wikihome/index.php?title=Deliberation&amp;action=edit&amp;redlink=1" title="Deliberation (page does not exist)">Deliberation</a>, because the computational processes involved in <a class="new" href="/wikihome/index.php?title=Deliberation&amp;action=edit&amp;redlink=1" title="Deliberation (page does not exist)">Deliberation</a> are 
 </p>
@@ -3290,13 +3703,18 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:526-0!*!0!*!*!*!* and timestamp 20150520030739 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-  <COL_CATEGORY>MindOntology:Cognitive Structure</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Novamente Cognition Engine</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Novamente_Cognition_Engine</COL_URL>
-  <COL_TXT>Developed by Novamente, the Novamente Cognition Engine (NCE) is a software system designed for large-scale implementation on a distributed network, and founded on a unique AGI design grounded in a systems theory of intelligence. The overall architecture of the system is based on principles from cognitive science and complex systems science; but the specific mechanisms used within the system are drawn from cutting-edge computer science, drawing on a number of recent advances in AI theory and practice. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Structure]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Novamente Cognition Engine]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Novamente_Cognition_Engine]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Developed by Novamente, the Novamente Cognition Engine (NCE) is a software system designed for large-scale implementation on a distributed network, and founded on a unique AGI design grounded in a systems theory of intelligence. The overall architecture of the system is based on principles from cognitive science and complex systems science; but the specific mechanisms used within the system are drawn from cutting-edge computer science, drawing on a number of recent advances in AI theory and practice. 
 
 Contents
 
@@ -3402,8 +3820,12 @@ Ben Goertzel's homepage
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Developed by <a href="/w/Novamente" title="Novamente">Novamente</a>, the Novamente Cognition Engine (NCE) is a software system designed for large-scale implementation on a distributed network, and founded on a unique AGI design grounded in a systems theory of intelligence. The overall architecture of the system is based on principles from cognitive science and complex systems science; but the specific mechanisms used within the system are drawn from cutting-edge computer science, drawing on a number of recent advances in AI theory and practice. 
+  <COL_HTML>
+<![CDATA[
+<p>Developed by <a href="/w/Novamente" title="Novamente">Novamente</a>, the Novamente Cognition Engine (NCE) is a software system designed for large-scale implementation on a distributed network, and founded on a unique AGI design grounded in a systems theory of intelligence. The overall architecture of the system is based on principles from cognitive science and complex systems science; but the specific mechanisms used within the system are drawn from cutting-edge computer science, drawing on a number of recent advances in AI theory and practice. 
 </p>
 
 
@@ -3579,13 +4001,18 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:527-0!*!0!!en!*!* and timestamp 20150519063415 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:AGI Projects</COL_CATEGORY>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Novamente Concept Formation</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Novamente_Concept_Formation</COL_URL>
-  <COL_TXT>A set of heuristics, in the Novamente Cognition Engine, for combining two or more Concepts to form a new one.  The heuristics make use of the specific semantics of Novamente Atoms, and implement the generic notion of Conceptual Blending.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:AGI Projects]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Novamente Concept Formation]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Novamente_Concept_Formation]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A set of heuristics, in the Novamente Cognition Engine, for combining two or more Concepts to form a new one.  The heuristics make use of the specific semantics of Novamente Atoms, and implement the generic notion of Conceptual Blending.
 
   Mind Ontology Links 
 Supercategory: Concretely Implemented Novamente Structure 
@@ -3593,8 +4020,12 @@ Supercategory: Conceptual Blending
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A set of heuristics, in the <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine">Novamente Cognition Engine</a>, for combining two or more <a class="mw-redirect" href="/w/Concept" title="Concept">Concepts</a> to form a new one.  The heuristics make use of the specific semantics of <a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">Novamente Atoms</a>, and implement the generic notion of <a class="mw-redirect" href="/w/Conceptual_Blending" title="Conceptual Blending">Conceptual Blending</a>.
+  <COL_HTML>
+<![CDATA[
+<p>A set of heuristics, in the <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine">Novamente Cognition Engine</a>, for combining two or more <a class="mw-redirect" href="/w/Concept" title="Concept">Concepts</a> to form a new one.  The heuristics make use of the specific semantics of <a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">Novamente Atoms</a>, and implement the generic notion of <a class="mw-redirect" href="/w/Conceptual_Blending" title="Conceptual Blending">Conceptual Blending</a>.
 </p>
 
 
@@ -3618,12 +4049,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:531-0!*!0!*!*!*!* and timestamp 20150520030742 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Novamente Forgetting</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Novamente_Forgetting</COL_URL>
-  <COL_TXT>"Forgetting" is implemented in Novamente via a MindAgent that removes items with low Long Term Importance.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Novamente Forgetting]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Novamente_Forgetting]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+"Forgetting" is implemented in Novamente via a MindAgent that removes items with low Long Term Importance.
 Sometimes it may remove items with mediocre rather than very low Long Term Importance as well, if it judges they can easily be regenerated via inference from other items in memory.
 When items are removed, they may be deleted irretrievably, or they may be stored on disk (i.e. in Ultra Long Term Memory).
 
@@ -3633,8 +4069,12 @@ Supercategory: Forgetting
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>"Forgetting" is implemented in Novamente via a <a class="mw-redirect" href="/w/MindAgent" title="MindAgent">MindAgent</a> that removes items with low <a class="mw-redirect" href="/w/Long_Term_Importance" title="Long Term Importance">Long Term Importance</a>.
+  <COL_HTML>
+<![CDATA[
+<p>"Forgetting" is implemented in Novamente via a <a class="mw-redirect" href="/w/MindAgent" title="MindAgent">MindAgent</a> that removes items with low <a class="mw-redirect" href="/w/Long_Term_Importance" title="Long Term Importance">Long Term Importance</a>.
 </p>
 <p>Sometimes it may remove items with mediocre rather than very low <a class="mw-redirect" href="/w/Long_Term_Importance" title="Long Term Importance">Long Term Importance</a> as well, if it judges they can easily be regenerated via inference from other items in memory.
 </p>
@@ -3662,12 +4102,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:533-0!*!0!*!*!*!* and timestamp 20150520030744 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Novamente Perception</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Novamente_Perception</COL_URL>
-  <COL_TXT>Perception is carried out in  Novamente via a specialized implementation of Greedy Stochastic Pattern Mining which looks for significant patterns in the stream of inputs coming into the system. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Novamente Perception]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Novamente_Perception]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Perception is carried out in  Novamente via a specialized implementation of Greedy Stochastic Pattern Mining which looks for significant patterns in the stream of inputs coming into the system. 
 The patterns that it searches for are those that are simple logical combinations of predicates (PredicateNodes, see Novamente Atom) judged as relevant.  There is a control Schema that periodically updates the list of "perception-relevant" predicates.  There is also a built-in measure defining what is a "simple combination," which takes into account factors such as temporal and spatial proximity as well as logical simplicity and compactness.
 
   Current Status 
@@ -3678,8 +4123,12 @@ Supercategory: Perception
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p><a class="mw-redirect" href="/w/Perception" title="Perception">Perception</a> is carried out in <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine"> Novamente</a> via a specialized implementation of <a class="new" href="/wikihome/index.php?title=Greedy_Stochastic_Pattern_Mining&amp;action=edit&amp;redlink=1" title="Greedy Stochastic Pattern Mining (page does not exist)">Greedy Stochastic Pattern Mining</a> which looks for significant patterns in the stream of inputs coming into the system. <br/>
+  <COL_HTML>
+<![CDATA[
+<p><a class="mw-redirect" href="/w/Perception" title="Perception">Perception</a> is carried out in <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine"> Novamente</a> via a specialized implementation of <a class="new" href="/wikihome/index.php?title=Greedy_Stochastic_Pattern_Mining&amp;action=edit&amp;redlink=1" title="Greedy Stochastic Pattern Mining (page does not exist)">Greedy Stochastic Pattern Mining</a> which looks for significant patterns in the stream of inputs coming into the system. <br/>
 The patterns that it searches for are those that are simple logical combinations of predicates (PredicateNodes, see <a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">Novamente Atom</a>) judged as relevant.  There is a control <a class="new" href="/wikihome/index.php?title=Novamente_Schema&amp;action=edit&amp;redlink=1" title="Novamente Schema (page does not exist)">Schema</a> that periodically updates the list of "perception-relevant" predicates.  There is also a built-in measure defining what is a "simple combination," which takes into account factors such as temporal and spatial proximity as well as logical simplicity and compactness.<br/>
 </p>
 
@@ -3710,12 +4159,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:534-0!*!0!!*!*!* and timestamp 20150520030745 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Numerical Archetypes</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Numerical_Archetypes</COL_URL>
-  <COL_TXT>Numerical archetypes were used by Charles Peirce and Carl Jung in their metaphysics of cognition.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Numerical Archetypes]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Numerical_Archetypes]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Numerical archetypes were used by Charles Peirce and Carl Jung in their metaphysics of cognition.
 
   Mind Ontology Links 
 Subcategory:  First (raw being)
@@ -3725,8 +4179,12 @@ Subcategory:  Fourth (synergy)
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Numerical archetypes were used by Charles Peirce and Carl Jung in their metaphysics of cognition.
+  <COL_HTML>
+<![CDATA[
+<p>Numerical archetypes were used by Charles Peirce and Carl Jung in their metaphysics of cognition.
 </p>
 
 
@@ -3752,20 +4210,29 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:538-0!*!0!*!*!*!* and timestamp 20150520030746 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Philosophical Ontologies Relevant to Cognition</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Observer</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Observer</COL_URL>
-  <COL_TXT>An observer is a System that carries out the Process of internally associating some other System with Behaviors.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Philosophical Ontologies Relevant to Cognition]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Observer]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Observer]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+An observer is a System that carries out the Process of internally associating some other System with Behaviors.
 
   Mind Ontology Links 
 Supercategory: Simple System Ontology
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>An observer is a <a class="new" href="/wikihome/index.php?title=System&amp;action=edit&amp;redlink=1" title="System (page does not exist)">System</a> that carries out the <a class="new" href="/wikihome/index.php?title=Process&amp;action=edit&amp;redlink=1" title="Process (page does not exist)">Process</a> of internally associating some other <a class="new" href="/wikihome/index.php?title=System&amp;action=edit&amp;redlink=1" title="System (page does not exist)">System</a> with <a class="new" href="/wikihome/index.php?title=Behavior&amp;action=edit&amp;redlink=1" title="Behavior (page does not exist)">Behaviors</a>.
+  <COL_HTML>
+<![CDATA[
+<p>An observer is a <a class="new" href="/wikihome/index.php?title=System&amp;action=edit&amp;redlink=1" title="System (page does not exist)">System</a> that carries out the <a class="new" href="/wikihome/index.php?title=Process&amp;action=edit&amp;redlink=1" title="Process (page does not exist)">Process</a> of internally associating some other <a class="new" href="/wikihome/index.php?title=System&amp;action=edit&amp;redlink=1" title="System (page does not exist)">System</a> with <a class="new" href="/wikihome/index.php?title=Behavior&amp;action=edit&amp;redlink=1" title="Behavior (page does not exist)">Behaviors</a>.
 </p>
 
 
@@ -3788,12 +4255,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:539-0!*!0!*!*!*!* and timestamp 20150519143445 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Systems</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:PLN Truth Value</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:PLN_Truth_Value</COL_URL>
-  <COL_TXT>A truth value utilized in the PLN probabilistic logic framework.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Systems]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:PLN Truth Value]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:PLN_Truth_Value]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A truth value utilized in the PLN probabilistic logic framework.
 PLN is built to support the combination of Novamente Atoms or Statements with various truth value representations (so long as all the representations adhere to a basic probabilistic semantics).
 
   Types of PLN Truth Value 
@@ -3809,8 +4281,12 @@ Supercategory: PLN Distributional Truth Value
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A truth value utilized in the <a class="mw-redirect" href="/w/PLN" title="PLN">PLN</a> probabilistic logic framework.<br/>
+  <COL_HTML>
+<![CDATA[
+<p>A truth value utilized in the <a class="mw-redirect" href="/w/PLN" title="PLN">PLN</a> probabilistic logic framework.<br/>
 <a class="mw-redirect" href="/w/PLN" title="PLN">PLN</a> is built to support the combination of <a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">Novamente Atoms</a> or <a class="new" href="/wikihome/index.php?title=Statement&amp;action=edit&amp;redlink=1" title="Statement (page does not exist)">Statements</a> with various truth value representations (so long as all the representations adhere to a basic probabilistic semantics).<br/>
 </p>
 
@@ -3848,12 +4324,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:540-0!*!0!!*!*!* and timestamp 20150520030749 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Patternism</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Patternism</COL_URL>
-  <COL_TXT>Previous: OpenCogPrime:Closely Related Work
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Patternism]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Patternism]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Previous: OpenCogPrime:Closely Related Work
 The Patternist Philosophy of Mind
 The patternist philosophy of mind is a general approach to thinking about intelligent systems which I (Ben Goertzel) have developed during the last two decades (in a series of publications beginning in 1991, most recently The Hidden Pattern). It is based on the very simple premise that mind is made of pattern.
 Now, pattern as the basis of mind is not in itself is a very novel idea — this concept is present, for instance, in the 19th-century philosophy of Charles Peirce (1935), in the writings of contemporary philosopher Daniel Dennett (1991), in Benjamin Whorf's (1964) linguistic philosophy and Gregory Bateson's (1979) systems theory of mind and nature. Bateson spoke of the "Metapattern": that it is pattern which connects. In a series of prior writings (Goertzel, 1993, 1993a, 1994, 1997, 2001) and most recently in the philosophical treatise The Hidden Pattern (2006), I have sought to pursue this theme more thoroughly than has been done before, and to articulate in detail how various aspects of human mind and mind in general can be well-understood by explicitly adopting a patternist perspective. This work includes attempts to formally ground the notion of pattern in mathematics such as algorithmic information theory (Chaitin, 1986; Solomonoff, 1964, 1978) and probability theory, beginning from the conceptual notion that a pattern is a representation as something simpler and then utilizing appropriate mathematical concepts of representation and simplicity. In prior writings I have used the term psynet model of mind to refer to the application of patternist philosophy to cognitive theory, but I have now deprecated that term as it seemed to introduce more confusion than clarification.
@@ -3886,8 +4367,12 @@ Next: MindOntology:SMEPH
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p><i>Previous: <a href="/w/OpenCogPrime:Closely_Related_Work" title="OpenCogPrime:Closely Related Work">OpenCogPrime:Closely Related Work</a></i>
+  <COL_HTML>
+<![CDATA[
+<p><i>Previous: <a href="/w/OpenCogPrime:Closely_Related_Work" title="OpenCogPrime:Closely Related Work">OpenCogPrime:Closely Related Work</a></i>
 </p>
 <p><b>The Patternist Philosophy of Mind</b>
 </p>
@@ -3951,21 +4436,30 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:287-0!*!0!*!*!*!* and timestamp 20150519055922 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>OpenCog Prime</COL_CATEGORY>
-  <COL_CATEGORY>AGI Glossary</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Post-Formal Stage</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Post-Formal_Stage</COL_URL>
-  <COL_TXT>This is another term for what we here call the Reflective Stage.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[OpenCog Prime]]></COL_CATEGORY>
+  <COL_CATEGORY><![CDATA[AGI Glossary]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Post-Formal Stage]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Post-Formal_Stage]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+This is another term for what we here call the Reflective Stage.
 
   Synonym 
 Reflective Stage
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>This is another term for what we here call the <a class="mw-redirect" href="/w/Reflective_Stage" title="Reflective Stage">Reflective Stage</a>.
+  <COL_HTML>
+<![CDATA[
+<p>This is another term for what we here call the <a class="mw-redirect" href="/w/Reflective_Stage" title="Reflective Stage">Reflective Stage</a>.
 </p>
 
 
@@ -3988,12 +4482,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:546-0!*!0!*!*!*!* and timestamp 20150520030752 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Cognitive Developmental Stages</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Prior Draft AGI Ontology</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Prior_Draft_AGI_Ontology</COL_URL>
-  <COL_TXT>  Glossary of terms 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Developmental Stages]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Prior Draft AGI Ontology]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Prior_Draft_AGI_Ontology]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+  Glossary of terms 
 Perception -- Converting the (3+1)D sensory experience to a symbolic  form (ie the internal knowledge representation).  For example, a symbolic form may be "On(apple,table)" signifying the apple is on the table.
 Symbol grounding -- may refer to several concepts; one of which is:
 "Sensory" symbol grounding -- Any means by which a symbolic representation becomes non-arbitrary because of its binding to sensory experience.  For example the word "apple" can be an arbitrary signifier.  The mapping of the word "apple" to a node that detects apples from the vision sensors enables the binding of the word to sensory experience.
@@ -4017,8 +4516,12 @@ Procedural learning -- Any form of learning occuring inside the Planner module. 
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><h2> <span class="mw-headline" id="Glossary_of_terms"> Glossary of terms </span></h2>
+  <COL_HTML>
+<![CDATA[
+<h2> <span class="mw-headline" id="Glossary_of_terms"> Glossary of terms </span></h2>
 
 
 <p><b>Perception</b> -- Converting the (3+1)D sensory experience to a symbolic  form (ie the internal knowledge representation).  For example, a symbolic form may be "On(apple,table)" signifying the apple is on the table.
@@ -4074,11 +4577,16 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:548-0!*!*!*!*!*!* and timestamp 20150520030753 
 
 
-</COL_HTML></RDF_ROW>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Probabilistic Logic Networks</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Probabilistic_Logic_Networks</COL_URL>
-  <COL_TXT>Entry moved to PLN (on the OpenCog wiki).
+
+]]>
+</COL_HTML>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Probabilistic Logic Networks]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Probabilistic_Logic_Networks]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Entry moved to PLN (on the OpenCog wiki).
 
   Mind Ontology Links 
 Supercategory: Probabilistic Logic 
@@ -4087,8 +4595,12 @@ Associated: Inference
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Entry moved to <a class="external text" href="http://opencog.org/wiki/Probabilistic_Logic_Networks" rel="nofollow">PLN</a> (on the OpenCog wiki).
+  <COL_HTML>
+<![CDATA[
+<p>Entry moved to <a class="external text" href="http://opencog.org/wiki/Probabilistic_Logic_Networks" rel="nofollow">PLN</a> (on the OpenCog wiki).
 </p>
 
 
@@ -4113,12 +4625,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:549-0!*!0!*!*!*!* and timestamp 20150520030754 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Problem</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Problem</COL_URL>
-  <COL_TXT> Definition of "Problem"
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Problem]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Problem]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+ Definition of "Problem"
 A problem is a situation which is experienced by an agent as different from the situation which the agent ideally would like to be in. A problem is solved by a sequence of actions that reduce the difference between the initial situation and the goal
 A problem can be analysed into more specific components. First of all it consists of the two situations, the present one which we will call the initial state, and the desired one, which we can call the goal state. The agent's task is to get from the initial state to the goal state by means of series of actions that change the state. The problem is solved if such a series of actions has been found, and the goal has been reached. In general, problem-solving is a component of goal-directed action or control.
 (from http://pespmc1.vub.ac.be/PROBSOLV.html)
@@ -4141,8 +4658,12 @@ Orthogonal:
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><h2> <span class="mw-headline" id="Definition_of_.22Problem.22">Definition of "Problem"</span></h2>
+  <COL_HTML>
+<![CDATA[
+<h2> <span class="mw-headline" id="Definition_of_.22Problem.22">Definition of "Problem"</span></h2>
 
 
 <p>A problem is a situation which is experienced by an agent as different from the situation which the agent ideally would like to be in. A problem is solved by a sequence of actions that reduce the difference between the initial situation and the goal<br/>
@@ -4193,12 +4714,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:550-0!*!0!!*!*!* and timestamp 20150520030756 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Concepts for Describing Aspects of Minds</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Procedural to Declarative Conversion</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Procedural_to_Declarative_Conversion</COL_URL>
-  <COL_TXT>A Forward Synthesis process that takes in a set of Procedures and generates a set of Statements describing what the procedures do.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Concepts for Describing Aspects of Minds]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Procedural to Declarative Conversion]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Procedural_to_Declarative_Conversion]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Forward Synthesis process that takes in a set of Procedures and generates a set of Statements describing what the procedures do.
 This is quite hard for humans -- for us, "know-how" does not easily translate into declaratively knowing how -- but will likely be much easier for properly architected AGI's.
 
  Mind Ontology Links
@@ -4207,8 +4733,12 @@ Associated: Novamente Cognition Engine
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="new" href="/wikihome/index.php?title=Forward_Synthesis&amp;action=edit&amp;redlink=1" title="Forward Synthesis (page does not exist)">Forward Synthesis</a> process that takes in a set of <a class="mw-redirect" href="/w/Procedure" title="Procedure">Procedures</a> and generates a set of <a class="new" href="/wikihome/index.php?title=Statement&amp;action=edit&amp;redlink=1" title="Statement (page does not exist)">Statements</a> describing what the procedures do.
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="new" href="/wikihome/index.php?title=Forward_Synthesis&amp;action=edit&amp;redlink=1" title="Forward Synthesis (page does not exist)">Forward Synthesis</a> process that takes in a set of <a class="mw-redirect" href="/w/Procedure" title="Procedure">Procedures</a> and generates a set of <a class="new" href="/wikihome/index.php?title=Statement&amp;action=edit&amp;redlink=1" title="Statement (page does not exist)">Statements</a> describing what the procedures do.
 </p>
 <p>This is quite hard for humans -- for us, "know-how" does not easily translate into declaratively knowing how -- but will likely be much easier for properly architected <a class="mw-redirect" href="/w/AGI" title="AGI">AGI</a>'s.
 </p>
@@ -4234,12 +4764,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:551-0!*!0!*!*!*!* and timestamp 20150520030757 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Cognitive Process</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Proto AGI System</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Proto_AGI_System</COL_URL>
-  <COL_TXT>This is a term for a software system like those currently described under AGI Projects, which is oriented toward eventually achieving a powerful level of AGI, but is still in development and hence "not quite there yet."
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Cognitive Process]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Proto AGI System]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Proto_AGI_System]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+This is a term for a software system like those currently described under AGI Projects, which is oriented toward eventually achieving a powerful level of AGI, but is still in development and hence "not quite there yet."
 
 
   Mind Ontology Links 
@@ -4247,8 +4782,12 @@ Associated: AGI System
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>This is a term for a software system like those currently described under <a href="/w/AGI_Projects" title="AGI Projects">AGI Projects</a>, which is oriented toward eventually achieving a powerful level of <a class="mw-redirect" href="/w/AGI" title="AGI">AGI</a>, but is still in development and hence "not quite there yet."
+  <COL_HTML>
+<![CDATA[
+<p>This is a term for a software system like those currently described under <a href="/w/AGI_Projects" title="AGI Projects">AGI Projects</a>, which is oriented toward eventually achieving a powerful level of <a class="mw-redirect" href="/w/AGI" title="AGI">AGI</a>, but is still in development and hence "not quite there yet."
 </p>
 <p><br/>
 </p>
@@ -4273,12 +4812,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:554-0!*!0!*!*!*!* and timestamp 20150520030758 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Quantum Gravity Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Quantum_Gravity_Mind</COL_URL>
-  <COL_TXT>Roger Penrose and Stuart Hameroff have argued that human creativity and consciousness derive from quantum gravity effects in the human brain.  (They choose quantum gravity rather than vanilla quantum theory because Deutsch showed that quantum systems cannot compute Turing uncomputable functions, and they want to argue that human intelligence is Turing uncomputable.) 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Quantum Gravity Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Quantum_Gravity_Mind]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Roger Penrose and Stuart Hameroff have argued that human creativity and consciousness derive from quantum gravity effects in the human brain.  (They choose quantum gravity rather than vanilla quantum theory because Deutsch showed that quantum systems cannot compute Turing uncomputable functions, and they want to argue that human intelligence is Turing uncomputable.) 
 See Penrose's book Shadows of the Mind.
 It seems unlikely to most experts that either
 
@@ -4289,8 +4833,12 @@ but at the present stage these things are not known for sure.
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Roger Penrose and Stuart Hameroff have argued that human creativity and consciousness derive from quantum gravity effects in the human brain.  (They choose quantum gravity rather than vanilla quantum theory because Deutsch showed that quantum systems cannot compute Turing uncomputable functions, and they want to argue that human intelligence is Turing uncomputable.) <br/>
+  <COL_HTML>
+<![CDATA[
+<p>Roger Penrose and Stuart Hameroff have argued that human creativity and consciousness derive from quantum gravity effects in the human brain.  (They choose quantum gravity rather than vanilla quantum theory because Deutsch showed that quantum systems cannot compute Turing uncomputable functions, and they want to argue that human intelligence is Turing uncomputable.) <br/>
 </p>
 <p>See Penrose's book <i>Shadows of the Mind</i>.
 </p>
@@ -4319,12 +4867,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:555-0!*!*!*!*!*!* and timestamp 20150520030800 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Quantum Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Quantum_Mind</COL_URL>
-  <COL_TXT>  Is the Brain a Quantum Computer? 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Quantum Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Quantum_Mind]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+  Is the Brain a Quantum Computer? 
 Some think the human brain utilizes quantum computing, via macroscopic quantum effects in the brain.   
 See a book by Jibu and Yasue, Quantum Brain Dynamics and Consciousness 
 
@@ -4338,8 +4891,12 @@ What would its psychology be like?  (Ben Goertzel wrote an article on this, whic
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><h2> <span class="mw-headline" id="Is_the_Brain_a_Quantum_Computer.3F"> Is the Brain a Quantum Computer? </span></h2>
+  <COL_HTML>
+<![CDATA[
+<h2> <span class="mw-headline" id="Is_the_Brain_a_Quantum_Computer.3F"> Is the Brain a Quantum Computer? </span></h2>
 
 
 <p>Some think the human brain utilizes quantum computing, via macroscopic quantum effects in the brain.   <br/>
@@ -4378,12 +4935,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:556-0!*!*!!*!*!* and timestamp 20150520030801 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Reality</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Reality</COL_URL>
-  <COL_TXT>According to some, a good theory of mind must take into account Objective Reality, Subjective Reality and Intersubjective Reality. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Reality]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Reality]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+According to some, a good theory of mind must take into account Objective Reality, Subjective Reality and Intersubjective Reality. 
 According to others, only Objective Reality "really exists" and the rest are phantoms.
 
   Mind Ontology Links 
@@ -4394,8 +4956,12 @@ Subcategory:  Virtual Reality
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>According to some, a good theory of mind must take into account <a class="new" href="/wikihome/index.php?title=Objective_Reality&amp;action=edit&amp;redlink=1" title="Objective Reality (page does not exist)">Objective Reality</a>, <a class="new" href="/wikihome/index.php?title=Subjective_Reality&amp;action=edit&amp;redlink=1" title="Subjective Reality (page does not exist)">Subjective Reality</a> and <a class="new" href="/wikihome/index.php?title=Intersubjective_Reality&amp;action=edit&amp;redlink=1" title="Intersubjective Reality (page does not exist)">Intersubjective Reality</a>. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>According to some, a good theory of mind must take into account <a class="new" href="/wikihome/index.php?title=Objective_Reality&amp;action=edit&amp;redlink=1" title="Objective Reality (page does not exist)">Objective Reality</a>, <a class="new" href="/wikihome/index.php?title=Subjective_Reality&amp;action=edit&amp;redlink=1" title="Subjective Reality (page does not exist)">Subjective Reality</a> and <a class="new" href="/wikihome/index.php?title=Intersubjective_Reality&amp;action=edit&amp;redlink=1" title="Intersubjective Reality (page does not exist)">Intersubjective Reality</a>. <br/>
 </p>
 <p>According to others, only Objective Reality "really exists" and the rest are phantoms.<br/>
 </p>
@@ -4423,12 +4989,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:558-0!*!0!*!*!*!* and timestamp 20150520030803 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Philosophical Ontologies Relevant to Cognition</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Reflectively Interactive System</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Reflectively_Interactive_System</COL_URL>
-  <COL_TXT>A Symbolically Interactive System that, as it interacts with and adapts to its environment, constructs Symbolic models of its own symbolic modeling process (by which it models aspects of itself, its environment and the interaction therebetween), utilizing these models to improve its symbolic modeling and possibly modify itself more thoroughly.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Philosophical Ontologies Relevant to Cognition]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Reflectively Interactive System]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Reflectively_Interactive_System]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Symbolically Interactive System that, as it interacts with and adapts to its environment, constructs Symbolic models of its own symbolic modeling process (by which it models aspects of itself, its environment and the interaction therebetween), utilizing these models to improve its symbolic modeling and possibly modify itself more thoroughly.
 
   Relationship to Cognitive Development 
 In the theory of Developmental Stages of Uncertain Logic Based AI Systems, the Mind (and components within it, such as Inference Control, is thought to display properties of a Reflectively Interactive System when it enters the Reflective Stage.
@@ -4438,8 +5009,12 @@ Supercategory: Symbolically Interactive System
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="new" href="/wikihome/index.php?title=Symbolically_Interactive_System&amp;action=edit&amp;redlink=1" title="Symbolically Interactive System (page does not exist)">Symbolically Interactive System</a> that, as it interacts with and adapts to its environment, constructs <a class="new" href="/wikihome/index.php?title=Symbol&amp;action=edit&amp;redlink=1" title="Symbol (page does not exist)">Symbolic</a> models of <i>its own symbolic modeling process</i> (by which it models aspects of itself, its environment and the interaction therebetween), utilizing these models to improve its symbolic modeling and possibly modify itself more thoroughly.
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="new" href="/wikihome/index.php?title=Symbolically_Interactive_System&amp;action=edit&amp;redlink=1" title="Symbolically Interactive System (page does not exist)">Symbolically Interactive System</a> that, as it interacts with and adapts to its environment, constructs <a class="new" href="/wikihome/index.php?title=Symbol&amp;action=edit&amp;redlink=1" title="Symbol (page does not exist)">Symbolic</a> models of <i>its own symbolic modeling process</i> (by which it models aspects of itself, its environment and the interaction therebetween), utilizing these models to improve its symbolic modeling and possibly modify itself more thoroughly.
 </p>
 
 
@@ -4469,26 +5044,44 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:560-0!*!0!!*!*!* and timestamp 20150520030804 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Systems</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:SMEPH</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:SMEPH</COL_URL>
-  <COL_TXT>Self-Modifying Evolving Probabilistic Hypergraph</COL_TXT>
-  <COL_HTML><div class="redirectMsg"><img alt="#REDIRECT" src="/wikihome/skins/common/images/redirectltr.png"/><span class="redirectText"><a class="new" href="/wikihome/index.php?title=Self-Modifying_Evolving_Probabilistic_Hypergraph&amp;action=edit&amp;redlink=1" title="Self-Modifying Evolving Probabilistic Hypergraph (page does not exist)">Self-Modifying Evolving Probabilistic Hypergraph</a></span></div>
-</COL_HTML></RDF_ROW>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Self</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Self</COL_URL>
-  <COL_TXT>See
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Systems]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:SMEPH]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:SMEPH]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Self-Modifying Evolving Probabilistic Hypergraph
+]]>
+</COL_TXT>
+  <COL_HTML>
+<![CDATA[
+<div class="redirectMsg"><img alt="#REDIRECT" src="/wikihome/skins/common/images/redirectltr.png"/><span class="redirectText"><a class="new" href="/wikihome/index.php?title=Self-Modifying_Evolving_Probabilistic_Hypergraph&amp;action=edit&amp;redlink=1" title="Self-Modifying Evolving Probabilistic Hypergraph (page does not exist)">Self-Modifying Evolving Probabilistic Hypergraph</a></span></div>
+
+]]>
+</COL_HTML>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Self]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Self]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+See
 
  Self-Model
  Phenomenal Self
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>See
+  <COL_HTML>
+<![CDATA[
+<p>See
 </p>
 
 
@@ -4509,12 +5102,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:562-0!*!0!*!*!*!* and timestamp 20150519160846 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Concepts for Describing Aspects of Minds</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Self-Modification of System Control Schemata</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Self-Modification_of_System_Control_Schemata</COL_URL>
-  <COL_TXT>The most obvious route to enabling Strong Self-Modification in the Novamente Cognition Engine is to apply the system's capability for Procedure Learning to the problem of learning procedures for controlling the system's MindAgents, as well as for carrying out more basic control processes like controlling MindAgent scheduling. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Concepts for Describing Aspects of Minds]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Self-Modification of System Control Schemata]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Self-Modification_of_System_Control_Schemata]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+The most obvious route to enabling Strong Self-Modification in the Novamente Cognition Engine is to apply the system's capability for Procedure Learning to the problem of learning procedures for controlling the system's MindAgents, as well as for carrying out more basic control processes like controlling MindAgent scheduling. 
 
   Temporary, Pragmatic Obstacles 
 The current Novamente codebase does not support this in an optimal way, because the code inside the various MindAgents is C++ code.  However, it would be quite possible to replace this C++ code with code in the Combo language, which could then be more easily comprehended, modified and/or replaced by the Novamente system's learning algorithms.  The reason this has not been done so far is that:
@@ -4530,8 +5128,12 @@ Supercategory: Concretely Implemented Novamente Structure
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>The most obvious route to enabling <a class="mw-redirect" href="/w/Strong_Self-Modification" title="Strong Self-Modification">Strong Self-Modification</a> in the <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine">Novamente Cognition Engine</a> is to apply the system's capability for <a class="mw-redirect" href="/w/Procedure_Learning" title="Procedure Learning">Procedure Learning</a> to the problem of learning procedures for controlling the system's <a class="mw-redirect" href="/w/MindAgent" title="MindAgent">MindAgents</a>, as well as for carrying out more basic control processes like controlling MindAgent scheduling. 
+  <COL_HTML>
+<![CDATA[
+<p>The most obvious route to enabling <a class="mw-redirect" href="/w/Strong_Self-Modification" title="Strong Self-Modification">Strong Self-Modification</a> in the <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine">Novamente Cognition Engine</a> is to apply the system's capability for <a class="mw-redirect" href="/w/Procedure_Learning" title="Procedure Learning">Procedure Learning</a> to the problem of learning procedures for controlling the system's <a class="mw-redirect" href="/w/MindAgent" title="MindAgent">MindAgents</a>, as well as for carrying out more basic control processes like controlling MindAgent scheduling. 
 </p>
 
 
@@ -4572,24 +5174,42 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:565-0!*!0!!*!*!* and timestamp 20150520030808 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Novamente Cognition Engine</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Self-Modifying Evolving Probabilistic Hypergraph</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Self-Modifying_Evolving_Probabilistic_Hypergraph</COL_URL>
-  <COL_TXT>Self-Modifying Evolving Probabilistic Hypergraph</COL_TXT>
-  <COL_HTML><div class="redirectMsg"><img alt="#REDIRECT" src="/wikihome/skins/common/images/redirectltr.png"/><span class="redirectText"><a class="new" href="/wikihome/index.php?title=Self-Modifying_Evolving_Probabilistic_Hypergraph&amp;action=edit&amp;redlink=1" title="Self-Modifying Evolving Probabilistic Hypergraph (page does not exist)">Self-Modifying Evolving Probabilistic Hypergraph</a></span></div>
-</COL_HTML></RDF_ROW>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Sensory Stimulus</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Sensory_Stimulus</COL_URL>
-  <COL_TXT>Input arriving in a Mind from the outside world. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Novamente Cognition Engine]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Self-Modifying Evolving Probabilistic Hypergraph]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Self-Modifying_Evolving_Probabilistic_Hypergraph]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Self-Modifying Evolving Probabilistic Hypergraph
+]]>
+</COL_TXT>
+  <COL_HTML>
+<![CDATA[
+<div class="redirectMsg"><img alt="#REDIRECT" src="/wikihome/skins/common/images/redirectltr.png"/><span class="redirectText"><a class="new" href="/wikihome/index.php?title=Self-Modifying_Evolving_Probabilistic_Hypergraph&amp;action=edit&amp;redlink=1" title="Self-Modifying Evolving Probabilistic Hypergraph (page does not exist)">Self-Modifying Evolving Probabilistic Hypergraph</a></span></div>
+
+]]>
+</COL_HTML>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Sensory Stimulus]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Sensory_Stimulus]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Input arriving in a Mind from the outside world. 
 The process of Perception transforms sensory stimuli into Percepts, which may then be processes by other Cognitive Processes.
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Input arriving in a <a class="new" href="/wikihome/index.php?title=Mind&amp;action=edit&amp;redlink=1" title="Mind (page does not exist)">Mind</a> from the outside world. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>Input arriving in a <a class="new" href="/wikihome/index.php?title=Mind&amp;action=edit&amp;redlink=1" title="Mind (page does not exist)">Mind</a> from the outside world. <br/>
 </p>
 <p>The process of <a class="mw-redirect" href="/w/Perception" title="Perception">Perception</a> transforms sensory stimuli into <a class="mw-redirect" href="/w/Percept" title="Percept">Percepts</a>, which may then be processes by other <a href="/w/Cognitive_Process" title="Cognitive Process">Cognitive Processes</a>.
 </p>
@@ -4607,12 +5227,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:567-0!*!0!*!*!*!* and timestamp 20150520030811 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Cognitive Structure</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Simple Event Ontology</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Simple_Event_Ontology</COL_URL>
-  <COL_TXT>This is a basic ontology of temporal phenomena. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Structure]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Simple Event Ontology]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Simple_Event_Ontology]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+This is a basic ontology of temporal phenomena. 
 Though it is intended to have general utility, it also represents the conceptual basis of the variant of Event Calculus used in the Novamente Cognition Engine.
 
   Mind Ontology Links 
@@ -4631,8 +5256,12 @@ Subcategory: Termination
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>This is a basic ontology of temporal phenomena. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>This is a basic ontology of temporal phenomena. <br/>
 </p>
 <p>Though it is intended to have general utility, it also represents the conceptual basis of the variant of <a class="new" href="/wikihome/index.php?title=Event_Calculus&amp;action=edit&amp;redlink=1" title="Event Calculus (page does not exist)">Event Calculus</a> used in the <a class="mw-redirect" href="/w/Novamente_Cognition_Engine" title="Novamente Cognition Engine">Novamente Cognition Engine</a>.<br/>
 </p>
@@ -4668,12 +5297,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:568-0!*!0!*!*!*!* and timestamp 20150520030812 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Philosophical Ontologies Relevant to Cognition</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Simple Patternist Ontology</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Simple_Patternist_Ontology</COL_URL>
-  <COL_TXT>A collection of Concepts related to the concept of "pattern," as defined in Pattern Theory
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Philosophical Ontologies Relevant to Cognition]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Simple Patternist Ontology]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Simple_Patternist_Ontology]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A collection of Concepts related to the concept of "pattern," as defined in Pattern Theory
 
   Links 
  See The Hidden Pattern  by Ben Goertzel (BrownWalker Press, 2006)
@@ -4691,8 +5325,12 @@ Subcategory: Structural Complexity
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A collection of <a class="mw-redirect" href="/w/Concept" title="Concept">Concepts</a> related to the concept of "pattern," as defined in <a class="new" href="/wikihome/index.php?title=Pattern_Theory&amp;action=edit&amp;redlink=1" title="Pattern Theory (page does not exist)">Pattern Theory</a>
+  <COL_HTML>
+<![CDATA[
+<p>A collection of <a class="mw-redirect" href="/w/Concept" title="Concept">Concepts</a> related to the concept of "pattern," as defined in <a class="new" href="/wikihome/index.php?title=Pattern_Theory&amp;action=edit&amp;redlink=1" title="Pattern Theory (page does not exist)">Pattern Theory</a>
 </p>
 
 
@@ -4730,12 +5368,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:569-0!*!0!!*!*!* and timestamp 20150520030813 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Philosophical Ontologies Relevant to Cognition</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Singly Embodied Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Singly_Embodied_Mind</COL_URL>
-  <COL_TXT>A mind that is fundamentally associated with a single body.  
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Philosophical Ontologies Relevant to Cognition]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Singly Embodied Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Singly_Embodied_Mind]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A mind that is fundamentally associated with a single body.  
 Human minds are like this at the moment, though this may change once mind-uploading becomes plausible.
 
   Links 
@@ -4743,8 +5386,12 @@ Human minds are like this at the moment, though this may change once mind-upload
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A mind that is fundamentally associated with a single body.  
+  <COL_HTML>
+<![CDATA[
+<p>A mind that is fundamentally associated with a single body.  
 </p>
 <p>Human minds are like this at the moment, though this may change once mind-uploading becomes plausible.
 </p>
@@ -4769,19 +5416,28 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:571-0!*!*!*!*!*!* and timestamp 20150520030815 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Social Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Social_Mind</COL_URL>
-  <COL_TXT>It has been argued by some theorists that human minds are not correctly thought of as individual, but that human intelligence is fundamentally social and intersubjective, existing among groups of people.  
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Social Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Social_Mind]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+It has been argued by some theorists that human minds are not correctly thought of as individual, but that human intelligence is fundamentally social and intersubjective, existing among groups of people.  
 This view is bolstered by the fact that human mind does not reach its fully developed form among individuals raised in isolation from social contact ("wild children"), and degenerates if deprived of a social setting (i.e. real life Robinson Crusoes usually go crazy).
 This page needs links to relevant references
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>It has been argued by some theorists that human minds are not correctly thought of as <i>individual</i>, but that human intelligence is fundamentally social and intersubjective, existing among groups of people.  
+  <COL_HTML>
+<![CDATA[
+<p>It has been argued by some theorists that human minds are not correctly thought of as <i>individual</i>, but that human intelligence is fundamentally social and intersubjective, existing among groups of people.  
 </p>
 <p>This view is bolstered by the fact that human mind does not reach its fully developed form among individuals raised in isolation from social contact ("wild children"), and degenerates if deprived of a social setting (i.e. real life Robinson Crusoes usually go crazy).
 </p>
@@ -4801,18 +5457,27 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:572-0!*!*!*!*!*!* and timestamp 20150520030816 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Specific Entity</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Specific_Entity</COL_URL>
-  <COL_TXT>A Knowledge Component that refers to (i.e. is a Representation of) a specific, spatiotemporally bounded entity, which is understood to occupy different regions of space at different times.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Specific Entity]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Specific_Entity]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A Knowledge Component that refers to (i.e. is a Representation of) a specific, spatiotemporally bounded entity, which is understood to occupy different regions of space at different times.
 The difference between Specific Entity and Concept corresponds roughly to the difference between "the" and "a."
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A <a class="mw-redirect" href="/w/Knowledge_Component" title="Knowledge Component">Knowledge Component</a> that refers to (i.e. is a <a class="mw-redirect" href="/w/Representation" title="Representation">Representation</a> of) a specific, spatiotemporally bounded entity, which is understood to occupy different regions of space at different times.<br/>
+  <COL_HTML>
+<![CDATA[
+<p>A <a class="mw-redirect" href="/w/Knowledge_Component" title="Knowledge Component">Knowledge Component</a> that refers to (i.e. is a <a class="mw-redirect" href="/w/Representation" title="Representation">Representation</a> of) a specific, spatiotemporally bounded entity, which is understood to occupy different regions of space at different times.<br/>
 The difference between Specific Entity and <a class="mw-redirect" href="/w/Concept" title="Concept">Concept</a> corresponds roughly to the difference between "the" and "a."
 </p>
 
@@ -4829,12 +5494,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:575-0!*!0!*!*!*!* and timestamp 20150520030818 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Cognitive Structure</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Symbolically Interactive System</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Symbolically_Interactive_System</COL_URL>
-  <COL_TXT>An Adaptive Control System that, as it interacts with and adapts to its environment, constructs Symbolic models of aspects of itself, its environment and the interaction therebetween, utilizing this model in its Actions and adaptations.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Cognitive Structure]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Symbolically Interactive System]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Symbolically_Interactive_System]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+An Adaptive Control System that, as it interacts with and adapts to its environment, constructs Symbolic models of aspects of itself, its environment and the interaction therebetween, utilizing this model in its Actions and adaptations.
 A species, evolving over time, may be considered as a symbolically interactive system, where the symbol system is related to the DNA and the rest of the genome.
 Symbolic Interactionism is a relevant branch of sociology.
 
@@ -4846,8 +5516,12 @@ Supercategory: Adaptive Control System
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>An <a href="/w/Adaptive_Control_System" title="Adaptive Control System">Adaptive Control System</a> that, as it interacts with and adapts to its environment, constructs <a class="new" href="/wikihome/index.php?title=Symbol&amp;action=edit&amp;redlink=1" title="Symbol (page does not exist)">Symbolic</a> models of aspects of itself, its environment and the interaction therebetween, utilizing this model in its <a class="new" href="/wikihome/index.php?title=Action&amp;action=edit&amp;redlink=1" title="Action (page does not exist)">Actions</a> and adaptations.<br/>
+  <COL_HTML>
+<![CDATA[
+<p>An <a href="/w/Adaptive_Control_System" title="Adaptive Control System">Adaptive Control System</a> that, as it interacts with and adapts to its environment, constructs <a class="new" href="/wikihome/index.php?title=Symbol&amp;action=edit&amp;redlink=1" title="Symbol (page does not exist)">Symbolic</a> models of aspects of itself, its environment and the interaction therebetween, utilizing this model in its <a class="new" href="/wikihome/index.php?title=Action&amp;action=edit&amp;redlink=1" title="Action (page does not exist)">Actions</a> and adaptations.<br/>
 A species, evolving over time, may be considered as a symbolically interactive system, where the symbol system is related to the DNA and the rest of the genome.<br/>
 <a class="new" href="/wikihome/index.php?title=Symbolic_Interactionism&amp;action=edit&amp;redlink=1" title="Symbolic Interactionism (page does not exist)">Symbolic Interactionism</a> is a relevant branch of sociology.<br/>
 </p>
@@ -4879,17 +5553,26 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:577-0!*!0!!*!*!* and timestamp 20150520030819 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Systems</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Systems</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Systems</COL_URL>
-  <COL_TXT>A system is a part of the universe that is distinguished from the rest of the universe by some Observer, and that is noted by that Observer as being associated with some Behaviors.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Systems]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Systems]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Systems]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+A system is a part of the universe that is distinguished from the rest of the universe by some Observer, and that is noted by that Observer as being associated with some Behaviors.
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>A system is a part of the universe that is distinguished from the rest of the universe by some <a class="new" href="/wikihome/index.php?title=Observer&amp;action=edit&amp;redlink=1" title="Observer (page does not exist)">Observer</a>, and that is noted by that <a class="new" href="/wikihome/index.php?title=Observer&amp;action=edit&amp;redlink=1" title="Observer (page does not exist)">Observer</a> as being associated with some <a class="new" href="/wikihome/index.php?title=Behavior&amp;action=edit&amp;redlink=1" title="Behavior (page does not exist)">Behaviors</a>.
+  <COL_HTML>
+<![CDATA[
+<p>A system is a part of the universe that is distinguished from the rest of the universe by some <a class="new" href="/wikihome/index.php?title=Observer&amp;action=edit&amp;redlink=1" title="Observer (page does not exist)">Observer</a>, and that is noted by that <a class="new" href="/wikihome/index.php?title=Observer&amp;action=edit&amp;redlink=1" title="Observer (page does not exist)">Observer</a> as being associated with some <a class="new" href="/wikihome/index.php?title=Behavior&amp;action=edit&amp;redlink=1" title="Behavior (page does not exist)">Behaviors</a>.
 </p>
 
 
@@ -4905,18 +5588,27 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:578-0!*!0!*!*!*!* and timestamp 20150520030822 
 
 
-</COL_HTML></RDF_ROW>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Tool Dependent Mind</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Tool_Dependent_Mind</COL_URL>
-  <COL_TXT>It has been argued that human mind does not really exist in the body alone, but in the emergent interactions between body and tools -- sticks, rocks, pencils, computers, and so forth.
+
+]]>
+</COL_HTML>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Tool Dependent Mind]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Tool_Dependent_Mind]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+It has been argued that human mind does not really exist in the body alone, but in the emergent interactions between body and tools -- sticks, rocks, pencils, computers, and so forth.
 For an AGI mind, the tools utilized as part of its "broader mind" could include other software programs like calculators, Mathematica, Google, etc.  It might not make sense to consider the AGI's mind apart from this surround of other software tools.
 This page needs links to relevant references
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>It has been argued that human mind does not really exist in the body alone, but in the emergent interactions between body and tools -- sticks, rocks, pencils, computers, and so forth.
+  <COL_HTML>
+<![CDATA[
+<p>It has been argued that human mind does not really exist in the body alone, but in the emergent interactions between body and tools -- sticks, rocks, pencils, computers, and so forth.
 </p>
 <p>For an <a class="mw-redirect" href="/w/AGI" title="AGI">AGI</a> mind, the tools utilized as part of its "broader mind" could include other software programs like calculators, Mathematica, Google, etc.  It might not make sense to consider the AGI's mind apart from this surround of other software tools.
 </p>
@@ -4936,12 +5628,17 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:580-0!*!0!*!*!*!* and timestamp 20150520030823 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>Mind</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Vedantic Hierarchy</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Vedantic_Hierarchy</COL_URL>
-  <COL_TXT>This is a hierarchy of "levels of being", representing the hierarchic view as expressed in the Perennial Philosophy. 
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[Mind]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Vedantic Hierarchy]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Vedantic_Hierarchy]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+This is a hierarchy of "levels of being", representing the hierarchic view as expressed in the Perennial Philosophy. 
 It is useful for thinking about States Of Consciousness 
 
   Mind Ontology Links 
@@ -4954,8 +5651,12 @@ Subcategory:  Anandamaya, spiritual reality / Logos
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>This is a hierarchy of "levels of being", representing the hierarchic view as expressed in the Perennial Philosophy. <br/>
+  <COL_HTML>
+<![CDATA[
+<p>This is a hierarchy of "levels of being", representing the hierarchic view as expressed in the Perennial Philosophy. <br/>
 </p>
 <p>It is useful for thinking about <a class="new" href="/wikihome/index.php?title=States_Of_Consciousness&amp;action=edit&amp;redlink=1" title="States Of Consciousness (page does not exist)">States Of Consciousness</a> <br/>
 </p>
@@ -4985,18 +5686,27 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:581-0!*!0!*!*!*!* and timestamp 20150520030825 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>MindOntology:Philosophical Ontologies Relevant to Cognition</COL_CATEGORY>
-<RDF_ROW>
-  <COL_NAME>MindOntology:Volition</COL_NAME>
-  <COL_URL>http://wiki.opencog.org/w/MindOntology:Volition</COL_URL>
-  <COL_TXT>Any Cognitive Process that leads up to one or more Cognitive Actions specifically oriented toward attempting to achieve some Goal.
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[MindOntology:Philosophical Ontologies Relevant to Cognition]]></COL_CATEGORY>
+</MindOntology_Definition>
+<MindOntology_Definition>
+  <COL_NAME><![CDATA[MindOntology:Volition]]></COL_NAME>
+  <COL_URL><![CDATA[http://wiki.opencog.org/w/MindOntology:Volition]]></COL_URL>
+  <COL_TXT>
+<![CDATA[
+Any Cognitive Process that leads up to one or more Cognitive Actions specifically oriented toward attempting to achieve some Goal.
 In Subjective Reality, this is often associated with the Feeling of Free Will.
 
 
 
+
+]]>
 </COL_TXT>
-  <COL_HTML><p>Any <a href="/w/Cognitive_Process" title="Cognitive Process">Cognitive Process</a> that leads up to one or more <a class="mw-redirect" href="/w/Cognitive_Action" title="Cognitive Action">Cognitive Actions</a> specifically oriented toward attempting to achieve some <a href="/w/Goal" title="Goal">Goal</a>.
+  <COL_HTML>
+<![CDATA[
+<p>Any <a href="/w/Cognitive_Process" title="Cognitive Process">Cognitive Process</a> that leads up to one or more <a class="mw-redirect" href="/w/Cognitive_Action" title="Cognitive Action">Cognitive Actions</a> specifically oriented toward attempting to achieve some <a href="/w/Goal" title="Goal">Goal</a>.
 </p>
 <p>In <a class="new" href="/wikihome/index.php?title=Subjective_Reality&amp;action=edit&amp;redlink=1" title="Subjective Reality (page does not exist)">Subjective Reality</a>, this is often associated with the <a class="mw-redirect" href="/w/Feeling" title="Feeling">Feeling</a> of <a class="new" href="/wikihome/index.php?title=Free_Will&amp;action=edit&amp;redlink=1" title="Free Will (page does not exist)">Free Will</a>.
 </p>
@@ -5014,6 +5724,9 @@ Expensive parser function count: 0/100
  Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:582-0!*!0!*!*!*!* and timestamp 20150519151811 
 
 
-</COL_HTML></RDF_ROW>
-  <COL_CATEGORY>AGI Glossary</COL_CATEGORY>
-</RDF>
+
+]]>
+</COL_HTML>
+  <COL_CATEGORY><![CDATA[AGI Glossary]]></COL_CATEGORY>
+</MindOntology_Definition>
+</mindOntology>

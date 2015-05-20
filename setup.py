@@ -1,4 +1,5 @@
-from distutils.core import setup
+#from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='AIKIF',
@@ -10,6 +11,9 @@ setup(
     license='GNU General Public License v3 (GPLv3)',
     description='Artificial Intelligence Knowledge Information Framework',
     long_description=open('README.txt').read(),
+    install_requires=[
+          'nose >= 1.0',
+    ],
     classifiers = [
     'Development Status :: 2 - Pre-Alpha',
     'Environment :: Web Environment',
@@ -25,3 +29,5 @@ setup(
     ],
 
 )
+
+

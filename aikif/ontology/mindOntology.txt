@@ -30,7 +30,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:412-0!*!*!*!*!*!* and timestamp 20140328000439 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:412-0!*!*!*!*!*!* and timestamp 20150520030638 
 
 
 
@@ -67,7 +67,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:422-0!*!0!*!*!*!* and timestamp 20140328000441 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:422-0!*!0!*!*!*!* and timestamp 20150520030639 
 
 
 
@@ -95,7 +95,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:424-0!*!*!*!*!*!* and timestamp 20140328024454 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:424-0!*!*!*!*!*!* and timestamp 20150520030641 
 
 
 
@@ -123,7 +123,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:426-0!*!0!*!*!*!* and timestamp 20140328000443 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:426-0!*!0!*!*!*!* and timestamp 20150520030642 
 
 
 
@@ -267,7 +267,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:429-0!*!0!!en!*!* and timestamp 20140328000445 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:429-0!*!0!!en!*!* and timestamp 20150519112459 
 
 
 
@@ -326,7 +326,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:406-0!*!0!*!*!*!* and timestamp 20140328000446 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:406-0!*!0!*!*!*!* and timestamp 20150520030645 
 
 
 
@@ -367,7 +367,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:431-0!*!0!*!*!*!* and timestamp 20140328000447 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:431-0!*!0!*!*!*!* and timestamp 20150520030646 
 
 
 
@@ -411,7 +411,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:438-0!*!0!*!*!*!* and timestamp 20140327155441 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:438-0!*!0!*!*!*!* and timestamp 20150520030647 
 
 
 
@@ -581,7 +581,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:440-0!*!0!!en!*!* and timestamp 20140328000450 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:440-0!*!0!!en!*!* and timestamp 20150520030649 
 
 
 
@@ -629,7 +629,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:492-0!*!0!*!*!*!* and timestamp 20140328024503 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:492-0!*!0!*!*!*!* and timestamp 20150520030650 
 
 
 
@@ -757,7 +757,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:512-0!*!0!!*!*!* and timestamp 20140328000453 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:512-0!*!0!!*!*!* and timestamp 20150519133901 
 
 
 
@@ -789,40 +789,11 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:544-0!*!*!*!*!*!* and timestamp 20140328000454 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:544-0!*!*!*!*!*!* and timestamp 20150520030653 
 
 
 
 CATEGORY: Mind Ontology
-[END_ROW]
-
-[BEGIN_ROW]
-NAME: MindOntology:Codelet Coalition
-URL: http://wiki.opencog.org/w/MindOntology:Codelet_Coalition
-TEXT: A collection of Codelets that form a Cognitive Map and collectively engage in Competition for Attention to have their content attended to.
-
-
-
-
-HTML: <p>A collection of <a class="new" href="/wikihome/index.php?title=Codelet&amp;action=edit&amp;redlink=1" title="Codelet (page does not exist)">Codelets</a> that form a <a class="new" href="/wikihome/index.php?title=Cognitive_Map&amp;action=edit&amp;redlink=1" title="Cognitive Map (page does not exist)">Cognitive Map</a> and collectively engage in <a class="mw-redirect" href="/w/Competition_for_Attention" title="Competition for Attention">Competition for Attention</a> to have their content attended to.
-</p>
-
-
- 
-NewPP limit report
-Preprocessor node count: 1/1000000
-Post-expand include size: 0/2097152 bytes
-Template argument size: 0/2097152 bytes
-Expensive parser function count: 0/100
-
-
-
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:432-0!*!0!*!*!*!* and timestamp 20140328024507 
-
-
-
-CATEGORY: Codelet
-CATEGORY: MindOntology:Cognitive Structure
 [END_ROW]
 
 [BEGIN_ROW]
@@ -864,7 +835,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:446-0!*!0!*!*!*!* and timestamp 20140327235016 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:446-0!*!0!*!*!*!* and timestamp 20150520030654 
 
 
 
@@ -968,7 +939,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:451-0!*!0!*!*!*!* and timestamp 20140328031337 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:451-0!*!0!*!*!*!* and timestamp 20150520030656 
 
 
 
@@ -1023,7 +994,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:452-0!*!0!!*!*!* and timestamp 20140327155448 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:452-0!*!0!!*!*!* and timestamp 20150520030657 
 
 
 
@@ -1061,7 +1032,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:455-0!*!0!*!*!*!* and timestamp 20140328000501 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:455-0!*!0!*!*!*!* and timestamp 20150520030659 
 
 
 
@@ -1091,7 +1062,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:456-0!*!0!*!*!*!* and timestamp 20140328000502 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:456-0!*!0!*!*!*!* and timestamp 20150520030700 
 
 
 
@@ -1172,7 +1143,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:288-0!*!0!*!*!*!* and timestamp 20140328000504 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:288-0!*!0!*!*!*!* and timestamp 20150520030701 
 
 
 
@@ -1183,8 +1154,7 @@ NAME: MindOntology:Ethical Properties of Minds
 URL: http://wiki.opencog.org/w/MindOntology:Ethical_Properties_of_Minds
 TEXT: Nearly everyone involved in building AGI's agrees that it is important for them to have agreeable ethical properties.  But there is much less agreement on which ethical properties are agreeable, and on whether it's practical or even possible to formalize ethical properties in a way that's useful for AGI development.
 A reading list with many entries relevant to this topic is here:
-http://www.singinst.org/reading/artificialgeneralintelligence/
-
+http://www.singinst.org/reading/artificialgeneralintelligence/ (this link is obsolete)
 
   Mind Ontology Links 
 Subcategory: Friendly AI 
@@ -1199,9 +1169,7 @@ HTML: <p>Nearly everyone involved in building AGI's agrees that it is important 
 </p>
 <p>A reading list with many entries relevant to this topic is here:
 </p>
-<p><a class="external free" href="http://www.singinst.org/reading/artificialgeneralintelligence/" rel="nofollow">http://www.singinst.org/reading/artificialgeneralintelligence/</a>
-</p>
-<p><br/>
+<p><a class="external free" href="http://www.singinst.org/reading/artificialgeneralintelligence/" rel="nofollow">http://www.singinst.org/reading/artificialgeneralintelligence/</a> (this link is obsolete)
 </p>
 
 
@@ -1228,7 +1196,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:465-0!*!0!!*!*!* and timestamp 20140328124208 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:465-0!*!0!!*!*!* and timestamp 20150520030703 
 
 
 
@@ -1259,7 +1227,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:469-0!*!0!*!*!*!* and timestamp 20140328000507 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:469-0!*!0!*!*!*!* and timestamp 20150520030704 
 
 
 
@@ -1347,7 +1315,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:470-0!*!0!*!*!*!* and timestamp 20140327164157 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:470-0!*!0!*!*!*!* and timestamp 20150520030705 
 
 
 
@@ -1370,6 +1338,22 @@ For instance, in OpenCogPrime, the analogue of a Frame would be a Map consisting
  are tightly interlinked via HebbianLinks, denoting frequent common utilization
 
 In this approach, there is no need for a separate "Frame" data structure; frames are fuzzy and emerge via the cooperation of Inference and Economic Attention Allocation dynamics.
+
+  Frame-based vs. non-frame-based 
+OpenCog uses non-frame-based representation for the subject and object of a verb and employs frame-based representation for the other arguments of the verb (e.g. prepositions or relative clauses) [1], as can be seen in the following example:
+
+(EvaluationLink
+    (PredicateNode "like")
+    (ListLink
+        (ConceptNode "I")
+        (EvaluationLink
+            (PredicateNode "eat")
+            (ListLink
+                (ConceptNode "I")
+                (ConceptNode "bass@12345")))))
+
+While using frame-based representation for everything would be more consistent, it requires more atoms and the rewriting of existing rules. A predecessor of OpenCog employed a frame-based format (similar to FrameNet [2]) using semantic role labeling to designate verb arguments. Disambiguation, however, often is not self-evident (figuring it if an argument is the patient or agent, etc) and this representation doesn't add any additional meaning over the existing style. Furthermore, as long as the mappings are relatively simple and mutually consistent, PLN should be able to convert between different representations to do any meaningful inference.
+In the near future, ML techniques should help in disambiguating and differentiating verbs, e.g. telling apart "Ben eats lunch" from "Ben appears ridiculous".
 
 
 
@@ -1403,16 +1387,40 @@ HTML: <p>A <strong class="selflink">Frame</strong> is a classical <a class="mw-r
 </p>
 
 
+<h1> <span class="mw-headline" id="Frame-based_vs._non-frame-based"> Frame-based vs. non-frame-based </span></h1>
+
+
+<p>OpenCog uses non-frame-based representation for the subject and object of a verb and employs frame-based representation for the other arguments of the verb (e.g. prepositions or relative clauses) <a class="external autonumber" href="https://github.com/opencog/opencog/pull/776#discussion_r13419473" rel="nofollow">[1]</a>, as can be seen in the following example:
+</p>
+
+
+<pre>(EvaluationLink
+    (PredicateNode "like")
+    (ListLink
+        (ConceptNode "I")
+        (EvaluationLink
+            (PredicateNode "eat")
+            (ListLink
+                (ConceptNode "I")
+                (ConceptNode "bass@12345")))))
+</pre>
+
+
+<p>While using frame-based representation for everything would be more consistent, it requires more atoms and the rewriting of existing rules. A predecessor of OpenCog employed a frame-based format (similar to FrameNet <a class="external autonumber" href="https://framenet2.icsi.berkeley.edu/fnReports/data/frameIndex.xml" rel="nofollow">[2]</a>) using semantic role labeling to designate verb arguments. Disambiguation, however, often is not self-evident (figuring it if an argument is the patient or agent, etc) and this representation doesn't add any additional meaning over the existing style. Furthermore, as long as the mappings are relatively simple and mutually consistent, PLN should be able to convert between different representations to do any meaningful inference.
+In the near future, ML techniques should help in disambiguating and differentiating verbs, e.g. telling apart "Ben eats lunch" from "Ben appears ridiculous".
+</p>
+
+
  
 NewPP limit report
-Preprocessor node count: 7/1000000
+Preprocessor node count: 11/1000000
 Post-expand include size: 0/2097152 bytes
 Template argument size: 0/2097152 bytes
 Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:473-0!*!0!!*!*!* and timestamp 20140328000509 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:473-0!*!0!!*!*!* and timestamp 20150520030707 
 
 
 
@@ -1503,7 +1511,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:475-0!*!0!!en!*!* and timestamp 20140328000511 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:475-0!*!0!!en!*!* and timestamp 20150520030708 
 
 
 
@@ -1560,7 +1568,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:476-0!*!*!!*!*!* and timestamp 20140328000512 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:476-0!*!*!!*!*!* and timestamp 20150520030710 
 
 
 
@@ -1669,7 +1677,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:478-0!*!0!!*!*!* and timestamp 20140327213014 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:478-0!*!0!!*!*!* and timestamp 20150520030711 
 
 
 
@@ -1717,7 +1725,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:481-0!*!0!*!*!*!* and timestamp 20140328024526 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:481-0!*!0!*!*!*!* and timestamp 20150519061203 
 
 
 
@@ -1764,11 +1772,12 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:482-0!*!0!*!*!*!* and timestamp 20140327165321 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:482-0!*!0!*!*!*!* and timestamp 20150520030714 
 
 
 
 CATEGORY: Novamente Cognition Engine
+CATEGORY: Structure mining
 [END_ROW]
 
 [BEGIN_ROW]
@@ -1792,7 +1801,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:490-0!*!0!*!*!*!* and timestamp 20140328031355 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:490-0!*!0!*!*!*!* and timestamp 20150520030715 
 
 
 
@@ -1842,43 +1851,11 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:491-0!*!0!*!*!*!* and timestamp 20140327231018 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:491-0!*!0!*!*!*!* and timestamp 20150520030716 
 
 
 
 CATEGORY: MindOntology:AGI Projects
-[END_ROW]
-
-[BEGIN_ROW]
-NAME: MindOntology:Intention
-URL: http://wiki.opencog.org/w/MindOntology:Intention
-TEXT: The resolve of an animal (Agent) to achieve some particular Goal. 
-I.e., a Statement stored in a mind's Declarative Memory, receiving a reasonably high degree of Attention, whose content is that the agent possesses a particular Goal and is devoting substantial resources toward achieving it.
-The structure of intention is often associated with the experiential phenomenon of Free Will.
-
-
-
-
-HTML: <p>The resolve of an animal (<a href="/w/Agent" title="Agent">Agent</a>) to achieve some particular <a href="/w/Goal" title="Goal">Goal</a>. <br/>
-I.e., a <a class="new" href="/wikihome/index.php?title=Statement&amp;action=edit&amp;redlink=1" title="Statement (page does not exist)">Statement</a> stored in a mind's <a class="mw-redirect" href="/w/Declarative_Memory" title="Declarative Memory">Declarative Memory</a>, receiving a reasonably high degree of <a class="mw-redirect" href="/w/Attention" title="Attention">Attention</a>, whose content is that the agent possesses a particular <a href="/w/Goal" title="Goal">Goal</a> and is devoting substantial resources toward achieving it.<br/>
-The structure of intention is often associated with the experiential phenomenon of <a class="new" href="/wikihome/index.php?title=Free_Will&amp;action=edit&amp;redlink=1" title="Free Will (page does not exist)">Free Will</a>.
-</p>
-
-
- 
-NewPP limit report
-Preprocessor node count: 1/1000000
-Post-expand include size: 0/2097152 bytes
-Template argument size: 0/2097152 bytes
-Expensive parser function count: 0/100
-
-
-
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:493-0!*!0!*!*!*!* and timestamp 20140328072304 
-
-
-
-CATEGORY: MindOntology:Cognitive Structure
 [END_ROW]
 
 [BEGIN_ROW]
@@ -1902,7 +1879,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:494-0!*!0!*!*!*!* and timestamp 20140328000521 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:494-0!*!0!*!*!*!* and timestamp 20150520030718 
 
 
 
@@ -1952,7 +1929,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:502-0!*!0!*!*!*!* and timestamp 20140328072307 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:502-0!*!0!*!*!*!* and timestamp 20150520030719 
 
 
 
@@ -2015,7 +1992,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:505-0!*!0!*!*!*!* and timestamp 20140327234948 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:505-0!*!0!*!*!*!* and timestamp 20150520030720 
 
 
 
@@ -2053,7 +2030,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:506-0!*!0!*!*!*!* and timestamp 20140328000525 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:506-0!*!0!*!*!*!* and timestamp 20150520030722 
 
 
 
@@ -2115,7 +2092,7 @@ Orthogonal:
 
 
 HTML: <p>A <a class="mw-redirect" href="/w/Cognitive_Structure" title="Cognitive Structure">Cognitive Structure</a> devoted to enabling <a class="mw-redirect" href="/w/Memory" title="Memory">Memory</a> of particular sorts of <a class="mw-redirect" href="/w/Pattern" title="Pattern">Patterns</a>. <br/>
-The specialization to particular sorts of patterns provides the potential to use an appropriately specialized <a href="/w/Knowledge_Representation" title="Knowledge Representation">Knowledge Representation</a>. <br/>
+The specialization to particular sorts of patterns provides the potential to use an appropriately specialized <a class="mw-redirect" href="/w/Knowledge_Representation" title="Knowledge Representation">Knowledge Representation</a>. <br/>
 </p>
 
 
@@ -2195,35 +2172,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:508-0!*!0!!en!*!* and timestamp 20140328024538 
-
-
-
-CATEGORY: MindOntology:Cognitive Structure
-[END_ROW]
-
-[BEGIN_ROW]
-NAME: MindOntology:Mental Image
-URL: http://wiki.opencog.org/w/MindOntology:Mental_Image
-TEXT: An image produced internally from any Sensory Modality -- or in other words, a part of a mind's internal Virtual Reality
-
-
-
-
-HTML: <p>An image produced internally from any <a class="new" href="/wikihome/index.php?title=Sensory_Modality&amp;action=edit&amp;redlink=1" title="Sensory Modality (page does not exist)">Sensory Modality</a> -- or in other words, a part of a mind's internal <a class="new" href="/wikihome/index.php?title=Virtual_Reality&amp;action=edit&amp;redlink=1" title="Virtual Reality (page does not exist)">Virtual Reality</a>
-</p>
-
-
- 
-NewPP limit report
-Preprocessor node count: 1/1000000
-Post-expand include size: 0/2097152 bytes
-Template argument size: 0/2097152 bytes
-Expensive parser function count: 0/100
-
-
-
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:509-0!*!0!*!*!*!* and timestamp 20140327155409 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:508-0!*!0!!en!*!* and timestamp 20150520030723 
 
 
 
@@ -2265,7 +2214,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:515-0!*!0!*!*!*!* and timestamp 20140327165310 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:515-0!*!0!*!*!*!* and timestamp 20150520030724 
 
 
 
@@ -2525,7 +2474,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:513-0!*!0!!en!*!* and timestamp 20140328000531 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:513-0!*!0!!en!*!* and timestamp 20150520030726 
 
 
 
@@ -2565,7 +2514,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:516-0!*!0!*!*!*!* and timestamp 20140328000532 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:516-0!*!0!*!*!*!* and timestamp 20150520030727 
 
 
 
@@ -2596,7 +2545,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:517-0!*!*!*!*!*!* and timestamp 20140328000534 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:517-0!*!*!*!*!*!* and timestamp 20150520030729 
 
 
 
@@ -2642,7 +2591,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:520-0!*!0!*!*!*!* and timestamp 20140328072320 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:520-0!*!0!*!*!*!* and timestamp 20150520030730 
 
 
 
@@ -2680,7 +2629,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:522-0!*!0!*!*!*!* and timestamp 20140328072321 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:522-0!*!0!*!*!*!* and timestamp 20150520030731 
 
 
 
@@ -2705,7 +2654,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:521-0!*!*!*!*!*!* and timestamp 20140328000538 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:521-0!*!*!*!*!*!* and timestamp 20150520030733 
 
 
 
@@ -2730,7 +2679,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:523-0!*!*!*!*!*!* and timestamp 20140328000539 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:523-0!*!*!*!*!*!* and timestamp 20150520030734 
 
 
 
@@ -3203,7 +3152,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:524-0!*!0!!*!*!* and timestamp 20140327165258 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:524-0!*!0!!*!*!* and timestamp 20150520030736 
 
 
 
@@ -3370,7 +3319,7 @@ HTML: <p><a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">
 
 <p><b>Supercategory</b>: <a class="mw-redirect" href="/w/Knowledge_Component" title="Knowledge Component">Knowledge Component</a> <br/>
 <b>Supercategory</b>: <a class="mw-redirect" href="/w/Concretely_Implemented_Novamente_Structure" title="Concretely Implemented Novamente Structure">Concretely Implemented Novamente Structure</a><br/>
-<b>Associated</b>: <a href="/w/Knowledge_Representation" title="Knowledge Representation">Knowledge Representation</a><br/>
+<b>Associated</b>: <a class="mw-redirect" href="/w/Knowledge_Representation" title="Knowledge Representation">Knowledge Representation</a><br/>
 </p>
 
 
@@ -3383,7 +3332,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:525-0!*!0!!en!*!* and timestamp 20140327163912 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:525-0!*!0!!en!*!* and timestamp 20150520030737 
 
 
 
@@ -3428,7 +3377,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:526-0!*!0!*!*!*!* and timestamp 20140327155418 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:526-0!*!0!*!*!*!* and timestamp 20150520030739 
 
 
 
@@ -3719,44 +3668,12 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:527-0!*!0!!en!*!* and timestamp 20140327155252 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:527-0!*!0!!en!*!* and timestamp 20150519063415 
 
 
 
 CATEGORY: MindOntology:AGI Projects
 CATEGORY: Novamente Cognition Engine
-[END_ROW]
-
-[BEGIN_ROW]
-NAME: MindOntology:Novamente Cognitive Map
-URL: http://wiki.opencog.org/w/MindOntology:Novamente_Cognitive_Map
-TEXT: A collection of Novamente Atoms whose Activation collectively follows some recognizable pattern (in the simplest case, a pattern of frequent simultaneous activity).
-The Map Formation process exists to recognize cognitive maps and explicitly embody them in Atoms (ConceptNodes or PredicateNodes).
-
-
-
-
-HTML: <p>A collection of <a class="mw-redirect" href="/w/Novamente_Atom" title="Novamente Atom">Novamente Atoms</a> whose <a class="new" href="/wikihome/index.php?title=Activation&amp;action=edit&amp;redlink=1" title="Activation (page does not exist)">Activation</a> collectively follows some recognizable pattern (in the simplest case, a pattern of frequent simultaneous activity).
-</p>
-<p>The <a href="/w/Map_Formation" title="Map Formation">Map Formation</a> process exists to recognize cognitive maps and explicitly embody them in Atoms (ConceptNodes or PredicateNodes).
-</p>
-
-
- 
-NewPP limit report
-Preprocessor node count: 1/1000000
-Post-expand include size: 0/2097152 bytes
-Template argument size: 0/2097152 bytes
-Expensive parser function count: 0/100
-
-
-
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:530-0!*!0!*!*!*!* and timestamp 20140328000546 
-
-
-
-CATEGORY: Novamente Cognition Engine
-CATEGORY: MindOntology:Cognitive Structure
 [END_ROW]
 
 [BEGIN_ROW]
@@ -3792,7 +3709,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:531-0!*!0!*!*!*!* and timestamp 20140327165302 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:531-0!*!0!*!*!*!* and timestamp 20150520030742 
 
 
 
@@ -3838,7 +3755,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:533-0!*!0!*!*!*!* and timestamp 20140327165325 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:533-0!*!0!*!*!*!* and timestamp 20150520030744 
 
 
 
@@ -3888,7 +3805,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:534-0!*!0!!*!*!* and timestamp 20140327165314 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:534-0!*!0!!*!*!* and timestamp 20150520030745 
 
 
 
@@ -3932,7 +3849,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:538-0!*!0!*!*!*!* and timestamp 20140327234850 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:538-0!*!0!*!*!*!* and timestamp 20150520030746 
 
 
 
@@ -3970,7 +3887,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:539-0!*!0!*!*!*!* and timestamp 20140327163459 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:539-0!*!0!*!*!*!* and timestamp 20150519143445 
 
 
 
@@ -4032,7 +3949,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:540-0!*!0!!*!*!* and timestamp 20140327165336 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:540-0!*!0!!*!*!* and timestamp 20150520030749 
 
 
 
@@ -4137,7 +4054,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:287-0!*!0!*!*!*!* and timestamp 20140327193710 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:287-0!*!0!*!*!*!* and timestamp 20150519055922 
 
 
 
@@ -4176,7 +4093,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:546-0!*!0!*!*!*!* and timestamp 20140328000557 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:546-0!*!0!*!*!*!* and timestamp 20150520030752 
 
 
 
@@ -4264,7 +4181,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:548-0!*!*!*!*!*!* and timestamp 20140328000558 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:548-0!*!*!*!*!*!* and timestamp 20150520030753 
 
 
 
@@ -4305,7 +4222,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:549-0!*!0!*!*!*!* and timestamp 20140327165332 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:549-0!*!0!*!*!*!* and timestamp 20150520030754 
 
 
 
@@ -4370,7 +4287,7 @@ HTML: <h2> <span class="mw-headline" id="Definition_of_.22Problem.22">Definition
 
 <ul><li> <a class="new" href="/wikihome/index.php?title=AGI_Hard&amp;action=edit&amp;redlink=1" title="AGI Hard (page does not exist)">AGI Hard</a>
 </li><li> Technical Problem Type
-<ul><li> <b>Subcategory</b>: <a class="new" href="/wikihome/index.php?title=Clustering&amp;action=edit&amp;redlink=1" title="Clustering (page does not exist)">Clustering</a> <br/>
+<ul><li> <b>Subcategory</b>: <a href="/w/Clustering" title="Clustering">Clustering</a> <br/>
 </li><li> <b>Subcategory</b>: <a class="mw-redirect" href="/w/Pattern_Mining" title="Pattern Mining">Pattern Mining</a> <br/>
 </li><li> <b>Subcategory</b>: <a class="new" href="/wikihome/index.php?title=Supervised_Categorization&amp;action=edit&amp;redlink=1" title="Supervised Categorization (page does not exist)">Supervised Categorization</a> <br/>
 </li><li> <b>Subcategory</b>: <a class="new" href="/wikihome/index.php?title=Function_Learning&amp;action=edit&amp;redlink=1" title="Function Learning (page does not exist)">Function Learning</a> <br/>
@@ -4387,7 +4304,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:550-0!*!0!!*!*!* and timestamp 20140327165402 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:550-0!*!0!!*!*!* and timestamp 20150520030756 
 
 
 
@@ -4430,7 +4347,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:551-0!*!0!*!*!*!* and timestamp 20140328024613 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:551-0!*!0!*!*!*!* and timestamp 20150520030757 
 
 
 
@@ -4471,7 +4388,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:554-0!*!0!*!*!*!* and timestamp 20140328000603 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:554-0!*!0!*!*!*!* and timestamp 20150520030758 
 
 
 
@@ -4519,7 +4436,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:555-0!*!*!*!*!*!* and timestamp 20140328000858 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:555-0!*!*!*!*!*!* and timestamp 20150520030800 
 
 
 
@@ -4580,7 +4497,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:556-0!*!*!!*!*!* and timestamp 20140328024617 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:556-0!*!*!!*!*!* and timestamp 20150520030801 
 
 
 
@@ -4627,7 +4544,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:558-0!*!0!*!*!*!* and timestamp 20140327234839 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:558-0!*!0!*!*!*!* and timestamp 20150520030803 
 
 
 
@@ -4675,7 +4592,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:560-0!*!0!!*!*!* and timestamp 20140327163455 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:560-0!*!0!!*!*!* and timestamp 20150520030804 
 
 
 
@@ -4719,7 +4636,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:562-0!*!0!*!*!*!* and timestamp 20140328000905 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:562-0!*!0!*!*!*!* and timestamp 20150519160846 
 
 
 
@@ -4784,7 +4701,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:565-0!*!0!!*!*!* and timestamp 20140327165317 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:565-0!*!0!!*!*!* and timestamp 20150520030808 
 
 
 
@@ -4823,7 +4740,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:567-0!*!0!*!*!*!* and timestamp 20140327155425 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:567-0!*!0!*!*!*!* and timestamp 20150520030811 
 
 
 
@@ -4886,7 +4803,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:568-0!*!0!*!*!*!* and timestamp 20140327234857 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:568-0!*!0!*!*!*!* and timestamp 20150520030812 
 
 
 
@@ -4950,7 +4867,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:569-0!*!0!!*!*!* and timestamp 20140327234907 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:569-0!*!0!!*!*!* and timestamp 20150520030813 
 
 
 
@@ -4991,7 +4908,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:571-0!*!*!*!*!*!* and timestamp 20140328000912 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:571-0!*!*!*!*!*!* and timestamp 20150520030815 
 
 
 
@@ -5025,7 +4942,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:572-0!*!*!*!*!*!* and timestamp 20140328000914 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:572-0!*!*!*!*!*!* and timestamp 20150520030816 
 
 
 
@@ -5055,7 +4972,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:575-0!*!0!*!*!*!* and timestamp 20140327155358 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:575-0!*!0!*!*!*!* and timestamp 20150520030818 
 
 
 
@@ -5107,7 +5024,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:577-0!*!0!!*!*!* and timestamp 20140327163511 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:577-0!*!0!!*!*!* and timestamp 20150520030819 
 
 
 
@@ -5135,7 +5052,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:578-0!*!0!*!*!*!* and timestamp 20140328000918 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:578-0!*!0!*!*!*!* and timestamp 20150520030822 
 
 
 
@@ -5168,7 +5085,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:580-0!*!0!*!*!*!* and timestamp 20140328000919 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:580-0!*!0!*!*!*!* and timestamp 20150520030823 
 
 
 
@@ -5219,7 +5136,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:581-0!*!0!*!*!*!* and timestamp 20140327234911 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:581-0!*!0!*!*!*!* and timestamp 20150520030825 
 
 
 
@@ -5250,7 +5167,7 @@ Expensive parser function count: 0/100
 
 
 
- Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:582-0!*!0!*!*!*!* and timestamp 20140328000922 
+ Saved in parser cache with key opencog_mediawik-oc_:pcache:idhash:582-0!*!0!*!*!*!* and timestamp 20150519151811 
 
 
 

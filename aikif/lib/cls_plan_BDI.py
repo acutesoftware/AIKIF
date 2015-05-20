@@ -11,6 +11,7 @@ class Plan_BDI(object):
     def __init__(self, name, dependency):
         self.name = name
         self.id = 1
+        self.dependency = dependency
         self.plan_version = "v0.10"
         self.success = False
         self.start_date = datetime.datetime.now().strftime("%I:%M%p %d-%B-%Y")
@@ -49,17 +50,17 @@ class Plan_BDI(object):
         with open(fname, "r") as f:
             for line in f:
                 if line != '': 
-                    type, txt = self.parse_plan_from_string(line)
-                    #print('type= "' + type + '"', txt)
-                    if type == 'name':
+                    tpe, txt = self.parse_plan_from_string(line)
+                    #print('tpe= "' + tpe + '"', txt)
+                    if tpe == 'name':
                         self.name = txt
-                    elif type == 'version':
+                    elif tpe == 'version':
                         self.plan_version = txt
-                    elif type == 'belief':
+                    elif tpe == 'belief':
                         self.beliefs.add(txt)
-                    elif type == 'desire':
+                    elif tpe == 'desire':
                         self.desires.add(txt)
-                    elif type == 'intention':
+                    elif tpe == 'intention':
                         self.intentions.add(txt)
                     else:
                         #print("COMMENT (or unknown) - " + txt)
@@ -71,11 +72,11 @@ class Plan_BDI(object):
             f.write("# AIKIF Plan specification \n")
             f.write("name       :" + self.name + "\n")
             f.write("version    :" + self.plan_version + "\n")
-            for i, txt in enumerate(self.beliefs.list()):
+            for txt in self.beliefs.list():
                 f.write("belief     :" + txt + "\n")
-            for i, txt in enumerate(self.desires.list()):
+            for txt in self.desires.list():
                 f.write("desire     :" + txt + "\n")
-            for i, txt in enumerate(self.intentions.list()):
+            for txt in self.intentions.list():
                 f.write("intention  :" + txt + "\n")
             
     
@@ -85,31 +86,25 @@ class Plan_BDI(object):
         if line != '':
             if line[0:1] != '#':
                 parts = line.split(":")
-                try:
-                    tpe = parts[0].strip()
-                except:
-                    pass
-                try:
-                    txt = parts[1].strip()
-                except:
-                    pass
+                tpe = parts[0].strip()
+                txt = parts[1].strip()
         return tpe, txt
     
     
     
-    def add_resource(self, name, type):
+    def add_resource(self, name, tpe):
         """
         add a resource available for the plan. These are text strings
         of real world objects mapped to an ontology key or programs
         from the toolbox section (can also be external programs)
         """
-        print("adding resource..." + name + " of type " + type )
+        print("adding resource..." + name + " of type " + tpe )
         
-    def add_constraint(self, name, type, val):
+    def add_constraint(self, name, tpe, val):
         """
         adds a constraint for the plan
         """
-        print("adding constraint..." + name + " of type " + type + " = " + str(val) )
+        print("adding constraint..." + name + " of type " + tpe + " = " + str(val) )
 
 class Thoughts(object):
     """ base class for beliefs, desires, intentions simply
@@ -131,7 +126,7 @@ class Thoughts(object):
     def list(self, print_console=False):
         lst = []
         for i, thought in enumerate(self._thoughts):
-            if print_console == True:
+            if print_console is True:
                 print(self._type + str(i) + ' = ' + thought)
             lst.append(thought)
         return lst
@@ -140,17 +135,17 @@ class Thoughts(object):
 class Beliefs(Thoughts):
     def __init__(self, parent_plan):
         self.parent_plan = parent_plan
-        super().__init__('belief')
+        super(Beliefs, self).__init__('belief')
         
 class Desires(Thoughts):
     def __init__(self, parent_plan):
         self.parent_plan = parent_plan
-        super().__init__('desire')
+        super(Desires, self).__init__('desire')
 
 class Intentions(Thoughts):
     def __init__(self, parent_plan):
         self.parent_plan = parent_plan
-        super().__init__('intention')
+        super(Intentions, self).__init__('intention')
         
 
 def TEST():        
@@ -169,7 +164,7 @@ def TEST():
     print(str(myplan))
     
 if __name__ == '__main__':
-	TEST()  
+    TEST()  
 
     
     
