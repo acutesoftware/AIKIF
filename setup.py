@@ -13,6 +13,7 @@ setup(
     long_description=open('README.txt').read(),
     install_requires=[
           'nose >= 1.0',
+          'pyaixi >= 1.0'
     ],
     classifiers = [
     'Development Status :: 2 - Pre-Alpha',
