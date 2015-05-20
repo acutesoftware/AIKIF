@@ -15,7 +15,7 @@ setup(
           'nose >= 1.0',
           'beautifulsoup4 >= 1.0',
           'Pillow >= 1.0',
-          'pandas >= 1.0'
+          'pandas >= 0.16.0'
     ],
     classifiers = [
     'Development Status :: 2 - Pre-Alpha',
