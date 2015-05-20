@@ -2,11 +2,8 @@
 
 
 import os
-import sys
-import random
 import imaplib
 import smtplib
-import email
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 
@@ -29,7 +26,7 @@ def TEST():
     save_folder = mod_cfg.fldrs['pers_data'] + os.sep + 'email' + os.sep + 'gmail'
     account = GmailAccount(username, password, save_folder)   
     
-    agt = EmailAgent('email_agent', root_folder, True, 1 , account)
+    agt = EmailAgent('email_agent', root_folder, True, account)
     print(agt)
     
     account.connect()
@@ -45,17 +42,17 @@ class EmailAgent(agt.Agent):
     agent that logs emails. [using AIKIF logging].
     """
     
-    def __init__(self, name,  fldr, running, LOG_LEVEL, account):
-        agt.Agent.__init__(self, name,  fldr, running)
+    def __init__(self, name,  fldr, running, account):
         """
         takes a folder which contains the list of email PST files for logging
         """
-        self.LOG_LEVEL = LOG_LEVEL
+        agt.Agent.__init__(self, name,  fldr, running)
+        self.LOG_LEVEL = 1
         self.root_folder = fldr
         self.account = account
         self.log_folder = mod_cfg.fldrs['log_folder']
         self.fl_opname = self.log_folder + os.sep + name + '.csv'
-        if running == True:
+        if running is True:
             self.do_your_job()
 
     def __str__(self):
@@ -70,14 +67,14 @@ class EmailAgent(agt.Agent):
         res += str(self.account)
         return res
             
-    def do_your_job(self, *arg):
+    def do_your_job(self):
         """
         the goal of the email agent is to parse emails and index
         """ 
         lg = mod_log.Log(self.log_folder)
         lg.record_command('email_collect.txt', 'email agent - checking folder - ' + self.root_folder)
 
-class EmailAccount:
+class EmailAccount(object):
     """
     base class for email account - server details based when sub-classed
     """
@@ -138,6 +135,8 @@ class EmailAccount:
         """
         count_emails = 0
         response, data = self.server_rec.search(None, search_criteria)
+        print('Email response', response)
+        
         for num in data[0].split():
             response, data = self.server_rec.fetch(num, '(RFC822)')
             count_emails += 1
@@ -154,11 +153,11 @@ class GmailAccount(EmailAccount):
     def __str__(self):
         return '--- Gmail' + str(EmailAccount.__str__(self))
 
-class Message():
+class Message(object):
     pass
         
 if __name__ == '__main__':
     TEST()	
-  		
+        
 
-	
+    

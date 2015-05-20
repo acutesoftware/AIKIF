@@ -21,17 +21,17 @@ class GoalFriendly(Goal):
             res = False
         if self.cost_freedom > 0:
             res = False
-        if self.cost_damage > accepted_damage:
+        if self.cost_damage > 0:
             res = False
             
         return res
 
-    def run_plan(self, strategy):
+    def run_plan(self, plan, strategy):
         """ 
         executes a plan by running the passed strategy
         and then updates the local results
         """
-        print ("running strategy : " + strategy['name'])
+        print ("running strategy : " + strategy['name'] + " for plan " + plan['name'])
         
 
     def find_best_plan(self):
@@ -40,5 +40,5 @@ class GoalFriendly(Goal):
         """
         for plan in self.plans:
             for strat in self.strategy:
-                run_plan(strat)
+                self.run_plan(plan, strat)
                 

@@ -2,24 +2,17 @@
 # search.py	written by Duncan Murray 20/3/2014	(C) Acute Software
 # searches AIKIF
 
-import os
-import sys
-import aikif.cls_file_mapping as filemap
 import aikif.config as cfg
 
 import argparse
 
 print("NOTE - you need to call python to get args passed, e.g.\n")
-print("python search.py database\n")
-
-
   
 def search(search_string):
     """ main function to search using indexes """
     print('-------------------')
-    print('Searching for ', search_string)
+    print('Searching for ' + search_string)
     print('-------------------')	
-
 #	ndxFiles = ['..\\data\\index\\ndxAll.txt', '..\\data\\index\\ndxWordsToFilesLecture.txt']
     ndxFiles = cfg.params['index_files']
     numResults = 0
@@ -27,15 +20,15 @@ def search(search_string):
     for fname in ndxFiles:
         print("Searching " + fname)
         with open(fname, 'r') as f:
+            line_num = 0
             for line_num, line in enumerate(f):
                 totLines = totLines + 1
-                for src in search_string:
-                    if src in line:
-                        try:
-                            print(line)   # gives error with some encoding
-                        except:
-                            print("Cant print search result")
-                        numResults = numResults + 1
+                if search_string in line:
+                    try:
+                        print(line)   # gives error with some encoding
+                    except Exception:
+                        print("Cant print search result")
+                    numResults = numResults + 1
             print(str(line_num) + " lines searched")
     print('Found ', str(numResults), 'results in', str(totLines), 'lines over', str(len(ndxFiles)), 'index files')
     
@@ -46,8 +39,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     # ... do something with args.search ...
     # ... do something with args.verbose ..
-    print(args.search)
-    search([args.search])	
-    
+    search(args.search.strip(''))	
+    print("REMEMBER - call this with python otherwise it doesnt run\n python search.py -s database\n")
+        
 
     
