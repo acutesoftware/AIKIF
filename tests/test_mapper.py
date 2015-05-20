@@ -4,8 +4,8 @@ import unittest
 import sys
 import os
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" )
-sys.path.append(root_fldr)
-import mapper as mod_map
+#sys.path.append(root_fldr)
+import aikif.mapper as mod_map
 
 class MapTest(unittest.TestCase):
     

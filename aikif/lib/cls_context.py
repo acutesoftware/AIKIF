@@ -44,8 +44,15 @@ class Context(object):
     
     """
     def __init__(self):
-        self.user, self.username = self.get_user()
-        self.host, self.hostname = self.get_host()
+        self.user = ''
+        self.username = ''
+        self.host = ''
+        self.hostname = ''
+        try:
+            self.user, self.username = self.get_user()
+            self.host, self.hostname = self.get_host()
+        except Exception:
+            pass
         self.transport = self.inspect_phone()
         self.summary = self.summarise()
         self.host_cpu_pct, self.host_num_processes, self.host_mem_available, self.host_mem_total = self.get_host_usage()

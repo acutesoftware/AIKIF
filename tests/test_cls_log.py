@@ -4,7 +4,8 @@ import unittest
 import sys
 import os
 import time
-test_fldr = os.getcwd() + os.sep + 'test_results'
+# test_fldr = os.getcwd() + os.sep + 'test_results'
+test_fldr = '.'
 import aikif.cls_log as mod_log
 import aikif.config as cfg
 

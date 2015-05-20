@@ -12,7 +12,10 @@ setup(
     description='Artificial Intelligence Knowledge Information Framework',
     long_description=open('README.txt').read(),
     install_requires=[
-          'nose >= 1.0'
+          'nose >= 1.0',
+          'bs4 >= 1.0',
+          'PIL >= 1.0',
+          'pandas >= 1.0'
     ],
     classifiers = [
     'Development Status :: 2 - Pre-Alpha',

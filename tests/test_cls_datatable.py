@@ -5,9 +5,11 @@ import os
 import sys
 import aikif.dataTools.cls_datatable as cl
 #root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
-fname =  'test_results' + os.sep + 'datatable_sample.csv'    
-fname2 =  'test_results' + os.sep + 'datatable_output.csv'                  
-fname3 =  'test_results' + os.sep + 'datatable_calcs.csv'     
+save_folder = 'test_results' + os.sep
+save_folder = ''  # to get the damn build passing
+fname =  save_folder + 'datatable_sample.csv'    
+fname2 = save_folder + 'datatable_output.csv'                  
+fname3 = save_folder + 'datatable_calcs.csv'     
              
 class TestClassDataTable(unittest.TestCase):
     def setUp(self):

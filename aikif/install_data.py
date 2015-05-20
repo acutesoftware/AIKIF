@@ -2,7 +2,8 @@
 
 import os
 cur_path = os.getcwd()
-config_file = cur_path + os.sep + '..' + os.sep + 'data' + os.sep + 'pers_config.py'
+#config_file = cur_path + os.sep + '..' + os.sep + 'data' + os.sep + 'pers_config.py'
+config_file = 'pers_config.py'
 def main():
     """
     script to setup folder structures for AIKIF 

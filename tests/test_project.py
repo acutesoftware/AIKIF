@@ -43,7 +43,7 @@ class TestProject(unittest.TestCase):
         proj_diary.add_source('PC Usage', root_folder)
         proj_diary.add_source('TODO List', root_folder)
 
-        my_biz = project.Project(name='Acute Software', type='business', desc='Custom Software development', fldr='')
+        my_biz = project.Project(name='Acute Software', tpe='business', desc='Custom Software development', fldr='')
         my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
         my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
 
@@ -64,7 +64,7 @@ class TestProject(unittest.TestCase):
         
  
     def test_11_task(self):
-        p = project.Project('update Country reference', type='Auto', fldr='c:\test')
+        p = project.Project('update Country reference', tpe='Auto', fldr='c:\test')
         p.add_task(1, 'download file', 'aikif.toolbox.web_download')
         p.add_task(2, 'extract zip', 'aikif.toolbox.zip_util')
         p.add_task(3, 'overwrite TXT to database staging', 'aikif.toolbox.data_load')

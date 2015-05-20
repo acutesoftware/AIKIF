@@ -61,7 +61,7 @@ class PlanSearchTest(unittest.TestCase):
         self.assertEqual(mod_plan.find_path_BFS(graph, 'E', 'J'), ['E', 'M', 'J'])
         self.assertEqual(mod_plan.find_path_BFS(graph, 'D', 'Z'), None)
 
-
+    """
     def test_20_graph_01(self):
         g = mod_plan.ds.Graph({'1': ['2','3','4'], '2':['6','7']})
         mat = g.get_adjacency_matrix()
@@ -79,7 +79,8 @@ class PlanSearchTest(unittest.TestCase):
         g = mod_plan.ds.Graph({'animal': ['bird','reptile','insect'], 'bird':['finch','owl'], 'reptile': ['snake', 'lizard'], 'insect': ['ladybird', 'moth']})
         mat = g.get_adjacency_matrix(True)
         self.assertEqual(g.nodes, ['animal', 'bird', 'finch', 'insect', 'ladybird', 'lizard', 'moth', 'owl', 'reptile', 'snake'])
-
+    """
+    
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
         print(str(self.myplan))

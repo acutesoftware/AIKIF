@@ -11,6 +11,7 @@ class TestClassFile(unittest.TestCase):
  
 	def setUp(self):
 		self.fname =  'test_results' + os.sep + 'cls_file_test_data.txt'
+        self.fname =  'cls_file_test_data.txt'
 
 	def test_01_file_create(self):
 		self.assertEqual(1, 1)  # dummy

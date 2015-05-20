@@ -6,8 +6,8 @@ import unittest
 import os
 import sys
 import csv
-sys.path.append('..' + os.sep + 'aikif')
-import cls_file_mapping as mod_filemap
+#sys.path.append('..' + os.sep + 'aikif')
+import aikif.cls_file_mapping as mod_filemap
 
 class TestFileMap(unittest.TestCase):
  
