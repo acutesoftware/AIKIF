@@ -20,10 +20,7 @@ facts =
 """
 
 import os
-import sys
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
-import aikif.cls_log as mod_log    # TODO - change this before publish (prefix aikif. )
-import aikif.mapper as mod_map
 
 def main():
     """
@@ -47,11 +44,12 @@ def main():
     
     print('AIKIF example: Processing Finance data\n')
     data = read_bank_statements('your_statement.csv')
+    print(data)
     maps = load_column_maps()
     rules = load_rules()
     
-    for map in maps:
-        print('AIKIF mapping  : ' + map[0] + ' => ' + map[1])
+    for m in maps:
+        print('AIKIF mapping  : ' + m[0] + ' => ' + m[1])
 
     for rule in rules:
         #print(rule)
@@ -69,6 +67,7 @@ def read_bank_statements(fname):
     this is normally load from CSV but put in list for example
     format is - DATE | AMOUNT  | DETAILS
     """
+    print("TODO = read from file " + fname)
     return [  
     ['27-06-14',	-53.34,	"BUNNINGS 412000   MARION"],      
     ['27-06-14',	-19,   "BECKS BAKEHOUSE SP  SOMERTON PARK"],   	

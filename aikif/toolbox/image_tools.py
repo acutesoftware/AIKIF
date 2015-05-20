@@ -58,9 +58,9 @@ def get_exif_data(image):
 def _get_if_exist(data, key):
     if key in data:
         return data[key]
-		
+        
     return None
-	
+    
 def _convert_to_degress(value):
     """
     Helper function to convert the GPS coordinates 
@@ -114,7 +114,7 @@ def resize(fname, basewidth, opFilename):
     img = Image.open(fname)
     wpercent = (basewidth/float(img.size[0]))
     hsize = int((float(img.size[1])*float(wpercent)))
-    img = img.resize((basewidth,hsize), PIL.Image.ANTIALIAS)
+    img = img.resize((basewidth,hsize), Image.ANTIALIAS)
     img.save(opFilename)
     #print("Resizing ", fname, " to ", basewidth, " pixels wide to file " , opFilename)
  
@@ -171,7 +171,7 @@ def print_all_metadata(fname):
     # get the image's width and height in pixels
     width, height = img.size
     # get the largest dimension
-    max_dim = max(img.size)
+    #max_dim = max(img.size)
     print("Width      :", width)
     print("Height     :", height)
     print("Format     :", img.format)
@@ -238,7 +238,7 @@ def get_metadata_as_dict(fname):
         (lat, lon) = get_lat_lon(exif_data)
         imgdict['lat'] =  str(lat)
         imgdict['lon'] =  str(lon)
-    except:
+    except Exception:
         pass
     return imgdict
         
@@ -274,7 +274,7 @@ def get_metadata_as_csv(fname):
         (lat, lon) = get_lat_lon(exif_data)
         res = res + q + str(lat) + q + d
         res = res + q + str(lon) + q + d
-    except:
+    except Exception:
         pass
     return res
         
@@ -290,10 +290,10 @@ def List2String(l, delim):
     return res
 
 def Dict2String(d):
-	res = ","
-	for k, v in d: # .iteritems():
-		res = res + k + ',' + str(v) + ','
-	return res
+    res = ","
+    for k, v in d: # .iteritems():
+        res = res + k + ',' + str(v) + ','
+    return res
 
 def is_number(s):
     try:
@@ -312,7 +312,7 @@ def auto_contrast(img, opFile):
 def add_text_to_image(fname, txt, opFilename):
     """ convert an image by adding text """
     ft = ImageFont.load("T://user//dev//src//python//_AS_LIB//timR24.pil")
-    wh = ft.getsize(txt)
+    #wh = ft.getsize(txt)
     print("Adding text ", txt, " to ", fname, " pixels wide to file " , opFilename)
     im = Image.open(fname)
     draw = ImageDraw.Draw(im)
@@ -336,13 +336,17 @@ def filter_contour(imageFile, opFile):
     im1.save(opFile)
 
 def detect_face(fname, opFile):
-    """ TODO - not implemented """
+    """ 
+    TODO - not implemented 
     storage = cv.CreateMemStorage()
     haar=cv.LoadHaarClassifierCascade('haarcascade_frontalface_default.xml')
     detected = cv.HaarDetectObjects(fname, haar, storage, 1.2, 2,cv.CV_HAAR_DO_CANNY_PRUNING, (100,100))
     if detected:
         for face in detected:
-            print (face)
+            print (face, 'saving to ', opFile)
+    """
+    print("detect_face NOT IMPLEMENTED: ", fname, opFile)
+    
     
 def check_image_duplicates(file_list):
     """ Checking Images for duplicates (despite resizing, colours, etc) """
@@ -350,15 +354,15 @@ def check_image_duplicates(file_list):
     ham_dist = 0
     
     print("Checking Images for duplicates (despite resizing, colours, etc) " )
-    for ndx, fname in enumerate(test_files):
-        hash = get_img_hash(Image.open(fname))
+    for ndx, fname in enumerate(file_list):
+        hsh = get_img_hash(Image.open(fname))
         if ndx == 0:  # this is the test MASTER image
-            master_hash = hash
+            master_hash = hsh
         else:
             # compare hamming distance against image 1  
             #print("hash=" + hash + "  MASTER_HASH=" + master_hash)
-            ham_dist = hamming_distance(hash, master_hash)
-        print(hash + " <- " + fname + " ,  hamming dist to img1 = " + str(ham_dist))
+            ham_dist = hamming_distance(hsh, master_hash)
+        print(hsh + " <- " + fname + " ,  hamming dist to img1 = " + str(ham_dist))
 
 def hamming_distance(s1, s2):
     """ 
@@ -376,6 +380,7 @@ def get_img_hash(image, hash_size = 8):
     image = image.resize((hash_size + 1, hash_size), Image.ANTIALIAS, )
 
     pixels = list(image.getdata())
+    print('get_img_hash: pixels=', pixels)
 
     # Compare adjacent pixels.
     difference = []
@@ -404,7 +409,8 @@ def load_image(fname):
 def dump_img(fname):
     """ output the image """
     img = Image.open(fname)
-    width, height = img.size
+    #width, height = img.size
+    width, _ = img.size
     pixels = list(img.getdata())
     for col in xrange(width):
         print (pixels[col:col+width])

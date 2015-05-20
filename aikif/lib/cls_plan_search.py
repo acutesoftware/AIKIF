@@ -4,14 +4,10 @@
 Various algorithms to do searches
 """
 
-import os
-import sys
 import heapq
 import queue
 PriorityQueue = queue.PriorityQueue
 
-import aikif.toolbox.cls_grid
-import aikif.toolbox.data_structures as ds
 import aikif.config as mod_cfg
 import aikif.cls_log as mod_log
 
@@ -21,7 +17,7 @@ def TEST():
     goal =  [1,2,3,4,5,6,7,8,0]
     start = [1,3,5,6,8,4,2,7,0] # hard
     start = [1,2,3,4,5,6,7,0,8] # easy
-   # start =  [1,2,3,4,5,6,7,8,0]
+    # start =  [1,2,3,4,5,6,7,8,0]
     plan = PlanSearchAStar('8 Puzzle', environ, goal, start)
     print(plan)
     plan.search()    
@@ -77,7 +73,7 @@ class Problem(object):
         """
         Checks for success
         """
-        if type(state_to_check) != type(self.goal):
+        if isinstance(state_to_check, type(self.goal)):
             return False
             
         if state_to_check == self.goal:
@@ -91,7 +87,7 @@ class Problem(object):
         to get the list of next nodes and their cost, 
         [[x1, 50], [x2, 24], [x3,545], [x5,32.1]]
         """
-        return [[x1, 50], [x2, 24], [x3,545], [x5,32.1]]
+        return [['x1', 50], ['x2', 24], ['x3',545], ['x5',32.1]]
         
     
 class Plan(object):
@@ -100,6 +96,7 @@ class Plan(object):
     """
     def __init__(self, nme, environ,  target, start):
         self.nme = nme
+        self.environ = environ
         self.start = start
         self.target = target
         self.method = 'No method defined'
@@ -154,11 +151,9 @@ class PlanSearchAStar(Plan):
         self.lg.record_command('CLS_PLAN_SEARCH - Finished Plan', self.nme)
 
         
-"""-----------------------------
-Utilities and Search Algorithms 
-(used by examples/ folder)
 
-"""   
+#Utilities and Search Algorithms 
+#(used by examples/ folder)
 
 def list_2_str(lst): 
     return ', '.join(str(i) for i in lst) 
@@ -175,7 +170,7 @@ def find_path_BFS(Graph,n,m):
     searched = []
     while True:
         j = len(path)
-        k = len(Graph[n])
+        #k = len(Graph[n])
         for i in range(j):
             node = path[i][-1]
             for neighbor in Graph[node]:

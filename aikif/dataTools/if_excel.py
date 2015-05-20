@@ -1,9 +1,6 @@
 # if_excel.py
 
 import os
-import sys
-import csv
-import string
 import pandas as pd
 
 def create_blank_xls_file(fname):
@@ -13,9 +10,9 @@ def create_blank_xls_file(fname):
     
     df = pd.DataFrame({'Col1' : [32,0,-6,7], 'Col2' : [9,66,30,73],'Col3' : [89,50,-31,-50]})
     print(df)
- #  df.to_excel('pandas.xls', sheet_name='Pandas_test')   # NOTE - xlsx not supported
- #  df.to_excel('pandas.xls')   # NOTE - xlsx not supported
- #  df.to_csv('pandas.csv')  # works
+    #  df.to_excel('pandas.xls', sheet_name='Pandas_test')   # NOTE - xlsx not supported
+    #  df.to_excel('pandas.xls')   # NOTE - xlsx not supported
+    #  df.to_csv('pandas.csv')  # works
     print('WARNING - doesnt work in all systems\n saving dataframe to Excel = ', fname)
     df.to_excel(fname, sheet_name='sheet1', index=False)
 
@@ -29,7 +26,7 @@ def xls_to_csv(xls_filename):
     xls.csv_from_excel(op_folder='', first_sheet_only=True) 
     return op_file
     
-class Excel():
+class Excel(object):
     """
     Doesn't inherit from Database class as it is not
     really a database
@@ -65,7 +62,7 @@ class Excel():
             base_csv = self.excel_filename.lower()[:-5]
         
         if op_folder != '':
-            if os.sep not in op.folder: # make sure full path not already passed
+            if os.sep not in op_folder: # make sure full path not already passed
                 base_csv = op_folder + os.sep + base_csv
         
         return base_csv
@@ -81,7 +78,7 @@ class Excel():
         
         base_csv = self.get_base_filename(op_folder)
         
-        if len(self.xl_file.sheet_names) == 1 or first_sheet_only == True:
+        if len(self.xl_file.sheet_names) == 1 or first_sheet_only is True:
             xls = pd.read_excel(self.excel_filename)
             xls.to_csv(base_csv + '.csv', encoding='utf-8')
         

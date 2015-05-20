@@ -8,7 +8,7 @@ aikif_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(aikif_dir)
 
 
-class Projects():
+class Projects(object):
     """
     handles the ontologies for all your projects to 
     avoid replication of data entry
@@ -42,12 +42,12 @@ class Projects():
         return None
         
  
-class Project():
+class Project(object):
     """
     handles the projects in AIKIF, meaning logs the names
     and parameters used for various algorithms.
     """
-    def __init__(self, name, type='', fldr=None , desc=''):
+    def __init__(self, name, tpe='', fldr=None , desc=''):
         self.nme = name
         self.goals = []
         self.data_sources = []
@@ -57,7 +57,7 @@ class Project():
         self.tasks = []
         self.params = []
         self.fldr = fldr
-        self.type = type
+        self.tpe = tpe
         self.desc = desc
         self.details = []   # as much info as is needed for project 
 
@@ -83,11 +83,11 @@ class Project():
         """
         self.goals.append([id, name, due_date, priority])
         
-    def add_task(self, id, name, due_date=None, priority=None):
+    def add_task(self, task_id, name, due_date=None, priority=None):
         """
         adds a task for the project
         """
-        self.tasks.append([id, name, due_date, priority])
+        self.tasks.append([task_id, name, due_date, priority])
         
     
     def add_link(self, src_id, dest_id, src_type='Goal', dest_type='Task'):  
@@ -106,12 +106,12 @@ class Project():
             op = name + '.log'
         self.data_sources.append([name, location, schedule, op])
 
-    def add_detail(self, type, detail):
+    def add_detail(self, tpe, detail):
         """
         handles the data sources used in projects, mainly as an 
         abstract to call the data sources in /lib and /dataTools
         """
-        self.details.append([type, detail])
+        self.details.append([tpe, detail])
 
     def add_param(self, task_id, param_key, param_val):
         """
@@ -133,21 +133,22 @@ class Project():
         """
         self.datatables.append(datatable)
     
-    def record(self, tbl, type, col_data):
+    def record(self, tbl, tpe, col_data):
         """
         takes a DataTable as param and adds a record
         TODO - log details here
         """
+        print(tpe)
         tbl.add(col_data)
         
         
-    def build_report(self, op_file, type='md'):
+    def build_report(self, op_file, tpe='md'):
         """
         create a report showing all project details
         """
-        if type == 'md':
+        if tpe == 'md':
             res = self.get_report_md()
-        elif type == 'rst':
+        elif tpe == 'rst':
             res = self.get_report_rst()
         else:
             res = 'Unknown report type passed to project.build_report'
@@ -199,8 +200,3 @@ class Project():
         
         return res
 
-
-        
-if __name__ == '__main__':
-    TEST()	
-    

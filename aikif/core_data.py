@@ -1,10 +1,5 @@
 # core_data.py
 import os
-import sys
-
-"""
-This contains the models for the core data for AIKIF
-"""
 
 def TEST():
     """
@@ -33,7 +28,7 @@ def TEST():
     
     
     
-class CoreData():
+class CoreData(object):
     """
     Base class for all core data objects
     """
@@ -92,6 +87,7 @@ class CoreData():
         children for that process
         TODO = processes need to be recalculated
         """
+        print('TODO: process check = ', process)
         print(self.name, ' expanded to ->', child_nodes)
         self.child_nodes = []   # reset ??
         for n in child_nodes:
@@ -105,6 +101,7 @@ class CoreData():
         (In real terms it returns the parent and recalculates)
         TODO = processes need to be recalculated
         """
+        print('TODO: process check = ', process)
         print(self.name, ' contracted to ->', self.parent)
 
     
@@ -117,17 +114,17 @@ class CoreData():
                 return c
         return None
         
-    def links_to(self, other, type):
+    def links_to(self, other, tpe):
         """
         adds a link from this thing to other thing
         using type (is_a, has_a, uses, contains, part_of)
         """
         if check_type(type):
-            self.links.append(self.name, other, type)
+            self.links.append(self.name, other, tpe)
         else:
             raise Exception('aikif.core_data cannot process this object type')
         
-    def check_type(self, type):
+    def check_type(self, tpe):
         """
         TODO - fix this, better yet work out what the hell
         you are trying to do here.
@@ -135,7 +132,7 @@ class CoreData():
         """
         valid_types = ['Object', 'Event', 'Location', 'Character', 'Process']
         for v in valid_types:
-            if type == v:
+            if tpe == v:
                 return True
         return False
         
@@ -170,15 +167,15 @@ class Charater(CoreData):
 class Process(CoreData):
     pass
     
-class CoreTable():
+class CoreTable(object):
     """
     Class to manage the collection of multiple CoreData 
     objects. Keeps everything as a list of objects such
     as Events, Locations, Objects, etc and handles the 
     saving, loading and searching of information.
     """
-    def __init__(self, fldr, type, user, header):
-        self.type = type
+    def __init__(self, fldr, tpe, user, header):
+        self.type = tpe
         self.user = user
         self.fldr = fldr
         self.table = []    # list of data - eg events, locations, etc

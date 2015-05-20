@@ -3,11 +3,8 @@
 # functions to convert data to HTML, etc for web dev
 import csv
 import os
-import glob
 import fnmatch
 from flask import request
-import sys
-
 
 def list2html(lst):
     """ 
@@ -36,6 +33,7 @@ def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
     numFiles = 0    
     opFileList = []
     for root, dirs, files in os.walk(rootPath):
+        print('found ' + str(len(dirs)) + ' directories')
         for basename in files:
             for xtn in lstXtn:
                 if fnmatch.fnmatch(basename, xtn):
@@ -141,9 +139,9 @@ def read_csv_to_html_table(csvFile, hasHeader='N'):
     reads a CSV file and converts it to HTML
     """
     txt = '<table class="as-table as-table-zebra as-table-horizontal">'
-    with open(csvFile, "r") as file:  # 
+    with open(csvFile, "r") as f:  # 
         numRows = 1
-        for row in file:
+        for row in f:
             if hasHeader == 'Y':
                 if numRows == 1:
                     td_begin = '<TH>'
@@ -162,7 +160,7 @@ def read_csv_to_html_table(csvFile, hasHeader='N'):
                 txt += td_begin
                 try:
                     colString = col
-                except:
+                except Exception:
                     colString = '<font color=red>Error decoding column data</font>'
                 txt += colString.strip('"')	
                 txt += td_end
@@ -193,7 +191,7 @@ def read_csv_to_html_table_using_CSV_module_OLD(csvFile, hasHeader='N'):
                 txt += td_begin
                 try:
                     txt += col
-                except:
+                except Exception:
                     txt += 'Error'
                 txt += td_end
             txt += "</TR>\n"
@@ -209,7 +207,7 @@ def read_csv_to_html_list(csvFile):
                 txt += " "
                 try:
                     txt += col
-                except:
+                except Exception:
                     txt += 'Error'
                 txt += " "
             txt += "</div>\n"

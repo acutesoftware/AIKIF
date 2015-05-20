@@ -2,8 +2,7 @@
 # displays search results for AIKIF web interface
 
 import os
-import sys
-import aikif.web_app.web_utils as web
+#import aikif.web_app.web_utils as web
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
 root_folder = os.path.abspath(cur_folder + os.sep + ".." + os.sep + ".."  )
@@ -47,22 +46,22 @@ def search_aikif(txt, formatHTML=True):
                     line_num += 1
                     if txt in line:
                         num_found += 1
-                        if formatHTML == True:
-                            results.append(format_result(f, line, line_num, txt))
+                        if formatHTML is True:
+                            results.append(format_result(line, line_num, txt))
                         else:
                             results.append([f, line, line_num, txt])
             if num_found > 0:
-                if formatHTML == True:
+                if formatHTML is True:
                     results.append('<h3>' + f + ' = ' + str(num_found) + ' results</h3>')
                 else:    
                     print(f + ' = ' + str(num_found) + '')
-        except:
+        except Exception:
             results.append('problem with file ' + f)
     if len(results) == 0:
         results.append("No results")
     return results
             
-def format_result(file, line, line_num, txt):
+def format_result(line, line_num, txt):
     """ highlight the search result """
     
     return '&nbsp;&nbsp;' + str(line_num) + ': ' + line.replace(txt, '<span style="background-color: #FFFF00">' + txt + '</span>')

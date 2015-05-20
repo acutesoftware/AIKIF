@@ -5,16 +5,16 @@
 # of contexts mean (so this only aggregates the data)
 
 # USAGE - e.g. test_agent.py
-		# from agent import Agent
-		# class TestAgent(Agent):
-		# 	def __init__(self, *arg):
-		# 		Agent.__init__(self, *arg)
-		#
-		# def main():
-		# 	test = TestAgent('hello',  os.getcwd())
-		# 	test.start()
-		# 	print(test.check_status())
-		# 	print(test.report())
+# from agent import Agent
+# class TestAgent(Agent):
+# 	def __init__(self, *arg):
+# 		Agent.__init__(self, *arg)
+#
+# def main():
+# 	test = TestAgent('hello',  os.getcwd())
+# 	test.start()
+# 	print(test.check_status())
+# 	print(test.report())
 		
 import os, sys
 #sys.path.append('T:\\user\\dev\\src\\python\\AI\\AI')  # why is this needed when called from run_agents in root??
@@ -45,11 +45,11 @@ class AggContext(Agent):
 		#print(' *arg = ', *arg)    # TODO - bug with args passed to class
 		#self.arg1 = 'test' # arg[0]
 		
-	def do_your_job(self, *arg):
+	def do_your_job(self):
 		"""  This is the function that actually does the work of the agent subclass """
-		print('AggContext... ')
 		#print(' self.arg = ', self.arg)
 		fullfilenames, files, folders = summarise_filelist(localFolder + fileListSrc)
+		print('AggContext found ' + str(len(files)) + ' files')
 		self.results.append(['Found ' + str(len(fullfilenames)) + ' files in ' + str(len(folders)) + ' folders'] )
 	
 def summarise_filelist(fname):
@@ -78,7 +78,6 @@ def summarise_filelist(fname):
 	files = []
 	folders = []
 	errors = []
-	numLines = 1
 	print('Summarizing FileList = ', fname)
 	with open(fname, 'r', encoding="utf8") as f:
 		for line in f:
@@ -89,7 +88,7 @@ def summarise_filelist(fname):
 					fullfilenames.append(cols[0].strip('"'))
 					files.append(cols[1].strip('"').strip(' '))
 					folders.append(cols[2].strip('"').strip(' '))
-				except:
+				except Exception:
 					errors.append(line)
 					
 	# make an index of ALL words
