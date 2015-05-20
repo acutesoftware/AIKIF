@@ -4,7 +4,6 @@
 # Source data is taken from Acute Softwares Diary and FileLister
 
 import os
-import sys
 import aikif.index as ndx
 import aikif.config as mod_cfg
 import aikif.lib.cls_filelist as mod_fl
@@ -27,7 +26,7 @@ ndxFile_final = 'T:\\user\\AIKIF\\pers_data\\ndx_final.txt'
 def main():
     try:
         os.remove(ndxFile)
-    except:
+    except Exception:
         pass
     all_files = add_diary_files_to_list(manual_files_to_index, diary_folder)	
     numFiles = 0
@@ -36,7 +35,7 @@ def main():
             numFiles += 1
             print('indexing ', str(numFiles) , ' of ', str(len(all_files)), ' : ', f)
             ndx.buildIndex(f, ndxFile, 'Y', 'N')	# run the index routine
-        except:
+        except Exception:
             print('ERROR - cant index file ', f)
 
     print('consolidating.... ')		

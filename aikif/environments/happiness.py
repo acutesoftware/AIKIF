@@ -38,7 +38,7 @@ def TEST():
     h.add_factor(HappinessFactors('growth', 'Economic', 0.01, 0.09))
     print(h.show_details())
     
-class World():
+class World(object):
     """
     define a 'world' that all the population live it
     """
@@ -70,7 +70,7 @@ class World():
             pop += loc.population
         return pop
 
-class WorldLocations():
+class WorldLocations(object):
     """
     This is a subsection of the World with its own parameters
     to allow people to experience maximum happiness (that's the idea anyway)
@@ -92,7 +92,7 @@ class WorldLocations():
         res += 'equity     = ' + str( self.equity) #+ '\n'
         return res
 
-class WorldFinder():
+class WorldFinder(object):
     """
     Class to iterate through list of worlds (randomly generated
     or using a solver / bit fit algorithm) to try and find the 
@@ -152,7 +152,7 @@ class WorldFinder():
                         if not silent:
                             print('found better world - ' + w.nme + ' = ' + str(world_happiness) + ' - total unhappy_people = ' + str(self.unhappy_people))
 
-class HappinessFactors():
+class HappinessFactors(object):
     """
     class for parameters used to calculate happiness
     h = Happiness(p, w)
@@ -172,7 +172,7 @@ class HappinessFactors():
         return res
         
  
-class Happiness():
+class Happiness(object):
     """
     abstract to manage the happiness calculations.
     The purpose of this class is to attempt to assign a number 
@@ -246,7 +246,7 @@ class Happiness():
         for f in self.factors:
             self._update_pref(f.min, f.max, self.world.tax_rate)
         
-    def _update_pref(self, min, max, cur):
+    def _update_pref(self, lmin, lmax, cur):
         """
         update the self rating based on the parameters.
         If min max is a range (ie not equal) then add fixed value
@@ -257,20 +257,20 @@ class Happiness():
         rate_of_change_negative = 2
         add_positive = 10
         add_negative = 2
-        if min == max:
-            self.rating -= int(abs(min - cur)*100) / 10
+        if lmin == lmax:
+            self.rating -= int(abs(lmin - cur)*100) / 10
         else:
-            if min <= cur:
-                self.rating += (int(abs(min - cur)*rate_of_change_positive)) + add_positive
+            if lmin <= cur:
+                self.rating += (int(abs(lmin - cur)*rate_of_change_positive)) + add_positive
             else:
-                self.rating -= (int(abs(min - cur)*rate_of_change_negative)) + add_negative
-            if max >= cur:
-                self.rating += (int(abs(max - cur)*rate_of_change_positive)) + add_positive
+                self.rating -= (int(abs(lmin - cur)*rate_of_change_negative)) + add_negative
+            if lmax >= cur:
+                self.rating += (int(abs(lmax - cur)*rate_of_change_positive)) + add_positive
             else:
-                self.rating -= (int(abs(max - cur)*rate_of_change_negative)) + add_negative
+                self.rating -= (int(abs(lmax - cur)*rate_of_change_negative)) + add_negative
 
     
-class Person():
+class Person(object):
     def __init__(self, nme, prefs):
         self.prefs = prefs
         self.nme = nme

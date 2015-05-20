@@ -21,7 +21,7 @@ class GoalMoney(Goal):
         
         
     def check_for_success(self):
-        if self.maximise == True:
+        if self.maximise is True:
             if self.target_val > self.current_val:
                 return True
             else:
@@ -32,12 +32,12 @@ class GoalMoney(Goal):
             else:
                 return False
 
-    def run_plan(self, strategy):
+    def run_plan(self, strategy, plan):
         """ 
         executes a plan by running the passed strategy
         and then updates the local results
         """
-        print ("running strategy : " + strategy['name'])
+        print ("running strategy : " + strategy['name'] + " for plan " + plan)
         
 
     def find_best_plan(self):
@@ -46,5 +46,5 @@ class GoalMoney(Goal):
         """
         for plan in self.plans:
             for strat in self.strategy:
-                run_plan(strat)
+                self.run_plan(strat, plan)
                 

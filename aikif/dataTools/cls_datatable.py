@@ -4,7 +4,6 @@
 #from cls_dataset import DataSet
 import math
 import collections
-from collections import Counter
 
 class DataTable(object): 
     """
@@ -36,13 +35,17 @@ class DataTable(object):
         arr    =  [['5320', 'M', '78', '18', '66'], ['1310', 'M', '78', '10', '12']]    
     """
 
-    def __init__(self, name, dataset_type, col_names = [], delim = ','):
+    def __init__(self, name, dataset_type, col_names = None, delim = ','):
         self.name = name
-        self.delim = ','
+        self.delim = delim
         self.dataset_type = dataset_type
         self.arr = []
         self.header = []
-        self.col_names = col_names
+        if col_names:
+            self.col_names = col_names
+        else:
+            self.col_names = []
+            
         self.header = col_names  # possible dupe but work in progress
         #self.load_to_array()
         
@@ -104,7 +107,7 @@ class DataTable(object):
         cols = collections.Counter()
         for row in self.arr:
             cols[row[colNum]] += 1
-        #print (colText, self.Dict2String(cols.most_common()[0:topN_values]))
+        print (colText)
         for k,v in cols.most_common()[0:topN_values]:
             res.append( self.force_to_string(k) + ' (' +  self.force_to_string(v) + ')')
 
@@ -126,7 +129,6 @@ class DataTable(object):
             keep_this_row = True
             #print('col_ids=', col_ids, ' row = ', row_num, row)
             for ndx, where_col in enumerate(col_ids):
-                #print('where_col[0]=', where_col[0], ' row[where_col[0]]=',row[where_col[0]], ', where_value_list[ndx]=', where_value_list[ndx], ', row=', row) 
                 #print('type where_value_list[ndx] = ', type(where_value_list[ndx]))
                 #print('type row[where_col[0]] = ', type(row[where_col[0]]))
                 
@@ -134,8 +136,7 @@ class DataTable(object):
                     keep_this_row = False
                 else:
                     pass
-                    #print('Match = where_col[0]=', where_col[0], ' where_col[1]=',where_col[1], ', where_value_list[ndx]=', where_value_list[ndx], ', row=', row) 
-            if keep_this_row == True:
+            if keep_this_row is True:
                 if col_name == '':
                     res.append([row_num, row])
                 else:   # extracting a single column only
@@ -153,9 +154,9 @@ class DataTable(object):
         if type(unknown) is float:
             result = str(unknown)
         if type(unknown) is dict:
-            result = Dict2String(unknown)
+            result = self.Dict2String(unknown)
         if type(unknown) is list:
-            result = List2String(unknown)
+            result = unknown # todo self.List2String(unknown)
         
         return result
         
@@ -165,7 +166,8 @@ class DataTable(object):
             res = res + k + str(v) + ','
         return res
 
-    def dict2list(self, dct, keylist): return [dct[i] for i in keylist]
+    def dict2list(self, dct, keylist): 
+        return [dct[i] for i in keylist]
         
     def update_where(self, col, value, where_col_list, where_value_list):
         """ 
@@ -206,7 +208,7 @@ class DataTable(object):
         """ calculates the 'num' percentile of the items in the list """
         new_list = sorted(lst_data)
         #print('new list = ' , new_list)
-        n = float(len(lst_data))
+        #n = float(len(lst_data))
         k = (len(new_list)-1) * percent
         f = math.floor(k)
         c = math.ceil(k)
@@ -261,7 +263,7 @@ class DataTable(object):
             import os
             try:
                 os.remove(fname)
-            except:
+            except Exception:
                 pass
         elif self.dataset_type == 'view':
             print ("TODO - drop view")
@@ -281,7 +283,7 @@ class DataTable(object):
         #print("BEFORE = " , len(self.arr[0]))
         self.header.extend(col_list)
         for r in self.arr:
-            r.extend(['0' for c in col_list])
+            r.extend(['0' for _ in col_list])
         #print("AFTER = " , len(self.arr[0]))
         
     def load_to_array(self):
@@ -308,7 +310,7 @@ class DataTable(object):
         
     def get_col_data_by_name(self, col_name, WHERE_Clause=''):
         """ returns the values of col_name according to where """
-        #print('get_col_data_by_name: col_name = ', col_name, ' WHERE = ', WHERE_Clause)
+        print('get_col_data_by_name: col_name = ', col_name, ' WHERE = ', WHERE_Clause)
         col_key = self.get_col_by_name(col_name)
         if col_key is None:
             print('get_col_data_by_name: col_name = ', col_name, ' NOT FOUND')

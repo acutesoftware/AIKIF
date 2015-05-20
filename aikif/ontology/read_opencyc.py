@@ -3,7 +3,6 @@
 # sample code to read OpenCyc files
 
 import os
-import sys
 import redis
 
 #ip_folder = os.path.dirname(os.path.abspath(__file__))  # leave src out of git - too big
@@ -24,9 +23,6 @@ lookup = ['gauge', 'mind', 'post']
 def main():
     #create_html_summary()
     load_data(ip_folder + os.sep + files[0])
-    allWords = []
-    num_lines = 0
-    num_definitions = 0
     
 
 def load_data(fname):
@@ -64,7 +60,7 @@ def parse_n3(row, src='csv'):
         key = l_root + ':' + cols[1].strip('"').strip() + ':' + cols[2].strip('"').strip()
         try:
             val = cols[3].strip('"').strip()
-        except:
+        except Exception:
             val = "Error parsing " + row
     elif src == 'n3':
         pass
@@ -111,4 +107,4 @@ def summarise_file_as_html(fname):
 
     
 if __name__ == "__main__":
-	main()
+    main()

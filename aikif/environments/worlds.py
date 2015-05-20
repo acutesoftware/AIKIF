@@ -1,7 +1,5 @@
 # worlds.py     written by Duncan Murray 9/7/2014
 
-import os
-import sys
 from random import randint
 import math
 
@@ -27,7 +25,7 @@ class World(object):
         txt_summary += ', w=' + str(self.grd.grid_width)
         txt_summary += ', h=' + str(self.grd.grid_height)
         
-        return str(self.grd) + self.show_grid_stats()
+        return txt_summary + '\n' + str(self.grd) + self.show_grid_stats()
     
     def show_grid_stats(self):
         self.refresh_stats()
@@ -72,13 +70,13 @@ class World(object):
         that hits perc_blocked.
         """
         rnge = math.floor(num_seeds/2)
-       # self.show_grid_stats()
+        # self.show_grid_stats()
         seeds = [[randint(0,self.grd.grid_height-1), randint(0,self.grd.grid_width-1)] for y in range(rnge) for x in range(rnge)]
         for seed in seeds:
              self.expand_seed(seed, (self.grd.grid_height * self.grd.grid_width)/(perc_sea),  TERRAIN_LAND)
         
         self.refresh_stats()
-     #   print(self.show_grid_stats())
+        #   print(self.show_grid_stats())
         expand = 1
         old_land = self.tot_land
         while (100*self.tot_land)/self.tot_pix < perc_land - 1:
@@ -86,7 +84,7 @@ class World(object):
             
             self.denoise_grid(TERRAIN_LAND, expand)
             self.refresh_stats()
-          #  print(expand, self.show_grid_stats())
+            #  print(expand, self.show_grid_stats())
             if old_land == self.tot_land:   # no extra expansion, so add another seed
                 self.expand_seed(self.add_new_seed(), 50, TERRAIN_LAND)
             else:
@@ -140,22 +138,22 @@ class World(object):
                         for y in range(self.grd.grid_height)]
         for row in range(self.grd.get_grid_height() - expand):
             for col in range(self.grd.get_grid_width() - expand):
-                    updated_grid[row][col] = self.grd.get_tile(row,col)  # set original point
-                    if self.grd.get_tile(row,col) == val:
-                        for y in range(-expand, expand):
-                            for x in range(-expand, expand):
-                                new_x = col+x
-                                new_y = row+y
-                                if new_x < 0: new_x = 0
-                                if new_y < 0: new_y = 0
-                                if new_x > self.grd.get_grid_width() - 1: new_x = self.grd.get_grid_width() - 1
-                                if new_y > self.grd.get_grid_height() - 1: new_y = self.grd.get_grid_height() - 1
-                                # randomly NOT denoise to make interesting edges
-                                if expand > 0: 
-                                    if randint(1,expand * 2) > (expand+1):
-                                        updated_grid[new_y][new_x] = val
-                                else:
+                updated_grid[row][col] = self.grd.get_tile(row,col)  # set original point
+                if self.grd.get_tile(row,col) == val:
+                    for y in range(-expand, expand):
+                        for x in range(-expand, expand):
+                            new_x = col+x
+                            new_y = row+y
+                            if new_x < 0: new_x = 0
+                            if new_y < 0: new_y = 0
+                            if new_x > self.grd.get_grid_width() - 1: new_x = self.grd.get_grid_width() - 1
+                            if new_y > self.grd.get_grid_height() - 1: new_y = self.grd.get_grid_height() - 1
+                            # randomly NOT denoise to make interesting edges
+                            if expand > 0: 
+                                if randint(1,expand * 2) > (expand+1):
                                     updated_grid[new_y][new_x] = val
+                            else:
+                                updated_grid[new_y][new_x] = val
                         
         
         self.grd.replace_grid(updated_grid)
@@ -263,7 +261,7 @@ class WorldSimulation(object):
     
         # save the agents results here
         with open (log_file_base + '__agents.txt', "a") as f:
-            f.write("\n\nFinal World: target = [" + str(self.agent_list[0].target_y) + "," + str(self.agent_list[0].target_x) + "]\n")
+            f.write("\nWorld tgt= [" + str(self.agent_list[0].target_y) + "," + str(self.agent_list[0].target_x) + "]\n")
             f.write(str(self.world.grd))
             f.write('\n\nAgent Name , starting, num Steps , num Climbs\n')
             for num, agt in enumerate(self.agent_list):
@@ -284,7 +282,7 @@ class WorldSimulation(object):
             print("target too close to left")
         if target_x < self.world.grd.grid_width:  
             print("target too close to right")
-        valid_cells = ['\\', '-', '|', '/']    
+        #valid_cells = ['\\', '-', '|', '/']    
         self.world.grd.set_tile(target_y - 1, target_x - 1, '\\')
         self.world.grd.set_tile(target_y - 0, target_x - 1, '-')
         self.world.grd.set_tile(target_y + 1, target_x - 1, '/')

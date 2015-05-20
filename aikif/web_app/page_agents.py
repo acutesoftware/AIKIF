@@ -1,17 +1,7 @@
 # page_agents.py	written by Duncan Murray 26/5/2014
 # handles the agents display page for AIKIF web interface
 
-import sys
 import aikif.web_app.web_utils as web
-"""
-cur_folder = os.path.dirname(os.path.abspath(__file__)) 
-aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
-root_folder = os.path.abspath(aikif_folder + os.sep + '..')
-
-
-sys.path.append('..\\..\\AI')
-"""
-
 
 import aikif.run_agents as agt
 

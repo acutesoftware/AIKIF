@@ -59,15 +59,12 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
     separates the ontology descriptions highest followed by values and lastly
     a final pass to get all delimited word parts.
     """
-    numWords = 0
-    numWordParts = 0
-    totWordCount = 0
     if silent == 'N':
         pass
     if append == 'N':
         try:
             os.remove(ndxFile)
-        except:
+        except Exception:
             pass
     delims = [',', '$', '&', '"', '%', '/', '.', ';', ':', '!', '?', '-', '_', ' ', '\n', '*', '\'', '(', ')', '[', ']', '{', '}']
     # 1st pass - index the ontologies, including 2 depths up (later - TODO)
@@ -78,7 +75,6 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
     
     AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName)
     if silent == 'N':
-        pass
         print(os.path.basename(ipFile).ljust(30) + ' ' + str(totLines).rjust(6) + ' lines ' + str(totWords).rjust(6) + ' words ' + str(len(uniqueWords)).rjust(6) + ' unique words')
     
         #show('uniqueWords', uniqueWords, 5)
@@ -126,7 +122,7 @@ def show(title, lst, full=-1):
             else:
                 txt = txt + i + ', ['
                 for j in i:
-                    txt = txt + i + ', '
+                    txt = txt + j + ', '
                 txt = txt + ']\n'
         num = num + 1
     print(txt)
@@ -135,6 +131,7 @@ def getWordList(ipFile, delim, headersOnly='N'):
     """
     extract a unique list of words and have line numbers that word appears
     """
+    print(headersOnly)
     indexedWords = {}
     totWords = 0
     totLines = 0

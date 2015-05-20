@@ -11,7 +11,7 @@ class Goal(object):
 	success: whether the goal has been successful or not
 	"""
 		
-	def __init__(self, name='New Goal', plans=[]):
+	def __init__(self, name='New Goal', plans=None):
 		self.name = name
 		self.id = 1  
 		self.success = False
@@ -31,7 +31,7 @@ class Goal(object):
 		strategy (no idea how as yet) on test data, then runs that plan
 		to simulate a result
 		"""
-		for plan in plans:
+		for plan in self.plans:
 			print("running plan ", plan[0])
 			
 		

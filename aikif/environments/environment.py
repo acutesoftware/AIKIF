@@ -13,7 +13,7 @@ class Environment(object):
     """
     Main base class for all AIKIF environments
     """
-    def __init__(self, name, *arg):
+    def __init__(self, name):
         """
         when using elsewhere include the line below
         super().__init__(self, *arg)
@@ -31,7 +31,7 @@ class Environment(object):
         
         return res
         
-    def create(self, *arg):
+    def create(self):
         """
         Creates the environment
         in your subclassed create function include the line below
@@ -39,7 +39,7 @@ class Environment(object):
         """
         self.log.record_process('enviroment.py', 'Creating environment - ' + self.name)
         
-    def destroy(self, *arg):
+    def destroy(self):
         """
         Call this when the environment is no longer needed
         in your subclassed create function include the line below

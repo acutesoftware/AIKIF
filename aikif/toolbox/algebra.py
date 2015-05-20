@@ -1,7 +1,7 @@
 # algebra.py  written by Duncan Murray 6/1/2015
 # functions for toolbox to solve algebra problems
 
-import math
+
 import parser
 
 def TEST():
@@ -21,7 +21,7 @@ def evalFunction(formula, n, verbose = 'verbose'):
         answer = eval(code)
     except ZeroDivisionError:
         pass
- #       print('error at value n = ', n)
+        #       print('error at value n = ', n)
     if verbose == 'verbose':
         print ('IF n=',n, ' THEN ', formula, ' = ', round(answer, 4))
     return answer

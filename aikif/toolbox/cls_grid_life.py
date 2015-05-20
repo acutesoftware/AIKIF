@@ -6,15 +6,13 @@ import sys
 cur_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
 lib_folder = os.path.abspath(cur_folder )
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
-import lib_folder
+#import lib_folder
 import cls_grid as mod_grid # aikif.toolbox.
  
-sys.path.append(lib_folder)
-import cls_grid_life
-
+#sys.path.append(lib_folder)
 
 print('cls_grid_life: sys.modules = ', sys.modules)
-exit(1)
+
 print('cls_grid_life: sys.modules[cls_grid_life] = ', sys.modules['cls_grid_life'])
 
 class GameOfLife(mod_grid.Grid):

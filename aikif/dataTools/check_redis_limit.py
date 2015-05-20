@@ -43,19 +43,19 @@ dbsize= 1320000  Total memory= 9.34G
 ...
 Memory via Windows (PC appearing to get slow ? paging)
 
-	16.0 GB DDR3
+    16.0 GB DDR3
 
-	Speed:	1600 MHz
-	Slots used:	2 of 4
-	Form factor:	DIMM
-	Hardware reserved:	113 MB
+    Speed:	1600 MHz
+    Slots used:	2 of 4
+    Form factor:	DIMM
+    Hardware reserved:	113 MB
 
-	Available	9.0 GB
-	Cached	5.9 GB
-	Committed	9.4/31.9 GB
-	Paged pool	267 MB
-	Non-paged pool	148 MB
-	In use	6.8 GB
+    Available	9.0 GB
+    Cached	5.9 GB
+    Committed	9.4/31.9 GB
+    Paged pool	267 MB
+    Non-paged pool	148 MB
+    In use	6.8 GB
 
 
 
@@ -149,16 +149,13 @@ mem_allocator:dlmalloc-2.8
 """
 
 import os
-import sys
-import datetime
-import csv
 try:
     import redis 
-except:
+except ImportError:
     print('you need to run pip install redis \nand also install the server via https://github.com/ServiceStack/redis-windows')
     exit(1)
 
-from aikif.dataTools.if_database import Database
+
 import aikif.dataTools.cls_datatable as mod_dt
 import aikif.dataTools.if_redis as mod_redis
 import aikif.dataTools.generateTestData as mod_gen
@@ -201,7 +198,7 @@ def load_lots_of_strings(d):
             for j in range(200):
                 val = [j*i/3.7 for j in range(200)]
                 key = schema + ':' + str(i)  + ':' + str(j)+ ':' + str(val)
-                res = d.set(key, val)
+                d.set(key, val)
         print('dbsize=',d.connection.dbsize(), ' Total memory=', d.connection.info()['used_memory_human'])
 
 

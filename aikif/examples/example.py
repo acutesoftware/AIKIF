@@ -2,20 +2,14 @@
 
 import os
 
-"""
-Step 1 - configure AIKIF
-----------------------------------------------------------
-"""
+
+#Step 1 - configure AIKIF
 import aikif.config as cfg
 cfg.set_folder = os.getcwd()	# sets folder for saving, and creates sub folders (log, raw, etc)
 #cfg.set_password(input('enter password'))  # not yet implemented
 
 
-"""
-Step 2 - define your working environment (personal ontology)
-----------------------------------------------------------
-"""
-
+#Step 2 - define your working environment (personal ontology)
 import aikif.project as prj
 my_projects = prj.Projects()
 my_projects.add_ontology('Business')	# options are student, business, worker, tradesman, researcher, software_dev
@@ -23,11 +17,7 @@ my_projects.add_ontology('software_dev')
 my_projects.add_ontology('researcher')
 
 
-"""
-Step 3 - setup your projects with goals / targets
-----------------------------------------------------------
-"""
-
+# Step 3 - setup your projects with goals / targets
 
 
 proj_dev_aikif = prj.Project('AIKIF development')   # development project
@@ -54,19 +44,13 @@ another_project = my_projects.get_by_name('Another Project')
 print(another_project)
 
 
-"""
-Step 4 - define your data sources
-----------------------------------------------------------
-not sure what to do here
-"""
+# Step 4 - define your data sources
 
 proj_script_mgt.add_source('src1', 'http://www.blah')
 proj_script_mgt.add_source('src2', 'http://www.blah2')
 
-"""
-Step 5 - setup your processes (how data is updated)
-----------------------------------------------------------
-"""
+
+# Step 5 - setup your processes (how data is updated)
 import aikif.toolbox.Toolbox as mod_tool
 tools = mod_tool.Toolbox()
 
@@ -80,26 +64,25 @@ tools.add({'name':'script3', 'PC':'linux_NAS', 'file':'/user/home/backup', 'log'
 
 #tools.schedule('Activate')
 
-"""
-Step 6 - monitor and manage via web app
-----------------------------------------------------------
 
-What do you get out of documenting all these processes?
-Keep track of projects
-All projects are visible and other team members can find the source years later
+# Step 6 - monitor and manage via web app
 
-Auto-Generated Documentation
-Because all the pertinant info is stored in the database, it is a simple process to extract this into a series of wiki pages for your project
+# What do you get out of documenting all these processes?
+# Keep track of projects
+# All projects are visible and other team members can find the source years later
 
-Auto-Generated Project Reports
-You can see the progress on any report
+# Auto-Generated Documentation
+# Because all the pertinant info is stored in the database, it is a simple process to extract this into a series of wiki pages for your project
 
-Email alerts when things stop
-If a process stops you get an email
+# Auto-Generated Project Reports
+# You can see the progress on any report
 
-Simple search across ALL your information
-With a copy of everything locally, a rich search is available
-"""
+# Email alerts when things stop
+# If a process stops you get an email
+
+# Simple search across ALL your information
+# With a copy of everything locally, a rich search is available
+
 
 print(' Start web server via : GO_WEB_AIKIF')
 

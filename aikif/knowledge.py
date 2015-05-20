@@ -15,7 +15,7 @@ def TEST():
     k = Knowledge('test')
     print(k)
     
-class BaseData():
+class BaseData(object):
     """
     TODO - base class for each of the classes to handle
     standard add/find in lists. Though may be using data
@@ -24,10 +24,10 @@ class BaseData():
     pass
 
     
-class Knowledge():
-    def __init__(self, name, type='', desc=''):
+class Knowledge(object):
+    def __init__(self, name, tpe='', desc=''):
         self.nme = name
-        self.type = type
+        self.type = tpe
         self.desc = desc
         self.core = []
         self.rules = []
@@ -44,10 +44,10 @@ class Knowledge():
     
  
     
-class Fact():
+class Fact(object):
     pass
     
-class RawData():
+class RawData(object):
     def __init__(self, src):
         self.data = []
         self.src = src

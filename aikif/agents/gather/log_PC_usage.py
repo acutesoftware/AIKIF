@@ -10,7 +10,7 @@ def GetUser():
 	try:
 		import getpass
 		usr = getpass.getuser()
-	except:
+	except Exception:
 		usr = 'username'
 	return usr
 
@@ -18,13 +18,13 @@ def GetPCName():
 	try:
 		import socket
 		pcname = socket.gethostname()
-	except:
+	except Exception:
 		pcname = 'computer'
 	return pcname
 
 try:
 	fname = sys.argv[1] + '\\pc_usage_' + GetPCName() + '_' + GetUser() + '.txt'
-except:
+except Exception:
 	fname = os.getcwd() + '\\pc_usage_' + GetPCName() + '_' + GetUser() + '.txt'
 
 
@@ -68,7 +68,7 @@ def record(lst):
 	with open(fname, "a") as f:
 		for txt in lst:
 			f.write(txt + '\n')
-	tot_seconds = 1
+	#tot_seconds = 1
 		
 if __name__ == '__main__':
 	main()

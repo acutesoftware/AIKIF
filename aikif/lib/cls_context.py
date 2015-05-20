@@ -1,10 +1,6 @@
 # cls_context.py    written by Duncan Murray 6-Sep-2014
 
 import os
-import sys
-import aikif.lib.cls_filelist
-
-
 
 #####################################################
 # Change User Settings below (currently hard coded)
@@ -41,7 +37,7 @@ usage = []
 mode = ['work', 'business', 'email', 'web', 'games', 'media', 'nonPC']
 tpe = ['passive', 'typing', 'clicking']
 
-class Context:
+class Context(object):
     """
     This class does a best guess to return a plain english version 
     of what the user (you), this software (aikif) and the computer is doing.
@@ -62,21 +58,21 @@ class Context:
         prints all attributes and returns them as a dictionary 
         (mainly for testing how it will all integrate)
         """
-        all = []
-        all.append(dict(name='phone', val=self.transport))
-        all.append(dict(name='username', val=self.username))
-        all.append(dict(name='user', val=self.user))
-        all.append(dict(name='hostname', val=self.hostname))
-        all.append(dict(name='host', val=self.host))
-        all.append(dict(name='cpu_pct', val=self.host_cpu_pct))
-        all.append(dict(name='num_proc', val=self.host_num_processes))
-        all.append(dict(name='mem_avail', val=self.host_mem_available))
-        all.append(dict(name='mem_total', val=self.host_mem_total))
+        all_params = []
+        all_params.append(dict(name='phone', val=self.transport))
+        all_params.append(dict(name='username', val=self.username))
+        all_params.append(dict(name='user', val=self.user))
+        all_params.append(dict(name='hostname', val=self.hostname))
+        all_params.append(dict(name='host', val=self.host))
+        all_params.append(dict(name='cpu_pct', val=self.host_cpu_pct))
+        all_params.append(dict(name='num_proc', val=self.host_num_processes))
+        all_params.append(dict(name='mem_avail', val=self.host_mem_available))
+        all_params.append(dict(name='mem_total', val=self.host_mem_total))
         if silent != 'NO':
-            for a in all:
+            for a in all_params:
                 print(a['name'].ljust(14) + '= ' + a['val'])
     
-        return all
+        return all_params
         
     def summarise(self):
         """ extrapolate a human readable summary of the contexts """
@@ -94,7 +90,7 @@ class Context:
 
     def is_user_busy(self):
         """ determines from user details if user is busy or not """
-        if self.phone_on_charge == True and self.user == 'Developer':
+        if self.phone_on_charge is True and self.user == 'Developer':
             return False
         else:
             return True
@@ -150,24 +146,24 @@ class Context:
         self.screen_saver = False
         #-------------------------------
         phone_status = ''
-        if self.phone_on_charge == True:
+        if self.phone_on_charge is True:
             phone_status += 'Phone is charging'
-            if self.phone_moving == True:
+            if self.phone_moving is True:
                 phone_status += ', driving in Car'
             else:
                 phone_status += ', sitting still'
         else:
-            if self.screen_saver == False:
+            if self.screen_saver is False:
                 phone_status += 'Phone is being used'
             else:
                 phone_status += 'Phone is off'
-            if self.phone_moving == True:
+            if self.phone_moving is True:
                 if self.phone_move_dist_2_mn < 5:
                     phone_status += ', going for Walk'
                 elif  self.phone_move_dist_2_mn > 500:
                     phone_status += ', flying on Plane'
                 else:    
-                    phone_status += ', riding on ' + transport['Public']
+                    phone_status += ', riding on public transport'
         return phone_status
 
     def get_host_usage(self):
@@ -191,5 +187,5 @@ def TEST():
     where_am_i.get_host_usage()
        
 if __name__ == '__main__':
-	TEST()
-	        
+    TEST()
+            

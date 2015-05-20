@@ -1,10 +1,8 @@
 # install_data.py
 
 import os
-import aikif.config as cfg
-import aikif.cls_log as mod_log
 cur_path = os.getcwd()
-config_file = cur_path + os.sep + 'data' + os.sep + 'pers_config.py'
+config_file = cur_path + os.sep + '..' + os.sep + 'data' + os.sep + 'pers_config.py'
 def main():
     """
     script to setup folder structures for AIKIF 
@@ -49,7 +47,7 @@ def create_folder(fldr):
     try:
         os.mkdir(fldr) 
         print('creating folder ' + fldr)
-    except:
+    except Exception:
         print(os.getcwd() + os.sep + fldr + ' already exists')
 
 def show_setup():
@@ -59,7 +57,7 @@ def show_setup():
             print(cfg_file.read())
             #for line in cfg_file:
             #    print(line)
-    except:
+    except Exception:
         print('No config file - press c to create sample data\n')
     
 def create_sample_data():
@@ -74,9 +72,9 @@ def create_sample_data():
     with open(config_file, 'w') as f:
         f.write('# pers_config.py  - created by aikif.install_data.py\n')
         f.write('# Modify this file after running create sample data\n')
-        f.write('LOG_LEVEL = ERROR\n')
-        f.write('username = your_name\n')
-        f.write("fldrs['localPath'] = " + cur_path + "\n")
+        f.write('LOG_LEVEL = "ERROR"\n')
+        f.write('username = "your_name"\n')
+        f.write("fldrs['localPath'] = '" + cur_path + "'\n")
         f.write("fldrs['data_folder'] = fldrs['localPath'] + os.sep + 'data'\n")
         f.write('\n')
   

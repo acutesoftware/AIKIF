@@ -1,10 +1,8 @@
 # cyc_extract.py    written by Duncan Murray 19/7/2014
 #
 
-import rdflib
-
 from rdflib import Graph
-from rdflib import URIRef, Literal, BNode, Namespace, ConjunctiveGraph
+from rdflib import URIRef, Literal, Namespace, ConjunctiveGraph
 from rdflib import RDF
 from rdflib import RDFS
 
@@ -13,7 +11,7 @@ def main():
 
     fname = ip_folder + 'open-cyc.n3'   # 770,166 tuples
     #create_sample_file('open-cyc.n3', 'sample_open_cyc.n3', 5000)
-    small_fname = 'sample_open_cyc.n3' #  6618 tuples
+    #small_fname = 'sample_open_cyc.n3' #  6618 tuples
     
     g = load_graph_from_rdf(fname)
     show_graph_summary(g)
@@ -78,7 +76,7 @@ def create_sample_file(ip, op, num_lines):
     """ make a short version of an RDF file """
     with open(ip, "rb") as f:
         with open(op, "wb") as fout:
-            for x in range(num_lines):
+            for _ in range(num_lines):
                 fout.write(f.readline() )
 
 
