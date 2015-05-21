@@ -12,7 +12,7 @@ class TestProject(unittest.TestCase):
 
       
     def test_01_project_init(self):
-        proj1 = project.Project(name='Acute Software', type='business', desc='Custom Software development', fldr='')
+        proj1 = project.Project(name='Acute Software', tpe='business', desc='Custom Software development', fldr='')
         proj1.add_detail('website', 'http://www.acutesoftware.com.au')
         proj1.add_detail('email', 'djmurray@acutesoftware.com.au')
         self.assertEqual(proj1.nme, 'Acute Software')
@@ -22,7 +22,7 @@ class TestProject(unittest.TestCase):
         self.assertEqual(proj1.details[1][1],'djmurray@acutesoftware.com.au')
         
     def test_02_record(self):
-        proj2 = project.Project(name='Sales Log', type='business', desc='Record list of sales', fldr='')
+        proj2 = project.Project(name='Sales Log', tpe='business', desc='Record list of sales', fldr='')
         proj2.add_detail('Note', 'List of sales taken from manual entries in test program')
         self.assertEqual(proj2.details[0][0],'Note')
         self.assertEqual(proj2.details[0][1],'List of sales taken from manual entries in test program')

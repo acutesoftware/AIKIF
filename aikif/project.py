@@ -4,10 +4,6 @@
 import os
 import sys
 
-aikif_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(aikif_dir)
-
-
 class Projects(object):
     """
     handles the ontologies for all your projects to 
