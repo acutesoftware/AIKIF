@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 # solve_knapsack.py		written by Duncan Murray 24/4/2014
 # WARNING - untested and inefficient solvers (here to test to AIKIF toolbox function)
-import sys
 from collections import namedtuple
-from operator import itemgetter
 
 Item = namedtuple("Item", ['index', 'value', 'weight', 'density'])
 
@@ -82,26 +80,26 @@ def solve_value_density(capacity, items):
 
 
 def main():
-	# Modify this code to run your optimization algorithm
+    # Modify this code to run your optimization algorithm
 
-	#Item = namedtuple("Item", ['index', 'value', 'weight', 'density'])
-	capacity = 19
+    #Item = namedtuple("Item", ['index', 'value', 'weight', 'density'])
+    capacity = 19
 
-	items = []
-	items.append(Item(1, 8, 4, 8 * 4))
-	items.append(Item(1, 10, 5, 10 * 5))
-	items.append(Item(1, 15, 8, 15 * 8))
-	items.append(Item(1, 4, 3, 4 * 3))
+    items = []
+    items.append(Item(1, 8, 4, 8 * 4))
+    items.append(Item(1, 10, 5, 10 * 5))
+    items.append(Item(1, 15, 8, 15 * 8))
+    items.append(Item(1, 4, 3, 4 * 3))
 
-	describe_problem(capacity, items)
-	value, taken = solve_expensive_items_first(capacity, items)
-	print('solve_expensive_items_first = ', value, taken)
-	
-	value, taken = solve_smallest_items_first(capacity, items)
-	print('solve_smallest_items_first = ', value, taken)
+    describe_problem(capacity, items)
+    value, taken = solve_expensive_items_first(capacity, items)
+    print('solve_expensive_items_first = ', value, taken)
+    
+    value, taken = solve_smallest_items_first(capacity, items)
+    print('solve_smallest_items_first = ', value, taken)
 
-	value, taken = solve_value_density(capacity, items)
-	print('solve_value_density = ', value, taken)
+    value, taken = solve_value_density(capacity, items)
+    print('solve_value_density = ', value, taken)
 
 if __name__ == '__main__':
-	main()
+    main()

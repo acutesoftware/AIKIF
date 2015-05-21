@@ -1,7 +1,6 @@
 # example_solve_happiness.py   written by Duncan Murray 8/2/2015
 
 import os
-import sys
 import random
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." )
@@ -26,7 +25,7 @@ def main():
  
 
 ############# Utility functions ############
-def create_random_population(num=100, diversity=0.4):
+def create_random_population(num=100):
     """
     create a list of people with randomly generated names and stats
     """
@@ -39,7 +38,7 @@ def create_random_population(num=100, diversity=0.4):
         equity = random.randint(1,100)/100
         pers = mod_hap_env.Person(nme, {'tax_min':tax_min, 'tax_max':tax_max, 'tradition':tradition, 'equity':equity})
         people.append(pers)
-        #print(pers)
+        print(pers)
 
     return people
 if __name__ == '__main__':

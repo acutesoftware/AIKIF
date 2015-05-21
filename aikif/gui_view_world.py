@@ -1,17 +1,16 @@
 # gui_view_world.py     written by Duncan Murray 10/7/2014
 
 import os
-import sys
 import math
 
 try:
-	import Tkinter as Tkinter
-except:
-	import tkinter as Tkinter
+    import Tkinter as Tkinter
+except ImportError:
+    import tkinter as Tkinter
 
-from PIL import ImageTk, Image, ImageDraw
-from tkinter import Tk, Canvas, PhotoImage, mainloop
-        	
+from PIL import ImageTk, Image
+from tkinter import Tk, Canvas, PhotoImage
+            
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) ) 
 
 default_fname = root_folder + os.sep + "examples" + os.sep + "test_world_traversed.txt"

@@ -5,7 +5,7 @@ On one bank of a river are three missionaries (black triangles)
 and three cannibals (red circles). There is one boat available 
 that can hold up to two people and that they would like to use 
 to cross the river. If the cannibals ever outnumber the 
-missionaries on either of the river’s banks, the missionaries 
+missionaries on either of the rivers banks, the missionaries 
 will get eaten. How can the boat be used to safely carry all 
 the missionaries and cannibals across the river?
 
@@ -112,9 +112,6 @@ Took 20 trips for 7 missionaries and 4 canniballs
 |            | mmmmmmmcccc|
 """
 
-import sys
-import os
-
 import aikif.lib.cls_plan_search as mod_plan
 
 
@@ -146,14 +143,14 @@ def show_results(result, missionaries,canniballs):
         displ = '| '
         for bank in p:
             side = ''
-            for m in range(bank[0]):
+            for _ in range(bank[0]):
                 side += 'm'
-            for c in range(bank[1]):
+            for _ in range(bank[1]):
                 side += 'c'
             displ += side.ljust(min_spacing, ' ') + '| '
         displ += ''  
         print(displ)
-        #print(num, p)
+        print(num, p)
         
 
 def boat_on_left_bank(node):

@@ -1,11 +1,9 @@
 # cls_log.py    written by Duncan Murray 13/9/2014
 
 import os
-import sys
 import time
 import getpass
 import socket
-import collections 
 import random
 import aikif.config as cfg
 
@@ -29,18 +27,18 @@ def TEST():
     print(lg)
     lg.add_watch_point('JACKPOT', 9, 8)
     lg.add_watch_point('OUCH - massive failure', 1, 8)
-    sum = LogSummary(lg, cfg.fldrs['log_folder'])
-    sum.summarise_events()
-    print(sum)
+    sm = LogSummary(lg, cfg.fldrs['log_folder'])
+    sm.summarise_events()
+    print(sm)
     
     
     # check extract by program
-    sum.filter_by_program('test.txt', cfg.fldrs['log_folder'] + os.sep + 'test_log.txt')
-    sum.filter_by_program('prog1.py', cfg.fldrs['log_folder'] + os.sep + 'prog1.txt')
-    sum.filter_by_program('prog2.py', cfg.fldrs['log_folder'] + os.sep + 'prog2.txt')
+    sm.filter_by_program('test.txt', cfg.fldrs['log_folder'] + os.sep + 'test_log.txt')
+    sm.filter_by_program('prog1.py', cfg.fldrs['log_folder'] + os.sep + 'prog1.txt')
+    sm.filter_by_program('prog2.py', cfg.fldrs['log_folder'] + os.sep + 'prog2.txt')
   
 
-class Log:
+class Log(object):
     """
     Main logging class for AIKIF should record appropriate
     actions and summarise to useful information.
@@ -86,11 +84,11 @@ class Log:
         from success to total failure and an importance for 
         finer control of display
         """
-        dict = {}
-        dict['string'] = string
-        dict['rating'] = rating
-        dict['importance'] = importance
-        self.watch_points.append(dict)
+        d = {}
+        d['string'] = string
+        d['rating'] = rating
+        d['importance'] = importance
+        self.watch_points.append(d)
     
     def get_folder_process(self):
         return self.logFileProcess
@@ -106,11 +104,11 @@ class Log:
         max_session = '0'
         try:
             with open(self.log_folder + os.sep + '_sessions.txt', 'r') as f:
-                for line in f:
+                for _ in f:
                     txt = f.readline()
                     if txt.strip('\n') != '':
                         max_session = txt
-        except:
+        except Exception:
             max_session = '1'
         
         this_session = str(int(max_session) + random.randint(9,100)).zfill(9) # not a great way to ensure uniqueness - TODO FIX  
@@ -157,11 +155,11 @@ class Log:
         dte = TodayAsString()
         usr = GetUserName()
         hst = GetHostName()
-        id = self.session_id
+        i = self.session_id
  
         if prg == '':
             prg = 'cls_log.log' 
-        logEntry = q + dte + q + delim + q + id + q + delim + q + usr + q + delim + q + hst + q + delim + q + prg + q + delim + q + txt + q + delim + '\n'
+        logEntry = q + dte + q + delim + q + i + q + delim + q + usr + q + delim + q + hst + q + delim + q + prg + q + delim + q + txt + q + delim + '\n'
         with open(fname, "a") as myfile:
             myfile.write(logEntry)
 
@@ -192,7 +190,7 @@ class Log:
         """
         self._log(self.logFileResult , force_to_string(res), prg)
 
-class LogSummary:
+class LogSummary(object):
     """
     Aggregating Logs. The goal of this class is to allow for 
     multiple usable aggregates to be automatically obtained 
@@ -296,17 +294,6 @@ class LogSummary:
                     sum_file.write(str(d_source[dte]) + '\n')
                 else:
                     sum_file.write('0\n')
-                
-        """
-        od = collections.OrderedDict(sorted(d_command.items()))        
-        with open(self.log_sum, "w") as sum_file:
-            sum_file.write('date,count_command\n')
-            for k,v in od.items():
-                sum_file.write(k + ',' + str(v) + '\n')
-                #print(k,v)
-        """        
-                
-                
                 
     def _count_by_date(self, fname, all_dates):
         """

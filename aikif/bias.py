@@ -4,10 +4,6 @@
 import os
 import sys
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
-sys.path.append(root_fldr)
-import cls_log
-import config as mod_cfg
-
 
 def TEST():
     """
@@ -17,7 +13,7 @@ def TEST():
     print(my_bias)
     
     
-class Bias:
+class Bias(object):
     """
     class to give a rough weighting to a piece of information
     based on source, time, context, etc.
