@@ -208,8 +208,11 @@ class LogSummary:
     
     def __str__(self):
         txt = ''
-        with open(self.log_sum, "r") as f:
-            txt = f.read()
+        try:
+            with open(self.log_sum, "r") as f:
+                txt = f.read()
+        except Exception:
+            txt = 'Summary File doesnt exist : ' + self.log_sum
         return txt
         
    

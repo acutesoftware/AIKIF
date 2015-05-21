@@ -83,13 +83,14 @@ class Context(object):
         
     def summarise(self):
         """ extrapolate a human readable summary of the contexts """
+        res = ''
         if self.user == 'Developer': 
             if self.host == 'Home PC':
-                res = 'At Home'
+                res += 'At Home'
             else:
-                res = 'Away from PC'
+                res += 'Away from PC'
         elif self.user == 'User' and self.host == 'Home PC':
-            res = 'Remote desktop into home PC'
+            res += 'Remote desktop into home PC'
         res += '\n'
         res += self.transport
         return res

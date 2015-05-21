@@ -2,16 +2,9 @@
 # unit testing for context class
 
 import unittest
-import os
-import sys
-import csv
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
-sys.path.append(root_folder)
-
-import lib.cls_context as context
+import aikif.lib.cls_context as context
                     
 class ContextTest(unittest.TestCase):
-         
     def test_01_instantiation(self):
         me = context.Context()
         self.assertEqual(str(me)[0:7], 'Hello, ')
@@ -48,9 +41,6 @@ class ContextTest(unittest.TestCase):
         self.assertEqual(me.is_host_busy(), True)
         me.host_cpu_pct = '50'
         self.assertEqual(me.is_host_busy(), False)
-
-
-
         
 if __name__ == '__main__':
     unittest.main()

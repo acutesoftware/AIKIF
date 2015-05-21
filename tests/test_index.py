@@ -5,14 +5,12 @@ import unittest
 import os
 import sys
 import csv
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
-sys.path.append(root_folder + os.sep + 'aikif' )
-import index as ndx
+import aikif.index as ndx
 
-ip_file_normal = 'test_results//index_normal_source.txt'
-op_file_normal = 'test_results//index_normal_results.txt'
-ip_file_odd_chars = 'test_results//index_odd_chars_source.txt'
-op_file_odd_chars = 'test_results//index_odd_chars_results.txt'
+ip_file_normal = 'index_normal_source.txt'
+op_file_normal = 'index_normal_results.txt'
+ip_file_odd_chars = 'index_odd_chars_source.txt'
+op_file_odd_chars = 'index_odd_chars_results.txt'
 
 class TestIndex(unittest.TestCase):
  
@@ -45,8 +43,19 @@ class TestIndex(unittest.TestCase):
 		totWords, totLines, indexedWords = ndx.getWordList(ip_file_odd_chars, [' '])
 		self.assertEqual( totWords, 11)	# make sure there are  11 words in odd chars file
 		self.assertEqual( totLines, 3)	# make sure there are 3 lines in index file
-		self.assertEqual( len(indexedWords), 7)	# make sure there are 7 indexed words (not sure why it isnt 3 - TODO - check)
+		self.assertEqual( len(indexedWords), 7)	
 
+
+    #def test_09_cleanup(self):
+    #    try:
+    #        os.remove(ip_file_normal)
+    #        os.remove(op_file_normal)
+    #        os.remove(ip_file_odd_chars)
+    #        os.remove(op_file_odd_chars)
+    #    except Exception:
+    #        pass
+
+        
 def CountLines(fname):
     with open(fname) as f:
         for i, l in enumerate(f):

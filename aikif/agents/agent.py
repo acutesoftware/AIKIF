@@ -17,10 +17,8 @@
 import os
 import sys
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
-sys.path.append(root_fldr)
-print('DEBUG:agent.py - root folder = ' + root_fldr)
-import cls_log
-import config as mod_cfg
+import aikif.cls_log as mod_log
+import aikif.config as mod_cfg
         
 agent_status = [  	'NONE',				# agent was never instantiated (then how would it report this?)
                     'RUNNING', 			# agent is running
@@ -46,7 +44,7 @@ class Agent(object):
         if fldr == '':
             print('ERROR - no log folder found')
             exit(1)
-        self.mylog = cls_log.Log(fldr)
+        self.mylog = mod_log.Log(fldr)
         self.mylog.record_command('agent', self.name + ' - initilising')
         
         if self.running is True:

@@ -30,8 +30,11 @@ class SQLCodeGenerator(object):
         return self.sql_text
     
     def save(self, fname):
-        with open(fname, "w") as f:
-            f.write(self.sql_text)
+        try:
+            with open(fname, "w") as f:
+                f.write(self.sql_text)
+        except IOError:
+            print("Error - cant save file " + fname)
    
     def save_ddl(self, fname):
         with open(fname, "w") as f:
