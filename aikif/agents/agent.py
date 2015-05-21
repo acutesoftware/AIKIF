@@ -15,7 +15,7 @@
         # 	print(test.check_status())
         # 	print(test.report())
 import os
-import sys
+
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 import aikif.cls_log as mod_log
 import aikif.config as mod_cfg

@@ -1,18 +1,16 @@
 # agent_filelist.py		written by Duncan Murray	24/7/2014
-
-
 import os
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 #sys.path.append(root_folder)
 #print('DEBUG:agent_filelist - root = ', root_folder)
 import aikif.agents.agent as agt
 import aikif.lib.cls_filelist as fl
-		
+        
 def TEST():
     agt = FileListAgent('filelist_agent', root_folder, True, 1, 'T:\\user\\AIKIF', [])
     print(agt.report())
 
- 	  
+      
 class FileListAgent(agt.Agent):
     """
     agent that gathers file metadata. The purpose of this class 
@@ -47,11 +45,9 @@ class FileListAgent(agt.Agent):
         when the list was last modified
         """
         pass
+
         
-    
-	
-		
 if __name__ == '__main__':
-	TEST()
-	
-	
+    TEST()
+
+    

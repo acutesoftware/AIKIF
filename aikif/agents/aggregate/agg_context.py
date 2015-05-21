@@ -15,7 +15,7 @@
 # 	test.start()
 # 	print(test.check_status())
 # 	print(test.report())
-		
+        
 import os, sys
 #sys.path.append('T:\\user\\dev\\src\\python\\AI\\AI')  # why is this needed when called from run_agents in root??
 aikif_dir = os.path.dirname(os.path.abspath(__file__))
@@ -25,88 +25,89 @@ fldr = os.path.abspath(aikif_dir + os.sep + "..\\..\\" )
 from aikif.agents.agent import Agent
 
 if len(sys.argv) == 3:   # folder and filename passed on command line
-	localFolder = sys.argv[1] 
-	fileListSrc = sys.argv[2]
+    localFolder = sys.argv[1] 
+    fileListSrc = sys.argv[2]
 else:
-	localFolder = aikif_dir + '\\'
-	fileListSrc = 'file_sample.csv' # '\\filelister.csv'
+    localFolder = aikif_dir + '\\'
+    fileListSrc = 'file_sample.csv' # '\\filelister.csv'
 print('localFolder = ', localFolder)
 print('fileListSrc = ', fileListSrc)
 
-	
+    
 def main():
-	agentFileList = AggContext()
-	agentFileList.start()
-	print(agentFileList.report())
-	
+    agentFileList = AggContext()
+    agentFileList.start()
+    print(agentFileList.report())
+    
 class AggContext(Agent):
-	def __init__(self, *arg):
-		Agent.__init__(self, *arg)
-		#print(' *arg = ', *arg)    # TODO - bug with args passed to class
-		#self.arg1 = 'test' # arg[0]
-		
-	def do_your_job(self):
-		"""  This is the function that actually does the work of the agent subclass """
-		#print(' self.arg = ', self.arg)
-		fullfilenames, files, folders = summarise_filelist(localFolder + fileListSrc)
-		print('AggContext found ' + str(len(files)) + ' files')
-		self.results.append(['Found ' + str(len(fullfilenames)) + ' files in ' + str(len(folders)) + ' folders'] )
-	
+    def __init__(self, *arg):
+        Agent.__init__(self, *arg)
+        #print(' *arg = ', *arg)    # TODO - bug with args passed to class
+        #self.arg1 = 'test' # arg[0]
+        
+    def do_your_job(self):
+        """  This is the function that actually does the work of the agent subclass """
+        #print(' self.arg = ', self.arg)
+        fullfilenames, files, folders = summarise_filelist(localFolder + fileListSrc)
+        print('AggContext found ' + str(len(files)) + ' files')
+        self.results.append(['Found ' + str(len(fullfilenames)) + ' files in ' + str(len(folders)) + ' folders'] )
+    
 def summarise_filelist(fname):
-	""" takes a filelister.py generated filelist and returns a summary """
-	from collections import Counter
-	import operator
-			
-	def saveListWithCounts(fname, lst):
-		""" takes a list of strings, counts unique values and saves to a file """
-		with open(fname, 'w', encoding="utf8") as f:
-			counts = Counter( sorted(lst) )
-			sorted_x = sorted(counts.items(), key=operator.itemgetter(0))
-			for l in sorted_x:
-				f.write('"' + l[0] + '","' +  str(l[1]) + '",\n')
-	
-	
-	def multi_split(line, split_chars):
-		res = [line]
-		for sep in split_chars:
-			line, res = res, []
-			for seq in line:
-				res += seq.split(sep)
-		return res
+    """ takes a filelister.py generated filelist and returns a summary """
+    from collections import Counter
+    import operator
+            
+    def saveListWithCounts(fname, lst):
+        """ takes a list of strings, counts unique values and saves to a file """
+        with open(fname, 'w', encoding="utf8") as f:
+            counts = Counter( sorted(lst) )
+            sorted_x = sorted(counts.items(), key=operator.itemgetter(0))
+            for l in sorted_x:
+                f.write('"' + l[0] + '","' +  str(l[1]) + '",\n')
+    
+    
+    def multi_split(line, split_chars):
+        res = [line]
+        for sep in split_chars:
+            line, res = res, []
+            for seq in line:
+                res += seq.split(sep)
+        return res
 
-	fullfilenames = []
-	files = []
-	folders = []
-	errors = []
-	print('Summarizing FileList = ', fname)
-	with open(fname, 'r', encoding="utf8") as f:
-		for line in f:
-			numLines += 1
-			if len(line) > 0:
-				try:
-					cols = line.split('","')
-					fullfilenames.append(cols[0].strip('"'))
-					files.append(cols[1].strip('"').strip(' '))
-					folders.append(cols[2].strip('"').strip(' '))
-				except Exception:
-					errors.append(line)
-					
-	# make an index of ALL words
-	print('generating index')
-	ndx = []
-	for line in fullfilenames:
-		words = multi_split(line, ['\\', ' ', '_', '-', '.', ','])
-		for word in words:
-			ndx.append(word.strip(' ').strip('').strip('"').strip('"'))
-	
-	saveListWithCounts(localFolder + 'lf_files.csv', sorted(files))
-	saveListWithCounts(localFolder + 'lf_folders.csv', sorted(folders))
-	saveListWithCounts(localFolder + 'lf_words.csv', sorted(ndx))
-	
-	return fullfilenames, (files), (folders)
-	
-			
+    fullfilenames = []
+    files = []
+    folders = []
+    errors = []
+    numLines = 0
+    print('Summarizing FileList = ', fname)
+    with open(fname, 'r', encoding="utf8") as f:
+        for line in f:
+            numLines += 1
+            if len(line) > 0:
+                try:
+                    cols = line.split('","')
+                    fullfilenames.append(cols[0].strip('"'))
+                    files.append(cols[1].strip('"').strip(' '))
+                    folders.append(cols[2].strip('"').strip(' '))
+                except Exception:
+                    errors.append(line)
+                    
+    # make an index of ALL words
+    print('generating index')
+    ndx = []
+    for line in fullfilenames:
+        words = multi_split(line, ['\\', ' ', '_', '-', '.', ','])
+        for word in words:
+            ndx.append(word.strip(' ').strip('').strip('"').strip('"'))
+    
+    saveListWithCounts(localFolder + 'lf_files.csv', sorted(files))
+    saveListWithCounts(localFolder + 'lf_folders.csv', sorted(folders))
+    saveListWithCounts(localFolder + 'lf_words.csv', sorted(ndx))
+    
+    return fullfilenames, (files), (folders)
+    
+            
 if __name__ == '__main__':
-	main()
-	
-	
+    main()
+    
+    

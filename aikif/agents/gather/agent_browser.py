@@ -258,7 +258,7 @@ class Browser(object):
             c = sqlite3.connect(path)
             for row in c.execute(SQL_STATEMENT):
                 #storage.write( row[0] + ", " + row[1] + ", " + str(row[2])+ ", ")
-                storage.write(format_history_row(row))
+                storage.write(self.format_history_row(row))
                 self.num_history += 1
                 #date_time = date_from_webkit(row[1])
                 #url = re.search(pattern, row[0])

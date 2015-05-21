@@ -9,7 +9,7 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 print(root_folder)
 import aikif.agents.agent as agt
 
-		
+        
 
 class ExploreAgent(agt.Agent):
     """
@@ -72,8 +72,6 @@ class ExploreAgent(agt.Agent):
                     self.current_y += y
                     self.lg_mv(3, self.name + ": randomly moving Y axis " + str(self.num_steps)  )
                     return
-                            
-            
         if x == 1:
             if self.grd.get_tile(self.current_y, self.current_x + 1) in accessible:
                 self.current_x += 1
@@ -98,7 +96,6 @@ class ExploreAgent(agt.Agent):
         self.grd.set_tile(self.start_y, self.start_x, 'A')
         self.grd.save(root_folder + os.sep + 'agent.txt')
 
-        
     def lg_mv(self, log_lvl, txt):
         """
         wrapper for debugging print and log methods
@@ -150,12 +147,12 @@ class ExploreAgent(agt.Agent):
         print(self.grd)
     
 def main():
-	agt = ExploreAgent('exploring_agent',  'T:\\user\\AIKIF', 1, True)
-	print(agt.report())
+    agt = ExploreAgent('exploring_agent',  'T:\\user\\AIKIF', 1, True)
+    print(agt.report())
 
- 		
-		
+        
+        
 if __name__ == '__main__':
-	main()
-	
-	
+    main()
+    
+    
