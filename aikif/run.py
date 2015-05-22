@@ -1,7 +1,6 @@
 # run.py    written by Duncan Murray 27/2/2015
 
 import os
-import sys
 
 cur_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
 settings_file = 'folder.txt'
@@ -42,7 +41,7 @@ def get_local_config():
     try:
         with open(cfg_file, 'r') as f:
             fldr = f.read()
-    except:
+    except Exception:
         pass
     return fldr
 

@@ -1,8 +1,6 @@
 # cls_file_mapping.py   written by Duncan Murray 13/9/2014
 
 import os
-import sys
-import aikif.lib.cls_filelist as mod_fl
 import aikif.config as mod_cfg
 
 root_folder   = mod_cfg.fldrs['root_path']
@@ -30,7 +28,7 @@ with open(subject_file, 'r') as f:
         dataSubjectAreas.append(line.strip())
 
         
-class FileMap:
+class FileMap(object):
     """
     Provides mapping to file names
     """

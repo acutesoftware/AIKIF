@@ -1,9 +1,6 @@
 # AI.py     written by Duncan Murray 2/5/2015
 
-import os
-import sys
 import aikif.knowledge
-
 
 #modes = ['COMMAND', 'ADD', 'QUERY']
 
@@ -24,7 +21,7 @@ class AICLI(object):
         self.mode = 'COMMAND'
         self.raw = aikif.knowledge.RawData('test')
         self.welcome()
-        if auto_start == True:
+        if auto_start is True:
             self.start()
     
     def start(self):
@@ -77,7 +74,7 @@ class AICLI(object):
             if txt in self.all_commands['cmd'][0]:
                 self.show_output('Returning to Command mode')
                 mode = 'COMMAND'
-                prompt = '> '
+                self.prompt = '> '
             else:
                 self.show_output('Adding Text : ', txt)
                 result = self.cmd_add(txt)
@@ -85,7 +82,7 @@ class AICLI(object):
             if txt in self.all_commands['cmd'][0]:
                 self.show_output('Returning to Command mode')
                 mode = 'COMMAND'
-                prompt = '> '
+                self.prompt = '> '
             else:
                 self.show_output('Query : ', txt)
                 result = self.cmd_query(txt)

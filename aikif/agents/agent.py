@@ -4,16 +4,16 @@
 # so it is the interface to whatever method will be used
 #  (e.g. mail, http, # subprocess, ?)
 # USAGE - e.g. test_agent.py
-        # from agent import Agent
-        # class TestAgent(Agent):
-        # 	def __init__(self, *arg):
-        # 		Agent.__init__(self, *arg)
-        #
-        # def main():
-        # 	test = TestAgent('hello',  os.getcwd())
-        # 	test.start()
-        # 	print(test.check_status())
-        # 	print(test.report())
+# from agent import Agent
+# class TestAgent(Agent):
+# 	def __init__(self, *arg):
+# 		Agent.__init__(self, *arg)
+#
+# def main():
+# 	test = TestAgent('hello',  os.getcwd())
+# 	test.start()
+# 	print(test.check_status())
+# 	print(test.report())
 import os
 
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
@@ -58,7 +58,7 @@ class Agent(object):
         txt += 'Name    : ' + self.name + '\n'
         txt += 'Folder  : ' + self.fldr + '\n'
         txt += 'Status  : ' + self.status + '\n'
-        if self.running == True:
+        if self.running is True:
             txt += 'Running : True\n'
         else:
             txt += 'Running : False\n'
@@ -104,7 +104,6 @@ class Agent(object):
         
 
 def TEST():
-    myAgent = Agent('TEST Agent', 'T:\\user\\AIKIF\\log', True)
     manualAgent = Agent('manual', 'T:\\user\\AIKIF\\log', False)
     manualAgent.start()
     manualAgent.stop()

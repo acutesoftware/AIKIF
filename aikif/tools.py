@@ -20,11 +20,7 @@ def main():
     Script to define tools, which currently all are functions in 
     python programs.
     TODO - this should be registered via cls_log in the program source
-    """
-    
-    tl = mod_tool.Toolbox()
 
-    """
     # attempt at imported tools via AIKIF, but doesnt work 
     # (is better to leave as full folder names anyway for 
     # external programs
@@ -38,6 +34,7 @@ def main():
     tl.add({'file':progName, 'function':'solve_smallest_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
     tl.add({'file':progName, 'function':'solve_expensive_items_first', 'args':['int', 'dict'], 'return':['int', 'list']})
     """
+    tl = mod_tool.Toolbox()
     
     tl.add({'file':fldr + os.sep + 'maths_ml_algorithms.py', 'function':'ml_entropy', 'args':['list'], 'return':['float']})
     
@@ -75,8 +72,8 @@ def main():
 def run_multiple(t1, tool, numIterations, silent='Y'):
     results = []
     start_time = time.time()		
-    for i in range(0,numIterations):
-        args = [randint(10,99) for j in range(1,randint(2,5))]
+    for _ in range(0,numIterations):
+        args = [randint(10,99) for _ in range(1,randint(2,5))]
         testname = tool['file'] + '.' + tool['function']
         #print('testname = ', testname)
         answer = t1.run(tool, args, silent)

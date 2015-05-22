@@ -4,13 +4,11 @@
 # 30/10/2014 : Files =  127  Bytes =  444760  Lines =  12595  Lines of Code =  10409
 # 04/03/2015 : Files =  142  Bytes =  572245  Lines =  15947  Lines of Code =  13181
 
-import sys
 import os
 
 import aikif.programs as mod_prg
 import aikif.config as mod_cfg
 import aikif.lib.cls_filelist as mod_fl
-import aikif.lib.cls_file as mod_file
 
 def main():
     """
@@ -18,28 +16,27 @@ def main():
     Simply call functions like below to build an overview 
     which has metadata automatically updated.
     """
-    document_programs(mod_cfg.fldrs['program_path']) 
-    
-    
-    
-def document_programs(fldr):
-    """
-    Document a subset of all programs with purpose (and intent)
-    """
+    fldr = mod_cfg.fldrs['program_path']
     p = mod_prg.Programs('AIKIF Programs', fldr)
-   # print(fldr)
+    document_core_programs(p) 
+    document_agents(p) 
+  
+    # p.list()	# get list of all programs
+    p.save(fldr + os.sep + 'examples' + os.sep + 'document_AIKIF.csv')
+    p.collect_program_info('progress.md')
+   
+    
+    
+def document_core_programs(p):
+    """
+    Document a subset of core programs with purpose (and intent)
+    """
     
     p.comment('programs.py', 'collects list of aikif programs to show progress and allows comments to be added to each file')
     p.comment('cls_file_mapping.py', 'uses ontology to get list of files to save data')
     p.comment('index.py', 'rebuilds indexes')
-    
-
     p.comment('dataTools.py', 'data tools to manage database access')
-    p.comment('AIKIF_create.py', 'creates default structures with test data - to be deprecated')
-    p.comment('AIKIF_utils.py', 'old file mapping - to be deprecated')
-    
     p.comment('generateTestData.py', 'Tool to generate various test data')
-
     p.comment('bias.py', '[DATA] weight the validity of source data based on location, person, timing')
     p.comment('cls_collect_files.py', 'duplicate - see agent filelist collecting')
     p.comment('config.py', '[DATA] central point for settings in AIKIF')
@@ -47,18 +44,7 @@ def document_programs(fldr):
     p.comment('mapper.py', 'maps business rules and columns of source data to standard aikif logs')
     p.comment('search.py', 'command line search tool [deprecated, but will be redone]')
     p.comment('tools.py', '[DATA] uses the toolbox class to create list of programs used by aikif')
-    p.comment('agent.py', 'base agent class')
-    p.comment('test_agent.py', 'test for agent class (why is this not in /tests root folder? TODO')
     p.comment('agg_context.py', 'detects context of user and computer')
-    
-    p.comment('agent_map_data.py', 'maps columns to aikif structure - attempt#3 (may be depracated)')
-
-    p.comment('agent_explore_grid.py', 'working prototype of agent to move through a grid world, using very simple path finding. Mainly an exercise in logging an agent moving through a generated world')
-    p.comment('agent_email.py', 'Agent that reads emails (currently only gmail)')
-    p.comment('agent_filelist.py', 'TOK - correctly scans and logs filelists from an agent')
-    p.comment('collect_Win_processes.py', 'script to collect windows processes. Currently not part of agent process, more an exercise on what can be logged')
-    p.comment('log_PC_usage.py', 'script to read current window title to be used as part of context to see what user is doing')
-    p.comment('log_browser_history.py', 'script to dump chrome browser history to CSV - not used')
     p.comment('check_redis_limit.py', 'starts reddis database and tests limits by repeatedly adding data until it breaks')
     p.comment('cls_data.py', 'base class for data')
     p.comment('cls_dataset.py', 'functions for a schema table - progress = stub only')
@@ -67,7 +53,7 @@ def document_programs(fldr):
     p.comment('form_example_simple.py', 'creates a TKinter form to show how sql generation works = TOK')
     p.comment('worlds.py', 'generates a 2d grid world')
     p.comment('autobackup.py', 'example showing automatic file backups via filelists')
-    p.comment('document_AIKIF.py', 'this program - collect a list of programs and add commments / progress on what is actually implemented rather than trust docstrings which show the intention of the class')
+    p.comment('document_AIKIF.py', 'this program - collect a list of programs and add commments / progress on what is actually implemented')
     p.comment('ex_index_mydocs.py', 'example showing what to index')
     p.comment('ex_project_management.py', 'example on using aikif for project management (poor example - needs work)')
     p.comment('finance_example.py ', 'example of using aikif for finance logging - good concept, needs completion')
@@ -109,8 +95,6 @@ def document_programs(fldr):
 
     p.comment('agent_browser.py', 'collects data from browser - bookmarks, visited sites')
     p.comment('outlook_export.py', 'agent to connect to outlook and export emails')
-    p.comment('agent_learn_aixi.py', '')
-    p.comment('dummy_learn_1.py', 'sample (but stub only) learning algorithm to be called as test below')
     p.comment('run_dummy_learn_1.py', 'sample code to call a learning algorithm')
     p.comment('cls_collect.py', 'collect filelists')
     p.comment('example_solve_happiness.py', 'toy problem - finding a world to keep all people happy (O^n^n^n complexity :) )')
@@ -128,8 +112,7 @@ def document_programs(fldr):
     p.comment('data_structures.py', 'Node and Graph classes')
     p.comment('solve_knapsack.py', 'functions to solve the knapsack problem')
 
-    # updates for 12/5/2015
-    p.comment('agent_image_metadata.py', 'agent to collect file picture metadata')
+
     p.comment('knowledge.py', 'processs raw data to information')
     p.comment('core_data.py', 'classes to manage the core data types')
     p.comment('if_excel.py', 'data interface to excel')
@@ -137,11 +120,25 @@ def document_programs(fldr):
     p.comment('AI_CLI.py', 'Command Line Interface (IN PROGRESS)')
     p.comment('install_data.py', 'script to setup data files (IN PROGRESS)')
  
-
  
-   # p.list()	# get list of all programs
-    p.save(fldr + os.sep + 'examples' + os.sep + 'document_AIKIF.csv')
-    p.collect_program_info('progress.md')
+def document_agents(p):
+    """
+    Document agents in AIKIF (purpose and intent)
+    """
+    p.comment('agent.py', 'base agent class')
+    p.comment('test_agent.py', 'test for agent class (why is this not in /tests root folder? TODO')
+    
+    p.comment('agent_image_metadata.py', 'agent to collect file picture metadata')
+    p.comment('agent_learn_aixi.py', '')
+    p.comment('dummy_learn_1.py', 'sample (but stub only) learning algorithm to be called as test below')
+
+    p.comment('agent_explore_grid.py', 'working prototype of agent to move through a grid world, using very simple path finding.')
+    p.comment('agent_email.py', 'Agent that reads emails (currently only gmail)')
+    p.comment('agent_filelist.py', 'TOK - correctly scans and logs filelists from an agent')
+    p.comment('collect_Win_processes.py', 'script to collect windows processes. Currently not part of agent process, more an exercise on what can be logged')
+    p.comment('log_PC_usage.py', 'script to read current window title to be used as part of context to see what user is doing')
+    p.comment('log_browser_history.py', 'script to dump chrome browser history to CSV - not used')
+
 
 
 def get_list_of_applications():
@@ -150,8 +147,8 @@ def get_list_of_applications():
     """
     apps = mod_prg.Programs('Applications', 'C:\\apps')
     fl = mod_fl.FileList(['C:\\apps'], ['*.exe'], ["\\bk\\"])
-    for file in fl.get_list():
-        apps.add(file, 'autogenerated list')
+    for f in fl.get_list():
+        apps.add(f, 'autogenerated list')
     apps.list()
     apps.save()
 

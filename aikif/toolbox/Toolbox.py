@@ -3,13 +3,11 @@
 # class to manage the functional toolbox of AIKIF
 
 import os
-import sys
-aikif_dir = os.path.dirname(os.path.abspath(__file__)) + os.sep + '..'
-#sys.path.append(aikif_dir)
+
 import aikif.cls_log as mod_log
 import aikif.config as mod_cfg
 
-class Toolbox():
+class Toolbox(object):
     """
     Class to manage the functional tools (programs or functions) that the AI can use 
     The toolbox starts as a subset of the Programs class (Programs manage the users 
@@ -48,7 +46,7 @@ class Toolbox():
         res = tool['file'] 
         try:
             res += '.' + tool['function']
-        except:
+        except Exception:
             pass
         res += '\n'
         return res
@@ -105,7 +103,7 @@ class Toolbox():
         if silent == 'N':
             print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
         mod = __import__( os.path.basename(tool['file']).split('.')[0]) # for absolute folder names
-       # mod = __import__( tool['file'][:-2]) # for aikif folders (doesnt work)
+        # mod = __import__( tool['file'][:-2]) # for aikif folders (doesnt work)
         func = getattr(mod, tool['function'])
         tool['return'] = func(args)
         return tool['return']

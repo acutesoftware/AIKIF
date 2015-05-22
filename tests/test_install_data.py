@@ -16,13 +16,13 @@ class TestClassFile(unittest.TestCase):
         self.assertEqual(inst.config_file[-14:], 'pers_config.py') 
 
     def test_03_create_folders(self):
-        inst.setup_folders()
-        inst.create_sample_data()
-        if os.path.isfile(inst.config_file):
-            self.assertEqual(inst.config_file, inst.config_file) #"File Exists") 
-        else:
-            self.assertEqual(inst.config_file, "File Not Found") 
-        
+        #inst.setup_folders()
+        #inst.create_sample_data()
+        #if os.path.isfile(inst.config_file):
+        #    self.assertEqual(inst.config_file, inst.config_file) #"File Exists") 
+        #else:
+        #    self.assertEqual(inst.config_file, "File Not Found") 
+        pass   # shouldnt have a test for this that actually runs the install
         
 if __name__ == '__main__':
     unittest.main()
