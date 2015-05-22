@@ -36,8 +36,8 @@ class AgentMapDataFile(object):
         """
         txt = self.name + '\n'
         txt += '------------------------------\n'
-        for num, map in enumerate(self.mapping):
-            txt += str(num).zfill(3) + ' ' + map + '\n'
+        for num, mp in enumerate(self.mapping):
+            txt += str(num).zfill(3) + ' ' + mp + '\n'
         for proc in self.process:
             txt +=  proc + '\n'
         return txt
@@ -48,7 +48,7 @@ class AgentMapDataFile(object):
         aikif data structures.
         """
         with open(self.src_file, "r") as f:
-            for rownum, line in enumerate(f):
+            for line in f:
                 cols = line.split(',')
                 print(cols)
                 

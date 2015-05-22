@@ -6,14 +6,8 @@ import sys
 cur_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
 lib_folder = os.path.abspath(cur_folder )
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
-#import lib_folder
-import cls_grid as mod_grid # aikif.toolbox.
- 
-#sys.path.append(lib_folder)
 
-print('cls_grid_life: sys.modules = ', sys.modules)
-
-print('cls_grid_life: sys.modules[cls_grid_life] = ', sys.modules['cls_grid_life'])
+import aikif.toolbox.cls_grid as mod_grid # 
 
 class GameOfLife(mod_grid.Grid):
     """
@@ -45,9 +39,9 @@ class GameOfLife(mod_grid.Grid):
             
         # logic for Game of life        
         if (living_neighbors == 3) or (living_neighbors == 2 and not self.is_empty(row, col)):
-            return cls_grid.FULL
+            return mod_grid.FULL
         else:
-            return cls_grid.EMPTY
+            return mod_grid.EMPTY
         
 class GameOfLifePatterns(object):
     """
@@ -64,7 +58,7 @@ class GameOfLifePatterns(object):
                              'boat','blinker','toad','beacon',  # oscillators
                              'glider'                           # gliders
                              ]
-        for i in range(num_patterns):
+        for _ in range(num_patterns):
             pattern_to_add = random.choice(self.pattern_list)
             methodToCall = getattr(sys.modules['cls_grid_life'], pattern_to_add)
             result = methodToCall()
@@ -103,9 +97,8 @@ class GameOfLifePatterns(object):
             res.append([itm[0] + y, itm[1] + x])
         return res
 
-"""
- Patterns are below outside the class to allow for simpler importing
-"""   
+# Patterns are below outside the class to allow for simpler importing
+ 
 
 # still lifes
 def block():

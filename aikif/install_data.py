@@ -73,6 +73,8 @@ def create_sample_data():
     with open(config_file, 'w') as f:
         f.write('# pers_config.py  - created by aikif.install_data.py\n')
         f.write('# Modify this file after running create sample data\n')
+        f.write('import os')
+        f.write('fldrs = {}')
         f.write('LOG_LEVEL = "ERROR"\n')
         f.write('username = "your_name"\n')
         f.write("fldrs['localPath'] = '" + cur_path + "'\n")

@@ -12,7 +12,7 @@ class TestProject(unittest.TestCase):
 
       
     def test_01_project_init(self):
-        proj1 = project.Project(name='Acute Software', tpe='business', desc='Custom Software development', fldr='')
+        proj1 = project.Project(name='Acute Software', desc='Custom Software development', fldr='')
         proj1.add_detail('website', 'http://www.acutesoftware.com.au')
         proj1.add_detail('email', 'djmurray@acutesoftware.com.au')
         self.assertEqual(proj1.nme, 'Acute Software')
@@ -22,7 +22,7 @@ class TestProject(unittest.TestCase):
         self.assertEqual(proj1.details[1][1],'djmurray@acutesoftware.com.au')
         
     def test_02_record(self):
-        proj2 = project.Project(name='Sales Log', tpe='business', desc='Record list of sales', fldr='')
+        proj2 = project.Project(name='Sales Log',  desc='Record list of sales', fldr='')
         proj2.add_detail('Note', 'List of sales taken from manual entries in test program')
         self.assertEqual(proj2.details[0][0],'Note')
         self.assertEqual(proj2.details[0][1],'List of sales taken from manual entries in test program')
@@ -43,7 +43,7 @@ class TestProject(unittest.TestCase):
         proj_diary.add_source('PC Usage', root_folder)
         proj_diary.add_source('TODO List', root_folder)
 
-        my_biz = project.Project(name='Acute Software', tpe='business', desc='Custom Software development', fldr='')
+        my_biz = project.Project(name='Acute Software', desc='Custom Software development', fldr='')
         my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
         my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
 
@@ -64,7 +64,7 @@ class TestProject(unittest.TestCase):
         
  
     def test_11_task(self):
-        p = project.Project('update Country reference', tpe='Auto', fldr='c:\test')
+        p = project.Project('update Country reference', fldr='c:\test')
         p.add_task(1, 'download file', 'aikif.toolbox.web_download')
         p.add_task(2, 'extract zip', 'aikif.toolbox.zip_util')
         p.add_task(3, 'overwrite TXT to database staging', 'aikif.toolbox.data_load')

@@ -35,10 +35,13 @@ class Mapper(object):
         """
         self.maps = []
         #print("reading mapping table")
-        with open(map_file, 'r') as f:
-            for line in f:
-                rule = MapRule(line)
-                self.maps.append(rule)
+        try:
+            with open(map_file, 'r') as f:
+                for line in f:
+                    rule = MapRule(line)
+                    self.maps.append(rule)
+        except FileNotFoundError:
+            print('cant load file ', map_file)
     
     def save_rules(self):
         """ 

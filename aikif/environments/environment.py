@@ -4,8 +4,8 @@ import aikif.cls_log
 import aikif.config
 
 def TEST():  
-    e = Environment('test', '', 'blah')
-    e.create(40,55, 'some nice text')
+    e = Environment('test')
+    e.create() #40,55, 'some nice text')
     print(e)
     e.destroy()
     

@@ -1,12 +1,8 @@
 # AIKIF_project.py      written by Duncan Murray 1st-Mar-2015
 
 import os
-import sys
-import aikif.cls_log as mod_log
 import aikif.project as mod_prj
 import aikif.dataTools.cls_datatable as mod_dt
-
-
 
 def main():
     """

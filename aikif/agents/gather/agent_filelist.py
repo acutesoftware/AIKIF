@@ -7,7 +7,7 @@ import aikif.agents.agent as agt
 import aikif.lib.cls_filelist as fl
         
 def TEST():
-    agt = FileListAgent('filelist_agent', root_folder, True, 1, 'T:\\user\\AIKIF', [])
+    agt = FileListAgent('filelist_agent', root_folder, True,  'T:\\user\\AIKIF')
     print(agt.report())
 
       
@@ -18,18 +18,18 @@ class FileListAgent(agt.Agent):
     and how the results are saved [using AIKIF logging].
     """
     
-    def __init__(self, name,  fldr, running, LOG_LEVEL, log_folder, col_list):
-        agt.Agent.__init__(self, name,  fldr, running)
+    def __init__(self, name,  fldr, running,  log_folder):
         """
         takes a fldr which is a single folder as string and makes its
         own instance of cls_filelist in do_your_job - not the best idea
         """
-        self.LOG_LEVEL = LOG_LEVEL
+        agt.Agent.__init__(self, name,  fldr, running)
+        self.LOG_LEVEL = 1
         self.root_folder = fldr
         self.log_folder = log_folder
         self.fl_opname = log_folder + os.sep + name + '.csv'
         self.col_list = col_list
-        if running == True:
+        if running is True:
             self.do_your_job()
 
     def do_your_job(self):

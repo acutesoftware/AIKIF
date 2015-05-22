@@ -44,26 +44,26 @@ class FileListGroup(object):
         self.filelist = []              # contains a list of the filelist class instances
         self.src_folder = src_folder
         self.dest_folder = dest_folder
-     
+
     def __str__(self):
         """ display the filelist group details """
         txt =  'FileListGroup : ' + self.name + '\n'
         txt += 'src_folder    : ' + self.src_folder + '\n'
         txt += 'dest_folder   : ' + self.dest_folder + '\n'
         return txt
-        
+
     def backup(self):
         """
         copies all files from the src folder to the dest folder
         """
         print("TODO backing up " + self.name)
-        
+
     def restore(self):
         """
         restores all files from the dest folder to the src folder
         """
         print("TODO (be careful with this) restoring " + self.name)
-        
+
     def backup_incremental(self):
         """
         copies CHANGED files from the src folder to the dest folder
@@ -208,20 +208,10 @@ class FileList(object):
                                     if filename.find(exclude) != -1:
                                         includeThisFile = "N"
                             if includeThisFile == "Y":
-                                if VERBOSE:
-                                    try:
-                                        print(os.path.basename(filename), '\t', os.path.getsize(filename), '\t', dirs)
-                                    except:
-                                        print("ERROR printing UniCode filename")
                                 numFiles = numFiles + 1
                                 self.filelist.append(filename)
                                 self.add_file_metadata(filename)    # not sure why there is a 2nd list, but there is.
-                        else:
-                            try:
-                                #print("file not matched " + basename)
-                                pass
-                            except UnicodeError:
-                                print("file not matched, but cant print basename")
+
         if VERBOSE:
             print("Found ", numFiles, " files")
         return self.filelist
@@ -295,7 +285,7 @@ class FileList(object):
             if fld == "name":
                 try:
                     line = line + qu + os.path.basename(fname) + qu + d
-                except:
+                except Exception:
                     line = line + qu + 'ERROR_FOLDER' + qu + d
             if fld == "date":
                 try:
@@ -365,11 +355,12 @@ class FileList(object):
             
             #print ("Finished saving " , opFile)
 
-	
+    
     def save_file_usage(self, fldr, nme):
-        """ saves a record of used files for infolink applications """
+        """ 
+        saves a record of used files for infolink applications
+        
         print("Saving File Usage to " + fldr)
-        #print(self.get_dirty_filelist())
         file_copied = fldr + 'copied_' + nme + '.txt'
         file_failed = fldr + 'failed_' + nme + '.txt'
         file_data = fldr + 'filelist_' + nme + '.csv'
@@ -411,7 +402,8 @@ class FileList(object):
                     f.write(self.TodayAsString() + ', ' + fname + ' (' + str(os.path.getsize(fname)) + ' bytes)\n')
                 except IOError:
                     print("FAILED LOGGING FILENAME to file_usage")
-
+        """
+        pass 
  
     def update_indexes(self, fname):
         """ 
@@ -422,8 +414,8 @@ class FileList(object):
         print("Updating index " + fname)
         
         
-	
+    
 if __name__ == '__main__':
-	TEST()
-	
+    TEST()
+    
             

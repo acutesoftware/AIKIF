@@ -7,7 +7,7 @@ EMPTY = '.'   # TODO - need to change this in multiple places (see worlds.py, cl
 FULL = 'X'     
 
 
-class Grid:
+class Grid(object):
     """
     Class to run the game logic.
     """
@@ -119,7 +119,7 @@ class Grid:
         square.  The tile should be 2 90% of the time and
         4 10% of the time.
         """
-        for i in range(num):				
+        for _ in range(num):				
             if random.random() > .5: 
                 new_tile = self.pieces[0]
             else:
@@ -131,7 +131,9 @@ class Grid:
             if blanks == 0:
                 print ("GAME OVER")
             else:
-                row, col = self.find_random_blank_cell()
+                res = self.find_random_blank_cell()
+                row = res[0]
+                col = res[1]
                 self.set_tile(row, col, new_tile)
                 
 
@@ -165,7 +167,7 @@ class Grid:
         while self.grid[row][col] != EMPTY:
             row = random.randrange(0, self.grid_height)
             col = random.randrange(0, self.grid_width)
-        return row, col
+        return [row, col]
         
     def set_tile(self, row, col, value):
         """
@@ -195,7 +197,7 @@ class Grid:
             self.grid[row][col] = value
             #if value == 'A':
             #    print("AGENT INSTALLED at ", row, col)
-        except:
+        except Exception:
             print("Error - tile out of range")
 
     def get_tile(self, row, col):

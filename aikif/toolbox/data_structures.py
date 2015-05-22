@@ -10,6 +10,7 @@ def TEST():
     g = Graph({'1': ['2','3','4'], '2':['6','7']})
     print('raw graph = ', g)
     mat = g.get_adjacency_matrix(True)
+    print('\nget_adjacency_matrix =', mat)
     print('\n  --== Node Test ==--')
     trunk = Node('root node') 
     branch1 = Node('1st branch')
@@ -28,19 +29,11 @@ def TEST():
     
         
         
-"""------------------------
-Classes for Data Structures
-
-USAGE:
-lib_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." +  os.sep + "toolbox" )
-sys.path.append(lib_folder)
-import data_structures as ds
-myGraph = ds.Graph(...)
-
-"""   
+#----------------------------
+# Classes for Data Structures
 
 
-class Node:
+class Node(object):
     """
     Node data structure
     """
@@ -123,7 +116,7 @@ class Graph(object):
             for connection in self.graph[node]:
                 all_nodes.append(connection)
         self.nodes = sorted(list(set(all_nodes)))
-        if show_in_console != False:
+        if show_in_console is not False:
             print (len(self.nodes), 'nodes:', self.nodes)
             print (len(self.links), 'links:', self.links)
         
@@ -137,14 +130,14 @@ class Graph(object):
                     if self.nodes[x] == l[1] and self.nodes[y] == l[0]:
                         match = True
                         
-                if match == True:
+                if match is True:
                     row.append(1)
                 else:
                     row.append(0)
                 
             op.append(row)
             
-        if show_in_console != False:
+        if show_in_console is not False:
             for row in op:
                 print(row)
             

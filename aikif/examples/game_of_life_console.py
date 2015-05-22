@@ -2,7 +2,6 @@
 import os
 import sys
 import time
-import random
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
 lib_folder = os.path.abspath(cur_folder + os.sep + ".." +  os.sep + "toolbox" )
@@ -29,7 +28,7 @@ def main():
     time_delay  = 0.03   # delay when printing on screen
     lg = mod_log.Log('test')
     lg.record_process('Game of Life', 'game_of_life_console.py')
-    for i in range(iterations):
+    for _ in range(iterations):
         s,e = run_game_of_life(years, width, height, time_delay, 'N') 
         lg.log_result("Started with " +  str(s) + " cells and ended with " + str(e) + " cells")
         

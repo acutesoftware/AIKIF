@@ -11,16 +11,16 @@ def TEST():
     print(f.drill_down()[1])
 
     # Events
-    e = Event('Sales Meeting', '2015-04-11', 'Office', 'Meet with client to discuss custom software')
+    e = Event('Sales Meeting', ['2015-04-11', 'Office', 'Meet with client to discuss custom software'])
     print(e)
     
     # save a table
-    ev = CoreTable(fldr=os.getcwd(), type='Events', user='user01', header=['date', 'category', 'details'])
-    ev.add(Event('Sales Meeting', '2014-01-11', 'Office', 'Catchup with client'))
-    ev.add(Event('Sales Meeting#3', '2015-03-11', 'Office', 'Catchup with client'))
-    ev.add(Event('DEV AIKIF - core data', '2015-05-11', 'Software', 'update TEST - no test for CORE_DATA'))
-    ev.add(Event('DEV LifePim - core data', '2015-03-11', 'Software', 'use data for LifePim'))
-    ev.add(Event('DEV AIKIF - data tools', '2015-05-11', 'Software', 'fix data tools '))
+    ev = CoreTable(fldr=os.getcwd(), tpe='Events', user='user01', header=['date', 'category', 'details'])
+    ev.add(Event('Sales Meeting', ['2014-01-11', 'Office', 'Catchup with client']))
+    ev.add(Event('Sales Meeting#3', ['2015-03-11', 'Office', 'Catchup with client']))
+    ev.add(Event('DEV AIKIF - core data', ['2015-05-11', 'Software', 'update TEST - no test for CORE_DATA']))
+    ev.add(Event('DEV LifePim - core data', ['2015-03-11', 'Software', 'use data for LifePim']))
+    ev.add(Event('DEV AIKIF - data tools', ['2015-05-11', 'Software', 'fix data tools ']))
     print(ev)
     
     ev.save()
@@ -119,7 +119,7 @@ class CoreData(object):
         adds a link from this thing to other thing
         using type (is_a, has_a, uses, contains, part_of)
         """
-        if check_type(type):
+        if check_type(tpe):
             self.links.append(self.name, other, tpe)
         else:
             raise Exception('aikif.core_data cannot process this object type')
@@ -146,12 +146,12 @@ class Object(CoreData):
         CoreData.__init__(self, name, data, parent)
     
 class Event(CoreData):
-    def __init__(self, name, date, category, details, data=None, parent=None):
+    def __init__(self, name, data=None, parent=None):
         """
         Events have a simple data structure
         date, category, remind_time, event
         """
-        data = [date, category, details]
+        #data = [date, category, details]
         
         CoreData.__init__(self, name, data, parent)
         

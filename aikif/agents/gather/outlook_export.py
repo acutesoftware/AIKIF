@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # outlook_export.py   written by Duncan Murray 15/1/2015
 import sys
-import codecs
 import win32com
 
 def TEST():
@@ -66,17 +65,8 @@ class Message(object):
         delim = '","'
         txt = '"' + self.path + delim
         txt += str(self.msg.size) + delim
-        
-        
-        try:
-            txt += str(self.msg.ReceivedTime) + delim
-        except UnicodeError:
-            txt += delim
-
-        try:
-            txt += str(self.msg.SenderEmailAddress) + delim
-        except UnicodeError:
-            txt += delim
+        txt += str(self.msg.ReceivedTime) + delim
+        txt += str(self.msg.SenderEmailAddress) + delim
 
         try:
             txt += self.msg.SenderName + delim
@@ -99,18 +89,16 @@ class Message(object):
                 txt += delim
         try:
             for attach in self.msg.Attachments:
-                #print(attach.FileName )
                 if attach:
                     txt += attach.FileName + '; '
                     attach.SaveASFile('E:\\backup\\MAIL\\_EXPORTED\\' + attach.FileName)
             txt += delim   
         except UnicodeError:
             txt += delim   
-        """
-        TODO - save attachments
-        attach.SaveASFile( C:\\folder\\' + attach.FileName)
-        """
-        
+
+        #TODO - save attachments
+        #attach.SaveASFile( C:\\folder\\' + attach.FileName)
+      
 
         return txt + '"\n'
  
