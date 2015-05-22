@@ -4,7 +4,7 @@
 import os
 import aikif.config as cfg
 import aikif.agents.agent as agt
-import aikif.toolbox.image_tools as moda_img
+import aikif.toolbox.image_tools as mod_img
 
 def TEST():
     ip_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'cur_files.txt'
@@ -60,7 +60,7 @@ class ImageMetadataAgent(agt.Agent):
         when the list was last modified
         """
         pass
-		
+        
 if __name__ == '__main__':
-	TEST()
+    TEST()
 

@@ -5,8 +5,7 @@ def TEST():
     usage from other programs:
     from sql_code_generator import SQLCodeGenerator
     """
-    import aikif.dataTools.cls_sql_code_generator as sql
-    tst = sql.SQLCodeGenerator('C_FACT_TABLE')
+    tst = SQLCodeGenerator('C_FACT_TABLE')
     print(tst)
  
 class SQLCodeGenerator(object):
@@ -44,7 +43,7 @@ class SQLCodeGenerator(object):
         with open(fname, "w") as f:
             f.write(self.undo_text)
 
-    
+
     def set_column_list(self, col_list):
         """ 
         opens table or CSV file and collects column names, data samples
@@ -100,7 +99,7 @@ class SQLCodeGenerator(object):
     
     def trunc_fact_table(self):
         """ wipe all records from fact table """
-       	self.sql_text += 'DELETE FROM ' + self.fact_table + ';\n'
+        self.sql_text += 'DELETE FROM ' + self.fact_table + ';\n'
         self.sql_text += 'COMMIT;\n'
        
     def reverse_pivot_to_fact(self, staging_table, piv_column, piv_list, from_column, meas_names, meas_values, new_line):
@@ -168,7 +167,7 @@ class SQLCodeGenerator(object):
             self.sql_text += 'SELECT '  + new_line
             num_chars_on_line = 0
             self.sql_text += "'" + piv_list[piv_num] + "', "
-            for meas_num, meas_name in enumerate(meas_names):
+            for meas_num, _ in enumerate(meas_names):
                 if meas_values[meas_num] == '':
                     self.sql_text += piv_list[piv_num] + ', '
                 else:

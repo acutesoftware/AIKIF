@@ -40,7 +40,7 @@ def add_event(fname, dte, details, remindme='', cat='Diary'):
     """
     print("Adding event:", dte, remindme, details)
     
-    e = c.Event('Diary', dte, cat, details)
+    e = c.Event('Diary', [dte, cat, details])
     
     
     with open(fname, "a") as f:

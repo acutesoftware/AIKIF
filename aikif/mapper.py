@@ -40,7 +40,7 @@ class Mapper(object):
                 for line in f:
                     rule = MapRule(line)
                     self.maps.append(rule)
-        except FileNotFoundError:
+        except Exception:
             print('cant load file ', map_file)
     
     def save_rules(self):
@@ -51,25 +51,26 @@ class Mapper(object):
             for m in self.maps:
                 f.write(m.format_for_file_output())
                 
-    def process_data(self, type, raw_data):
+    def process_data(self, tpe, raw_data):
         """
         top level function to decide how to process 
         the raw data (which can be any format)
         """
         num_applicable_rules = 0
-        formatted_data = self.format_raw_data(type, raw_data)
+        formatted_data = self.format_raw_data(tpe, raw_data)
         for m in self.maps:
-            if m.type == type:
+            if m.tpe == tpe:
                 num_applicable_rules += 1
-                self.process_rule(m, formatted_data, type)
+                self.process_rule(m, formatted_data, tpe)
         return num_applicable_rules
         
-    def process_rule(self, m, dict, tpe):
+    def process_rule(self, m, dct, tpe):
         """ 
         uses the MapRule 'm' to run through the 'dict'
         and extract data based on the rule
         """
         print('TODO - ' + tpe + ' + applying rule ' + str(m).replace('\n', '') )
+        print(dct)
     
     def format_raw_data(self, tpe, raw_data):
         """
@@ -182,7 +183,7 @@ class MapRule(object):
         takes a raw row in the map file and extracts info
         """
         cols = raw_line.split(',')
-        self.type = cols[0].strip()
+        self.tpe = cols[0].strip()
         self.key = cols[1].strip()
         self.val = cols[2].strip()
     
@@ -190,10 +191,10 @@ class MapRule(object):
         """
         display a map rule to string
         """
-        return self.type.ljust(15) + self.key.ljust(15) + self.val.ljust(15) + '\n'
+        return self.tpe.ljust(15) + self.key.ljust(15) + self.val.ljust(15) + '\n'
         
     def format_for_file_output(self):
-        return self.type + ',' + self.key + ',' + self.val + '\n'
+        return self.tpe + ',' + self.key + ',' + self.val + '\n'
  
 class MapColumns(object):
     """

@@ -28,7 +28,7 @@ class FileListAgent(agt.Agent):
         self.root_folder = fldr
         self.log_folder = log_folder
         self.fl_opname = log_folder + os.sep + name + '.csv'
-        self.col_list = col_list
+        self.col_list = []
         if running is True:
             self.do_your_job()
 

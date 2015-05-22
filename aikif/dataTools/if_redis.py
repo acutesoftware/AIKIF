@@ -102,7 +102,7 @@ class redis_server(Database):
         (this is not how class will be implemented - just testing for now)
         """
 #        super(Database, self).__init__([host + ':' + str(port), str(db), '', ''])
-        super(Database, self).__init__([host + ':' + str(port), str(db), '', ''])
+        super(redis_server, self).__init__([host + ':' + str(port), str(db), '', ''])
         self.connection = redis.StrictRedis(host, port , db);
 
     def get(self, key):  

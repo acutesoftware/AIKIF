@@ -105,9 +105,9 @@ def GetWindowsProcesses_method2():
     from subprocess import call
     try:
         _ = call(batFile, shell=True) 
+        print(_)
         time.sleep(1)
-    except OSError as e:
-        'ERROR - could not get list of processes'
+    except Exception:
         return []
 
     print('reading Processes')
