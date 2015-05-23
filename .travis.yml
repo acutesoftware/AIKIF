@@ -15,7 +15,7 @@ install:
 script:  
   - python setup.py nosetests --with-coverage --cover-package pypiview
   - coverage run --source=AIKIF setup.py test
-  - nosetests
+  - nosetests --with-coverage
  
  after_success:  
   - coveralls
