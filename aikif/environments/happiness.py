@@ -25,7 +25,7 @@ def TEST():
     
     
     """
-    w = World('Mars', 0, 0.0, 0.9, 0.0)
+    w = World('Mars', [0, 0.0, 0.9, 0.0])
     print(w)
     p = Person('Rover', {'tax_min':0.0, 'tax_max':0.9,'tradition':0.9, 'equity':0.0})
     print(p)
@@ -42,12 +42,12 @@ class World(object):
     """
     define a 'world' that all the population live it
     """
-    def __init__(self, nme, population, tax_rate, tradition, equity):
+    def __init__(self, nme, params):
         self.nme = nme
-        self.population = population
-        self.tax_rate = tax_rate
-        self.tradition = tradition
-        self.equity = equity
+        self.population = params[0]
+        self.tax_rate = params[1]
+        self.tradition = params[2]
+        self.equity = params[3]
         self.world_locations = []  
         
     def __str__(self):
@@ -75,14 +75,14 @@ class WorldLocations(object):
     This is a subsection of the World with its own parameters
     to allow people to experience maximum happiness (that's the idea anyway)
     """
-    def __init__(self, nme, population, tax_rate, tradition, equity):
+    def __init__(self, nme, params):
         self.nme = nme
         self.pos_x = 0     # may not use a grid, would be better as a graph
         self.pos_y = 0     # to allow large populations to expand without effect
-        self.population = population
-        self.tax_rate = tax_rate
-        self.tradition = tradition
-        self.equity = equity
+        self.population = params[0]
+        self.tax_rate = params[1]
+        self.tradition = params[2]
+        self.equity = params[3]
         
     def __str__(self):
         res = '\n----- WORLD SUMMARY for : ' + self.nme + ' -----\n'
@@ -138,7 +138,7 @@ class WorldFinder(object):
                     self.num_worlds += 1
                     if self.num_worlds > max_worlds:
                         break
-                    w = World(str(self.num_worlds).zfill(6), 5000, tax_rate/10, tradition/10, equity/10)
+                    w = World(str(self.num_worlds).zfill(6), [5000, tax_rate/10, tradition/10, equity/10])
                     world_happiness = 0
                     num_unhappy = 0
                     for person in self.all_people:
@@ -158,11 +158,11 @@ class HappinessFactors(object):
     h = Happiness(p, w)
     h.add_factor(HappinessFactors('tax rate', 0.2, 0.5, 'hi'))
     """
-    def __init__(self, name, type, min, max):
+    def __init__(self, name, tpe, mn, mx):
         self.name = name
-        self.type = type
-        self.min = min
-        self.max = max
+        self.type = tpe
+        self.min = mn
+        self.max = mx
     
     def __str__(self):
         res = self.name.rjust(15) + ': '

@@ -20,7 +20,7 @@ class Grid(object):
         self.reset()
         self.grid = [[EMPTY for dummy_col in range(self.grid_width)] 
                        for dummy_row in range(self.grid_height)]
-
+        #print(self.grid)
         
                        
     def reset(self):
@@ -49,8 +49,12 @@ class Grid(object):
 
     def save(self, fname):
         """ saves a grid to file as ASCII text """
-        with open(fname, "w") as f:
-            f.write(str(self))
+        try:
+            with open(fname, "w") as f:
+                f.write(str(self))
+        except Exception:
+            print('ERROR = cant save grid results to ' + fname)
+            
         
         
     def load(self, fname):
@@ -203,7 +207,8 @@ class Grid(object):
     def get_tile(self, row, col):
         """
         Return the value of the tile at position row, col.
-        """        
+        """   
+        #print('attempting to get_tile from ', row, col)
         return self.grid[row][col]
 
     def set_empty(self, row, col):

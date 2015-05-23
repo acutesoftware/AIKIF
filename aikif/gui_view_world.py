@@ -8,8 +8,8 @@ try:
 except ImportError:
     import tkinter as Tkinter
 
-from PIL import ImageTk, Image
-from tkinter import Tk, Canvas, PhotoImage
+#from PIL import ImageTk, Image
+from tkinter import Canvas, PhotoImage
             
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) ) 
 

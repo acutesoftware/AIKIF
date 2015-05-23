@@ -119,7 +119,7 @@ class CoreData(object):
         adds a link from this thing to other thing
         using type (is_a, has_a, uses, contains, part_of)
         """
-        if check_type(tpe):
+        if self.check_type(tpe):
             self.links.append(self.name, other, tpe)
         else:
             raise Exception('aikif.core_data cannot process this object type')

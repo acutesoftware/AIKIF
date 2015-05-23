@@ -142,7 +142,7 @@ class redis_server(Database):
         print ('loaded ', str(row_num) , ' rows')
         
         
-    def export_to_CSV(fldr, printHeader = True):
+    def export_to_CSV(self, fldr, printHeader = True):
         opFile = fldr + 'test' + '.CSV'
         if printHeader is True:
             print('saving header')

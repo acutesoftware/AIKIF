@@ -11,8 +11,8 @@ all_people.append(mod_env.Person('Gand', {'tax_min':0.3, 'tax_max':0.5, 'traditi
 all_people.append(mod_env.Person('Murd', {'tax_min':0.0, 'tax_max':0.2,'tradition':0.5, 'equity':0.1}))
 
 all_worlds = []
-w1 = mod_env.World('Astr', 5000, 0.1, .2, 0.3)
-w2 = mod_env.World('Cryx', 1000, 0.3, .3, 0.5)
+w1 = mod_env.World('Astr', [5000, 0.1, .2, 0.3])
+w2 = mod_env.World('Cryx', [1000, 0.3, .3, 0.5])
 all_worlds.append(w1)
 all_worlds.append(w2)
 
@@ -88,8 +88,8 @@ class TestSolveHappiness(unittest.TestCase):
         self.assertEqual(list1[0].prefs['tax_min'] > 0.009, True)
 
     def test_10_locations(self):
-        erth = mod_env.World('Erth', 7000, 0.1, .2, 0.3)
-        country1 = mod_env.WorldLocations('Ostraleu', 26, 0.3, 0.3, 0.4)
+        erth = mod_env.World('Erth', [7000, 0.1, .2, 0.3])
+        country1 = mod_env.WorldLocations('Ostraleu', [26, 0.3, 0.3, 0.4])
         erth.add_location(country1)
         self.assertEqual(len(str(country1)), 108)
  

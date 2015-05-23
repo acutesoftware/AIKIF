@@ -54,10 +54,10 @@ class Programs(object):
         self.tot_files = 0
         self.tot_loc = 0
         fl = mod_fl.FileList([self.fldr], ['*.py'], ["__pycache__", ".git"])
-        for file in fl.get_list():
-            if '__init__.py' not in file:
-                self.add(file, 'TODO - add comment')
-                f = mod_file.TextFile(file)
+        for f in fl.get_list():
+            if '__init__.py' not in f:
+                self.add(f, 'TODO - add comment')
+                f = mod_file.TextFile(f)
                 self.tot_lines += f.count_lines_in_file()
                 self.tot_loc += f.count_lines_of_code()
                 self.tot_bytes += f.size
@@ -88,7 +88,7 @@ class Programs(object):
                     i[1] = desc
                     program_exists = True
             
-            if program_exists == False: # not there?
+            if program_exists is False: # not there?
                 self.lstPrograms.append([nme,desc + ' - <I>FILE DOESNT EXIST</I>'])
             
             self.lg.record_process('adding description to - ' + nme)
@@ -115,7 +115,7 @@ class Programs(object):
         
         # save to standard AIKIF structure
         filemap = mod_filemap.FileMap(mod_filemap.dataPath)
-        location_fileList = filemap.get_full_filename(filemap.find_type('LOCATION'), filemap.find_ontology('FILE-PROGRAM')[0])   	
+        #location_fileList = filemap.get_full_filename(filemap.find_type('LOCATION'), filemap.find_ontology('FILE-PROGRAM')[0])   	
         object_fileList = filemap.get_full_filename(filemap.find_type('OBJECT'), filemap.find_ontology('FILE-PROGRAM')[0])   	
         print('object_fileList = ' + object_fileList + '\n')
         os.remove(object_fileList)

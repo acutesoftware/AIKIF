@@ -54,7 +54,7 @@ class Oracle(Database):
         # connects to Oracle database and returns the open connection cursor
         password = base64.b64decode(encryptedPasswd)
         conn_str = schema + u'/' + password + '@' + dbase
-        print(conn_str)
+        print(conn_str, usr)
         conn = cx_Oracle.connect(conn_str)
         return conn
 

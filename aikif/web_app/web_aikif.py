@@ -205,7 +205,7 @@ def format_list_as_html_table_row(lst):
     return txt
     
 def format_csv_to_html(csvFile, opHTML):
-    txt = '' # TODO = BuildHTMLHeader(csvFile)
+    """
     print(len(opHTML))
     with open(csvFile) as csv_file:
         for row in csv.reader(csv_file, delimiter=','):
@@ -216,10 +216,10 @@ def format_csv_to_html(csvFile, opHTML):
                 txt += "</TD>"
             txt += "</TR>"
         txt += "</TABLE>"
+    """
+    txt = 'TODO format_csv_to_html to convert' + csvFile + ' to ' + opHTML
     return txt
     
-def DisplayImagesAsHTML(imageList):
-    pass
 
     
 if __name__ == "__main__":

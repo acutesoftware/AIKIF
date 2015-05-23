@@ -16,9 +16,10 @@ class World(object):
     TODO = derive this on the Environment class and fix the rubbish functions
     
     """
-    def __init__(self, width, height, terrain):
-        self.grd = grd.Grid(width, height, terrain, 1)
+    def __init__(self, height, width, terrain):
+        self.grd = grd.Grid(height, width, terrain, 1)
         self.refresh_stats()
+        print(self.grd)
     
     def __str__(self):
         txt_summary = '\nWorld'
@@ -199,8 +200,16 @@ class World(object):
  
     def add_block(self):
         """ adds a random size block to the map """
-        row = randint(0, self.grd.get_grid_height() - 15)
-        col = randint(0, self.grd.get_grid_width() - 10)
+        row_max = self.grd.get_grid_height() - 15
+        if row_max < 2:
+            row_max = 2
+        row = randint(0, row_max)
+        
+        col_max = self.grd.get_grid_width() - 10
+        if col_max < 2:
+            col_max = 2
+        col = randint(0, col_max)
+        
         direction = randint(1,19)-10
         if direction > 0:
             y_len = 10 * (math.floor(self.grd.get_grid_height() / 120) + 1)
@@ -240,9 +249,12 @@ class WorldSimulation(object):
         #self.highlight_cell_surroundings(self.agent_list[0].target_y, self.agent_list[0].target_x)
         self.start_all_agents()
         # save the agents results here
-        with open (log_file_base + '__agents.txt', "w") as f:
-            f.write("Starting World = \n")
-            f.write(str(self.world.grd))
+        try:
+            with open (log_file_base + '__agents.txt', "w") as f:
+                f.write("Starting World = \n")
+                f.write(str(self.world.grd))
+        except Exception:
+            print('Cant save log results to ' + log_file_base)
             
         for cur_run in range(0,num_runs):
             print("WorldSimulation:run#", cur_run)
@@ -252,7 +264,7 @@ class WorldSimulation(object):
                         self.world.grd.set_tile(agt.current_y, agt.current_x, 'o')
                     else:
                         self.world.grd.set_tile(agt.current_y, agt.current_x, str(num))
-                agt.do_your_job(self.LOG_LEVEL)
+                agt.do_your_job()
                 self.world.grd.set_tile(agt.current_y, agt.current_x, 'A')    # update the main world grid with agents changes
             
             # save grid after each run if required

@@ -2,7 +2,7 @@
 # page_data.py	written by Duncan Murray 26/5/2014
 # handles the data display page for AIKIF web interface
 
-import sys, os
+import os
 import aikif.web_app.web_utils as web
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 

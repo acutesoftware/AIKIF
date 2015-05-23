@@ -2,7 +2,6 @@
 # part of AIKIF 
 
 import os
-import sys
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 
 def TEST():

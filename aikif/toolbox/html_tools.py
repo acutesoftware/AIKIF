@@ -23,7 +23,7 @@ def extract_page_links(rawText, searchText):
         l = str(link.get('href'))
         if searchText in l:
             #a = link.attrs
-            content = str(link.string)
+            #content = str(link.string)
             #t = str(link.get('title'))
             if l != '/':
                 links.append(l)

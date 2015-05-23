@@ -34,14 +34,14 @@ def get_host_name():
     return socket.gethostname()
 
 def get_web_page(url):
-	txtString = '404'
-	try:
-		rawText = urllib.request.urlopen(url).read()
-		txtString =  str( rawText, encoding='utf8' )
-	except UnicodeError:
-		pass
-	return txtString
-    
+    txtString = '404'
+    try:
+        rawText = urllib.request.urlopen(url).read()
+        txtString =  str( rawText, encoding='utf8' )
+    except UnicodeError:
+        pass
+    return txtString
+
 def download_file_no_logon(url, filename):
     """
     download a file from a public website with no logon required
@@ -73,7 +73,7 @@ def get_protected_page(url, user, pwd, filename):
                 fd.write(chunk)
     else:
         print('failed = ' + str(r.status_code))
-        
+
 def download_file(p_realm, p_url, p_op_file, p_username, p_password):
     """
     Currently not working...
@@ -92,7 +92,7 @@ def download_file(p_realm, p_url, p_op_file, p_username, p_password):
     web = urllib.request.urlopen(p_url)
     with open(p_op_file, 'w') as f:
         f.write(web.read().decode('utf-8'))
-        
+
 def download_file_proxy(p_url, p_op_file, p_username, p_password, proxies):
     """
     Currently fails behind proxy...
@@ -110,4 +110,3 @@ def download_file_proxy(p_url, p_op_file, p_username, p_password, proxies):
 
 if __name__ == '__main__':
     TEST()    
-    

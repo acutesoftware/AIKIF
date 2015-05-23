@@ -2,11 +2,9 @@
 
 
 import os
-import sys
 import random
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
-#sys.path.append(root_folder)
-print(root_folder)
+
 import aikif.agents.agent as agt
 
         
@@ -22,7 +20,7 @@ class ExploreAgent(agt.Agent):
         self.num_steps = 0
         self.num_climbs = 0
         
-    def set_world(self, grd, start_y, start_x, y, x):
+    def set_world(self, grd, start_y_x, y_x):
         """
         tell the agent to move to location y,x 
         Why is there another grd object in the agent? Because 
@@ -31,12 +29,12 @@ class ExploreAgent(agt.Agent):
         The real grid is initialised in World.__init__() class
         """
         self.grd = grd
-        self.start_x = start_x
-        self.start_y = start_y
-        self.current_x = start_x
-        self.current_y = start_y
-        self.target_x = x
-        self.target_y = y
+        self.start_y = start_y_x[0]
+        self.start_x = start_y_x[1]
+        self.current_y = start_y_x[0]
+        self.current_x = start_y_x[1]
+        self.target_y = y_x[0]
+        self.target_x = y_x[1]
         self.backtrack = [0,0]   # set only if blocked and agent needs to go back
         self.prefer_x = 0        # set only if backtracked as preferred direction x
         self.prefer_y = 0        # set only if backtracked as preferred direction y
@@ -63,7 +61,6 @@ class ExploreAgent(agt.Agent):
         self.num_steps += 1   
         # first try is to move on the x axis in a simple greedy search
         accessible = ['\\', '-', '|', '/', '.']
-        blocked = '#'
         
         # randomly move in Y direction instead of X if all paths clear
         if y != 0 and x != 0 and self.backtrack == [0,0]:
