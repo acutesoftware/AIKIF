@@ -16,6 +16,7 @@ Thumbs.db
 .cache
 nosetests.xml
 coverage.xml
+.coveralls.yml
 
 # large files and old prototypes
 aikif/ontology/open-cyc.n3
