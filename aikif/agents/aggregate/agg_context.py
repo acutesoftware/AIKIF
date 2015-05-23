@@ -77,8 +77,6 @@ def summarise_filelist(fname):
     fullfilenames = []
     files = []
     folders = []
-    errors = []
-    numLines = 0
     print('Summarizing FileList = ', fname)
     with open(fname, 'r', encoding="utf8") as f:
         for line in f:
@@ -90,7 +88,8 @@ def summarise_filelist(fname):
                     files.append(cols[1].strip('"').strip(' '))
                     folders.append(cols[2].strip('"').strip(' '))
                 except Exception:
-                    errors.append(line)
+                    #print('error = ' , line)
+                    pass
                     
     # make an index of ALL words
     print('generating index')

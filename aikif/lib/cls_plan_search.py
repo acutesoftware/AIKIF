@@ -21,7 +21,7 @@ def TEST():
     plan = PlanSearchAStar('8 Puzzle', environ, goal, start)
     print(plan)
     plan.search()    
-    my_prob = Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test1', 'test of problem')
+    my_prob = Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test' )
     print(my_prob)
     print('Goal test should pass with [1,2,3,4]: ', my_prob.goal_test([1,2,3,4]))
     print('Goal test should fail with [3,2,1,4]: ', my_prob.goal_test([3,2,1,4]))
@@ -36,14 +36,13 @@ class Problem(object):
     - set of actions with outcomes
     - path cost function
     """
-    def __init__(self, goal, start, actions, name, description):
+    def __init__(self, goal, start, actions, name):
         """
         The Search Problem is defined by an initial state, a successor function,
         and a goal state.  In lieu of a path cost function, a default one is
         provided that depends on the depth of the node in the tree.
         """
         self.name = name
-        self.description = description
         self.actions = actions
         self.start = start
         self.goal = goal
@@ -52,7 +51,6 @@ class Problem(object):
     def __str__(self):
         res = ' --- Problem Definition ---' '\n'
         res += 'Problem Name : ' + self.name + '\n'
-        res += 'Description  : ' + self.description + '\n'
         res += 'Start State  : ' + list_2_str(self.start) + '\n'
         res += 'Goal State   : ' + list_2_str(self.goal) + '\n'
         res += 'Actions List : ' + '\n'

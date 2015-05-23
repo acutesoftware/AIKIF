@@ -78,9 +78,9 @@ class EmailAccount(object):
     """
     base class for email account - server details based when sub-classed
     """
-    def __init__(self, username, password, save_folder, send_server_name, rec_server_name):
-        self.username = username
-        self.password = password
+    def __init__(self, credentials, save_folder, send_server_name, rec_server_name):
+        self.username = credentials[0]
+        self.password = credentials[1]
         self.save_folder = save_folder
         self.send_server_name = send_server_name
         self.rec_server_name = rec_server_name
@@ -148,7 +148,7 @@ class EmailAccount(object):
  
 class GmailAccount(EmailAccount):
     def __init__(self, username, password, save_folder):
-        EmailAccount.__init__(self, username, password, save_folder, 'smtp.gmail.com:587', ['imap.gmail.com', 993])
+        EmailAccount.__init__(self, [username, password], save_folder, 'smtp.gmail.com:587', ['imap.gmail.com', 993])
         
     def __str__(self):
         return '--- Gmail' + str(EmailAccount.__str__(self))

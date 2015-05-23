@@ -26,8 +26,9 @@ class Internet(mod_env.Environment):
         self.log.record_command('enviroment.py', 'Initilising base environment - ' + self.name)
         
         """
-        super(Internet, self).__init__(name, desc)
+        super(Internet, self).__init__(name)
         self.websites = []
+        self.desc = desc
     
     def __str__(self):
         res = super(Internet, self).__str__()

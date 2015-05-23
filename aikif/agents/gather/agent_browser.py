@@ -27,7 +27,7 @@ op_folder = mod_cfg.fldrs['pers_data']
 def TEST():
     """ self test for browser agent """
     my_browser = Browser(browser_data_path, op_folder, 'Chrome')
-    my_agent = BrowserCollectAgent('Duncans Browser', root_folder, my_browser, False, log_folder)
+    my_agent = BrowserCollectAgent('Duncans Browser', log_folder, my_browser, False)
     
     print('browser object = ', my_browser)
     print('agent object   = ', my_agent)
@@ -46,7 +46,7 @@ class BrowserCollectAgent(agt.Agent):
     results using AIKIF logging
     """
     
-    def __init__(self, name, fldr, browser, running, log_folder):
+    def __init__(self, name, fldr, browser, running):
         """
         takes a browser object (see below) to manage the collection - sub 
         class browser for different ones (IE, Firefox, Safari)
@@ -55,7 +55,6 @@ class BrowserCollectAgent(agt.Agent):
         self.root_folder = fldr # used for logging, NOT the source of Chrome
         self.browser = browser
         self.results = []
-        self.log_folder = log_folder
         if running is True:
             self.do_your_job()
 
@@ -326,7 +325,6 @@ class Browser(object):
             try:
                 password = self.decode_password(row[5])
                 self.num_passwords += 1
-                pass
             except Exception:
                 print('ERROR - password = ', row[5])
             
@@ -339,7 +337,10 @@ class Browser(object):
 
         
     def decode_password(self, raw):
-        """ password from Chrome as byte arrays """
+        """ 
+        password from Chrome as byte arrays 
+        Doesn't decode password, though tried several methods
+        """
         #print("RAW = ", str(raw))
         v1 = str(raw)
         #  v2 = base64.b64decode("".join(b for b in raw))
@@ -348,14 +349,14 @@ class Browser(object):
         #password = row[5].decode("windows-1252")
         #password = "".join( chr( val ) for val in row[5] )
         #import binascii
-        btes = [b for b in raw]
+        #btes = [b for b in raw]
         #v3 = ' '.join(str(b) for b in btes)
         
         
-        v4 = ''
-        for b in raw:
-            if b > 32 and b < 112:
-                v4 += chr(int(b)) + ''
+        #v4 = ''
+        #for b in raw:
+        #    if b > 32 and b < 112:
+        #        v4 += chr(int(b)) + ''
         
         res = v1
         #print("OP  = ", res)

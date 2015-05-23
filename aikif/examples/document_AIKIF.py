@@ -20,12 +20,13 @@ def main():
     p = mod_prg.Programs('AIKIF Programs', fldr)
     document_core_programs(p) 
     document_agents(p) 
+    document_examples(p) 
   
     # p.list()	# get list of all programs
     p.save(fldr + os.sep + 'examples' + os.sep + 'document_AIKIF.csv')
     p.collect_program_info('progress.md')
    
-    
+   
     
 def document_core_programs(p):
     """
@@ -66,20 +67,9 @@ def document_core_programs(p):
     p.comment('cls_goal_money.py', 'example based on cls_goal to manage money goals')
     p.comment('cls_goal_time.py', 'example based on cls_goal to manage time goals')
     p.comment('cls_plan.py', 'STUB only at this stage - this should provide the link from goals to toolbox (somewhat tricky to say the least)')
-    p.comment('load_ABS_data.py', 'old example showing how to map reading a file to the aikif')
-    p.comment('createMindOntology.py', 'script to parse website wiki page of OpenCog into a simple CSV structure')
-    p.comment('cyc_extract.py', 'script to read OpenCyc dataset and extract data (STUB only)')
-    p.comment('read_opencyc.py', 'script to read OpenCyc dataset')
-    p.comment('read_wordnet.py', 'script to read WordNet dataset')
-    p.comment('review_ontology.py', '[DATA] program to document details of ontology review')
-    p.comment('run_agents.py', 'Top level function to run the agents')
     p.comment('Toolbox.py', 'class to manage the toolbox - list of programs and functions aikif can use')
     p.comment('cls_grid.py', 'base class for 2D grid for games - 2048, game of life, 2D terrain maps')
     p.comment('cls_grid_life.py', 'game of life game')
-    p.comment('maths_ml_algorithms.py', 'machine learning algorithms for toolbox in AIKIF')
-    p.comment('crypt_utils.py', 'scripts to encode / decode data')
-    p.comment('game_board_utils.py', 'board game rules')
-    p.comment('solve_knapsack.py ', 'toolbox - solves knapsack (using trivial algorithms)')
     p.comment('test_tool.py', 'tesing toolbox (SHOULD BE IN TESTS)')
     p.comment('page_about.py', 'web_aikif - generates page using flask')
     p.comment('page_agents.py', 'web_aikif - generates page using flask')
@@ -97,12 +87,6 @@ def document_core_programs(p):
     p.comment('outlook_export.py', 'agent to connect to outlook and export emails')
     p.comment('run_dummy_learn_1.py', 'sample code to call a learning algorithm')
     p.comment('cls_collect.py', 'collect filelists')
-    p.comment('example_solve_happiness.py', 'toy problem - finding a world to keep all people happy (O^n^n^n complexity :) )')
-    p.comment('finance_example.py', 'toy problem - logging finance data [TODO]')
-    p.comment('maths_fermat_brute_force.py', 'sample script to calculate long running process')
-    p.comment('puzzle_N_queens.py', 'stub only - not implemented///')
-    p.comment('puzzle_missions_canninballs.py', 'calculates the path to solve problem')
-    p.comment('solve_travelling_salesman.py', 'stub only')
     p.comment('cls_context.py', 'estimate what the user and PC are currently actively working on')
     p.comment('cls_filelist.py', 'fileslist class')
     p.comment('cls_plan_BDI.py', 'stub for planner based on belief, desire, intent')
@@ -110,8 +94,6 @@ def document_core_programs(p):
     p.comment('project.py', 'Core module to manage projects - meta self documentation')
     p.comment('algebra.py', 'toolbox module for based evaluation of maths problems')
     p.comment('data_structures.py', 'Node and Graph classes')
-    p.comment('solve_knapsack.py', 'functions to solve the knapsack problem')
-
 
     p.comment('knowledge.py', 'processs raw data to information')
     p.comment('core_data.py', 'classes to manage the core data types')
@@ -119,6 +101,28 @@ def document_core_programs(p):
     p.comment('network_tools.py', 'toolbox method to download files')
     p.comment('AI_CLI.py', 'Command Line Interface (IN PROGRESS)')
     p.comment('install_data.py', 'script to setup data files (IN PROGRESS)')
+
+def document_examples(p):
+    """
+    Document example programs with purpose (and intent)
+    """
+    p.comment('maths_ml_algorithms.py', 'machine learning algorithms for toolbox in AIKIF')
+    p.comment('crypt_utils.py', 'scripts to encode / decode data')
+    p.comment('game_board_utils.py', 'board game rules')
+    p.comment('solve_knapsack.py ', 'toolbox - solves knapsack (using trivial algorithms)')
+    p.comment('example_solve_happiness.py', 'toy problem - finding a world to keep all people happy (O^n^n^n complexity :) )')
+    p.comment('finance_example.py', 'toy problem - logging finance data [TODO]')
+    p.comment('maths_fermat_brute_force.py', 'sample script to calculate long running process')
+    p.comment('puzzle_N_queens.py', 'stub only - not implemented///')
+    p.comment('puzzle_missions_canninballs.py', 'calculates the path to solve problem')
+    p.comment('solve_travelling_salesman.py', 'stub only')
+    p.comment('solve_knapsack.py', 'functions to solve the knapsack problem')
+    p.comment('load_ABS_data.py', 'old example showing how to map reading a file to the aikif')
+    p.comment('createMindOntology.py', 'script to parse website wiki page of OpenCog into a simple CSV structure')
+    p.comment('cyc_extract.py', 'script to read OpenCyc dataset and extract data (STUB only)')
+    p.comment('read_opencyc.py', 'script to read OpenCyc dataset')
+    p.comment('read_wordnet.py', 'script to read WordNet dataset')
+    p.comment('review_ontology.py', '[DATA] program to document details of ontology review')
  
  
 def document_agents(p):
@@ -126,7 +130,7 @@ def document_agents(p):
     Document agents in AIKIF (purpose and intent)
     """
     p.comment('agent.py', 'base agent class')
-    p.comment('test_agent.py', 'test for agent class (why is this not in /tests root folder? TODO')
+    p.comment('run_agents.py', 'Top level function to run the agents')
     
     p.comment('agent_image_metadata.py', 'agent to collect file picture metadata')
     p.comment('agent_learn_aixi.py', '')

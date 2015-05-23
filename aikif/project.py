@@ -70,11 +70,11 @@ class Project(object):
                 res += d[0] + '\t ' + d[1] + '\n'
         return res
 
-    def add_goal(self, id, name, due_date=None, priority=None):
+    def add_goal(self, goal_id, name, due_date=None, priority=None):
         """
         adds a goal for the project
         """
-        self.goals.append([id, name, due_date, priority])
+        self.goals.append([goal_id, name, due_date, priority])
         
     def add_task(self, task_id, name, due_date=None, priority=None):
         """

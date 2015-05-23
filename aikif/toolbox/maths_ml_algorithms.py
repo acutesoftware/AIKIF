@@ -56,9 +56,6 @@ def ml_information_gain(lst):
 def ml_gini_index(lst):
     print('TODO = ', lst)
     
-def ml_weighted_average(lst):
-    print('TODO = ', lst)
-    
 def ml_support(lst):
     print('TODO = ', lst)
     

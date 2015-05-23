@@ -65,7 +65,7 @@ def GetBrowserHistoryChrome():
         c = sqlite3.connect(path)
         for row in c.execute(SQL_STATEMENT):
             #storage.write( row[0] + ", " + row[1] + ", " + str(row[2])+ ", ")
-            storage.write( '"' + row[0] + '","' + str(row[2]) + '","' + str(row[3]) + '","' + str(DateConv(row[4]))[0:21]  + '","' + str(DateConv(row[5]))[0:21] + '","' + str(row[6]) + '","' + str(row[7]) + '","' + str(row[8]) + '","' + str(row[9]) + '","' + row[1] + '"\n'  )
+            storage.write( format_chrome_row_as_csv(row) )
             numRecs = numRecs + 1
             #date_time = date_from_webkit(row[1])
             #url = re.search(pattern, row[0])
@@ -75,7 +75,22 @@ def GetBrowserHistoryChrome():
     print('Exported ' + str(numRecs) + ' records to ' + opFile)		
 # Main
 
-
+def format_chrome_row_as_csv(row):
+    """
+    takes a chrome browser history row and formats as CSV
+    """
+    txt = ''
+    txt += '"' + row[0] + '","'
+    txt += str(row[2]) + '","' 
+    txt += str(row[3]) + '","' 
+    txt += str(DateConv(row[4]))[0:21]  + '","' 
+    txt += str(DateConv(row[5]))[0:21] + '","'
+    txt += str(row[6]) + '","'
+    txt += str(row[7]) + '","'
+    txt += str(row[8]) + '","'
+    txt += str(row[9]) + '","'
+    txt += row[1] + '"\n'  
+    return txt
         
 if __name__ == '__main__':
     GetBrowserHistoryChrome()	

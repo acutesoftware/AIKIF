@@ -46,8 +46,8 @@ def read_credentials(fname):
     username and password
     """
     with open(fname, 'r') as f:
-            username = f.readline().strip('\n')
-            password = f.readline().strip('\n')
+        username = f.readline().strip('\n')
+        password = f.readline().strip('\n')
     return username, password
 
     

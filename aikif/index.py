@@ -32,6 +32,7 @@ def index():
     """
     lg = mod_log.Log(mod_cfg.fldrs['localPath'])
     lg.record_command('Starting indexing',  'index.py') # sys.modules[self.__module__].__file__)
+    print('silent = ', silent)
     if silent == 'N':
         print('------------------')
         print('Rebuilding Indexes')
@@ -42,6 +43,10 @@ def index():
 
     files_to_index = mod_fl.FileList([mod_cfg.fldrs['public_data_path'] + os.sep + 'core'], ['*.csv'], ignore_files, "files_to_index_filelist.csv")
     
+    
+    if silent == 'N':
+        print(format_op_hdr())
+        
     for f in files_to_index.get_list():
         buildIndex(f, ndxFile, silent)
     
@@ -75,12 +80,27 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
     
     AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName)
     if silent == 'N':
-        print(os.path.basename(ipFile).ljust(30) + ' ' + str(totLines).rjust(6) + ' lines ' + str(totWords).rjust(6) + ' words ' + str(len(uniqueWords)).rjust(6) + ' unique words')
-    
+        print(format_op_row(ipFile, totLines, totWords, uniqueWords))
+   
         #show('uniqueWords', uniqueWords, 5)
     #print(uniqueWords)  # this is now a DICTIONARY with no key names - TODO - how to save properly
     #DisplayIndexAsDictionary(uniqueWords)
 
+def format_op_row(ipFile, totLines, totWords, uniqueWords):
+    txt = os.path.basename(ipFile).ljust(36) + ' '
+    txt += str(totLines).rjust(7) + ' '
+    txt += str(totWords).rjust(7) + ' '
+    txt += str(len(uniqueWords)).rjust(7) + ' '
+    return txt
+
+def format_op_hdr():
+    txt = 'Base Filename'.ljust(36) + ' '
+    txt += 'Lines'.rjust(7) + ' '
+    txt += 'Words'.rjust(7) + '  '
+    txt += 'Unique'.ljust(8) + ''
+    return txt
+    
+    
 def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName='Y'):
     """ Save the list of unique words to the master list """
     if useShortFileName == 'Y':
@@ -127,11 +147,11 @@ def show(title, lst, full=-1):
         num = num + 1
     print(txt)
     
-def getWordList(ipFile, delim, headersOnly='N'):
+def getWordList(ipFile, delim):
     """
     extract a unique list of words and have line numbers that word appears
     """
-    print(headersOnly)
+    #print(headersOnly)
     indexedWords = {}
     totWords = 0
     totLines = 0

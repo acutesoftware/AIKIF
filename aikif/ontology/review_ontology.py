@@ -62,7 +62,9 @@ ontologyList = [  # links to various upper ontologies - http://en.wikipedia.org/
      'url': 'http://stlab.istc.cnr.it/stlab/The_Semantic_Technology_Laboratory_%28STLab%29', 
      'data': 'http://www.ontologydesignpatterns.org/ont/dul/DUL.owl', 
      'localFile': 'S:\\DATA\\opendata\\ontology\\DnS\\DUL.owl', 
-     'rating': 'constructivist ontology that pushes DOLCEs descriptive stance even further allowing for context-sensitive redescriptions of the types and relations postulated by other given ontologies', 
+     'rating': """constructivist ontology that pushes DOLCEs descriptive stance even 
+     further allowing for context-sensitive redescriptions of the types and relations 
+     postulated by other given ontologies""", 
      'tested': 'Untested'},
     {'name': 'GFO - General Formal Ontology', 
      'url': 'http://www.onto-med.de/ontologies/index.jsp', 
@@ -120,7 +122,7 @@ ontologyList = [  # links to various upper ontologies - http://en.wikipedia.org/
      'localFile': 'S:\\DATA\\opendata\\ontology\\MindOntology\\mindOntology.csv', 
      'rating': 'Focussed for AGI use, but no single download found (arranged as wiki pages, converted to CSV 27/3/2014)', 
      'tested': 'Untested'},
-     {'name': 'DIY - eg build your own Ontology', 
+    {'name': 'DIY - eg build your own Ontology', 
      'url': 'http://localhost', 
      'data': '', 
      'localFile': '', 
@@ -182,7 +184,8 @@ documentList = [  # links to various documents, tools and general ontology relat
         'author': 'Natalya F. Noy and Deborah L. McGuinness - Stanford University', 'year': '2000?', 
         'url': 'http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html',
         'localSavedFile': 'ontology101-noy-mcguinness.html', 
-        'comment': 'Good introduction and examples of building an ontology - key points: reuse parts if possible, but build yourself to keep it short and valid'},
+        'comment': """Good introduction and examples of building an ontology - key points: reuse parts if possible, 
+        but build yourself to keep it short and valid"""},
     {'title': 'KSL Ontonlingua', 
      'url' : 'http://www.ksl.stanford.edu/software/ontolingua/', 
      'author': 'Standford', 
@@ -196,7 +199,9 @@ documentList = [  # links to various documents, tools and general ontology relat
         'author'		: '', 
         'year'			: '', 
         'localSavedFile': 'S:\\DATA\\opendata\\ontology\\OCHRE\\ki2003epaper.pdf', 
-        'comment': 'Descriptive document, not an actual ontology - has a focus on conceptual simplicity, so that the number of basic (primitive) concepts and relations is as small as possible in order to simplify the theory'}, 
+        'comment': """Descriptive document, not an actual ontology - has a focus on conceptual simplicity, 
+        so that the number of basic (primitive) concepts and relations is as small as possible in order to 
+        simplify the theory"""}, 
     {'title'			: 'Onto-Med Report Nr. 8', 
         'url'			: 'http://www.onto-med.de/publications/2010/gfo-basic-principles.pdf',
         'author'		: 'Onto-Med in  Leipzig', 
@@ -365,10 +370,10 @@ def DoesFileExist(localFile):
 def TestLocalFile(localFile):
     result = 'Not downloaded'
     if DoesFileExist(localFile):
-            print('Collecting stats for ' + localFile)
-            result = '<I>Sample file saved to ' + localFile + ' (' + format(GetFileSize(localFile), ',d') + ' bytes)<BR>'
-            result = result + '' + format(GetTotalNumFiles(localFile), ',d')
-            result = result + ' files in folder, totalling ' + format(GetTotalFileSizesForFolder(localFile), ',d') + ' bytes</I>'
+        print('Collecting stats for ' + localFile)
+        result = '<I>Sample file saved to ' + localFile + ' (' + format(GetFileSize(localFile), ',d') + ' bytes)<BR>'
+        result = result + '' + format(GetTotalNumFiles(localFile), ',d')
+        result = result + ' files in folder, totalling ' + format(GetTotalFileSizesForFolder(localFile), ',d') + ' bytes</I>'
     return result
     
 def SaveHTML_Review_as_table(htmlFile):

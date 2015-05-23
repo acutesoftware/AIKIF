@@ -149,12 +149,6 @@ mem_allocator:dlmalloc-2.8
 """
 
 import os
-try:
-    import redis 
-except ImportError:
-    print('you need to run pip install redis \nand also install the server via https://github.com/ServiceStack/redis-windows')
-    exit(1)
-
 
 import aikif.dataTools.cls_datatable as mod_dt
 import aikif.dataTools.if_redis as mod_redis

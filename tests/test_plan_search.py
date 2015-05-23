@@ -33,13 +33,12 @@ class PlanSearchTest(unittest.TestCase):
 
 
     def test_05_problem_definition(self):
-        prob1 = mod_plan.Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test1', '')
+        prob1 = mod_plan.Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test1')
         #self.assertEqual(prob1.goal_test([1,2,3,4]), True)
         
     def test_06_problem_goal_test(self):
-        prob2 = mod_plan.Problem([1,2,3,4],[3,2,1,4], [], 'test1', 'hello - this is a test')
+        prob2 = mod_plan.Problem([1,2,3,4],[3,2,1,4], [], 'test1')
         self.assertEqual(prob2.name, 'test1')
-        self.assertEqual(prob2.description, 'hello - this is a test')
         self.assertEqual(prob2.start, [3,2,1,4])
         self.assertEqual(prob2.goal,  [1,2,3,4])
         

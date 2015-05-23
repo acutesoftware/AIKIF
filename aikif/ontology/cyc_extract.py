@@ -2,7 +2,7 @@
 #
 
 from rdflib import Graph
-from rdflib import URIRef, Literal, Namespace, ConjunctiveGraph
+from rdflib import URIRef, Literal, Namespace #, ConjunctiveGraph
 from rdflib import RDF
 from rdflib import RDFS
 

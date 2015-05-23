@@ -74,7 +74,7 @@ class File(object):
         res = ''
         try:
             res = str(datetime.fromtimestamp(t).strftime("%Y-%m-%d %H:%M:%S"))
-        except:
+        except Exception:
             pass
         return res    
         

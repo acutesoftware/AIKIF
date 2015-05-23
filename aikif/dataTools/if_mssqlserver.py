@@ -39,7 +39,7 @@ class MSSQL_server(Database):
     def CompactAccessDatabase(self, fname):
         pypyodbc.win_compact_mdb(fname,'D:\\compacted.mdb')
 
-    def SQLServer_to_CSV(self, cred, schema, table, fldr, printHeader = True):
+    def SQLServer_to_CSV(self, cred, schema, table, fldr):
         opFile = fldr + table + '.CSV'
         print ('Saving ' + table + ' to ' + opFile)
         #cred = [server, database, username, password]
@@ -50,11 +50,11 @@ class MSSQL_server(Database):
         sqlToExec = 'SELECT * FROM ' + schema + '.' + table + ';'
         cur.execute(sqlToExec)
         op = open(opFile,'wb') # 'wb'
-        if printHeader: # add column headers if requested
-            txt = ''
-            for col in cur.description:
-                txt += '"' + self.force_string(col[0]) + '",'
-            op.write(txt + '\n')
+        # add column headers
+        txt = ''
+        for col in cur.description:
+            txt += '"' + self.force_string(col[0]) + '",'
+        op.write(txt + '\n')
         for row_data in cur: # add table rows			.encode('utf-8')
             txt = ''
             for col in row_data:

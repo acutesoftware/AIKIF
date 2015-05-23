@@ -72,9 +72,9 @@ class World(object):
         """
         rnge = math.floor(num_seeds/2)
         # self.show_grid_stats()
-        seeds = [[randint(0,self.grd.grid_height-1), randint(0,self.grd.grid_width-1)] for y in range(rnge) for x in range(rnge)]
+        seeds = [[randint(0,self.grd.grid_height-1), randint(0,self.grd.grid_width-1)] for _ in range(rnge) for _ in range(rnge)]
         for seed in seeds:
-             self.expand_seed(seed, (self.grd.grid_height * self.grd.grid_width)/(perc_sea),  TERRAIN_LAND)
+            self.expand_seed(seed, (self.grd.grid_height * self.grd.grid_width)/(perc_sea),  TERRAIN_LAND)
         
         self.refresh_stats()
         #   print(self.show_grid_stats())
@@ -159,10 +159,6 @@ class World(object):
         
         self.grd.replace_grid(updated_grid)
 
-    def fill_neighbours(self, new_grd, row, col, val, expand):
-        """ for the 
-        """
-        pass
         
     def add_blocks(self, perc_blocked=30):
         """  
@@ -277,8 +273,10 @@ class WorldSimulation(object):
             f.write(str(self.world.grd))
             f.write('\n\nAgent Name , starting, num Steps , num Climbs\n')
             for num, agt in enumerate(self.agent_list):
-                res = ''.join([a for a in agt.results])
-                f.write(agt.name + ' , [' + str(agt.start_y) + ', ' + str(agt.start_x) + '], ' + str(agt.num_steps)  + ' , ' + str(agt.num_climbs) + ' , ' + res + '\n')
+                res = agt.name + ' , [' + str(agt.start_y) + ', ' + str(agt.start_x) + '], '
+                res += str(agt.num_steps)  + ' , ' + str(agt.num_climbs) + ' , '
+                res += ''.join([a for a in agt.results])
+                f.write(res + '\n')
                 
     def highlight_cell_surroundings(self, target_y, target_x):
         """

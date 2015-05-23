@@ -5,7 +5,7 @@ import aikif.config
 
 def TEST():  
     e = Environment('test')
-    e.create() #40,55, 'some nice text')
+    e.create(20) #40,55, 'some nice text')
     print(e)
     e.destroy()
     

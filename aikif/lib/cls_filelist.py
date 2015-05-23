@@ -198,6 +198,8 @@ class FileList(object):
             if VERBOSE:
                 print(rootPath)
             for root, dirs, files in os.walk(rootPath):
+                if VERBOSE:
+                    print(dirs)
                 for basename in files:
                     for xtn in lstXtn:
                         if fnmatch.fnmatch(basename, xtn):
@@ -278,25 +280,13 @@ class FileList(object):
         d = ','
         for fld in col_headers:
             if fld == "fullfilename":
-                try:
-                    line = line + qu + fname + qu + d
-                except IOError:
-                    line = line + qu + 'ERROR_FILENAME' + qu + d
+                line = line + qu + fname + qu + d
             if fld == "name":
-                try:
-                    line = line + qu + os.path.basename(fname) + qu + d
-                except Exception:
-                    line = line + qu + 'ERROR_FOLDER' + qu + d
+                line = line + qu + os.path.basename(fname) + qu + d
             if fld == "date":
-                try:
-                    line = line + qu + self.GetDateAsString(os.path.getmtime(fname)) + qu + d
-                except IOError:
-                    line = line + qu + 'ERROR_DATE' + qu + d
+                line = line + qu + self.GetDateAsString(fname) + qu + d
             if fld == "size":
-                try:
-                    line = line + qu + str(os.path.getsize(fname)) + qu + d
-                except IOError:
-                    line = line + qu + 'ERROR_SIZE' + qu + d
+                line = line + qu + self.get_size_as_string(fname) + qu + d
             if fld == "path":
                 try:
                     line = line + qu + os.path.dirname(fname) + qu + d 
@@ -304,13 +294,23 @@ class FileList(object):
                     line = line + qu + 'ERROR_PATH' + qu + d
 
         return line
-        
-    def GetDateAsString(self, t):
+    
+    def get_size_as_string(self, fname):
         res = ''
         try:
+            res = str(os.path.getsize(fname))
+        except Exception:
+            res = 'Unknown size'
+        return res
+        
+    
+    def GetDateAsString(self, fname):
+        res = ''
+        try:
+            t = os.path.getmtime(fname)
             res = str(datetime.fromtimestamp(t).strftime("%Y-%m-%d %H:%M:%S"))
-        except IOError:
-            pass
+        except Exception:
+            res = 'Unknown Date'
         return res     
         
     def TodayAsString(self):	

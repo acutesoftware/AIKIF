@@ -4,6 +4,7 @@ import sys
 import os
 
 try:
+    #    from PIL import Image as ImagePIL
     from PIL import Image
     from PIL import ImageDraw
     from PIL import ImageFont
@@ -31,7 +32,14 @@ def TEST():
         f.write(get_metadata_as_csv('..\\..\\doc\\web-if-v02.jpg') + '\n')
         f.write(get_metadata_as_csv('..\\..\\doc\\AIKIF-Overview.jpg') + '\n')
  
-
+#class Image(ImagePIL):
+#    """
+#    wrapping PIL's image class to allow access to protected exif function
+#    without Lint complaining
+#    """
+#    def __init__(self, *arg):
+#        #super(Image, self).__init__(*arg)
+#        ImagePIL.__init__(self, *arg)
 
 def get_exif_data(image):
     """
@@ -157,7 +165,7 @@ def print_exif_data(img):
                         pass
                         #print(v) - this is now done by get_exif_data
         #print("exif_data       :", exif_data)
-    except:
+    except Exception:
         print ("Error - ", sys.exc_info()[0])
 
         

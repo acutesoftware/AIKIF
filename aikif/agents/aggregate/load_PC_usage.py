@@ -25,7 +25,7 @@ def GetPCName():
 try:
     ipFolder = sys.argv[1] 
     opFolder = sys.argv[2] 
-except:
+except Exception:
     print ('load_PC_usage.py - processes logged PC usage data to diary files')
     print('Usage:')
     print('  load_PC_usage.py [input_folder] [output_folder]')
