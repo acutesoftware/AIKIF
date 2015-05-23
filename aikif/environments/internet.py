@@ -24,7 +24,6 @@ class Internet(mod_env.Environment):
         self.name = name
         self.log = aikif.cls_log.Log(aikif.config.fldrs['log_folder'])
         self.log.record_command('enviroment.py', 'Initilising base environment - ' + self.name)
-        
         """
         super(Internet, self).__init__(name)
         self.websites = []

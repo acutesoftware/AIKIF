@@ -80,7 +80,6 @@ def summarise_filelist(fname):
     print('Summarizing FileList = ', fname)
     with open(fname, 'r', encoding="utf8") as f:
         for line in f:
-            numLines += 1
             if len(line) > 0:
                 try:
                     cols = line.split('","')

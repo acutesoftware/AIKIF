@@ -40,7 +40,7 @@ class Project(object):
     handles the projects in AIKIF, meaning logs the names
     and parameters used for various algorithms.
     """
-    def __init__(self, name, tpe='', fldr=None , desc=''):
+    def __init__(self, name, tpe='', fldr='' , desc=''):
         self.nme = name
         self.goals = []
         self.data_sources = []

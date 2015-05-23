@@ -25,19 +25,19 @@ proj_script_mgt = prj.Project('Script management')  # logging of projects
 proj_acute = prj.Project('Acute Software Business') # business project
 proj_research = prj.Project('Personal Research')    # study / research project
 
-proj_dev_aikif.add_goal(id='REL_ALPHA', name='Milestone - Alpha Release', due_date='2015/06/01', priority='High')
-proj_dev_aikif.add_goal(id='REL_BETA', name='Milestone - Beta Release', due_date='2016/01/01', priority='High')
-proj_dev_aikif.add_goal(id='TEST', name='User testing', due_date='2015/06/01', priority='High')
+proj_dev_aikif.add_goal('REL_ALPHA', 'Milestone - Alpha Release', due_date='2015/06/01', priority='High')
+proj_dev_aikif.add_goal('REL_BETA', 'Milestone - Beta Release', due_date='2016/01/01', priority='High')
+proj_dev_aikif.add_goal('TEST','User testing', due_date='2015/06/01', priority='High')
 
-proj_script_mgt.add_goal(id='SCRIPT_LOG', name='Log of script runs')
+proj_script_mgt.add_goal('SCRIPT_LOG', 'Log of script runs')
 
-my_projects.add(proj_acute)
-my_projects.add(proj_script_mgt)
-my_projects.add(proj_acute)
-my_projects.add(proj_research)
+my_projects.add_project(proj_acute)
+my_projects.add_project(proj_script_mgt)
+my_projects.add_project(proj_acute)
+my_projects.add_project(proj_research)
 
 # a new project can be defined directly into Projects but shown here after for simplicity
-my_projects.add(prj.Project(name='Another Project', desc='created adhoc'))
+my_projects.add_project(prj.Project(name='Another Project', desc='created adhoc'))
 
 another_project = my_projects.get_by_name('Another Project')
 

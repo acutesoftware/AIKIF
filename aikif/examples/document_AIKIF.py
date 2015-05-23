@@ -45,20 +45,11 @@ def document_core_programs(p):
     p.comment('mapper.py', 'maps business rules and columns of source data to standard aikif logs')
     p.comment('search.py', 'command line search tool [deprecated, but will be redone]')
     p.comment('tools.py', '[DATA] uses the toolbox class to create list of programs used by aikif')
-    p.comment('agg_context.py', 'detects context of user and computer')
     p.comment('check_redis_limit.py', 'starts reddis database and tests limits by repeatedly adding data until it breaks')
     p.comment('cls_data.py', 'base class for data')
     p.comment('cls_dataset.py', 'functions for a schema table - progress = stub only')
     p.comment('cls_datatable.py', 'functions for a single table - progress = TOK')
     p.comment('cls_sql_code_generator.py', 'useful generation of SQL commands')
-    p.comment('form_example_simple.py', 'creates a TKinter form to show how sql generation works = TOK')
-    p.comment('worlds.py', 'generates a 2d grid world')
-    p.comment('autobackup.py', 'example showing automatic file backups via filelists')
-    p.comment('document_AIKIF.py', 'this program - collect a list of programs and add commments / progress on what is actually implemented')
-    p.comment('ex_index_mydocs.py', 'example showing what to index')
-    p.comment('ex_project_management.py', 'example on using aikif for project management (poor example - needs work)')
-    p.comment('finance_example.py ', 'example of using aikif for finance logging - good concept, needs completion')
-    p.comment('game_of_life_console.py', 'example showing a game of life = TOK')
     p.comment('world_generator.py', 'generates a 2D grid world with random terrain - land, sea, blockages')
     p.comment('gui_view_world.py', 'script to read a saved grid from world.py and show in gui. Good for seeing grids larger than 80x25')
     p.comment('cls_file.py', 'TOK - class for handling file details - has subclasses for test, pictures and audio')
@@ -92,7 +83,6 @@ def document_core_programs(p):
     p.comment('cls_plan_BDI.py', 'stub for planner based on belief, desire, intent')
     p.comment('cls_plan_search.py', 'AI planner search functions')
     p.comment('project.py', 'Core module to manage projects - meta self documentation')
-    p.comment('algebra.py', 'toolbox module for based evaluation of maths problems')
     p.comment('data_structures.py', 'Node and Graph classes')
 
     p.comment('knowledge.py', 'processs raw data to information')
@@ -107,6 +97,7 @@ def document_examples(p):
     Document example programs with purpose (and intent)
     """
     p.comment('maths_ml_algorithms.py', 'machine learning algorithms for toolbox in AIKIF')
+    p.comment('algebra.py', 'toolbox module for based evaluation of maths problems')
     p.comment('crypt_utils.py', 'scripts to encode / decode data')
     p.comment('game_board_utils.py', 'board game rules')
     p.comment('solve_knapsack.py ', 'toolbox - solves knapsack (using trivial algorithms)')
@@ -124,6 +115,13 @@ def document_examples(p):
     p.comment('read_wordnet.py', 'script to read WordNet dataset')
     p.comment('review_ontology.py', '[DATA] program to document details of ontology review')
  
+    p.comment('form_example_simple.py', 'creates a TKinter form to show how sql generation works = TOK')
+    p.comment('worlds.py', 'generates a 2d grid world')
+    p.comment('autobackup.py', 'example showing automatic file backups via filelists')
+    p.comment('document_AIKIF.py', 'this program - collect a list of programs and add commments / progress on what is actually implemented')
+    p.comment('ex_index_mydocs.py', 'example showing what to index')
+    p.comment('ex_project_management.py', 'example on using aikif for project management (poor example - needs work)')
+    p.comment('game_of_life_console.py', 'example showing a game of life = TOK')
  
 def document_agents(p):
     """
@@ -142,6 +140,7 @@ def document_agents(p):
     p.comment('collect_Win_processes.py', 'script to collect windows processes. Currently not part of agent process, more an exercise on what can be logged')
     p.comment('log_PC_usage.py', 'script to read current window title to be used as part of context to see what user is doing')
     p.comment('log_browser_history.py', 'script to dump chrome browser history to CSV - not used')
+    p.comment('agg_context.py', 'detects context of user and computer')
 
 
 

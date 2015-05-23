@@ -140,33 +140,28 @@ def print_stats(img):
     print("stddev     : ", stat.stddev)
 
     
-def print_exif_data(img):   
-    """ NOTE - the img is ALREADY opened by calling function """
-    try:
-        exif_data = {
-            TAGS[k]: v
-            for k, v in img._getexif().items()
-            if k in TAGS
-        }
-        
-        for k,v in exif_data.items():
-            if k:
-                if type(v) is str:
-                    #if  v[1:] != 'b':
-                    print (k , " : ", v)
-                elif type(v) is int:    
-                    print (k , " : ", v)
-                elif type(v) is tuple:    
-                    print (k , " : ", v)
-                else:
-                    #pass
-                    #print("NON STRING? = ", k, " : ", type(v))
-                    if k == "GPSInfo":
-                        pass
-                        #print(v) - this is now done by get_exif_data
-        #print("exif_data       :", exif_data)
-    except Exception:
-        print ("Error - ", sys.exc_info()[0])
+#def print_exif_data(img):   
+#    """ NOTE - the img is ALREADY opened by calling function """
+#    try:
+#        exif_data = {
+#            TAGS[k]: v
+#            for k, v in img._getexif().items()
+#            if k in TAGS
+#        }
+#        for k,v in exif_data.items():
+#            if k:
+#                if type(v) is str:
+#                    #if  v[1:] != 'b':
+#                    print (k , " : ", v)
+#                elif type(v) is int:    
+#                    print (k , " : ", v)
+#                elif type(v) is tuple:    
+#                    print (k , " : ", v)
+#                else:
+#                    if k == "GPSInfo":
+#                        pass
+#    except Exception:
+#        print ("Error - ", sys.exc_info()[0])
 
         
 def print_all_metadata(fname):

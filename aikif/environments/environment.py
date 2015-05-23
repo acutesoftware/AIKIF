@@ -31,13 +31,13 @@ class Environment(object):
         
         return res
         
-    def create(self):
+    def create(self, num):
         """
         Creates the environment
         in your subclassed create function include the line below
         super().build(arg1, arg2, arg2, ...)
         """
-        self.log.record_process('enviroment.py', 'Creating environment - ' + self.name)
+        self.log.record_process('enviroment.py', 'Creating ' + str(num) + ' environments - ' + self.name)
         
     def destroy(self):
         """
