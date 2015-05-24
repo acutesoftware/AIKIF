@@ -11,6 +11,10 @@ auth = HTTPBasicAuth()
 app.config['BASIC_AUTH_USERNAME'] = 'local'
 app.config['BASIC_AUTH_PASSWORD'] = 'local'
 
+base_url = '/aikif/api/v1.0/'    # http://127.0.0.1:5000/aikif/api/v1.0/facts/2
+base_url = '/aikif/api/v2.0/'
+base_url = '/'                   # http://127.0.0.1:5000/facts/2
+url_pre = 'http://127.0.0.1:5000' 
 #basic_auth = BasicAuth(app)
 
 
@@ -29,21 +33,26 @@ def unauthorized():
 
 help_fields = {
     'help_id': fields.String,
-    'help_str': fields.String
+    'help_str': fields.String,
+    'help_url': fields.String
 } 
   
-help = [
+help_list = [
     {
         'help_id': 'help',
-        'help_str': 'Returns list of all API commands (No authentication needed)'
+        'help_str': 'Returns list of all API commands (No authentication needed)',
+        'help_url': url_pre + base_url + 'help'
     },
     {
         'help_id': 'users',
-        'help_str': 'List all the users of the system'
+        'help_str': 'List all the users of the system',
+        'help_url': url_pre + base_url + 'users'
     },
     {
         'help_id': 'facts',
-        'help_str': 'Facts contain raw strings added by users'
+        'help_str': 'Facts contain raw strings added by users',
+        'help_url': url_pre + base_url + 'facts'
+
     }
 ]
 
@@ -92,7 +101,7 @@ class HelpListAPI(Resource):
         super(HelpListAPI, self).__init__()
 
     def get(self):
-        return {'help': [marshal(help, help_fields) for help in help]}
+        return {'help': [marshal(help, help_fields) for help in help_list]}
 
 
 class FactListAPI(Resource):
@@ -116,7 +125,24 @@ class FactListAPI(Resource):
         }
         facts.append(fact)
         return {'fact': marshal(fact, fact_fields)}, 201
+        
+    def put(self, id):
+        fact = [fact for fact in facts if fact['fact_id'] == fact_id]
+        if len(fact) == 0:
+            abort(404)
+        fact = fact[0]
+        args = self.reqparse.parse_args()
+        for k, v in args.items():
+            if v is not None:
+                fact[k] = v
+        return {'fact': marshal(fact, fact_fields)}
 
+    def delete(self, fact_id):
+        fact = [fact for fact in facts if fact['fact_id'] == fact_id]
+        if len(fact) == 0:
+            abort(404)
+        facts.remove(fact[0])
+        return {'result': True}
     
 class FactAPI(Resource):
     #decorators = [auth.login_required]
@@ -153,10 +179,6 @@ class UserAPI(Resource):
 
     def delete(self, user_id):
         pass
-
-base_url = '/aikif/api/v1.0/'    # http://127.0.0.1:5000/aikif/api/v1.0/facts/2
-base_url = '/aikif/api/v2.0/'
-base_url = '/'                   # http://127.0.0.1:5000/facts/2
 
 api.add_resource(HelpListAPI, base_url + 'help',               endpoint='help')
 api.add_resource(UserAPI,     base_url + 'users/<int:user_id>', endpoint = 'user')
