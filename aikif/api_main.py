@@ -8,6 +8,13 @@ app = Flask(__name__, static_url_path="")
 api = Api(app)
 auth = HTTPBasicAuth()
 
+app.config['BASIC_AUTH_USERNAME'] = 'local'
+app.config['BASIC_AUTH_PASSWORD'] = 'local'
+
+#basic_auth = BasicAuth(app)
+
+
+
 @auth.get_password
 def get_password(username):
     if username == 'local':
@@ -20,6 +27,27 @@ def unauthorized():
     # displaying the default auth dialog
     return make_response(jsonify({'message':'Unauthorized access'}), 403)
 
+help_fields = {
+    'help_id': fields.String,
+    'help_str': fields.String
+} 
+  
+help = [
+    {
+        'help_id': 'help',
+        'help_str': 'Returns list of all API commands (No authentication needed)'
+    },
+    {
+        'help_id': 'users',
+        'help_str': 'List all the users of the system'
+    },
+    {
+        'help_id': 'facts',
+        'help_str': 'Facts contain raw strings added by users'
+    }
+]
+
+
 facts = [
     {
         'fact_id':1,
@@ -30,9 +58,68 @@ facts = [
         'fact_str':'AIKIF is a Project',
     }
 ]
+
+fact_fields = {
+    'fact_id': fields.String,
+    'fact_str': fields.String
+}
+
+users = [
+    {
+        'user_id':1,
+        'username':'local',
+        'password':'local'
+    },
+    {
+        'user_id':2,
+        'username':'guest',
+        'password':'guest'
+    }
+]   
+ 
+user_fields = {
+    'user_id':  fields.String,
+    'username': fields.String,
+    'password': fields.String
+}
+
+class HelpListAPI(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('help_str', type=str, required=True,
+                                   help='No Help content provided',
+                                   location='json')
+        super(HelpListAPI, self).__init__()
+
+    def get(self):
+        return {'help': [marshal(help, help_fields) for help in help]}
+
+
+class FactListAPI(Resource):
+    #decorators = [auth.login_required]
+
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('fact_str', type=str, required=True,
+                                   help='No Fact content provided',
+                                   location='json')
+        super(FactListAPI, self).__init__()
+
+    def get(self):
+        return {'facts': [marshal(fact, fact_fields) for fact in facts]}
+
+    def post(self):
+        args = self.reqparse.parse_args()
+        fact = {
+            'fact_id': facts[-1]['fact_id'] + 1,
+            'fact_str': args['fact_str']
+        }
+        facts.append(fact)
+        return {'fact': marshal(fact, fact_fields)}, 201
+
     
 class FactAPI(Resource):
-    decorators = [auth.login_required]
+    #decorators = [auth.login_required]
     
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
@@ -41,11 +128,40 @@ class FactAPI(Resource):
         super(FactAPI, self).__init__()
     
     def get(self, fact_id):
-        fact =[f for f in facts if f['fact_id'] == fact_id]
-        if len(fact) == 0:
-            abort(404)
-        return {'fact':marshal(fact[0], fact_fields)}
+        #fact =[fact for fact in facts if fact['fact_id'] == fact_id]
+        for fact in facts:
+            if fact['fact_id'] == fact_id:
+                return {'fact':marshal(fact, fact_fields)}
+        abort(404)
 
+class UserAPI(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('user_id',  type=str, location='json')
+        self.reqparse.add_argument('username', type=str, location='json')
+        self.reqparse.add_argument('password', type=str, location='json')
+        super(UserAPI, self).__init__()
+        
+    def get(self, user_id):
+        for user in users:
+            if user['user_id'] == user_id:
+                return {'user':marshal(user, user_fields)}
+        abort(404)
+
+    def put(self, user_id):
+        pass
+
+    def delete(self, user_id):
+        pass
+
+base_url = '/aikif/api/v1.0/'    # http://127.0.0.1:5000/aikif/api/v1.0/facts/2
+base_url = '/aikif/api/v2.0/'
+base_url = '/'                   # http://127.0.0.1:5000/facts/2
+
+api.add_resource(HelpListAPI, base_url + 'help',               endpoint='help')
+api.add_resource(UserAPI,     base_url + 'users/<int:user_id>', endpoint = 'user')
+api.add_resource(FactListAPI, base_url + 'facts',               endpoint='facts')
+api.add_resource(FactAPI,     base_url + 'facts/<int:fact_id>', endpoint='fact')
 
 if __name__ == '__main__':
     app.run(debug=True)
