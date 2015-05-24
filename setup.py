@@ -12,6 +12,10 @@ setup(
     long_description=open('README.txt').read(),
     install_requires=[
           'nose >= 1.0',
+          'flask >= 0.10.1',
+          'flask-httpauth >= 2.3.0',
+          'flask-restful >= 0.3.1',
+          'requests >= 2.3',
           'beautifulsoup4 >= 1.0',
           'Pillow >= 1.0',
           'pandas >= 0.16.0',
