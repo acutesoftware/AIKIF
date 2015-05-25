@@ -249,7 +249,7 @@ index data locally for simple unified search across all sources (facebook, email
 ``````````````
 There are several levels of local indexing starting at the meta 'project level' based on tags and categories down to full text searching.
 
-Goal 4 - AI monitoring (future)
+Goal 4 - AI Management
 -----
 Define methods an AI can use (aikif.toolbox)
 ``````````````
@@ -257,19 +257,12 @@ The Toolbox function maps programs (internal and external) to a standard format 
 
 The benefit of an AI using methods via the framework to is log times and results to see the outcomes of various algorithms. This provides a central place to manage and track the success and types of results.
 
-Automated Goal planning [Unresolved]
+Simple interface to manage and control AI's
 ``````````````
+Web service has API to control all aspects of AIKIF
 
-You enter a generic goal like 'be happy', 'make money', 
-
-You then add specific milestones for that goal (happy=8/10, money=$5000)
-
-You then add specific details / plans on how to get each milestone
-
-Recursively break down plans into specific tasks and sub tasks until each milestone has a clear path that can be met.
-
-Once specific tasks are defined, AIKIF suggests methods to help achieve the tasks.
-
+Web app example shows how this can be used to manage AI applications run with different data sources and parameters
+ 
 
 Log all results with useful milestones and checkpoints
 ``````````````
@@ -277,61 +270,3 @@ Log all results with useful milestones and checkpoints
 The log aggregates should show useful summaries
 
 
-Specify and regulate processes to allow automation (Unresolved)
-``````````````
-Mapping processes into sub tasks (with sub-sub tasks if needed) and linking to an ontology that AIKIF knows about will allow new task automation to be discoverable.
-
-For example, if methods include: web.download.file, data.import.file, data.quality.fix 
-and you specify a new task
-
-download the latest country data from http://blah and load it into the reference table C_REF_COUNTRY
-
-This task can be discoverable and automated IFF you specify the details before hand
-
-
-.. code:: python
-
-    data_table="C_REF_COUNTRY"
-    source("C_REF_COUNTRY") = ontology.reference.country
-    update_location="http://blah"   
-
-
-
-black box monitoring of unknown software agents
-``````````````
-Detection of agents, either through logfiles, virus scanner like tools or interactions
-
-To monitor an unknown software agent is very likely out of scope of the first 54 versions of this project, but it would probably look like the following...
-
-1. make a virtual environment for the software to run
-2. snapshot data
-3. work out a set of parameters to pass as input
-4. select a set of data inputs
-5. Run the software for EACH data input FOR each parameter
-6. log results of each
-7. parse results and extract highlights from each iteration including overall best performer
-
-Monitor for friendliness (unlikely to be achievable)
-``````````````
-Investigate how a mapped ontology can be used to track unfriendliness.
-
-Ontology can be a mapping of processes or things that are known to be harmful or risky
-
-
-.. code:: python
-
-    destroy_planet=-500000000
-    mess_with_nanoparticles=-300000
-    mess_with_fission=-20000
-    harm_humans_directly=-100000
-
-    dangerous_substance_anything={uranium}
-    dangerous_substance_anything={uranium}
-    dangerous_substance_human={arsenic, poison, spider venom}
-
-
-For example, an Agent needs to build a device.
-
-Friendliness is increased by : not using radioactive materials, minimising resources
-
-Friendliness is decreased by : killing or harming humans, hurting animals, injuries, potential harmful or risky processes
