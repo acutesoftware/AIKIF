@@ -21,16 +21,17 @@ class TestApi(unittest.TestCase):
 
     def test_02_help(self):
         r = requests.get(url + 'help')
-        self.assertEqual(len(r.text), 393)
+        print(r.text)
+        self.assertEqual(len(r.text), 557)
         self.assertEqual(r.status_code, 200)  # should always pass regardless of logging in
         
     def test_02_user(self):
         #usr01 = '"user":{"password":"local","user_id":"1","username":"local"}'
         r = requests.get(url + 'users/1')
-        self.assertEqual(len(r.text), 105)
-        self.assertEqual('"username": "local"' in r.text, True)
-        
-        self.assertEqual(r.status_code, 200)  # should always pass regardless of logging in
+        self.assertEqual(r.status_code in valid_response, True) 
+        if r.status_code == 200:
+            self.assertEqual(len(r.text), 105)
+            self.assertEqual('"username": "local"' in r.text, True)
         
 if __name__ == '__main__':
     unittest.main()
