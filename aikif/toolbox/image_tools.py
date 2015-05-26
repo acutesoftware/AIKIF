@@ -1,6 +1,5 @@
 # image_tools.py  written by Duncan Murray 1/7/2014
 
-import sys
 import os
 
 try:
@@ -181,7 +180,7 @@ def print_all_metadata(fname):
     print("palette    :", img.palette )
      
     print_stats(img)
-    print_exif_data(img)
+    #print_exif_data(img)
     exif_data = get_exif_data(img)
     (lat, lon) = get_lat_lon(exif_data)
     print("GPS Lat    :", lat )
