@@ -111,6 +111,11 @@ mod_log.LogSummary(self.mylog, test_fldr)
 
 This currently produces a simple count by session ID, but will need to extract key events from the data.
 
+
+Log Watchpoints
+----------------
+Watchpoints can be set for any project to monitor for specific events, such as success in a genetic algorithm 
+
 **Key Events to Extract**
 Depending of the type of log file, you can do the following
 
@@ -397,6 +402,39 @@ An environment can be used as follows:
     sim.world.grd.save('test_world_traversed.txt')
 
 
+===========================
+AI Management
+===========================
+Section to show how AI applications can use the AIKIF
+    
+This should centre around having an algorithm such as machine learning which attempts to solve a question.
+
+Start by specifying the problem and its data sources, then setup AIKIF to call the AI with parameters to get logs.
+
+
+.. code:: python
+
+    proj='ML_solver1'
+    source='c:\data\'
+    algorithms=['cluster', 'multivariate']
+
+    lg = aikif.Project('ML_solver1')
+    lg.add_source('Your source')
+    lg.add_param(type='algorithm', name='cluster')
+    lf.add_param(type='X', 54)
+    lf.add_param(type='Y', 4.2)
+
+    t = aikif.toolbox.Toolbox('c:\ml_solver.py')   # your AI
+
+    lg.run(t)    # run the AI with the parameters and results are logged
+
+    lg.parse_logs('success')  # extract logs saying success
+
+
+The results can be tracked on the web interface in a nice summary    
+    
+    
+    
 ===================
 Memory / Knowledge
 ===================
@@ -539,7 +577,7 @@ uses project mappings to identify projects
 
 
 
-Other Outputs [unresolved]
+Other Outputs
 --------------------------
 
 Automating Database Updates [testing]
@@ -565,7 +603,7 @@ Backup my working documents to the server each week
 
 
 
-Resume [unresolved]
+Resume
 ````````````````````````
 
   - list of events where you worked
@@ -575,18 +613,22 @@ Resume [unresolved]
 
 You can also run tasks such as "Tailor my resume for [work_type]” which shows those work experiences first where overlaps occur
 
+.. code:: python
 
+    p = aikif.Project('MyResume')
+    skills = p.add_table('skills', ['skill', 'comment'])
+    work = p.add_table('work history', ['date_start','date_end', 'company', 'task'])
 
+    # populate company history by looking at emails SENT address
+    work.populate(aikif.core_data('SELECT min(date), max(date), from_address FROM aikif_pim_email'))
 
-Business Plan [unresolved]
-`````````````````````````````
+    # populate skills based on what you spend time on
+    skills.populate(aikif.core_data('SELECT distinct languages FROM aikif_pim_github'))
 
-"Prepare a business plan to sell 'bling' software"
-This is an example of template driven plans with good naming conventions
-- NLP to find what 'bling' means in ontology
-- agent to create marketing stuff around bling (sales . demand . samples of advertys from google ads)
-- finance app estimates cost to build
-- show profit and loss
-- prepares full business plan
+    # add skills based on your github repos
+    skills.populate(aikif.core_data('SELECT TOP 10 projects FROM aikif_pim_pc_usage'))
+
+    # format the resume
+    p.format(aikif_template_resume, 'C:\my_resume.rst')
 
 
