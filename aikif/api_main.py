@@ -101,7 +101,7 @@ class HelpListAPI(Resource):
         super(HelpListAPI, self).__init__()
 
     def get(self):
-        return {'help': [marshal(help, help_fields) for help in help_list]}
+        return {'help': [marshal(h, help_fields) for h in help_list]}
 
 
 class FactListAPI(Resource):
@@ -126,7 +126,7 @@ class FactListAPI(Resource):
         facts.append(fact)
         return {'fact': marshal(fact, fact_fields)}, 201
         
-    def put(self, id):
+    def put(self, fact_id):
         fact = [fact for fact in facts if fact['fact_id'] == fact_id]
         if len(fact) == 0:
             abort(404)
