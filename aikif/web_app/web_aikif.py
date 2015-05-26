@@ -8,7 +8,7 @@ print ("os.getcwd() = ", os.getcwd())
 
 #AIKIF_WEB_VERSION = "PROD"
 AIKIF_WEB_VERSION = "DEV"
-AIKIF_VERSION_NUM = "Version 0.0.9 (pre-alpha) - updated 13-Mar-2015"
+AIKIF_VERSION_NUM = "Version 0.1.2 (pre-alpha) - updated 26-May-2015"
 
 import aikif.web_app.web_utils as web
 from flask import Flask
@@ -19,6 +19,7 @@ menu = [
     ['/',        'Home',     'This is the admin web interface for AIKIF (Artificial Intelligence Knowledge Information Framework)'],
     ['/todo',    'Todo',     'Project overview showing current list of tasks being worked on'],
     ['/data',    'Data',     'Shows the available data sets for AIKIF'],
+    ['/projects',    'Projects',     'Manage projects'],
     ['/agents',  'Agents',   'Describes the agents capabilities, and last run status'],
     ['/programs','Programs', 'Details of the modules in AIKIF'],
     ['/about',   'About',    'About AIKIF and author contact']
@@ -79,14 +80,19 @@ def page_todo():
     txt += get_footer()
     return txt
 
+@app.route("/projects")
+def page_projects():
+    txt = aikif_web_menu('Projects')
+    import page_projects
+    txt += page_projects.get_page()
+    txt += get_footer()
+    return txt
+
 @app.route("/data")
 def page_data():
     txt = aikif_web_menu('Data')
-#	try:
     import page_data
     txt += page_data.get_page()
-#	except:
-#		txt += page_error('data')
     txt += get_footer()
     return txt
 
