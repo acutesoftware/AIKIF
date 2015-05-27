@@ -3,7 +3,7 @@
 AIKIF Design
 ====================
 
-Last updated 19-March-2015
+Last updated 28-May-2015
 AIKIF Dev version 0.0.10
 
 This document is a scratch pad area for design notes during the development of AIKIF
@@ -21,33 +21,28 @@ As areas are completed, the contents will be copied to a users manual
 *tags for progress are*
 
 [unresolved]  = not sure how to do this
-
 [in progress] = work may have started but early stages
-
 [testing]     = key parts developed, testing results
-
 [completed]   = tests passed and contents copied to users manual / ext paper
-
-
 
 
 Key Concepts
 ``````````````
 
 
-create data structures to hold information
+- create data structures to hold information
 
-define mappings to populate data structures
+- define mappings to populate data structures
 
-define / use toolbox to populate data
+- define / use toolbox to populate data
 
-build agents to collect and aggregate
+- build agents to collect and aggregate
 
-optional build environments for test areas  (eg File System?)
+- optional build environments for test areas  (eg File System?)
 
-build controller to manage agents (currently tools.py)
+- build controller to manage agents (currently tools.py)
 
-monitor and update on web interface and via collection agents / mappers
+- monitor and update on web interface and via collection agents / mappers
 
 
 The key principle here is along the lines of “Reproducible Research”
