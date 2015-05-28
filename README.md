@@ -50,10 +50,21 @@ This github repository [https://github.com/acutesoftware/AIKIF](https://github.c
 
 `pip install aikif`
 
-To start the web interface use `aikif/web_app/web_aikif.py` or the batch file `aikif\go_web_aikif`
+To start the API server use `aikif/api_main.py` and run the `tests/test_api.py`
+
+```
+ * Running on http://127.0.0.1:5000/
+ * Restarting with reloader
+127.0.0.1 - - [28/May/2015 19:22:49] "GET /facts HTTP/1.1" 200 -
+127.0.0.1 - - [28/May/2015 19:22:49] "GET /help HTTP/1.1" 200 -
+127.0.0.1 - - [28/May/2015 19:22:49] "GET /users/1 HTTP/1.1" 200 -
+```
+
+ To start the web interface use `aikif/web_app/web_aikif.py` or the batch file `aikif\go_web_aikif`
  
 ![screenshot of web interface](https://github.com/acutesoftware/AIKIF/blob/master/doc/web-if-v02.jpg "Screenshot of web interface") 
- 
+
+
 ####Simple Usage
 In its simplest form AIKIF can be used to manage your projects and tasks, by updating information from scripts and tracking via the web application
 ```
