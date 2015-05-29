@@ -20,7 +20,7 @@ There are 4 main goals:
 
 - Control of Personal data
 
-- AI monitoring 
+- AI Management 
 
 
 Intentions
