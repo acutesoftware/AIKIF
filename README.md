@@ -16,7 +16,7 @@ A tool is any python wrapped function or application and is easily extensible.<b
 
 
 
-![Overview of AIKIF](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg"AIKIF Overview") 
+![Overview of AIKIF](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg) 
 
 
 
