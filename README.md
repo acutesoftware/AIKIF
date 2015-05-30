@@ -15,7 +15,15 @@ them down to smaller tasks until the task can be run by a tool in the Toolbox.<b
 A tool is any python wrapped function or application and is easily extensible.<br />
 
 
+
+![Overview of AIKIF](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg"AIKIF Overview") 
+
+
+
+
 ###Core Data
+All collected data is mapped to the Core data table, and from that the mapper can aggregate this into standard data tables below.
+
 Data type | description |
  --- | ---                
 | events     | any time or date based subset of information gets logged here  |
