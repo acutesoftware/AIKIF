@@ -26,9 +26,9 @@ class TestApi(unittest.TestCase):
     def test_02_help(self):
         try:
             r = requests.get(url + 'help')
-            print(r.text)
+            #print(r.text)
             if r.status_code == 200:  # so travis_ci passes if api not on
-                self.assertEqual(len(r.text), 557)
+                self.assertEqual(len(r.text), 698)
                 self.assertEqual(r.status_code, 200)  # should always pass regardless of logging in
         except Exception as ex:
             print('API not running - ' + str(ex))
@@ -51,7 +51,7 @@ class TestApi(unittest.TestCase):
         #data = json.dumps({'txt':'some test repo'}) 
         #r = requests.post(url + 'log/txt', 'some test repo')   # works but string is 'txt'
         
-        data = json.dumps({'txt':'example log entry via API'}) 
+        dat1 = json.dumps({'txt':'example log entry via API'}) 
         
         #r = requests.post(url + 'log/txt=this_is_a_test', data)   # works 201
         # "2015-05-31 20:09:25","000054058","Duncan","Treebeard","cls_log.log","txt=this_is_a_test",
@@ -59,11 +59,31 @@ class TestApi(unittest.TestCase):
         #r = requests.post(url + 'log/txt', data)   # works 201
         # "2015-05-31 20:10:36","000054163","Duncan","Treebeard","cls_log.log","txt",
         
-        r = requests.post(url + 'logs/works_but_not_best_logging_method', data) 
+        #r = requests.post(url + 'logs/works_but_not_best_logging_method', data) 
         # "2015-05-31 21:00:33","000054766","Duncan","Treebeard","cls_log.log","tttttt",
         
-        r = requests.post(url + 'logs', data) 
+        headers = {'content-type': 'application/json'}
+        r = requests.post(url + 'log', data=dat1,headers=headers) 
         
-        
+    def test_05_fact_post(self):
+        #new_fact1 = json.dumps({'fact_id':6, 'fact_str':'New Fact 6 added by test_05'})
+        new_fact1 = json.dumps({'fact_str':'New Fact added by test_05'})
+        headers = {'content-type': 'application/json'}
+        #print(new_fact1)
+        try:
+            r = requests.post(url + 'facts', data=new_fact1,headers=headers) 
+            
+            self.assertEqual(r.status_code in valid_response, True)
+            
+        except Exception as ex:
+            print('API not running - ' + str(ex))
+
+            # now list the facts back
+            
+        r2 = requests.get(url + 'facts')
+        print(r2.text)
+            
+            
+    
 if __name__ == '__main__':
     unittest.main()

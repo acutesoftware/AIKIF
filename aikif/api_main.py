@@ -211,24 +211,16 @@ class LogAPI(Resource):
         print('Log put: recording event ' + txt)
         self.lg.record_process(txt)
         args = self.reqparse.parse_args()
-        
-        """
-        args = self.reqparse.parse_args()
-        fact = {
-            'fact_id': facts[-1]['fact_id'] + 1,
-            'fact_str': args['fact_str']
-        }
-        facts.append(fact)
-        return {'fact': marshal(fact, fact_fields)}, 201
-        """
+
         log = {
             'txt':  args['txt']
         }
         return {'log': marshal(log, log_fields)}, 201
         
+        
 api.add_resource(HelpListAPI, base_url + 'help',                endpoint = 'help')
 api.add_resource(LogAPI,      base_url + 'log/<string:txt>',    endpoint = 'log')
-#api.add_resource(LogAPI,      base_url + 'logs',    endpoint = 'logs')
+api.add_resource(LogAPI,      base_url + 'logs',    endpoint = 'logs')
 api.add_resource(UserAPI,     base_url + 'users/<int:user_id>', endpoint = 'user')
 api.add_resource(FactListAPI, base_url + 'facts',               endpoint = 'facts')
 api.add_resource(FactAPI,     base_url + 'facts/<int:fact_id>', endpoint = 'fact')
