@@ -91,7 +91,24 @@ class TestApi(unittest.TestCase):
         except Exception as ex:
             print('API not running - ' + str(ex))
 
+    def test_08_map_post(self):
+        headers = {'content-type': 'application/json'}
+        new_map1 = json.dumps({'map_name':'New Map added by test_08'})
+        try:
+            r = requests.post(url + 'maps', data=new_map1,headers=headers)
+            #print(r.text)
+            self.assertEqual(r.status_code in valid_response, True)
+        except Exception as ex:
+            print('API not running - ' + str(ex))
             
+    def test_09_map_get_again(self):
+        try:
+            r = requests.get(url + 'maps')
+            print(r.text)
+            self.assertEqual(r.status_code in valid_response, True)
+        except Exception as ex:
+            print('API not running - ' + str(ex))
+
     
 if __name__ == '__main__':
     unittest.main()

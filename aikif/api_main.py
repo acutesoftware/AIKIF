@@ -218,17 +218,17 @@ class MapperListAPI(Resource):
         super(MapperListAPI, self).__init__()
         
     def get(self):
-        return {'maps': [marshal(map, map_fields) for map in maps]}
+        return {'maps': [marshal(mp, map_fields) for mp in maps]}
 
-    def post(self, map_id, map_name):
-        print('Mapper put: adding mapping ' + txt)
+    def post(self):
         args = self.reqparse.parse_args()
 
-        map = {
-            'map_id':  args['map_id'],
+        mp = {
+            'map_id':   maps[-1]['map_id'] + 1,
             'map_name':  args['map_name'],
         }
-        return {'map': marshal(map, map_fields)}, 201
+        maps.append(mp)
+        return {'map': marshal(mp, map_fields)}, 201
 
 
 class LogAPI(Resource):
