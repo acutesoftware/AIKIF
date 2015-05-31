@@ -108,6 +108,17 @@ log_fields = {
     'txt': fields.String
 }
 
+
+map_fields = {
+    'map_id':  fields.String,
+    'map_name': fields.String
+}
+
+maps = [
+    { 'map_id':1, 'map_name':'map test1' },
+    { 'map_id':2, 'map_name':'map test2' }
+ ]
+
 class HelpListAPI(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
@@ -199,6 +210,27 @@ class UserAPI(Resource):
 import aikif.cls_log as mod_log
 import aikif.config as mod_cfg
 
+class MapperListAPI(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('map_id',  type=str, location='json')
+        self.reqparse.add_argument('map_name',  type=str, location='json')
+        super(MapperListAPI, self).__init__()
+        
+    def get(self):
+        return {'maps': [marshal(map, map_fields) for map in maps]}
+
+    def post(self, map_id, map_name):
+        print('Mapper put: adding mapping ' + txt)
+        args = self.reqparse.parse_args()
+
+        map = {
+            'map_id':  args['map_id'],
+            'map_name':  args['map_name'],
+        }
+        return {'map': marshal(map, map_fields)}, 201
+
+
 class LogAPI(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
@@ -224,6 +256,7 @@ api.add_resource(LogAPI,      base_url + 'logs',    endpoint = 'logs')
 api.add_resource(UserAPI,     base_url + 'users/<int:user_id>', endpoint = 'user')
 api.add_resource(FactListAPI, base_url + 'facts',               endpoint = 'facts')
 api.add_resource(FactAPI,     base_url + 'facts/<int:fact_id>', endpoint = 'fact')
+api.add_resource(MapperListAPI, base_url + 'maps',               endpoint = 'maps')
 
 if __name__ == '__main__':
     app.run(debug=True)

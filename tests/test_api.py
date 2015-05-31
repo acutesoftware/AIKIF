@@ -51,7 +51,6 @@ class TestApi(unittest.TestCase):
         #data = json.dumps({'txt':'some test repo'}) 
         #r = requests.post(url + 'log/txt', 'some test repo')   # works but string is 'txt'
         
-        dat1 = json.dumps({'txt':'example log entry via API'}) 
         
         #r = requests.post(url + 'log/txt=this_is_a_test', data)   # works 201
         # "2015-05-31 20:09:25","000054058","Duncan","Treebeard","cls_log.log","txt=this_is_a_test",
@@ -62,6 +61,7 @@ class TestApi(unittest.TestCase):
         #r = requests.post(url + 'logs/works_but_not_best_logging_method', data) 
         # "2015-05-31 21:00:33","000054766","Duncan","Treebeard","cls_log.log","tttttt",
         
+        dat1 = json.dumps({'txt':'example log entry via API'}) 
         headers = {'content-type': 'application/json'}
         r = requests.post(url + 'log', data=dat1,headers=headers) 
         
@@ -83,6 +83,14 @@ class TestApi(unittest.TestCase):
         r2 = requests.get(url + 'facts')
         print(r2.text)
             
+    def test_07_map_get(self):
+        try:
+            r = requests.get(url + 'maps')
+            #print(r.text)
+            self.assertEqual(r.status_code in valid_response, True)
+        except Exception as ex:
+            print('API not running - ' + str(ex))
+
             
     
 if __name__ == '__main__':
