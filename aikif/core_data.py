@@ -15,7 +15,8 @@ def TEST():
     print(e)
     
     # save a table
-    ev = CoreTable(fldr=os.getcwd(), tpe='Events', user='user01', header=['date', 'category', 'details'])
+    import aikif.config
+    ev = CoreTable(aikif.config.fldrs['log_folder'], tpe='Events', user='user01', header=['date', 'category', 'details'])
     ev.add(Event('Sales Meeting', ['2014-01-11', 'Office', 'Catchup with client']))
     ev.add(Event('Sales Meeting#3', ['2015-03-11', 'Office', 'Catchup with client']))
     ev.add(Event('DEV AIKIF - core data', ['2015-05-11', 'Software', 'update TEST - no test for CORE_DATA']))
