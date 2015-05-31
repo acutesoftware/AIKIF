@@ -44,6 +44,11 @@ help_list = [
         'help_url': url_pre + base_url + 'help'
     },
     {
+        'help_id': 'log',
+        'help_str': 'Log events',
+        'help_url': url_pre + base_url + 'log'
+    },
+    {
         'help_id': 'users',
         'help_str': 'List all the users of the system',
         'help_url': url_pre + base_url + 'users'
@@ -69,7 +74,7 @@ facts = [
 ]
 
 fact_fields = {
-    'fact_id': fields.String,
+    'fact_id':  fields.String,
     'fact_str': fields.String
 }
 
@@ -90,6 +95,17 @@ user_fields = {
     'user_id':  fields.String,
     'username': fields.String,
     'password': fields.String
+}
+
+logs = [
+    { 'txt':'First default log entry' },
+    { 'txt':'Second default log entry' },
+    { 'txt':'Third and last log entry' }
+ ]
+    
+
+log_fields = {
+    'txt': fields.String
 }
 
 class HelpListAPI(Resource):
@@ -180,10 +196,42 @@ class UserAPI(Resource):
     def delete(self, user_id):
         pass
 
-api.add_resource(HelpListAPI, base_url + 'help',               endpoint='help')
+import aikif.cls_log as mod_log
+import aikif.config as mod_cfg
+
+class LogAPI(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument('txt',  type=str, location='json')
+        self.lg = mod_log.Log(mod_cfg.fldrs['log_folder'])
+        super(LogAPI, self).__init__()
+        
+
+    def post(self, txt):
+        print('Log put: recording event ' + txt)
+        self.lg.record_process(txt)
+        args = self.reqparse.parse_args()
+        
+        """
+        args = self.reqparse.parse_args()
+        fact = {
+            'fact_id': facts[-1]['fact_id'] + 1,
+            'fact_str': args['fact_str']
+        }
+        facts.append(fact)
+        return {'fact': marshal(fact, fact_fields)}, 201
+        """
+        log = {
+            'txt':  args['txt']
+        }
+        return {'log': marshal(log, log_fields)}, 201
+        
+api.add_resource(HelpListAPI, base_url + 'help',                endpoint = 'help')
+api.add_resource(LogAPI,      base_url + 'log/<string:txt>',    endpoint = 'log')
+#api.add_resource(LogAPI,      base_url + 'logs',    endpoint = 'logs')
 api.add_resource(UserAPI,     base_url + 'users/<int:user_id>', endpoint = 'user')
-api.add_resource(FactListAPI, base_url + 'facts',               endpoint='facts')
-api.add_resource(FactAPI,     base_url + 'facts/<int:fact_id>', endpoint='fact')
+api.add_resource(FactListAPI, base_url + 'facts',               endpoint = 'facts')
+api.add_resource(FactAPI,     base_url + 'facts/<int:fact_id>', endpoint = 'fact')
 
 if __name__ == '__main__':
     app.run(debug=True)

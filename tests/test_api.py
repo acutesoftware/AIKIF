@@ -5,6 +5,7 @@
 
 import unittest
 import requests
+import json as json
 
 import aikif.api_main as api  # ok, we dont *need* this, but good to get base URL
 
@@ -32,7 +33,7 @@ class TestApi(unittest.TestCase):
         except Exception as ex:
             print('API not running - ' + str(ex))
         
-    def test_02_user(self):
+    def test_03_user(self):
         #usr01 = '"user":{"password":"local","user_id":"1","username":"local"}'
         try:
             r = requests.get(url + 'users/1')
@@ -42,5 +43,27 @@ class TestApi(unittest.TestCase):
                 self.assertEqual('"username": "local"' in r.text, True)
         except Exception as ex:
             print('API not running - ' + str(ex))
+    
+    
+    def test_04_log(self):
+        # data = json.dumps({'txt':'some test repo'}) 
+        # r = requests.post(url + 'log', params=data)
+        #data = json.dumps({'txt':'some test repo'}) 
+        #r = requests.post(url + 'log/txt', 'some test repo')   # works but string is 'txt'
+        
+        data = json.dumps({'txt':'example log entry via API'}) 
+        
+        #r = requests.post(url + 'log/txt=this_is_a_test', data)   # works 201
+        # "2015-05-31 20:09:25","000054058","Duncan","Treebeard","cls_log.log","txt=this_is_a_test",
+        
+        #r = requests.post(url + 'log/txt', data)   # works 201
+        # "2015-05-31 20:10:36","000054163","Duncan","Treebeard","cls_log.log","txt",
+        
+        r = requests.post(url + 'logs/works_but_not_best_logging_method', data) 
+        # "2015-05-31 21:00:33","000054766","Duncan","Treebeard","cls_log.log","tttttt",
+        
+        r = requests.post(url + 'logs', data) 
+        
+        
 if __name__ == '__main__':
     unittest.main()
