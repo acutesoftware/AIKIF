@@ -14,9 +14,12 @@ class Projects(object):
         res = '-- List of All Projects --\n'
         for p in self.project_list:
             res += p.nme.ljust(22) + p.desc + '\n'
-            
         return res
     
+    def __iter__(self):
+        for p in self.project_list:
+            yield p
+
     def add_project(self, proj):
         self.project_list.append(proj)
     
@@ -143,6 +146,8 @@ class Project(object):
             res = self.get_report_md()
         elif tpe == 'rst':
             res = self.get_report_rst()
+        elif tpe == 'html':
+            res = self.get_report_html()
         else:
             res = 'Unknown report type passed to project.build_report'
         
@@ -192,4 +197,22 @@ class Project(object):
         
         
         return res
+        
+    def get_report_html(self):
+        """
+        formats the project into a report in MD format - WARNING - tables missing BR
+        """
+        res = '<h2>Project:' + self.nme  + '</h2>'
+        res += '<p>' + self.desc + '</p>'
+        res += '<p>' + self.fldr + '</p>'
+        
+        res += '<BR><h3>TABLES</h3>'
+        
+        for t in self.datatables:
+            res += '<b>' + t.name + '<b><BR>'
+            res += '<p>' + str(t) + '</p>'
+        
+        
+        return res
+        
 
