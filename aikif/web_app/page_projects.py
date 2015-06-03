@@ -11,10 +11,15 @@ root_folder = mod_cfg.fldrs['log_folder']
 def get_page():
     txt = ''
     projects_list = create_sample_projects()
-    txt += str(projects_list).replace('\n', '<BR>') + '<BR><BR>'
-    
+    #txt += str(projects_list).replace('\n', '<BR>') + '<BR><BR>'
+    txt += '<table border=1><tr><td>Name</td><td>Description</td><td>Folder</td></tr>'
     for p in projects_list:
-        txt += str(p).replace('\n', '<BR>') + '<HR>'
+        txt += '<tr>\n'
+        txt += '<td>' + p.nme + '</td>\n'
+        txt += '<td>' + p.desc + '</td>\n'
+        txt += '<td>' + p.fldr + '</td>\n'
+        txt += '</tr>\n'
+    txt += '</table>\n'
     
     return txt
     
@@ -38,14 +43,9 @@ def create_sample_projects():
     proj_diary.add_source('PC Usage', root_folder)
     proj_diary.add_source('TODO List', root_folder)
 
-    my_biz = project.Project(name='Acute Software', desc='Custom Software development', fldr='')
-    my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
-    my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
-
     
     all_projects = project.Projects()
     all_projects.add_project(proj_diary)
-    all_projects.add_project(my_biz)
     all_projects.add_project(proj1)
     all_projects.add_project(proj2)
     
