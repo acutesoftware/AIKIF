@@ -1,12 +1,5 @@
 # run_tests.py
-"""
-from tests import *
-import unittest
 
-if __name__ == "__main__":
-    unittest.main()
- """   
- 
 import unittest as unittest
  
 if __name__ == "__main__":
