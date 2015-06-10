@@ -17,5 +17,3 @@ script:
 - coverage run --source=aikif setup.py test
 - nosetests --with-coverage
  
- after_success:  
-- coveralls
