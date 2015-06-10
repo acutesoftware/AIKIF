@@ -22,6 +22,7 @@ def main():
     fldr = os.getcwd()
     p = mod_prj.Project(name, type, desc, fldr)
     p.add_detail('source', 'pip install rawdata')
+
     
     # create the rawdata
     col_names = ['Year', 'name',   'Purchase', 'Location']
@@ -35,7 +36,9 @@ def main():
     for row in t.tbl:
         #print(row)
         p.record(test_data, '', row)
+    p.build_report('test_raw_data.html', 'html')
     p.build_report('test_raw_data.rst', 'rst')
+    p.build_report('test_raw_data.md', 'md')
     
     print(test_data)
     

@@ -1,5 +1,14 @@
-<h2>Project:rawdata_gen</h2><p>T:\user\dev\src\python\AIKIF\aikif\.z_prototype</p><p>Creates raw data tables for aikif
-     Last updated 2015-06-10 23:53:31</p><BR><h3>TABLES</h3><b>random.csv<b><BR><p>Year    name    PurchaseLocation
+#rawdata_gen
+T:\user\dev\src\python\AIKIF\aikif\.z_prototype
+Creates raw data tables for aikif
+     Last updated 2015-06-10 23:53:31
+
+
+##TABLES
+
+###random.csv
+-------------------------
+Year    name    PurchaseLocation
 Year    ,name    ,Purchase,Location,
 1990    ,Andrea  ,+$95.99 ,Russia  ,
 1987    ,Absolom ,446.00  ,Austria ,
@@ -51,4 +60,5 @@ Year    ,name    ,Purchase,Location,
 2013    ,Ormand  ,-153.50 ,Uzbekistan,
 1991    ,Adonia  ,+$141.99,Argentina,
 1999    ,Sergio  ,308.00  ,Japan   ,
-</p>
+
+

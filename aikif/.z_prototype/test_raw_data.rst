@@ -6,7 +6,7 @@ rawdata_gen
      T:\user\dev\src\python\AIKIF\aikif\.z_prototype
 
      Creates raw data tables for aikif
-     Last updated 2015-06-10 23:47:16
+     Last updated 2015-06-10 23:53:31
 
 .. contents:: 
 
@@ -26,56 +26,56 @@ random.csv
 Year                     name                     Purchase                 Location                 
 ======================== ======================== ======================== ======================== 
 Year                     name                     Purchase                 Location                 
-1989                     Ailish                   $217.95                  Guatemala                
-2002                     Dessa                    65.99                    Samoa                    
-1985                     Paulina                  $164.99                  Malawi                   
-2000                     Jacqui                   -277.00                  Austria                  
-2005                     Lilli                    -16.00                   New Caledonia            
-1996                     Butterfly                +$321.99                 People'S Republic Of The Congo
-1991                     Delores                  $ 433.00                 China                    
-2011                     Trinity                  -230.50                  Spain                    
-2013                     Stephen                  -176.99                  West Africa              
-1996                     Jariath                  -$223.00                 Central Africa           
-1995                     Barretta                 -$386.50                 Asia                     
-2012                     Selena                   384.00                   Zambia                   
-2007                     Bevan                    $ 248.99                 Philippines              
-1990                     Juliana                  $117.99                  Greece                   
-1991                     Jessica                  -$463.99                 Australia                
-2012                     Shira                    -$126.10                 Argentina                
-2007                     Esmerelda                $381.10                  Nepal                    
-1991                     Cherie                   +$336.99                 Czech Republic           
-1991                     Sage                     -$101.99                 Denmark                  
-2005                     Bambi                    205.10                   Asia                     
-2004                     July                     74.99                    Morocco                  
-2008                     Angelina                 +$260.50                 Monaco                   
-2008                     Tavia                    -$67.50                  Micronesia               
-1993                     Oriana                   $ 417.99                 Persian Gulf             
-2007                     Koko                     $ 477.00                 Gabon                    
-1991                     Zoan                     -$65.99                  Belarus                  
-1990                     Rabia                    322.95                   Maldives                 
-1992                     Reagan                   471.50                   Sweden                   
-1990                     Earlene                  -406.95                  Malta                    
-2004                     Aolani                   -375.99                  Trinidad And Tobago      
-1999                     Mitch                    -$270.99                 Gambia                   
-2002                     Kumiko                   -460.95                  Uruguay                  
-2002                     Wyatt                    155.10                   Swaziland                
-1991                     Kimmy                    +$462.10                 Senegal                  
-1999                     Shelly                   484.95                   Paraguay                 
-2011                     Bart                     $ 422.50                 Guinea                   
-2009                     Arne                     142.99                   Slovenia                 
-1996                     Tory                     +$490.00                 Nauru                    
-1992                     Seda                     $463.95                  Turkey                   
-1987                     Lenora                   +$487.10                 Mali                     
-2003                     Tino                     $469.95                  Fiji                     
-1998                     Nalo                     +$334.50                 Chad                     
-1986                     Picabo                   146.99                   Mayotte                  
-1987                     Alina                    +$55.99                  Southeast Asia           
-2012                     Arnie                    $485.10                  Switzerland              
-2009                     Erwin                    $152.95                  El Salvador              
-2006                     Cade                     +$21.00                  Columbia                 
-2009                     Oke                      15.00                    Saint Pierre And Miquelon
-1999                     Charisse                 $ 178.95                 Cambodia                 
-2009                     Darshan                  63.50                    Caucasus                 
+1990                     Andrea                   +$95.99                  Russia                   
+1987                     Absolom                  446.00                   Austria                  
+1985                     Moriah                   +$164.50                 Senegal                  
+2004                     Dulcea                   -375.95                  Lithuania                
+1992                     Betsy                    $ 372.99                 American Samoa           
+2012                     Da-Xia                   384.00                   Persian Gulf             
+1990                     Isaac                    250.50                   Anguilla                 
+1985                     Xavier                   +$195.10                 Asia                     
+2010                     Deka                     -151.99                  Namibia                  
+1989                     Garren                   -$60.99                  Guyana                   
+1991                     Chastity                 -26.50                   Hungary                  
+1988                     Zia                      +$195.50                 West Bank                
+2001                     Sapphire                 +$189.95                 Marshall Islands         
+1990                     Porter                   335.00                   British Virgin Islands   
+1997                     Cornelia                 418.00                   Guam                     
+2002                     Cedric                   -$82.10                  Sierra Leone             
+2011                     Didrika                  258.50                   Aruba                    
+1992                     Reba                     -$498.99                 East Indies              
+2000                     Coralie                  $351.00                  Svalbard And Jan Mayen Islands
+1985                     Huso                     -$226.00                 Marshall Islands         
+1999                     Lynne                    149.99                   Eastern Europe           
+1995                     Sadiki                   $340.10                  Cook Islands             
+1987                     Bingham                  $191.50                  Libya                    
+2008                     Quade                    +$82.10                  Romania                  
+1995                     Makenna                  -$107.10                 Mongolia                 
+1996                     Keene                    386.99                   Kenya                    
+2010                     Shay                     +$114.50                 Moldova                  
+2003                     Arnold                   -326.00                  Nigeria                  
+1986                     Eldora                   +$456.95                 West Africa              
+1988                     Naveen                   $130.10                  Country_Desc             
+2012                     Lalo                     $ 50.00                  Central African Republic 
+2007                     Naolin                   $199.10                  Zimbabwe                 
+2008                     Umeko                    449.99                   Nigeria                  
+2010                     Mariam                   $ 467.95                 Gabon                    
+1986                     Marli                    -424.99                  Sao Tome And Principe    
+2000                     Ginacarlo                -224.95                  Latin America            
+2005                     Kiana                    $429.95                  Bangladesh               
+2000                     Karna                    +$191.99                 South Asia               
+2005                     Nakima                   -$452.95                 Columbia                 
+2006                     Argus                    153.99                   Tanzania                 
+2001                     Nan                      237.50                   Djibouti                 
+2010                     Sharon                   198.99                   North America            
+2001                     Janel                    -84.50                   Tokelau                  
+1989                     Aren                     $176.95                  Canada                   
+1999                     Collin                   -56.00                   Montenegro               
+1993                     Chen                     $235.95                  Uganda                   
+1998                     Job                      -89.95                   Eastern Europe           
+2013                     Ormand                   -153.50                  Uzbekistan               
+1991                     Adonia                   +$141.99                 Argentina                
+1999                     Sergio                   308.00                   Japan                    
 ======================== ======================== ======================== ======================== 
 
 
