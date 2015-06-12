@@ -1,8 +1,5 @@
-# AI.py     written by Duncan Murray 2/5/2015
-
+#!/usr/bin/python3
 import aikif.knowledge
-
-#modes = ['COMMAND', 'ADD', 'QUERY']
 
 class AICLI(object):
     """

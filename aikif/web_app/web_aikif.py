@@ -1,5 +1,4 @@
-# web_aikif.py	written by Duncan Murray 25/5/2014
-# web interface for AIKIF
+#!/usr/bin/python3
 import sys
 import os
 
