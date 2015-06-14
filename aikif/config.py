@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # config.py     written by Duncan Murray 28/7/2014
 

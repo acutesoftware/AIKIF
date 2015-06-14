@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # install_data.py
 
 import os
