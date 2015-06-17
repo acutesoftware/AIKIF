@@ -1,11 +1,14 @@
 # test_cls_log.py
 
 import unittest
-import sys
-import os
 import time
-# test_fldr = os.getcwd() + os.sep + 'test_results'
-test_fldr = '.'
+import os
+import sys
+
+root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
+sys.path.insert(0, root_fldr)
+
 import aikif.cls_log as mod_log
 import aikif.config as cfg
 

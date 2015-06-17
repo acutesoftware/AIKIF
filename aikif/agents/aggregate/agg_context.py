@@ -36,10 +36,11 @@ def main():
     agentFileList.start()
     print(agentFileList.report())
     
+    
 class AggContext(Agent):
     def __init__(self, *arg):
         Agent.__init__(self, *arg)
-        
+         
     def do_your_job(self):
         """
         This is the function that actually does the work of the agent subclass 

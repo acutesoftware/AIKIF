@@ -19,7 +19,6 @@ class Goal(object):
 		self.start_date = datetime.datetime.now().strftime("%I:%M%p %d-%B-%Y")
 		
 	def __str__(self):
-		print("PRINTING SELF")
 		return self.name
 
 	def get_name(self):

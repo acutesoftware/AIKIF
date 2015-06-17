@@ -1,7 +1,12 @@
 # test_goal.py
 
 import unittest
+import os
 import sys
+
+root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
+sys.path.insert(0, root_fldr)
 
 from aikif.lib.cls_goal import Goal
 from aikif.lib.cls_goal_time import GoalTime

@@ -22,6 +22,7 @@ class GoalTime(Goal):
         ]
         
         
+        
     def check_for_success(self):
         return False
 
