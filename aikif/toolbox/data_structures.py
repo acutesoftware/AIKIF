@@ -4,30 +4,9 @@ def TEST():
     """
     self test for various data structures used in aikif
     initially starting with planning structures.
-    Not sure if this needs to be moved to aikif.dataTools ???
     """
-    print('  --== Graph Test ==--')
-    g = Graph({'1': ['2','3','4'], '2':['6','7']})
-    print('raw graph = ', g)
-    mat = g.get_adjacency_matrix(True)
-    print('\nget_adjacency_matrix =', mat)
-    print('\n  --== Node Test ==--')
-    trunk = Node('root node') 
-    branch1 = Node('1st branch')
-    branch2 = Node('2nd branch')
-    branch3 = Node('3rd branch')
-    trunk.add_link(branch1)
-    trunk.add_link(branch2)
-    trunk.add_link(branch3)
-    twig1 = Node('1st twig')
-    twig2 = Node('2nd twig')
-    branch1.add_link(twig1)
-    branch3.add_link(twig2)
-    
-    print(trunk)
-    print(branch3)
-    
-        
+    print('see /tests/test_data_structures.py')
+ 
         
 #----------------------------
 # Classes for Data Structures
