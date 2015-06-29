@@ -26,27 +26,31 @@ def list2html(lst):
     txt += '</TABLE><BR>\n'
     return txt
 
-def GetFileList(rootPath, lstXtn, shortNameOnly='Y'):
+
+def GetFileList(rootPaths, lstXtn, shortNameOnly='Y'):
     """ 
     builds a list of files and returns as a list 
     """
     numFiles = 0    
     opFileList = []
-    for root, dirs, files in os.walk(rootPath):
-        print('found ' + str(len(dirs)) + ' directories')
-        for basename in files:
-            for xtn in lstXtn:
-                if fnmatch.fnmatch(basename, xtn):
-                    filename = os.path.join(root, basename)
-                    numFiles = numFiles + 1
-                    if shortNameOnly == 'Y':
-                        opFileList.append( os.path.basename(filename))
-                    else:
-                        opFileList.append(filename)
+    if type(rootPaths) == str:
+        rootPaths = [rootPaths]
+    for rootPath in rootPaths:
+        for root, dirs, files in os.walk(rootPath):
+            print('found ' + str(len(dirs)) + ' directories')
+            for basename in files:
+                for xtn in lstXtn:
+                    if fnmatch.fnmatch(basename, xtn):
+                        filename = os.path.join(root, basename)
+                        numFiles = numFiles + 1
+                        if shortNameOnly == 'Y':
+                            opFileList.append( os.path.basename(filename))
+                        else:
+                            opFileList.append(filename)
                         
     return sorted(opFileList)
 
-  
+ 
 def filelist2html_div(lst, fldr):
     """ 
     convert a list to html using DIV formatting 
