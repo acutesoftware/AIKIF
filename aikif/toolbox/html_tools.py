@@ -22,29 +22,11 @@ def extract_page_links(rawText, searchText):
         #print(link)
         l = str(link.get('href'))
         if searchText in l:
-            #a = link.attrs
-            #content = str(link.string)
-            #t = str(link.get('title'))
             if l != '/':
                 links.append(l)
-                #print(l)
     return links	
 
-def extract_page_links_OLD(url, searchText):	
-    links = []
-    raw_text = mod_net.get_web_page(url)
-    soup = BeautifulSoup(raw_text)
-    for link in soup.findAll('a'):
-        #print(link)
-        l = str(link.get('href'))
-        if searchText in l:
-            #a = link.attrs
-            content = str(link.string)
-            t = str(link.get('title'))
-            links.append({'name': content, 'url': l, 'title': t, 'txt': '', 'html': '', 'catList': []})
-    return links	
-
-   
+ 
 def extract_by_div(raw_text, divID):
     html = ''
     soup = BeautifulSoup(raw_text)
