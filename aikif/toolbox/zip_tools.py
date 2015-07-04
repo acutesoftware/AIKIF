@@ -31,6 +31,17 @@ class ZipFile(object):
     def _determine_zip_type(self):
         return 'ZIP'
     
+    def _extract_zip(self, zip_file, dest_fldr, password=''):
+        pass
+        
+    def _extract_gz(self, zip_file, dest_fldr, password=''):
+        pass
+        
+    def _extract_tar(self, zip_file, dest_fldr, password=''):
+        pass
+        
+    
+    
     def extract(self, dest_fldr):
         """
         unzip the file contents to the dest_folder
