@@ -15,6 +15,15 @@ url = 'http://127.0.0.1:5000' + api.base_url
 valid_response = [403, 200]  # TODO - set to 200 after user login works
 
 class TestApi(unittest.TestCase):
+    def setUp(self):
+        unittest.TestCase.setUp(self)
+        # import aikif.api_main as api
+        # api.app.run(debug=True)
+        # Not a good idea - starts server but cant terminate easily
+        
+    def tearDown(self):
+        unittest.TestCase.tearDown(self)
+        #api.app = None
     
     def test_01_server_on(self):
         try:
