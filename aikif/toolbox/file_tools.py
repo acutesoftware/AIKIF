@@ -4,7 +4,6 @@
 
 import os
 import aikif.lib.cls_filelist as mod_fl
-import aikif.lib.cls_file as mod_file
 
 root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
 print(root_folder)
