@@ -3,6 +3,9 @@
 # zip_tools.py
 
 import os
+import zipfile
+import gzip
+import tarfile
 
 def TEST():
     print('local testing of zip_tools')
@@ -19,7 +22,6 @@ def extract_all(zipfile, dest_folder):
     z.extract(os.getcwd() + os.sep + 'unzipped')
     
     
-    
 class ZipFile(object):
     def __init__(self, fname):
         self.fname = fname
@@ -29,16 +31,32 @@ class ZipFile(object):
         return self.fname + ' is type ' + self.type
         
     def _determine_zip_type(self):
-        return 'ZIP'
+        xtn = self.fname[-3:].upper()
+        print('_' + xtn + '_', self.fname)
+        if xtn == 'ZIP':
+            return 'ZIP'
+        elif xtn == '.GZ':
+            return 'GZ'
+        elif xtn == 'TAR':
+            return 'TAR'
+        else:
+            print('Unknown file type - TODO, examine header')
+        return 'Unknown'
     
-    def _extract_zip(self, zip_file, dest_fldr, password=''):
-        pass
+    def _extract_zip(self, fldr, password=''):
+        z = zipfile.ZipFile(zip_file)
+        z.extractall(fldr, pwd=password)  # must pass as bytes, eg b'SECRET'
         
-    def _extract_gz(self, zip_file, dest_fldr, password=''):
-        pass
+    def _extract_gz(self, fldr, password=''):
+        with gzip.open(self.get_file_named(fldr, '*.gz'), 'rb') as fip:
+            file_content = fip.read()
+            with open(fldr + os.sep + 'temp.tar', 'wb') as fop:
+                fop.write(file_content)
         
-    def _extract_tar(self, zip_file, dest_fldr, password=''):
-        pass
+    def _extract_tar(self, fldr, password=''):
+        tar = tarfile.open(fldr + os.sep + 'temp.tar')
+        tar.extractall(path=fldr)
+        tar.close()    
         
     
     
@@ -49,7 +67,32 @@ class ZipFile(object):
         and then return the list of files extracted
         """
         print('extracting to ' + dest_fldr)
-        return [dest_fldr + os.sep + 'test.gz']
-    
+        if self.type == 'ZIP':
+            self._extract_zip(dest_fldr, password)
+        elif self.type == 'GZ':
+            self._extract_gz(dest_fldr, password)
+        elif self.type == 'TAR':
+            self._extract_tar(dest_fldr, password)
+        else:
+            raise('Unknown archive file type')
+
+    def get_file_named(self, fldr, xtn):
+        """
+        scans a directory for files like *.GZ or *.ZIP and returns
+        the filename of the first one found (should only be one of
+        each file here
+        """
+        res = []       # list of Sample objects
+        for root, _, files in os.walk(fldr):
+            for basename in files:
+                if fnmatch.fnmatch(basename, xtn):
+                    filename = os.path.join(root, basename)
+                    res.append(filename)
+
+        if len(res) > 0:   
+            return res[0]
+        else:
+            return None
+            
 if __name__ == '__main__':
     TEST()    
