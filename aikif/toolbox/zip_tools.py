@@ -8,8 +8,9 @@ import gzip
 import tarfile
 
 def TEST():
-    print('local testing of zip_tools')
-    extract_all('test.zip', os.getcwd())
+    print('to do testing - use run_tests')
+    #create_zip_from_file('test.zip', 'zip_tools.py')
+    #extract_all('test.zip', os.getcwd())
 
 def extract_all(zipfile, dest_folder):
     """
@@ -21,6 +22,25 @@ def extract_all(zipfile, dest_folder):
     print(z)
     z.extract(os.getcwd() + os.sep + 'unzipped')
     
+def create_zip_from_file(zip_file, fname):
+    """
+    add a file to the archive
+    """
+    with zipfile.ZipFile(zip_file, 'w') as myzip:
+        myzip.write(fname)
+    
+def create_zip_from_folder(zip_file, fldr, mode="r"):
+    """
+    add all the files from the folder fldr
+    to the archive
+    """
+    zipf = zipfile.ZipFile(zip_file, 'w')
+    for root, dirs, files in os.walk(fldr):
+        for file in files:
+            zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.join(fldr, '..')))
+    
+    
+    zipf.close()
     
 class ZipFile(object):
     def __init__(self, fname):
@@ -44,7 +64,7 @@ class ZipFile(object):
         return 'Unknown'
     
     def _extract_zip(self, fldr, password=''):
-        z = zipfile.ZipFile(zip_file)
+        z = zipfile.ZipFile(self.fname)
         z.extractall(fldr, pwd=password)  # must pass as bytes, eg b'SECRET'
         
     def _extract_gz(self, fldr, password=''):
@@ -60,7 +80,7 @@ class ZipFile(object):
         
     
     
-    def extract(self, dest_fldr):
+    def extract(self, dest_fldr, password=''):
         """
         unzip the file contents to the dest_folder
         (create if it doesn't exist)
@@ -93,6 +113,7 @@ class ZipFile(object):
             return res[0]
         else:
             return None
-            
+    
+    
 if __name__ == '__main__':
     TEST()    
