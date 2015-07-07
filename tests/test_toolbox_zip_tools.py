@@ -25,7 +25,7 @@ class ToolboxZipToolsTest(unittest.TestCase):
             os.remove(test_file2)
         except Exception:
             pass
-        zip_tools.create_zip_from_file(test_file2, 'test_toolbox_zip_tools.py')
+        zip_tools.create_zip_from_file(test_file2, os.getcwd() + os.sep + 'test_toolbox_zip_tools.py')
         lst1 = fl.FileList([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['test2.zip'], [],  '')
         #print(lst1.get_list())
         self.assertEqual('test2.zip' in lst1.get_list()[0], True ) 
