@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# coding: utf-8
 import unittest
 import sys
 import os
@@ -10,7 +12,7 @@ sys.path.append(root_folder + os.sep + 'aikif' + os.sep + 'toolbox' )
 import xml_tools
 
 small_file = root_folder + os.sep + 'aikif' + os.sep + 'ontology' + os.sep + 'mindOntology.xml'
-large_file = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' + os.sep + 'ANC__WhereToHongKong.xml'
+large_file = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' + os.sep + '__ANC__WhereToHongKong.xml'
 print('small_file = ', small_file)
 
 class ToolboxXmlToolsTest(unittest.TestCase):

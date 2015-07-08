@@ -81,6 +81,7 @@ def count_elements(fname, element):
     
 def count_via_minidom(fname, tag_name):
     from xml.dom.minidom import parseString
+    print('count_via_minidom : reading ' + fname)
     file = open(fname,'r')
     data = file.read()
     file.close()
@@ -194,7 +195,7 @@ class XmlFile(mod_file.TextFile):
         return txt
 
     def count_elements_in_file(self):
-        return count_via_minidom(self.name, 'sentence')
+        return count_via_minidom(self.fullname , 'MindOntology_Definition')  # sentence, MindOntology_Definition
     
 if __name__ == '__main__':
     TEST()	

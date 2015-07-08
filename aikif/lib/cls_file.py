@@ -106,7 +106,7 @@ class TextFile(File):
         if fname == '':
             fname = self.fullname
         try:
-            with open(fname) as f:
+            with open(fname, encoding="utf8") as f:
                 for i, _ in enumerate(f):
                     pass
             return i + 1    
