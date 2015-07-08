@@ -9,8 +9,8 @@ import os
 import sys
 from xml.sax import parse
 from xml.sax.saxutils import XMLGenerator
-
 from xml.etree.ElementTree import iterparse
+import aikif.lib.cls_file as mod_file
 
 try:
     from lxml import etree
@@ -21,15 +21,41 @@ def TEST():
     #print('Split a large XML file into multiple files')
     #split_xml('ANC__WhereToHongKong.xml', 'annotationSet', 10)
 
+    s = get_xml_stats('ANC__WhereToHongKong.xml')
+    display_stats(s)
+    
+    x = XmlFile('ANC__WhereToHongKong.xml')
+    print(x)
     
     print(count_elements('ANC__WhereToHongKong.xml', 'sentence'))
+    print(count_via_minidom('ANC__WhereToHongKong.xml', 'sentence'))
+    
+    
     #print('Fast processing of XML files')
     #context = etree.iterparse( 'short.xml', tag='layer' )
     #fast_iter(context,process_element)
     
-    
 # Public facing functions
 ###############################
+def get_xml_stats(fname):
+    """
+    return a dictionary of statistics about an 
+    XML file including size in bytes, num lines,
+    number of elements, count by elements
+    """
+    f = mod_file.TextFile(fname)
+    res = {}
+    res['shortname'] = f.name
+    res['folder'] = f.path
+    res['filesize'] = str(f.size) + ' bytes'
+    res['num_lines'] = str(f.lines) + ' lines'
+    res['date_modified'] = f.GetDateAsString(f.date_modified)
+    
+    return res
+    
+def display_stats(s):
+    for k,v in s.items():
+        print(k.ljust(15) + '= ',v)
 
 def split_xml(fname, element, num_elements):    
     parse(fname, XMLBreaker(element, break_after=num_elements, out=CycleFile(fname)))
@@ -42,17 +68,24 @@ def count_elements(fname, element):
     tot = 0
     for event, elem in iterparse(fname):
         tot += 1
-        if elem.text != '':
-            print(' tag  = ', elem.tag)
-            #print(' event  = ', event   # always end
-            print(' text = ',  elem.text)
+        #if elem.text != '':
+        #    print(' tag  = ', elem.tag)
+        #    #print(' event  = ', event   # always end
+        #    print(' text = ',  elem.text)
         if element in elem.tag:
             #print(elem.xpath( 'description/text( )' ))
-            print(elem.text)
+            #print(elem.text)
             num += 1
             elem.clear()
     return num, tot
     
+def count_via_minidom(fname, tag_name):
+    from xml.dom.minidom import parseString
+    file = open(fname,'r')
+    data = file.read()
+    file.close()
+    dom = parseString(data)
+    return len(dom.getElementsByTagName(tag_name))
     
 # internal classes for toolkit
 ###############################
@@ -77,6 +110,7 @@ def fast_iter(context, func, *args, **kwargs):
 
 def process_element(elem):
     print(elem.xpath( 'description/text( )' ))
+
 
 
 class CycleFile(object):
@@ -142,6 +176,26 @@ class XMLBreaker(XMLGenerator):
                     XMLGenerator.start_element(self, *element)
 
 
+class XmlFile(mod_file.TextFile):
+    """
+    Xml specific details derived from File object
+    """
+    
+    def __init__(self, fname):
+        super(XmlFile, self).__init__(fname)
+        self.element_count = self.count_elements_in_file()
+        self.lines = self.count_lines_in_file()
+
+    def __str__(self):
+        """ display the text file sample """
+        txt = super(mod_file.TextFile, self).__str__()
+        txt += '| TextFile = ' + str(self.lines) + ' lines\n'
+        txt += '| XmlFile  = ' + str(self.element_count) + ' elements\n'
+        return txt
+
+    def count_elements_in_file(self):
+        return count_via_minidom(self.name, 'sentence')
+    
 if __name__ == '__main__':
     TEST()	
  
