@@ -1,4 +1,9 @@
+#!/usr/bin/python3
+# coding: utf-8
 # cls_file.py
+# Other modules that inherit from this class:
+#   toolbox.xml_tools.XmlFile  (in progress)
+#   toolbox.image_tools.ImageFile  (TODO)
 
 import os
 import sys
