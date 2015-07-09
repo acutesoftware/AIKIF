@@ -22,8 +22,8 @@ folder_to_zip = root_folder + os.sep + 'data'
 class ToolboxZipToolsTest(unittest.TestCase):
     def test_01_create_zip_from_file(self):
         zip_tools.create_zip_from_file(test_file2, src_file)
-        lst1 = fl.FileList([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['test2.zip'], [],  '')
-        #print(lst1.get_list())
+        lst1 = fl.FileList([os.getcwd()], ['test2.zip'], [],  '')
+        print(lst1.get_list())
         self.assertEqual('test2.zip' in lst1.get_list()[0], True ) 
 
     def test_02_create_zip_from_folder(self):
