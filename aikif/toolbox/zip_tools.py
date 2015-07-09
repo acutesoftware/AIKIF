@@ -27,7 +27,8 @@ def create_zip_from_file(zip_file, fname):
     add a file to the archive
     """
     with zipfile.ZipFile(zip_file, 'w') as myzip:
-        myzip.write(fname)
+        myzip.write(fname, os.path.relpath(os.path.join(os.getcwd(), zip_file)))
+        #myzip.write(fname)
     
 def create_zip_from_folder(zip_file, fldr, mode="r"):
     """
