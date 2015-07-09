@@ -19,7 +19,7 @@ def extract_all(zipfile, dest_folder):
     are extracted 
     """
     z = ZipFile(zipfile)
-    print(z)
+    #print(z)
     z.extract(os.getcwd() + os.sep + 'unzipped')
     
 def create_zip_from_file(zip_file, fname):
@@ -53,7 +53,7 @@ class ZipFile(object):
         
     def _determine_zip_type(self):
         xtn = self.fname[-3:].upper()
-        print('_' + xtn + '_', self.fname)
+        #print('_' + xtn + '_', self.fname)
         if xtn == 'ZIP':
             return 'ZIP'
         elif xtn == '.GZ':
@@ -87,7 +87,7 @@ class ZipFile(object):
         (create if it doesn't exist)
         and then return the list of files extracted
         """
-        print('extracting to ' + dest_fldr)
+        #print('extracting to ' + dest_fldr)
         if self.type == 'ZIP':
             self._extract_zip(dest_fldr, password)
         elif self.type == 'GZ':

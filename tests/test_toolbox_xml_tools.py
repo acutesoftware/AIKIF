@@ -55,13 +55,7 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         """
         this wont work with large XML file on travis-ci
         """
-        try:
-            print(large_file)
-            if os.path.exists(large_file):   # for travis_ci not having large file
-                print('testing large file')
-                xml_tools.split_xml(large_file, 'sentence', 500)
-        except:
-            print('Large XML file not uploaded (this is to pass CI tools')
+        xml_tools.split_xml(small_file, 'sentence', 500)
             
     def test_13_get_xml_stats(self):
         s = xml_tools.get_xml_stats(small_file)
