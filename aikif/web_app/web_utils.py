@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # coding: utf-8
 # web_utils.py	written by Duncan Murray 26/5/2014
 # functions to convert data to HTML, etc for web dev
@@ -37,7 +38,7 @@ def GetFileList(rootPaths, lstXtn, shortNameOnly='Y'):
         rootPaths = [rootPaths]
     for rootPath in rootPaths:
         for root, dirs, files in os.walk(rootPath):
-            print('found ' + str(len(dirs)) + ' directories')
+            #print('found ' + str(len(dirs)) + ' directories')
             for basename in files:
                 for xtn in lstXtn:
                     if fnmatch.fnmatch(basename, xtn):
@@ -51,23 +52,6 @@ def GetFileList(rootPaths, lstXtn, shortNameOnly='Y'):
     return sorted(opFileList)
 
  
-def filelist2html_div(lst, fldr):
-    """ 
-    convert a list to html using DIV formatting 
-    """
-    txt = ''
-    for l in lst:
-        if type(l) is str:
-            txt+= ' ' + link_file(l, fldr) + '\n'
-        elif type(l) is list:
-            for i in l:
-                txt+= link_file(i, fldr) + ', '
-            txt+= '\n'
-        else:
-            txt+= ' ' + str(l) + '\n'
-        txt += '<BR>\n'
-    txt += '\n'
-    return txt
 
 def build_search_form():
     """ 
@@ -118,10 +102,7 @@ def link_file(f, fldr):
     """
     fname = os.path.join(fldr,f)
     if os.path.isfile(fname):
-        if 'data/' in request.path:
-            return '<a href="' + f + '">' + f + '</a>'
-        else:
-            return '<a href="data/' + f + '">' + f + '</a>'
+        return '<a href="data/' + f + '">' + f + '</a>'
     else:
         return f
     
@@ -173,34 +154,6 @@ def read_csv_to_html_table(csvFile, hasHeader='N'):
     return txt
     
 
-def read_csv_to_html_table_using_CSV_module_OLD(csvFile, hasHeader='N'):
-    txt = '<TABLE width=100% border=1>'
-    with open(csvFile, "rb") as csv_file:  # , encoding='utf-8'
-        numRows = 1
-        for row in csv.reader(csv_file, delimiter=','):
-            if hasHeader == 'Y':
-                if numRows == 1:
-                    td_begin = '<TH>'
-                    td_end = '</TH>'
-                else:
-                    td_begin = '<TD>'
-                    td_end = '</TD>'
-            else:
-                td_begin = '<TD>'
-                td_end = '</TD>'
-            numRows += 1
-
-            txt += "<TR>"
-            for col in row:
-                txt += td_begin
-                try:
-                    txt += col
-                except Exception:
-                    txt += 'Error'
-                txt += td_end
-            txt += "</TR>\n"
-        txt += "</TABLE>\n\n"
-    return txt
     
 def read_csv_to_html_list(csvFile):
     txt = ''
