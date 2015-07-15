@@ -5,8 +5,10 @@ import os
 import sys
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
-import aikif.project as project
+sys.path.append(root_folder)
+import project as project
 import aikif.dataTools.cls_datatable as cls_datatable
+import aikif.toolbox.html_tools as mod_html
 
 class TestProject(unittest.TestCase):
 
@@ -57,24 +59,31 @@ class TestProject(unittest.TestCase):
    
     def test_04_project_tasks(self):
         proj04 = project.Project(name='TODO List', fldr=root_folder, desc='List of things to do')
-        proj04.add_task(1, 'task1')
-        proj04.add_task(2, 'task2')
-        proj04.add_task(3, 'task3')
-        self.assertEqual(len(proj04.tasks), 3)
+        func = mod_html.extract_page_links
+        t = project.Task(1, 'task1', func)
+        proj04.add_task(t)
+        print(t)
+        self.assertEqual(len(proj04.tasks), 1)
         
  
     def test_11_task(self):
         p = project.Project('update Country reference', fldr='c:\test')
-        p.add_task(1, 'download file', 'aikif.toolbox.web_download')
-        p.add_task(2, 'extract zip', 'aikif.toolbox.zip_util')
-        p.add_task(3, 'overwrite TXT to database staging', 'aikif.toolbox.data_load')
-
-        p.add_param(task_id=1, param_key='url', param_val='http://www.')
-        p.add_param(task_id=1, param_key='dest_zip',  param_val= 'T:\\data\download\country')
-        p.add_param(task_id=3, param_key='tbl', param_val='S_REF_COUNTRY')
-        p.execute()
+        func = mod_html.extract_page_links
+        t1 = project.Task(1, 'task1', mod_html.extract_page_links)
+        t2 = project.Task(2, 'task2', mod_html.extract_page_links)
+        t3 = project.Task(3, 'task3', mod_html.extract_page_links)
+        t1.add_param(param_key='url', param_val='http://www.')
+        t1.add_param(param_key='dest_zip',  param_val= 'T:\\data\download\country')
+        t2.add_param(param_key='tbl', param_val='S_REF_COUNTRY')
+        p.add_task(t1)
+        p.add_task(t2)
+        p.add_task(t3)
+ 
+        #t1.execute()
         print(p)
-    
+        self.assertEqual(len(t1.params), 2)
+        self.assertEqual(len(t2.params), 1)
+        
       
 if __name__ == '__main__':
     unittest.main()
