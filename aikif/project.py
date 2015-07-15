@@ -51,7 +51,6 @@ class Project(object):
         self.ontology = []
         self.links = []
         self.tasks = []
-        self.params = []
         self.fldr = fldr
         self.tpe = tpe
         self.desc = desc
@@ -71,6 +70,13 @@ class Project(object):
             res += ':Data Sources:\n'
             for d in self.data_sources:
                 res += d[0] + '\t ' + d[1] + '\n'
+                
+                
+        # [task_id, name, due_date, priority]
+        if len(self.tasks) > 0:
+            res += ':Tasks:\n'
+            for t in self.tasks:
+                res += t.name + '\n'
         return res
 
     def add_goal(self, goal_id, name, due_date=None, priority=None):
@@ -79,11 +85,11 @@ class Project(object):
         """
         self.goals.append([goal_id, name, due_date, priority])
         
-    def add_task(self, task_id, name, due_date=None, priority=None):
+    def add_task(self, task):
         """
         adds a task for the project
         """
-        self.tasks.append([task_id, name, due_date, priority])
+        self.tasks.append(task)
         
     
     def add_link(self, src_id, dest_id, src_type='Goal', dest_type='Task'):  
@@ -109,19 +115,6 @@ class Project(object):
         """
         self.details.append([tpe, detail])
 
-    def add_param(self, task_id, param_key, param_val):
-        """
-        adds parameters as key value pairs
-        """
-        self.params.append([task_id, param_key, param_val])
-        
-    def execute(self):
-        """
-        executes all automatic tasks in order of task id
-        """
-        print('running tasks...')
-        for t in self.tasks:
-            print('task ' + t[1])
     
     def log_table(self, datatable):
         """
@@ -211,8 +204,53 @@ class Project(object):
         for t in self.datatables:
             res += '<b>' + t.name + '<b><BR>'
             res += '<p>' + str(t) + '</p>'
+        return res
+
         
-        
+class Task(object):
+    """
+    handles a single task for a project
+    """
+    def __init__(self, task_id, name, func, due_date=None, priority=None):
+        self.task_id = task_id
+        self.name = name 
+        self.func = func
+        self.due_date = due_date
+        self.priority = priority
+        self.params = []
+
+    def __str__(self):
+        res = '\nTask #' + str(self.task_id) + '       : ' + self.name + '\n'
+        if self.due_date:
+            res += 'Due Date       : ' + self.due_date + '\n'
+        if self.priority:
+            res += 'Priority       : ' + self.priority + '\n'
+        res += 'Function       : ' + str(self.func.__name__) + '\n'
+
+        for i in self.params:
+            res += '  Param        : ' + i[0] + ' = ' + i[1] + '\n'
         return res
         
-
+    def add_param(self, param_key, param_val):
+        """
+        adds parameters as key value pairs
+        """
+        self.params.append([param_key, param_val])
+        
+    def execute(self):
+        """
+        executes all automatic tasks in order of task id
+        """
+        func_params = []
+        exec_str = self.func.__name__ + '(' 
+        for p in self.params:
+            exec_str += p[0] + '="' + p[1] + '", '
+            func_params.append(p[1])
+        exec_str = exec_str[:-2]
+        exec_str += ')  # task' + str(self.task_id) + ': ' + self.name
+        
+        
+        result = self.func(*func_params)
+        print(exec_str + ' loaded ', result)
+    
+    
