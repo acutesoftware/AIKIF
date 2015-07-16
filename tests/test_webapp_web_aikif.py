@@ -37,11 +37,6 @@ class WebAppWebAikif(unittest.TestCase):
     def test_05_page_projects(self):
         self.assertEqual(len(web_aikif.page_projects()) > 4, True)
         
-    def test_06_page_data(self):
-        import page_data
-        #txt = page_data.get_page()
-        txt = web_aikif.get_footer()
-        self.assertEqual(len(txt) > 99, True)
         
         
     def test_06_page_agents(self):
@@ -65,6 +60,11 @@ class WebAppWebAikif(unittest.TestCase):
     def test_09_page_error(self):
         self.assertEqual(len(web_aikif.page_error('test')) > 4, True)
         
+    def test_10_page_data(self):
+        #import page_data
+        #txt = page_data.get_page()
+        txt = web_aikif.get_footer()
+        self.assertEqual(len(txt) > 9, True)
         
         
         
