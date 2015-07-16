@@ -48,6 +48,7 @@ class WebAppWebAikif(unittest.TestCase):
         
     def test_07_page_programs(self):
         pass
+        print('TODO - fix page programs so it doesnt point to dev')
         #txt = web_aikif.page_programs()
         #print(txt)
         #self.assertEqual(len(txt) > 4, True)
