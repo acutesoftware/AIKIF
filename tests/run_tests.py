@@ -64,3 +64,9 @@ wipe_file('test2.zip')
 wipe_file('sample_small1.xml')
 wipe_file('sample_small.xml')
 wipe_file('summary_diary.dat')
+
+wipe_file('command.log')
+wipe_file('process.log')
+wipe_file('filelist_images.csv')
+wipe_file('filelist_image_metadata.csv')
+
