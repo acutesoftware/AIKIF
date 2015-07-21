@@ -63,3 +63,4 @@ wipe_file('test2.zip')
 
 wipe_file('sample_small1.xml')
 wipe_file('sample_small.xml')
+wipe_file('summary_diary.dat')
