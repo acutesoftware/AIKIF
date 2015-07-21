@@ -43,15 +43,14 @@ class ImageMetadataAgent(agt.Agent):
                 op.write('\n')
                 for line in ip:
                     #fname = line.replace('\\', '\\\\').strip()
-                    fname = line.strip()
-                    try:
-                        if os.path.isfile(os.path.abspath(fname)):
-                            dat = mod_img.get_metadata_as_csv(fname)
-                            op.write(dat + '\n')
-                        else:
-                            pass
-                    except Exception:
-                        pass
+                    fname = line.strip().strip(',').strip('"')
+                    #print('fname = ', fname)
+                    if os.path.isfile(os.path.abspath(fname)):
+                        dat = mod_img.get_metadata_as_csv(fname)
+                        print(dat)
+                        op.write(dat + '\n')
+                    else:
+                        print('cant get metadata for file ' + fname)
     
     
     def check_last_updated(self):
