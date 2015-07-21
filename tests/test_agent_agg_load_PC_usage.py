@@ -10,8 +10,8 @@ sys.path.append(root_fldr + os.sep + "agents" + os.sep + "aggregate")
 
 import load_PC_usage as mod_usage
 
-diary_folder = os.getcwd() + os.sep + 'test_results'
-op_file = os.getcwd() + os.sep + 'test_results' + os.sep + 'summary_diary.dat'
+diary_folder = os.getcwd() 
+op_file = os.getcwd() + os.sep + 'summary_diary.dat'
 
     
 class AgentAggLoadPCUsageTest(unittest.TestCase):
@@ -21,8 +21,7 @@ class AgentAggLoadPCUsageTest(unittest.TestCase):
         
         self.assertEqual(os.path.exists(op_file), True)
         
- 
- 
+
  
 if __name__ == '__main__':
     unittest.main()
