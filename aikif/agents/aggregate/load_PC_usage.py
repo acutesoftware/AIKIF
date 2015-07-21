@@ -6,62 +6,30 @@
 import sys
 import os
 
-def GetUser():
-    try:
-        import getpass
-        usr = getpass.getuser()
-    except Exception:
-        usr = 'username'
-    return usr
-
-def GetPCName():
-    try:
-        import socket
-        pcname = socket.gethostname()
-    except Exception:
-        pcname = 'computer'
-    return pcname
-
-try:
-    ipFolder = sys.argv[1] 
-    opFolder = sys.argv[2] 
-except Exception:
-    print ('load_PC_usage.py - processes logged PC usage data to diary files')
-    print('Usage:')
-    print('  load_PC_usage.py [input_folder] [output_folder]')
-    exit(1)
+ 
+def process_all(ipFolder, op_file):	
     
-    
-def main():	
-    #ipFile = ipFolder + '\\pc_usage_' + GetPCName() + '_' + GetUser() + '.txt'
-    #opFile = opFolder + '\\diary.csv'
-    print('aggregating ', ipFolder, ' to ' , opFolder)
-    rawFiles = GetRawFiles(ipFolder)
+    print('aggregating ', ipFolder, ' to ' , op_file)
+    rawFiles = get_raw_files(ipFolder)
     for f in rawFiles:
         print('rawfile = ' + f)
-        processRawFile(f, opFolder)
+        process_raw_file(f, op_file)
     
-def GetRawFiles(ipFolder):
+def get_raw_files(ipFolder):
     fl = []
     print(ipFolder)
-    for root, dirs, files in os.walk(ipFolder):
-        print('root = ', root)
-        print('dirs = ', dirs)
-        print('files= ', files)
+    for root, _, files in os.walk(ipFolder):
         for basename in files:
             filename = os.path.join(root, basename)
             if basename[0:6] == 'diary_':
                 fl.append(filename)
-        #print(filename)
-        #print(basename[0:9])
-    print(fl)
     return fl
 
 
-def processRawFile(f, opFolder):
+def process_raw_file(f, op_file):
     print ('Processing: ', f)
     usage = []
-    with open(opFolder + os.sep + 'diary.csv','a') as op:
+    with open(op_file,'a') as op:
         with open(f, 'r') as ip:
             for line in ip:
                 det = ''
@@ -76,7 +44,4 @@ def processRawFile(f, opFolder):
                 usage.append([dte,tme,amt,det])
         for res in usage:
             op.write(chr(31).join(res))
-    
-if __name__ == '__main__':
-    main()	
     
