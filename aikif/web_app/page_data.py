@@ -11,10 +11,6 @@ root_folder = os.path.abspath(aikif_folder + os.sep + '..')
 data_folder = root_folder + os.sep + 'data' + os.sep + 'core'
 print('page_data.py: root_folder = ', root_folder)
 
-#import aikif.AIKIF_utils as aikif
-import aikif.cls_file_mapping as filemap
-
-
 def get_page(dataFile=''):
 	txt = '<div id="content">\n'
 	txt += '<div id="table_list">\n'
