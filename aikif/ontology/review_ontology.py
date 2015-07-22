@@ -223,12 +223,12 @@ def main():
     ShowStatistics()
     SaveHTML_File_Samples('review_file_samples.html')
     SaveHTML_Review('review_ontology.html')
-    #SaveAsMarkup('review_ontology.txt')
+    SaveAsMarkup('review_ontology.txt')
     #os.system('start review_ontology.html')
     #os.system('start review_ontology.txt')
 
 
-    #ShowConclusion()
+    ShowConclusion()
 
 def ShowStatistics():
     print('Ontologies 	= ' + str(len(ontologyList)))
