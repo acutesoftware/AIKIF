@@ -70,3 +70,7 @@ wipe_file('process.log')
 wipe_file('filelist_images.csv')
 wipe_file('filelist_image_metadata.csv')
 
+wipe_file('review_ontology.txt')
+wipe_file('review_file_samples.html')
+wipe_file('review_ontology.txt')
+
