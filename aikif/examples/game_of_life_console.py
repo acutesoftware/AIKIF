@@ -9,7 +9,8 @@ aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 
 import aikif.toolbox.cls_grid_life as mod_grid
 import aikif.cls_log as mod_log
-lg = mod_log.Log('')
+import aikif.config as cfg
+lg = mod_log.Log(cfg.fldrs['log_folder'])
 
 lg.record_process("Running Game of Life Console...")
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -21,8 +22,8 @@ def main():
     Generates a sequence of random grids and runs the
     Game of Life, saving results
     """
-    iterations  = 10     # how many simulations to run
-    years       = 100    # how many times to run each simulation
+    iterations  = 9     # how many simulations to run
+    years       = 3    # how many times to run each simulation
     width       = 22     # grid height
     height      = 78     # grid width
     time_delay  = 0.03   # delay when printing on screen
@@ -30,7 +31,7 @@ def main():
     lg.record_process('Game of Life', 'game_of_life_console.py')
     for _ in range(iterations):
         s,e = run_game_of_life(years, width, height, time_delay, 'N') 
-        lg.log_result("Started with " +  str(s) + " cells and ended with " + str(e) + " cells")
+        lg.record_result("Started with " +  str(s) + " cells and ended with " + str(e) + " cells")
         
 def run_game_of_life(years, width, height, time_delay, silent="N"):
     """
@@ -39,7 +40,7 @@ def run_game_of_life(years, width, height, time_delay, silent="N"):
     """
     lfe = mod_grid.GameOfLife(width, height, ['.', 'x'], 1)
     set_random_starting_grid(lfe)
-    lg.log_source(lfe, 'game_of_life_console.py')
+    lg.record_source(lfe, 'game_of_life_console.py')
     print(lfe)
     start_cells = lfe.count_filled_positions()
     for ndx, dummy_idx in enumerate(range(years)):
