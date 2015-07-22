@@ -21,7 +21,7 @@ class TestTemplate(unittest.TestCase):
         unittest.TestCase.tearDown(self)
 
     
-    def test_01_server_on(self):
+    def test_01_instantiate_class(self):
         self.assertEqual(1,1)
 
 
