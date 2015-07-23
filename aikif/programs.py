@@ -15,16 +15,6 @@ import aikif.lib.cls_file as mod_file
 root_folder = os.path.abspath(mod_cfg.fldrs['root_path'] + os.sep  ) 
 
 
-def TEST():
-    """
-    local test function - see \tests\test_programs.py for full coverage
-    """
-    prg = Programs('AIKIF Programs', root_folder)
-    prg.list_all_python_programs()
-    # print(prg)
-    prg.save(root_folder + os.sep + 'aikif' + os.sep + 'programs.csv')
-    print('Done')
-
 class Programs(object):
     """
     Class to manage a list of programs for AIKIF
@@ -167,5 +157,3 @@ class Programs(object):
         with open(fname, 'w') as f:
             f.write(md)
  
-if __name__ == '__main__': 
-    TEST()
