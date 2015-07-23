@@ -79,3 +79,6 @@ wipe_file('test_world.txt')
 wipe_file('review_ontology.html')
 wipe_file('_sessions.txt')
 
+wipe_file('programs_test_folder.csv')
+wipe_file('programs_test_folder.md')
+
