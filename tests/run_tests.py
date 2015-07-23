@@ -74,3 +74,8 @@ wipe_file('review_ontology.txt')
 wipe_file('review_file_samples.html')
 wipe_file('review_ontology.txt')
 
+wipe_file('test_world_traversed.txt')
+wipe_file('test_world.txt')
+wipe_file('review_ontology.html')
+wipe_file('_sessions.txt.txt')
+
