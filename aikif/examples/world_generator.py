@@ -16,8 +16,8 @@ def main():
     """
     width       =  20   # grid width 
     height      =  10   # grid height
-    iterations  =  50   # how many simulations to run
-    num_agents  =   8   # number of agents to enter the world
+    iterations  =  20   # how many simulations to run
+    num_agents  =   4   # number of agents to enter the world
     
     w = build_world(height, width)
     print(w)
