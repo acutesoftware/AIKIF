@@ -82,3 +82,5 @@ wipe_file('_sessions.txt')
 wipe_file('programs_test_folder.csv')
 wipe_file('programs_test_folder.md')
 
+wipe_file('program_list.html')
+

@@ -8,18 +8,25 @@ cur_folder = os.path.dirname(os.path.abspath(__file__))
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 root_folder = os.path.abspath(aikif_folder + os.sep + '..')
 
+prog_file = 'program_list.html'
+
 def get_page():
     txt = '<a href="/programs/rebuild">Rebuild Program List</a><BR>'
     txt += show_program_list()
     return txt
 
 def show_program_list():
-    with open('program_list.html', 'r') as f:
-        return f.read()
+    txt = ''
+    try:
+        with open(prog_file, 'r') as f:
+            txt = f.read()
+    except Exception:
+        pass
+    return txt
 
 def rebuild():
     """ rebuilds the list of programs to file  """
-    with open('program_list.html', 'w') as f:
+    with open(prog_file, 'w') as f:
         f.write(get_program_list())
     
 def get_program_list():
