@@ -15,7 +15,8 @@ fldrs['pers_data'] = 'T:\\user\\AIKIF\\pers_data'
 fldrs['pers_credentials'] = 'T:\\user\\AIKIF\\pers_data\\credentials' 
 
 # FOR DEVELOPMENT
-core_folder = 'T:\\user\\dev\\src\\python\\AIKIF'
+#core_folder = 'T:\\user\\dev\\src\\python\\AIKIF' # <-- wtf!!
+core_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 fldrs['root_path'] = core_folder
 fldrs['public_data_path'] = core_folder + os.sep + 'data'
 fldrs['program_path'] = os.path.abspath(core_folder + os.sep + 'aikif') 
