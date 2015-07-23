@@ -108,7 +108,10 @@ class Programs(object):
         #location_fileList = filemap.get_full_filename(filemap.find_type('LOCATION'), filemap.find_ontology('FILE-PROGRAM')[0])   	
         object_fileList = filemap.get_full_filename(filemap.find_type('OBJECT'), filemap.find_ontology('FILE-PROGRAM')[0])   	
         print('object_fileList = ' + object_fileList + '\n')
-        os.remove(object_fileList)
+        try:
+            os.remove(object_fileList)
+        except Exception:
+            pass
         self.lstPrograms.sort()
 
         with open(object_fileList, 'a') as f:
