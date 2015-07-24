@@ -9,7 +9,7 @@ root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.s
 print(root_folder)
 
 
-def count_lines_in_file(dest_table, src_file ):
+def count_lines_in_file(src_file ):
     """
     test function.
     """
