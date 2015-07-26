@@ -43,6 +43,7 @@ class Programs(object):
         self.tot_bytes = 0
         self.tot_files = 0
         self.tot_loc = 0
+        self.lstPrograms = []
         fl = mod_fl.FileList([self.fldr], ['*.py'], ["__pycache__", ".git"])
         for f in fl.get_list():
             if '__init__.py' not in f:
