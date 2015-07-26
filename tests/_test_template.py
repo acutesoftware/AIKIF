@@ -6,10 +6,10 @@ import sys
 import unittest
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
-web_app_path = root_folder + os.sep + 'aikif' + os.sep + 'web_app' 
-sys.path.append(web_app_path)
+pth = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' 
+sys.path.append(pth)
 
-import web_aikif
+import ???_tools
 
 
 class TestTemplate(unittest.TestCase):
