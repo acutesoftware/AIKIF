@@ -3,6 +3,8 @@
 # file_tools.py
 
 import os
+import glob
+import shutil
 import aikif.lib.cls_filelist as mod_fl
 
 root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
@@ -33,7 +35,7 @@ def get_filelist(fldr):
     return lst.get_list()
 
 def delete_files_in_folder(fldr):
-    fl = glob.glob(fldr + os.sep + '*.*')
+    fl = glob.glob(fldr + '\\*.*')
     for f in fl:
         os.remove(f)
  
