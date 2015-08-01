@@ -8,25 +8,6 @@ import sys
 import pprint
 
 def TEST():
-    print(parse_text_to_table('aaa,bdsdsbb,cfe\nAAA,BB,C\na,bb,ccc\n'))
-    tab_data = """animal	bird	dove		
-animal	bird	duck		
-animal	fish	salmon		
-animal	mammal	human		
-animal	mammal	lion		
-animal	mammal	pig		
-plant	flower	rose		
-plant	tree	apple	
-plant	tree	lemon	
-life	plant	vegetable	herb	mint	
-life	plant	vegetable	herb	rosemary	
-life	plant	vegetable	herb	sage	
-life	plant	vegetable	pea		
-life	plant	vegetable	potato		"""
-
-    tbl = parse_text_to_table(tab_data)
-    print(tbl)
-    save_tbl_as_csv(tbl, 'test_csv_output_auto.csv')
     
     # no do a manual split
     t3 = parse_text_by_col_pos('aaa,bdsdsbb,cfe\nAAA,BB,C\na,bb,ccc\n', [3,3,3])
@@ -41,7 +22,7 @@ def parse_text_to_table(txt):
     """
     res = []                # resulting table
     delim = identify_delim(txt)
-    print('delim = _' + delim + '_')
+    #print('delim = _' + delim + '_')
     if delim == '' or delim == ' ':
         fixed_split = identify_col_pos(txt)
         if fixed_split == []:
@@ -142,7 +123,7 @@ def identify_delim(txt):
     possible_delims = _get_dict_char_count(txt)  # {'C': 3, 'a': 4, 'b': 5, 'c': 6, ',': 6, 'A': 3, '\n': 3, 'B': 3})
         
     delim = max(possible_delims.keys(), key=(lambda k: possible_delims[k]))
-    print('delim = ', delim)
+    #print('delim = ', delim)
     
     """
     lines = txt.split('\n')
@@ -173,4 +154,3 @@ def keywithmaxval(d):
      return k[v.index(max(v))]
 
    
-TEST()
