@@ -54,4 +54,4 @@ wipe_file('programs_test_folder.csv')
 wipe_file('programs_test_folder.md')
 wipe_file('program_list.html')
 wipe_file('tools.txt')
-
+wipe_file('text_tools_sample.csv')
