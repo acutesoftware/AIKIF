@@ -46,7 +46,17 @@ life	plant	vegetable	potato		"""
         self.assertEqual(t3[1], ['AAA', '', '', ',BB,C'])
         self.assertEqual(t3[2], ['a,b', '', '', 'b,ccc'])
         
-     
+  
+    def test_04_identify_col_pos(self):
+        col_splits = text_tools.identify_col_pos('Name Address Phone very_long_col_name')
+        self.assertEqual(col_splits, [5, 13, 19, 36])
+    
+    def test_05_parse_text_to_table(self):
+        test_hdr = 'Name,Address,zip,,,,'
+        delim = text_tools.identify_delim(test_hdr)
+        self.assertEqual(delim, ',')
+        t3 = text_tools.parse_text_to_table(test_hdr)   
+        self.assertEqual(t3, [['Name', 'Address', 'zip', '', '', '', '']])
         
 if __name__ == '__main__':
     unittest.main()
