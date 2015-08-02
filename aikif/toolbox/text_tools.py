@@ -7,12 +7,6 @@ import os
 import sys
 import pprint
 
-def TEST():
-    
-    # no do a manual split
-    t3 = parse_text_by_col_pos('aaa,bdsdsbb,cfe\nAAA,BB,C\na,bb,ccc\n', [3,3,3])
-    #save_tbl_as_csv(t3, 'test_tbl3.csv')
-    
 def parse_text_to_table(txt):
     """
     takes a blob of text and finds delimiter OR guesses 
@@ -22,7 +16,6 @@ def parse_text_to_table(txt):
     """
     res = []                # resulting table
     delim = identify_delim(txt)
-    #print('delim = _' + delim + '_')
     if delim == '' or delim == ' ':
         fixed_split = identify_col_pos(txt)
         if fixed_split == []:
@@ -44,15 +37,11 @@ def identify_col_pos(txt):
     #res.append(0)
     lines = txt.split('\n')
     prev_ch = ''
-    print('lines[0] = ', lines[0])
     for col_pos, ch in enumerate(lines[0]):
-        #print('col_pos, ch, prev_ch = ', col_pos, ch, prev_ch)
         if _is_white_space(ch) is False and _is_white_space(prev_ch) is True:
             res.append(col_pos)
         prev_ch = ch
     res.append(col_pos)
-    print('identify_col_pos ' , res)
-    
     return res
 
     
@@ -73,8 +62,6 @@ def save_tbl_as_csv(t, fname):
 def parse_text_by_col_pos(txt, fixed_split):
     tbl = []
     lines = txt.split('\n')
-    #print('reading ' + str(len(lines)) + ' in blob size ' + str(len(txt)))
-    #print('fixed_split = ' , fixed_split)
     for line in lines:
         if line.strip('\n') != '':
             cols = []
@@ -83,7 +70,6 @@ def parse_text_by_col_pos(txt, fixed_split):
                 cols.append(line[prev_spacing:cur_pos])
                 prev_spacing = cur_pos
             cols.append(line[cur_pos:])
-            #print('cols = ', cols)
         tbl.append(cols)
     return tbl
     
@@ -123,7 +109,6 @@ def identify_delim(txt):
     possible_delims = _get_dict_char_count(txt)  # {'C': 3, 'a': 4, 'b': 5, 'c': 6, ',': 6, 'A': 3, '\n': 3, 'B': 3})
         
     delim = max(possible_delims.keys(), key=(lambda k: possible_delims[k]))
-    #print('delim = ', delim)
     
     """
     lines = txt.split('\n')
@@ -144,13 +129,4 @@ def identify_delim(txt):
     
     return delim
    
-def keywithmaxval(d):
-     """ 
-        
-         a) create a list of the dict's keys and values; 
-         b) return the key with the max value"""  
-     v=list(d.values())
-     k=list(d.keys())
-     return k[v.index(max(v))]
 
-   
