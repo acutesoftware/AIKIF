@@ -7,12 +7,11 @@ import unittest
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 pth = root_folder + os.sep + 'aikif' + os.sep + 'environments' 
-example_path = root_folder + os.sep + 'aikif' + os.sep + 'examples' 
+
 sys.path.append(pth)
-sys.path.append(example_path)
 
 import worlds
-#import world_generator
+import world_generator
 
 class TestToolboxClsGridLife(unittest.TestCase):
     def setUp(self):
@@ -25,9 +24,9 @@ class TestToolboxClsGridLife(unittest.TestCase):
     
     def test_01_run_all(self):
         pass
-        #world_generator.main()
-        #self.assertEqual(os.path.exists(os.getcwd() + os.sep + 'test_world_traversed.txt'), True)
-        #self.assertEqual(os.path.exists(os.getcwd() + os.sep + 'test_world.txt'), True)
+        world_generator.main()
+        self.assertEqual(os.path.exists(os.getcwd() + os.sep + 'test_world_traversed.txt'), True)
+        self.assertEqual(os.path.exists(os.getcwd() + os.sep + 'test_world.txt'), True)
 
     def test_02_world_init(self):
         
