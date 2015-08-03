@@ -115,9 +115,11 @@ class Programs(object):
             pass
         self.lstPrograms.sort()
 
-        with open(object_fileList, 'a') as f:
-            f.write('\n'.join([i[0] for i in self.lstPrograms]))
-
+        try:
+            with open(object_fileList, 'a') as f:
+                f.write('\n'.join([i[0] for i in self.lstPrograms]))
+        except Exception:
+            print('ERROR = cant write to object_filelist ' , object_fileList)
 
     def get_file_info_line(self, fname, delim):
         """

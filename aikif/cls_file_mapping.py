@@ -18,15 +18,22 @@ file_type_file = root_folder + os.sep + "data" + os.sep + "ref" + os.sep + "ONTO
 
 
 dataFileTypes = []
-with open(file_type_file, 'r') as f:
-    for line in f:
-        dataFileTypes.append(line.strip())
+if os.path.exists(file_type_file):
+    with open(file_type_file, 'r') as f:
+        for line in f:
+            dataFileTypes.append(line.strip())
+else:
+    print('MISSING DATA FILE (file_type_file) ' , file_type_file)
+    print('update your config.py or config.txt')
     
 dataSubjectAreas = []
-with open(subject_file, 'r') as f:
-    for line in f:
-        dataSubjectAreas.append(line.strip())
-
+if os.path.exists(subject_file):
+    with open(subject_file, 'r') as f:
+        for line in f:
+            dataSubjectAreas.append(line.strip())
+else:
+    print('MISSING DATA FILE (subject_file) ' , subject_file)
+    print('update your config.py or config.txt')
         
 class FileMap(object):
     """
