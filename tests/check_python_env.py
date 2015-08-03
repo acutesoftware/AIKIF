@@ -5,8 +5,8 @@ import os
 
 import aikif.lib.cls_filelist as cl
 
-packages = ['os', 'sys', 'numpy', 'requests', 'pypyodbc', 'codecs', 're', 'csv' ,
-        'operator' , 'datetime' , 'xml' , 'platform' , 'cx_Oracle',
+packages = ['os', 'sys', 'requests', 'pypyodbc', 'codecs', 're', 'csv' ,
+        'operator' , 'datetime' , 'xml' , 'platform' , 
         'socket' , 'getopt', 'unittest' , 'random', 'binascii' , 'time', 
         'xlrd' , 'glob', 'flask' , 'json', 'sqlite3' , 'string' , 'math' 
         ,'getpass' , 'subprocess', 'fnmatch' , 'ctypes']

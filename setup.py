@@ -18,7 +18,6 @@ setup(
           'requests >= 2.3',
           'beautifulsoup4 >= 1.0',
           'Pillow >= 1.0',
-          'pandas >= 0.16.0',
           'xlrd >= 0.9.0',
           'psutil > 0.1.0'
     ],
