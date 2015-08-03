@@ -88,8 +88,8 @@ class CoreData(object):
         children for that process
         TODO = processes need to be recalculated
         """
-        print('TODO: process check = ', process)
-        print(self.name, ' expanded to ->', child_nodes)
+        #print('TODO: process check = ', process)
+        #print(self.name, ' expanded to ->', child_nodes)
         self.child_nodes = []   # reset ??
         for n in child_nodes:
             self.child_nodes.append(Object(n, parent=self))
