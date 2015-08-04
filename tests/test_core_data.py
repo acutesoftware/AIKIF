@@ -65,7 +65,7 @@ class CoreDataTest(unittest.TestCase):
 
         # contract (or rollup - ie get parent) the shelf - NOT IMPLEMENTED
         #self.assertEqual(str(shelf.contract()), 'Projects')
-        
+        self.assertEqual(1,2)
 
 
         
