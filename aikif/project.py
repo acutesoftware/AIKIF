@@ -279,19 +279,21 @@ class Task(object):
         
     
     def _force_str(self, obj):
-        if type(obj) is str:
-            return obj
-        elif type(obj) is int:
-            return str(obj)
-        elif type(obj) is list:
-            txt = '['
-            for l in obj:
-                txt += self._force_str(l) + ','
-            return txt + ']'
-        elif type(obj) is dict:
-            txt = '{'
-            for k,v in obj.items():
-                txt +=  k + '=' + self._force_str(v) + ','
-            return txt + '}'
-        else:
-            return 'unknown type'
+        return str(obj)  # lets see how this works
+        
+        # if type(obj) is str:
+            # return obj
+        # elif type(obj) is int:
+            # return str(obj)
+        # elif type(obj) is list:
+            # txt = '['
+            # for l in obj:
+                # txt += self._force_str(l) + ','
+            # return txt + ']'
+        # elif type(obj) is dict:
+            # txt = '{'
+            # for k,v in obj.items():
+                # txt +=  k + '=' + self._force_str(v) + ','
+            # return txt + '}'
+        # else:
+            # return 'todo - convert type'
