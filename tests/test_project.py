@@ -60,10 +60,13 @@ class TestProject(unittest.TestCase):
     def test_04_project_tasks(self):
         proj04 = project.Project(name='TODO List', fldr=root_folder, desc='List of things to do')
         func = mod_html.extract_page_links
-        t = project.Task(1, 'task1', func)
+        t = project.Task(1, 'task1', func, due_date='2015-02-13', priority='High')
         proj04.add_task(t)
         print(t)
         self.assertEqual(len(proj04.tasks), 1)
+        proj04.build_report('task.md', 'md')
+        proj04.build_report('task.html', 'html')
+        proj04.build_report('task.rst', 'rst')
         
  
     def test_11_task(self):
@@ -75,14 +78,16 @@ class TestProject(unittest.TestCase):
         t1.add_param(param_key='url', param_val='http://www.')
         t1.add_param(param_key='dest_zip',  param_val= 'T:\\data\download\country')
         t2.add_param(param_key='tbl', param_val='S_REF_COUNTRY')
+        t2.add_param('__success_test', True)
+
         p.add_task(t1)
         p.add_task(t2)
         p.add_task(t3)
  
-        #t1.execute()
+        t1.execute()
         print(p)
         self.assertEqual(len(t1.params), 2)
-        self.assertEqual(len(t2.params), 1)
+        self.assertEqual(len(t2.params), 2)
 
     def test_12_task_complex_params(self):
         t12 = project.Task(1, 'task', mod_html.extract_page_links)
