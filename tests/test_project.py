@@ -94,10 +94,9 @@ class TestProject(unittest.TestCase):
         
         t12.add_param(param_key='mixed_dict', param_val={'var1':'test_var1','var2':['a','b','c'],'var3':6785})
         t12.add_param(param_key='deep', param_val=[7,6,5,[7,8,[{'d1':'woah'},['bb','cc'],45, 'hello']]])
-        self.assertEqual(t12._force_str(t12.params[5]), '[deep,[7,6,5,[7,8,[{d1=woah,},[bb,cc,],45,hello,],],],]')
-        # Note - multiple dictionary items are annoying to test as they arrive in different order
+        self.assertEqual(t12._force_str(t12.params[5]), '[\'deep\', [7, 6, 5, [7, 8, [{\'d1\': \'woah\'}, [\'bb\', \'cc\'], 45, \'hello\']]]]')
+        self.assertEqual(str(t12.params[5]), '[\'deep\', [7, 6, 5, [7, 8, [{\'d1\': \'woah\'}, [\'bb\', \'cc\'], 45, \'hello\']]]]')
         
-        print(t12)
-      
+       
 if __name__ == '__main__':
     unittest.main()
