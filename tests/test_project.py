@@ -83,7 +83,21 @@ class TestProject(unittest.TestCase):
         print(p)
         self.assertEqual(len(t1.params), 2)
         self.assertEqual(len(t2.params), 1)
+
+    def test_12_task_complex_params(self):
+        t12 = project.Task(1, 'task', mod_html.extract_page_links)
+        t12.add_param(param_key='a_string', param_val='Hi There - this is a string')
+        t12.add_param(param_key='a_number', param_val=42)
+        t12.add_param(param_key='a_list', param_val=[1,2,3,7,8,9])
+        t12.add_param(param_key='a_dict', param_val={'var1':'test_var1','var2':'test_var2','var3':'test_var3'})
+        self.assertEqual(len(t12.params), 4)
         
+        t12.add_param(param_key='mixed_dict', param_val={'var1':'test_var1','var2':['a','b','c'],'var3':6785})
+        t12.add_param(param_key='deep', param_val=[7,6,5,[7,8,[{'d1':'woah'},['bb','cc'],45, 'hello']]])
+        self.assertEqual(t12._force_str(t12.params[5]), '[deep,[7,6,5,[7,8,[{d1=woah,},[bb,cc,],45,hello,],],],]')
+        # Note - multiple dictionary items are annoying to test as they arrive in different order
+        
+        print(t12)
       
 if __name__ == '__main__':
     unittest.main()
