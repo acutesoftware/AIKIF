@@ -1,4 +1,5 @@
-# coding: utf-8
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # project.py	written by Duncan Murray 11/1/2015	(C) Acute Software
 
 class Projects(object):
@@ -130,7 +131,23 @@ class Project(object):
         print(tpe)
         tbl.add(col_data)
         
+    def execute_tasks(self):
+        """
+        run execute on all tasks IFF prior task is successful
+        """
+        for t in self.tasks:
+            print('RUNNING ' + str(t.task_id) + ' = ' + t.name)
+            t.execute()
+            if t.success != '__IGNORE__RESULT__':
+                print(t)
+                print('TASK RESULT :', t.result, ' but success = ' , t.success )
+                if t.result != t.success:
+                    #raise Exception('Project execution failed at task ' + str(t.task_id) + ' = ' + t.name)
+                    print('ABORTING TASK EXECUTION SEQUENCE'  + str(t.task_id) + ' = ' + t.name)
+                    break
+
         
+     
     def build_report(self, op_file, tpe='md'):
         """
         create a report showing all project details
@@ -212,11 +229,15 @@ class Task(object):
     handles a single task for a project
     """
     def __init__(self, task_id, name, func, due_date=None, priority=None):
+        if type(task_id) is not int:
+            raise Exception('Error - task_id must be an int')
         self.task_id = task_id
         self.name = name 
         self.func = func
         self.due_date = due_date
         self.priority = priority
+        self.result = 'NOT RUN'
+        self.success = True
         self.params = []
 
     def __str__(self):
@@ -228,7 +249,7 @@ class Task(object):
         res += 'Function       : ' + str(self.func.__name__) + '\n'
 
         for i in self.params:
-            res += '  Param        : ' + i[0] + ' = ' + i[1] + '\n'
+            res += '  Param        : ' + i[0] + ' = ' + self._force_str(i[1]) + '\n'
         return res
         
     def add_param(self, param_key, param_val):
@@ -236,6 +257,8 @@ class Task(object):
         adds parameters as key value pairs
         """
         self.params.append([param_key, param_val])
+        if param_key == '__success_test':
+            self.success = param_val  # shitty way to do this!
         
     def execute(self):
         """
@@ -244,13 +267,31 @@ class Task(object):
         func_params = []
         exec_str = self.func.__name__ + '(' 
         for p in self.params:
-            exec_str += p[0] + '="' + p[1] + '", '
-            func_params.append(p[1])
+            if p[0][0:2] != '__':   # ignore custom param names
+                exec_str += p[0] + '="' + self._force_str(p[1]) + '", '
+                func_params.append(p[1])
         exec_str = exec_str[:-2]
         exec_str += ')  # task' + str(self.task_id) + ': ' + self.name
         
         
-        result = self.func(*func_params)
-        print(exec_str + ' loaded ', result)
+        self.result = self.func(*func_params)
+        print(exec_str + ' loaded ', self.result)
+        
     
-    
+    def _force_str(self, obj):
+        if type(obj) is str:
+            return obj
+        elif type(obj) is int:
+            return str(obj)
+        elif type(obj) is list:
+            txt = '['
+            for l in obj:
+                txt += self._force_str(l) + ','
+            return txt + ']'
+        elif type(obj) is dict:
+            txt = '{'
+            for k,v in obj.items():
+                txt +=  k + '=' + self._force_str(v) + ','
+            return txt + '}'
+        else:
+            return 'unknown type'
