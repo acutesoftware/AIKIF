@@ -6,11 +6,7 @@ import os
 import zipfile
 import gzip
 import tarfile
-
-def TEST():
-    print('to do testing - use run_tests')
-    #create_zip_from_file('test.zip', 'zip_tools.py')
-    #extract_all('test.zip', os.getcwd())
+import fnmatch
 
 def extract_all(zipfile, dest_folder):
     """
@@ -114,7 +110,4 @@ class ZipFile(object):
             return res[0]
         else:
             return None
-    
-    
-if __name__ == '__main__':
-    TEST()    
+
