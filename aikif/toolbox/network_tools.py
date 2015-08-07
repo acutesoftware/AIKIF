@@ -10,10 +10,6 @@ import getpass
 import socket
 
 
-def TEST():
-    url = 'http://www.google.com'
-    print('downloaded ' + str(len(get_web_page(url))) + ' bytes from ' + url)
-
 def load_username_password(fname):
     """
     use the config class to read credentials
@@ -99,14 +95,10 @@ def download_file_proxy(p_url, p_op_file, p_username, p_password, proxies):
     # https://docs.python.org/3/library/urllib.request.html#examples
     """
     chunk_size=4096
-    print('downloading file ', p_url)
-    print('with credentials : ', p_username, p_password)
     import requests
     r = requests.get(p_url, auth=(p_username, p_password), proxies=proxies)
-    print(r.status_code)
+    #print(r.status_code)
     with open(p_op_file, 'wb') as fd:
         for chunk in r.iter_content(chunk_size):
-            fd.write(chunk)    
-
-if __name__ == '__main__':
-    TEST()    
+            fd.write(chunk)  
+    return r.status_code
