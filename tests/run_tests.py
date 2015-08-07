@@ -55,3 +55,8 @@ wipe_file('programs_test_folder.md')
 wipe_file('program_list.html')
 wipe_file('tools.txt')
 wipe_file('text_tools_sample.csv')
+wipe_file('task.html')
+wipe_file('task.md')
+wipe_file('task.rst')
+wipe_file('test.md')
+
