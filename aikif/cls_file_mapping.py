@@ -1,11 +1,13 @@
-# cls_file_mapping.py   written by Duncan Murray 13/9/2014
+#!/usr/bin/python3
+# coding: utf-8
+# cls_file_mapping.py
 
 import os
 import aikif.config as mod_cfg
 
 root_folder   = mod_cfg.fldrs['root_path']
 dataPath      = root_folder + os.sep + "data"
-dataFiles     = []  # complete mapping of file types to physical CSV files
+dataFiles     = [] 
 
 
 """

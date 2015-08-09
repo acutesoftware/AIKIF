@@ -1,4 +1,6 @@
-# cls_log.py    written by Duncan Murray 13/9/2014
+#!/usr/bin/python3
+# coding: utf-8
+# cls_log.py
 
 import os
 import time
