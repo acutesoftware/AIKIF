@@ -22,16 +22,20 @@ def main():
     
 {"name":"Documents", "fldr":"T:\\user\\docs\\business", "base_path_ignore":"T:\\user\\"},
 {"name":"eBooks", "fldr":"Z:\\DATA\\eBooks\\000_Computer_Science", "base_path_ignore":"Z:\\DATA\\"},
+
+{"name":"rawdata", "fldr":"T:\\user\\dev\\src\\python\\rawdata", "base_path_ignore":"T:\\user\\"},
+{"name":"AIKIF logs", "fldr":"T:\\user\\AIKIF", "base_path_ignore":"T:\\user\\"},
+{"name":"Documents", "fldr":"T:\\user\\docs\\articles", "base_path_ignore":"T:\\user\\"},
     
     """
     log_folder    = aikif.localPath + 'log\\autobackup\\'
     ndx_file      = aikif.localPath + 'index\\files_autobackup.ndx'
-    dest_folder   = "E:\\backup"
+    dest_folder   = "F:\\_home_BK"
 
     backups = [
-{"name":"AIKIF Code", "fldr":"T:\\user\\dev\\src\\python\\AI", "base_path_ignore":"T:\\user\\"},
-{"name":"AIKIF logs", "fldr":"T:\\user\\AIKIF", "base_path_ignore":"T:\\user\\"},
-{"name":"Documents", "fldr":"T:\\user\\docs\\articles", "base_path_ignore":"T:\\user\\"},
+{"name":"user", "fldr":"S:\\", "base_path_ignore":""},
+{"name":"photo", "fldr":"P:\\", "base_path_ignore":""},
+{"name":"music", "fldr":"M:\\", "base_path_ignore":""},
 ]
     
     
@@ -42,7 +46,8 @@ def main():
 def autobackup(nme, fldr, ignore_root, dest_folder, log_folder, ndx_file):
     aikif.LogCommand('autobackup - ' + nme, 'autobackup.py')
     print('Starting backup "' + nme + '" - ' +  fldr)
-    fl = agt.FileListAgent(nme, fldr, True, 1, log_folder, ['name', 'size', 'date', 'path'])
+    fl = agt.FileListAgent(nme, fldr, True, log_folder ) # ['name', 'size', 'date', 'path'])
+    # , name,  fldr, running,  log_folder):
     
     fl.lst.check_files_needing_synch(dest_folder, ignore_root)
     
