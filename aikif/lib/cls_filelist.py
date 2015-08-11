@@ -153,8 +153,8 @@ class FileList(object):
     
     def get_file_hash(self, fname):
         """ returns a file hash of the file """
-        print('WARNING - get_file_hash not implemented - no hash for ' + fname)
-        return 1  # not implemented obviously - should used saved results anyway
+        #print('WARNING - get_file_hash not implemented - no hash for ' + fname)
+        return True  # not implemented obviously - should used saved results anyway
     
     def compare_file_date(self, dte, dest_file, date_accuracy):
         """Checks to see if date of file is the same   """
@@ -347,7 +347,8 @@ class FileList(object):
                 except IOError:
                     line += '\n'   # no metadata
                 try:
-                    fout.write (line + '\n')
+                    fout.write (str(line.encode('ascii', 'ignore').decode('utf-8')))
+                    fout.write ('\n')
                 except IOError:
                     #print("Cant print line - cls_filelist line 304")
                     pass
