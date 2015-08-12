@@ -109,7 +109,11 @@ class FileList(object):
         backing up.
         """
         for f in self.fl_metadata:
-            dest_folder =  os.path.join(dest_root_folder, os.path.dirname(f["fullfilename"])[len(base_path_ignore):])
+            if base_path_ignore == '':
+                dest_folder =  os.path.join(dest_root_folder, os.path.dirname(f["fullfilename"]))
+                #print('dest_root_folder = ', dest_root_folder,  ', dest_folder = ', dest_folder )
+            else:
+                dest_folder =  os.path.join(dest_root_folder, os.path.dirname(f["fullfilename"])[len(base_path_ignore):])
             dest_file = dest_folder + os.sep + f["name"]
             # works - find correct source file and dest file
             #print("Checking file - " + f["fullfilename"])
