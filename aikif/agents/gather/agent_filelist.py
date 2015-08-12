@@ -36,7 +36,7 @@ class FileListAgent(agt.Agent):
         """
         the goal of the filelist agent is to collect metadata on files
         """ 
-        self.lst = fl.FileList([self.root_folder], ['*'], [], False)
+        self.lst = fl.FileList([self.root_folder], ['*.*'], [], False)
         self.lst.save_filelist( self.fl_opname, self.col_list)
     
     def check_last_updated(self):
