@@ -72,7 +72,11 @@ def autobackup(nme, fldr, ignore_root, dest_folder, log_folder, ndx_file):
 def backup_file(fname, dest_root_folder, base_path_ignore):
     final_folder =  os.path.join(dest_root_folder, os.path.dirname(fname)[len(base_path_ignore):])
     if not os.path.exists(final_folder):
-        os.makedirs(final_folder) # create all directories, raise an error if it already exists
+        try:
+            os.makedirs(final_folder) # create all directories, raise an error if it already exists
+        except:
+            print('Error - cant create directory')
+            
     try:
         shutil.copy2(fname, final_folder)
         return True
