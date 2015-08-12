@@ -26,22 +26,26 @@ def main():
 {"name":"rawdata", "fldr":"T:\\user\\dev\\src\\python\\rawdata", "base_path_ignore":"T:\\user\\"},
 {"name":"AIKIF logs", "fldr":"T:\\user\\AIKIF", "base_path_ignore":"T:\\user\\"},
 {"name":"Documents", "fldr":"T:\\user\\docs\\articles", "base_path_ignore":"T:\\user\\"},
-    
+ 
+USE THIS FOR EVERYTHING = 2015 Aug
+
+
+{"name":"test-rawdata", "fldr":"R:\\", "base_path_ignore":"R:\\", "dest_folder": root_dest + "r_back"},
     """
     log_folder    = aikif.localPath + 'log\\autobackup\\'
     ndx_file      = aikif.localPath + 'index\\files_autobackup.ndx'
-    dest_folder   = "F:\\_home_BK"
+    root_dest   = "F:\\_home_BK\\"
 
     backups = [
-{"name":"user", "fldr":"S:\\", "base_path_ignore":""},
-{"name":"photo", "fldr":"P:\\", "base_path_ignore":""},
-{"name":"music", "fldr":"M:\\", "base_path_ignore":""},
-]
+{"name":"user", "fldr":"S:\\", "base_path_ignore":"S:\\", "dest_folder": root_dest + "user_bk"},
+{"name":"photo", "fldr":"P:\\", "base_path_ignore":"P:\\", "dest_folder": root_dest + "photo_bk"},
+{"name":"music", "fldr":"M:\\", "base_path_ignore":"M:\\", "dest_folder": root_dest + "music_bk"},
+ ]
     
     
-    aikif.LogResult("Started backup to " + dest_folder, "autobackup.py")
+    aikif.LogResult("Started autobackup.py")
     for backup in backups:
-        autobackup(backup["name"], backup["fldr"], backup["base_path_ignore"], dest_folder, log_folder, ndx_file)
+        autobackup(backup["name"], backup["fldr"], backup["base_path_ignore"], backup["dest_folder"], log_folder, ndx_file)
 
 def autobackup(nme, fldr, ignore_root, dest_folder, log_folder, ndx_file):
     aikif.LogCommand('autobackup - ' + nme, 'autobackup.py')
@@ -53,7 +57,8 @@ def autobackup(nme, fldr, ignore_root, dest_folder, log_folder, ndx_file):
     
     for file in fl.lst.get_dirty_filelist():
         if backup_file(file, dest_folder, ignore_root) != True:
-            fl.lst.add_failed_file(file, dest_folder)
+            #fl.lst.add_failed_file(file, dest_folder)
+            fl.lst.add_failed_file(file)
         
     bk_files = len(fl.lst.get_dirty_filelist())
     tot_files = len(fl.lst.get_list())
@@ -65,11 +70,11 @@ def autobackup(nme, fldr, ignore_root, dest_folder, log_folder, ndx_file):
         
         
 def backup_file(fname, dest_root_folder, base_path_ignore):
-    dest_folder =  os.path.join(dest_root_folder, os.path.dirname(fname)[len(base_path_ignore):])
-    if not os.path.exists(dest_folder):
-        os.makedirs(dest_folder) # create all directories, raise an error if it already exists
+    final_folder =  os.path.join(dest_root_folder, os.path.dirname(fname)[len(base_path_ignore):])
+    if not os.path.exists(final_folder):
+        os.makedirs(final_folder) # create all directories, raise an error if it already exists
     try:
-        shutil.copy2(fname, dest_folder)
+        shutil.copy2(fname, final_folder)
         return True
     except: 
         return False
