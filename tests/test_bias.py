@@ -22,15 +22,15 @@ class BiasTest(unittest.TestCase):
         bias = mod_bias.Bias('AAA', 'BBB', 'CCC', 'DDD')
         self.assertEqual(bias.get_source_area(), 'AAA')
 
-    def test_03_get_source_type(self):
+    def test_04_get_source_type(self):
         bias = mod_bias.Bias('AAA', 'BBB', 'CCC', 'DDD')
         self.assertEqual(bias.get_source_type(), 'BBB')
 
-    def test_03_get_source_website(self):
+    def test_05_get_source_website(self):
         bias = mod_bias.Bias('AAA', 'BBB', 'CCC', 'DDD')
         self.assertEqual(bias.get_source_website(), 'CCC')
 
-    def test_03_get_source_person(self):
+    def test_06_get_source_person(self):
         bias = mod_bias.Bias('AAA', 'BBB', 'CCC', 'DDD')
         self.assertEqual(bias.get_source_person(), 'DDD')
 
