@@ -31,7 +31,7 @@ class Bias(object):
         self.source_website =  source_website       
         self.source_person = source_person
         self.bias_rating = 0  # default to zero for safety - dont trust anything
-        self.calculate_bias()
+        self._calculate_bias()
         
     def __str__(self):
         """ returns a string of basic inputs and outputs """
@@ -43,7 +43,7 @@ class Bias(object):
         res += 'BIAS Rating    = ' + str(self.bias_rating) + '\n'
         return res
     
-    def calculate_bias(self):
+    def _calculate_bias(self):
         """
         returns a weighting from 0 to 1 based on the sources
         Read the bias files in:
@@ -54,8 +54,22 @@ class Bias(object):
         and then lookup the names and find the weightings
         
         """
-        self.bias_rating = 0.863
         
+        
+        self.bias_rating = 0.863
+    
+    def _read_bias_rating(self, short_filename):
+        """
+        read the bias file based on the short_filename
+        and return as a dictionary
+        """
+        res = {}
+        #full_name = os.path.join(root_fldr, 'aikif', 'data', short_filename)  # use this after moving /data
+        full_name = os.path.join(root_fldr, 'data', short_filename)
+        with open(full_name, 'r') as f:
+            for line in f:
+                cols = line.split(',')
+    
     def get_bias_rating(self):
         return self.bias_rating
     
