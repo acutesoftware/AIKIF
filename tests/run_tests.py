@@ -60,3 +60,4 @@ wipe_file('task.md')
 wipe_file('task.rst')
 wipe_file('test.md')
 
+wipe_file('config_credentials.txt')
