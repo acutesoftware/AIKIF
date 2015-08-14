@@ -1,33 +1,7 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # core_data.py
 import os
-
-def TEST():
-    """
-    test function for the core tables
-    """
-    f = Object('Food')
-    f.expand('List', ['Apples', 'Chops', 'Cheese'])
-    print(f)
-    print(f.drill_down()[1])
-
-    # Events
-    e = Event('Sales Meeting', ['2015-04-11', 'Office', 'Meet with client to discuss custom software'])
-    print(e)
-    
-    # save a table
-    import aikif.config
-    ev = CoreTable(aikif.config.fldrs['log_folder'], tpe='Events', user='user01', header=['date', 'category', 'details'])
-    ev.add(Event('Sales Meeting', ['2014-01-11', 'Office', 'Catchup with client']))
-    ev.add(Event('Sales Meeting#3', ['2015-03-11', 'Office', 'Catchup with client']))
-    ev.add(Event('DEV AIKIF - core data', ['2015-05-11', 'Software', 'update TEST - no test for CORE_DATA']))
-    ev.add(Event('DEV LifePim - core data', ['2015-03-11', 'Software', 'use data for LifePim']))
-    ev.add(Event('DEV AIKIF - data tools', ['2015-05-11', 'Software', 'fix data tools ']))
-    print(ev)
-    
-    ev.save()
-    
-    
-    
     
 class CoreData(object):
     """
@@ -195,7 +169,9 @@ class CoreTable(object):
         """
         returns the filename
         """
-        return self.fldr + os.sep + self.type + year + '.' + self.user 
+        res = self.fldr + os.sep + self.type + year + '.' + self.user 
+        #print('get_filename = ' , res)
+        return res
     
     def add(self, e):
         self.table.append(e)
@@ -215,12 +191,8 @@ class CoreTable(object):
         """
             
         for e in self.table: 
-            print('e',e)
+            #print('e',e)
             fname = self.get_filename('2015')
             with open(fname, 'a') as f:
                 f.write(e.format_csv())
-    
-
-if __name__ == '__main__':
-    TEST()    
     
