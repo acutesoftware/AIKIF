@@ -7,7 +7,7 @@ import unittest
 import requests
 import json as json
 
-import aikif.api_main as api  # ok, we dont *need* this, but good to get base URL
+import api_main as api 
 
 url = 'http://127.0.0.1:5000' + api.base_url
 

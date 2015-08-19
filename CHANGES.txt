@@ -1,3 +1,7 @@
+v0.1.4, 19-Aug-2015 -- bug fix on install
+- fixed bug with data files not being found
+- increased coverage, moving script files out of root
+
 v0.1.3, 03-Aug-2015 -- split data collection to rawdata
 - moved agent collections to rawdata package
 - additional tests, and moved many old code modules to z_prototypes
