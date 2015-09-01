@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 # test_cls_file.py
 # unit testing for collection class
-# NOTE - this is different to the agent_filelist.py program because 
-#        the agent_fileList USES this, and so should have a single 
-#        higher level test.
 
 
 import unittest

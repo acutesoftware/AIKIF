@@ -105,7 +105,8 @@ class Programs(object):
 
         
         # save to standard AIKIF structure
-        filemap = mod_filemap.FileMap(mod_filemap.dataPath)
+        
+        filemap = mod_filemap.FileMap([], [], mod_filemap.dataPath)
         #location_fileList = filemap.get_full_filename(filemap.find_type('LOCATION'), filemap.find_ontology('FILE-PROGRAM')[0])   	
         object_fileList = filemap.get_full_filename(filemap.find_type('OBJECT'), filemap.find_ontology('FILE-PROGRAM')[0])   	
         print('object_fileList = ' + object_fileList + '\n')
