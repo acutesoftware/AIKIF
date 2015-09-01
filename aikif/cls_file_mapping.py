@@ -128,11 +128,9 @@ def check_ontology(fname):
     """
     reads the ontology yaml file and does basic verifcation
     """
-    pth = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
-    fle = os.path.join(pth, 'samples', 'tiny_world.yaml')
-
-    # _print_yaml(fle)  # works
-    y = sample._read_yaml(fle)
+    with open(fname, 'r') as stream:
+        y = yaml.safe_load(stream)
+    import pprint
     pprint.pprint(y) 
 
 

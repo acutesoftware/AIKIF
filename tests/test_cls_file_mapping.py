@@ -83,7 +83,8 @@ class TestFileMap(unittest.TestCase):
     def test_06_fileMap_get_full_filename(self):  
         self.assertEqual(self.filemap.get_full_filename('AAAAA', 'BBBBB'), self.filemap.get_datapath() + os.sep + 'core' + os.sep  + 'AAAAA_BBBBB.CSV')	
 
-        
+    def test_20_check_ontology(self):
+        mod_filemap.check_ontology(os.path.join(pth, 'data', 'ref', 'ontology.yaml'))
         
 if __name__ == '__main__':
     unittest.main()
