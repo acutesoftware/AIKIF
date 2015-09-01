@@ -1,0 +1,85 @@
+---
+Event:			
+Location:			
+    Virtual:		
+        Website:	
+        - domain
+        - page
+        Computer: #/ Phone / Device	
+        - Folder
+        - File
+    Physical:		
+        - Label Friendly	
+            - Work
+            - Home
+            - Shops (your primary supermarket)
+            - Movies (your cinema[s])
+            - Mums (your mums house)
+        - Address	
+        - GPS Coords	
+        - Astronomy Coords #(for space - future proofing)	
+            
+People:	#a person or entity or Pet		
+    Label_Friendly:	
+        - Me	
+        - Spouse	
+        - Relative	
+        - Friend	
+        - Colleague	
+        - Acquaintence	
+        - Customer	
+        - Suppliers	
+        - ToFollow	
+        - ToBlock	
+    Profession:		
+        - Student	
+        - Home carer	
+        - Plumber	
+        - Carpenter	
+        - Programmer	
+        - Small Business Owner	
+    Class:		
+        - Upper	
+        - Middle	
+        - Lower	
+Object:
+    Virtual:
+        Label Friendly	
+            My website location / email address
+            Location of My Documents / backup folders, etc
+        Website	
+            domain
+            page
+        Computer / Phone / Device	
+            Folder
+            File
+            Application
+    Physical:		
+        Label Friendly	
+            My house (Home)
+            my car
+        Materials	
+            Food ingredients
+            Wood
+        Tools - anything that is needed or will help do a task	
+            Hammer
+        Assetts	
+            Furniture
+        Other stuff	
+            Elephants, Walrus tusks, Antique pipes, Clock Tower in London
+
+Process: #			NO ROOT NEEDED - this is DEFAULT  ->
+    Project		
+        Task	    
+            Methods
+    Work		
+        Business	
+    Learn		
+        Study	
+        Tradeskill	
+			
+			
+			
+			
+	Play		
+			
