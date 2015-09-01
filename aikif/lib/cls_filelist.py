@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # cls_filelist.py
 import os
@@ -8,31 +9,7 @@ import fnmatch
 import time
 from datetime import datetime
 
-def TEST():
-    """ simple test used for development.
-    TODO - move to unittest 
-    TODO - check that folder is NOT a filename
-    TODO - make sure folder passed is a LIST not a string
-    TODO - make sure xtn passed is a LIST not a string
-    TODO - make sure excluded is passed NOT just the output file
-    TODO - decide whether you really need a FileListGroup or just
-           an autobackup app class
-    """
-    print("Running self test for cls_filelist")
-    fldr = os.path.dirname(os.path.abspath(__file__))
-    
-    fl_grp = FileListGroup("AIKIF lib files", fldr, "E:\\backup")
-    print(fl_grp)
-    
-    fl = FileList([fldr], ['*.py'], [], "sample_filelist.csv")
-    #col_headers = ["name", "size", "date", "path"]
-    col_headers = ["name", "date", "size"]
-    #col_headers = ["date", "fullfilename"]
-    for f in fl.fl_metadata:
-        #print('{:<30}'.format(f["name"]), '{:,}'.format(f["size"]))
-        print(fl.print_file_details_in_line(f["fullfilename"], col_headers))
-    print("Done.")
-    
+
 class FileListGroup(object):
     """ 
     not sure about the point of this class - might be simpler 
