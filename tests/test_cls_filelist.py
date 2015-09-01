@@ -1,4 +1,6 @@
-# test_cls_file.py     written by Duncan Murray 22/6/2014
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# test_cls_file.py
 # unit testing for collection class
 # NOTE - this is different to the agent_filelist.py program because 
 #        the agent_fileList USES this, and so should have a single 
@@ -10,6 +12,7 @@ import os
 import sys
 
 root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
+#root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
 print("in test_cls_filelist : root_folder = " + root_folder)
 sys.path.append(root_folder)
 
@@ -35,6 +38,9 @@ class TestClassFile(unittest.TestCase):
         """print("test2 - Collecting multiple file metadata")"""
         lst3 = fl.FileList([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['*.*'], ['*.sql'],  self.fname)
         self.assertEqual(len(lst3.get_list()) > 10, True) 
+        self.assertEqual(len(lst3.get_file_list([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['*.*'], ['*.sql'],VERBOSE=True)) > 10, True) 
+        
+        
         
     def test_04_save_filelist(self):
         """ test saving filelist  """
@@ -65,6 +71,44 @@ class TestClassFile(unittest.TestCase):
         self.assertEqual(len(lst), 6)
         self.assertEqual(len(list(set(lst))), 3)
 
+    def test_07_filelistGroup(self):
+        fl_grp = fl.FileListGroup("AIKIF lib files", os.getcwd(), "E:\\backup")
+        print(fl_grp)
+        self.assertTrue(len(str(fl_grp)) > 6, True)
+        # call empty functions
+        fl_grp.backup()
+        fl_grp.restore()
+        fl_grp.backup_incremental()
+        
+        
+    def test_08_metadata_columns(self):
+        fldr = os.path.dirname(os.path.abspath(__file__))
+        fl8 = fl.FileList([fldr], ['*.py'], [], "sample_filelist.csv")
+        #col_headers = ["name", "size", "date", "path"]
+        col_headers = ["name", "date", "size"]
+        for f in fl8.fl_metadata:
+            txt = fl8.print_file_details_in_line(f["fullfilename"], col_headers)
+            self.assertTrue(len(str(txt)) > 6, True)
+    
+    def test_20_is_file_dirty(self):
+        fldr = os.path.dirname(os.path.abspath(__file__))
+        fl20 = fl.FileList([fldr], ['*.py'], [], "sample_filelist.csv")
+        fl20.is_file_dirty(src_file_dict={}, dest_file='', date_accuracy='hour')
+        self.assertTrue(True)
+    
+    def test_99_unbuilt_functions(self):
+        fldr = os.path.dirname(os.path.abspath(__file__))
+        fl99 = fl.FileList([os.getcwd()], ['*.*'], [], "sample_filelist.csv")
+        #print(fl99.fl_metadata)
+        fl99.get_dirty_filelist()
+        fl99.get_metadata()
+        fl99.get_failed_backups()
+        fl99.add_failed_file('')
+        fl99.check_files_needing_synch('', '', date_accuracy = 'hour')
+        fl99.get_file_hash('')
+        self.assertTrue(True)
+        
+        
         
 if __name__ == '__main__':
     unittest.main()
