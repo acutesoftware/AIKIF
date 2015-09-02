@@ -19,7 +19,7 @@ setup(
           'beautifulsoup4 >= 1.0',
           'Pillow >= 1.0',
           'xlrd >= 0.9.0',
-          'PyYAML>=3.10',
+          'pyyaml >= 3.10',
           'psutil > 0.1.0'
     ],
     classifiers = [
