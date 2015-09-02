@@ -194,8 +194,8 @@ class XmlFile(mod_file.TextFile):
         txt += '| XmlFile  = ' + str(self.element_count) + ' elements\n'
         return txt
 
-    def count_elements_in_file(self):
-        return count_via_minidom(self.fullname , 'MindOntology_Definition')  # sentence, MindOntology_Definition
+    def count_elements_in_file(self, tag_name='MindOntology_Definition'):
+        return count_via_minidom(self.fullname , tag_name)
     
 if __name__ == '__main__':
     TEST()	
