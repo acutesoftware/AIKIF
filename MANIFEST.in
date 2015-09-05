@@ -1,1 +1,8 @@
 include aikif/web_app/static/*
+include aikif/data/*
+include aikif/data/core/*
+include aikif/data/index/*
+include aikif/data/raw/*
+include aikif/data/ref/*
+
+

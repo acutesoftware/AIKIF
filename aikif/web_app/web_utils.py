@@ -102,7 +102,7 @@ def link_file(f, fldr):
     """
     fname = os.path.join(fldr,f)
     if os.path.isfile(fname):
-        return '<a href="data/' + f + '">' + f + '</a>'
+        return '<a href="/aikif/data/core/' + f + '">' + f + '</a>'
     else:
         return f
     

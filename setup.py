@@ -2,12 +2,13 @@ from setuptools import setup
 
 setup(
     name='AIKIF',
-    version='0.1.5',
+    version='0.1.6',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
-    packages=['aikif', 'aikif.agents','aikif.agents.aggregate','aikif.agents.explore','aikif.agents.gather','aikif.agents.learn''aikif.dataTools','aikif.environments','aikif.lib', 'aikif.ontology','aikif.toolbox', 'aikif.web_app'],
+    packages=['aikif', 'aikif.agents','aikif.agents.aggregate','aikif.agents.explore','aikif.agents.gather','aikif.agents.learn', 'aikif.dataTools','aikif.environments','aikif.lib', 'aikif.ontology','aikif.toolbox', 'aikif.web_app'],
     include_package_data = True,
     package_data = {
+        '': ['*.txt', '*.csv', '*.yaml'],
         'aikif': ['data/*.*'],
     },    
     url='https://github.com/acutesoftware/AIKIF',

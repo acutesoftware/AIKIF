@@ -28,6 +28,7 @@ class TestWebAppPageData(unittest.TestCase):
         self.assertEqual('<TR><TD>' in fles, True)
 
     def test_02_show_data_file(self):
+        print('test02 = page_data.data_folder = ', page_data.data_folder)
         fles = page_data.show_data_file(page_data.data_folder + os.sep + 'LOCATION_WORLD.csv')
         #print(fles)
         self.assertEqual('<TR><TD>153</TD><TD>MDG</TD><TD>Madagascar</TD><TD>' in fles, True)

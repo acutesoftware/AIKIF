@@ -5,7 +5,6 @@ import os
 #import aikif.web_app.web_utils as web
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
-root_folder = os.path.abspath(cur_folder + os.sep + ".." + os.sep + ".."  )
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 data_folder = os.path.abspath(aikif_folder + os.sep + '..' + os.sep  + 'data' + os.sep + 'core')
 
@@ -35,7 +34,7 @@ def search_aikif(txt, formatHTML=True):
     results = []
     num_found = 0
     import aikif.lib.cls_filelist as mod_fl
-    my_files = mod_fl.FileList([root_folder + os.sep + 'data', root_folder + os.sep + 'aikif'], ['*.*'], ['*.pyc'])
+    my_files = mod_fl.FileList([aikif_folder ], ['*.*'], ['*.pyc'])
     files = my_files.get_list()
     for f in files:
         try:
