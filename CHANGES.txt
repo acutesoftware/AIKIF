@@ -1,3 +1,7 @@
+v0.1.5, 05-Sep-2015 -- another bug fix on install
+- cls_file_mapping bug causes tests to fail
+- fixing more tests for increased coverage
+
 v0.1.4, 19-Aug-2015 -- bug fix on install
 - fixed bug with data files not being found
 - increased coverage, moving script files out of root
