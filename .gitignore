@@ -22,8 +22,8 @@ coverage.xml
 aikif/ontology/open-cyc.n3
 aikif/.z_prototype
 aikif/dump.rdb
-data/index/ndxFull.txt
-data/index/ndxWordsToFiles.txt
+aikif/data/index/ndxFull.txt
+aikif/data/index/ndxWordsToFiles.txt
 tests/test_results
 tests/htmlcov
 
