@@ -71,7 +71,7 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
             os.remove(ndxFile)
         except Exception:
             pass
-    delims = [',', '$', '&', '"', '%', '/', '.', ';', ':', '!', '?', '-', '_', ' ', '\n', '*', '\'', '(', ')', '[', ']', '{', '}']
+    delims = [',', '$', '&', '"', '%', '/', '\\', '.', ';', ':', '!', '?', '-', '_', ' ', '\n', '*', '\'', '(', ')', '[', ']', '{', '}']
     # 1st pass - index the ontologies, including 2 depths up (later - TODO)
     #buildIndex(ipFile, ndxFile, ' ', 1, 'Y')
 
