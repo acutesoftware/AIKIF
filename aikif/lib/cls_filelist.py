@@ -58,7 +58,6 @@ class FileList(object):
         self.paths = paths
         self.xtn = xtn
         self.excluded = excluded
-        
         self.get_file_list(self.paths, self.xtn, self.excluded)
     
     def get_list(self):
@@ -207,6 +206,7 @@ class FileList(object):
         rather than do a try except otherwise you will get an 
         incomplete set of files.
         """
+        
         file_dict = {}
         try:
             file_dict["fullfilename"] = fname
@@ -219,7 +219,7 @@ class FileList(object):
             file_dict["name"] = 'Unknown basename'
             
         try:        
-            file_dict["date"] = self.GetDateAsString(os.path.getmtime(fname))
+            file_dict["date"] = self.GetDateAsString(fname)
         except IOError:
             file_dict["date"] = 'Unknown date'
             
@@ -246,7 +246,7 @@ class FileList(object):
             if fld == "name":
                 line = line + '{:<30}'.format(os.path.basename(fname)) + ' '
             if fld == "date":
-                line = line + self.GetDateAsString(os.path.getmtime(fname)) + ' '
+                line = line + self.GetDateAsString(fname) + ' '
             if fld == "size":
                 line = line + '{:,}'.format(os.path.getsize(fname)) + ' ' 
             if fld == "path":
@@ -283,10 +283,9 @@ class FileList(object):
         except Exception:
             res = 'Unknown size'
         return res
-        
-    
+
     def GetDateAsString(self, fname):
-        res = ''
+        res = ''  
         try:
             t = os.path.getmtime(fname)
             res = str(datetime.fromtimestamp(t).strftime("%Y-%m-%d %H:%M:%S"))
@@ -297,10 +296,9 @@ class FileList(object):
     def TodayAsString(self):	
         """
         returns current date and time like oracle
-    #	return time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+        return time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
         """
         return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        
         
         
     def save_filelist(self, opFile, opFormat, delim=',', qu='"'):
@@ -320,7 +318,7 @@ class FileList(object):
                         if fld == "name":
                             line = line + qu + os.path.basename(f) + qu + delim
                         if fld == "date":
-                            line = line + qu + self.GetDateAsString(os.path.getmtime(f)) + qu + delim 
+                            line = line + qu + self.GetDateAsString(f) + qu + delim 
                         if fld == "size":
                             line = line + qu + str(os.path.getsize(f)) + qu + delim
                         if fld == "path":
@@ -333,10 +331,6 @@ class FileList(object):
                 except IOError:
                     #print("Cant print line - cls_filelist line 304")
                     pass
-
-            
-            #print ("Finished saving " , opFile)
-
     
     def save_file_usage(self, fldr, nme):
         """ 
