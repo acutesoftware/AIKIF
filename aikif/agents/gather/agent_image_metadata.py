@@ -47,7 +47,7 @@ class ImageMetadataAgent(agt.Agent):
                     #print('fname = ', fname)
                     if os.path.isfile(os.path.abspath(fname)):
                         dat = mod_img.get_metadata_as_csv(fname)
-                        print(dat)
+                        #print(dat)
                         op.write(dat + '\n')
                     else:
                         print('cant get metadata for file ' + fname)
