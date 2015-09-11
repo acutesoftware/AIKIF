@@ -1,3 +1,6 @@
+v0.1.6, 07-Sep-2015 -- included data folder for pip install
+- moved data to aikif/data so samples are included
+
 v0.1.5, 05-Sep-2015 -- another bug fix on install
 - cls_file_mapping bug causes tests to fail
 - fixing more tests for increased coverage
