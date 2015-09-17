@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# coding: utf-8
 # image_tools.py  written by Duncan Murray 1/7/2014
 
 import os
