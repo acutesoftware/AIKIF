@@ -52,7 +52,7 @@ class TestClassImageTools(unittest.TestCase):
         
     def test_05_save_metadata(self):       
         # save CSV file of metadata
-        metadata_file = os.path.join(os.getcwd(), 'test_results','image_metadata.csv')
+        metadata_file = os.path.join(os.getcwd(), 'image_metadata.csv')
         with open(metadata_file, 'w') as f:
             f.write(cl.List2String(cl.metadata_header(), ", ") + '\n')
             f.write(cl.get_metadata_as_csv(test_file1) + '\n')
@@ -60,13 +60,13 @@ class TestClassImageTools(unittest.TestCase):
         self.assertTrue(os.path.exists(metadata_file))   
         
     def test_06_resize(self):       
-        op_file = os.path.join(os.getcwd(), 'test_results','small_image.jpg')
+        op_file = os.path.join(os.getcwd(), 'small_image.jpg')
         
         cl.resize(test_file1, 0, op_file)  # will default to 300 width if zero passed
         self.assertTrue(os.path.exists(op_file))   
 
     def test_07_print_stats(self):       
-        op_file = os.path.join(os.getcwd(), 'test_results','small_image.jpg')
+        op_file = os.path.join(os.getcwd(), 'small_image.jpg')
         image = cl.load_image(op_file)
         cl.print_stats(image)
         
