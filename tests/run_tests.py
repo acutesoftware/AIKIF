@@ -63,3 +63,7 @@ wipe_file('test.md')
 wipe_file('config_credentials.txt')
 wipe_file('programs_test_folder.md')
 wipe_file('programs_test_folder.csv')
+
+#wipe_file('small_image.jpg')
+#wipe_file('image_metadata.csv')
+
