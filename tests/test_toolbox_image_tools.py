@@ -46,10 +46,29 @@ class TestClassImageTools(unittest.TestCase):
         self.assertEqual(metadata['lat'], 'None')   
         self.assertEqual(metadata['lon'], 'None')   
 
-        """
-        for k,v in metadata.items():
-            print(k,v)
-        """
+    def test_04_print_all_metadata(self):       
+        cl.print_all_metadata(test_file1)
+        self.assertEqual(1,1)   
+        
+    def test_05_save_metadata(self):       
+        # save CSV file of metadata
+        metadata_file = os.path.join(os.getcwd(), 'test_results','image_metadata.csv')
+        with open(metadata_file, 'w') as f:
+            f.write(cl.List2String(cl.metadata_header(), ", ") + '\n')
+            f.write(cl.get_metadata_as_csv(test_file1) + '\n')
+            f.write(cl.get_metadata_as_csv(test_file2) + '\n')
+        self.assertTrue(os.path.exists(metadata_file))   
+        
+    def test_06_resize(self):       
+        op_file = os.path.join(os.getcwd(), 'test_results','small_image.jpg')
+        
+        cl.resize(test_file1, 0, op_file)  # will default to 300 width if zero passed
+        self.assertTrue(os.path.exists(op_file))   
+
+    def test_07_print_stats(self):       
+        op_file = os.path.join(os.getcwd(), 'test_results','small_image.jpg')
+        image = cl.load_image(op_file)
+        cl.print_stats(image)
         
 if __name__ == '__main__':
     unittest.main()
