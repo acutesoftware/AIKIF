@@ -4,43 +4,13 @@
 
 import os
 
-try:
-    #    from PIL import Image as ImagePIL
-    from PIL import Image
-    from PIL import ImageDraw
-    from PIL import ImageFont
-    from PIL import ImageFilter
-    from PIL.ExifTags import TAGS, GPSTAGS
-    from PIL import ImageStat
-    from PIL import ImageOps
-
-except ImportError:
-    print("--------------------------------------------------------------------------")
-    print("Error: Cant import PIL")
-    print("you need to run 'easy_install pillow' for PIL functionality in 3.4")
-    print("Also, you need to ensure Python 3.4 is used, e.g.")
-    print("  >   C:\python34\python.exe image_tools.py")
-    print("--------------------------------------------------------------------------\n")
-    
-def TEST():
-    """ local test to demo usage - see unittests for full functionality """
-    print("Local test of image_tools.py")
-    print_all_metadata('..\\..\\doc\\web-if-v02.jpg')
-    
-    # save CSV file of metadata
-    with open('..\\..\\tests\\test_results\\image_metadata.csv', 'w') as f:
-        f.write(List2String(metadata_header(), ", ") + '\n')
-        f.write(get_metadata_as_csv('..\\..\\doc\\web-if-v02.jpg') + '\n')
-        f.write(get_metadata_as_csv('..\\..\\doc\\AIKIF-Overview.jpg') + '\n')
- 
-#class Image(ImagePIL):
-#    """
-#    wrapping PIL's image class to allow access to protected exif function
-#    without Lint complaining
-#    """
-#    def __init__(self, *arg):
-#        #super(Image, self).__init__(*arg)
-#        ImagePIL.__init__(self, *arg)
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
+from PIL import ImageFilter
+from PIL.ExifTags import TAGS, GPSTAGS
+from PIL import ImageStat
+from PIL import ImageOps
 
 def get_exif_data(image):
     """
@@ -419,6 +389,3 @@ def dump_img(fname):
     for col in xrange(width):
         print (pixels[col:col+width])
         
-        
-if __name__ == '__main__':    
-    TEST()  
