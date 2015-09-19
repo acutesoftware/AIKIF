@@ -29,7 +29,7 @@ class KnowledgeTest(unittest.TestCase):
         self.r.add('the dog chases the cat')
         self.r.add('the cat eats the fish')
         self.r.add('the fish is out of luck')
-        #print(self.r)
+        self.assertTrue(len(str(self.r)) > 30) 
         self.assertEqual(len(self.r.data) , 3) 
         self.assertEqual(self.r.find('cat') , ['the dog chases the cat', 'the cat eats the fish']) 
         self.assertEqual(self.r.find('dog') , ['the dog chases the cat']) 
