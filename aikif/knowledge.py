@@ -1,27 +1,7 @@
+#!/usr/bin/python3
 # coding: utf-8
-# knowledge.py      written by Duncan Murray 11/3/2015
+# knowledge.py
 
-def TEST():
-    """
-    goal is to have a set of classes to manage the transition
-    of raw data to knowledge, tapered by the bias network
-    """
-    print('stub for knowledge module')
-    r = RawData('test')
-    r.add('the dog chases the cat')
-    r.add('the cat eats the fish')
-    r.add('the fish is out of luck')
-    print(r)
-    k = Knowledge('test')
-    print(k)
-    
-class BaseData(object):
-    """
-    TODO - base class for each of the classes to handle
-    standard add/find in lists. Though may be using data
-    class in dataTools
-    """
-    pass
 
     
 class Knowledge(object):
@@ -45,7 +25,20 @@ class Knowledge(object):
  
     
 class Fact(object):
-    pass
+    def verify(self):
+        """
+        verify raw data and assign bias results
+        """
+        print('TODO - Fact.verify not yet implemented')
+        return True
+        
+    def process(self, dat):
+        """
+        take the raw data subset 'dat' and process
+        into appropriate information structures
+        """
+        print('TODO - Fact.process not yet implemented')
+        return True
     
 class RawData(object):
     def __init__(self, src):
@@ -75,19 +68,4 @@ class RawData(object):
                 result.append(d)
         return result
         
-    def verify(self):
-        """
-        verify raw data and assign bias results
-        """
-        pass
-        
-    def process(self, dat):
-        """
-        take the raw data subset 'dat' and process
-        into appropriate information structures
-        """
-        pass
 
-        
-if __name__ == '__main__':
-    TEST()	
