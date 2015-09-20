@@ -2,8 +2,6 @@
 # coding: utf-8
 # knowledge.py
 
-
-    
 class Knowledge(object):
     def __init__(self, name, tpe='', desc=''):
         self.nme = name
@@ -12,7 +10,6 @@ class Knowledge(object):
         self.core = []
         self.rules = []
         self.bias = []
-        
 
     def __str__(self):
         res = ' /---- Knowledge ------------------------------- \n' 
@@ -21,8 +18,6 @@ class Knowledge(object):
         res += '|  type = ' + self.type + '\n'
         res += '\---------------------------------------------\n'
         return res
-    
- 
     
 class Fact(object):
     def verify(self):
