@@ -13,7 +13,6 @@ install:
 - pip install coveralls
 
 script:  
-- python setup.py nosetests --with-coverage --cover-package pypiview
 - nosetests --with-coverage
 
 after_success:
