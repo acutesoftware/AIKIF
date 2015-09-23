@@ -7,7 +7,7 @@ import time
 import getpass
 import socket
 import random
-import aikif.config as cfg
+import config as cfg
 
 def TEST():
     """ simple test function """
@@ -260,14 +260,14 @@ class LogSummary(object):
     def summarise_events(self):
         """
         takes the logfiles and produces an event summary matrix
-            date	    command	result	process	source
-            20140421	9	    40	    178	    9
-            20140423	0	    0	    6	    0
-            20140424	19	    1	    47	    19
-            20140425	24	    0	    117	    24
-            20140426	16	    0	    83	    16
-            20140427	1	    0	    6	    1
-            20140429	0	    0	    0	    4
+            date        command result  process source
+            20140421    9       40      178     9
+            20140423    0       0       6       0
+            20140424    19      1       47      19
+            20140425    24      0       117     24
+            20140426    16      0       83      16
+            20140427    1       0       6       1
+            20140429    0       0       0       4
 
         """
         all_dates = []
@@ -318,7 +318,9 @@ class LogSummary(object):
     
 def ensure_dir(f):
     """ NOTE - not sure if this works exactly - needs a separate test """
+    print('ensure_dir: file = ' + f)
     d = os.path.dirname(f)
+    print('ensure_dir: d = ' , d)
     
     if not os.path.exists(d):
         os.makedirs(d)

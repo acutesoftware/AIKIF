@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# coding: utf-8
 # test_cls_log.py
 
 import unittest
@@ -6,11 +8,11 @@ import os
 import sys
 
 root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
-sys.path.insert(0, root_fldr)
+test_fldr = root_fldr + os.sep + 'tests'+ os.sep + 'test_results'
+sys.path.insert(0, root_fldr + os.sep + 'aikif')
 
-import aikif.cls_log as mod_log
-import aikif.config as cfg
+import cls_log as mod_log
+import config as cfg
 
 class LogTest(unittest.TestCase):
     

@@ -1,12 +1,14 @@
+#!/usr/bin/python3
+# coding: utf-8
 # test_agent.py
 
 import unittest
 import sys
 import os
-root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" )
+root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" + os.sep + "agents" )
 test_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "test_results" + os.sep + "log")
-#sys.path.append(root_fldr)
-import aikif.agents.agent as mod_agent
+sys.path.append(root_fldr)
+import agent as mod_agent
 
 class AgentTest(unittest.TestCase):
     
