@@ -16,7 +16,7 @@ C:\Python34\lib\site-packages\beautifulsoup4-4.3.2-py3.4.egg\bs4\builder\_htmlpa
 rser.py:157: DeprecationWarning: The value of convert_charrefs will become True
 in 3.5. You are encouraged to set the value explicitly.
 """
-			
+            
 class ToolboxHtmlToolsTest(unittest.TestCase):
 
     def test_01_extract_page_links_none(self):
@@ -40,11 +40,12 @@ class ToolboxHtmlToolsTest(unittest.TestCase):
         url = 'http://xkcd.com/292'
         raw_text = mod_net.get_web_page(url)
         links = mod_html.extract_page_links(raw_text, '')
-        self.assertEqual(len(raw_text) > 6902, True) 
+        print(len(raw_text))
+        self.assertEqual(len(raw_text) > 6000, True) 
         self.assertEqual(len(links) > 10, True)
         self.assertEqual(mod_html.extract_content(raw_text).strip()[0:10], 'xkcd: goto')
         self.assertEqual(mod_html.extract_content(raw_text).strip()[-13:], 'More details.')
 
-		
+        
 if __name__ == '__main__':
-	unittest.main()
+    unittest.main()
