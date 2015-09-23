@@ -3,26 +3,36 @@
 # config.py     written by Duncan Murray 28/7/2014
 
 import os
-
+import sys
 fldrs = {}
 logs = {}
 params = {}
 
+
+
 # path for personal data location  (TODO - you need to modify this line below!)
-fldrs['localPath'] = 'T:\\user\\AIKIF\\' 
-fldrs['log_folder'] = 'T:\\user\\AIKIF\\log' 
-fldrs['pers_data'] = 'T:\\user\\AIKIF\\pers_data' 
-fldrs['pers_credentials'] = 'T:\\user\\AIKIF\\pers_data\\credentials' 
+if sys.platform == 'linux':
+    hme = '/home/duncan/'
+    core_folder = '/home/duncan/dev/src/python/AIKIF'
+else:
+    hme = 'T:\\user'
+    core_folder = 'T:\\user\\dev\\src\\python\\AIKIF'
+
+
+fldrs['localPath'] = hme + 'AIKIF' + os.sep
+fldrs['log_folder'] = hme + 'AIKIF' + os.sep + 'log'
+fldrs['pers_data'] = hme + 'AIKIF' + os.sep + 'pers_data'
+fldrs['pers_credentials'] = hme + 'AIKIF'  + os.sep + 'pers_data' + os.sep + 'credentials' 
+
 
 # FOR DEVELOPMENT
-#core_folder = 'T:\\user\\dev\\src\\python\\AIKIF' # <-- wtf!!
 core_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 fldrs['root_path'] = core_folder
-fldrs['public_data_path'] = core_folder + os.sep + 'data'
+fldrs['public_data_path'] = core_folder + os.sep + 'aikif' + os.sep + 'data'
 fldrs['program_path'] = os.path.abspath(core_folder + os.sep + 'aikif') 
 
 # user defined parameters 
-params['AIKIF_version'] = '0.0.9'
+params['AIKIF_version'] = '0.1.6'
 params['AIKIF_deploy'] = 'DEV'
 
 

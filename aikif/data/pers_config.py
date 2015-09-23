@@ -4,8 +4,8 @@ import os
 fldrs = {}
 
 LOG_LEVEL = 'ERROR'
-username = 'your_name'
+username = 'duncan'
 
-fldrs['localPath'] = "T:\\user\\dev\\src\\python\\AIKIF"
+fldrs['localPath'] = "/home/duncan/dev/src/python/AIKIF/"
 fldrs['data_folder'] = fldrs['localPath'] + os.sep + "data"
 
