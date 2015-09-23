@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='AIKIF',
-    version='0.1.6',
+    version='0.1.7',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
     packages=['aikif', 'aikif.agents','aikif.agents.aggregate','aikif.agents.explore','aikif.agents.gather','aikif.agents.learn', 'aikif.dataTools','aikif.environments','aikif.lib', 'aikif.ontology','aikif.toolbox', 'aikif.web_app'],
@@ -42,8 +42,7 @@ setup(
     'Topic :: Software Development :: Libraries :: Application Frameworks',
     'Topic :: Software Development :: Libraries :: Python Modules',
     'Topic :: System :: Logging',
-    'Topic :: Text Processing'
-    ]
+    ],
 
 )
 

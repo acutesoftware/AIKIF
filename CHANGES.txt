@@ -1,3 +1,6 @@
+v0.1.7, 23-Sep-2015 -- default linux paths
+- config defaults have both Windows and Linux defaults
+
 v0.1.6, 07-Sep-2015 -- included data folder for pip install
 - moved data to aikif/data so samples are included
 

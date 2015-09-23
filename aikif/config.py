@@ -12,8 +12,14 @@ params = {}
 
 # path for personal data location  (TODO - you need to modify this line below!)
 if sys.platform == 'linux':
-    hme = '/home/duncan/'
-    core_folder = '/home/duncan/dev/src/python/AIKIF'
+    if os.path.exists('/home/duncan'):
+        hme = '/home/duncan/'
+        core_folder = '/home/duncan/dev/src/python/AIKIF'
+        print('config.py : running locally on duncans PC!')
+    else:
+        hme = os.getcwd()        
+        core_folder = os.getcwd()
+        print('config.py : running on CI build!')
 else:
     hme = 'T:\\user'
     core_folder = 'T:\\user\\dev\\src\\python\\AIKIF'

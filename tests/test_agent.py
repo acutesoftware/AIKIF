@@ -14,14 +14,15 @@ class AgentTest(unittest.TestCase):
     
     def setUp(self):
         unittest.TestCase.setUp(self)
-        self.agt = mod_agent.Agent('test_agent_number_685848')
+        self.agt = mod_agent.Agent(name='test_agent_number_685848', fldr=os.getcwd())
         
     def tearDown(self):
         """ called once at the end of this test class """
         unittest.TestCase.tearDown(self)
 
     def test_01_str(self):
-        self.assertEqual(len(str(self.agt)), 113)
+        #print(str(self.agt))
+        self.assertTrue(len(str(self.agt)) > 99)
 
     def test_02_name(self):
         self.assertEqual(self.agt.name, 'test_agent_number_685848')
