@@ -20,13 +20,8 @@ class TestClassImageTools(unittest.TestCase):
         image = cl.load_image(test_file1)
         self.assertEqual(type(image), PIL.JpegImagePlugin.JpegImageFile)   
         #image = None        
-        
-    def test_02_image_hash(self):
-        image = cl.load_image(test_file1)
-        img = cl.get_img_hash(image)  
-        self.assertEqual(len(img), 16) 
-       
-    def test_03_image_metadata(self):       
+
+    def test_02_image_metadata(self):       
         metadata = cl.get_metadata_as_dict(test_file1)
         self.assertEqual(metadata['basename'], 'AIKIF-Overview.jpg')   
         self.assertEqual(metadata['path'], root_folder + os.sep + 'doc')   
@@ -43,13 +38,19 @@ class TestClassImageTools(unittest.TestCase):
         #self.assertEqual(metadata['median'], '255,255,255,')   
         #self.assertEqual(metadata['stddev'], '43.90777518104409,43.82013801501286,49.83032669733196,')   
         #self.assertEqual(metadata['rms'], '250.0433210198374,250.27364842667234,244.31571431841436,')   
-        self.assertEqual(metadata['lat'], 'None')   
-        self.assertEqual(metadata['lon'], 'None')   
+        #self.assertEqual(metadata['lat'], 'None')   
+        #self.assertEqual(metadata['lon'], 'None')   
 
-    def test_04_print_all_metadata(self):       
+    def test_03_print_all_metadata(self): 
         cl.print_all_metadata(test_file1)
         self.assertEqual(1,1)   
         
+
+    def test_04_image_hash(self):
+        i = cl.load_image(test_file1)
+        img = cl.get_img_hash(i)  
+        self.assertEqual(len(img), 16) 
+
     def test_05_save_metadata(self):       
         # save CSV file of metadata
         metadata_file = os.path.join(os.getcwd(), 'image_metadata.csv')
@@ -66,9 +67,8 @@ class TestClassImageTools(unittest.TestCase):
         self.assertTrue(os.path.exists(op_file))   
 
     def test_07_print_stats(self):       
-        op_file = os.path.join(os.getcwd(), 'small_image.jpg')
-        image = cl.load_image(op_file)
-        cl.print_stats(image)
+        i = cl.load_image(test_file2)
+        cl.print_stats(i)
         
 if __name__ == '__main__':
     unittest.main()
