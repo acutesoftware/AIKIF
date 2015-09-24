@@ -5,7 +5,11 @@ import unittest
 import os
 import sys
 import csv
-import aikif.lib.cls_file as cl
+
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+sys.path.append(root_folder + os.sep + 'aikif' + os.sep + 'lib' )
+
+import cls_file as cl
                     
 class TestClassFile(unittest.TestCase):
  
