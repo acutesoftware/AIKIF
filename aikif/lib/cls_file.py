@@ -7,6 +7,7 @@
 
 import os
 import sys
+import codecs
 from datetime import datetime
 
 def TEST():
@@ -31,7 +32,7 @@ def TEST():
 class File(object):
     """
     handles various file conversions, reading, writing 
-    as well as	general file operations (delete, copy, launch)
+    as well as  general file operations (delete, copy, launch)
     """
     
     def __init__(self, fname):
@@ -86,7 +87,7 @@ class File(object):
 class TextFile(File):
     """
     handles various file conversions, reading, writing 
-    as well as	general file operations (delete, copy, launch)
+    as well as  general file operations (delete, copy, launch)
     """
     
     def __init__(self, fname):
@@ -106,7 +107,8 @@ class TextFile(File):
         if fname == '':
             fname = self.fullname
         try:
-            with open(fname, encoding="utf8") as f:
+            #with open(fname, encoding="utf8") as f:
+            with codecs.open(fname, "r",encoding='utf8', errors='ignore') as f:    
                 for i, _ in enumerate(f):
                     pass
             return i + 1    
@@ -175,7 +177,7 @@ class TextFile(File):
             with open(self.fullname, 'r') as f:
                 for line in f:
                     lst.append(line) 
-            return lst	
+            return lst  
         except IOError:
             return lst
         
