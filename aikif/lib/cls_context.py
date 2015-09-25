@@ -191,7 +191,7 @@ def TEST():
     print(where_am_i.get_host())
     for k,v in os.environ.items():
         print(k,v)
-    print(where_am_i.get_user()[0])
+    print(where_am_i.get_user())
     where_am_i.get_host_usage()
        
 if __name__ == '__main__':
