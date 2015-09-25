@@ -9,10 +9,12 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 pth = root_folder + os.sep + 'aikif'
 sys.path.append(pth)
 
-test_folder = os.getcwd()
 
 import programs
+import config
 
+test_folder = config.core_folder  #os.getcwd()
+print('test_folder = ', test_folder)
 
 class TestTemplate(unittest.TestCase):
     def setUp(self):
