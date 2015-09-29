@@ -31,8 +31,12 @@ class Bias(object):
         self.source_website =  source_website       
         self.source_person = source_person
         self.bias_rating = 0  # default to zero for safety - dont trust anything
+        self.bias_details = []
         self._read_bias_rating('bias.csv')
+        self._read_bias_rating('bias-website.csv')
         self._calculate_bias()
+        
+        print(self.bias_details)
         
     def __str__(self):
         """ returns a string of basic inputs and outputs """
@@ -70,7 +74,12 @@ class Bias(object):
         print('reading bias file : ', short_filename, ' from ' , full_name)
         with open(full_name, 'r') as f:
             for line in f:
+                bias_line = []
                 cols = line.split(',')
+                bias_line.extend([short_filename])
+                for col in cols:
+                    bias_line.extend([col.strip('"').strip('\n')])
+                self.bias_details.append(bias_line)
     
     def get_bias_rating(self):
         return self.bias_rating
