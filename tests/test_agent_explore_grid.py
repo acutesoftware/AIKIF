@@ -31,6 +31,10 @@ class TestToolboxClsGridLife(unittest.TestCase):
         agt.show_status()
         self.assertEqual(1,1)
 
+    def test_03_clear_surroundings(self):
+        agt.show_status()
+        self.assertEqual(1,1)
+
 
 if __name__ == '__main__':
     unittest.main()
