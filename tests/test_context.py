@@ -1,8 +1,14 @@
 # test_context.py     written by Duncan Murray 6/9/2014
 # unit testing for context class
- 
+import os
+import sys 
 import unittest
-import aikif.lib.cls_context as context
+
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+pth = root_folder + os.sep + 'aikif' + os.sep + 'lib' 
+sys.path.append(pth)
+
+import cls_context as context
                     
 class ContextTest(unittest.TestCase):
     def test_01_instantiation(self):
@@ -16,7 +22,12 @@ class ContextTest(unittest.TestCase):
         self.assertEqual(context.users[3]['type'], 'web_user')
     
     def test_03_host_types(self):
-        pass
+        me = context.Context()
+        res = me.summarise()
+        #print(res)  
+            # At Home
+            # Phone is charging, sitting still
+        self.assertEqual(res[0:7], 'At Home')
     
     def test_04_host_stats(self):
         """ check for reasonable ranges in CPU stats """
@@ -44,7 +55,7 @@ class ContextTest(unittest.TestCase):
 
     def test_07_get_host_usage(self):
         me = context.Context()
-        print('me.get_host_usage() = ', me.get_host_usage())
+        #print('me.get_host_usage() = ', me.get_host_usage())
         self.assertTrue(int(me.get_host_usage()[2]) > 1000000)
         
         #override available memory
