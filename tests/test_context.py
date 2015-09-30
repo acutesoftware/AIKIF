@@ -1,6 +1,6 @@
 # test_context.py     written by Duncan Murray 6/9/2014
 # unit testing for context class
-
+ 
 import unittest
 import aikif.lib.cls_context as context
                     
@@ -41,6 +41,16 @@ class ContextTest(unittest.TestCase):
         self.assertEqual(me.is_host_busy(), True)
         me.host_cpu_pct = '50'
         self.assertEqual(me.is_host_busy(), False)
+
+    def test_07_get_host_usage(self):
+        me = context.Context()
+        print('me.get_host_usage() = ', me.get_host_usage())
+        self.assertTrue(int(me.get_host_usage()[2]) > 1000000)
+        
+        #override available memory
+        me.host_mem_available = '4000000'
+        self.assertEqual(int(me.host_mem_available), 4000000)
+        
         
 if __name__ == '__main__':
     unittest.main()
