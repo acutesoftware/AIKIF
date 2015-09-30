@@ -143,13 +143,3 @@ class ExploreAgent(agt.Agent):
         
         print(self.grd)
     
-def main():
-    agt = ExploreAgent('exploring_agent',  'T:\\user\\AIKIF', 1, True)
-    print(agt.report())
-
-        
-        
-if __name__ == '__main__':
-    main()
-    
-    
