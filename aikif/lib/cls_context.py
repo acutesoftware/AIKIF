@@ -182,18 +182,18 @@ class Context(object):
         mem = psutil.virtual_memory()
         return str(cpu_pct), str(len(process_names)), str(mem.available), str(mem.total)
         
-def TEST():
-    """ self testing context class """
-    where_am_i = Context()
+#def TEST():
+    # """ self testing context class """
+    # where_am_i = Context()
     #print(where_am_i)
     #print(where_am_i.summarise())
-    where_am_i.dump_all('yes')
-    print(where_am_i.get_host())
-    for k,v in os.environ.items():
-        print(k,v)
-    print(where_am_i.get_user())
-    where_am_i.get_host_usage()
+    #where_am_i.dump_all('yes')
+    # print(where_am_i.get_host())
+    # for k,v in os.environ.items():
+        # print(k,v)
+    # print(where_am_i.get_user())
+    # where_am_i.get_host_usage()
        
-if __name__ == '__main__':
-    TEST()
+# if __name__ == '__main__':
+    # TEST()
             
