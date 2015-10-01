@@ -42,13 +42,34 @@ AIKIF:
         - add toolbox - Machine Learning
         
 virtual-AI-simulator:
-
+    simulator:
+        - define simulation parameters
+        - run simulations
+        
 worldbuild:
-
+    worlds:
+        - generate planet randomly as x/y grid
+        - read JPG hand drawn map and convert to data
+    objects:
+        - define objects for use in world
+        
 rawdata:
+    generate:
+        - generate random data (done)
+    gather:
+        - read emails
+        - read file metadata
+        - read documents
+        
 
 lifepim:
-
+    website:
+        - define structure (done)
+        - design style
+        - implement basic crud functionality
+    collection:
+        - collecters using rawdata package for email, files, webbrowsing
+        
     
 
         
