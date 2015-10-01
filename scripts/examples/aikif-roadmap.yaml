@@ -23,15 +23,15 @@ AIKIF:
         - sample raw data file - project management
             
     API:
-        - idendify all public interfaces
+        - identify all public interfaces
         - have an API to call them
             
     website:
-        - build AIKIF website
-            - css styling
-            - basic structure
-            - uses AIKIF via API
-            - load public sample data
+        - decide on website purpose and users
+        - basic structure and menu
+        - css styling
+        - uses AIKIF via API
+        - load public sample data
             
     toolbox:
         - document working tools as DATA (yaml)

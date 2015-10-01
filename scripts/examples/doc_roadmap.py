@@ -14,7 +14,7 @@ def main():
     """
     #_print_yaml('aikif-roadmap.yaml')
     dat = _read_yaml('aikif-roadmap.yaml')
-    create_roadmap_doc(dat, 'roadmap.md')
+    create_roadmap_doc(dat, 'roadmap.rst')
     #pprint.pprint(dat)
 
 def create_roadmap_doc(dat, opFile):
@@ -35,11 +35,10 @@ def create_roadmap_doc(dat, opFile):
                 else:
                     for txt in dat[h1][h2]:
                         op += '  - ' + txt + '\n'
-                        
-                        
         op += '\n'
 
-    print(op)
+    with open(opFile, 'w') as f:
+        f.write(op)
     
 def format_title(txt):
     res = txt + '\n'
