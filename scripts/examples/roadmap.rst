@@ -43,17 +43,47 @@ toolbox
 
 virtual-AI-simulator
 ---------------------------------------------------
-(No details)
+
+simulator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - define simulation parameters
+  - run simulations
 
 worldbuild
 ---------------------------------------------------
-(No details)
+
+objects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - define objects for use in world
+
+worlds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - generate planet randomly as x/y grid
+  - read JPG hand drawn map and convert to data
 
 rawdata
 ---------------------------------------------------
-(No details)
+
+generate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - generate random data (done)
+
+gather
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - read emails
+  - read file metadata
+  - read documents
 
 lifepim
 ---------------------------------------------------
-(No details)
+
+collection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - collecters using rawdata package for email, files, webbrowsing
+
+website
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - define structure (done)
+  - design style
+  - implement basic crud functionality
 
