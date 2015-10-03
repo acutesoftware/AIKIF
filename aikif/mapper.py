@@ -1,15 +1,19 @@
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# mapper.py     written by Duncan Murray 21/10/2014
-
+# mapper.py
 
 import os
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 
 import aikif.dataTools.cls_datatable as mod_datatable
+import config as mod_cfg
 
-column_map_file = root_folder + os.sep + 'data' + os.sep +  'ref' + os.sep + 'rules_column_maps.csv'
-map_file = root_folder + os.sep + 'data' + os.sep +  'ref' + os.sep + 'mapping_rules.csv'
-sample_datafile = root_folder + os.sep + 'data' + os.sep +  'raw' + os.sep + 'sample-filelist-for-AIKIF.csv'
+data_folder = mod_cfg.core_folder + os.sep + 'aikif' + os.sep + 'data' + os.sep +  'ref'
+
+column_map_file = data_folder + os.sep + 'rules_column_maps.csv'
+map_file = data_folder + os.sep + 'mapping_rules.csv'
+sample_datafile = mod_cfg.fldrs['log_folder'] + os.sep + 'sample-filelist-for-AIKIF.csv'
+sample_datafile = data_folder + os.sep + 'sample-filelist-for-AIKIF.csv'
   
 class Mapper(object):    
     """
@@ -22,6 +26,7 @@ class Mapper(object):
         setup that reads the table
         """
         self.load_rules()
+        self.map_type = 'file'
 
     def __str__(self):
         res = ' -- List of Mapping Business Rules -- \n'
@@ -104,7 +109,7 @@ class Mapper(object):
         """
         print('TODO - parse_file_to_dict' + fname)
         for m in self.maps:
-            if m.type == 'file':
+            if m.tpe == 'file':
                 if m.key[0:3] == 'col':
                     print('reading column..')
 
@@ -232,9 +237,6 @@ def TEST():
     """ 
     local test function for mapper
     """
-    m = Mapper()
-    print(m)
-    m.process_data('text', 'the cat sat on the mat')
     # use this to clean up file or AFTER web updates map.save_rules()
     m.create_map_from_file(sample_datafile)
  
