@@ -147,7 +147,7 @@ class Mapper(object):
     def create_map_from_file(self, data_filename):
         """
         reads the data_filename into a matrix and calls the main
-        function '' to generate a map file
+        function '' to generate a  .rule file based on the data in the map
         
         For all datafiles mapped, there exists a .rule file to define it
         

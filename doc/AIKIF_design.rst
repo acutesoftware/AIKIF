@@ -138,6 +138,33 @@ A domain can get based on other domains so that it uses those rules and informat
 
 
 
+
+Mapping Process
+``````````````````````
+So how will this actually work? Some scenarios below:
+
+Automatic data reading
+ - read a bunch of CSV or data files, and use the column names and content to generate mapping rules (by linking the column names to standard ontology_colums)
+    for each file
+        create_map_from_rule
+        for each map
+            process_map
+            
+
+
+Mapping Functions
+``````````````````````
+This section has notes on possible functions used in the mapping module - some currently in development but still haven't decided on correct approach.
+
+
+create_map_from_file
+        reads the data_filename into a matrix and calls the main
+        function '' to generate a .rule file based on the data in the map
+        
+        For all datafiles mapped, there exists a .rule file to define it
+
+
+
 Mapping Hierarchies
 ``````````````````````
 
@@ -152,6 +179,8 @@ profession specific - eg Software developers -> emails from RegNow are sales, ca
 situational - e.g. Work mode -> hide Reddit, Game mode -> turn off notifications, Sales mode -> ringer volume loud
 
 [YOUR_MAPPING] = add all own mappings which if duplicated, override above
+
+
 
 Domains (Ontology Examples) [unresolved]
 -----------------------------------------
@@ -593,8 +622,8 @@ Routine Computer Tasks [testing]
 Backup my working documents to the server each week
 
 - agent to find working doc folder (needs to be a MAPPING set of rules)
-	- if file modified date less than week old, backup folder TREE
-	- if folder NAME == project_NAME then backup folder TREE
+    - if file modified date less than week old, backup folder TREE
+    - if folder NAME == project_NAME then backup folder TREE
 
 
 
