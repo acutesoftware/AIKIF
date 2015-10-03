@@ -19,8 +19,8 @@ def wipe_file(fname):
         except:
             pass
         
-
-print ('WIPING ALL TEST RESULTS - PRESS CTRL C TO STOP')
+print('Did the tests fail.... DID YOU TURN ON VIRTUALENV!   ". ~/p von"')
+print('WIPING ALL TEST RESULTS - PRESS CTRL C TO STOP')
 
 time.sleep(10)
 wipe_file('index_odd_chars_results.txt')
