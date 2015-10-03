@@ -14,7 +14,7 @@ def main():
     """
     #_print_yaml('aikif-roadmap.yaml')
     dat = _read_yaml('aikif-roadmap.yaml')
-    create_roadmap_doc(dat, 'roadmap.rst')
+    create_roadmap_doc(dat, os.path.join('..','..', 'doc', 'roadmap.rst'))
     #pprint.pprint(dat)
 
 def create_roadmap_doc(dat, opFile):
