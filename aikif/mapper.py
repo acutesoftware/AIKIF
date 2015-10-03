@@ -238,8 +238,7 @@ def TEST():
     local test function for mapper
     """
     # use this to clean up file or AFTER web updates map.save_rules()
-    m.create_map_from_file(sample_datafile)
- 
+    
     col_map = MapColumns(column_map_file)
     print(col_map)
 

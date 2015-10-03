@@ -4,8 +4,10 @@ import unittest
 import sys
 import os
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" )
-#sys.path.append(root_fldr)
-import aikif.mapper as mod_map
+sys.path.append(root_fldr)
+print(root_fldr)
+import config as mod_cfg
+import mapper as mod_map
 
 class MapTest(unittest.TestCase):
     
@@ -33,10 +35,14 @@ class MapTest(unittest.TestCase):
         res = self.mymap.process_data('file', 'test.csv')
         self.assertEqual(res , 10)
 
+    
+    def test_24_create_map_from_file(self):
+        self.mymap.create_map_from_file(mod_map.sample_datafile)
+         
      
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
-        #print(str(self.mymap))
+        print(str(self.mymap))
         pass
     
 if __name__ == '__main__':
