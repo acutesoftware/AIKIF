@@ -168,11 +168,11 @@ class Mapper(object):
                 
             
         
-def List2String(l):
-    res = ""
-    for v in l:
-        res = res + v
-    return res
+#def List2String(l):
+#    res = ""
+#    for v in l:
+#        res = res + v
+#    return res
         
                     
 class MapRule(object):
