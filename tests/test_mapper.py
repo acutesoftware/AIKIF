@@ -49,6 +49,11 @@ class MapTest(unittest.TestCase):
         self.mymap.create_map_from_file(mod_map.sample_datafile)
         self.assertTrue(os.path.exists(mod_map.sample_datafile + '.rule' ))
      
+    def test_30_map_columns(self):
+        mc = mod_map.MapColumns(mod_map.map_file)
+        self.assertTrue(len(str(mc)) > 10)
+        
+         
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
         #print(str(self.mymap))
