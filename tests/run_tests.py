@@ -66,4 +66,4 @@ wipe_file('programs_test_folder.csv')
 
 wipe_file('small_image.jpg')
 wipe_file('image_metadata.csv')
-
+wipe_file('rules_saved.txt')
