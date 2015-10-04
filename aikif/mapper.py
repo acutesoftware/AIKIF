@@ -39,20 +39,16 @@ class Mapper(object):
         load the rules from file
         """
         self.maps = []
-        #print("reading mapping table")
-        try:
-            with open(map_file, 'r') as f:
-                for line in f:
-                    rule = MapRule(line)
-                    self.maps.append(rule)
-        except Exception:
-            print('cant load file ', map_file)
-    
-    def save_rules(self):
+        with open(map_file, 'r') as f:
+            for line in f:
+                rule = MapRule(line)
+                self.maps.append(rule)
+     
+    def save_rules(self, op_file):
         """ 
         load the rules to file after web updates or program changes 
         """
-        with open(map_file, 'w') as f:
+        with open(op_file, 'w') as f:
             for m in self.maps:
                 f.write(m.format_for_file_output())
                 
@@ -75,7 +71,7 @@ class Mapper(object):
         and extract data based on the rule
         """
         print('TODO - ' + tpe + ' + applying rule ' + str(m).replace('\n', '') )
-        print(dct)
+        #print(dct)
     
     def format_raw_data(self, tpe, raw_data):
         """
@@ -217,7 +213,7 @@ class MapColumns(object):
         print('self.col_file = ' + self.col_file)
         for m in self.col_maps:
             res += m
-            print(m)
+            #print(m)
         return res
 
     def load_rules(self):
