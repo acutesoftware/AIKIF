@@ -31,18 +31,27 @@ class MapTest(unittest.TestCase):
         res = self.mymap.process_data('text', 'hello world')
         self.assertEqual(res , 4)
 
-    def test_21_process_file_1(self):
+    def test_12_process_file_1(self):
         res = self.mymap.process_data('file', 'test.csv')
         self.assertEqual(res , 10)
 
+    def test_13_process_unknown(self):
+        res = self.mymap.process_data('blah blah', 'SOME_STUFF')
+        #print(res)
+        self.assertEqual(res , 0)
+        
+        
+    def test_20_save_mapping(self):
+        self.mymap.save_rules('rules_saved.txt')
+        self.assertTrue(os.path.exists('rules_saved.txt'))
     
     def test_24_create_map_from_file(self):
         self.mymap.create_map_from_file(mod_map.sample_datafile)
-         
+        self.assertTrue(os.path.exists(mod_map.sample_datafile + '.rule' ))
      
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
-        print(str(self.mymap))
+        #print(str(self.mymap))
         pass
     
 if __name__ == '__main__':
