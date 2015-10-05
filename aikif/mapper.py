@@ -227,16 +227,3 @@ class MapColumns(object):
                 rule = line  # class to parse here?
                 self.col_maps.append(rule)
 
-
-        
-def TEST():
-    """ 
-    local test function for mapper
-    """
-    # use this to clean up file or AFTER web updates map.save_rules()
-    
-    col_map = MapColumns(column_map_file)
-    print(col_map)
-
-if __name__ == '__main__':
-    TEST()        
