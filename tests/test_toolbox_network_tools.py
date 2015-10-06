@@ -6,7 +6,10 @@ import os
 import time
 import aikif.config as mod_cfg
 
-from aikif.toolbox import network_tools as mod_net
+root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" + os.sep + "toolbox" )
+sys.path.append(root_fldr)
+
+import network_tools as mod_net
 
 creditionals_file = mod_cfg.fldrs['pers_credentials'] + os.sep + 'dummy.cred'
                 
@@ -41,24 +44,14 @@ class NetworkToolsTest(unittest.TestCase):
         self.assertEqual(password, 'dummy_password')
 
     def test_05_download_file_password_protected(self):
-        """
-        download a file from a password protected site
-        print('NOTE - replace line below with your own creditionals file')
-        private_file = mod_cfg.fldrs['pers_credentials'] + os.sep + 'regnow.cred' 
-        username, password = mod_net.load_username_password(private_file)
-        #self.assertEqual(username, '3580')
-        url = 'https://admin.mycommerce.com/vendorpriv/orders.cgi'
-        login_page = 'https://admin.mycommerce.com/app/cp/login/vendor'
-        op_file = mod_cfg.fldrs['pers_credentials'] + os.sep + 'regnow.html'
-        try:
-            os.remove(op_file)
-        except:
-            pass
-        print('downloading....')
-        mod_net.download_file('regnow', url, op_file, username, password)
-        self.assertEqual(os.path.isfile(op_file), True)
-        """
-        pass
+        username, password = mod_net.load_username_password('dummy_credentials.txt')
+        self.assertEqual(username, 'dummy_username')
+        
+        url = 'http://www.acutesoftware.com.au/about.html'
+        op_file = 'secret.html'
+        #mod_net.download_file('test_5', url, op_file, username, password)
+        #mod_net.get_protected_page( url, None, None, op_file)
+        #self.assertEqual(os.path.isfile(op_file), True)
         
 
         
