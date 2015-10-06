@@ -25,10 +25,9 @@ class NetworkToolsTest(unittest.TestCase):
 
     def test_03_download_file1(self):
         fname = os.getcwd() + os.sep + 'test_country.txt'
-        try:
+        if os.path.exists(fname):
             os.remove(fname)
-        except:
-            pass
+
         url = 'http://gdeltproject.org/data/lookups/CAMEO.country.txt'
         mod_net.download_file_no_logon(url, fname)
         self.assertEqual(os.path.isfile(fname), True)
