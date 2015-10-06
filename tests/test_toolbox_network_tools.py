@@ -9,7 +9,7 @@ import aikif.config as mod_cfg
 from aikif.toolbox import network_tools as mod_net
 
 creditionals_file = mod_cfg.fldrs['pers_credentials'] + os.sep + 'dummy.cred'
-				
+                
 class NetworkToolsTest(unittest.TestCase):
 
     def test_01_get_user_name(self):
@@ -34,9 +34,11 @@ class NetworkToolsTest(unittest.TestCase):
         
     def test_04_read_username_password(self):
         pass
-        #username, password = mod_net.load_username_password(creditionals_file)
-        #self.assertEqual(username, 'dummy_username')
-        #self.assertEqual(password, 'dummy_password')
+        with open('dummy_credentials.txt', 'w') as f:
+            f.write('dummy_username\ndummy_password\n')
+        username, password = mod_net.load_username_password('dummy_credentials.txt')
+        self.assertEqual(username, 'dummy_username')
+        self.assertEqual(password, 'dummy_password')
 
     def test_05_download_file_password_protected(self):
         """
@@ -59,6 +61,6 @@ class NetworkToolsTest(unittest.TestCase):
         pass
         
 
-		
+        
 if __name__ == '__main__':
-	unittest.main()
+    unittest.main()
