@@ -21,9 +21,10 @@ class TestToolboxSqlTools(unittest.TestCase):
         unittest.TestCase.tearDown(self)
 
     
-    def test_01_count_lines_in_file(self):
-        lines = sql_tools.count_lines_in_file('test_toolbox_sql_tools.py' )
-        self.assertEqual(lines > '29 recs read', True)
+    def test_01_init(self):
+        fldr = sql_tools.root_folder
+        print('test_toolbox_sql_tools, root_folder = ', fldr)
+        self.assertEqual(os.path.exists(fldr), True)
 
     def test_02_load_txt_to_sql(self):
         src_file = 'test_src_file.csv'
@@ -34,6 +35,10 @@ class TestToolboxSqlTools(unittest.TestCase):
         self.assertTrue(os.path.exists('CREATE_tbl_testload.SQL'))
         self.assertTrue(os.path.exists('LOAD_tbl_testload.BAT'))
         self.assertTrue(os.path.exists('tbl_testload.CTL'))
+
+    def test_03_count_lines_in_file(self):
+        lines = sql_tools.count_lines_in_file('test_src_file.csv' )
+        self.assertEqual(lines, '2 recs read')
         
         
 if __name__ == '__main__':
