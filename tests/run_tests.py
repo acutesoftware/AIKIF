@@ -69,3 +69,9 @@ wipe_file('image_metadata.csv')
 wipe_file('rules_saved.txt')
 
 wipe_file('local_test_agent.py')
+
+wipe_file('BACKOUT_tbl_testload.SQL')
+wipe_file('CREATE_tbl_testload.SQL')
+wipe_file('LOAD_tbl_testload.BAT')
+wipe_file('tbl_testload.CTL')
+wipe_file('test_src_file.csv')
