@@ -25,10 +25,11 @@ def count_lines_in_file(src_file ):
     return res 
 
     
-def load_txt_to_sql(tbl_name, src_file, op_folder ):
+def load_txt_to_sql(tbl_name, src_file, op_folder, cols ):
     """
     creates a SQL loader script to load a text file into a database
     and then executes it.
+    Note that src_file is 
     """
     res = ''
     fname_create_script = op_folder + os.sep + 'CREATE_' + tbl_name + '.SQL'
@@ -37,7 +38,8 @@ def load_txt_to_sql(tbl_name, src_file, op_folder ):
     fname_batch_file    = op_folder + os.sep + 'LOAD_' + tbl_name + '.BAT'
     
     ctl_data_lines = []
-    cols = get_cols(src_file)
+    if cols == None:
+        cols = get_cols(src_file)
     create_script_staging_table(fname_create_script, tbl_name, cols)    
     create_file(fname_backout_file, 'DROP TABLE ' + tbl_name + ' CASCADE CONSTRAINTS;\n')
     create_CTL(fname_control_file, tbl_name, src_file, cols, 'TRUNCATE')
