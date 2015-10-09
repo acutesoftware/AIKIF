@@ -36,10 +36,19 @@ class TestToolboxSqlTools(unittest.TestCase):
         self.assertTrue(os.path.exists('LOAD_tbl_testload.BAT'))
         self.assertTrue(os.path.exists('tbl_testload.CTL'))
 
+        # test to see if cols are created when not passed
+        sql_tools.load_txt_to_sql('tbl_testload', src_file, os.getcwd(), None )
+
     def test_03_count_lines_in_file(self):
-        lines = sql_tools.count_lines_in_file('test_src_file.csv' )
-        self.assertEqual(lines, '2 recs read')
-        
+        self.assertEqual(sql_tools.count_lines_in_file('test_src_file.csv'), '2 recs read')
+        self.assertEqual(sql_tools.count_lines_in_file('NO_FILE'), 'ERROR -couldnt open file')
+       
+    def test_04_get_CTL_log_string(self):
+        details = sql_tools.get_CTL_log_string('mytbl', 'src', 'ctl')
+        print(details)
+        expected = r"log='logs\mytbl.log' bad='logs\mytbl.bad' discard='logs\mytbl.discard' control=ctl data='src'\n"
+        self.assertEqual(len(details), len(expected))
+
         
 if __name__ == '__main__':
     unittest.main()
