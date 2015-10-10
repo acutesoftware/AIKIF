@@ -24,8 +24,9 @@ lookup_src.csv
 ======================== ======================== 
 name                     url                      
 ======================== ======================== 
-resources                http://aclweb.org/aclwiki/index.php?title=RTE_Knowledge_Resources#Publicly_available_Resources
+page-resources           http://aclweb.org/aclwiki/index.php?title=RTE_Knowledge_Resources#Publicly_available_Resources
 science_notes            http://www.ck12.org/     
+data-wikipedia           https://en.wikipedia.org/wiki/Wikipedia:Database_download
 ======================== ======================== 
 
 
