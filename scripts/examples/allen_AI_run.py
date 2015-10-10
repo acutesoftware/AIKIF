@@ -25,6 +25,11 @@ def document_project(p):
     p.add_detail('files_src_data', src_data)
     p.add_detail('files_op_folder', op_folder)
     p.add_detail('date_last_ran', mod_dt.TodayAsString())
+    
+    lookup_src = mod_dt.DataTable('lookup_src.csv', ',', col_names=['name', 'url', 'comments'])
+    p.log_table(lookup_src)
+    p.record(lookup_src, '', ['resources', 'http://aclweb.org/aclwiki/index.php?title=RTE_Knowledge_Resources#Publicly_available_Resources', ''])
+    p.record(lookup_src, '', ['science_notes', 'http://www.ck12.org/', ''])
 
 
     progress = mod_dt.DataTable('progress.csv', ',', col_names=['program', 'percent', 'details'])
