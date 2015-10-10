@@ -21,12 +21,12 @@ TABLES
 lookup_src.csv
 -------------------------
 
-======================== ======================== ======================== 
-name                     url                      comments                 
-======================== ======================== ======================== 
-resources                http://aclweb.org/aclwiki/index.php?title=RTE_Knowledge_Resources#Publicly_available_Resources                         
-science_notes            http://www.ck12.org/                              
-======================== ======================== ======================== 
+======================== ======================== 
+name                     url                      
+======================== ======================== 
+resources                http://aclweb.org/aclwiki/index.php?title=RTE_Knowledge_Resources#Publicly_available_Resources
+science_notes            http://www.ck12.org/     
+======================== ======================== 
 
 
 progress.csv
