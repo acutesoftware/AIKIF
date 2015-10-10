@@ -28,8 +28,11 @@ def document_project(p):
     
     lookup_src = mod_dt.DataTable('lookup_src.csv', ',', col_names=['name', 'url'])
     p.log_table(lookup_src)
-    p.record(lookup_src, '', ['resources', 'http://aclweb.org/aclwiki/index.php?title=RTE_Knowledge_Resources#Publicly_available_Resources'])
+    p.record(lookup_src, '', ['page-resources', 'http://aclweb.org/aclwiki/index.php?title=RTE_Knowledge_Resources#Publicly_available_Resources'])
     p.record(lookup_src, '', ['science_notes', 'http://www.ck12.org/'])
+    p.record(lookup_src, '', ['data-wikipedia', 'https://en.wikipedia.org/wiki/Wikipedia:Database_download'])
+
+
 
 
     progress = mod_dt.DataTable('progress.csv', ',', col_names=['program', 'percent', 'details'])
