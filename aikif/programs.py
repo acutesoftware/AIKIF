@@ -44,11 +44,10 @@ class Programs(object):
         self.tot_files = 0
         self.tot_loc = 0
         self.lstPrograms = []
-        fl = mod_fl.FileList([self.fldr], ['*.py'], ["__pycache__", "/venv/", ".git"])
+        fl = mod_fl.FileList([self.fldr], ['*.py'], ["__pycache__", "/venv/", "/venv2/", ".git"])
         for fip in fl.get_list():
             if '__init__.py' not in fip:
                 self.add(fip, 'TODO - add comment')
-                print('programs.py - fip = ', fip)
                 f = mod_file.TextFile(fip)
                 self.tot_lines += f.count_lines_in_file()
                 self.tot_loc += f.count_lines_of_code()
