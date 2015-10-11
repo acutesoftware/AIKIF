@@ -96,12 +96,13 @@ class Toolbox(object):
         
         return success
         
-    def run(self, tool, args, silent='Y', import_path=None):
+    def run(self, tool, args, silent='Y', new_import_path=''):
         """
         import the tool and call the function, passing the args.
         """
-        if import_path is not None:
-            sys.path.append(import_path)
+        if new_import_path != '':
+            #print('APPENDING PATH = ', new_import_path)
+            sys.path.append(new_import_path)
         
         if silent == 'N':
             print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
