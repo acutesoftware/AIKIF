@@ -1,6 +1,6 @@
+#!/usr/bin/python3
 # coding: utf-8
-# toolbox.py	written by Duncan Murray 20/3/2014	(C) Acute Software
-# class to manage the functional toolbox of AIKIF
+# toolbox.py   
 
 import os
 
@@ -96,10 +96,13 @@ class Toolbox(object):
         
         return success
         
-    def run(self, tool, args, silent='Y'):
+    def run(self, tool, args, silent='Y', import_path=None):
         """
         import the tool and call the function, passing the args.
         """
+        if import_path is not None:
+            sys.path.append(import_path)
+        
         if silent == 'N':
             print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
         mod = __import__( os.path.basename(tool['file']).split('.')[0]) # for absolute folder names
