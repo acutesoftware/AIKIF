@@ -180,9 +180,9 @@ class Project(object):
         res += 'This document contains details on the project : ' + self.nme + '\n\n'
         
         for d in self.details:
-            res += str(d) + '\n'
+            res += '    ' + str(d) + '\n'
         
-        res += 'TABLES\n' + '===========================================\n\n'
+        res += '\nTABLES\n' + '===========================================\n\n'
         
         for t in self.datatables:
             res +=  t.name + '\n'
