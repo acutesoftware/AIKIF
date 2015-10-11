@@ -59,7 +59,7 @@ def main():
     for tool_num, tool in enumerate(t.lstTools):
         print('tool=', tool)
         for param in params:
-            result = t.run(t.lstTools[tool_num], ['test' + str(tool_num), param], 'Y', root_folder)
+            result = t.run(tool, ['test' + str(tool_num), param], 'Y', root_folder)
             p.record(results, '', [tool['file'], tool['function'], param, result, mod_dt.TodayAsString()])
     results.save_csv(os.path.join(root_folder, 'allen_AI_results.csv'))   
        
