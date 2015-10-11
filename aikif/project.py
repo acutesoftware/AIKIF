@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# project.py	written by Duncan Murray 11/1/2015	(C) Acute Software
+# project.py    written by Duncan Murray 11/1/2015  (C) Acute Software
 
 class Projects(object):
     """
@@ -128,7 +128,7 @@ class Project(object):
         takes a DataTable as param and adds a record
         TODO - log details here
         """
-        print(tpe)
+        #print(tpe)
         tbl.add(col_data)
         
     def execute_tasks(self):
@@ -172,13 +172,16 @@ class Project(object):
         res += '-----------------------------------\n' 
         res += self.nme  + '\n'
         res += '-----------------------------------\n\n'
-        res += '::\n'
-        res += '     ' + self.desc + '\n\n'
-        res += '     ' + self.fldr + '\n\n'
+        res += self.desc + '\n'
+        res += self.fldr + '\n\n'
         res += '.. contents:: \n\n\n'
 
         res += 'Overview\n' + '===========================================\n\n'
         res += 'This document contains details on the project : ' + self.nme + '\n\n'
+        
+        for d in self.details:
+            res += str(d) + '\n'
+        
         res += 'TABLES\n' + '===========================================\n\n'
         
         for t in self.datatables:
