@@ -13,11 +13,12 @@ Overview
 
 This document contains details on the project : Allen_AI
 
-['kaggle_url', 'https://www.kaggle.com/c/the-allen-ai-science-challenge']
-['files_root_folder', '/home/duncan/dev/src/python/kaggle/aicomp']
-['files_src_data', '/home/duncan/dev/src/python/kaggle/aicomp/data']
-['files_op_folder', '/home/duncan/dev/src/python/kaggle/aicomp/output']
-['date_last_ran', '2015-10-11 19:33:15']
+    ['kaggle_url', 'https://www.kaggle.com/c/the-allen-ai-science-challenge']
+    ['files_root_folder', '/home/duncan/dev/src/python/kaggle/aicomp']
+    ['files_src_data', '/home/duncan/dev/src/python/kaggle/aicomp/data']
+    ['files_op_folder', '/home/duncan/dev/src/python/kaggle/aicomp/output']
+    ['date_last_ran', '2015-10-11 19:56:44']
+
 TABLES
 ===========================================
 
@@ -54,18 +55,18 @@ results.csv
 ======================== ======================== ======================== ======================== ======================== 
 program                  function                 param                    result                   date_ran                 
 ======================== ======================== ======================== ======================== ======================== 
-method1.py               solve                    -0.5                     -4.25                    2015-10-11 19:33:15      
-method1.py               solve                    -0.02                    -0.17                    2015-10-11 19:33:15      
-method1.py               solve                    1                        8.5                      2015-10-11 19:33:15      
-method1.py               solve                    124                      1054.0                   2015-10-11 19:33:15      
-method2.py               solve                    -0.5                     583858482                2015-10-11 19:33:15      
-method2.py               solve                    -0.02                    583858482                2015-10-11 19:33:15      
-method2.py               solve                    1                        583858482                2015-10-11 19:33:15      
-method2.py               solve                    124                      583858482                2015-10-11 19:33:15      
-method3.py               solve                    -0.5                     -54.565                  2015-10-11 19:33:15      
-method3.py               solve                    -0.02                    -54.565                  2015-10-11 19:33:15      
-method3.py               solve                    1                        -54.565                  2015-10-11 19:33:15      
-method3.py               solve                    124                      -54.565                  2015-10-11 19:33:15      
+method1.py               solve                    -0.5                     -4.25                    2015-10-11 19:56:44      
+method1.py               solve                    -0.02                    -0.17                    2015-10-11 19:56:44      
+method1.py               solve                    1                        8.5                      2015-10-11 19:56:44      
+method1.py               solve                    124                      1054.0                   2015-10-11 19:56:44      
+method2.py               solve                    -0.5                     583858482                2015-10-11 19:56:44      
+method2.py               solve                    -0.02                    583858482                2015-10-11 19:56:44      
+method2.py               solve                    1                        583858482                2015-10-11 19:56:44      
+method2.py               solve                    124                      583858482                2015-10-11 19:56:44      
+method3.py               solve                    -0.5                     -54.565                  2015-10-11 19:56:44      
+method3.py               solve                    -0.02                    -54.565                  2015-10-11 19:56:44      
+method3.py               solve                    1                        -54.565                  2015-10-11 19:56:44      
+method3.py               solve                    124                      -54.565                  2015-10-11 19:56:44      
 ======================== ======================== ======================== ======================== ======================== 
 
 
