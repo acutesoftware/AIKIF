@@ -4,18 +4,14 @@
 
 import os
 import sys
-#import aikif.project as mod_prj
 import aikif.dataTools.cls_datatable as mod_dt
 
+aikif_prog_root = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  + os.sep + ".." + os.sep + "aikif" )
 
-# fudge to make sure we run LOCAL aikif programs
-
-
-py_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  + os.sep + ".." + os.sep + "aikif"  + os.sep + "toolbox")
-sys.path.append(py_fldr)
+sys.path.append(aikif_prog_root  + os.sep + "toolbox")
 import Toolbox as mod_tool
 
-sys.path.append( os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  + os.sep + ".." + os.sep + "aikif" ))
+sys.path.append(aikif_prog_root)
 import project as mod_prj
 
 root_folder = '/home/duncan/dev/src/python/kaggle/aicomp'
