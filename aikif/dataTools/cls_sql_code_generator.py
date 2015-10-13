@@ -1,13 +1,5 @@
 # cls_sql_code_generator.py written by Duncan Murray June 2014
 
-def TEST():
-    """
-    usage from other programs:
-    from sql_code_generator import SQLCodeGenerator
-    """
-    tst = SQLCodeGenerator('C_FACT_TABLE')
-    print(tst)
- 
 class SQLCodeGenerator(object):
     """ generates SQL based on a table  """
     def __init__(self, fact_table):
@@ -334,6 +326,3 @@ class SQLCodeGenerator(object):
         self.sql_text += "    FROM " + self.fact_table + " GROUP BY " + group_by_cols + "\n"
         self.sql_text += ");\n"        
 
-if __name__ == '__main__':
-    TEST()    
- 
