@@ -83,4 +83,5 @@ wipe_file('test_sql_code_agg_multiple_cols.sql')
 wipe_file('test_sql_code_agg_single_col.sql')
 wipe_file('test_sql_code_test_rev_piv.sql')
 wipe_file('test_sql_code_test_rev_piv_simple.sql')
+wipe_file('UNDO.SQL')
 
