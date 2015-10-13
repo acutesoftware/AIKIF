@@ -2,6 +2,7 @@
 
 import unittest
 import sys
+import os
 from aikif.dataTools.cls_sql_code_generator import SQLCodeGenerator
 class TestClassDataSet(unittest.TestCase):
  
@@ -25,39 +26,61 @@ class TestClassDataSet(unittest.TestCase):
         tst.comment_block('Key to Dimensions')
         tst.key_to_dimension('PRODUCT_KEY', 'substr(op.PRODUCT, 1,10)', 'U_PRODUCT_LIST', 'product_name', 'PRODUCT_KEY')
         tst.commit()
-        tst.save(self.results_folder + 'test_full_sql_generation.sql')
+        tst.save(self.results_folder + 'test_will_fail_full_sql_generation.sql')  # will fail
+        tst.save('test_full_sql_generation.sql')
         #print(tst.get_sql())
         self.assertEqual(len(tst.get_sql()), 1060) 		
-    
+        self.assertEqual(len(str(tst)), 71)
+        #print(tst)
+        self.assertEqual(str(tst), """C_FACT_TABLE
+col : DATE
+col : PRODUCT
+col : CUSTOMER_NAME
+col : AMOUNT
+""")
+        tst.create_script_fact()
+        tst.collect_stats('C_FACT_TABLE')
+        tst.comment('test comment')
+        tst.create_index('C_FACT_TABLE', ['DATE', 'CUSTOMER'])
+        tst.save_ddl('CREATE_TEST01.SQL')
+        self.assertTrue(os.path.exists('CREATE_TEST01.SQL'))
+
 
     def test_02_sql_code_agg_single_col(self):
         t2 = SQLCodeGenerator('C_SALES')
         t2.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
         t2.aggregate('C_AGG_PRODUCT', 'PRODUCT', 'sum(AMOUNT)')
-        t2.save(self.results_folder + 'test_sql_code_agg_single_col.sql')
-        self.assertEqual(len(t2.get_sql()), 138) 		
+        t2.save('test_sql_code_agg_single_col.sql')
+        self.assertTrue(os.path.exists('test_sql_code_agg_single_col.sql'))
+        self.assertEqual(len(t2.get_sql()), 138) 
 
     def test_03_aggregate_multiple_cols(self):
         t3 = SQLCodeGenerator('C_SALES')
         t3.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
         t3.aggregate('C_AGG_PRODUCT', 'PRODUCT, CUSTOMER_NAME', 'sum(AMOUNT)')
-        t3.save(self.results_folder + 'test_sql_code_agg_multiple_cols.sql')
-        self.assertEqual(len(t3.get_sql()), 168) 		
+        t3.save('test_sql_code_agg_multiple_cols.sql')
+        self.assertTrue(os.path.exists('test_sql_code_agg_multiple_cols.sql'))
+        self.assertEqual(len(t3.get_sql()), 168)
+        
+
 
 
     def test_04_reverse_pivot(self):
         t4 = SQLCodeGenerator('C_SALES_UNPIVOT')
         meas_cols = ['Sales', 'Expenses']
         t4.reverse_pivot_to_fact('C_SALES_UNPIVOT', 'Question' , ['Q1', 'Q2'], ['YEAR', 'Person'], meas_cols, meas_cols, '\n')
-        t4.save(self.results_folder + 'test_sql_code_test_rev_piv.sql')
-        self.assertEqual(len(t4.get_sql()), 401) 		
+        t4.save('test_sql_code_test_rev_piv.sql')
+        self.assertTrue(os.path.exists('test_sql_code_test_rev_piv.sql'))
+        self.assertEqual(len(t4.get_sql()), 401)
 
     def test_05_reverse_pivot_simple(self):
         t4 = SQLCodeGenerator('C_TEST_UNPIVOT')
         meas_cols = ['Car', 'Home', 'Travel', 'Study']
         t4.reverse_pivot_to_fact('C_TEST_UNPIVOT', 'Category' , meas_cols, meas_cols, meas_cols, meas_cols, '\n')
-        t4.save(self.results_folder + 'test_sql_code_test_rev_piv_simple.sql')
-        self.assertEqual(len(t4.get_sql()), 689) 		
+        t4.save('test_sql_code_test_rev_piv_simple.sql')
+        self.assertTrue(os.path.exists('test_sql_code_test_rev_piv_simple.sql'))
+        self.assertEqual(len(t4.get_sql()), 689)
+        
 
     def test_06_get_column_list_from_select(self) :
         t5 = SQLCodeGenerator('BLAH')
@@ -90,7 +113,9 @@ CREATE TABLE test07 (
 );
 """
         self.assertEqual(t7.ddl_text, expected_result) 	
-
+        print(t7.ddl_text)
+        t7.save_ddl('CREATE_TABLE_test07.SQL')
+        self.assertTrue(os.path.exists('CREATE_TABLE_test07.SQL'))
         
 if __name__ == '__main__':
     unittest.main()
