@@ -44,11 +44,14 @@ col : AMOUNT
         tst.create_index('C_FACT_TABLE', ['DATE', 'CUSTOMER'])
         tst.save_ddl('CREATE_TEST01.SQL')
         self.assertTrue(os.path.exists('CREATE_TEST01.SQL'))
+        tst.save_undo('UNDO.SQL')
+        self.assertTrue(os.path.exists('UNDO.SQL'))
 
 
     def test_02_sql_code_agg_single_col(self):
         t2 = SQLCodeGenerator('C_SALES')
-        t2.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
+        t2.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME'])
+        t2.add_to_column_list('AMOUNT')  # pretend we forgot to declare a column
         t2.aggregate('C_AGG_PRODUCT', 'PRODUCT', 'sum(AMOUNT)')
         t2.save('test_sql_code_agg_single_col.sql')
         self.assertTrue(os.path.exists('test_sql_code_agg_single_col.sql'))
@@ -58,9 +61,13 @@ col : AMOUNT
         t3 = SQLCodeGenerator('C_SALES')
         t3.set_column_list(['DATE', 'PRODUCT', 'CUSTOMER_NAME', 'AMOUNT'])
         t3.aggregate('C_AGG_PRODUCT', 'PRODUCT, CUSTOMER_NAME', 'sum(AMOUNT)')
+        
+        t3.extract_dimension('dim_name', ['dim_cols'], 'dim_key', 'dim_stag_table', 'src_table', ['src_cols'], ['grain_cols'], 'where_clause')
+        print(t3)
         t3.save('test_sql_code_agg_multiple_cols.sql')
         self.assertTrue(os.path.exists('test_sql_code_agg_multiple_cols.sql'))
-        self.assertEqual(len(t3.get_sql()), 168)
+        self.assertEqual(len(t3.get_sql()), 684)
+        
         
 
 
