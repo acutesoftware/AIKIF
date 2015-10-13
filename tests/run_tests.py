@@ -75,3 +75,12 @@ wipe_file('CREATE_tbl_testload.SQL')
 wipe_file('LOAD_tbl_testload.BAT')
 wipe_file('tbl_testload.CTL')
 wipe_file('test_src_file.csv')
+
+wipe_file('CREATE_TABLE_test07.SQL')
+wipe_file('CREATE_TEST01.SQL')
+wipe_file('test_full_sql_generation.sql')
+wipe_file('test_sql_code_agg_multiple_cols.sql')
+wipe_file('test_sql_code_agg_single_col.sql')
+wipe_file('test_sql_code_test_rev_piv.sql')
+wipe_file('test_sql_code_test_rev_piv_simple.sql')
+
