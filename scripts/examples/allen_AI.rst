@@ -3,7 +3,7 @@ Allen_AI
 -----------------------------------
 
 Kaggle competetion entry for Allen_AI
-/home/duncan/dev/src/python/kaggle/aicomp/output
+T:\user\dev\src\python\kaggle\output
 
 .. contents:: 
 
@@ -15,13 +15,13 @@ This document contains details on the project Allen_AI
 
  - kaggle_url = https://www.kaggle.com/c/the-allen-ai-science-challenge
 
- - files_root_folder = /home/duncan/dev/src/python/kaggle/aicomp
+ - files_root_folder = T:\user\dev\src\python\kaggle
 
- - files_src_data = /home/duncan/dev/src/python/kaggle/aicomp/data
+ - files_src_data = T:\user\dev\src\python\kaggle\data
 
- - files_op_folder = /home/duncan/dev/src/python/kaggle/aicomp/output
+ - files_op_folder = T:\user\dev\src\python\kaggle\output
 
- - date_last_ran = 2015-10-12 21:18:01
+ - date_last_ran = 2015-10-14 21:02:23
 
 
 TABLES
@@ -36,6 +36,21 @@ name                     url
 page-resources           http://aclweb.org/aclwiki/index.php?title=RTE_Knowledge_Resources#Publicly_available_Resources
 science_notes            http://www.ck12.org/     
 data-wikipedia           https://en.wikipedia.org/wiki/Wikipedia:Database_download
+YAGO                     http://yago-knowledge.org
+Dbpedia                  http://dbpedia.org       
+Freebase                 http://freebase.com      
+Entitycube               http://entitycube.research.microsoft.com
+renlifang                http://renlifang.msra.cn 
+NELL                     http://rtw.ml.cmu.edu    
+DeepDive                 http://deepdive.stanford.edu
+Probase                  http://research.microsoft.com/en-us/projects/probase/
+KnowItAll                http://openie.cs.washington.edu
+ReVerb                   http://reverb.cs.washington.edu
+BabelNet                 http://babelnet.org      
+WikiNet                  http://www.h-its.org/english/research/nlp/download/
+ConceptNet               http://conceptnet5.media.mit.edu
+WordNet                  http://wordnet.princeton.edu
+Linked Open Data         http://linkeddata.org    
 ======================== ======================== 
 
 
@@ -60,18 +75,18 @@ results.csv
 ======================== ======================== ======================== ======================== ======================== 
 program                  function                 param                    result                   date_ran                 
 ======================== ======================== ======================== ======================== ======================== 
-method1.py               solve                    -0.5                     -4.25                    2015-10-12 21:18:01      
-method1.py               solve                    -0.02                    -0.17                    2015-10-12 21:18:01      
-method1.py               solve                    1                        8.5                      2015-10-12 21:18:01      
-method1.py               solve                    124                      1054.0                   2015-10-12 21:18:01      
-method2.py               solve                    -0.5                     583858482                2015-10-12 21:18:01      
-method2.py               solve                    -0.02                    583858482                2015-10-12 21:18:01      
-method2.py               solve                    1                        583858482                2015-10-12 21:18:01      
-method2.py               solve                    124                      583858482                2015-10-12 21:18:01      
-method3.py               solve                    -0.5                     -54.565                  2015-10-12 21:18:01      
-method3.py               solve                    -0.02                    -54.565                  2015-10-12 21:18:01      
-method3.py               solve                    1                        -54.565                  2015-10-12 21:18:01      
-method3.py               solve                    124                      -54.565                  2015-10-12 21:18:01      
+method1.py               solve                    -0.5                     -4.25                    2015-10-14 21:02:23      
+method1.py               solve                    -0.02                    -0.17                    2015-10-14 21:02:23      
+method1.py               solve                    1                        8.5                      2015-10-14 21:02:23      
+method1.py               solve                    124                      1054.0                   2015-10-14 21:02:23      
+method2.py               solve                    -0.5                     583858482                2015-10-14 21:02:23      
+method2.py               solve                    -0.02                    583858482                2015-10-14 21:02:23      
+method2.py               solve                    1                        583858482                2015-10-14 21:02:23      
+method2.py               solve                    124                      583858482                2015-10-14 21:02:23      
+method3.py               solve                    -0.5                     -54.565                  2015-10-14 21:02:23      
+method3.py               solve                    -0.02                    -54.565                  2015-10-14 21:02:23      
+method3.py               solve                    1                        -54.565                  2015-10-14 21:02:23      
+method3.py               solve                    124                      -54.565                  2015-10-14 21:02:23      
 ======================== ======================== ======================== ======================== ======================== 
 
 
