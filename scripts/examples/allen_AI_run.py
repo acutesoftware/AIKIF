@@ -14,7 +14,12 @@ import Toolbox as mod_tool
 sys.path.append(aikif_prog_root)
 import project as mod_prj
 
-root_folder = '/home/duncan/dev/src/python/kaggle/aicomp'
+
+if os.name == 'nt':
+    root_folder = 'T:\\user\\dev\\src\\python\\kaggle'
+else:
+    root_folder = '/home/duncan/dev/src/python/kaggle/aicomp'
+    
 src_data = root_folder + '/data'
 op_folder = root_folder + '/output'
 
@@ -35,6 +40,23 @@ def main():
     p.record(lookup_src, '', ['science_notes', 'http://www.ck12.org/'])
     p.record(lookup_src, '', ['data-wikipedia', 'https://en.wikipedia.org/wiki/Wikipedia:Database_download'])
 
+    p.record(lookup_src, '', ['YAGO', 'http://yago-knowledge.org'])
+    p.record(lookup_src, '', ['Dbpedia', 'http://dbpedia.org'])
+    p.record(lookup_src, '', ['Freebase', 'http://freebase.com'])
+    p.record(lookup_src, '', ['Entitycube', 'http://entitycube.research.microsoft.com'])
+    p.record(lookup_src, '', ['renlifang', 'http://renlifang.msra.cn'])
+    p.record(lookup_src, '', ['NELL', 'http://rtw.ml.cmu.edu'])
+    p.record(lookup_src, '', ['DeepDive', 'http://deepdive.stanford.edu'])
+    p.record(lookup_src, '', ['Probase', 'http://research.microsoft.com/en-us/projects/probase/'])
+    p.record(lookup_src, '', ['KnowItAll', 'http://openie.cs.washington.edu'])
+    p.record(lookup_src, '', ['ReVerb', 'http://reverb.cs.washington.edu'])
+    p.record(lookup_src, '', ['BabelNet', 'http://babelnet.org'])
+    p.record(lookup_src, '', ['WikiNet', 'http://www.h-its.org/english/research/nlp/download/'])
+    p.record(lookup_src, '', ['ConceptNet', 'http://conceptnet5.media.mit.edu'])
+    p.record(lookup_src, '', ['WordNet', 'http://wordnet.princeton.edu'])
+    p.record(lookup_src, '', ['Linked Open Data', 'http://linkeddata.org'])
+
+    
     progress = mod_dt.DataTable('progress.csv', ',', col_names=['program', 'percent', 'details'])
     p.log_table(progress)
     p.record(progress, '', ['Source data download', '100%',  'download competition sample data'])
