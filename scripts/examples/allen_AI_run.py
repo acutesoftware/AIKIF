@@ -20,8 +20,8 @@ if os.name == 'nt':
 else:
     root_folder = '/home/duncan/dev/src/python/kaggle/aicomp'
     
-src_data = root_folder + '/data'
-op_folder = root_folder + '/output'
+src_data = root_folder + os.sep + 'data'
+op_folder = root_folder + os.sep + 'output'
 
 params = [ -0.5, -0.02, 1, 124]
 
