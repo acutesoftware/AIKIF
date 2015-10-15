@@ -7,7 +7,7 @@ import unittest
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 pth = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' 
-#sys.path.append(pth)
+sys.path.append(pth)
 
 import file_tools
 
@@ -29,10 +29,18 @@ class TestToolboxFileTools(unittest.TestCase):
             print('checking ' + f.replace(os.getcwd(), ''))
             self.assertEqual(os.path.exists(f), True)
 
+    def test_02_copy_file(self):
+        test_file = 'file_to_copy.txt'
+        file_tools.delete_file(test_file, True)
+        self.assertEqual(os.path.exists(test_file), False)
+        with open(test_file, 'w') as f:
+            f.write('test file')
+        self.assertEqual(os.path.exists(test_file), True)
+        file_tools.delete_file('test_results' + os.sep + test_file, True)
+        self.assertEqual(os.path.exists('test_results' + os.sep + test_file), False)
+        file_tools.copy_file(test_file, 'test_results')
+        self.assertEqual(os.path.exists('test_results' + os.sep + test_file), True)
             
-    def test_02_download(self):
-        
-        self.assertEqual(1, 1)
             
     def test_03_delete_files_in_folder(self):
         
