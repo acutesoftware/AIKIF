@@ -17,7 +17,7 @@ def wipe_file(fname):
             os.remove(fname)
             print('deleted ' + fname)
         except:
-            pass
+            print('ERROR - cant delete ' + fname)
         
 print('Did the tests fail.... DID YOU TURN ON VIRTUALENV!   ". ~/p von"')
 print('WIPING ALL TEST RESULTS - PRESS CTRL C TO STOP')
@@ -84,4 +84,4 @@ wipe_file('test_sql_code_agg_single_col.sql')
 wipe_file('test_sql_code_test_rev_piv.sql')
 wipe_file('test_sql_code_test_rev_piv_simple.sql')
 wipe_file('UNDO.SQL')
-
+wipe_file('file_to_copy.txt')
