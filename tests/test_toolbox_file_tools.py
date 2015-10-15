@@ -11,7 +11,11 @@ sys.path.append(pth)
 
 import file_tools
 
-
+def ensure_dir(f):
+    d = os.path.dirname(f)
+    if not os.path.exists(d):
+        os.makedirs(d)
+        
 class TestToolboxFileTools(unittest.TestCase):
     def setUp(self):
         unittest.TestCase.setUp(self)
@@ -31,6 +35,9 @@ class TestToolboxFileTools(unittest.TestCase):
 
     def test_02_copy_file(self):
         test_file = 'file_to_copy.txt'
+        ensure_dir('test_results')
+        
+        
         file_tools.delete_file(test_file, True)
         self.assertEqual(os.path.exists(test_file), False)
         with open(test_file, 'w') as f:
@@ -43,11 +50,11 @@ class TestToolboxFileTools(unittest.TestCase):
             
             
     def test_03_delete_files_in_folder(self):
-        
+        print('TODO - make temp folder')
         self.assertEqual(1, 1)
             
     def test_04_copy_files_to_folder(self):
-        
+        print('TODO - make temp folder')
         self.assertEqual(1, 1)
             
             
