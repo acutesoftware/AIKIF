@@ -35,7 +35,7 @@ class TestToolboxFileTools(unittest.TestCase):
 
     def test_02_copy_file(self):
         test_file = 'file_to_copy.txt'
-        ensure_dir('test_results')
+        ensure_dir(os.getcwd() + os.sep + 'test_results')
         
         
         file_tools.delete_file(test_file, True)
