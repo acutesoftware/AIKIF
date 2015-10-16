@@ -102,8 +102,3 @@ def create_file(fname, txt):
     with open(fname, 'w') as f:
         f.write(txt + '\n')
 
-    
-def append_to_file(fname, txt): 
-    with open(fname, 'a') as f:
-        f.write(txt + '\n')
-    
