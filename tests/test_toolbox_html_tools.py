@@ -46,6 +46,14 @@ class ToolboxHtmlToolsTest(unittest.TestCase):
         self.assertEqual(mod_html.extract_content(raw_text).strip()[0:10], 'xkcd: goto')
         self.assertEqual(mod_html.extract_content(raw_text).strip()[-13:], 'More details.')
 
+
+    def test_06_extract_by_div(self):
+        raw_text = '<DIV id=aa>div aa</DIV>blah blah'
+        html, txt = mod_html.extract_by_div(raw_text, 'aa')
+        print('html = ', html)
+        print('txt  = ', txt)
+        self.assertEqual(html, 'div aa\n')
+        self.assertEqual(txt, 'div aa')
         
 if __name__ == '__main__':
     unittest.main()
