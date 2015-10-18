@@ -212,8 +212,8 @@ def get_metadata_as_dict(fname):
         (lat, lon) = get_lat_lon(exif_data)
         imgdict['lat'] =  str(lat)
         imgdict['lon'] =  str(lon)
-    except Exception:
-        pass
+    except Exception as ex:
+        print('problem reading image file metadata in ', fname, str(ex))
     return imgdict
         
 def get_metadata_as_csv(fname):
