@@ -47,8 +47,10 @@ class File(object):
             self.path = os.path.dirname(self.fullname)
             self.size = os.path.getsize(self.fullname)
             self.date_modified = os.path.getmtime(self.fullname)  # self.GetDateAsString(os.path.getmtime(fname))
-        except IOError:
-            pass
+        except IOError as exIO:
+            print('cant access file ' + fname)
+        except Exception as ex:     
+            print('problem accessing ' + fname + ' ' + str(ex))
 
     def __str__(self):
         # when printing a file class it should print the name, size, date
@@ -80,8 +82,8 @@ class File(object):
         res = ''
         try:
             res = str(datetime.fromtimestamp(t).strftime("%Y-%m-%d %H:%M:%S"))
-        except Exception:
-            pass
+        except Exception as ex:     
+            print('problem converting time ' + str(t) + ' ' + str(ex))
         return res    
         
 class TextFile(File):
