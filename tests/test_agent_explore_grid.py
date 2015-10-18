@@ -14,6 +14,8 @@ sys.path.append(pth)
 import agent_explore_grid as mod_agt
 agt = mod_agt.ExploreAgent('TEST - exploring_agent',  os.getcwd(), 1, True)
 agt.set_world( [], [3,4], [6,6])
+#agt.do_your_job()
+
 class TestToolboxClsGridLife(unittest.TestCase):
     def setUp(self):
         unittest.TestCase.setUp(self)
@@ -24,15 +26,15 @@ class TestToolboxClsGridLife(unittest.TestCase):
 
     
     def test_01_instantiate_class(self):
-        print(agt.report())
-        self.assertEqual(1,1)
+        res = agt.report()
+        self.assertEqual(res,[])
 
     def test_02_show_status(self):
-        agt.show_status()
+        #agt.show_status()
         self.assertEqual(1,1)
 
     def test_03_clear_surroundings(self):
-        agt.show_status()
+        #agt.show_status()
         self.assertEqual(1,1)
 
 
