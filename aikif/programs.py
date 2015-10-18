@@ -117,8 +117,8 @@ class Programs(object):
         try:
             with open(object_fileList, 'a') as f:
                 f.write('\n'.join([i[0] for i in self.lstPrograms]))
-        except Exception:
-            print('ERROR = cant write to object_filelist ' , object_fileList)
+        except Exception as ex:
+            print('ERROR = cant write to object_filelist ' , object_fileList, str(ex))
 
     def get_file_info_line(self, fname, delim):
         """
