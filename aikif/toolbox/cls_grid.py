@@ -1,4 +1,4 @@
-# cls_grid.py		written by Duncan Murray 15/6/2014
+# cls_grid.py       written by Duncan Murray 15/6/2014
 # class to handle a grid used for board and puzzle games
 
 import random
@@ -52,14 +52,32 @@ class Grid(object):
         try:
             with open(fname, "w") as f:
                 f.write(str(self))
-        except Exception:
-            print('ERROR = cant save grid results to ' + fname)
+        except Exception as ex:
+            print('ERROR = cant save grid results to ' + fname + str(ex))
             
         
         
     def load(self, fname):
         """ loads a ASCII text file grid to self  """
-        pass
+        
+        # get height and width of grid from file
+        self.grid_width = 4
+        self.grid_height = 4
+        
+        # re-read the file and load it
+        self.grid = [[0 for dummy_l in range(self.grid_width)] for dummy_l in range(self.grid_height)]
+        with open(fname, 'r') as f:
+            for row_num, row in enumerate(f):
+                if row == '':
+                    break
+                for col_num, col in enumerate(row.strip('\n')):   
+                    self.set_tile(row_num, col_num, col) 
+    
+        #print('loaded grid = \n', str(self))
+        
+        
+        
+
         
         
     def get_grid_height(self):
@@ -123,7 +141,7 @@ class Grid(object):
         square.  The tile should be 2 90% of the time and
         4 10% of the time.
         """
-        for _ in range(num):				
+        for _ in range(num):                
             if random.random() > .5: 
                 new_tile = self.pieces[0]
             else:
