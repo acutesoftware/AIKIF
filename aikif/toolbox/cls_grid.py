@@ -39,7 +39,7 @@ class Grid(object):
         """
         Return a string representation of the grid for debugging.
         """
-        output_string = ""
+        output_string = ''
         for row in range(self.grid_height):
             for col in range(self.grid_width):
                 output_string += str(self.grid[row][col]).rjust(self.spacing)
@@ -203,7 +203,7 @@ class Grid(object):
             
         if col > self.grid_width :
             print("ERROR - x larger than grid", col)
-            col = self.grid_width 
+            col = self.grid_width - 1
             #return
             
         if row < 0:
@@ -213,7 +213,7 @@ class Grid(object):
             
         if row > self.grid_height:
             print("ERROR - y larger than grid", row)
-            row = self.grid_height 
+            row = self.grid_height - 1
             #return
         try:    
             self.grid[row][col] = value
