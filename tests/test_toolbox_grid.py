@@ -10,7 +10,10 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 sys.path.append(root_folder)
 import config as mod_cfg
 
-import toolbox.cls_grid as mod_grid
+tool_folder = root_folder + os.sep + 'toolbox' 
+sys.path.append(tool_folder)
+import cls_grid as mod_grid
+
 grd = mod_grid.Grid(grid_height=8, grid_width=8, pieces=['X', 'O'], spacing=1)   
 grd.new_tile()
 grd.new_tile()
@@ -59,10 +62,13 @@ class ToolboxGridTest(unittest.TestCase):
         self.assertFalse(os.path.exists(crap_file))    
         
     def test_07_load_grid(self):
+        """  test data includes blank lines which load should ignore """
         test_grid_data = """.XX.
 X.X.
 ....
-XXXX"""
+XXXX
+
+"""
         with open('test_grid.txt', 'w') as f:
             f.write(test_grid_data)
         self.assertTrue(os.path.exists('test_grid.txt'))
@@ -86,7 +92,33 @@ XXXX"""
         self.assertEqual(grd.get_tile(3,1),'X')
         self.assertEqual(grd.get_tile(3,2),'X')
         self.assertEqual(grd.get_tile(3,3),'X')
+    
+    def test_08_set_tile_incorrectly(self):
+
+        grd.clear()
+        grd.set_tile(0, 0, 'X')
+        self.assertEqual(grd.extract_row(0), ['X', '.', '.', '.'])
         
+        grd.clear()
+        grd.set_tile(-1, 0, 'X')
+        self.assertEqual(grd.extract_row(0), ['X', '.', '.', '.'])
+ 
+        grd.clear()
+        grd.set_tile(0, -1, 'X')
+        self.assertEqual(grd.extract_row(0), ['X', '.', '.', '.'])
+
+        grd.clear()
+        self.assertEqual(grd.get_tile(3,0),'.')
+        grd.set_tile(0, 999, 'X')
+        self.assertEqual(grd.get_tile(0,3),'X')
+        self.assertEqual(grd.extract_row(3), ['.', '.', '.', '.'])
+        
+ 
+        grd.clear()
+        grd.set_tile(999, 0, 'X')
+        self.assertEqual(grd.extract_row(3), ['X', '.', '.', '.'])
+ 
+       
         
         
             
