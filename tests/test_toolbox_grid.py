@@ -92,6 +92,14 @@ XXXX
         self.assertEqual(grd.get_tile(3,1),'X')
         self.assertEqual(grd.get_tile(3,2),'X')
         self.assertEqual(grd.get_tile(3,3),'X')
+        
+        # extract_col test
+        self.assertEqual(grd.extract_col(0), ['.', 'X', '.', 'X'])
+        self.assertEqual(grd.extract_col(1), ['X', '.', '.', 'X'])
+        self.assertEqual(grd.extract_col(2), ['X', 'X', '.', 'X'])
+        self.assertEqual(grd.extract_col(3), ['.', '.', '.', 'X'])
+
+           
     
     def test_08_set_tile_incorrectly(self):
 
@@ -118,7 +126,16 @@ XXXX
         grd.set_tile(999, 0, 'X')
         self.assertEqual(grd.extract_row(3), ['X', '.', '.', '.'])
  
-       
+    def test_09_replace_row(self):
+        grd.clear()
+        grd.replace_row(['X','X','.','.'], 2)
+        str_grd = str(grd)
+        self.assertEqual(str_grd, """....
+....
+XX..
+....
+
+""")
         
         
             
