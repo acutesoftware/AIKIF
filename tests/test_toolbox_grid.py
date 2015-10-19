@@ -99,6 +99,8 @@ XXXX
         self.assertEqual(grd.extract_col(2), ['X', 'X', '.', 'X'])
         self.assertEqual(grd.extract_col(3), ['.', '.', '.', 'X'])
 
+        # count_filled_positions
+        self.assertEqual(grd.count_filled_positions(),8)
            
     
     def test_08_set_tile_incorrectly(self):
@@ -106,6 +108,9 @@ XXXX
         grd.clear()
         grd.set_tile(0, 0, 'X')
         self.assertEqual(grd.extract_row(0), ['X', '.', '.', '.'])
+        
+        self.assertEqual(grd.reverse_line(grd.extract_row(0)), ['.', '.', '.', 'X'])
+        
         
         grd.clear()
         grd.set_tile(-1, 0, 'X')
@@ -137,7 +142,33 @@ XX..
 
 """)
         
+    def test_10_replace_row(self):
+        grd.clear()
+        grd.replace_col(['.','.','X','X'], 3)
+        print(grd)
+        str_grd = str(grd)
+        self.assertEqual(str_grd, """....
+....
+...X
+...X
+
+""")
         
-            
+    def test_11_neighbours(self):
+        n = grd.four_neighbors( 1, 1)
+        #print(n)
+        self.assertEqual(n, [(0, 1), (2, 1), (1, 0), (1, 2)])
+        
+        p = grd.eight_neighbors( 1, 1)
+        #print(p)
+        self.assertEqual(p,[(0, 1), (2, 1), (1, 0), (1, 2), (0, 0), (0, 2), (2, 0), (2, 2)])
+        
+    def test_12_get_index(self):
+        i = grd.get_index((1,1), 4)
+        #print('index = ', i)
+        self.assertEqual(i, (0.25, 0.25))
+        
+        
+        
 if __name__ == '__main__':
     unittest.main()
