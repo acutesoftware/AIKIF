@@ -85,3 +85,6 @@ wipe_file('test_sql_code_test_rev_piv.sql')
 wipe_file('test_sql_code_test_rev_piv_simple.sql')
 wipe_file('UNDO.SQL')
 wipe_file('file_to_copy.txt')
+wipe_file('my_grid.txt')
+wipe_file('test_grid.txt')
+

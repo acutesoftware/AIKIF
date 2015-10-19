@@ -1,4 +1,4 @@
-# agent_explore_grid.py		written by Duncan Murray	9/7/2014
+# agent_explore_grid.py     written by Duncan Murray    9/7/2014
 
 
 import os
@@ -7,7 +7,6 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 
 import aikif.agents.agent as agt
 
-        
 
 class ExploreAgent(agt.Agent):
     """
