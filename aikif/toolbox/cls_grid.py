@@ -68,7 +68,7 @@ class Grid(object):
         self.grid = [[0 for dummy_l in range(self.grid_width)] for dummy_l in range(self.grid_height)]
         with open(fname, 'r') as f:
             for row_num, row in enumerate(f):
-                if row == '':
+                if row.strip('\n') == '':
                     break
                 for col_num, col in enumerate(row.strip('\n')):   
                     self.set_tile(row_num, col_num, col) 
