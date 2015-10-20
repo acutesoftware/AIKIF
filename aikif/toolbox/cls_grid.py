@@ -201,7 +201,7 @@ class Grid(object):
             col = 0
             #return
             
-        if col > self.grid_width :
+        if col > self.grid_width - 1 :
             print("ERROR - x larger than grid", col)
             col = self.grid_width - 1
             #return
@@ -211,7 +211,7 @@ class Grid(object):
             row = 0
             #return
             
-        if row > self.grid_height:
+        if row > self.grid_height - 1:
             print("ERROR - y larger than grid", row)
             row = self.grid_height - 1
 
