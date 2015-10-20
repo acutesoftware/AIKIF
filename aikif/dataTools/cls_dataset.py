@@ -22,7 +22,7 @@ class DataSet(object):
         self.dataset_type = dataset_type
         self.datatables = []
         self.connection = None
-        if len(creds) == 2:
+        if len(creds) == 3:
             self.schema = creds[0]
             self.username = creds[1]
             self.password = creds[2]
