@@ -1,5 +1,6 @@
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# cls_datatable.py	written by Duncan Murray 25/6/2014
+# cls_datatable.py
 
 #from cls_dataset import DataSet
 import math
@@ -161,13 +162,13 @@ class DataTable(object):
         return result
         
     def Dict2String(self, d):
-        res = ","
-        for k, v in d: # .iteritems():
-            res = res + k + str(v) + ','
+        res = ""
+        for k, v in d.items(): # .iteritems():
+            res = res + k + '=' + str(v) + ','
         return res
 
-    def dict2list(self, dct, keylist): 
-        return [dct[i] for i in keylist]
+    #def dict2list(self, dct, keylist): 
+    #    return [dct[i] for i in keylist]
         
     def update_where(self, col, value, where_col_list, where_value_list):
         """ 
