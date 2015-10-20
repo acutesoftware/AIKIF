@@ -183,7 +183,7 @@ class Grid(object):
         
     def find_random_blank_cell(self):
         if self.count_blank_positions() == 0:
-            return None
+            return -1, -1
         row = random.randrange(0, self.grid_height)
         col = random.randrange(0, self.grid_width)
         while self.grid[row][col] != EMPTY:
@@ -214,13 +214,8 @@ class Grid(object):
         if row > self.grid_height:
             print("ERROR - y larger than grid", row)
             row = self.grid_height - 1
-            #return
-        try:    
-            self.grid[row][col] = value
-            #if value == 'A':
-            #    print("AGENT INSTALLED at ", row, col)
-        except Exception:
-            print("Error - tile out of range")
+
+        self.grid[row][col] = value
 
     def get_tile(self, row, col):
         """

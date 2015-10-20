@@ -168,6 +168,16 @@ XX..
         #print('index = ', i)
         self.assertEqual(i, (0.25, 0.25))
         
+    def test_13_full_grid(self):
+        grd2 = mod_grid.Grid(grid_height=2, grid_width=2, pieces=['X', 'O'], spacing=1)   
+        grd2.new_tile()
+        grd2.new_tile()
+        grd2.new_tile()
+        grd2.new_tile()
+        grd2.new_tile()
+
+        x,y = grd2.find_random_blank_cell()
+        print(grd2)
         
         
 if __name__ == '__main__':
