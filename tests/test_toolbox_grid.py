@@ -175,6 +175,12 @@ XX..
         grd2.new_tile()
         grd2.new_tile()
         grd2.new_tile()
+        grd2.new_tile()
+        grd2.new_tile()
+        grd2.new_tile()
+        grd2.new_tile()
+        grd2.new_tile()
+        grd2.new_tile()
 
         x,y = grd2.find_random_blank_cell()
         print(grd2)
