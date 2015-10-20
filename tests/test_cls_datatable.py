@@ -1,9 +1,17 @@
-# test_cls_datatable.py		written by Duncan Murray 25/6/2014
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# test_cls_datatable.py
 
 import unittest
 import os
 import sys
-import aikif.dataTools.cls_datatable as cl
+
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
+sys.path.append(root_folder + os.sep + 'dataTools')
+
+import cls_datatable as cl
+
+
 #root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
 save_folder = 'test_results' + os.sep
 save_folder = ''  # to get the damn build passing
@@ -112,7 +120,21 @@ class TestClassDataTable(unittest.TestCase):
         self.assertEqual(len(dat.arr), 3)
         self.assertEqual(len(dat.count_unique_values(0, 'date')), 3)
         self.assertEqual(len(dat.count_unique_values(2, 'details')), 2)
+        self.assertEqual(str(dat)[0:23], 'date    amount  details')
+        op_rst = dat.format_rst()
+        #print(op_rst)
+        self.assertEqual(len(op_rst) > 55, True)
 
+    def test_08_describe_contents(self):
+        dat = cl.DataTable('sales.csv', ',', col_names=['date', 'amount', 'details'])
+        dat.describe_contents()
+        
+    def test_09_dict_2_string(self):
+        dat = cl.DataTable('dud.csv', ',', col_names=['date'])
+        self.assertEqual(dat.Dict2String({"a": 5}), 'a=5,')
+        
+    def test_09_TodayAsString(self):
+        self.assertEqual(len(cl.TodayAsString()) > 9, True)
         
 if __name__ == '__main__':
     unittest.main()
