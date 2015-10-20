@@ -1,5 +1,6 @@
-# cls_dataset.py	written by Duncan Murray 25/6/2014
-
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# cls_dataset.py
 
 class DataSet(object):
     """
@@ -38,10 +39,11 @@ class DataSet(object):
         self.schema = schema
         self.username = username
         self.password = password
-        
+        self.connection = schema
         
     def logout(self):
-        print('Logging out - TODO')
+        print('Logging out')
+        self.connection = None
     
     def list_tables(self, delim='\n'):
         """
