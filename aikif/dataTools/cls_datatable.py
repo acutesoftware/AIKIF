@@ -135,8 +135,6 @@ class DataTable(object):
                 
                 if row[where_col[0]] != where_value_list[ndx]:
                     keep_this_row = False
-                else:
-                    pass
             if keep_this_row is True:
                 if col_name == '':
                     res.append([row_num, row])
@@ -155,9 +153,9 @@ class DataTable(object):
         if type(unknown) is float:
             result = str(unknown)
         if type(unknown) is dict:
-            result = self.Dict2String(unknown)
+            result = '{' + self.Dict2String(unknown) + '}'
         if type(unknown) is list:
-            result = unknown # todo self.List2String(unknown)
+            result = '[' + ','.join([self.force_to_string(i) for i in unknown]) + ']'
         
         return result
         
@@ -237,7 +235,8 @@ class DataTable(object):
             if hasattr(content, '__iter__'):
                 f.write('\n'.join([row for row in content]))
             else:
-                f.write(content)
+                print('WRINGI CONTWETESWREWR')
+                f.write(str(content))
 
     def save_csv(self, filename, write_header_separately=True):
         """
@@ -264,12 +263,12 @@ class DataTable(object):
             import os
             try:
                 os.remove(fname)
-            except Exception:
-                pass
-        elif self.dataset_type == 'view':
-            print ("TODO - drop view")
-        elif self.dataset_type == 'table':
-            print ("TODO - drop table")
+            except Exception as ex:
+                print('cant drop file "' + fname + '" : ' + str(ex))
+        #elif self.dataset_type == 'view':
+        #    print ("TODO - drop view")
+        #elif self.dataset_type == 'table':
+        #    print ("TODO - drop table")
             
     def get_arr(self):
         return self.arr
@@ -359,7 +358,7 @@ class DataStats(object):
                    
 # Utility
 
-def TodayAsString():	
+def TodayAsString():    
     """
     returns current date and time like oracle
     """
