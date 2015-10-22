@@ -24,6 +24,16 @@ def create_zip_from_file(zip_file, fname):
     """
     with zipfile.ZipFile(zip_file, 'w') as myzip:
         myzip.write(fname)
+
+def create_gz_from_content(gz_file, binary_content):
+    with gzip.open(gz_file, 'wb') as f:
+        f.write(binary_content)
+        
+def create_tar_from_files(tar_file, fl):
+    with  tarfile.open(tar_file, "w:gz") as tar:
+        for name in fl:
+            tar.add(name)
+        
     
 def create_zip_from_folder(zip_file, fldr, mode="r"):
     """
@@ -72,8 +82,10 @@ class ZipFile(object):
             with open(fldr + os.sep + 'temp.tar', 'wb') as fop:
                 fop.write(file_content)
         
-    def _extract_tar(self, fldr, password=''):
-        tar = tarfile.open(fldr + os.sep + 'temp.tar')
+    def _extract_tar(self, fldr, tar_file=''):
+        if tar_file == '':
+            fldr + os.sep + 'temp.tar'
+        tar = tarfile.open(tar_file)
         tar.extractall(path=fldr)
         tar.close()    
         
