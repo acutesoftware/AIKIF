@@ -86,7 +86,10 @@ class ZipFile(object):
         if tar_file == '':
             fldr + os.sep + 'temp.tar'
         tar = tarfile.open(tar_file)
-        tar.extractall(path=fldr)
+        for item in tar:
+            tar.extract(item)
+    
+        #tar.extractall(path=fldr)
         tar.close()    
         
     
@@ -103,7 +106,7 @@ class ZipFile(object):
         elif self.type == 'GZ':
             self._extract_gz(dest_fldr, password)
         elif self.type == 'TAR':
-            self._extract_tar(dest_fldr, password)
+            self._extract_tar(dest_fldr, self.fname)
         else:
             raise('Unknown archive file type')
 
