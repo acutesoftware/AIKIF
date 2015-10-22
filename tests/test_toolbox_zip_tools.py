@@ -66,8 +66,13 @@ class ToolboxZipToolsTest(unittest.TestCase):
         zip_tools.create_tar_from_files('test.tar', ['test.gz', 'test2.zip'])
         self.assertEqual(os.path.exists('test.tar'), True)
         time.sleep(1)
-
-        #zip_tools.extract_all('test.tar', op_folder )
+        os.remove('test.gz') 
+        os.remove('test2.zip') 
+        self.assertEqual(os.path.exists('test.gz'), False)
+        self.assertEqual(os.path.exists('test2.zip'), False)
+        zip_tools.extract_all('test.tar', op_folder )
+        self.assertEqual(os.path.exists('test.gz'), True)
+        self.assertEqual(os.path.exists('test2.zip'), True)
                 
  
 if __name__ == '__main__':
