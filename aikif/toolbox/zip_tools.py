@@ -15,26 +15,28 @@ def extract_all(zipfile, dest_folder):
     are extracted 
     """
     z = ZipFile(zipfile)
-    #print(z)
-    z.extract(os.getcwd() + os.sep + 'unzipped')
+    print(z)
+    z.extract(dest_folder)
     
 def create_zip_from_file(zip_file, fname):
     """
     add a file to the archive
     """
     with zipfile.ZipFile(zip_file, 'w') as myzip:
-        myzip.write(fname, os.path.relpath(os.path.join(os.getcwd(), zip_file)))
-        #myzip.write(fname)
+        myzip.write(fname)
     
 def create_zip_from_folder(zip_file, fldr, mode="r"):
     """
     add all the files from the folder fldr
     to the archive
     """
+    #print('zip from folder - adding folder : ', fldr)
     zipf = zipfile.ZipFile(zip_file, 'w')
     for root, dirs, files in os.walk(fldr):
         for file in files:
-            zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), os.path.join(fldr, '..')))
+            fullname = os.path.join(root, file)
+            #print('zip - adding file : ', fullname)
+            zipf.write(fullname)
     
     
     zipf.close()
