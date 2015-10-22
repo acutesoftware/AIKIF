@@ -27,6 +27,10 @@ class AgentTest(unittest.TestCase):
         ag_fail = mod_agent.verify_agents([{'name': 'FAIL', 'file': 'no_file.py', 'schedule_type':'hour'}])
         self.assertFalse(ag_fail)
 
+    def test_04_run_schedule(self):
+        mod_agent.run('python ./local_test_agent.py', True)
+        #self.assertEqual(os.path.exists('environment.md'), True)
+        pass # todo
     
 if __name__ == '__main__':
     unittest.main()
