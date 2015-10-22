@@ -36,11 +36,7 @@ class ToolboxZipToolsTest(unittest.TestCase):
         #self.assertEqual(lst1.get_list()[0], 'T:\\user\\dev\\src\\python\\AIKIF\\tests\\test_results\\test_nested.zip') 
         
     def test_03_extract_all(self):
-        try:
-             os.remove(src_file)
-             pass
-        except Exception as ex:
-            print('file already deleted ready for unzipping')
+        os.remove(src_file) # no try needed - you create this file at the start of the test
         self.assertEqual(os.path.exists(src_file), False)  # make sure orig file is gone 
         zip_tools.extract_all(test_file2, op_folder) # os.getcwd()
         time.sleep(1)
@@ -60,9 +56,19 @@ class ToolboxZipToolsTest(unittest.TestCase):
         #print(lst1.get_list())
         self.assertEqual(len(lst1.get_list()) > 1, True) 
         extract_fldr = op_folder + os.sep
-        
-        #self.assertEqual(extract_fldr + 'README.md' in lst1.get_list(), True) 
-        #self.assertEqual(extract_fldr + 'usda_national_nutrients.sql' in lst1.get_list(), True) 
 
+    def test_20_type_GZ(self):
+        zip_tools.create_gz_from_content('test.gz', b"some data for GZ file")
+        zip_tools.extract_all('test.gz', op_folder)
+        self.assertEqual(os.path.exists('test.gz'), True)
+
+    def test_21_type_TAR(self):
+        zip_tools.create_tar_from_files('test.tar', ['test.gz', 'test2.zip'])
+        self.assertEqual(os.path.exists('test.tar'), True)
+        time.sleep(1)
+
+        #zip_tools.extract_all('test.tar', op_folder )
+                
+ 
 if __name__ == '__main__':
     unittest.main()
