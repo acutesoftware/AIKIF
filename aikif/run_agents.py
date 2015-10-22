@@ -12,14 +12,14 @@ schedule_types = ['once', 'year', 'month', 'fortnight', 'week', 'weekday', 'day'
 agentCodeFolder = os.path.dirname(os.path.abspath(__file__)) + os.sep 
 
 agent_list = [
-    {'name': 'Browser history', 
-     'file': os.path.join(agentCodeFolder,'agents','gather','log_browser_history.py'), 
-     'schedule_type':'week'
-    },
-    {'name': 'PC Usage', 
-     'file': os.path.join(agentCodeFolder,'agents','gather','log_PC_usage.py'), 
-     'schedule_type':'second'
-    },
+    #{'name': 'Browser history', 
+    # 'file': os.path.join(agentCodeFolder,'agents','gather','log_browser_history.py'), 
+    # 'schedule_type':'week'
+    #},
+    #{'name': 'PC Usage', 
+    # 'file': os.path.join(agentCodeFolder,'agents','gather','log_PC_usage.py'), 
+    # 'schedule_type':'second'
+    #},
     #{'name': 'Aggregate PC usage', 
     # 'file': os.path.join(agentCodeFolder,'agents','aggregate','load_PC_usage.py'), 
     # 'schedule_type':'minute'
@@ -32,6 +32,10 @@ agent_list = [
     # 'file': os.path.join(agentCodeFolder,'agents','aggregate','agg_context.py'), 
     # 'schedule_type':'minute' 
     #}
+    {'name': 'File Usage - wrong schedule', 
+     'file': os.path.join(agentCodeFolder,'agents','gather','agent_filelist.py'), 
+     'schedule_type':'WHENEVER'
+    },
 ]
 
         
