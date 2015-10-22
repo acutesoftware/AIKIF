@@ -348,7 +348,9 @@ class DataTable(object):
         return res
  
     def get_col_width(self, col_name):
-        pass
+        vals = self.get_col_data_by_name(col_name)
+        return max([len(l) for l in vals])
+        
         
 class DataStats(object):
     """ class to do statistics on an array """
