@@ -27,7 +27,7 @@ def generate_report(lst_imports, tok, fail ):
     """
     saves results of environment to local file
     """
-    op_file = "test_results\\environment.md"
+    op_file = "environment.md"
     with open(op_file, "w") as f:
         f.write("#environment.md\n")
         f.write("Details on development environment, imports, code fixes todo.\nCreated by check_python_env.py\n\n")
