@@ -137,8 +137,7 @@ class TestClassDataTable(unittest.TestCase):
         self.assertEqual(dat.col_names[1], 'amount')
         self.assertEqual(dat.col_names[2], 'details')
         
-        self.assertEqual(dat.get_col_width('date'), 4)
-
+ 
     def test_07_add_data(self):
         dat = cl.DataTable('sales.csv', ',', col_names=['date', 'amount', 'details'])
         dat.add(['2015-01-09', 24.95, 'Timer'])
@@ -151,6 +150,7 @@ class TestClassDataTable(unittest.TestCase):
         op_rst = dat.format_rst()
         #print(op_rst)
         self.assertEqual(len(op_rst) > 55, True)
+        self.assertEqual(dat.get_col_width('date'), 10)
 
     def test_08_describe_contents(self):
         dat = cl.DataTable('sales.csv', ',', col_names=['date', 'amount', 'details'])
