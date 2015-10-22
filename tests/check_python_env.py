@@ -57,7 +57,7 @@ def get_import_list(root_folder):
     print("ROOT FOLDER = " + root_folder)
 #    py_files = cl.clsCollectFiles(os.path.join(os.path.dirname(root_folder), os.pardir), '*.py')  # test_cls_collect
     
-    py_files = cl.FileList([root_folder], ['*.py'], [], "sample_filelist.csv")
+    py_files = cl.FileList([root_folder], ['*.py'], ['venv2'], "sample_filelist.csv")
     for fname in py_files.fl_metadata:
         #print(fl.print_file_details_in_line(f, ["fullfilename"]))
         print(fname["fullfilename"])
