@@ -32,6 +32,13 @@ class LogTest(unittest.TestCase):
         self.assertEqual(os.path.exists('process.log'), True)
         self.assertEqual(os.path.exists('_sessions.txt'), True)
 
+        sum = mod_log.LogSummary(lg, '')
+        extract = sum.extract_logs('process.log', 'test_cls_log.py')
+        #print('extract = ', extract)
+        self.assertEqual(len(extract) > 20, True) # ['"2015-10-23 22:24:47","000000054","Dunc[1934 chars],\n'])
+        
+
+        
     def test_02_get_folder(self):
         result = self.mylog.get_folder_process()
         self.assertEqual(result, test_fldr + os.sep + 'process.log')
@@ -107,6 +114,7 @@ class LogTest(unittest.TestCase):
     
         self.assertEqual(os.path.isfile(cfg.fldrs['log_folder'] + os.sep + 'prog1.txt'), True)
         self.assertEqual(os.path.isfile(cfg.fldrs['log_folder'] + os.sep + 'prog2.txt'), True)
+        
     
     
     def test_13_check_missing_logs_doesnt_break_sum(self):
@@ -119,7 +127,9 @@ class LogTest(unittest.TestCase):
         lg = mod_log.Log(os.getcwd())
         self.assertEqual(lg.estimate_complexity(10,10,10, 10), '0.1 seconds')
         self.assertEqual(lg.estimate_complexity(100,100,100, 100), '16.7 minutes')
+        self.assertEqual(lg.estimate_complexity(100,100,100, 1000), '6.9 hours')
         self.assertEqual(lg.estimate_complexity(1000,1000,1000, 1000), '115.7 days')
+        self.assertEqual(lg.estimate_complexity(9999,9999,9999, 9999), '190182.7 years')
         
 if __name__ == '__main__':
     unittest.main()
