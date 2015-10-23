@@ -115,5 +115,11 @@ class LogTest(unittest.TestCase):
     def test_14_self_test(self):
         mod_log.TEST()
         
+    def test_14_estimate_complexity(self):
+        lg = mod_log.Log(os.getcwd())
+        self.assertEqual(lg.estimate_complexity(10,10,10, 10), '0.1 seconds')
+        self.assertEqual(lg.estimate_complexity(100,100,100, 100), '16.7 minutes')
+        self.assertEqual(lg.estimate_complexity(1000,1000,1000, 1000), '115.7 days')
+        
 if __name__ == '__main__':
     unittest.main()
