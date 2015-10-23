@@ -87,9 +87,9 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
     if silent == 'N':
         print(format_op_row(ipFile, totLines, totWords, uniqueWords))
    
-        #show('uniqueWords', uniqueWords, 5)
+        show('uniqueWords', uniqueWords, 5)
     #print(uniqueWords)  # this is now a DICTIONARY with no key names - TODO - how to save properly
-    #DisplayIndexAsDictionary(uniqueWords)
+    DisplayIndexAsDictionary(uniqueWords)
 
 def format_op_row(ipFile, totLines, totWords, uniqueWords):
     txt = os.path.basename(ipFile).ljust(36) + ' '
@@ -126,13 +126,14 @@ def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName='
 def DisplayIndexAsDictionary(word_occurrences):
     """ print the index as a dict """
     word_keys = word_occurrences.keys()
-    for word in word_keys:
+    for num, word in enumerate(word_keys):
         line_nums = word_occurrences[word]
         print(word + " ")
-        for line_num in line_nums:
-            print(str(line_num) + " ")
-        print("\n")
-
+        #for line_num in line_nums[0:3]:
+        #    print(str(line_num) + " ")
+        #print("\n")
+        if num > 3:
+            break
             
 def show(title, lst, full=-1):
     """
@@ -227,11 +228,11 @@ def consolidate(ipFile, opFile):
     
  
 
-def DebugIndexing(curFile, curWord, curLineNums, line):
-    print('line = ' + line)
-    print('curFile = ' + curFile)
-    print('curWord = ' + curWord)
-    print('curLineNums = ' + curLineNums)
+#def DebugIndexing(curFile, curWord, curLineNums, line):
+#    print('line = ' + line)
+#    print('curFile = ' + curFile)
+#    print('curWord = ' + curWord)
+#    print('curLineNums = ' + curLineNums)
     
         
 if __name__ == '__main__':
