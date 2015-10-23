@@ -246,7 +246,7 @@ class LogSummary(object):
         log_3.close()
         log_4.close()
    
-    def extract_logs(fname, prg):
+    def extract_logs(self, fname, prg):
         """
         read a logfile and return entries for a program
         """
