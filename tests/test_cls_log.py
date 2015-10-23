@@ -29,13 +29,14 @@ class LogTest(unittest.TestCase):
         #self.assertTrue(len(str(self.mylog)) > 1)
         lg = mod_log.Log(os.getcwd())
         lg.record_process('test_cls_log.py', 'TEST LOG')
+        lg.record_process('test_cls_log.py', 'another log entry')
         self.assertEqual(os.path.exists('process.log'), True)
         self.assertEqual(os.path.exists('_sessions.txt'), True)
 
         sum = mod_log.LogSummary(lg, '')
-        extract = sum.extract_logs('process.log', 'test_cls_log.py')
+        extract = sum.extract_logs(os.getcwd() + os.sep + 'process.log', 'test_cls_log.py')
         #print('extract = ', extract)
-        self.assertEqual(len(extract) > 20, True) # ['"2015-10-23 22:24:47","000000054","Dunc[1934 chars],\n'])
+        self.assertEqual(len(extract) > 0, True) # ['"2015-10-23 22:24:47","000000054","Dunc[1934 chars],\n'])
         
 
         

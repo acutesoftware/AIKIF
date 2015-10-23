@@ -168,7 +168,7 @@ class Log(object):
     def record_source(self, src, prg=''):
         """
         function to collect raw data from the web and hard drive
-        Examples - new source file for ontologiesm, email contacts list, folder for xmas photos
+        Examples - new source file for ontologies, email contacts list, folder for xmas photos
         """
         self._log(self.logFileSource , force_to_string(src), prg)
 
