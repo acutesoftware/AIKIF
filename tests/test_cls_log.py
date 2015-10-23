@@ -27,11 +27,15 @@ class LogTest(unittest.TestCase):
 
     def test_01_new_log(self):
         #self.assertTrue(len(str(self.mylog)) > 1)
-        pass
+        lg = mod_log.Log(os.getcwd())
+        lg.record_process('test_cls_log.py', 'TEST LOG')
+        self.assertEqual(os.path.exists('process.log'), True)
+        self.assertEqual(os.path.exists('_sessions.txt'), True)
 
     def test_02_get_folder(self):
         result = self.mylog.get_folder_process()
         self.assertEqual(result, test_fldr + os.sep + 'process.log')
+        
 
     def test_03_append_log_process(self):
         self.mylog.record_process('test', 'hello - recording process')
@@ -108,7 +112,8 @@ class LogTest(unittest.TestCase):
     def test_13_check_missing_logs_doesnt_break_sum(self):
         print("TODO = test_13_check_missing_logs_doesnt_break_sum (will fail)")
         
-
+    def test_14_self_test(self):
+        mod_log.TEST()
         
 if __name__ == '__main__':
     unittest.main()
