@@ -4,7 +4,10 @@ import unittest
 import sys
 import os
 
-import aikif.lib.cls_plan_search as mod_plan
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'aikif') 
+sys.path.append(root_folder + os.sep + 'lib')
+
+import cls_plan_search as mod_plan
 
 goal =  [1,2,3,4,5,6,7,8,0]
 start = [1,2,3,4,5,6,7,0,8]
@@ -22,6 +25,7 @@ class PlanSearchTest(unittest.TestCase):
     """
     def test_01_new_plan(self):
         self.assertEqual(self.myplan.nme, '8 Puzzle')
+        self.assertEqual(len(str(self.myplan)) > 20, True)
 
     def test_02_check_none_method(self):
         self.assertEqual(self.myplan.nme, '8 Puzzle')
@@ -34,15 +38,25 @@ class PlanSearchTest(unittest.TestCase):
 
     def test_05_problem_definition(self):
         prob1 = mod_plan.Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test1')
+        self.assertEqual(len(str(prob1)) > 20, True)
         #self.assertEqual(prob1.goal_test([1,2,3,4]), True)
         
     def test_06_problem_goal_test(self):
-        prob2 = mod_plan.Problem([1,2,3,4],[3,2,1,4], [], 'test1')
-        self.assertEqual(prob2.name, 'test1')
+        prob2 = mod_plan.Problem([1,2,3,4],[3,2,1,4], [], 'test2')
+        self.assertEqual(prob2.name, 'test2')
         self.assertEqual(prob2.start, [3,2,1,4])
         self.assertEqual(prob2.goal,  [1,2,3,4])
         
+        self.assertEqual(prob2.goal_test([1,2,3,4]), True)
+        self.assertEqual(prob2.goal_test([3,1,3,4]), False)
         
+    def test_07_problem_cost(self):
+        prob3 = mod_plan.Problem([1,2,3,4],[3,2,1,4], [], 'test3')
+        self.assertEqual(prob3.path_cost(), 1)
+        
+    def test_08_get_successors(self):
+        prob3 = mod_plan.Problem([1,2,3,4],[3,2,1,4], [], 'test3')
+        self.assertEqual(prob3.get_successors(), [['x1', 50], ['x2', 24], ['x3', 545], ['x5', 32.1]])
         
     def test_10_util_BFS(self):
         graph = {
@@ -80,10 +94,6 @@ class PlanSearchTest(unittest.TestCase):
         self.assertEqual(g.nodes, ['animal', 'bird', 'finch', 'insect', 'ladybird', 'lizard', 'moth', 'owl', 'reptile', 'snake'])
     """
     
-    def test_99(self):
-        """ prints the test to screen to make sure all is ok """
-        print(str(self.myplan))
-        pass
-    
+
 if __name__ == '__main__':
     unittest.main()
