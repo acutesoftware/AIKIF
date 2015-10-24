@@ -72,7 +72,8 @@ class Problem(object):
         Checks for success
         """
         if isinstance(state_to_check, type(self.goal)):
-            return False
+            print('TODO - isinstance(state_to_check, type(self.goal))')
+            #return False
             
         if state_to_check == self.goal:
             return True
