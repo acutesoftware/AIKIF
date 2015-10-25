@@ -103,6 +103,7 @@ class TestClassFile(unittest.TestCase):
         # now pretend the file is old
         self.assertEqual(fl20.compare_file_date(fake_file['date'], myfile, 'hour'), False)
     
+
     def test_99_unbuilt_functions(self):
         fldr = os.path.dirname(os.path.abspath(__file__))
         fl99 = fl.FileList([os.getcwd()], ['*.*'], [], "sample_filelist.csv")
@@ -111,10 +112,16 @@ class TestClassFile(unittest.TestCase):
         fl99.get_metadata()
         fl99.get_failed_backups()
         fl99.add_failed_file('')
+        fl99.update_indexes('')
         fl99.check_files_needing_synch('', '', date_accuracy = 'hour')
         fl99.check_files_needing_synch('', 'IGNORE_BASE_PATH', date_accuracy = 'hour')
         fl99.get_file_hash('')
         self.assertTrue(True)
+        
+        line = fl99.print_file_details_as_csv('fake file', ["name", "path", "size", "date", "fullfilename"])
+        print(line)
+        self.assertEqual(line, '"fake file","","Unknown size","Unknown Date","fake file",')
+        
         
         
         
