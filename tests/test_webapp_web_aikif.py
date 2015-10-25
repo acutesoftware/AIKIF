@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# coding: utf-8
 # test_webapp_web_aikif.py
 
 import unittest
@@ -47,11 +49,13 @@ class WebAppWebAikif(unittest.TestCase):
          
         
     def test_07_page_programs(self):
-        pass
-        print('TODO - fix page programs so it doesnt point to dev')
-        #txt = web_aikif.page_programs()
-        #print(txt)
-        #self.assertEqual(len(txt) > 4, True)
+        txt = web_aikif.page_programs()
+        self.assertEqual(len(txt) > 4, True)
+        
+    def test_07a_page_programs_rebuild(self):
+        txt = web_aikif.page_programs_rebuild()
+        print(txt)
+        self.assertEqual(len(txt) > 4, True)
         
         
     def test_08_page_about(self):
@@ -62,13 +66,22 @@ class WebAppWebAikif(unittest.TestCase):
         self.assertEqual(len(web_aikif.page_error('test')) > 4, True)
         
     def test_10_page_data(self):
-        #import page_data
-        #txt = page_data.get_page()
-        txt = web_aikif.get_footer()
+        txt = web_aikif.page_data()
         self.assertEqual(len(txt) > 9, True)
         
         
+    def test_11_page_data_show(self):
+        txt = web_aikif.page_data_show(csv_file)
+        #print(txt)
+        self.assertEqual(len(txt) > 9, True)
         
+    def test_12_escape_html(self):
+        self.assertEqual(web_aikif.escape_html('<H1>TEST</H1>'), '&lt;H1&gt;TEST&lt;/H1&gt;')
+
+    def test_13_format_list_as_html_table_row(self):
+        self.assertEqual(web_aikif.format_list_as_html_table_row(['1','2']), '<TR><TD>1</TD><TD>2</TD></TR>')
+
+
         
 if __name__ == '__main__':
 	unittest.main()
