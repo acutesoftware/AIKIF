@@ -80,11 +80,6 @@ class Project(object):
                 res += t.name + '\n'
         return res
 
-    def add_goal(self, goal_id, name, due_date=None, priority=None):
-        """
-        adds a goal for the project
-        """
-        self.goals.append([goal_id, name, due_date, priority])
         
     def add_task(self, task):
         """
@@ -93,13 +88,6 @@ class Project(object):
         self.tasks.append(task)
         
     
-    def add_link(self, src_id, dest_id, src_type='Goal', dest_type='Task'):  
-        """
-        creates links for the projects, mainly for tasks to goals
-        but also for folders to projects
-        """
-        self.links.append([src_id, dest_id, src_type, dest_type])
-        
     def add_source(self, name, location, schedule='Daily', op=''):
         """
         handles the data sources used in projects, mainly as an 
