@@ -17,23 +17,6 @@ try:
 except ImportError:
     print('you need to pip install lxml')
 
-def TEST():
-    #print('Split a large XML file into multiple files')
-    #split_xml('ANC__WhereToHongKong.xml', 'annotationSet', 10)
-
-    s = get_xml_stats('ANC__WhereToHongKong.xml')
-    display_stats(s)
-    
-    x = XmlFile('ANC__WhereToHongKong.xml')
-    print(x)
-    
-    print(count_elements('ANC__WhereToHongKong.xml', 'sentence'))
-    print(count_via_minidom('ANC__WhereToHongKong.xml', 'sentence'))
-    
-    
-    #print('Fast processing of XML files')
-    #context = etree.iterparse( 'short.xml', tag='layer' )
-    #fast_iter(context,process_element)
     
 # Public facing functions
 ###############################
@@ -53,9 +36,6 @@ def get_xml_stats(fname):
     
     return res
     
-def display_stats(s):
-    for k,v in s.items():
-        print(k.ljust(15) + '= ',v)
 
 def split_xml(fname, element, num_elements):    
     parse(fname, XMLBreaker(element, break_after=num_elements, out=CycleFile(fname)))

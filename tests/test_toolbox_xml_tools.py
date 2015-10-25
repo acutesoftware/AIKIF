@@ -43,7 +43,10 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         with open(small_file, 'w') as f:
             f.write(pretty_xml_as_string)
             
-        
+        self.assertEqual(xml_tools.count_elements(small_file, 'slideshow'), (1,11))
+        self.assertEqual(xml_tools.count_elements(small_file, 'title'), (3,11))
+        self.assertEqual(xml_tools.count_elements(small_file, 'slide'), (3,11))
+        self.assertEqual(xml_tools.count_elements(small_file, 'point'), (5,11))
         
     def test_11_xml_class(self):
         x = xml_tools.XmlFile(small_file)
