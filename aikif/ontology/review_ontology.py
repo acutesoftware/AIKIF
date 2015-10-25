@@ -246,16 +246,16 @@ def ShowConclusion():
 
     
 def ShowData():
-    print('------ Ontologies-------\n')	
+    print('------ Ontologies-------\n')
     for i in ontologyList:
         #print(i['name'], i['url'])
         print(i)
         
-    print('------ Documents-------\n')	
+    print('------ Documents-------\n')
     for i in documentList:
         print(i['title'], i['url'])
 
-    print('------ COMMENTS-------\n')	
+    print('------ COMMENTS-------\n')
     for i in commentsList:
         print(i['comment'])
 
@@ -349,16 +349,16 @@ def GetFileSize(localFile):
 def GetTotalNumFiles(localFile):
     fldr = os.path.dirname(localFile)
     fileList = os.listdir(fldr)
-    numfiles = len([name for name in fileList if os.path.isfile(fldr + '\\' + name)])
+    numfiles = len([name for name in fileList if os.path.isfile(fldr + os.sep + name)])
     return numfiles
     
 def GetTotalFileSizesForFolder(localFile):
     fldr = os.path.dirname(localFile)
     fileList = os.listdir(fldr)
-    num = sum(os.path.getsize(fldr + '\\' + f) for f in fileList if os.path.isfile(fldr + '\\' + f))
+    num = sum(os.path.getsize(fldr + os.sep + f) for f in fileList if os.path.isfile(fldr + os.sep + f))
     return num
 
-def DoesFileExist(localFile):	
+def DoesFileExist(localFile):
     success = False
     try:
         if os.path.isfile(localFile):
