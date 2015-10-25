@@ -44,15 +44,20 @@ class TestProject(unittest.TestCase):
         proj_diary.add_source('File Usage', root_folder)
         proj_diary.add_source('PC Usage', root_folder)
         proj_diary.add_source('TODO List', root_folder)
+        self.assertEqual(len(str(proj_diary)) > 5, True)
 
         my_biz = project.Project(name='Acute Software', desc='Custom Software development', fldr='')
         my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
         my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
-
+        self.assertEqual(len(str(my_biz)) > 5, True)
+        
         
         all_projects = project.Projects()
         all_projects.add_project(proj_diary)
         all_projects.add_project(my_biz)
+        all_projects.add_ontology('mapping')
+        res = all_projects.get_by_name('Diary')
+        self.assertEqual(res.desc, 'Diary database for PIM application')
         
         self.assertEqual(len(all_projects.project_list), 2)
         self.assertEqual(len(str(all_projects)), 134)
