@@ -44,6 +44,8 @@ class TestClassFile(unittest.TestCase):
         
         #f.delete()
         
-        
+    def test_99_main(self):    
+        cl.TEST()
+    
 if __name__ == '__main__':
     unittest.main()
