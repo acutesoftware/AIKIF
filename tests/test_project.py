@@ -36,6 +36,8 @@ class TestProject(unittest.TestCase):
         
         proj2.log_table(tbl_exp)
         proj2.build_report('task.rst', 'rst')
+        proj2.build_report('task.md', 'md')
+        proj2.build_report('task.html', 'html')
         self.assertEqual(len(tbl_exp.arr), 3)
         self.assertEqual(tbl_exp.arr[1][2], 'petrol')
  
