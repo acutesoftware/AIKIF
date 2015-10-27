@@ -62,9 +62,6 @@ class Plan_BDI(object):
                         self.desires.add(txt)
                     elif tpe == 'intention':
                         self.intentions.add(txt)
-                    else:
-                        #print("COMMENT (or unknown) - " + txt)
-                        pass
     
     def save_plan(self, fname):
                 
@@ -98,14 +95,14 @@ class Plan_BDI(object):
         of real world objects mapped to an ontology key or programs
         from the toolbox section (can also be external programs)
         """
-        print("adding resource..." + name + " of type " + tpe )
+        self.resources.append([name, tpe])
         
     def add_constraint(self, name, tpe, val):
         """
         adds a constraint for the plan
         """
-        print("adding constraint..." + name + " of type " + tpe + " = " + str(val) )
-
+        self.constraint.append([name, tpe])
+        
 class Thoughts(object):
     """ base class for beliefs, desires, intentions simply
     to make it easier to manage similar groups of objects """
