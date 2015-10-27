@@ -64,13 +64,17 @@ class PlanTest(unittest.TestCase):
         thought = Thoughts('bizzare_type')
         thought.add('I AM A BUS')
         thought.add('No - you are a test case')
+        thought.list(True)
         #print(str(thought))
         self.assertEqual(len(str(thought)), 52)
     
+    def test_21_add_resource(self):
+        self.myplan.add_resource
+    
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
-        #print(str(self.myplan))
-        pass
+        import cls_plan_BDI
+        cls_plan_BDI.TEST()
     
 if __name__ == '__main__':
     unittest.main()
