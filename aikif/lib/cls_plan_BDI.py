@@ -101,7 +101,7 @@ class Plan_BDI(object):
         """
         adds a constraint for the plan
         """
-        self.constraint.append([name, tpe])
+        self.constraint.append([name, tpe, val])
         
 class Thoughts(object):
     """ base class for beliefs, desires, intentions simply
