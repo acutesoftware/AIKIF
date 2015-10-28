@@ -26,24 +26,29 @@ class GoalTest(unittest.TestCase):
     """ 
     tests for goals go below - use mygoal instantiated object
     """
-    def test_new_goal(self):
+    def test_01_new_goal(self):
         result = self.mygoal.get_name()
         self.assertEqual(result, 'New Goal')
 
-    def test_success(self):
+    def test_02_success(self):
         result = self.mygoal.check_for_success()
+        print(self.mygoal)
+        self.assertEqual(str(self.mygoal), 'New Goal')
         self.assertEqual(result, False)
 
-    def test_time_goal(self):
+    def test_03_time_goal(self):
         timeGoal = GoalTime(True, 5,2)
         result = timeGoal.check_for_success()
         self.assertEqual(result, False)
         
-    def test_money_goal(self):
+    def test_04_money_goal(self):
         moneyGoal = GoalMoney(True, 100,50)
         result = moneyGoal.check_for_success()
         self.assertEqual(result, False)
-        
+    
+    def test_05_find_best_plan(self):
+        g2 = Goal(name='Goal with Plan', plans=['1','2'])
+        g2.find_best_plan()
         
 if __name__ == '__main__':
     unittest.main()
