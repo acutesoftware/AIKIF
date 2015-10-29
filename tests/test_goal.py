@@ -45,6 +45,15 @@ class GoalTest(unittest.TestCase):
         moneyGoal = GoalMoney(True, 100,50)
         result = moneyGoal.check_for_success()
         self.assertEqual(result, False)
+        moneyGoal.current_val = 200
+        moneyGoal.maximise = False
+        result = moneyGoal.check_for_success()
+        self.assertEqual(result, True)
+        
+        moneyGoal.current_val = 4
+        result = moneyGoal.check_for_success()
+        self.assertEqual(result, False)
+        
     
     def test_05_find_best_plan(self):
         g2 = Goal(name='Goal with Plan', plans=['1','2'])
