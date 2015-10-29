@@ -49,6 +49,15 @@ class GoalTest(unittest.TestCase):
     def test_05_find_best_plan(self):
         g2 = Goal(name='Goal with Plan', plans=['1','2'])
         g2.find_best_plan()
+
+    def test_06_money_goal_best_plan(self):
+        m = GoalMoney(True, 100,50)
+        m.name = 'Money Goal - fudge, TODO'
+        m.plans = ['1','2']
+        print(m)
+        result = m.find_best_plan()
+        self.assertEqual(result, None)
+
         
 if __name__ == '__main__':
     unittest.main()
