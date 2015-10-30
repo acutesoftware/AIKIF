@@ -1,10 +1,15 @@
 # test_agent_map_data.py
 
 import os
+import sys
 import unittest
-import aikif.agents.agent_map_data as mod_map
-root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__))+os.sep+'..'+os.sep + '..')
-test_file = root_fldr + os.sep + 'aikif' + os.sep + 'agents' + os.sep + 'test_map.csv'
+
+root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + '..')
+sys.path.append(root_fldr + os.sep + 'aikif' + os.sep + 'agents')
+
+import agent_map_data as mod_map
+
+
 mapping = {
     'name':'recipes', 
     'col_list':['ingredient', 'quant', 'calories'],
@@ -12,7 +17,7 @@ mapping = {
     'quant':'',
     'calories':''
 }
-map_agt = mod_map.AgentMapDataFile('recipes', test_file, mapping)
+map_agt = mod_map.AgentMapDataFile('recipes', 'test_map.csv', mapping)
 
 class TestAgentMapData(unittest.TestCase):
     def test_01_(self):
@@ -26,8 +31,10 @@ class TestAgentMapData(unittest.TestCase):
         #map_agt.map_data()
     
     def test_02_process(self):
-        map_agt.add_process('test1')
-        self.assertEqual(map_agt.process[0],'test1')
+        map_agt.add_process('test_process1')
+        self.assertEqual(map_agt.process[0],'test_process1')
+        self.assertTrue('test_process1' in str(map_agt))
+        
     
     
    
