@@ -2,22 +2,6 @@
 
 import os
 import aikif.agents.agent as mod_agt
-root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + '..' + os.sep + '..'  )
-
-def TEST():
-    agt = mod_agt.Agent('Testing Map Agent')
-    print(agt)
-    test_file = root_fldr + os.sep + 'aikif' + os.sep + 'agents' + os.sep + 'test_map.csv'
-    mapping = {
-        'name':'recipes', 
-        'col_list':['ingredient', 'quant', 'calories'],
-        'ingredient':'',
-        'quant':'',
-        'calories':''
-    }
-    map_agt = AgentMapDataFile('recipes', test_file, mapping)
-    print(map_agt)
-    #agt.map_data()
 
 class AgentMapDataFile(object):
     def __init__(self, list_name, src_file, mapping):
@@ -58,6 +42,4 @@ class AgentMapDataFile(object):
         """
         self.process.append(proc)
         
-if __name__ == '__main__':    
-    TEST()
 
