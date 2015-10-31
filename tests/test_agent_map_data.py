@@ -35,7 +35,11 @@ class TestAgentMapData(unittest.TestCase):
         self.assertEqual(map_agt.process[0],'test_process1')
         self.assertTrue('test_process1' in str(map_agt))
         
-    
+    def test_03_map_data(self):
+        # TODO - for now, create a temp file
+        with open('test_map.csv', 'w') as f:
+            f.write('map,comment\n01,test01\n')
+        map_agt.map_data()
     
    
 if __name__ == '__main__':
