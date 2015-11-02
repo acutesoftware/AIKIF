@@ -61,7 +61,7 @@ wipe_file('text_tools_sample.csv')
 wipe_file('task.html')
 wipe_file('task.md')
 wipe_file('task.rst')
-wipe_file('test.blah')
+wipe_file('task.blah')
 wipe_file('test_map.csv')
 
 wipe_file('config_credentials.txt')
