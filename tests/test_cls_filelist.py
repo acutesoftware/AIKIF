@@ -11,10 +11,10 @@ import sys
 root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
 #root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
 print("in test_cls_filelist : root_folder = " + root_folder)
-sys.path.append(root_folder)
+sys.path.append(root_folder + os.sep + 'aikif' + os.sep + 'lib')
 
 
-import aikif.lib.cls_filelist as fl 
+import cls_filelist as fl 
                     
 class TestClassFile(unittest.TestCase):
  
@@ -90,9 +90,20 @@ class TestClassFile(unittest.TestCase):
     def test_20_is_file_dirty(self):
         fldr = os.path.dirname(os.path.abspath(__file__))
         fl20 = fl.FileList([fldr], ['*.py'], [], "sample_filelist.csv")
-        fl20.is_file_dirty(src_file_dict={}, dest_file='', date_accuracy='hour')
-        self.assertTrue(True)
+        res_none = fl20.is_file_dirty(src_file_dict={}, dest_file='', date_accuracy='hour')
+        
+        fake_file = {}
+        myfile = os.getcwd() + os.sep + 'fake_file.py'
+        fake_file['fullfilename'] = myfile
+        fake_file['size'] = 100
+        fake_file['date'] = fl20.TodayAsString()
+        res_none = fl20.is_file_dirty(fake_file, myfile, 'hour')
+        self.assertEqual(res_none, True)
+        
+        # now pretend the file is old
+        self.assertEqual(fl20.compare_file_date(fake_file['date'], myfile, 'hour'), False)
     
+
     def test_99_unbuilt_functions(self):
         fldr = os.path.dirname(os.path.abspath(__file__))
         fl99 = fl.FileList([os.getcwd()], ['*.*'], [], "sample_filelist.csv")
@@ -101,9 +112,16 @@ class TestClassFile(unittest.TestCase):
         fl99.get_metadata()
         fl99.get_failed_backups()
         fl99.add_failed_file('')
+        fl99.update_indexes('')
         fl99.check_files_needing_synch('', '', date_accuracy = 'hour')
+        fl99.check_files_needing_synch('', 'IGNORE_BASE_PATH', date_accuracy = 'hour')
         fl99.get_file_hash('')
         self.assertTrue(True)
+        
+        line = fl99.print_file_details_as_csv('fake file', ["name", "path", "size", "date", "fullfilename"])
+        print(line)
+        self.assertEqual(line, '"fake file","","Unknown size","Unknown Date","fake file",')
+        
         
         
         

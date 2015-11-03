@@ -33,6 +33,11 @@ class TestProject(unittest.TestCase):
         proj2.record(tbl_exp, 'Expense', ['2015-02-13', 49.94, 'restaurant'])
         proj2.record(tbl_exp, 'Expense', ['2015-02-15', 29.00, 'petrol'])
         proj2.record(tbl_exp, 'Expense', ['2015-02-17', 89.95, 'fringe tickets'])
+        
+        proj2.log_table(tbl_exp)
+        proj2.build_report('task.rst', 'rst')
+        proj2.build_report('task.md', 'md')
+        proj2.build_report('task.html', 'html')
         self.assertEqual(len(tbl_exp.arr), 3)
         self.assertEqual(tbl_exp.arr[1][2], 'petrol')
  
@@ -44,29 +49,42 @@ class TestProject(unittest.TestCase):
         proj_diary.add_source('File Usage', root_folder)
         proj_diary.add_source('PC Usage', root_folder)
         proj_diary.add_source('TODO List', root_folder)
+        proj_diary.log_table('Tasks.log')
+        self.assertEqual(len(str(proj_diary)) > 5, True)
 
         my_biz = project.Project(name='Acute Software', desc='Custom Software development', fldr='')
         my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
         my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
-
+        self.assertEqual(len(str(my_biz)) > 5, True)
+        
         
         all_projects = project.Projects()
         all_projects.add_project(proj_diary)
         all_projects.add_project(my_biz)
+        all_projects.add_ontology('mapping')
+        res = all_projects.get_by_name('Diary')
+        self.assertEqual(res.desc, 'Diary database for PIM application')
         
         self.assertEqual(len(all_projects.project_list), 2)
         self.assertEqual(len(str(all_projects)), 134)
+        
+        self.assertEqual(all_projects.get_by_name('No such project'), None)
+        
    
     def test_04_project_tasks(self):
         proj04 = project.Project(name='TODO List', fldr=root_folder, desc='List of things to do')
         func = mod_html.extract_page_links
         t = project.Task(1, 'task1', func, due_date='2015-02-13', priority='High')
         proj04.add_task(t)
+        proj04.add_detail('email', 'djmurray@acutesoftware.com.au')
+
         print(t)
         self.assertEqual(len(proj04.tasks), 1)
         proj04.build_report('task.md', 'md')
         proj04.build_report('task.html', 'html')
         proj04.build_report('task.rst', 'rst')
+        
+        proj04.build_report('task.blah', 'UNKNOWN')
         
  
     def test_11_task(self):
@@ -85,6 +103,7 @@ class TestProject(unittest.TestCase):
         p.add_task(t3)
  
         t1.execute()
+        p.execute_tasks()
         print(p)
         self.assertEqual(len(t1.params), 2)
         self.assertEqual(len(t2.params), 2)

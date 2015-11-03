@@ -34,12 +34,23 @@ class PlanSearchTest(unittest.TestCase):
     def test_03_astar_new(self):
         myplan2 = mod_plan.PlanSearchAStar('8 Puzzle', [], goal, start)
         self.assertEqual(myplan2.method, 'A*')
+        myplan2.search()   
+        self.assertEqual(mod_plan.list_2_str(['1','2']), '1, 2')
+        
+        self.assertEqual(myplan2.heuristic_cost((1,1),(3,3)),4)
+        self.assertEqual(myplan2.heuristic_cost((1,1),(11,11)),20)
 
+        self.assertEqual(myplan2.get_min_f_score(),1)
 
     def test_05_problem_definition(self):
         prob1 = mod_plan.Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test1')
         self.assertEqual(len(str(prob1)) > 20, True)
         #self.assertEqual(prob1.goal_test([1,2,3,4]), True)
+        
+        # check for no actions
+        prob1a = mod_plan.Problem([1,2,3,4],[3,2,1,4], [], 'test1a')
+        self.assertEqual(len(str(prob1a)) > 20, True)
+        
         
     def test_06_problem_goal_test(self):
         prob2 = mod_plan.Problem([1,2,3,4],[3,2,1,4], [], 'test2')
@@ -47,6 +58,7 @@ class PlanSearchTest(unittest.TestCase):
         self.assertEqual(prob2.start, [3,2,1,4])
         self.assertEqual(prob2.goal,  [1,2,3,4])
         
+        self.assertEqual(prob2.goal_test('ARE WE THERE YET?'), False)
         self.assertEqual(prob2.goal_test([1,2,3,4]), True)
         self.assertEqual(prob2.goal_test([3,1,3,4]), False)
         

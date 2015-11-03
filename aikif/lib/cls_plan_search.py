@@ -11,23 +11,6 @@ PriorityQueue = queue.PriorityQueue
 import aikif.config as mod_cfg
 import aikif.cls_log as mod_log
 
-def TEST():
-    # TODO later : environ = cls_grid.Grid(grid_height=8, grid_width=8, pieces=['X', 'O'], spacing=1) 
-    environ = [[1,1],[3,3]]  # grid
-    goal =  [1,2,3,4,5,6,7,8,0]
-    start = [1,3,5,6,8,4,2,7,0] # hard
-    start = [1,2,3,4,5,6,7,0,8] # easy
-    # start =  [1,2,3,4,5,6,7,8,0]
-    plan = PlanSearchAStar('8 Puzzle', environ, goal, start)
-    print(plan)
-    plan.search()    
-    my_prob = Problem([1,2,3,4],[3,2,1,4], ['L:-1','R:+1'], 'test' )
-    print(my_prob)
-    print('Goal test should pass with [1,2,3,4]: ', my_prob.goal_test([1,2,3,4]))
-    print('Goal test should fail with [3,2,1,4]: ', my_prob.goal_test([3,2,1,4]))
-    print('Goal test should fail with "BLAH": ', my_prob.goal_test('BLAH'))
-    print('Goal test should fail with 3.14159265359: ', my_prob.goal_test(3.14159265359))
-    
 class Problem(object):
     """
     Defines the planning problem. Must contain:
@@ -65,6 +48,7 @@ class Problem(object):
         """
         return the cost of the function - this needs to be subclassed
         """
+        print('TODO: cls_plan_search.path_cost not implemented')
         return 1
         
     def goal_test(self, state_to_check):
@@ -72,7 +56,7 @@ class Problem(object):
         Checks for success
         """
         if isinstance(state_to_check, type(self.goal)):
-            print('TODO - isinstance(state_to_check, type(self.goal))')
+            print('TODO - cls_plan_search.goal_test : isinstance(state_to_check, type(self.goal))')
             #return False
             
         if state_to_check == self.goal:
@@ -86,6 +70,7 @@ class Problem(object):
         to get the list of next nodes and their cost, 
         [[x1, 50], [x2, 24], [x3,545], [x5,32.1]]
         """
+        print('TODO: cls_plan_search.get_successors not implemented')
         return [['x1', 50], ['x2', 24], ['x3',545], ['x5',32.1]]
         
     
@@ -133,10 +118,11 @@ class PlanSearchAStar(Plan):
         return abs(x1 - x2) + abs(y1 - y2)
 
     def get_min_f_score(self):
+        print('TODO: cls_plan_search.get_min_f_score not implemented')
         return 1
         
     def search(self):
-        print('searching...')
+        print('TODO: not implemented - cls_plan_search.search()')
         self.lg.record_process('CLS_PLAN_SEARCH', 'running A* search')
 
         if self.target == self.current:
@@ -182,9 +168,3 @@ def find_path_BFS(Graph,n,m):
             path.pop(0)
     return path
 
-
-
-    
-if __name__ == '__main__':
-    TEST()	
-    

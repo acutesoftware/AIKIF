@@ -50,6 +50,18 @@ class PlanTest(unittest.TestCase):
     
     def test_06_plan_string_size(self):
         self.assertEqual(len(str(self.myplan)), 475)
+        
+    def test_07_add_constraints(self):
+        self.myplan.add_constraint('constraint #1', 'normal', 45)
+        self.myplan.add_constraint('constraint #2', 'normal', 0.4)
+        self.myplan.add_constraint('constraint #3', 'normal', -3.1)
+        self.assertEqual(len(self.myplan.constraint), 3)
+        
+    def test_07_add_resource(self):
+        self.myplan.add_resource('resource #1', 'normal')
+        self.myplan.add_resource('resource #2', 'normal')
+        self.myplan.add_resource('resource #3', 'normal')
+        self.assertEqual(len(self.myplan.resources), 3)
 
     def test_10_save_plan(self):    
         self.myplan.save_plan('plan_test.txt')
@@ -64,13 +76,17 @@ class PlanTest(unittest.TestCase):
         thought = Thoughts('bizzare_type')
         thought.add('I AM A BUS')
         thought.add('No - you are a test case')
+        thought.list(True)
         #print(str(thought))
         self.assertEqual(len(str(thought)), 52)
     
+    def test_21_add_resource(self):
+        self.myplan.add_resource
+    
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
-        #print(str(self.myplan))
-        pass
+        import cls_plan_BDI
+        cls_plan_BDI.TEST()
     
 if __name__ == '__main__':
     unittest.main()

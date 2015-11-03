@@ -138,7 +138,10 @@ class FileList(object):
     
     def compare_file_date(self, dte, dest_file, date_accuracy):
         """Checks to see if date of file is the same   """
-        dest_date = self.GetDateAsString(os.path.getmtime(dest_file))
+        if os.path.exists(dest_file):
+            dest_date = self.GetDateAsString(os.path.getmtime(dest_file))
+        else:
+            return False
         
         date_size = 17
         if date_accuracy == 'day':

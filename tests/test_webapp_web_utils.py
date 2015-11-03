@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# coding: utf-8
 # test_webapp_web_utils.py
 
 import unittest
@@ -91,7 +93,10 @@ class WebAppWebUtilsTest(unittest.TestCase):
         self.assertEqual(len(htm), 116) 
         self.assertEqual(htm[0:41], '<div id="table_row"> name  score   </div>')
  
-
+    def test_08_list_to_html(self):
+        res = web_utils.list2html(['1',2,['3','4','5']])
+        self.assertEqual('<TD>3, 4, 5, </TD></TR>' in res, True)
+        self.assertEqual('<TD>2</TD>' in res, True)
         
 if __name__ == '__main__':
 	unittest.main()

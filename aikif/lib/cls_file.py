@@ -23,11 +23,11 @@ def TEST():
         txt_file = TextFile('cls_file.py')
         print(txt_file)
         
-        img_file = ImageFile('..\\..\\doc\\web-if-v02.jpg')
-        print(img_file)
+        #img_file = ImageFile('..\\..\\doc\\web-if-v02.jpg')
+        #print(img_file)
 
-        aud_file = AudioFile(r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3")
-        print(aud_file)
+        #aud_file = AudioFile(r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3")
+        #print(aud_file)
         
 class File(object):
     """
