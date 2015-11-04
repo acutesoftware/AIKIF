@@ -74,8 +74,9 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
     if append == 'N':
         try:
             os.remove(ndxFile)
-        except Exception:
-            pass
+        except Exception as ex:
+            print('file already deleted - ignore' + str(ex))
+            
     delims = [',', '$', '&', '"', '%', '/', '\\', '.', ';', ':', '!', '?', '-', '_', ' ', '\n', '*', '\'', '(', ')', '[', ']', '{', '}']
     # 1st pass - index the ontologies, including 2 depths up (later - TODO)
     #buildIndex(ipFile, ndxFile, ' ', 1, 'Y')
