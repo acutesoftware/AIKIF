@@ -3,8 +3,8 @@
 AIKIF Design
 ====================
 
-Last updated 28-May-2015
-AIKIF Dev version 0.0.10
+Last updated 6-Nov-2015
+AIKIF Dev version 0.1.7
 
 This document is a scratch pad area for design notes during the development of AIKIF
 
@@ -36,7 +36,7 @@ Key Concepts
 
 - define / use toolbox to populate data
 
-- build agents to collect and aggregate
+- build agents to collect and aggregate [the data collection is being moved to the rawdata package]
 
 - optional build environments for test areas  (eg File System?)
 
@@ -132,7 +132,7 @@ Mapper
 
 Mapper.py will be the main method to read the rules from CSV (or YAML) and apply them
 
-A domain is a collection of rules and information that makes it easier to manage for humans entering the data. These include concepts such as ‘study, work, play’ or concrete things like ‘small business’, plumber, write a play, do food shopping.
+A domain is a collection of rules and information that makes it easier to manage for humans entering the data. These include concepts such as 'study, work, play' or concrete things like 'small business', plumber, write a play, do food shopping.
 
 A domain can get based on other domains so that it uses those rules and information - there can be many to many links, and collisions are listed and must be overridden. e.g. Plumber derives from Tradeskill and Small business
 
