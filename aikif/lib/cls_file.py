@@ -51,15 +51,18 @@ class File(object):
         
         return txt
         
-    def launch(self, params=''):
-        """ launch a file using os.system() - used for starting html pages """
-        os.system("start " + self.fullname + " " + params)    
-
+    def exists(self):
+        if os.path.exists(self.fullname):
+            return True
+        return False
+        
+    def launch(self):
+        """ launch a file - used for starting html pages """
+        os.system(self.fullname) # gives permission denied seeing it needs to be chmod +x
+ 
     def delete(self):
         """ delete a file, don't really care if it doesn't exist """
-        if self.fullname == "":
-            pass
-        else:
+        if self.fullname != "":
             try:
                 os.remove(self.fullname)
             except IOError:
@@ -127,7 +130,7 @@ class TextFile(File):
             with open(self.fullname, 'r') as f:
                 for line_num, line in enumerate(f):
                     res += str(line_num).zfill(5) + ' ' + line 
-                    if line_num > numLines:
+                    if line_num >= numLines-1:
                         break
         except IOError:
             pass
@@ -148,7 +151,8 @@ class TextFile(File):
         out_csv = csv.writer(ofile, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
         if in_txt != "":
             out_csv.writerows(in_txt)
-
+        ofile.close()
+        #in_txt.close()
 
     def load_file_to_string(self):
         """ load a file to a string """
