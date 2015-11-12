@@ -10,24 +10,11 @@ import sys
 import codecs
 from datetime import datetime
 
-def TEST():
-    """ test routines during development - will be part of unittest 
-    Call from command line:
-        python cls_file.py cls_filelist.py
-    """
-    print(sys.argv)
-    if len(sys.argv) > 1:
-        user_file = TextFile(sys.argv[1])
-        print(user_file)
-    else:
-        txt_file = TextFile('cls_file.py')
-        print(txt_file)
-        
-        #img_file = ImageFile('..\\..\\doc\\web-if-v02.jpg')
-        #print(img_file)
+#img_file = ImageFile('..\\..\\doc\\web-if-v02.jpg')
+#print(img_file)
 
-        #aud_file = AudioFile(r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3")
-        #print(aud_file)
+#aud_file = AudioFile(r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3")
+#print(aud_file)
         
 class File(object):
     """
@@ -64,15 +51,18 @@ class File(object):
         
         return txt
         
-    def launch(self, params=''):
-        """ launch a file using os.system() - used for starting html pages """
-        os.system("start " + self.fullname + " " + params)    
-
+    def exists(self):
+        if os.path.exists(self.fullname):
+            return True
+        return False
+        
+    def launch(self):
+        """ launch a file - used for starting html pages """
+        os.system(self.fullname) # gives permission denied seeing it needs to be chmod +x
+ 
     def delete(self):
         """ delete a file, don't really care if it doesn't exist """
-        if self.fullname == "":
-            pass
-        else:
+        if self.fullname != "":
             try:
                 os.remove(self.fullname)
             except IOError:
@@ -140,7 +130,7 @@ class TextFile(File):
             with open(self.fullname, 'r') as f:
                 for line_num, line in enumerate(f):
                     res += str(line_num).zfill(5) + ' ' + line 
-                    if line_num > numLines:
+                    if line_num >= numLines-1:
                         break
         except IOError:
             pass
@@ -161,7 +151,8 @@ class TextFile(File):
         out_csv = csv.writer(ofile, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
         if in_txt != "":
             out_csv.writerows(in_txt)
-
+        ofile.close()
+        #in_txt.close()
 
     def load_file_to_string(self):
         """ load a file to a string """
@@ -220,5 +211,3 @@ class AudioFile(File):
         return txt
         
         
-if __name__ == "__main__":
-    TEST()
