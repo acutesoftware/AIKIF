@@ -10,24 +10,11 @@ import sys
 import codecs
 from datetime import datetime
 
-def TEST():
-    """ test routines during development - will be part of unittest 
-    Call from command line:
-        python cls_file.py cls_filelist.py
-    """
-    print(sys.argv)
-    if len(sys.argv) > 1:
-        user_file = TextFile(sys.argv[1])
-        print(user_file)
-    else:
-        txt_file = TextFile('cls_file.py')
-        print(txt_file)
-        
-        #img_file = ImageFile('..\\..\\doc\\web-if-v02.jpg')
-        #print(img_file)
+#img_file = ImageFile('..\\..\\doc\\web-if-v02.jpg')
+#print(img_file)
 
-        #aud_file = AudioFile(r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3")
-        #print(aud_file)
+#aud_file = AudioFile(r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3")
+#print(aud_file)
         
 class File(object):
     """
@@ -220,5 +207,3 @@ class AudioFile(File):
         return txt
         
         
-if __name__ == "__main__":
-    TEST()
