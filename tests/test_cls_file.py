@@ -62,7 +62,7 @@ D20130611001220130611PCFile0500 60UsageDesktop
         f = cl.TextFile('chr31_delimited_data_file.dat')
         #self.assertEqual(f.get_file_sample(1), '00000 D20130611000920130611PCFile0122 15UsageFacebook - Google Chrome')
         
-        f.convert_to_csv('chr31_delimited_data_file.csv', '')
+        f.convert_to_csv('chr31_delimited_data_file.csv', chr(31))
         
         f_csv = cl.TextFile('chr31_delimited_data_file.csv')
         self.assertEqual(f_csv.get_file_sample(1), '00000 "D201306110009","20130611","PCFile","0122"," 15","Usage","","","","","","","","","Facebook - Google Chrome",""\n')
