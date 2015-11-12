@@ -53,6 +53,7 @@ class TestToolboxSqlTools(unittest.TestCase):
 TRUNCATE
 into table tbl_testload
 fields terminated by ','
+optionally Enclosed  by '"'
 TRAILING NULLCOLS
 (
 COL1,
