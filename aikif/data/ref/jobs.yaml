@@ -1,0 +1,28 @@
+---
+Goals:
+    Local_copy: Key data on websites to be downloaded for local copy
+    Metadata: Extract metadata and index locally
+    Backup: Keep local files backed up to NAS and external site
+    
+Plans:
+    Local_copy: 
+        - download gmail
+        - export outlook
+        - download dropbox
+        - download Google drive
+    Metadata: 
+        - collect file metadata
+        - index all documents
+    Backup: 
+        - backup home / dev / docs daily
+        - full backup weekly
+    
+Credentials:
+    - NAS: ~/logons/password_nas.crypt
+    - Linux_logon: ~/logons/password_linux.crypt
+    - Win8_logon: ~/logons/password_win8.crypt
+    - SQL_dev: ~/logons/password_SQL_dev.crypt
+    - SQL_test: ~/logons/password_SQL_test.crypt
+    - SQL_prod: ~/logons/password_SQL_prod.crypt
+    - Outlook: ~/logons/password_outlook.crypt
+    
