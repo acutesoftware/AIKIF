@@ -16,7 +16,15 @@ Plans:
     Backup: 
         - backup home / dev / docs daily
         - full backup weekly
+
+Locations:
+    - Windows_root: T:\user\aikif
+    - Linux_root: ~/aikif
     
+Tools:
+    - file: file_tools.py
+    - network: network_tools.py
+        
 Credentials:
     - NAS: ~/logons/password_nas.crypt
     - Linux_logon: ~/logons/password_linux.crypt
