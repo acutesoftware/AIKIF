@@ -49,6 +49,20 @@ class TestToolboxClsGridLife(unittest.TestCase):
         self.assertEqual('.' in str(myWorld.grd), True)
         self.assertEqual('X' in str(myWorld.grd), True)
         self.assertEqual('#' in str(myWorld.grd), True)
-               
+
+    def test_03_mountains(self):
+        myWorld = worlds.World( 20, 70, ['A','B','@']) 
+        myWorld.build_random( 5, 15, 85, 4)
+        #print(myWorld.grd)
+        self.assertEqual(myWorld.grd.get_grid_width(), 70)
+        self.assertEqual(myWorld.grd.get_grid_height(), 20)
+        myWorld.add_mountains()
+        myWorld.add_new_seed()
+        myWorld.add_mountains()
+        print(myWorld)
+        
+ 
+
+        
 if __name__ == '__main__':
     unittest.main()
