@@ -1,3 +1,7 @@
+v0.1.8, 15-Nov-2015 -- slightly more stable release
+- toolbox functions mostly working and tested
+- removal of unfinished functions
+
 v0.1.7, 23-Sep-2015 -- default linux paths
 - config defaults have both Windows and Linux defaults
 
