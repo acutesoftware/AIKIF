@@ -19,39 +19,6 @@ A tool is any python wrapped function or application and is easily extensible.<b
 
 
 
-
-###Core Data
-All collected data is mapped to the Core data table, and from that the mapper can aggregate this into standard data tables below.
-
-Data type | description |
- --- | ---                
-| events     | any time or date based subset of information gets logged here  |
-| facts      | the text of the information |
-| contacts   | person/website details extracted and linked from text or column in table |
-| locations  | physical location in world, or virtual location on network / computer disk |
-| processes  | actions that occur - logged events and planned jobs  |
-| projects   | an AIKIF project, when used with toolbox methods can be automated   |
- 
- 
-
-###Key Programs
-|Filename | description |
- --- | ---      
-|go_web_aikif.bat | starts the web server for the AIKIF admin interface|
-|AI_CLI.py		  | Command Line interface to add and query data|
-|agents/*.py      | agents to collect and aggregate raw data |
-|environments/*.py | defined environments for agents to run in |
-|toolbox/*.py     | toolbox methods used to perform a specific task |
-|dataTools/*.py   | various programs for managing data flow |
-|lib/*.py         | commonly used functions (NOTE - these may move) |
-|core_data.py     | classes to manage the core data types |
-|knowledge.py     | processs raw data to information |
-|index.py		  | creates text indexes of all the files|
-|search.py		  | searches, using both indexes and ontologies|
-|mapper.py        | applies business rules to map raw input to aikif data structures|
-|context.py       | determines user context|
-|bias.py          | user defined ranking of raw data by source / type / person / date|
-
 ##Quick Start
 This github repository [https://github.com/acutesoftware/AIKIF](https://github.com/acutesoftware/AIKIF) contains the latest code, but the current public release is available via
 
