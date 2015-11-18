@@ -71,6 +71,20 @@ class GoalTest(unittest.TestCase):
         result = m.find_best_plan()
         self.assertEqual(result, None)
 
+    def test_07_check_success_time(self):
+        g7a = GoalTime(maximise=True, current_val=20, target_val=100)
+        self.assertTrue(g7a.check_for_success())
+
+        g7b = GoalTime(maximise=True, current_val=2000, target_val=100)
+        self.assertFalse(g7b.check_for_success())
         
+        g7c = GoalTime(maximise=False, current_val=20, target_val=100)
+        self.assertFalse(g7c.check_for_success())
+        
+        g7d = GoalTime(maximise=False, current_val=2000, target_val=100)
+        self.assertTrue(g7d.check_for_success())
+        
+        
+     
 if __name__ == '__main__':
     unittest.main()
