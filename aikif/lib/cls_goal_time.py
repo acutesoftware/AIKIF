@@ -20,25 +20,23 @@ class GoalTime(Goal):
             {'name':'Travel_car', 'speed':60, 'max_km_day':1500, 'dest_flexibility':30, 'money_cost':50, 'environ_cost':50},
             {'name':'Travel_bus', 'speed':60, 'max_km_day':1500, 'dest_flexibility':20, 'money_cost':10, 'environ_cost':15}
         ]
-        
-        
+
         
     def check_for_success(self):
         return False
 
-    def run_plan(self, strategy, plan):
+    def run_plan(self, strategy):
         """ 
         executes a plan by running the passed strategy
         and then updates the local results
         """
-        print ("running strategy : " + strategy['name'] + " for plan " + plan)
+        print ("TODO running strategy : " + strategy['name'] )
         
 
     def find_best_plan(self):
         """
         try each strategy with different amounts
         """
-        for plan in self.plans:
-            for strat in self.strategy:
-                self.run_plan(strat, plan)
+        for strat in self.strategy:
+            self.run_plan(strat)
                 

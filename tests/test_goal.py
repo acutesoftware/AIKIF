@@ -58,6 +58,10 @@ class GoalTest(unittest.TestCase):
     def test_05_find_best_plan(self):
         g2 = Goal(name='Goal with Plan', plans=['1','2'])
         g2.find_best_plan()
+        
+        g_time = GoalTime(maximise=True, current_val=20, target_val=100)
+        g_time.find_best_plan()
+        
 
     def test_06_money_goal_best_plan(self):
         m = GoalMoney(True, 100,50)
