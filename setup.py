@@ -23,7 +23,7 @@ setup(
           'requests >= 2.3',
           'beautifulsoup4 >= 1.0',
           'Pillow >= 1.0',
-          'noise >= 1.2.0',
+          'noise >= 1.2.2',
           'xlrd >= 0.9.0',
           'pyyaml >= 3.10',
           'psutil > 0.1.0'
