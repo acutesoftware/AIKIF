@@ -92,3 +92,6 @@ wipe_file('file_to_copy.txt')
 wipe_file('my_grid.txt')
 wipe_file('test_grid.txt')
 
+wipe_file('chr31_delimited_data_file.csv')
+wipe_file('chr31_delimited_data_file.dat')
+
