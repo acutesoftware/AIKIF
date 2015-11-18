@@ -326,16 +326,16 @@ def ensure_dir(f):
         os.makedirs(d)
         
 def List2String(l):
-    res = ""
+    res = "["
     for v in l:
-        res = res + v
-    return res
+        res = res + v + ','
+    return res + ']'
     
 def Dict2String(d):
-    res = ","
-    for k, v in d: 
-        res = res + k + str(v) + ','
-    return res
+    res = "{"
+    for k, v in d.items(): 
+        res += k + ':' + str(v) + ','
+    return res + '}'
     
 def TodayAsString():
     return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -348,6 +348,8 @@ def force_to_string(unknown):
     if type(unknown) is str:
         result = unknown
     if type(unknown) is int:
+        result = str(unknown)
+    if type(unknown) is float:
         result = str(unknown)
     if type(unknown) is dict:
         result = Dict2String(unknown)
