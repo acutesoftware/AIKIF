@@ -124,13 +124,20 @@ class LogTest(unittest.TestCase):
     def test_14_self_test(self):
         mod_log.TEST()
         
-    def test_14_estimate_complexity(self):
+    def test_15_estimate_complexity(self):
         lg = mod_log.Log(os.getcwd())
         self.assertEqual(lg.estimate_complexity(10,10,10, 10), '0.1 seconds')
         self.assertEqual(lg.estimate_complexity(100,100,100, 100), '16.7 minutes')
         self.assertEqual(lg.estimate_complexity(100,100,100, 1000), '6.9 hours')
         self.assertEqual(lg.estimate_complexity(1000,1000,1000, 1000), '115.7 days')
         self.assertEqual(lg.estimate_complexity(9999,9999,9999, 9999), '190182.7 years')
+        
+    def test_16_record_command_data_types(self):
+        self.mylog.record_command( 994723.23)        
+        self.mylog.record_command( 'logging a string')        
+        self.mylog.record_command( ['logging a list', 'more list items'])        
+        self.mylog.record_command( {'01':'logging a dictionary',  '02':'more dict logging'})        
+        
         
 if __name__ == '__main__':
     unittest.main()
