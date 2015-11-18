@@ -23,7 +23,16 @@ class GoalTime(Goal):
 
         
     def check_for_success(self):
-        return False
+        if self.maximise:
+            if self.current_val > self.target_val:
+                return False
+            else:
+                return True
+        else:
+            if self.current_val <= self.target_val:
+                return False
+            else:
+                return True
 
     def run_plan(self, strategy):
         """ 
