@@ -3,19 +3,6 @@ Roadmap for AIKIF
 AIKIF
 ---------------------------------------------------
 
-knowledge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - work out the architecture
-  - sample raw data file - sentence
-  - sample raw data file - data table
-  - sample raw data file - website
-  - sample raw data file - project management
-
-API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - identify all public interfaces
-  - have an API to call them
-
 mapper
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - read map file
@@ -24,6 +11,14 @@ mapper
   - sample map file - image downloading
   - sample map file - zip extraction, data extraction
 
+knowledge
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - work out the architecture
+  - sample raw data file - sentence
+  - sample raw data file - data table
+  - sample raw data file - website
+  - sample raw data file - project management
+
 website
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - decide on website purpose and users
@@ -31,6 +26,11 @@ website
   - css styling
   - uses AIKIF via API
   - load public sample data
+
+API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - identify all public interfaces
+  - have an API to call them
 
 toolbox
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,26 +64,26 @@ objects
 rawdata
 ---------------------------------------------------
 
-generate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - generate random data (done)
-
 gather
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - read emails
   - read file metadata
   - read documents
 
+generate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - generate random data (done)
+
 lifepim
 ---------------------------------------------------
+
+collection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - collecters using rawdata package for email, files, webbrowsing
 
 website
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - define structure (done)
   - design style
   - implement basic crud functionality
-
-collection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - collecters using rawdata package for email, files, webbrowsing
 
