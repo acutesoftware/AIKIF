@@ -4,8 +4,8 @@ import unittest
 import sys
 import os
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif"  )
-sys.path.append(root_fldr)
-import toolbox.maths_ml_algorithms as ml
+sys.path.append(root_fldr + os.sep + "toolbox")
+import maths_ml_algorithms as ml
 
 class LogTest(unittest.TestCase):
 
