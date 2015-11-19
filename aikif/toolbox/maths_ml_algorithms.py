@@ -9,10 +9,6 @@
 import math
 
 
-def TEST():
-    """ local test  """
-    ml_entropy([3,3])
-
 
 def ml_entropy(lst):
     """
@@ -46,27 +42,6 @@ def ml_entropy(lst):
     return res
   
 
-def ml_weighted_average(lst):
-    """ calculate weighted average """
-    print('TODO = ', lst)
-    
-def ml_information_gain(lst):
-    print('TODO = ', lst)
-    
-def ml_gini_index(lst):
-    print('TODO = ', lst)
-    
-def ml_support(lst):
-    print('TODO = ', lst)
-    
-def ml_confidence(lst):
-    print('TODO = ', lst)
-    
-def ml_lift(lst):
-    print('TODO = ', lst)
-    
-def ml_apriori(lst):
-    print('TODO = ', lst)
     
 def ml_process_mining_alpha(lst):
     """
@@ -80,8 +55,5 @@ def ml_process_mining_alpha(lst):
     else:
         return [1]
     
-#if __name__ == '__main__':
-#    TEST()
-    
-    
+
     
