@@ -78,7 +78,7 @@ class CoreData(object):
         """
         print('TODO: process check = ', process)
         print(self.name, ' contracted to ->', self.parent)
-
+        return self.parent
     
     def get_child_by_name(self, name):
         """
