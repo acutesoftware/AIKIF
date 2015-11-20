@@ -69,8 +69,10 @@ class CoreDataTest(unittest.TestCase):
         rubbish = proj.get_child_by_name('Something that doesnt exist')
         self.assertEqual(str(rubbish), 'None')
 
-        # contract (or rollup - ie get parent) the shelf - NOT IMPLEMENTED
-        self.assertEqual(str(shelf.contract('Projects')), 'None')
+        # contract
+        self.assertEqual(str(shelf.contract('')), 'Projects')
+        self.assertEqual(str(proj.contract('TODO - set process')), 'Everything')
+        
         
     def test_05_save_a_table(self):
         try:
