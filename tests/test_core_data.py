@@ -92,13 +92,14 @@ class CoreDataTest(unittest.TestCase):
         with open(test_fldr + os.sep + 'Events2015.user01', 'r') as f:
             txt = f.read()
         self.assertEqual(len(txt), 353)
+        ev.generate_diary()
         
     def test_06_core_table(self):
         ob = mod_core.CoreTable(test_fldr, tpe='Object', user='user03', header=['code', 'desc'])
         print(ob) 
         self.assertEqual(len(str(ob)) > 50, True)
         self.assertEqual(ob.get_filename('2999'), test_fldr + os.sep + 'Object2999.user03')
-        ob.generate_diary()
+        
         
         
          

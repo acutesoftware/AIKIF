@@ -199,4 +199,6 @@ class CoreTable(object):
         extracts event information from core tables into diary files
         """
         print('TODO - generate diary files')
+        for r in self.table:
+            print('DIARY = ', r)
         
