@@ -170,7 +170,6 @@ class CoreTable(object):
         returns the filename
         """
         res = self.fldr + os.sep + self.type + year + '.' + self.user 
-        #print('get_filename = ' , res)
         return res
     
     def add(self, e):
@@ -191,8 +190,13 @@ class CoreTable(object):
         """
             
         for e in self.table: 
-            #print('e',e)
             fname = self.get_filename('2015')
             with open(fname, 'a') as f:
                 f.write(e.format_csv())
-    
+ 
+    def generate_diary(self):
+        """
+        extracts event information from core tables into diary files
+        """
+        print('TODO - generate diary files')
+        

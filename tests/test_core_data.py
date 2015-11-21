@@ -98,6 +98,9 @@ class CoreDataTest(unittest.TestCase):
         print(ob) 
         self.assertEqual(len(str(ob)) > 50, True)
         self.assertEqual(ob.get_filename('2999'), test_fldr + os.sep + 'Object2999.user03')
+        ob.generate_diary()
+        
+        
          
 if __name__ == '__main__':
     unittest.main()
