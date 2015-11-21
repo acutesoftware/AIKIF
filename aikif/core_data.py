@@ -198,7 +198,7 @@ class CoreTable(object):
         """
         extracts event information from core tables into diary files
         """
-        print('TODO - generate diary files')
+        print('TODO - generate diary files from Event rows only')
         for r in self.table:
-            print('DIARY = ', r)
+            print('DIARY row of type('  + str(type(r)) + ') = ', r)
         
