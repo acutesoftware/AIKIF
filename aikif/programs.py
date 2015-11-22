@@ -32,7 +32,10 @@ class Programs(object):
         """
         return a summary of programs
         """
-        return 'list of programs in AIKIF'
+        res = 'List of Programs in ' + self.fldr + '\n'
+        for p in self.lstPrograms:
+            res += p[0] + '\n'
+        return res
         
     
     def list_all_python_programs(self):
