@@ -13,7 +13,8 @@ sys.path.append(pth)
 import programs
 import config
 
-test_folder = config.core_folder  #os.getcwd()
+#test_folder = config.core_folder  #os.getcwd()
+test_folder = os.getcwd()
 print('test_folder = ', test_folder)
 
 class TestTemplate(unittest.TestCase):
@@ -33,8 +34,14 @@ class TestTemplate(unittest.TestCase):
         
         prg.collect_program_info(test_folder + os.sep + 'programs_test_folder.md')
         self.assertEqual(os.path.exists(test_folder + os.sep + 'programs_test_folder.md'), True)
-        
- 
 
+
+        self.assertEqual(len(str(prg)) > 100, True)
+        self.assertEqual(str(prg)[0:20], 'List of Programs in ')
+        
+        prg.comment('test_programs.py', 'comment on this program')
+        # doesnt work same on all OS self.assertTrue('comment on this program' in str(prg))
+        
+        
 if __name__ == '__main__':
     unittest.main()
