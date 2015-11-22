@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # cls_goal_time.py
 
 from aikif.lib.cls_goal import Goal

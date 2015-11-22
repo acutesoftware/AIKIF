@@ -4,13 +4,12 @@ import unittest
 import os
 import sys
 
-root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
+root_fldr = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'aikif', 'lib'))
 sys.path.insert(0, root_fldr)
 
-from aikif.lib.cls_goal import Goal
-from aikif.lib.cls_goal_time import GoalTime
-from aikif.lib.cls_goal_money import GoalMoney
+from cls_goal import Goal
+from cls_goal_time import GoalTime
+from cls_goal_money import GoalMoney
                 
 class GoalTest(unittest.TestCase):
 
@@ -59,8 +58,6 @@ class GoalTest(unittest.TestCase):
         g2 = Goal(name='Goal with Plan', plans=['1','2'])
         g2.find_best_plan()
         
-        g_time = GoalTime(maximise=True, current_val=20, target_val=100)
-        g_time.find_best_plan()
         
 
     def test_06_money_goal_best_plan(self):
