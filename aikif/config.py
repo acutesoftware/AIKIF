@@ -21,7 +21,7 @@ if sys.platform == 'linux':
         core_folder = os.getcwd()
         print('config.py : running on CI build!')
 else:
-    hme = 'T:\\user'
+    hme = 'T:\\user\\'
     core_folder = 'T:\\user\\dev\\src\\python\\AIKIF'
 
 
