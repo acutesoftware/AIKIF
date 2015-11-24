@@ -1,4 +1,8 @@
-# world_generator.py    written by Duncan Murray 9/7/2014
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# world_generator.py
+# Originally part of AIKIF under environments but this will be
+# moved to the package virtual-AI-simulator
 
 import os
 import math
@@ -6,7 +10,6 @@ from random import randint
 import aikif.environments.worlds as my_world
 import aikif.agents.explore.agent_explore_grid as agt
 
-#log_folder = 'T:\\user\\AIKIF\\log\\agents\\worlds'
 log_folder = os.getcwd() + os.sep + 'temp'
 
 def main():
@@ -26,7 +29,7 @@ def main():
     sim = my_world.WorldSimulation(w, a, 1)
     sim.run(iterations, 'Y', log_folder + os.sep + 'agt_run')
     sim.world.grd.save('test_world_traversed.txt')
-    
+    print('TODO: move this to VAIS')
     
 def build_world(height, width):    
     num_seeds   =   6   # number of seed points to start land generation
@@ -50,6 +53,5 @@ def create_random_agents(myWorld, num_agents):
         ag.set_world(myWorld.grd, [start_y, start_x], [target_coords[0], target_coords[1]])
         agt_list.append(ag)
     return agt_list
-    
- 
+  
 main()
