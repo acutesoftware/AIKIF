@@ -95,3 +95,8 @@ wipe_file('test_grid.txt')
 wipe_file('chr31_delimited_data_file.csv')
 wipe_file('chr31_delimited_data_file.dat')
 
+wipe_file('command.log')
+wipe_file('data.txt')
+wipe_file('programs_test_folder.csv')
+wipe_file('programs_test_folder.md')
+
