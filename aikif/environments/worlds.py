@@ -8,7 +8,7 @@ import aikif.toolbox.cls_grid as grd
 TERRAIN_SEA = '.'  # TODO - need to change this in multiple places (see worlds.py, cls_grid, world_generator)
 TERRAIN_LAND = 'X'
 TERRAIN_BLOCKED = '#'
-
+print('TODO - THIS MODULE IS BEING MOVED TO VAIS AND SHOULD BE REMOVED FROM AIKIF')
 class World(object):
     """
     base class for a simple virtual environment

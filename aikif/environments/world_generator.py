@@ -6,7 +6,8 @@ from random import randint
 import aikif.environments.worlds as my_world
 import aikif.agents.explore.agent_explore_grid as agt
 
-log_folder = 'T:\\user\\AIKIF\\log\\agents\\worlds'
+#log_folder = 'T:\\user\\AIKIF\\log\\agents\\worlds'
+log_folder = os.getcwd() + os.sep + 'temp'
 
 def main():
     """
