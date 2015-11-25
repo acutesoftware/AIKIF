@@ -1,6 +1,7 @@
 # run.py    written by Duncan Murray 27/2/2015
 
 import os
+import sys
 
 cur_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
 settings_file = 'folder.txt'
@@ -49,7 +50,14 @@ def start_aikif():
     """
     starts the web interface and possibly other processes
     """
-    os.system("start go_web_aikif.bat") 
+    if sys.platform[0:3] == 'win':
+        os.system("start go_web_aikif.bat") 
+    else:
+        os.system("../aikif/web_app/web_aikif.py")
+        import webbrowser
+        import time
+        time.sleep(1)
+        webbrowser.open('http://127.0.0.1:5000')
 
     
 if __name__ == '__main__':
