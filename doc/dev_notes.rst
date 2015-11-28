@@ -1,12 +1,12 @@
 AIKIF Dev Notes
 ===================================================
 Current Tasks
----------------------------------------------------
-
-Working on now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - mapper to read CSV files
+provide sample CSV files
 
+- logging
+use logging module instead of standard file logging in cls_log
 
 Upcoming Tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
