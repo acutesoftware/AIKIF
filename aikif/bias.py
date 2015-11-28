@@ -36,7 +36,7 @@ class Bias(object):
         self._read_bias_rating('bias-website.csv')
         self._calculate_bias()
         
-        print(self.bias_details)
+        #print(self.bias_details)
         
     def __str__(self):
         """ returns a string of basic inputs and outputs """
@@ -71,7 +71,7 @@ class Bias(object):
         res = {}
         #full_name = os.path.join(root_fldr, 'aikif', 'data', short_filename)  # use this after moving /data
         full_name = os.path.join(root_fldr, 'aikif', 'data', 'ref', short_filename)
-        print('reading bias file : ', short_filename, ' from ' , full_name)
+        #print('reading bias file : ', short_filename, ' from ' , full_name)
         with open(full_name, 'r') as f:
             for line in f:
                 bias_line = []
