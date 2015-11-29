@@ -34,6 +34,15 @@ class BiasTest(unittest.TestCase):
         bias = mod_bias.Bias(test_metadata)
         self.assertEqual(bias.get_bias_rating(),  5.9457650345124735e-09)
 
+    def test_03_contraversy_low(self):
+        low_cont = mod_bias.Contraversy('maths')
+        print(low_cont)
+        self.assertTrue(low_cont.get_contraversy() < 0.2)
+
+    def test_04_contraversy_high(self):
+        high_cont = mod_bias.Contraversy('religion')
+        print(high_cont)
+        self.assertTrue(high_cont.get_contraversy() > 0.8)
 
         
     def test_07_sample_data(self):
