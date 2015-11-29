@@ -4,14 +4,13 @@
 import os
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 
-def TEST():
-    """
-    Local self test routine - see test_bias.pt in /tests for full tests
-    """
-    my_bias = Bias('gov.au', 'published_data', 'abs.gov.au', '')
-    print(my_bias)
-    
-    
+bias_files = [  'bias-website.csv', 
+                'bias-source-type.csv', 
+                'bias-person-reputation.csv', 
+                'bias-person-relationship.csv', 
+                'bias-collection-method.csv',
+]
+                
 class Bias(object):
     """
     class to give a rough weighting to a piece of information
@@ -32,8 +31,8 @@ class Bias(object):
         self.source_person = source_person
         self.bias_rating = 0  # default to zero for safety - dont trust anything
         self.bias_details = []
-        self._read_bias_rating('bias.csv')
-        self._read_bias_rating('bias-website.csv')
+        for f in bias_files:
+            self._read_bias_rating(f)
         self._calculate_bias()
         
         #print(self.bias_details)
@@ -97,6 +96,3 @@ class Bias(object):
         return self.source_person
 
         
-if __name__ == '__main__':
-    TEST()
-           

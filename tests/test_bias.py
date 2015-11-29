@@ -13,6 +13,7 @@ class BiasTest(unittest.TestCase):
     def test_01_str(self):
         self.bias = mod_bias.Bias('gov.au', 'published_data', 'abs.gov.au', '')
         self.assertEqual(len(str(self.bias)), 130)
+        print(self.bias)
 
     def test_02_calc_bias(self):
         bias = mod_bias.Bias('gov.au', 'published_data', 'abs.gov.au', '')
