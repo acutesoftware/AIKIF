@@ -1,14 +1,14 @@
-"self", 0.9
-"spouse", 0.8
-"hero", 0.8
-"friend", 0.7
-"family", 0.7
-"authority", 0.7
-"followed", 0.6
-"celebrity", 0.5
-"friend of friend", 0.5
-"unknown", 0.4
-"friend of foe", 0.3
-"foe", 0.2
-"nemesis", 0.1
+self, 0.9
+spouse, 0.8
+hero, 0.8
+friend, 0.7
+family, 0.7
+authority, 0.7
+followed, 0.6
+celebrity, 0.5
+friend of friend, 0.5
+unknown, 0.4
+friend of foe, 0.3
+foe, 0.2
+nemesis, 0.1
 
