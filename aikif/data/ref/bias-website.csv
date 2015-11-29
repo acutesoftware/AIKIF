@@ -1,5 +1,9 @@
-".gov.au", 0.9
-".edu.au", 0.91
-"wikipedia.org", 0.92
-"reddit.com", 0.75
-"4chan.org", 0.1
+"wikipedia.org", 0.9
+".edu.au", 0.8
+".gov.au", 0.7
+"reddit.com", 0.6
+"[other]", 0.5
+"twitter.com", 0.4
+"facebook.com", 0.3
+"4chan.org", 0.2
+"youtube.com", 0.1
