@@ -109,4 +109,37 @@ class Bias(object):
     def get_bias_rating(self):
         return self.bias_rating
     
-
+class Contraversy(object):
+    """
+    class to handle and report on controversial topics so 
+    that it can be added as a value to bias calculations.
+    
+    The outcome is a value from:
+        0 (universally agreed) to
+        1 (everyone argues about it)
+    There is also a 'noise' rating for a topic, also a value
+        0 = no one is talking about it
+        1 = everyone talks about it
+        
+    Controversies should be time stamped so that the values
+    can be factored accordingly.
+    
+    """
+    
+    def __init__(self, topic):
+        self.topic = topic
+        self.noise = 0
+        self.controversy = 0
+        
+    def __str__(self):
+        res = 'Contraversy: '
+        res += self.topic 
+        res += ' controversy=' + str(self.controversy) + ' noise=' + str(self.noise) + '\n'
+        return res
+    
+    def get_contraversy(self):
+        print('TODO')
+        if self.topic == 'maths':
+            return 0.1
+        else:
+            return 0.85
