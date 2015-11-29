@@ -26,7 +26,7 @@ class CoreData(object):
         """
         res = qu + self.name + qu + delim
         for d in self.data:
-            res += qu + d + qu + delim
+            res += qu + str(d) + qu + delim
         return res + '\n'
         
     def format_dict(self, delim=':', qu="'"):
@@ -36,7 +36,7 @@ class CoreData(object):
         """
         res = 'name' + delim + qu + self.name + qu + ','
         for num, d in enumerate(self.data):
-            res += 'col' + str(num) + delim + qu + d + qu + ','
+            res += 'col' + str(num) + delim + qu + str(d) + qu + ','
         return res
         
     def drill_down(self):
