@@ -25,4 +25,17 @@ Log of Work
 - 2015-11-28 Started Developers logbook
 Made this file to keep focused on core concepts
 
+- 2015-11-29 Working on Bias calculation.
+Not sure if this is final implementation but Bias class currently needs
+all parameters to do calculation. Need another class to handle the mapping
+of CoreData or information with partial metadata to call the Bias class.
+
+changed start bias to 1 instead of zero as each metadata element uses 
+multiplication, meaning it would have always been zero
+    self.bias_rating = 1  # everything starts unbiased
+    
+Started Controversy class stub to handle noise and disputes on facts
+
+
+    
 
