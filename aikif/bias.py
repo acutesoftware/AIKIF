@@ -10,6 +10,19 @@ bias_files = [  'bias-website.csv',
                 'bias-person-relationship.csv', 
                 'bias-collection-method.csv',
 ]
+
+sample_metadata = [
+    {'label':'collection-method', 'value': 'website'},
+    {'label':'website', 'value': 'reddit.com'},
+    {'label':'person', 'value': 'acutesoftware'},
+    {'label':'reputation', 'value': 'logged in user'},
+    {'label':'time', 'value': 'recent'},
+    {'label':'relationship', 'value': 'self'},
+    {'label':'source-type', 'value': 'comment'},
+    
+]
+
+sample_rawdata = {'metadata': sample_metadata, 'data':'You should develop in Python 3 instead of 2 for new projects unless you have a dependant package that only works on version 2'}
                 
 class Bias(object):
     """
@@ -19,48 +32,62 @@ class Bias(object):
     a random comment on a forum does not get equal weighting to 
     a peer reviewed academic paper.
     There can be multiple biases, and each user can modify the 
-    weights to what they deem accurate for their situation
+    weights to what they deem accurate for their situation.
+    
+    Parameters:
+        sources [] = list of sources, all optional. This comes 
+                     from the 'data' metadata and can contain 
+                     website, type, person-reputation, person-relationship,
+                     collection_method
+    Public functions:
+        get_bias_rating() = returns the bias rating 0=bullshit -> 1=fact
+        
     """
-    def __init__(self, source_area, source_type, source_website, source_person):
+    def __init__(self, metadata):
         """ 
         passes all data on command line leave as empty string for blank
         """
-        self.source_area = source_area        
-        self.source_type = source_type       
-        self.source_website =  source_website       
-        self.source_person = source_person
-        self.bias_rating = 0  # default to zero for safety - dont trust anything
+        self.metadata = metadata        
+        self.bias_rating = 1  # everything starts unbiased
         self.bias_details = []
         for f in bias_files:
             self._read_bias_rating(f)
         self._calculate_bias()
         
-        #print(self.bias_details)
+        for b in self.bias_details:
+            #print(b)
+            pass
+            
         
     def __str__(self):
         """ returns a string of basic inputs and outputs """
         res = 'Bias\n'
-        res += 'source_area    = ' + self.source_area + '\n'
-        res += 'source_type    = ' + self.source_type + '\n'
-        res += 'source_website = ' + self.source_website + '\n'
-        res += 'source_person  = ' + self.source_person + '\n'
+        for m in self.metadata:
+            res += m['label'] + ' = ' + m['value'] + '\n'
         res += 'BIAS Rating    = ' + str(self.bias_rating) + '\n'
         return res
+    
+
     
     def _calculate_bias(self):
         """
         returns a weighting from 0 to 1 based on the sources
-        Read the bias files in:
-        AIKIF / data / temp / bias.csv
-        AIKIF / data / temp / people.csv
-        AIKIF / data / temp / websites.csv
-        
-        and then lookup the names and find the weightings
-        
         """
-        
-        
-        self.bias_rating = 0.863
+        for m in self.metadata:
+            print('METADATA : ', m)
+            for b in self.bias_details:
+                if  b[0] == 'bias-' + m['label'] + '.csv':
+                    #print('b = ', b, 'm = ', m)
+                    l_bias = 1.000
+                    try:
+                        l_bias = float(b[2])
+                    except:
+                        print("ERROR converting bias value to float: ", b)
+                        print('bias found ', m, b)
+                    self.bias_rating *= l_bias
+    
+        print('FINISHED - bias_rating = ', self.bias_rating)
+        #self.bias_rating = 0.863
     
     def _read_bias_rating(self, short_filename):
         """
@@ -68,7 +95,6 @@ class Bias(object):
         and return as a dictionary
         """
         res = {}
-        #full_name = os.path.join(root_fldr, 'aikif', 'data', short_filename)  # use this after moving /data
         full_name = os.path.join(root_fldr, 'aikif', 'data', 'ref', short_filename)
         #print('reading bias file : ', short_filename, ' from ' , full_name)
         with open(full_name, 'r') as f:
@@ -83,16 +109,4 @@ class Bias(object):
     def get_bias_rating(self):
         return self.bias_rating
     
-    def get_source_area(self):
-        return self.source_area
 
-    def get_source_type(self):
-        return self.source_type
-
-    def get_source_website(self):
-        return self.source_website
-
-    def get_source_person(self):
-        return self.source_person
-
-        
