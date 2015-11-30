@@ -8,6 +8,14 @@ provide sample CSV files
 - logging
 use logging module instead of standard file logging in cls_log
 
+- bias
+bias module mostly working, but values will need tweaking (when all 
+areas are multiplied the result is too low - may need to change from 
+0 -> 1 to 0 -> 2 where 1 is 'no difference'
+
+- core data
+using the core data module, load sample data to core tables via bias module
+
 Upcoming Tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - integrate vais to run simulations
