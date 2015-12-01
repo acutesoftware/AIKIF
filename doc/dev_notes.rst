@@ -18,12 +18,12 @@ using the core data module, load sample data to core tables via bias module
 
 Upcoming Tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- integrate vais to run simulations
+- integrate vais to run simulations. Should include world.py and environment.py
 
 
 Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Ontology - not sure whether to create core ontology
+- Ontology - not sure whether to create core ontology, or allow one to be derived.
 
 
 
