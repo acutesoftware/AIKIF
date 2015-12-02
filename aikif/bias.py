@@ -71,7 +71,10 @@ class Bias(object):
     
     def _calculate_bias(self):
         """
-        returns a weighting from 0 to 1 based on the sources
+        returns a weighting from 0 to 1 based on the sources.
+        Due to fractions multiplying resulting in very small 
+        numbers, adding 0.5 to bias calculations which means
+        actual range is 0.5 -> 1.5 (still testing)
         """
         for m in self.metadata:
             print('METADATA : ', m)
@@ -80,7 +83,7 @@ class Bias(object):
                     #print('b = ', b, 'm = ', m)
                     l_bias = 1.000
                     try:
-                        l_bias = float(b[2])
+                        l_bias = float(b[2]) + 0.5
                     except:
                         print("ERROR converting bias value to float: ", b)
                         print('bias found ', m, b)
