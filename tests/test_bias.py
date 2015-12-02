@@ -27,12 +27,12 @@ class BiasTest(unittest.TestCase):
 
     def test_01_str(self):
         self.bias = mod_bias.Bias(test_metadata)
-        self.assertEqual(len(str(self.bias)), 153)
+        self.assertEqual(len(str(self.bias)), 149)
         #print(self.bias)
 
     def test_02_calc_bias(self):
         bias = mod_bias.Bias(test_metadata)
-        self.assertEqual(bias.get_bias_rating(),  5.9457650345124735e-09)
+        self.assertEqual(bias.get_bias_rating(), 14.848288519170794) # 5.9457650345124735e-09)
 
     def test_03_contraversy_low(self):
         low_cont = mod_bias.Contraversy('maths')
