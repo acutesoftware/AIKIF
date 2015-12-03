@@ -77,7 +77,6 @@ class Bias(object):
         actual range is 0.5 -> 1.5 (still testing)
         """
         for m in self.metadata:
-            print('METADATA : ', m)
             for b in self.bias_details:
                 if  b[0] == 'bias-' + m['label'] + '.csv':
                     #print('b = ', b, 'm = ', m)
@@ -102,6 +101,8 @@ class Bias(object):
         #print('reading bias file : ', short_filename, ' from ' , full_name)
         with open(full_name, 'r') as f:
             for line in f:
+                if line.strip('') == '':
+                    break
                 bias_line = []
                 cols = line.split(',')
                 bias_line.extend([short_filename])
