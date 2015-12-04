@@ -44,7 +44,12 @@ class BiasTest(unittest.TestCase):
         print(high_cont)
         self.assertTrue(high_cont.get_contraversy() > 0.8)
 
-        
+    def test_05_get_bias_details(self):
+        bias5 = mod_bias.Bias(test_metadata)
+        #print(bias5.get_bias_details())
+        self.assertEqual(bias5.get_bias_details()[0:17], 'Bias File Details')
+        self.assertTrue(len(bias5.get_bias_details()) > 200)
+    
     def test_07_sample_data(self):
         dat = ['website:twitter,sender:@random,text:"Really love the new Star Wars film"',
                'website:wikipedia,page:https://en.wikipedia.org/wiki/Exilioidea, text:"Exilioidea is a genus of sea snails, marine gastropod mollusks in the family Ptychatractidae"',

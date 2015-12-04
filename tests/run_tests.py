@@ -99,4 +99,5 @@ wipe_file('command.log')
 wipe_file('data.txt')
 wipe_file('programs_test_folder.csv')
 wipe_file('programs_test_folder.md')
+wipe_file('test_bias.log')
 
