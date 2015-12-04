@@ -2,6 +2,9 @@
 # part of AIKIF 
 
 import os
+import logging
+
+logging.basicConfig(filename='test_bias.log',level=logging.DEBUG,format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 
 bias_files = [  'bias-website.csv', 
@@ -49,25 +52,37 @@ class Bias(object):
         """
         self.metadata = metadata        
         self.bias_rating = 1  # everything starts unbiased
+        logging.info('init bias class')
         self.bias_details = []
         for f in bias_files:
             self._read_bias_rating(f)
         self._calculate_bias()
         
-        for b in self.bias_details:
-            #print(b)
-            pass
             
         
     def __str__(self):
-        """ returns a string of basic inputs and outputs """
+        """ 
+        returns a string of basic inputs and outputs 
+        """
         res = 'Bias\n'
         for m in self.metadata:
             res += m['label'] + ' = ' + m['value'] + '\n'
         res += 'BIAS Rating    = ' + str(self.bias_rating) + '\n'
         return res
     
-
+    def get_bias_details(self):
+        """
+        returns a string representation of the bias details
+        """
+        res = 'Bias File Details\n'
+        for b in self.bias_details:
+            if len(b) > 2:
+                res += b[0].ljust(35)
+                res += b[1].ljust(35)
+                res += b[2].ljust(9)
+            res += '\n'
+        return res
+        
     
     def _calculate_bias(self):
         """
@@ -84,12 +99,10 @@ class Bias(object):
                     try:
                         l_bias = float(b[2]) + 0.5
                     except:
-                        print("ERROR converting bias value to float: ", b)
-                        print('bias found ', m, b)
+                        logging.error('ERROR converting bias value to float: ' + str(b))
                     self.bias_rating *= l_bias
     
         print('FINISHED - bias_rating = ', self.bias_rating)
-        #self.bias_rating = 0.863
     
     def _read_bias_rating(self, short_filename):
         """
@@ -99,6 +112,7 @@ class Bias(object):
         res = {}
         full_name = os.path.join(root_fldr, 'aikif', 'data', 'ref', short_filename)
         #print('reading bias file : ', short_filename, ' from ' , full_name)
+        logging.info('reading ' + full_name)
         with open(full_name, 'r') as f:
             for line in f:
                 if line.strip('') == '':
