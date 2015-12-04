@@ -44,6 +44,8 @@ multiplication, meaning it would have always been zero
     
 Started Controversy class stub to handle noise and disputes on facts
 
-
+- 2015-12-03 Bias starting values
+Originally returned a weighting from 0 to 1 based on the sources.
+Due to fractions multiplying resulting in very small numbers, adding 0.5 to bias calculations which means actual range is 0.5 -> 1.5 (still testing)
     
 
