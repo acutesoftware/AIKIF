@@ -1,8 +1,8 @@
-prediction, 0.2
-estimate,0.4
-current, 0.9
-recent, 0.9
-established, 0.9
-ancient, 0.6
-legend, 0.2
+prediction, 0.2, t > 100
+estimate,0.4, t > 0
+current, 0.9, t = 0
+recent, 0.9, t < 0
+established, 0.9, t < 10
+ancient, 0.6, t < 100
+legend, 0.2, t < 500
 
