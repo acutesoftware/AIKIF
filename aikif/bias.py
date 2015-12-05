@@ -94,7 +94,6 @@ class Bias(object):
         for m in self.metadata:
             for b in self.bias_details:
                 if  b[0] == 'bias-' + m['label'] + '.csv':
-                    #print('b = ', b, 'm = ', m)
                     l_bias = 1.000
                     try:
                         l_bias = float(b[2]) + 0.5
@@ -102,7 +101,6 @@ class Bias(object):
                         logging.error('ERROR converting bias value to float: ' + str(b))
                     self.bias_rating *= l_bias
     
-        print('FINISHED - bias_rating = ', self.bias_rating)
     
     def _read_bias_rating(self, short_filename):
         """
@@ -111,7 +109,6 @@ class Bias(object):
         """
         res = {}
         full_name = os.path.join(root_fldr, 'aikif', 'data', 'ref', short_filename)
-        #print('reading bias file : ', short_filename, ' from ' , full_name)
         logging.info('reading ' + full_name)
         with open(full_name, 'r') as f:
             for line in f:
