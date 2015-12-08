@@ -44,7 +44,7 @@ Jobs:
     - Backup_win_files:
         tool:@file
         source: T:\
-        dest: //nas/backup/win
+        dest: \\nas\backup\win
         when: daily
         
     
