@@ -34,3 +34,17 @@ Credentials:
     - SQL_prod: ~/logons/password_SQL_prod.crypt
     - Outlook: ~/logons/password_outlook.crypt
     
+Jobs:
+    - Backup_linux_files:
+        tool:@file
+        source: ~/user/duncan
+        dest: //nas/backup/linux
+        when: daily
+        
+    - Backup_win_files:
+        tool:@file
+        source: T:\
+        dest: //nas/backup/win
+        when: daily
+        
+    
