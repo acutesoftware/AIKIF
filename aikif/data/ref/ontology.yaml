@@ -1,6 +1,16 @@
 ---
 Event:
+    Time_Scales:
     - date
+    - now
+    - soon
+    - today
+    - tomorrow
+    - near future
+    - this week
+    - at some stage
+    - whenever
+    - if you get time    
 Location:
     Virtual:
         Website:
@@ -19,7 +29,8 @@ Location:
         - Address
         - GPS Coords
         - Astronomy Coords #(for space - future proofing)
-            
+
+    
 People: #a person or entity or Pet
     Label_Friendly:
         - Me
@@ -69,7 +80,7 @@ Object:
         Other_stuff:
             - Elephants, Walrus tusks, Antique pipes, Clock Tower in London
 
-Process: # NO ROOT NEEDED - this is DEFAULT  ->
+Process: 
     Project:
         Task:
             - Methods
