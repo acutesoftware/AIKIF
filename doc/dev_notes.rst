@@ -48,4 +48,6 @@ Started Controversy class stub to handle noise and disputes on facts
 Originally returned a weighting from 0 to 1 based on the sources.
 Due to fractions multiplying resulting in very small numbers, adding 0.5 to bias calculations which means actual range is 0.5 -> 1.5 (still testing)
     
+- 2015-12-08 Rethinking Ontology
+Will not be linking to upper Ontology as originally intended so will focus on the mapping process and classifications.
 
