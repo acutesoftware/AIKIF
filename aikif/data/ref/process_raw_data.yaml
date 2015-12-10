@@ -12,12 +12,18 @@
 # Step 1 - define the sources
 ##############################
 - sources:
-    - gmail: gmail.csv
-    - email: country.csv
-    - course: coursera.csv
-    - tasks: tasks.csv
-    - diary: D*.dat
-    - file_metadata: all_files.csv
+    - gmail: 
+        source: gmail.csv
+    - email: 
+        source: country.csv
+    - course: 
+        source: coursera.csv
+    - tasks: 
+        source: tasks.csv
+    - diary: 
+        source: D*.dat
+    - file_metadata: 
+        source: all_files.csv
 
 
 # Step 2 - define the mappings
