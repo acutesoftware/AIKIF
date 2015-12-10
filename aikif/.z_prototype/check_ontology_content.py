@@ -57,7 +57,11 @@ def main():
                                  # SEE mini lib to do this - https://github.com/tardyp/dictns
                                  # also bunch = https://github.com/dsc/bunch
                                  
-                                 
+    # show process file
+    print('\nPROCESS RAW DATA.YAML\n===================================')
+    with open(os.path.join('..','data','ref','process_raw_data.yaml'), 'r') as stream:
+        y = yaml.safe_load(stream)
+    pprint.pprint(y) 
 
 class DictView(object):
     def __init__(self, d):
