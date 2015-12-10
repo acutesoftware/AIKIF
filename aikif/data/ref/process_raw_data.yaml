@@ -1,0 +1,49 @@
+# process_raw_data.yaml
+
+# this defines a list of data sources to process to show example 
+# on how to load and assign bias of real world data.
+
+# sample files are provided based on 'roughly' real world data
+
+# this works by defining agents to run a set of mappings to do the job
+# it should NOT have any python code to read files itself - all this is 
+# done by the mappers and the toolboxes
+
+# Step 1 - define the sources
+##############################
+- sources:
+    - gmail: gmail.csv
+    - email: country.csv
+    - course: coursera.csv
+    - tasks: tasks.csv
+    - diary: D*.dat
+    - file_metadata: all_files.csv
+
+
+# Step 2 - define the mappings
+##############################
+- mappings:
+    - file_maps: rules_column_maps.csv
+
+# Step 3 - assign biases
+##############################
+
+- bias:
+    - bias_files:
+        - bias-website.csv
+        - bias-source-type.csv
+        - bias-person-reputation.csv
+        - bias-person-relationship.csv
+        - bias-collection-method.csv
+
+
+# Step 4 - run 
+##############################
+- schedule:
+    - Weekly:
+        -  course, browser
+    - Daily:
+        - backup
+    - Hourly:
+        - gmail, email,
+    
