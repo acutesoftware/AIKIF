@@ -3,7 +3,7 @@
 AIKIF Design
 ====================
 
-Last updated 6-Nov-2015
+Last updated 12-Dec-2015
 AIKIF Dev version 0.1.7
 
 This document is a scratch pad area for design notes during the development of AIKIF
@@ -181,13 +181,6 @@ situational - e.g. Work mode -> hide Reddit, Game mode -> turn off notifications
 [YOUR_MAPPING] = add all own mappings which if duplicated, override above
 
 
-
-Domains (Ontology Examples) [unresolved]
------------------------------------------
-
-Originally, the plan was  to have everything mapped that you do in your world. A full ontology contains roughly 98% of items that do not appear in your horizon, so rather than link to an external Ontology at this stage, there will be a local Ontology you can modify for your own use.
-
-TODO = think about a local ontology - look at the original ones
 
 Core Domains
 ``````````````
