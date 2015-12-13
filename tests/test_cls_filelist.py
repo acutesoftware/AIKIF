@@ -74,7 +74,6 @@ class TestClassFile(unittest.TestCase):
         self.assertTrue(len(str(fl_grp)) > 6, True)
         # call empty functions
         fl_grp.backup()
-        fl_grp.restore()
         fl_grp.backup_incremental()
         
         
