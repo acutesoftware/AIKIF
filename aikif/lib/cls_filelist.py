@@ -8,7 +8,7 @@ import os
 import fnmatch
 import time
 from datetime import datetime
-
+import aikif.cls_log as mod_log
 
 class FileListGroup(object):
     """ 
@@ -19,13 +19,11 @@ class FileListGroup(object):
     def __init__(self, name, src_folder, dest_folder):
         self.name = name
         self.filelist = []              # contains a list of the filelist class instances
-        self.src_folder = src_folder
         self.dest_folder = dest_folder
 
     def __str__(self):
         """ display the filelist group details """
         txt =  'FileListGroup : ' + self.name + '\n'
-        txt += 'src_folder    : ' + self.src_folder + '\n'
         txt += 'dest_folder   : ' + self.dest_folder + '\n'
         return txt
 
@@ -33,13 +31,9 @@ class FileListGroup(object):
         """
         copies all files from the src folder to the dest folder
         """
-        print("TODO backing up " + self.name)
+        for fl in self.filelist:
+            print("TODO backing up filelist " + str(fl))
 
-    def restore(self):
-        """
-        restores all files from the dest folder to the src folder
-        """
-        print("TODO (be careful with this) restoring " + self.name)
 
     def backup_incremental(self):
         """
@@ -69,14 +63,26 @@ class FileList(object):
     def get_metadata(self):
         return self.fl_metadata
     
+    def backup(self, dest_root_folder):
+        """
+        backup all files for the filelist into a destination
+        root folder
+        """
+        for fldr in self.filelist:
+            print('TODO - backing up ' + fldr)
+        
 
+    
     def get_failed_backups(self):
         return self.failed_backups
 
     def add_failed_file(self, fname):
-        """ this file failed to backup, so log it for future retry """
+        """ 
+        this file failed to backup, so log it for future retry 
+        """
         self.failed_backups.append(fname)
-        
+    
+    
     def check_files_needing_synch(self, dest_root_folder, base_path_ignore, date_accuracy = 'hour'):
         """ 
         checks the metadata in the list of source files
