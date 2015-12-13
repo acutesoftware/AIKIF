@@ -2,6 +2,10 @@
 # createMindOntology.py		written by Duncan Murray 27/3/2014
 # Script to generate a single ontology file from the OpenCog wiki
 
+# NOTE - this file is not part of the coverage stats, and doesn't 
+#        have any tests, but needs to stay here as it is linked 
+#        externally.
+
 
 
 baseURL = 'http://wiki.opencog.org'
