@@ -71,7 +71,7 @@ class LogTest(unittest.TestCase):
     
     def test_09_verify_tools(self):
         tool1 = {'file':'tool_doesnt_exist.py'}
-        tool2 = {'file':'test_toolbox.py'}
+        tool2 = {'file': os.getcwd() + os.sep + 'test_toolbox.py'}
         tb9 = mod_tool.Toolbox(lst=[tool1, tool2])
         self.assertFalse(tb9.verify(tool1))
         self.assertTrue(tb9.verify(tool2))
