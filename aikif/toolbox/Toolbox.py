@@ -87,15 +87,13 @@ class Toolbox(object):
         """
         check that the tool exists
         """
-        success = True
         if os.path.isfile(tool['file']):
             print('Toolbox: program exists = TOK  :: ' + tool['file'])
+            return True
         else:
             print('Toolbox: program exists = FAIL :: ' + tool['file'])
-            success = False
-        
-        return success
-        
+            return False
+
     def run(self, tool, args, new_import_path=''):
         """
         import the tool and call the function, passing the args.
