@@ -46,8 +46,8 @@ class Toolbox(object):
         res = tool['file'] 
         try:
             res += '.' + tool['function']
-        except Exception:
-            pass
+        except Exception as ex:
+            print('Warning - no function defined for tool ' + str(tool))
         res += '\n'
         return res
         
@@ -96,7 +96,7 @@ class Toolbox(object):
         
         return success
         
-    def run(self, tool, args, silent='Y', new_import_path=''):
+    def run(self, tool, args, new_import_path=''):
         """
         import the tool and call the function, passing the args.
         """
@@ -104,8 +104,8 @@ class Toolbox(object):
             #print('APPENDING PATH = ', new_import_path)
             sys.path.append(new_import_path)
         
-        if silent == 'N':
-            print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
+        #if silent == 'N':
+        #    print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
         mod = __import__( os.path.basename(tool['file']).split('.')[0]) # for absolute folder names
         # mod = __import__( tool['file'][:-2]) # for aikif folders (doesnt work)
         func = getattr(mod, tool['function'])
