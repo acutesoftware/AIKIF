@@ -69,12 +69,10 @@ class LogTest(unittest.TestCase):
         txt = open('tool_list.txt', 'r').read()
         self.assertEqual(txt, 'test_tool.py.sum_even_numbers\n')
     
-    def test_09_verify_tools(self):
+    def test_09_verify_missing_tool(self):
         tool1 = {'file':'tool_doesnt_exist.py'}
-        tool2 = {'file': os.getcwd() + os.sep + 'test_toolbox.py'}
-        tb9 = mod_tool.Toolbox(lst=[tool1, tool2])
+        tb9 = mod_tool.Toolbox(lst=[tool1])
         self.assertFalse(tb9.verify(tool1))
-        self.assertTrue(tb9.verify(tool2))
         
     
 if __name__ == '__main__':
