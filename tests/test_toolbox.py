@@ -52,6 +52,30 @@ class LogTest(unittest.TestCase):
             test_result = 454
  
         self.assertEqual(test_result, 454)
+    
+    def test_06_predefined_list(self):
+        tool1 = {'file':'tool1.py', 'function':'do_stuff', 'args':['list'], 'return':['int']}
+        tool2 = {'file':'tool2.py'}
         
+        tb2 = mod_tool.Toolbox(lst=[tool1, tool2])
+
+        tb2.list()
+        
+        self.assertEqual(tb2.tool_as_string(tool1), 'tool1.py.do_stuff\n')
+        self.assertEqual(tb2.tool_as_string(tool2), 'tool2.py\n')
+        
+    def test_08_save_tools(self):
+        self.tb.save('tool_list.txt')
+        txt = open('tool_list.txt', 'r').read()
+        self.assertEqual(txt, 'test_tool.py.sum_even_numbers\n')
+    
+    def test_09_verify_tools(self):
+        tool1 = {'file':'tool_doesnt_exist.py'}
+        tool2 = {'file':'test_toolbox.py'}
+        tb9 = mod_tool.Toolbox(lst=[tool1, tool2])
+        self.assertFalse(tb9.verify(tool1))
+        self.assertTrue(tb9.verify(tool2))
+        
+    
 if __name__ == '__main__':
     unittest.main()
