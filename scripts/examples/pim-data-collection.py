@@ -30,9 +30,16 @@ import audio_tools as mod_aud
 
 op_folder = 'T:\\user\\AIKIF\\'
 
-p_gmail = prj.Project('Gmail', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\email\\gmail' , desc='Load gmail') 
-p_outlook = prj.Project('Outlook', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\email' , desc='Load Outlook mail')  
-p_file = prj.Project('File Metadata', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\file_metadata' , desc='Read metadata') 
+def main():
+    pim_projects = prj.Projects()
+    pim_projects.add_project(gmail())
+    pim_projects.add_project(outlook())
+    pim_projects.add_project(file_metadata())
+    
+    print(pim_projects)
+    
+"""
+
 p_docs = prj.Project('Documents - Local', tpe='PIM', fldr='T:\\user\\' , desc='Index documents') 
 p_gdrive = prj.Project('Documents - GDrive', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\gdrive' , desc='Index Gdrive')
 p_sites = prj.Project('Web links', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\gdrive' , desc='Bookmarks')   
@@ -41,12 +48,27 @@ p_photos = prj.Project('Photos', tpe='PIM', fldr='P:\\' , desc='Photos')
 p_music = prj.Project('Music', tpe='PIM', fldr='M:\\' , desc='Music') 
 p_diary = prj.Project('Diary', tpe='PIM', fldr='T:\\user\\AIKIF\\diary' , desc='Diary files') 
 p_pcusage = prj.Project('PC Usage', tpe='PIM', fldr='T:\\user\\AIKIF\\diary' , desc='PC Usage from Infolink') 
+"""
 
 
 
-pim_projects = prj.Projects()
+
+def gmail():
+    p = prj.Project('Gmail', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\email\\gmail' , desc='Load gmail') 
+    
+    return p
+
+def outlook():
+    p = prj.Project('Outlook', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\email' , desc='Load Outlook mail')  
+    return p
+
+def file_metadata():
+    p = prj.Project('File Metadata', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\file_metadata' , desc='Read metadata') 
+    
+    return p
 
 
+"""
 pim_projects.add_project(p_gmail)
 pim_projects.add_project(p_outlook)
 pim_projects.add_project(p_file)
@@ -58,6 +80,7 @@ pim_projects.add_project(p_photos)
 pim_projects.add_project(p_music)
 pim_projects.add_project(p_diary)
 pim_projects.add_project(p_pcusage)
+"""
 
-print(pim_projects)
 
+main()
