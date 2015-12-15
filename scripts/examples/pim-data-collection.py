@@ -5,23 +5,6 @@
 # Production example of using AIKIF to collect PIM data
 # from various sources to populate the core_data database
 # 
-# To use this, setup the following config files in a non
-# public place (away from git etc)
-#
-# pim-ontology.yaml     # actually this can be public
-# ---------------------------------------------
-#   - pim-ontology
-#       - tasks
-#   
-#
-# pim-collection.yaml   
-# ---------------------------------------------
-# jobs = [diary, tasks, contacts, browser, links, files]
-# 
-# 
-# 
-# 
-
 
 import os
 import sys
@@ -32,6 +15,18 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 pth = root_folder + os.sep + 'aikif'
 sys.path.append(pth)
 import project as prj
+import core_data as mod_dat
+import cls_log as mod_log
+import index as mod_ndx
+import knowledge as mod_know
+import mapper as mod_map
+import bias as mod_bias
+
+sys.path.append(pth + os.sep + 'toolbox')
+import file_tools as mod_fle
+import image_tools as mod_img
+import text_tools as mod_txt
+import audio_tools as mod_aud
 
 op_folder = 'T:\\user\\AIKIF\\'
 
@@ -43,6 +38,7 @@ p_gdrive = prj.Project('Documents - GDrive', tpe='PIM', fldr='T:\\user\\AIKIF\\p
 p_sites = prj.Project('Web links', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\gdrive' , desc='Bookmarks')   
 p_ebooks = prj.Project('Ebooks', tpe='index', fldr='S:\\DATA\\eBooks' , desc='Ebooks')   
 p_photos = prj.Project('Photos', tpe='PIM', fldr='P:\\' , desc='Photos') 
+p_music = prj.Project('Music', tpe='PIM', fldr='M:\\' , desc='Music') 
 p_diary = prj.Project('Diary', tpe='PIM', fldr='T:\\user\\AIKIF\\diary' , desc='Diary files') 
 p_pcusage = prj.Project('PC Usage', tpe='PIM', fldr='T:\\user\\AIKIF\\diary' , desc='PC Usage from Infolink') 
 
@@ -59,6 +55,7 @@ pim_projects.add_project(p_gdrive)
 pim_projects.add_project(p_ebooks)
 pim_projects.add_project(p_sites)
 pim_projects.add_project(p_photos)
+pim_projects.add_project(p_music)
 pim_projects.add_project(p_diary)
 pim_projects.add_project(p_pcusage)
 
