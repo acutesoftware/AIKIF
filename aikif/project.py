@@ -38,7 +38,16 @@ class Projects(object):
             if p.nme == name:
                 return p
         return None
-        
+    
+    def run(self):
+        """
+        executes all tasks for each of the projects
+        which (depending on projects schedule) will
+        allow each project to run the required tasks.
+        """
+        for p in self.project_list:
+            p.execute_tasks()
+            
  
 class Project(object):
     """
