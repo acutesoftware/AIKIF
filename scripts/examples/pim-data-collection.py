@@ -23,6 +23,7 @@ import mapper as mod_map
 import bias as mod_bias
 
 sys.path.append(pth + os.sep + 'toolbox')
+import Toolbox as mod_tool
 import file_tools as mod_fle
 import image_tools as mod_img
 import text_tools as mod_txt
@@ -60,10 +61,14 @@ def gmail():
 
 def outlook():
     p = prj.Project('Outlook', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\email' , desc='Load Outlook mail')  
+    tools = mod_tool.Toolbox()
+    tools.add({'name':'collect_emails', 'file':op_folder + 'agent_email.py', 'interval':'Daily'})
+    print(tools)
     return p
 
 def file_metadata():
     p = prj.Project('File Metadata', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\file_metadata' , desc='Read metadata') 
+
     
     return p
 
