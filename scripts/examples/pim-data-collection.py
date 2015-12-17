@@ -29,15 +29,28 @@ import image_tools as mod_img
 import text_tools as mod_txt
 import audio_tools as mod_aud
 
-op_folder = 'T:\\user\\AIKIF\\'
+if os.name == 'nt':
+    myfldr = 'T:\\user\\AIKIF\\'
+else:
+    myfldr = '/home/duncan/AIKIF'
 
 def main():
+    # define projects
     pim_projects = prj.Projects()
     pim_projects.add_project(gmail())
     pim_projects.add_project(outlook())
     pim_projects.add_project(file_metadata())
     
     print(pim_projects)
+    
+    # setup tools needed
+    tools = mod_tool.Toolbox()
+    tools.add({'name':'email download', 'file':myfldr + 'download_email.py', 'interval':'Daily'})
+    tools.add({'name':'email process', 'file':myfldr + 'process_email.py', 'interval':'Daily'})
+    
+    
+    # run as needed
+    
     
 """
 
@@ -61,9 +74,7 @@ def gmail():
 
 def outlook():
     p = prj.Project('Outlook', tpe='PIM', fldr='T:\\user\\AIKIF\\pers_data\\email' , desc='Load Outlook mail')  
-    tools = mod_tool.Toolbox()
-    tools.add({'name':'collect_emails', 'file':op_folder + 'agent_email.py', 'interval':'Daily'})
-    print(tools)
+
     return p
 
 def file_metadata():
