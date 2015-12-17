@@ -28,6 +28,14 @@ class LogTest(unittest.TestCase):
         self.tb.add({'file':'tool2.py', 'function':'do_stuff', 'args':['list'], 'return':['int']})
         self.assertEqual(str(self.tb), 'test_tool.py.sum_even_numbers\ntool2.py.do_stuff\n')
         
+        t1 = self.tb.get_tool_by_name('tool2.py')
+        self.assertEqual(t1['file'], 'tool2.py')
+        
+        self.tb.add({'name':'my cool tool', 'file':'tool15.py', 'function':'main'})
+        t2 = self.tb.get_tool_by_name('my cool tool')
+        self.assertEqual(t2['name'], 'my cool tool')
+        
+        
     def test_03_run_tool(self):
         test_result = self.tb.run(self.tb.lstTools[0], [1,2,3,4,5,6,7], 'Y')
         self.assertEqual(test_result, 12)
