@@ -50,8 +50,19 @@ class Toolbox(object):
             print('Warning - no function defined for tool ' + str(tool))
         res += '\n'
         return res
-        
-        
+     
+    def get_tool_by_name(self, nme):
+        """
+        get the tool object by name
+        """
+        for t in self.lstTools:
+            if 'name' in t:
+                if t['name'] == nme:
+                    return t
+            elif 'file' in t:
+                if t['file'] == nme:
+                    return t
+                    
     def add(self, tool):
         """
         Adds a Tool to the list, logs the reference and TODO
