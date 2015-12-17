@@ -53,15 +53,16 @@ class Toolbox(object):
      
     def get_tool_by_name(self, nme):
         """
-        get the tool object by name
+        get the tool object by name or file
         """
         for t in self.lstTools:
             if 'name' in t:
                 if t['name'] == nme:
                     return t
-            elif 'file' in t:
+            if 'file' in t:
                 if t['file'] == nme:
                     return t
+        return None
                     
     def add(self, tool):
         """
