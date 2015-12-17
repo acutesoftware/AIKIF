@@ -31,11 +31,6 @@ class LogTest(unittest.TestCase):
         t1 = self.tb.get_tool_by_name('tool2.py')
         self.assertEqual(t1['file'], 'tool2.py')
         
-        self.tb.add({'name':'my cool tool', 'file':'tool15.py', 'function':'main'})
-        t2 = self.tb.get_tool_by_name('my cool tool')
-        self.assertEqual(t2['name'], 'my cool tool')
-        
-        
     def test_03_run_tool(self):
         test_result = self.tb.run(self.tb.lstTools[0], [1,2,3,4,5,6,7], 'Y')
         self.assertEqual(test_result, 12)
@@ -82,6 +77,17 @@ class LogTest(unittest.TestCase):
         tb9 = mod_tool.Toolbox(lst=[tool1])
         self.assertFalse(tb9.verify(tool1))
         
+    def test_10_get_tool_by_name(self):
+
+        self.tb.add({'name':'my cool tool', 'file':'tool15.py', 'function':'main'})
+        t2 = self.tb.get_tool_by_name('my cool tool')
+        self.assertEqual(t2['name'], 'my cool tool')
+
+        t2 = self.tb.get_tool_by_name('tool15.py')
+        self.assertEqual(t2['name'], 'my cool tool')
+    
+        t_not_found = self.tb.get_tool_by_name('Non existant tool')
+        self.assertEqual(t_not_found, None)
     
 if __name__ == '__main__':
     unittest.main()
