@@ -61,5 +61,5 @@ life	plant	vegetable	potato		"""
         t3 = text_tools.parse_text_to_table(test_hdr)   
         self.assertEqual(t3, [['Name', 'Address', 'zip', '', '', '', '']])
         
-if __name__ == '__main__':
-    unittest.main()
+#if __name__ == '__main__':
+#    unittest.main()
