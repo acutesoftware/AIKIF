@@ -51,3 +51,4 @@ Due to fractions multiplying resulting in very small numbers, adding 0.5 to bias
 - 2015-12-08 Rethinking Ontology
 Will not be linking to upper Ontology as originally intended so will focus on the mapping process and classifications.
 
+- 2015-12-19 updating Toolbox and adding additional tools
