@@ -24,6 +24,9 @@ Locations:
 Tools:
     - file: file_tools.py
     - network: network_tools.py
+    - image: image_tools.py
+    - text: text_tools.py
+    - audio: audio_tools.py
         
 Credentials:
     - NAS: ~/logons/password_nas.crypt
