@@ -75,8 +75,13 @@ Object:
             - Wood
         Tools: # - anything that is needed or will help do a task
             - Hammer
+            - Chisel
+            - Saw
+            - Screwdriver
         Assetts:
             - Furniture
+            - Car
+            - House
         Other_stuff:
             - Elephants, Walrus tusks, Antique pipes, Clock Tower in London
 
