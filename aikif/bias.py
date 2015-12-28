@@ -2,9 +2,13 @@
 # part of AIKIF 
 
 import os
-import logging
+#import logging
 
-logging.basicConfig(filename='test_bias.log',level=logging.DEBUG,format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+import cls_log
+#logging.basicConfig(filename='test_bias.log',level=logging.DEBUG,format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+
+
+
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 
 bias_files = [  'bias-website.csv', 
@@ -26,6 +30,10 @@ sample_metadata = [
 ]
 
 sample_rawdata = {'metadata': sample_metadata, 'data':'You should develop in Python 3 instead of 2 for new projects unless you have a dependant package that only works on version 2'}
+
+lg = cls_log.Log(os.getcwd())
+lg.record_process('bias.py', 'starting bias.py')
+
                 
 class Bias(object):
     """
@@ -52,7 +60,8 @@ class Bias(object):
         """
         self.metadata = metadata        
         self.bias_rating = 1  # everything starts unbiased
-        logging.info('init bias class')
+        lg.record_process('bias.py', 'init bias class')
+
         self.bias_details = []
         for f in bias_files:
             self._read_bias_rating(f)
@@ -98,7 +107,7 @@ class Bias(object):
                     try:
                         l_bias = float(b[2]) + 0.5
                     except:
-                        logging.error('ERROR converting bias value to float: ' + str(b))
+                        lg.record_process('bias.py','ERROR converting bias value to float: ' + str(b))
                     self.bias_rating *= l_bias
     
     
@@ -109,7 +118,8 @@ class Bias(object):
         """
         res = {}
         full_name = os.path.join(root_fldr, 'aikif', 'data', 'ref', short_filename)
-        logging.info('reading ' + full_name)
+        lg.record_process('bias.py','reading ' + full_name)
+         
         with open(full_name, 'r') as f:
             for line in f:
                 if line.strip('') == '':
