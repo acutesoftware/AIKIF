@@ -24,10 +24,14 @@ dummy_metadata = [  # source_area, source_type, source_website, source_person
 
 
 class BiasTest(unittest.TestCase):
+    def tearDown(self):
+        unittest.TestCase.tearDown(self)
+        
 
     def test_01_str(self):
         self.bias = mod_bias.Bias(test_metadata)
         self.assertEqual(len(str(self.bias)), 149)
+        #self.bias.close()
         #print(self.bias)
 
     def test_02_calc_bias(self):
