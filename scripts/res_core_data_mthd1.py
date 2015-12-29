@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# research_core_data_method1.py
+# res_core_data_mthd1.py
 
 import unittest
 import sys
@@ -11,7 +11,9 @@ sys.path.append(root_folder)
 import core_data as mod_core
 
 def main():
-    print('\n==============================\nresearch_core_data_method1.py\n==============================\n')
+    print("""
+======================
+res_core_data_mthd1.py
+======================""")
 
 
-main()
