@@ -22,6 +22,17 @@ This paper tests methods to integrate information and measure the effectiveness 
 
 Methods/Procedure
 =====================================
+The following results are auto-generated
+
+Method 1 - Ontological Mapping
+---------------------------------------
+
+method 1: running test1.dat and appending results to res_core_data.rst
+
+method 1: running test2.dat and appending results to res_core_data.rst
+
+
+
 
 Results
 =====================================
