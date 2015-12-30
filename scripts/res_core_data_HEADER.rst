@@ -16,3 +16,5 @@ This paper tests methods to integrate information and measure the effectiveness 
 
 Methods/Procedure
 =====================================
+The following results are auto-generated
+
