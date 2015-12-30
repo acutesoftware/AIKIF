@@ -10,10 +10,11 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 sys.path.append(root_folder)
 import core_data as mod_core
 
-def main():
-    print("""
-======================
-res_core_data_mthd1.py
-======================""")
+def run(fname, dat):
+    append_rst(fname, 'method 1: running ' + dat + ' and appending results to ' + fname + '\n\n')
+ 
 
 
+def append_rst(fname, txt):
+    with open(fname, 'a') as f:
+        f.write(txt)
