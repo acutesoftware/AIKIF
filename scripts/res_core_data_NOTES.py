@@ -12,6 +12,8 @@ import core_data as mod_core
 
 fname = 'res_core_data.rst'
 
+data_files = ['test1.dat', 'test2.dat']
+
 def main():
     """
     This generates the research document based on the results of 
@@ -21,22 +23,30 @@ def main():
     print("Generating research notes...")
     if os.path.exists(fname):
        os.remove(fname)
-    with open(fname, 'w') as f:
-        f.write('================================================\n')
-        f.write('Comparison of Information Aggregation Techniques\n')
-        f.write('================================================\n\n')
-        f.write('.. contents::\n\n')
+    append_rst('================================================\n')
+    append_rst('Comparison of Information Aggregation Techniques\n')
+    append_rst('================================================\n\n')
+    append_rst('.. contents::\n\n')
        
-        # import header
-        f.write(open('res_core_data_HEADER.rst', 'r').read())
-        
-        # call programs
-        import res_core_data_mthd1
-        res_core_data_mthd1.main()
-        
-        # import footer
-        f.write(open('res_core_data_FOOTER.rst', 'r').read())    
+    # import header
+    append_rst(open('res_core_data_HEADER.rst', 'r').read())
+    
+    # call programs
+    append_rst('Method 1 - Ontological Mapping\n')
+    append_rst('---------------------------------------\n\n')
+    import res_core_data_mthd1
+    
+    for dat in data_files:
+        res_core_data_mthd1.run(fname, dat)
+    
+    append_rst('\n\n')
+    
+    # import footer
+    append_rst(open('res_core_data_FOOTER.rst', 'r').read())    
     print("Done!")
     
-
+def append_rst(txt):
+    with open(fname, 'a') as f:
+        f.write(txt)
+    
 main()
