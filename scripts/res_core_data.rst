@@ -27,9 +27,13 @@ The following results are auto-generated
 Method 1 - Ontological Mapping
 ---------------------------------------
 
-method 1: running test1.dat and appending results to res_core_data.rst
+- Data File : test1.dat
 
-method 1: running test2.dat and appending results to res_core_data.rst
+running source data test1.dat .... 
+
+- Data File : test2.dat
+
+running source data test2.dat .... 
 
 
 
