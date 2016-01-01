@@ -11,7 +11,8 @@ sys.path.append(root_folder)
 import core_data as mod_core
 
 def run(fname, dat):
-    append_rst(fname, 'method 1: running ' + dat + ' and appending results to ' + fname + '\n\n')
+    append_rst(fname, '- Data File : ' + dat + '\n')
+    append_rst(fname, '\nrunning source data ' + dat + ' .... \n\n')
  
 
 
