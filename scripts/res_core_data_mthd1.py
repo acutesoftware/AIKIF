@@ -6,9 +6,10 @@ import unittest
 import sys
 import os
 
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" ) 
 sys.path.append(root_folder)
 import core_data as mod_core
+
 
 def run(fname, dat):
     append_rst(fname, '- Data File : ' + dat + '\n')
