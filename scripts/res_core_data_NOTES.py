@@ -35,9 +35,14 @@ def main():
     append_rst('Method 1 - Ontological Mapping\n')
     append_rst('---------------------------------------\n\n')
     import res_core_data_mthd1
-    
     for dat in data_files:
         res_core_data_mthd1.run(fname, dat)
+    
+    append_rst('Method 2 - Method 2 - Drill Up / Drill down\n')
+    append_rst('---------------------------------------\n\n')
+    import res_core_data_mthd2
+    for dat in data_files:
+        res_core_data_mthd2.run(fname, dat)
     
     append_rst('\n\n')
     
