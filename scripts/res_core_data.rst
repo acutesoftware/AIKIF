@@ -35,6 +35,17 @@ running source data test1.dat ....
 
 running source data test2.dat .... 
 
+Method 2 - Method 2 - Drill Up / Drill down
+---------------------------------------
+
+- Data File : test1.dat
+
+running source data test1.dat .... 
+
+- Data File : test2.dat
+
+running source data test2.dat .... 
+
 
 
 
