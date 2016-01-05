@@ -27,24 +27,16 @@ The following results are auto-generated
 Method 1 - Ontological Mapping
 ---------------------------------------
 
-- Data File : test1.dat
+- Data File : sample_raw_data1.csv
 
-running source data test1.dat .... 
-
-- Data File : test2.dat
-
-running source data test2.dat .... 
+running source data sample_raw_data1.csv .... 
 
 Method 2 - Method 2 - Drill Up / Drill down
 ---------------------------------------
 
-- Data File : test1.dat
+- Data File : sample_raw_data1.csv
 
-running source data test1.dat .... 
-
-- Data File : test2.dat
-
-running source data test2.dat .... 
+running source data sample_raw_data1.csv .... 
 
 
 
