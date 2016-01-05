@@ -14,7 +14,9 @@ import core_data as mod_core
 def run(fname, dat):
     append_rst(fname, '- Data File : ' + dat + '\n')
     append_rst(fname, '\nrunning source data ' + dat + ' .... \n\n')
- 
+    with open(dat, 'r') as f:
+        for line in f:
+            print (line)
 
 
 def append_rst(fname, txt):
