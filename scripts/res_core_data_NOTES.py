@@ -13,7 +13,7 @@ import core_data as mod_core
 fname = 'res_core_data.rst'
 
 #data_files = ['sample_raw_data1.csv', 'sample_raw_data2.csv']
-data_files = ['sample_raw_data1.csv']
+data_files = ['sample_raw_data1.csv', 'sample_raw_data2.csv']
 
 def main():
     """

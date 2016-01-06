@@ -31,12 +31,20 @@ Method 1 - Ontological Mapping
 
 running source data sample_raw_data1.csv .... 
 
+- Data File : sample_raw_data2.csv
+
+running source data sample_raw_data2.csv .... 
+
 Method 2 - Method 2 - Drill Up / Drill down
 ---------------------------------------
 
 - Data File : sample_raw_data1.csv
 
 running source data sample_raw_data1.csv .... 
+
+- Data File : sample_raw_data2.csv
+
+running source data sample_raw_data2.csv .... 
 
 
 
