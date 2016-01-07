@@ -16,9 +16,15 @@ def run(fname, dat):
     append_rst(fname, '\nrunning source data ' + dat + ' .... \n\n')
     with open(dat, 'r') as f:
         for line in f:
-            print (line)
+            cols = parse_csv(line)
+            print(cols)
 
 
 def append_rst(fname, txt):
     with open(fname, 'a') as f:
         f.write(txt)
+        
+        
+def parse_csv(txt):
+    cols = txt.split(',')
+    return cols
