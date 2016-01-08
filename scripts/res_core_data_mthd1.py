@@ -13,14 +13,21 @@ import core_data as mod_core
 def get_method(fname):
     """
     returns a description in RST for the research paper
+    
+   
+    append_rst('Method 2 - Method 2 - Drill Up / Drill down\n')
+    append_rst('---------------------------------------\n\n')
+
+    
+    
     """
-    txt = 'Method1\n'
-    txt += 'Using an ontology, map the columns in raw data to a set of standard tables\n'
+    txt = 'Method 1 - Ontological Mapping\n'
+    txt += '---------------------------------------\n\n'
+    txt += 'Using an ontology, map the columns in raw data to a set of standard tables\n\n'
     return txt
     
 def get_results(fname, dat):
-    append_rst(fname, '- Data File : ' + dat + '\n')
-    append_rst(fname, '\nrunning source data ' + dat + ' .... \n\n')
+    append_rst(fname, '\nMethod 1: running source data ' + dat + ' .... \n')
     with open(dat, 'r') as f:
         for line in f:
             cols = parse_csv(line)
