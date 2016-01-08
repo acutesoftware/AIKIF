@@ -10,9 +10,11 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 sys.path.append(root_folder)
 import core_data as mod_core
 
+import res_core_data_mthd1
+import res_core_data_mthd2
+
 fname = 'res_core_data.rst'
 
-#data_files = ['sample_raw_data1.csv', 'sample_raw_data2.csv']
 data_files = ['sample_raw_data1.csv', 'sample_raw_data2.csv']
 
 def main():
@@ -31,21 +33,17 @@ def main():
        
     # import header
     append_rst(open('res_core_data_HEADER.rst', 'r').read())
+    append_rst(res_core_data_mthd1.get_method(fname))
+    append_rst(res_core_data_mthd2.get_method(fname))
     
     # call programs
-    append_rst('Method 1 - Ontological Mapping\n')
-    append_rst('---------------------------------------\n\n')
-    import res_core_data_mthd1
+    append_rst('Results\n')
+    append_rst('=====================================\n')
     for dat in data_files:
-        res_core_data_mthd1.run(fname, dat)
+        append_rst('\nData File : ' + dat + '\n---------------------------------------\n\n')
+        res_core_data_mthd1.get_results(fname, dat)
+        res_core_data_mthd2.get_results(fname, dat)
     
-    append_rst('Method 2 - Method 2 - Drill Up / Drill down\n')
-    append_rst('---------------------------------------\n\n')
-    import res_core_data_mthd2
-    for dat in data_files:
-        res_core_data_mthd2.run(fname, dat)
-    
-    append_rst('\n\n')
     
     # import footer
     append_rst(open('res_core_data_FOOTER.rst', 'r').read())    
