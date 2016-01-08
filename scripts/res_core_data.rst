@@ -24,28 +24,36 @@ Methods/Procedure
 =====================================
 The following results are auto-generated
 
-Method 2 - Method 2 - Drill Up / Drill down
+Method 1 - Ontological Mapping
 ---------------------------------------
+
+Using an ontology, map the columns in raw data to a set of standard tables
+
+Method 2 - Drill Up / Drill down
+---------------------------------------
+
+Data statements can be expanded (drill down)
+and overviewed (drillup) using semi-manual process
+to build a tree/graph
 
 Results
 =====================================
 
-- Data File : sample_raw_data1.csv
+Data File : sample_raw_data1.csv
+---------------------------------------
 
-running source data sample_raw_data1.csv .... 
 
-- Data File : sample_raw_data1.csv
+Method 1: running source data sample_raw_data1.csv .... 
 
-running source data sample_raw_data1.csv .... 
+Method 2: running source data sample_raw_data1.csv .... 
 
-- Data File : sample_raw_data2.csv
+Data File : sample_raw_data2.csv
+---------------------------------------
 
-running source data sample_raw_data2.csv .... 
 
-- Data File : sample_raw_data2.csv
+Method 1: running source data sample_raw_data2.csv .... 
 
-running source data sample_raw_data2.csv .... 
-
+Method 2: running source data sample_raw_data2.csv .... 
 
 
 
