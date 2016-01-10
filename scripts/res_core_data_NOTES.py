@@ -33,8 +33,8 @@ def main():
        
     # import header
     append_rst(open('res_core_data_HEADER.rst', 'r').read())
-    append_rst(res_core_data_mthd1.get_method(fname))
-    append_rst(res_core_data_mthd2.get_method(fname))
+    append_rst(res_core_data_mthd1.get_method())
+    append_rst(res_core_data_mthd2.get_method())
     
     # call programs
     append_rst('Results\n')

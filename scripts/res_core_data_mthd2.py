@@ -10,7 +10,7 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 sys.path.append(root_folder)
 import core_data as mod_core
 
-def get_method(fname):
+def get_method():
     """
     returns a description in RST for the research paper
     """
