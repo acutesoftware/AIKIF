@@ -23,9 +23,17 @@ def get_method(fname):
     
 def get_results(fname, dat):
     append_rst(fname, '\nMethod 2: running source data ' + dat + ' .... \n')
- 
+    with open(dat, 'r') as f:
+        for line in f:
+            cols = parse_csv(line)
+            print(cols)
 
 
 def append_rst(fname, txt):
     with open(fname, 'a') as f:
         f.write(txt)
+        
+        
+def parse_csv(txt):
+    cols = txt.split(',')
+    return cols
