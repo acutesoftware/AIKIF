@@ -52,3 +52,6 @@ Due to fractions multiplying resulting in very small numbers, adding 0.5 to bias
 Will not be linking to upper Ontology as originally intended so will focus on the mapping process and classifications.
 
 - 2015-12-19 updating Toolbox and adding additional tools
+
+- 2016-01 Research Notes: core_data
+Started scripts/res_core_data.rst which is an automatically generated RST file which I hope will show the usefulness of the various methods of mapping data. Have tried several methods in AIKIF so the idea is to document the methods so as not to repeat past mistakes.
