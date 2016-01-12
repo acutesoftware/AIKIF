@@ -13,13 +13,6 @@ import core_data as mod_core
 def get_method():
     """
     returns a description in RST for the research paper
-    
-   
-    append_rst('Method 2 - Method 2 - Drill Up / Drill down\n')
-    append_rst('---------------------------------------\n\n')
-
-    
-    
     """
     txt = 'Method 1 - Ontological Mapping\n'
     txt += '---------------------------------------\n\n'
