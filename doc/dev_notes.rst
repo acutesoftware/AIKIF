@@ -55,3 +55,7 @@ Will not be linking to upper Ontology as originally intended so will focus on th
 
 - 2016-01 Research Notes: core_data
 Started scripts/res_core_data.rst which is an automatically generated RST file which I hope will show the usefulness of the various methods of mapping data. Have tried several methods in AIKIF so the idea is to document the methods so as not to repeat past mistakes.
+
+- 2016-01-14 Moved World generator to VAIS package
+moved the worlds.py, world_generator.py and associated tests from AIKIF to VAIS (virtual-AI-simulator) package.
+Makes sense for VAIS to handle worlds rather than AIKIF which needs to focus on the actual data handling. 
