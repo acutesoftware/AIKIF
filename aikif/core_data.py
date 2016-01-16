@@ -134,7 +134,17 @@ class Event(CoreData):
         return CoreData.__str__(self)
     
 class Location(CoreData):
-    pass
+    def __init__(self, name, data=None, parent=None):
+        """
+        Locations are physical or virtual places
+        data = ['Name', 'Phys|Virt', 'Location']
+        """
+        
+        CoreData.__init__(self, name, data, parent)
+        
+    def __str__(self):
+        return CoreData.__str__(self)
+    
     
 class Charater(CoreData):
     pass
