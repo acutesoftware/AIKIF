@@ -102,6 +102,10 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(len(str(ob)) > 50, True)
         self.assertEqual(ob.get_filename('2999'), test_fldr + os.sep + 'Object2999.user03')
         
+    def test_07_locations(self):
+        l = mod_core.Event('Office', ['Office', 'Physical', '2 Downing St, London'])
+        print('location = ', l)
+        self.assertEqual(len(l.format_csv()) >  5, True)
         
         
          
