@@ -115,7 +115,7 @@ class Toolbox(object):
             sys.path.append(new_import_path)
         
         #if silent == 'N':
-        #    print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
+        print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
         mod = __import__( os.path.basename(tool['file']).split('.')[0]) # for absolute folder names
         # mod = __import__( tool['file'][:-2]) # for aikif folders (doesnt work)
         func = getattr(mod, tool['function'])
