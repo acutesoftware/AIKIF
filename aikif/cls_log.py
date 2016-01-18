@@ -318,9 +318,9 @@ class LogSummary(object):
     
 def ensure_dir(f):
     """ NOTE - not sure if this works exactly - needs a separate test """
-    print('ensure_dir: file = ' + f)
+    #print('ensure_dir: file = ' + f)
     d = os.path.dirname(f)
-    print('ensure_dir: d = ' , d)
+    #print('ensure_dir: d = ' , d)
     
     if not os.path.exists(d):
         os.makedirs(d)
