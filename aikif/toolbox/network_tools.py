@@ -49,11 +49,14 @@ def download_file_no_logon(url, filename):
     import urllib.request
     #url = "http://www.google.com/"
     request = urllib.request.Request(url)
-    response = urllib.request.urlopen(request)
-    with open(filename,'wb') as f:
-        #print (response.read().decode('utf-8'))
-        f.write(response.read())
-
+    try:
+        response = urllib.request.urlopen(request)
+        with open(filename,'wb') as f:
+            #print (response.read().decode('utf-8'))
+            f.write(response.read())
+    except Exception as ex:
+        print("Error - cant download " + url + str(ex))
+        
 def get_protected_page(url, user, pwd, filename):
     """
     having problems with urllib on a specific site so trying requests
