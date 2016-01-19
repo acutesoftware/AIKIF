@@ -25,8 +25,9 @@ class Mapper(object):
         """
         setup that reads the table
         """
-        self.load_rules()
         self.map_type = 'file'
+        self.maps = []          # list of MapRule objects
+        self.load_rules()
 
     def __str__(self):
         res = ' -- List of Mapping Business Rules -- \n'
@@ -34,6 +35,19 @@ class Mapper(object):
             res += str(m)
         return res
 
+    def get_maps_stats(self):
+        """
+        calculates basic stats on the MapRule elements of the maps
+        to give a quick overview.
+        """
+        tpes = {}
+        for m in self.maps:
+            if m.tpe in tpes:
+                tpes[m.tpe] += 1
+            else:
+                tpes[m.tpe] = 1
+        return tpes
+        
     def load_rules(self):
         """ 
         load the rules from file
