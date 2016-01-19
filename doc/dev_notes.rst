@@ -59,3 +59,7 @@ Started scripts/res_core_data.rst which is an automatically generated RST file w
 - 2016-01-14 Moved World generator to VAIS package
 moved the worlds.py, world_generator.py and associated tests from AIKIF to VAIS (virtual-AI-simulator) package.
 Makes sense for VAIS to handle worlds rather than AIKIF which needs to focus on the actual data handling. 
+
+- 2016-01-19 mapper get_maps_stats
+working on mapper to show basic stats of map files
+
