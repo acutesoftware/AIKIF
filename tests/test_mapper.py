@@ -55,7 +55,14 @@ class MapTest(unittest.TestCase):
         mc = mod_map.MapColumns(mod_map.map_file)
         self.assertTrue(len(str(mc)) > 10)
         
-         
+        
+    def test_90_get_maps_stats(self):
+        mc = mod_map.Mapper()
+        print(mc)
+        stats = mc.get_maps_stats()
+        print(stats)
+        self.assertTrue(stats,  {'file': 10, 'text': 4})
+        
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
         #print(str(self.mymap))
