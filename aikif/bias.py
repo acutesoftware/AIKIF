@@ -157,6 +157,12 @@ class Contraversy(object):
         self.topic = topic
         self.noise = 0
         self.controversy = 0
+        self.topics = [{'name':'maths', 'value':0.1},
+                  {'name':'physics', 'value':0.12},
+                  {'name':'economics', 'value':0.4},
+                  {'name':'politics', 'value':0.75},
+                  {'name':'religion', 'value':0.85},
+        ]
         
     def __str__(self):
         res = 'Contraversy: '
@@ -165,10 +171,9 @@ class Contraversy(object):
         return res
     
     def get_contraversy(self):
-        print('TODO')
-        if self.topic == 'maths':
-            return 0.1
-        else:
-            return 0.85
-            
+        for t in self.topics:
+            #print(t)
+            if t['name'] == self.topic:
+                return t['value']
+        return 0    
             
