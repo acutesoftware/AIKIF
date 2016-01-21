@@ -40,17 +40,14 @@ class BiasTest(unittest.TestCase):
 
     def test_03_contraversy_low(self):
         low_cont = mod_bias.Contraversy('maths')
-        print(low_cont)
         self.assertTrue(low_cont.get_contraversy() < 0.2)
 
     def test_04_contraversy_high(self):
         high_cont = mod_bias.Contraversy('religion')
-        print(high_cont)
         self.assertTrue(high_cont.get_contraversy() > 0.8)
 
     def test_05_get_bias_details(self):
         bias5 = mod_bias.Bias(test_metadata)
-        #print(bias5.get_bias_details())
         self.assertEqual(bias5.get_bias_details()[0:17], 'Bias File Details')
         self.assertTrue(len(bias5.get_bias_details()) > 200)
     
