@@ -29,7 +29,8 @@ sample_metadata = [
     
 ]
 
-sample_rawdata = {'metadata': sample_metadata, 'data':'You should develop in Python 3 instead of 2 for new projects unless you have a dependant package that only works on version 2'}
+sample_rawdata = {  'metadata': sample_metadata, 
+                    'data':'You should develop in Python 3 instead of 2 for new projects unless you have a dependant package that only works on version 2'}
 
 lg = cls_log.Log(os.getcwd())
 lg.record_process('bias.py', 'starting bias.py')
@@ -133,7 +134,8 @@ class Bias(object):
     
     def get_bias_rating(self):
         return self.bias_rating
-    
+
+        
 class Contraversy(object):
     """
     class to handle and report on controversial topics so 
@@ -168,3 +170,5 @@ class Contraversy(object):
             return 0.1
         else:
             return 0.85
+            
+            
