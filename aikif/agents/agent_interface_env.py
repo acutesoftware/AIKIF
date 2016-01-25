@@ -23,9 +23,24 @@ class AgentInterfaceEnv(agt.Agent):
     def __str__(self):
         return self.name  + " is " + self.status
         
+    def send_string(self, wnd, txt):
+        """
+        sends a string of text to the window 'wnd', note that this 
+        must be subclassed by appropriate OS
+        """
+        return 'WARNING - dont run this from base class'
+        
+        
     
 class AgentInterfaceWindows(AgentInterfaceEnv):
-    pass
+    def send_string(self, wnd, txt):
+        """
+        sends a string to window and returns True/False as result
+        """
+        print('sending string to OS Windows')
+        return True
+        
+       
     
 class AgentInterfaceLinux(AgentInterfaceEnv):
     pass
