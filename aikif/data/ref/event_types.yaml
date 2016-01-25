@@ -1,0 +1,21 @@
+# event_types.yaml
+# updated 22/1/2016
+# used by AIKIF/scripts/res_core_data_mthd1.py
+
+
+---
+Event_Types:
+    Generic:
+    - Visit
+    - Do
+    - Reminder
+    
+
+Games:
+    General:
+    - buy gear:
+    - play:
+    - discus:
+    Minecraft:
+    - Build
+
