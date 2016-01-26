@@ -24,16 +24,9 @@ class TestAgentInterfaceEnvironment(unittest.TestCase):
         try:
             if os.path.exists('random_text.txt'):
                 os.remove('random_text.txt')
-            
             self.assertFalse(os.path.exists('random_text.txt'))
-
-            
             os.system('start notepad') # for linux, use "open [txtfile]"
             time.sleep(1)
-            #hwnd = mod_tool.get_window_by_caption('Untitled - Notepad')
-            #print('Notepad window ID = ', hwnd)
-            #res = mod_tool.send_text(hwnd, 'hello')  # this fails
-            #self.assertTrue(hwnd > 0)
             mod_tool.app_activate('Untitled - Notepad')
             mod_tool.send_keys("^a{DELETE}hello this is some text with a //")
             mod_tool.send_keys("^s") 
