@@ -9,8 +9,8 @@ import sys
 
 try:
     import win32gui
-except:
-    print('Cant import win32gui (probably CI build on linux)')
+except Exception as ex:
+    print('Cant import win32gui (probably CI build on linux)' + str(ex))
 
 try:
     import win32con
@@ -37,7 +37,7 @@ def get_window_by_caption(caption):
     try:
         hwnd = win32gui.FindWindow(None, caption)
         return hwnd
-    except ex as Exception:
+    except Exception as ex:
         print('error calling win32gui.FindWindow ' + str(ex))
         return -1
     
@@ -52,7 +52,7 @@ def send_text(hwnd, txt):
                 win32api.SendMessage(hwnd, win32con.WM_KEYUP, win32con.VK_RETURN, 0)
             else:
                 win32api.SendMessage(hwnd, win32con.WM_CHAR, ord(c), 0)            
-    except ex as Exception:
+    except Exception as ex:
         print('error calling SendMessage ' + str(ex))
                 
 def launch_app(app_path, params):
@@ -68,7 +68,7 @@ def app_activate(caption):
     try:
         shell = win32com.client.Dispatch("WScript.Shell")
         shell.AppActivate(caption)
-    except ex as Exception:
+    except Exception as ex:
         print('error calling win32com.client.Dispatch (AppActivate)')
         
 def close_app(caption):
@@ -89,6 +89,6 @@ def send_keys(key_string):
     try:
         shell = win32com.client.Dispatch("WScript.Shell")
         shell.SendKeys(key_string)
-    except ex as Exception:
+    except Exception as ex:
         print('error calling win32com.client.Dispatch (SendKeys)')
 
