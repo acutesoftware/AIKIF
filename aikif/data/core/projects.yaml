@@ -1,0 +1,23 @@
+---
+open_source_software:
+    - AIKIF:
+        name: AIKIF
+        location: https://github.com/acutesoftware/AIKIF
+    - rawdata:
+        name: rawdata
+        location: https://github.com/acutesoftware/rawdata
+    - VAIS:
+        name: virtual-AI-simulator
+        location: https://github.com/acutesoftware/virtual-AI-simulator
+    - worldbuild:
+        name: worldbuild
+        location: https://github.com/acutesoftware/worldbuild
+
+websites:
+    - acutesoftware:
+        name: Acute Software
+        location: http://www.acutesoftware.com.au
+
+house:
+    - spring_clean
+    - get new tap installed
