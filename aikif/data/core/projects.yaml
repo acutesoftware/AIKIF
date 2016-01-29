@@ -17,6 +17,10 @@ websites:
     - acutesoftware:
         name: Acute Software
         location: http://www.acutesoftware.com.au
+    - lifepim:
+        name: LifePIM
+        location: https://github.com/acutesoftware/lifepim
+        
 
 house:
     - spring_clean
