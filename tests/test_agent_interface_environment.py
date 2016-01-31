@@ -32,8 +32,9 @@ class TestAgentInterfaceEnvironment(unittest.TestCase):
 
     def test_10_send_key_via_baseclass(self):
         res = mod_agt.AgentInterfaceEnv('Agent Enviroment Interface')
-        self.assertEqual(res.send_string('blah', 'some text'),'WARNING - dont run this from base class')
-
+        self.assertRaises(ValueError, res.send_string, 'blah', 'some text')
+        #self.assertEqual(res.send_string('blah', 'some text'),'WARNING - dont run this from base class')
+        
     def test_11_send_key_via_env_windows(self):
         res = mod_agt.AgentInterfaceWindows('Windows Interface')
         self.assertEqual(res.send_string('blah', 'some text'),True)

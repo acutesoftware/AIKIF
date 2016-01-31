@@ -28,8 +28,8 @@ class AgentInterfaceEnv(agt.Agent):
         sends a string of text to the window 'wnd', note that this 
         must be subclassed by appropriate OS
         """
-        return 'WARNING - dont run this from base class'
-        
+        print('HEY - you cant call send_string directly')
+        raise ValueError('agent_interface_env.py->AgentInterfaceEnv: WARNING - dont run this from base class') 
         
     
 class AgentInterfaceWindows(AgentInterfaceEnv):
