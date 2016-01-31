@@ -16,6 +16,9 @@ areas are multiplied the result is too low - may need to change from
 - core data
 using the core data module, load sample data to core tables via bias module
 
+- agents
+ issue with using Agents in worlds (under VAIS)
+
 Upcoming Tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - integrate vais to run simulations. Should include world.py and environment.py
@@ -62,4 +65,7 @@ Makes sense for VAIS to handle worlds rather than AIKIF which needs to focus on 
 
 - 2016-01-19 mapper get_maps_stats
 working on mapper to show basic stats of map files
+
+- 2016-01-31 fixing issues with using Agents in worlds (under VAIS)
+agent location needs to be fully redone in a later stage. At the moment VAIS holds the old AIKIF World and WorldGenerator class which run agents, however the locations of the agents are stored and managed separately which isnt optimal.
 
