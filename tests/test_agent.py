@@ -37,6 +37,12 @@ class AgentTest(unittest.TestCase):
         self.assertEqual(self.agt.status, 'STOPPED')
         self.assertEqual(self.agt.check_status(), 'STOPPED')
     
+    def test_05_agent_coords(self):
+        self.assertEqual(self.agt.get_coords(), (0,0,0,0))
+        self.agt.set_coords(546.343, -1, 6949395996,9)
+        self.assertEqual(self.agt.get_coords(), (546.343, -1, 6949395996,9))
+        
+    
     
 if __name__ == '__main__':
     unittest.main()
