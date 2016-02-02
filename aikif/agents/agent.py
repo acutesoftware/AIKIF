@@ -37,6 +37,8 @@ class Agent(object):
         self.name = name
         self.fldr = fldr
         self.running = running
+        self.characteristics = None  # this optionally can be a vais.Character, skillpoints, rules
+        self.ai = None          # this is the external AI object that controls this agent
         self.results = []
         self.coords = {}
         self.coords['x']=0
@@ -68,6 +70,11 @@ class Agent(object):
             txt += 'Running : True\n'
         else:
             txt += 'Running : False\n'
+            
+        for c,v in self.coords.items():
+            txt += '  coord ' + str(c) + ' = ' + str(v) + '\n'
+
+            
         return txt
         
     def start(self):
