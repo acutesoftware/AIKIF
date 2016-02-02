@@ -38,6 +38,11 @@ class Agent(object):
         self.fldr = fldr
         self.running = running
         self.results = []
+        self.x=0
+        self.y=0
+        self.z=0
+        self.t=0
+        
         self.status = 'READY'
         if fldr == '':
             fldr = mod_cfg.fldrs['log_folder']
@@ -71,6 +76,26 @@ class Agent(object):
         self.running = True
         self.status = 'RUNNING'
         self.mylog.record_process('agent', self.name + ' - starting')
+    
+    def set_coords(self, x=0, y=0, z=0, t=0):
+        """
+        set coords of agent in an arbitrary world
+        """
+        self.x=x
+        self.y=y
+        self.z=z
+        self.t=t
+
+    def get_coords(self):
+        """
+        Agent to keep track of its coordinates in an unknown world or 
+        simulation. There are no tests here for viability or safety of
+        locations, rather it makes sense for each agent to keep its 
+        location and have the simulation, or world track locations of 
+        *all* agents.
+        """
+        return self.x, self.y, self.z, self.t
+        
     
     def do_your_job(self):
         """
