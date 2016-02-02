@@ -1,3 +1,7 @@
+v0.1.9, 2-Feb-2016 -- change to Agents
+- moved Worlds to separate package virtual-AI-simulator
+- Agent contains characteristics and ai object (not implemented)
+
 v0.1.8, 15-Nov-2015 -- slightly more stable release
 - toolbox functions mostly working and tested
 - removal of unfinished functions
