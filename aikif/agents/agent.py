@@ -38,10 +38,11 @@ class Agent(object):
         self.fldr = fldr
         self.running = running
         self.results = []
-        self.x=0
-        self.y=0
-        self.z=0
-        self.t=0
+        self.coords = {}
+        self.coords['x']=0
+        self.coords['y']=0
+        self.coords['z']=0
+        self.coords['t']=0
         
         self.status = 'READY'
         if fldr == '':
@@ -77,14 +78,15 @@ class Agent(object):
         self.status = 'RUNNING'
         self.mylog.record_process('agent', self.name + ' - starting')
     
-    def set_coords(self, x=0, y=0, z=0, t=0):
+    def set_coords(self, coords = {'x':0, 'y':0, 'z':0, 't':0}):
         """
         set coords of agent in an arbitrary world
         """
-        self.x=x
-        self.y=y
-        self.z=z
-        self.t=t
+        self.coords = {}
+        self.coords['x']=coords['x']
+        self.coords['y']=coords['y']
+        self.coords['z']=coords['z']
+        self.coords['t']=coords['t']
 
     def get_coords(self):
         """
@@ -94,7 +96,7 @@ class Agent(object):
         location and have the simulation, or world track locations of 
         *all* agents.
         """
-        return self.x, self.y, self.z, self.t
+        return self.coords
         
     
     def do_your_job(self):
