@@ -1,19 +1,8 @@
-# Agent.py	written by Duncan Murray 21/4/2014
+#!/usr/bin/python3
+# coding: utf-8
+# agent.py
 # Base class for agents in AIKIF
-# This class manages the starting and stopping of agents, 
-# so it is the interface to whatever method will be used
-#  (e.g. mail, http, # subprocess, ?)
-# USAGE - e.g. test_agent.py
-# from agent import Agent
-# class TestAgent(Agent):
-# 	def __init__(self, *arg):
-# 		Agent.__init__(self, *arg)
-#
-# def main():
-# 	test = TestAgent('hello',  os.getcwd())
-# 	test.start()
-# 	print(test.check_status())
-# 	print(test.report())
+
 import os
 
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
@@ -137,14 +126,5 @@ class Agent(object):
         return self.results
         
 
-def TEST():
-    manualAgent = Agent('manual', 'T:\\user\\AIKIF\\log', False)
-    manualAgent.start()
-    manualAgent.stop()
-    print(manualAgent.check_status())
-    print(manualAgent.report())
-    
-if __name__ == '__main__':
-    TEST()
-    
+
     
