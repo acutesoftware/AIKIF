@@ -3,8 +3,8 @@
 AIKIF Design
 ====================
 
-Last updated 12-Dec-2015
-AIKIF Dev version 0.1.7
+Last updated 5-Feb-2016
+AIKIF Dev version 0.1.9
 
 This document is a scratch pad area for design notes during the development of AIKIF
 
@@ -67,8 +67,7 @@ This is the main part of AIKIF and the idea is to be able to log any level of de
 Logging Events
 -----------------
 
-The main program is aikif/cls_log and at the moment this simply appends to a text file.
-
+Logging is done via aikif/cls_log.
 
 The main methods of the cls_log.py are below
 
