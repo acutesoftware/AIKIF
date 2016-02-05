@@ -69,3 +69,7 @@ working on mapper to show basic stats of map files
 - 2016-01-31 fixing issues with using Agents in worlds (under VAIS)
 agent location needs to be fully redone in a later stage. At the moment VAIS holds the old AIKIF World and WorldGenerator class which run agents, however the locations of the agents are stored and managed separately which isnt optimal.
 
+- 2016-02-05 testing loading real data
+setting up local folder and config / mappings to load real data. Not many changes likely to AIKIF package apart from new toolbox modules.
+The external program should use the package via config files.
+
