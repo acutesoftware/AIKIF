@@ -191,12 +191,33 @@ class Mapper(object):
                     
 class MapRule(object):
     """
-    manages the parsing of rules in the mapping table
+    manages the parsing of rules in the mapping table.
+    A rule can be a classification such as
+    1. File types: rule is file, [xtn], [doc_type]
+    eg 
+            
+        file           .php           program
+        file           .docx          document
+        file           .htm           document
+        file           .html          document
+        file           .xls           data_file
+        file           .xlsx          data_file    
+        
+    or it can be a text relationship 
+        text           object         all
+        text           event          all
+        text           action         all
+        text           relationship   all
+
+
+    Column rules are currently mapped as separately (??) 
+    
     """
     def __init__(self, raw_line):
         """
         takes a raw row in the map file and extracts info
         """
+        
         cols = raw_line.split(',')
         self.tpe = cols[0].strip()
         self.key = cols[1].strip()
