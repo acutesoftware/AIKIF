@@ -21,11 +21,12 @@ class Mapper(object):
     based on a mapping table
     """
     
-    def __init__(self):
+    def __init__(self, map_file=None):
         """
         setup that reads the table
         """
         self.map_type = 'file'
+        self.map_file = map_file
         self.maps = []          # list of MapRule objects
         self.load_rules()
 
@@ -247,7 +248,7 @@ class MapColumns(object):
         res = ' -- List of Column Mappings -- \n'
         print('self.col_file = ' + self.col_file)
         for m in self.col_maps:
-            res += m
+            res += str(m)
             #print(m)
         return res
 
@@ -259,6 +260,71 @@ class MapColumns(object):
         #print("reading mapping table")
         with open(self.col_file, 'r') as f:
             for line in f:
-                rule = line  # class to parse here?
+                rule = MapColumn(line)
+                #rule = line
                 self.col_maps.append(rule)
 
+class MapColumn(object):
+    """
+    Class to manage the content of a single column map rule.
+    It is designed to be re-usable for all rows in a map file,
+    so instantiate it once, then call the create_from_csv_line
+    to load a rule, and then use it (parse, or process).
+    
+    Properties of the class are:
+    table
+    column
+    data_type
+    aikif_map
+    aikif_map_name
+    extract
+    format
+    where
+    index
+    
+    table,column,data_type,aikif_map,aikif_map_name,extract,format,where,index
+    emails_sent.csv,subject,str,fact,email subject,,,,full
+
+    """
+    def __init__(self, csv_line):
+        self.csv_line = csv_line
+        self._parse_csv_col_rules()
+        
+        
+    def __str__(self):
+        res = ' Map Column\n'
+        
+        res += 'table : ' + self.table + '\n'
+        res += 'column : ' + self.column + '\n'
+        res += 'data_type : ' + self.data_type + '\n'
+        res += 'aikif_map : ' + self.aikif_map + '\n'
+        res += 'aikif_map_name : ' + self.aikif_map_name + '\n'
+        res += 'extract : ' + self.extract + '\n'
+        res += 'format : ' + self.format + '\n'
+        res += 'where : ' + self.where + '\n'
+        res += 'index : ' + self.index + '\n'
+        return res
+        
+    def _parse_csv_col_rules(self):
+        def extract_col(cols, num):
+            txt = ''
+            try:
+                txt = cols[num].split(' ').strip('\n')
+                return txt
+            except:
+                print('cant put text into col ' , num, ' txt = ', txt)
+                return ''
+        cols = self.csv_line.split(',')
+        self.table = extract_col(cols, 0)
+        self.column = extract_col(cols, 1)
+        self.data_type = extract_col(cols, 2)
+        self.aikif_map = extract_col(cols, 3)
+        self.aikif_map_name = extract_col(cols, 4)
+        self.extract = extract_col(cols, 5)
+        self.format = extract_col(cols, 6)
+        self.where = extract_col(cols, 7)
+        self.index = extract_col(cols, 8)
+        
+        
+        
+    
