@@ -16,7 +16,7 @@ class MapTest(unittest.TestCase):
     def setUp(self):
         """ gets called for EACH test """
         unittest.TestCase.setUp(self)
-        self.mymap = mod_map.Mapper()
+        self.mymap = mod_map.Mapper(mod_map.map_file)
         
         
     def tearDown(self):
@@ -58,7 +58,7 @@ class MapTest(unittest.TestCase):
     
     def test_31_MapColumn(self):
         mc = mod_map.MapColumn('table,column,data_type,aikif_map,aikif_map_name,extract,format,where,index,')
-        print(mc)
+        #print(mc)
         self.assertEqual(mc.table, 'table')
         self.assertEqual(mc.column, 'column')
         self.assertEqual(mc.data_type, 'data_type')
@@ -71,10 +71,10 @@ class MapTest(unittest.TestCase):
       
     
     def test_90_get_maps_stats(self):
-        mc = mod_map.Mapper()
-        print(mc)
+        mc = mod_map.Mapper(mod_map.map_file)
+        #print(mc)
         stats = mc.get_maps_stats()
-        print(stats)
+        #print(stats)
         self.assertTrue(stats,  {'file': 10, 'text': 4})
         
     def test_99(self):
