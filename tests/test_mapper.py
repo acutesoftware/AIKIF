@@ -59,6 +59,16 @@ class MapTest(unittest.TestCase):
     def test_31_MapColumn(self):
         mc = mod_map.MapColumn('table,column,data_type,aikif_map,aikif_map_name,extract,format,where,index,')
         print(mc)
+        self.assertEqual(mc.table, 'table')
+        self.assertEqual(mc.column, 'column')
+        self.assertEqual(mc.data_type, 'data_type')
+        self.assertEqual(mc.aikif_map, 'aikif_map')
+        self.assertEqual(mc.aikif_map_name, 'aikif_map_name')
+        self.assertEqual(mc.extract, 'extract')
+        self.assertEqual(mc.format, 'format')
+        self.assertEqual(mc.where, 'where')
+        self.assertEqual(mc.index, 'index')
+      
     
     def test_90_get_maps_stats(self):
         mc = mod_map.Mapper()
