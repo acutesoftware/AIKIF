@@ -54,10 +54,12 @@ class Mapper(object):
         load the rules from file
         """
         self.maps = []
-        with open(map_file, 'r') as f:
+        with open(self.map_file, 'r') as f:
             for line in f:
-                rule = MapRule(line)
-                self.maps.append(rule)
+                if line.strip(' ')[0:1] != '#':
+                    rule = MapRule(line)
+                    #print('rule = ', rule)
+                    self.maps.append(rule)
      
     def save_rules(self, op_file):
         """ 
@@ -174,7 +176,7 @@ class Mapper(object):
             f.write('filename:source=' + data_filename + '\n')
             f.write('filename:rule=' + op_filename + '\n\n')
             for row in l_map:
-                print('ROW = ' , row)
+                #print('ROW = ' , row)
                 if type(row) is str:
                     f.write(row + '\n')
                 else:
@@ -322,7 +324,7 @@ class MapColumn(object):
             txt = self.cols[num].strip(' ').strip('\n')
             return txt
         except:
-            print('cant put text into col ' , num, ' txt = ', txt)
+            #print('cant put text into col ' , num, ' txt = ', txt)
             return ''
             
     def _parse_csv_col_rules(self):
