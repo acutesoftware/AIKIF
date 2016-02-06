@@ -55,7 +55,11 @@ class MapTest(unittest.TestCase):
         mc = mod_map.MapColumns(mod_map.map_file)
         self.assertTrue(len(str(mc)) > 10)
         
-        
+    
+    def test_31_MapColumn(self):
+        mc = mod_map.MapColumn('table,column,data_type,aikif_map,aikif_map_name,extract,format,where,index,')
+        print(mc)
+    
     def test_90_get_maps_stats(self):
         mc = mod_map.Mapper()
         print(mc)
