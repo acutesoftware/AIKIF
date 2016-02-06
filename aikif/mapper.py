@@ -288,6 +288,17 @@ class MapColumn(object):
     """
     def __init__(self, csv_line):
         self.csv_line = csv_line
+        self.cols = []
+        self.table = ''
+        self.column = ''
+        self.data_type = ''
+        self.aikif_map = ''
+        self.aikif_map_name = ''
+        self.extract = ''
+        self.format = ''
+        self.where = ''
+        self.index = ''
+        
         self._parse_csv_col_rules()
         
         
@@ -305,25 +316,26 @@ class MapColumn(object):
         res += 'index : ' + self.index + '\n'
         return res
         
+    def extract_col(self, num):
+        txt = ''
+        try:
+            txt = self.cols[num].strip(' ').strip('\n')
+            return txt
+        except:
+            print('cant put text into col ' , num, ' txt = ', txt)
+            return ''
+            
     def _parse_csv_col_rules(self):
-        def extract_col(cols, num):
-            txt = ''
-            try:
-                txt = cols[num].split(' ').strip('\n')
-                return txt
-            except:
-                print('cant put text into col ' , num, ' txt = ', txt)
-                return ''
-        cols = self.csv_line.split(',')
-        self.table = extract_col(cols, 0)
-        self.column = extract_col(cols, 1)
-        self.data_type = extract_col(cols, 2)
-        self.aikif_map = extract_col(cols, 3)
-        self.aikif_map_name = extract_col(cols, 4)
-        self.extract = extract_col(cols, 5)
-        self.format = extract_col(cols, 6)
-        self.where = extract_col(cols, 7)
-        self.index = extract_col(cols, 8)
+        self.cols = self.csv_line.split(',')
+        self.table = self.extract_col(0)
+        self.column = self.extract_col(1)
+        self.data_type = self.extract_col(2)
+        self.aikif_map = self.extract_col(3)
+        self.aikif_map_name = self.extract_col(4)
+        self.extract = self.extract_col(5)
+        self.format = self.extract_col(6)
+        self.where = self.extract_col(7)
+        self.index = self.extract_col(8)
         
         
         
