@@ -68,6 +68,9 @@ class MapTest(unittest.TestCase):
         self.assertEqual(mc.format, 'format')
         self.assertEqual(mc.where, 'where')
         self.assertEqual(mc.index, 'index')
+        
+        self.assertEqual(str(mc)[0:41], ' Map Column\ntable : table\ncolumn : column')
+        self.assertEqual(len(str(mc)), 180)
       
     
     def test_90_get_maps_stats(self):
