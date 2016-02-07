@@ -63,7 +63,7 @@ class Mapper(object):
      
     def save_rules(self, op_file):
         """ 
-        load the rules to file after web updates or program changes 
+        save the rules to file after web updates or program changes 
         """
         with open(op_file, 'w') as f:
             for m in self.maps:
@@ -328,6 +328,11 @@ class MapColumn(object):
             return ''
             
     def _parse_csv_col_rules(self):
+        """
+        splits the CSV line of the current format and puts into 
+        local class variables - mainly for testing, though this is
+        not the best method long term. (TODO - fix this)
+        """
         self.cols = self.csv_line.split(',')
         self.table = self.extract_col(0)
         self.column = self.extract_col(1)
