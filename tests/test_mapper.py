@@ -8,6 +8,10 @@ import os
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" )
 sys.path.append(root_fldr)
 print(root_fldr)
+
+fldr_raw_data = os.path.join(root_fldr, 'data', 'raw')
+print(fldr_raw_data)
+
 import config as mod_cfg
 import mapper as mod_map
 
@@ -79,7 +83,13 @@ class MapTest(unittest.TestCase):
         stats = mc.get_maps_stats()
         #print(stats)
         self.assertTrue(stats,  {'file': 10, 'text': 4})
-        
+    
+
+    def test_40_read_raw_file(self):
+        mapPC_Usage = mod_map.Mapper(os.path.join(fldr_raw_data, 'PC_Usage.map'))
+        tot = mapPC_Usage.process_raw_file(os.path.join(fldr_raw_data, 'sample_PC_usage.txt'))
+        self.assertEqual(tot, 24)
+    
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
         #print(str(self.mymap))
