@@ -92,8 +92,8 @@ class Mapper(object):
                     #except:
                     #    print('parsing error - shouldnt really be splitting using a comma anyway!')
                 
-                if num_lines > 100:
-                    break
+                #if num_lines > 100:
+                #    break
                 
         return num_lines
 
