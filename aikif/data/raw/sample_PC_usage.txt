@@ -1,0 +1,24 @@
+2014-12-23,11:37,2,Google Calendar - Google Chrome
+2014-12-23,11:37,6,Inbox (1,878) - djmurray@gmail.com - Gmail - Google Chrome
+2014-12-23,11:37,27,@coursera tweeted: Coursera congratulates Guokr on its $20M series C. With Guokr's MOOC Academy, browse courses &amp; interact w/ learners - djmurray@gmail.com - Gmail - Google Chrome
+2014-12-23,11:38,20,@coursera tweeted: Coursera congratulates Guokr on its $20M series C. With Guokr's MOOC Academy, browse courses &amp; interact w/ learners - djmurray@gmail.com - Gmail - Google Chrome
+2014-12-23,11:38,1,Z:\duncan\C\user\docs\study\process-mining\ass1-CoSeLoG project.xes - Notepad++
+2014-12-23,11:38,4,Open
+2014-12-23,11:38,2,Z:\duncan\C\user\docs\study\process-mining\ass1-CoSeLoG project.xes - Notepad++
+2014-12-23,11:38,1,T:\user\dev\src\python\AIKIF\aikif\agents\learn\agent_learn_aixi.py - Notepad++
+2014-12-23,11:38,10,Open
+2014-12-23,11:38,4,T:\user\dev\src\python\AIKIF\tests\test_toolbox_maths_ml_algorithms.py - Notepad++
+2014-12-23,11:38,4,Quiz | Coursera - Google Chrome
+2014-12-23,11:38,5,T:\user\dev\src\python\AIKIF\tests\test_toolbox_maths_ml_algorithms.py - Notepad++
+2014-12-23,11:38,7,*T:\user\dev\src\python\AIKIF\tests\test_toolbox_maths_ml_algorithms.py - Notepad++
+2014-12-23,11:38,2,C:\Windows\system32\cmd.exe
+2014-12-23,11:39,6,C:\Windows\system32\cmd.exe
+2014-12-23,11:39,3,Select C:\Windows\system32\cmd.exe
+2014-12-23,11:39,3,T:\user\dev\src\python\AIKIF\tests\test_toolbox_maths_ml_algorithms.py - Notepad++
+2014-12-23,11:39,2,*T:\user\dev\src\python\AIKIF\tests\test_toolbox_maths_ml_algorithms.py - Notepad++
+2014-12-23,11:39,6,C:\Windows\system32\cmd.exe
+2014-12-23,11:39,3,T:\user\dev\src\python\AIKIF\tests\test_toolbox_maths_ml_algorithms.py - Notepad++
+2014-12-23,11:39,36,Quiz | Coursera - Google Chrome
+2014-12-23,11:40,60,Quiz | Coursera - Google Chrome
+2014-12-23,11:41,60,Quiz | Coursera - Google Chrome
+2014-12-23,11:42,60,Quiz | Coursera - Google Chrome
