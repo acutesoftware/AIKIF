@@ -83,11 +83,14 @@ class Mapper(object):
                 raw_cols = line.split(',')
                 num_lines += 1
                 for col_num, col_data in enumerate(raw_cols):
-                    print('col_num, col_data = ', col_num, col_data)
                     try:
-                        print('self.maps[', col_num, '] = ', self.maps[col_num])
+                        print('col_num, col_data = ', col_num, col_data)
                     except:
-                        print('parsing error - shouldnt really be splitting using a comma anyway!')
+                        print('ERROR trying to print col_data')
+                    #try:
+                    #    print('self.maps[', col_num, '] = ', self.maps[col_num])
+                    #except:
+                    #    print('parsing error - shouldnt really be splitting using a comma anyway!')
                 
                 if num_lines > 100:
                     break
