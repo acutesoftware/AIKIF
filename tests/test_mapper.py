@@ -30,15 +30,15 @@ class MapTest(unittest.TestCase):
         self.assertEqual(len(str(self.mymap)) > 500, True)
 
     def test_11_process_text_1(self):
-        res = self.mymap.process_data('text', 'hello world')
+        res = self.mymap.identify_data('text', 'hello world')
         self.assertEqual(res , 4)
 
     def test_12_process_file_1(self):
-        res = self.mymap.process_data('file', 'test.csv')
+        res = self.mymap.identify_data('file', 'test.csv')
         self.assertEqual(res , 10)
 
     def test_13_process_unknown(self):
-        res = self.mymap.process_data('blah blah', 'SOME_STUFF')
+        res = self.mymap.identify_data('blah blah', 'SOME_STUFF')
         #print(res)
         self.assertEqual(res , 0)
         

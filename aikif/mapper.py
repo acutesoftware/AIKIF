@@ -69,7 +69,7 @@ class Mapper(object):
             for m in self.maps:
                 f.write(m.format_for_file_output())
                 
-    def process_data(self, tpe, raw_data):
+    def identify_data(self, tpe, raw_data):
         """
         top level function to decide how to process 
         the raw data (which can be any format)
