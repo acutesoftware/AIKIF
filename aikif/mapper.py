@@ -68,11 +68,39 @@ class Mapper(object):
         with open(op_file, 'w') as f:
             for m in self.maps:
                 f.write(m.format_for_file_output())
+    
+    def process_raw_file(self, raw_file_name):
+        """
+        takes the filename to be read and uses the maps setup 
+        on class instantiation to process the file.
+        This is a top level function and uses self.maps which 
+        should be the column descriptions (in order).
+        """
+        num_lines = 0
+        num_outouts = 0
+        with open(raw_file_name, 'r') as f:
+            for line in f:
+                raw_cols = line.split(',')
+                num_lines += 1
+                for col_num, col_data in enumerate(raw_cols):
+                    print('col_num, col_data = ', col_num, col_data)
+                    try:
+                        print('self.maps[', col_num, '] = ', self.maps[col_num])
+                    except:
+                        print('parsing error - shouldnt really be splitting using a comma anyway!')
                 
+                if num_lines > 100:
+                    break
+                
+        return num_lines
+
+    
     def identify_data(self, tpe, raw_data):
         """
-        top level function to decide how to process 
-        the raw data (which can be any format)
+        function to decide how to process 
+        the raw data (which can be any format).
+        Note - not 100% sure how this will be implemented
+        should we pass the filename (currently takes a line)
         """
         num_applicable_rules = 0
         formatted_data = self.format_raw_data(tpe, raw_data)
