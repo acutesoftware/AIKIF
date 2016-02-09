@@ -78,25 +78,41 @@ class Mapper(object):
         """
         num_lines = 0
         num_outouts = 0
+        dist_vals = {}
+        group_dat = []
+        events = []
+        facts = []
+        
         with open(raw_file_name, 'r') as f:
             for line in f:
                 raw_cols = line.split(',')
                 num_lines += 1
                 for col_num, col_data in enumerate(raw_cols):
                     try:
-                        print('col_num, col_data = ', col_num, col_data)
+                        #print('col_num, col_data = ', col_num, col_data)
+                        num_outouts += 0
                     except:
                         print('ERROR trying to print col_data')
-                    #try:
+                    try:
                     #    print('self.maps[', col_num, '] = ', self.maps[col_num])
-                    #except:
-                    #    print('parsing error - shouldnt really be splitting using a comma anyway!')
-                
-                #if num_lines > 100:
-                #    break
-                
-        return num_lines
+                        if self.maps[col_num].val == 'group_distinct':
+                            group_dat.append(col_data)
+                        elif self.maps[col_num].val == 'event_date':
+                            events.append(col_data)
 
+                    except:
+                       print('parsing error - shouldnt really be splitting using a comma anyway!')
+                
+                
+                if num_lines > 99:
+                    break
+        
+        dist_vals = set(group_dat)
+        
+        return num_lines, dist_vals
+
+    def aggregate_data(self):
+        pass
     
     def identify_data(self, tpe, raw_data):
         """
