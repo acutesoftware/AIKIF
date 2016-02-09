@@ -78,7 +78,7 @@ class Mapper(object):
         """
         num_lines = 0
         num_outouts = 0
-        dist_vals = {}
+        dist_vals = []
         group_dat = []
         events = []
         facts = []
@@ -107,7 +107,7 @@ class Mapper(object):
                 if num_lines > 99:
                     break
         
-        dist_vals = set(group_dat)
+        dist_vals = sorted(list(set(group_dat)))
         
         return num_lines, dist_vals
 
