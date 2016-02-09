@@ -1,5 +1,5 @@
 # PC_Usage.map
-col, string, date
-col, string, time
-col, string, length
-col, string, caption
+col, date, event_date
+col, time, event_time
+col, length, event_length
+col, caption, group_distinct
