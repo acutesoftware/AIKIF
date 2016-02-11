@@ -5,7 +5,7 @@
 2014-12-23,11:38,1,T:\user\dev\src\python\AIKIF\aikif\agents\learn\agent_learn_aixi.py - Notepad++
 2014-12-23,11:38,10,Open
 2014-12-23,11:38,4,T:\user\dev\src\python\AIKIF\tests\test_toolbox_maths_ml_algorithms.py - Notepad++
-2014-12-23,11:38,4,Quiz | Coursera - Google Chrome
+2014-12-23,11:38,4,Quiz | Coursera - Google Chrome with added comma , 
 2014-12-23,11:38,5,T:\user\dev\src\python\AIKIF\tests\test_toolbox_maths_ml_algorithms.py - Notepad++
 2014-12-23,11:38,2,C:\Windows\system32\cmd.exe
 2014-12-23,11:39,6,C:\Windows\system32\cmd.exe
