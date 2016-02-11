@@ -89,11 +89,6 @@ class Mapper(object):
                 num_lines += 1
                 for col_num, col_data in enumerate(raw_cols):
                     try:
-                        print('col_num, col_data = ', col_num, col_data)
-                        num_outouts += 1
-                    except:
-                        print('ERROR trying to print col_data')
-                    try:
                     #    print('self.maps[', col_num, '] = ', self.maps[col_num])
                         if self.maps[col_num].val == 'group_distinct':
                             group_dat.append(col_data.strip('\n'))
