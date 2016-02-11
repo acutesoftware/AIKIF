@@ -3,6 +3,7 @@
 # mapper.py
 
 import os
+import csv
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 
 import aikif.dataTools.cls_datatable as mod_datatable
@@ -69,38 +70,33 @@ class Mapper(object):
             for m in self.maps:
                 f.write(m.format_for_file_output())
     
-    def process_raw_file(self, raw_file_name):
+    def process_raw_file(self, raw_file_name, field_names):
         """
         takes the filename to be read and uses the maps setup 
         on class instantiation to process the file.
         This is a top level function and uses self.maps which 
         should be the column descriptions (in order).
         """
-        num_lines = 0
         num_outouts = 0
         dist_vals = []
         group_dat = []
         events = []
         facts = []
         
-        with open(raw_file_name, 'r') as f:
-            for line in f:
-                raw_cols = line.split(',')
-                num_lines += 1
-                for col_num, col_data in enumerate(raw_cols):
+        with open(raw_file_name) as csvfile:
+            reader = csv.DictReader(csvfile, fieldnames = field_names)
+            for num_lines, row in enumerate(reader):
+                #print('row = =',row)
+                for col_num, fld in enumerate(field_names):
                     try:
-                    #    print('self.maps[', col_num, '] = ', self.maps[col_num])
+                        #print('self.maps[', col_num, '] = ', self.maps[col_num])
                         if self.maps[col_num].val == 'group_distinct':
-                            group_dat.append(col_data.strip('\n'))
+                            group_dat.append(row[fld])
                         elif self.maps[col_num].val == 'event_date':
-                            events.append(col_data)
+                            events.append(row[fld])
 
                     except:
                        print('parsing error - shouldnt really be splitting using a comma anyway!')
-                
-                
-                if num_lines > 99:
-                    break
         
         dist_vals = sorted(list(set(group_dat)))
         
