@@ -10,37 +10,31 @@ test_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep 
 sys.path.append(root_fldr)
 import agent as mod_agent
 
+agt = mod_agent.Agent(name='test_agent_number_685848', fldr=os.getcwd())
+
 class AgentTest(unittest.TestCase):
-    
-    def setUp(self):
-        unittest.TestCase.setUp(self)
-        self.agt = mod_agent.Agent(name='test_agent_number_685848', fldr=os.getcwd())
-        
-    def tearDown(self):
-        """ called once at the end of this test class """
-        unittest.TestCase.tearDown(self)
 
     def test_01_str(self):
         #print(str(self.agt))
-        self.assertTrue(len(str(self.agt)) > 99)
+        self.assertTrue(len(str(agt)) > 99)
 
     def test_02_name(self):
-        self.assertEqual(self.agt.name, 'test_agent_number_685848')
+        self.assertEqual(agt.name, 'test_agent_number_685848')
         
     def test_03_start_agent(self):
-        self.agt.start()
-        self.assertEqual(self.agt.status, 'RUNNING')
-        self.assertEqual(self.agt.check_status(), 'RUNNING')
+        agt.start()
+        self.assertEqual(agt.status, 'RUNNING')
+        self.assertEqual(agt.check_status(), 'RUNNING')
         
     def test_04_stop_agent(self):
-        self.agt.stop()
-        self.assertEqual(self.agt.status, 'STOPPED')
-        self.assertEqual(self.agt.check_status(), 'STOPPED')
+        agt.stop()
+        self.assertEqual(agt.status, 'STOPPED')
+        self.assertEqual(agt.check_status(), 'STOPPED')
     
     def test_05_agent_coords(self):
-        self.assertEqual(self.agt.get_coords(), {'x':0, 'y':0, 'z':0, 't':0})
-        self.agt.set_coords({'x':546.343, 'y':-1, 'z':6949395996, 't':9})
-        self.assertEqual(self.agt.get_coords(), {'x':546.343, 'y':-1, 'z':6949395996, 't':9})
+        self.assertEqual(agt.get_coords(), {'x':0, 'y':0, 'z':0, 't':0})
+        agt.set_coords({'x':546.343, 'y':-1, 'z':6949395996, 't':9})
+        self.assertEqual(agt.get_coords(), {'x':546.343, 'y':-1, 'z':6949395996, 't':9})
         
     
     
