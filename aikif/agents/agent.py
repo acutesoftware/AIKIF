@@ -44,6 +44,11 @@ class Agent(object):
         self.mylog = mod_log.Log(fldr)
         self.mylog.record_command('agent', self.name + ' - initilising')
         
+        # log agent name to get list of all agents
+        with open('log_agent_list.txt', 'a') as f:
+            f.write(self.__class__.__name__ + ":" + self.name + '\n')
+        
+        
         if self.running is True:
             self.start()
 
