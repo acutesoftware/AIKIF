@@ -11,7 +11,6 @@ print(root_fldr)
 
 def get_page():
     txt = ''
-    txt += '<p>Page to show agents currently setup in AIKIF.</p>'
     txt += load_agent_list(os.path.join(root_fldr,"data"))
     return txt
     
