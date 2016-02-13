@@ -17,8 +17,9 @@ class TestWebAppPageAgent(unittest.TestCase):
 
     def test_01_get_list_of_files(self):
         res = page_agents.get_page()
-        print(res)
+        #print(res)
         self.assertEqual(len(res) > 40, True)
+        self.assertEqual(res[0:36], '\nAgent:test_agent_number_685848\n<BR>')
 
 
 
