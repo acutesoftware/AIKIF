@@ -133,12 +133,15 @@ class ExploreAgent(agt.Agent):
         """
         dumps the status of the agent
         """
-        print("Agent Status:")
-        print("start_x  = ", self.start_x)
-        print("start_y  = ", self.start_y)
-        print("target_x = ", self.target_x)
-        print("target_y = ", self.target_y)
+        txt = 'Agent Status:\n'
+        print(txt)
+        txt += "start_x  = " + str(self.start_x) + "\n"
+        txt += "start_y  = " + str(self.start_y) + "\n"
+        txt += "target_x = " + str(self.target_x) + "\n"
+        txt += "target_y = " + str(self.target_y) + "\n"
+        txt += "current_x = " + str(self.current_x) + "\n"
+        txt += "current_y = " + str(self.current_y) + "\n"
        
         
         print(self.grd)
-    
+        return txt
