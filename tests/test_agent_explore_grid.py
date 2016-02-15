@@ -86,5 +86,13 @@ class TestAgentExploreGrid(unittest.TestCase):
         self.assertEqual(agt.grd.get_tile(agt.current_y + 1, agt.current_x - 1),' ' )
         self.assertEqual(agt.grd.get_tile(agt.current_y + 1, agt.current_x + 1),' ' )
 
+    def test_09_move_opposite(self):
+        agt.set_world( grd, [5,5], [2,2])
+        for i in range(0,99):
+            agt.do_your_job()
+        txt_after = agt.show_status()
+        self.assertTrue(agt.current_y != 5 or agt.current_x != 5)  # we *assume* it manages to move somewhere
+
+        
 if __name__ == '__main__':
     unittest.main()
