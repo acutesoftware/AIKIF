@@ -15,7 +15,7 @@ import agent_explore_grid as mod_agt
 sys.path.append(tool_folder)
 import cls_grid as mod_grid
 
-agt = mod_agt.ExploreAgent('TEST - exploring_agent',  os.getcwd(), 1, True)
+agt = mod_agt.ExploreAgent('TEST - exploring_agent',  os.getcwd(), 4, True)
 grd = mod_grid.Grid(grid_height=8, grid_width=8, pieces=['X', 'O'], spacing=1)   
 grd.new_tile()
 grd.new_tile()
