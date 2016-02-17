@@ -19,7 +19,7 @@ class TestWebAppPageAgent(unittest.TestCase):
         res = page_agents.get_page()
         #print(res)
         self.assertEqual(len(res) > 40, True)
-        self.assertEqual(res[0:36], '\nAgent:test_agent_number_685848\n<BR>')
+        self.assertEqual(res[0:36], '\n<TABLE><TR><TH>Class</TH><TH>Name</')
 
 
 
