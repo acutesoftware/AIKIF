@@ -19,11 +19,16 @@ def load_agent_list(fldr):
     reads the text file showing the list of agent classes used
     and presents counts based on the agent usage
     """
-    res = '\n'
+    res = '\n<TABLE border=1 valign=top width=80%><TR><TH>Class</TH><TH>Name</TH></TR>\n'
+    cols = []
     with open(os.path.join(fldr, 'list_agent_names.txt'), 'r') as f:
         for line in f:
-            res += line + '<BR>\n'
-    res += '<BR><BR>\n'
+            res += '<TR><TD>'
+            cols = line.split(':')
+            res += cols[0] + '</TD><TD>'
+            res += cols[1] + '</TD>'
+            res += '</TR><BR>\n'
+    res += '</TABLE><BR><BR>\n'
     
     
     return res
