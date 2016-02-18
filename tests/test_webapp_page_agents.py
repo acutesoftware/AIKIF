@@ -17,10 +17,8 @@ class TestWebAppPageAgent(unittest.TestCase):
 
     def test_01_get_list_of_files(self):
         res = page_agents.get_page()
-        #print(res)
         self.assertEqual(len(res) > 40, True)
         self.assertEqual(res[0:35], '\n<TABLE border=1 valign=top width=8')
-
 
 
 if __name__ == '__main__':
