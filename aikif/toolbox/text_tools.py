@@ -2,11 +2,6 @@
 # -*- coding: utf-8 -*-
 # text_tools.py 
 
-
-import os
-import sys
-import pprint
-
 def parse_text_to_table(txt):
     """
     takes a blob of text and finds delimiter OR guesses 
@@ -61,6 +56,7 @@ def save_tbl_as_csv(t, fname):
         
 def parse_text_by_col_pos(txt, fixed_split):
     tbl = []
+    cur_pos = 0
     lines = txt.split('\n')
     for line in lines:
         if line.strip('\n') != '':
