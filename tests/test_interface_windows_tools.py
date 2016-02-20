@@ -61,7 +61,6 @@ class TestAgentInterfaceEnvironment(unittest.TestCase):
     def test_04_send_text(self):
         try:
             hw = mod_tool.get_window_by_caption('C:\\WINDOWS\\system32\\cmd.exe')
-            print('window handle of Command prompt  = ', hw)
             mod_tool.send_text(hw,'hi there\n')  # note, works, but in case of multiples you dont know which one
             self.assertTrue(hw > 1)
         except Exception as ex:
