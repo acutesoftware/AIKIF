@@ -40,7 +40,14 @@ class TestAgentInterfaceEnvironment(unittest.TestCase):
             self.assertFalse(os.path.exists('random_text.txt'))
         except Exception as ex:
             print('WARNING - Windows tests failed - likely due to running on Linux VM')
-            
+    
+    def test_02_launch_app(self):
+        #self.assertTrue(mod_tool.launch_app('Notepad'))
+        #self.assertTrue(mod_tool.launch_app('environment.md'))
+        self.assertTrue(mod_tool.launch_app('dir'))
+        #mod_tool.send_keys("exit") 
+        self.assertEqual(mod_tool.launch_app('klgpotifejtjhgGGdfd'), False)
+        
         
 if __name__ == '__main__':
     unittest.main()
