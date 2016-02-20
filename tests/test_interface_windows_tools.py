@@ -49,8 +49,27 @@ class TestAgentInterfaceEnvironment(unittest.TestCase):
             self.assertEqual(mod_tool.launch_app('klgpotifejtjhgGGdfd'), False)
         except Exception as ex:
             print('WARNING - Windows tests failed - likely due to running on Linux VM')
-            
-        
+    
+    def test_03_get_window_by_caption(self):
+        try:
+            hw = mod_tool.get_window_by_caption('C:\\WINDOWS\\system32\\cmd.exe')
+            print('window handle of Command prompt  = ', hw)
+            self.assertTrue(hw > 1)
+        except Exception as ex:
+            print('WARNING - Windows tests failed - likely due to running on Linux VM')
+    
+    def test_04_send_text(self):
+        try:
+            hw = mod_tool.get_window_by_caption('C:\\WINDOWS\\system32\\cmd.exe')
+            print('window handle of Command prompt  = ', hw)
+            mod_tool.send_text(hw,'hi there\n')  # note, works, but in case of multiples you dont know which one
+            self.assertTrue(hw > 1)
+        except Exception as ex:
+            print('WARNING - Windows tests failed - likely due to running on Linux VM')
+    
+    
+    
+    
 if __name__ == '__main__':
     unittest.main()
         
