@@ -1,0 +1,6 @@
+topic,controversy,noise
+maths,0.01,0.1
+physics,0.012,0.2
+economics,0.4,0.3
+politics,0.85,0.9
+religion,0.95,0.9
