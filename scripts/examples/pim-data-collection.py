@@ -15,19 +15,19 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 pth = root_folder + os.sep + 'aikif'
 sys.path.append(pth)
 import project as prj
-import core_data as mod_dat
-import cls_log as mod_log
-import index as mod_ndx
-import knowledge as mod_know
-import mapper as mod_map
-import bias as mod_bias
+#import core_data as mod_dat
+#import cls_log as mod_log
+#import index as mod_ndx
+#import knowledge as mod_know
+#import mapper as mod_map
+#import bias as mod_bias
 
 sys.path.append(pth + os.sep + 'toolbox')
 import Toolbox as mod_tool
-import file_tools as mod_fle
-import image_tools as mod_img
-import text_tools as mod_txt
-import audio_tools as mod_aud
+#import file_tools as mod_fle
+#import image_tools as mod_img
+#import text_tools as mod_txt
+#import audio_tools as mod_aud
 
 if os.name == 'nt':
     myfldr = 'T:\\user\\AIKIF\\'

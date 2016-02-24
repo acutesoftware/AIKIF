@@ -5,7 +5,6 @@
 # and capture results / screengrabs
 
 import os
-import sys
 
 try:
     import win32gui
@@ -19,7 +18,7 @@ except:
 
 try:
     import win32api
-except:
+except Exception as ex:
     print('Cant import win32gui (probably CI build on linux)')
 
 try:
@@ -55,11 +54,22 @@ def send_text(hwnd, txt):
     except Exception as ex:
         print('error calling SendMessage ' + str(ex))
                 
-def launch_app(app_path, params):
+def launch_app(app_path, params=[], time_before_kill_app=15):
     """
     start an app
     """
-    pass
+    import subprocess
+    try:
+        res = subprocess.call([app_path, params], timeout=time_before_kill_app, shell=True)
+        print('res = ', res)
+        if res == 0:
+            return True
+        else:
+            return False
+    except Exception as ex:
+        print('error launching app  ' + str(app_path) + ' with params ' + str(params) + '\n' + str(ex))
+        return False
+    
     
 def app_activate(caption):
     """

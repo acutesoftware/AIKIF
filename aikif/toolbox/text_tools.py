@@ -2,11 +2,6 @@
 # -*- coding: utf-8 -*-
 # text_tools.py 
 
-
-import os
-import sys
-import pprint
-
 def parse_text_to_table(txt):
     """
     takes a blob of text and finds delimiter OR guesses 
@@ -61,6 +56,7 @@ def save_tbl_as_csv(t, fname):
         
 def parse_text_by_col_pos(txt, fixed_split):
     tbl = []
+    cur_pos = 0
     lines = txt.split('\n')
     for line in lines:
         if line.strip('\n') != '':
@@ -102,15 +98,15 @@ def identify_delim(txt):
     The delim is determined if the count of delims is consistant
     in all rows.
     """
-    count_by_row = []
-    max_cols = 0
-    max_rows = 0
-
     possible_delims = _get_dict_char_count(txt)  # {'C': 3, 'a': 4, 'b': 5, 'c': 6, ',': 6, 'A': 3, '\n': 3, 'B': 3})
         
     delim = max(possible_delims.keys(), key=(lambda k: possible_delims[k]))
     
     """
+    count_by_row = []
+    max_cols = 0
+    max_rows = 0
+
     lines = txt.split('\n')
     for line in lines:
         if len(line) > max_cols:

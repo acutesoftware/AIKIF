@@ -2,9 +2,6 @@
 # handles the agents display page for AIKIF web interface
 
 import os
-import sys
-#import aikif.web_app.web_utils as web
-import web_utils as web
 
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." )
 print(root_fldr)
