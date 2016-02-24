@@ -47,9 +47,9 @@ what table is this for [tblName] | Any Table | Any Table in [schema]
 A generic business rules engine which defines many parts of the day to day operation. This is likely to be a core category used by mapper.py to get the appropriate rules list, eg RULES_DATA_COUNTRY, RULES_TOP_PROJECT, RULES_SYSTEM_FILE_BACKUP
 
 The structure of the rules MUST be generic enough to handle any type of automated task, for example - 
-Data updates   - detailed data mappings (eg change China (excl Mongolia)  to China in country ref file
-PC Admin tasks - copy all source code to NAS each night at 10pm 
-Web scraping   - download funny pictures from Reddit at 5pm | check for online orders
+- Data updates   - detailed data mappings (eg change China (excl Mongolia)  to China in country ref file
+- PC Admin tasks - copy all source code to NAS each night at 10pm 
+- Web scraping   - download funny pictures from Reddit at 5pm | check for online orders
 
 aikif programs using rules
 ``````````````
@@ -112,7 +112,7 @@ Use the AIKIF to completely manage projects, as it stores not only details on pr
     proj.Contact(‘djmurray’)
     
     backups = bus.BackupRules()
-    backups.Source(‘t:\user’)
+    backups.Source(‘t:\\user’)
     backups.Dest(‘NAS’)
     backups.Schedule(‘DAILY’)
 
@@ -153,7 +153,7 @@ Document a business
     my_biz.add_type(type=‘Online Sale’, category=’Taxable_income’, desc=’Online sales orders from RegNow’)
     
 
-    -- Now setup some data structures to hold information -- 
+    # Now setup some data structures to hold information
     import aikif.dataTools.cls_data_table
     import aikif.cls_log
     lg =Log('Acute Software', 'T:\user\docs\business')
