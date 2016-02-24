@@ -166,26 +166,14 @@ class Contraversy(object):
         self.topic = topic
         self.noise = 0
         self.controversy = 0
-        self.topics = [{'name':'maths', 'value':0.1},
-                  {'name':'physics', 'value':0.12},
-                  {'name':'economics', 'value':0.4},
-                  {'name':'politics', 'value':0.75},
-                  {'name':'religion', 'value':0.85},
-        ]
+        self.topics = []
         
         import csv
         full_name = os.path.join(root_fldr, 'aikif', 'data', 'ref', 'bias_by_topic.csv')
-        reader = csv.DictReader(open(full_name))
-
-        result = {}
-        for row in reader:
-            for column, value in row.items():
-                result.setdefault(column, []).append(value)
-        for num, r in enumerate(result):
-            print (num, 'r=',str(r))
-        
-        
-        
+        reader = csv.reader(open(full_name))
+        for num, r in enumerate(reader):
+            self.topics.append({'name':r[0], 'value':float(r[1])})
+          
     def __str__(self):
         res = 'Contraversy: '
         res += self.topic 
@@ -194,7 +182,7 @@ class Contraversy(object):
     
     def get_contraversy(self):
         for t in self.topics:
-            #print(t)
+            print(t)
             if t['name'] == self.topic:
                 return t['value']
         return 0    
