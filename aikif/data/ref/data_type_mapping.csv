@@ -1,0 +1,8 @@
+data_type_name,database_map,info_map
+name,string,CORE.PERSON
+address,string,CORE.LOCATION
+ip_address,string,CORE.LOCATION
+age,number,CORE.FACT
+gender,string,CORE.FACT
+event_date,date,CORE.EVENT
+mail_sent_date,CORE.EVENT
