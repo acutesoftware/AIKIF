@@ -5,4 +5,4 @@ ip_address,string,CORE.LOCATION
 age,number,CORE.FACT
 gender,string,CORE.FACT
 event_date,date,CORE.EVENT
-mail_sent_date,CORE.EVENT
+mail_sent_date,date,CORE.EVENT
