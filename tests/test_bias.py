@@ -31,8 +31,6 @@ class BiasTest(unittest.TestCase):
     def test_01_str(self):
         self.bias = mod_bias.Bias(test_metadata)
         self.assertEqual(len(str(self.bias)), 149)
-        #self.bias.close()
-        #print(self.bias)
 
     def test_02_calc_bias(self):
         bias = mod_bias.Bias(test_metadata)
@@ -56,9 +54,13 @@ class BiasTest(unittest.TestCase):
                'website:wikipedia,page:https://en.wikipedia.org/wiki/Exilioidea, text:"Exilioidea is a genus of sea snails, marine gastropod mollusks in the family Ptychatractidae"',
                'source:person,actor:self,text:"I like cheese"',
                ]
+               
+        more_metadata = [
+            {'label':'test_label', 'value': 'test_value'},
+        ]
+        bias = mod_bias.Bias(more_metadata)
+        print(bias)
         for d in dat:
-            #bias = mod_bias.Bias(d[0],d[1],d[2])
-            #print(d)
             pass
  
  
