@@ -46,7 +46,13 @@ class BiasTest(unittest.TestCase):
         self.assertTrue(high_cont.get_controversy() > 0.8)
         self.assertEqual(str(high_cont), 'Controversy: religion controversy=0.95 noise=0.9\n')
 
-    def test_05_get_bias_details(self):
+    def test_05_controversy_wrong_data(self):
+        unknown_cont = mod_bias.Controversy('JujdfjrtigdFF')
+        self.assertEqual(unknown_cont.get_controversy(), 0)
+        self.assertEqual(unknown_cont.get_noise(), 0)
+        self.assertEqual(str(unknown_cont), 'Controversy: JujdfjrtigdFF controversy=0 noise=0\n')
+        
+    def test_06_get_bias_details(self):
         bias5 = mod_bias.Bias(test_metadata)
         self.assertEqual(bias5.get_bias_details()[0:17], 'Bias File Details')
         self.assertTrue(len(bias5.get_bias_details()) > 200)
