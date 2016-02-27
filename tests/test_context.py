@@ -25,9 +25,10 @@ class ContextTest(unittest.TestCase):
         me = context.Context()
         res = me.summarise()
         print('res = ', res)
-        self.assertEqual(res, 'At Home\nPhone is charging, sitting still')  
-            # At Home
-            # Phone is charging, sitting still
+        if me.host == 'Home PC':
+            self.assertEqual(res, 'At Home\nPhone is charging, sitting still')  
+        else:
+            self.assertEqual(res, '\nPhone is charging, sitting still')  
         me.host == 'Unknown'
         me.user == 'Developer'
         res_change1 = me.summarise()
