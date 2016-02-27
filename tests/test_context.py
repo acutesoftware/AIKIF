@@ -36,7 +36,10 @@ class ContextTest(unittest.TestCase):
         me.user == 'Developer'
         res_change1 = me.summarise()
         print('res_change1 = ', res_change1)
-        self.assertEqual(res_change1, 'At Home\nPhone is charging, sitting still')
+        if sys.platform == 'linux':
+            self.assertEqual(res_change1, '\nPhone is charging, sitting still')
+        else:
+            self.assertEqual(res_change1, 'At Home\nPhone is charging, sitting still')
         self.assertTrue(len(res_change1) > 15)
     
     def test_04_host_stats(self):
