@@ -28,7 +28,10 @@ class ContextTest(unittest.TestCase):
         if me.host == 'Home PC':
             self.assertEqual(res, 'At Home\nPhone is charging, sitting still')  
         else:
-            self.assertEqual(res, '\nPhone is charging, sitting still')  
+            if sys.platform == 'linux':
+                self.assertEqual(res, '\nPhone is charging, sitting still')  
+            else:
+                self.assertEqual(res, 'At Home\nPhone is charging, sitting still')  
         me.host == 'Unknown'
         me.user == 'Developer'
         res_change1 = me.summarise()
