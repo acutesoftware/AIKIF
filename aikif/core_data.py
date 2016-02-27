@@ -95,7 +95,7 @@ class CoreData(object):
         using type (is_a, has_a, uses, contains, part_of)
         """
         if self.check_type(tpe):
-            self.links.append(self.name, other, tpe)
+            self.links.append([other, tpe])
         else:
             raise Exception('aikif.core_data cannot process this object type')
         
