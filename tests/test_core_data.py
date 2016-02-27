@@ -98,14 +98,23 @@ class CoreDataTest(unittest.TestCase):
         
     def test_06_core_table(self):
         ob = mod_core.CoreTable(test_fldr, tpe='Object', user='user03', header=['code', 'desc'])
-        print(ob) 
         self.assertEqual(len(str(ob)) > 50, True)
         self.assertEqual(ob.get_filename('2999'), test_fldr + os.sep + 'Object2999.user03')
         
     def test_07_locations(self):
-        l = mod_core.Event('Office', ['Office', 'Physical', '2 Downing St, London'])
-        print('location = ', l)
+        l = mod_core.Location('Office', ['Office', 'Physical', '2 Downing St, London'])
+        #print(l)
         self.assertEqual(len(l.format_csv()) >  5, True)
+        
+    def test_10_links_to(self):
+        f = mod_core.Object('Food')
+        r = mod_core.Object('Recipe')
+        f.links_to('Recipe', 'Process')
+        #print('LINKS')
+        #print('links from f = ', f.links)
+        #print('links from r = ', r.links)
+        self.assertRaises(Exception, f.links_to, 'Recipe', 'WRONG_TYPE')
+        
         
         
          
