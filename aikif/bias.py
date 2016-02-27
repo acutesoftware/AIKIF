@@ -134,7 +134,7 @@ class Bias(object):
         return self.bias_rating
 
         
-class Contraversy(object):
+class Controversy(object):
     """
     class to handle and report on controversial topics so 
     that it can be added as a value to bias calculations.
@@ -160,28 +160,40 @@ class Contraversy(object):
         'noise'      : ['0.1',   '0.2',     '0.3',       '0.9',      '0.9']
          }        
         
+        Once all topics are loaded, the key 'topic' passed as on initialisation
+        is used to find the controversy and noise
+        
         """
         self.topic = topic
-        self.noise = 0
-        self.controversy = 0
         self.topics = []
         
         import csv
         full_name = os.path.join(root_fldr, 'aikif', 'data', 'ref', 'bias_by_topic.csv')
-        reader = csv.reader(open(full_name))
-        for num, r in enumerate(reader):
-            self.topics.append({'name':r[0], 'value':float(r[1])})
-          
+        with open(full_name, 'r') as fin:
+            reader = csv.reader(fin)
+            for num, r in enumerate(reader):
+                self.topics.append({'name':r[0], 'controversy':float(r[1]), 'noise':float(r[2])})
+        
+        self.controversy = self.get_controversy()
+        self.noise = self.get_noise()
+        
     def __str__(self):
-        res = 'Contraversy: '
+        res = 'Controversy: '
         res += self.topic 
         res += ' controversy=' + str(self.controversy) + ' noise=' + str(self.noise) + '\n'
         return res
     
-    def get_contraversy(self):
+    def get_controversy(self):
         for t in self.topics:
-            print(t)
+            #print(t)
             if t['name'] == self.topic:
-                return t['value']
+                return t['controversy']
+        return 0    
+            
+    def get_noise(self):
+        for t in self.topics:
+            #print(t)
+            if t['name'] == self.topic:
+                return t['noise']
         return 0    
             
