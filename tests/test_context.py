@@ -21,13 +21,19 @@ class ContextTest(unittest.TestCase):
         self.assertEqual(context.users[2]['type'], 'Tester')
         self.assertEqual(context.users[3]['type'], 'web_user')
     
-    def test_03_host_types(self):
+    def test_03_summarise(self):
         me = context.Context()
         res = me.summarise()
-        #print(res)  
+        print('res = ', res)
+        self.assertEqual(res, 'At Home\nPhone is charging, sitting still')  
             # At Home
             # Phone is charging, sitting still
-        self.assertTrue(len(res) > 15)
+        me.host == 'Unknown'
+        me.user == 'Developer'
+        res_change1 = me.summarise()
+        print('res_change1 = ', res_change1)
+        self.assertEqual(res_change1, 'At Home\nPhone is charging, sitting still')
+        self.assertTrue(len(res_change1) > 15)
     
     def test_04_host_stats(self):
         """ check for reasonable ranges in CPU stats """
