@@ -36,13 +36,15 @@ class BiasTest(unittest.TestCase):
         bias = mod_bias.Bias(test_metadata)
         self.assertEqual(bias.get_bias_rating(), 14.848288519170794) # 5.9457650345124735e-09)
 
-    def test_03_contraversy_low(self):
-        low_cont = mod_bias.Contraversy('maths')
-        self.assertTrue(low_cont.get_contraversy() < 0.2)
+    def test_03_controversy_low(self):
+        low_cont = mod_bias.Controversy('maths')
+        self.assertTrue(low_cont.get_controversy() < 0.2)
+        self.assertEqual(str(low_cont), 'Controversy: maths controversy=0.01 noise=0.1\n')
 
-    def test_04_contraversy_high(self):
-        high_cont = mod_bias.Contraversy('religion')
-        self.assertTrue(high_cont.get_contraversy() > 0.8)
+    def test_04_controversy_high(self):
+        high_cont = mod_bias.Controversy('religion')
+        self.assertTrue(high_cont.get_controversy() > 0.8)
+        self.assertEqual(str(high_cont), 'Controversy: religion controversy=0.95 noise=0.9\n')
 
     def test_05_get_bias_details(self):
         bias5 = mod_bias.Bias(test_metadata)
@@ -59,7 +61,7 @@ class BiasTest(unittest.TestCase):
             {'label':'test_label', 'value': 'test_value'},
         ]
         bias = mod_bias.Bias(more_metadata)
-        print(bias)
+        #print(bias)
         for d in dat:
             pass
  
