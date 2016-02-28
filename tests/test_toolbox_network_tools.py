@@ -28,13 +28,14 @@ class NetworkToolsTest(unittest.TestCase):
         if os.path.exists(fname):
             os.remove(fname)
 
-        #url = 'http://gdeltproject.org/data/lookups/CAMEO.country.txt'
+        #url = 'http://gdeltproject.org/data/lookups/CAMEO.country.txt'  # dont want to poll repeatedly
         url = 'https://github.com/acutesoftware/AIKIF/blob/master/aikif/data/raw/CAMEO.country.txt'
+        url = 'https://raw.githubusercontent.com/acutesoftware/AIKIF/master/aikif/data/raw/CAMEO.country.txt'
         mod_net.download_file_no_logon(url, fname)
-        time.sleep(2)
-        self.assertEqual(os.path.isfile(fname), True)
         time.sleep(1)
-        os.remove(fname)
+        self.assertEqual(os.path.isfile(fname), True)
+        time.sleep(.4)
+        #os.remove(fname)
         
     def test_04_read_username_password(self):
         pass
