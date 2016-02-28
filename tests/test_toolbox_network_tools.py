@@ -57,15 +57,21 @@ class NetworkToolsTest(unittest.TestCase):
         self.assertEqual(username, 'dummy_username')
         self.assertEqual(password, 'dummy_password')
 
-    def test_05_download_file_password_protected(self):
-        username, password = mod_net.load_username_password('dummy_credentials.txt')
-        self.assertEqual(username, 'dummy_username')
+    def test_05_get_protected_page(self):
+        """
+        This test doesnt really confirm that the username/password works
+        as it is checking a non password protected page
+        """
+        url = 'https://github.com/acutesoftware/AIKIF/blob/master/CHANGES.txt'
+        op_file = 'toolbox_network_protected_page.html'
+        mod_net.get_protected_page( url, 'username', 'password', op_file)
+        self.assertEqual(os.path.isfile(op_file), True)
         
-        url = 'http://www.acutesoftware.com.au/about.html'
-        op_file = 'secret.html'
-        #mod_net.download_file('test_5', url, op_file, username, password)
-        #mod_net.get_protected_page( url, None, None, op_file)
-        #self.assertEqual(os.path.isfile(op_file), True)
+    def test_06_download_file_password_protected(self):
+        url = 'https://raw.githubusercontent.com/acutesoftware/AIKIF/master/README.txt'
+        op_file = 'toolbox_network_password_protected.html'
+        mod_net.download_file('test_5', url, op_file, 'username', 'password')
+        self.assertEqual(os.path.isfile(op_file), True)
         
 
         
