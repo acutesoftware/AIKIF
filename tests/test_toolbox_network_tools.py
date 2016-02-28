@@ -37,6 +37,18 @@ class NetworkToolsTest(unittest.TestCase):
         time.sleep(.4)
         #os.remove(fname)
         
+    def test_03_download_failed_file(self):
+        fname = os.getcwd() + os.sep + 'no_such_file.txt'
+        url = 'http://no_such_file_or_domain.blah/some_file_that_doesnt_exist.mp8'
+        mod_net.download_file_no_logon(url, fname)
+        self.assertEqual(os.path.isfile(fname), False)
+        
+        # make sure error is logged
+        with open('result.log', 'r') as f:
+            lg_data = f.read()
+            self.assertTrue('Error - cant download http://no_such_file_or_domain.blah/some_file_that_doesnt_exist.mp8' in lg_data)
+        
+        
     def test_04_read_username_password(self):
         pass
         with open('dummy_credentials.txt', 'w') as f:
