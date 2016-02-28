@@ -65,14 +65,14 @@ def get_protected_page(url, user, pwd, filename):
     import requests
     r = requests.get(url, auth=(user, pwd))
     print(r.status_code)
-    print(len(str(r)))
     if r.status_code == 200:
         print('success')
         with open(filename, 'wb') as fd:
             for chunk in r.iter_content(4096):
                 fd.write(chunk)
+        lg.record_result("Success - downloaded " + url)
     else:
-        print('failed = ' + str(r.status_code))
+        lg.record_result('network_tools.get_protected_page:Failed to downloaded ' + url + ' (status code = ' + str(r.status_code) + ')')
 
 def download_file(p_realm, p_url, p_op_file, p_username, p_password):
     """
