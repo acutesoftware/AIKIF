@@ -1,14 +1,15 @@
 # coding: utf-8
 # network_tools.py  written by Duncan Murray 26/3/2015
 
+import os
 import urllib
 import urllib.request
 import aikif.config as mod_cfg
-    
-#import urllib2 as request	
+import aikif.cls_log as mod_log
 import getpass
 import socket
 
+lg = mod_log.Log(os.getcwd())  # TODO - fix this. not the best way
 
 def load_username_password(fname):
     """
@@ -55,7 +56,7 @@ def download_file_no_logon(url, filename):
             #print (response.read().decode('utf-8'))
             f.write(response.read())
     except Exception as ex:
-        print("Error - cant download " + url + str(ex))
+        lg.record_result("Error - cant download " + url + str(ex))
         
 def get_protected_page(url, user, pwd, filename):
     """
