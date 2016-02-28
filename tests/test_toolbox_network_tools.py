@@ -73,6 +73,13 @@ class NetworkToolsTest(unittest.TestCase):
         mod_net.download_file('test_5', url, op_file, 'username', 'password')
         self.assertEqual(os.path.isfile(op_file), True)
         
+    def test_07_download_file_proxy(self):
+        url = 'https://github.com/acutesoftware/AIKIF/blob/master/LICENSE.txt'
+        op_file = 'toolbox_network_download_proxy.html'
+        proxy = []  # dummy test so pass no proxy
+        mod_net.download_file_proxy( url, op_file, 'username', 'password', proxy)
+        self.assertEqual(os.path.isfile(op_file), True)
+        
 
         
 if __name__ == '__main__':
