@@ -65,8 +65,8 @@ class Bias(object):
         for f in bias_files:
             self._read_bias_rating(f)
         self._calculate_bias()
-        
-            
+        lg.record_process('bias.py', 'bias rating = ' + str(self.bias_rating) + ' for ' + str(self.metadata))
+
         
     def __str__(self):
         """ 
