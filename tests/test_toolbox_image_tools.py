@@ -49,7 +49,10 @@ class TestClassImageTools(unittest.TestCase):
         #self.assertEqual(metadata['lon'], 'None')   
         
         # Now make sure a dud file returns almost empty dict with filename
-        self.assertEqual(cl.get_metadata_as_dict('no such file.blah'), {'filename':'no such file.blah'})
+        self.assertEqual(cl.get_metadata_as_dict('none.blah'), {'filename':'none.blah'})
+        self.assertEqual(cl.Dict2String(cl.get_metadata_as_dict('none.blah')),',filename,none.blah,')
+        
+        self.assertEqual(cl.get_metadata_as_csv('none.blah'), '"none.blah","none.blah","",')
 
     def test_03_print_all_metadata(self): 
         cl.print_all_metadata(test_file1)
@@ -100,6 +103,22 @@ class TestClassImageTools(unittest.TestCase):
         for k,v in metadata.items():
             print(k, '=', v)
             
+    def test_10_auto_contrast(self):
+        #    cl.auto_contrast(photo_with_gps, 'photo_auto_contrast.jpg')
+        pass
+    
+    def test_11_add_crosshair_to_image(self):
+        cl.resize(photo_with_gps, 400, 'image_small.jpg')
+        cl.add_crosshair_to_image('image_small.jpg', 'image_crosshair.jpg')
+        self.assertTrue(os.path.exists('image_crosshair.jpg'))
+    
+    def test_12_filter_contour(self):
+        cl.filter_contour('image_small.jpg', 'image_contour.jpg')
+        self.assertTrue(os.path.exists('image_contour.jpg'))
+    
+    def test_13_dump_img(self):
+        txt = cl.dump_img('image_small.jpg', False)
+        self.assertTrue(len(txt) > 2000000)
     
 if __name__ == '__main__':
     unittest.main()
