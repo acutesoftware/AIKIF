@@ -326,17 +326,22 @@ def check_image_duplicates(file_list):
     """ Checking Images for duplicates (despite resizing, colours, etc) """
     master_hash = ''
     ham_dist = 0
-    
+    results = []
     print("Checking Images for duplicates (despite resizing, colours, etc) " )
     for ndx, fname in enumerate(file_list):
-        hsh = get_img_hash(Image.open(fname))
+        #img = Image.open(fname)
+        img = load_image(fname)
+        hsh = get_img_hash(img)
         if ndx == 0:  # this is the test MASTER image
             master_hash = hsh
         else:
             # compare hamming distance against image 1  
             #print("hash=" + hash + "  MASTER_HASH=" + master_hash)
             ham_dist = hamming_distance(hsh, master_hash)
-        print(hsh + " <- " + fname + " ,  hamming dist to img1 = " + str(ham_dist))
+        #print(hsh + " <- " + fname + " ,  hamming dist to img1 = " + str(ham_dist))
+        #results.append(hsh + " <- " + fname + " ,  hamming dist to img1 = " + str(ham_dist))
+        results.append({'hsh':hsh, 'fname':fname, 'dist_to_img1':str(ham_dist)})
+    return results
 
 def hamming_distance(s1, s2):
     """ 
@@ -354,7 +359,7 @@ def get_img_hash(image, hash_size = 8):
     image = image.resize((hash_size + 1, hash_size), Image.ANTIALIAS, )
 
     pixels = list(image.getdata())
-    print('get_img_hash: pixels=', pixels)
+    #print('get_img_hash: pixels=', pixels)
 
     # Compare adjacent pixels.
     difference = []
@@ -377,18 +382,18 @@ def get_img_hash(image, hash_size = 8):
     return ''.join(hex_string)
 
 def load_image(fname):
-    """ read an image from file """
-    return Image.open(fname)
+    """ read an image from file - PIL doesnt close nicely """
+    with open(fname, "rb") as f:
+        i = Image.open(fname)
+        #i.load()
+        return i
     
-def dump_img(fname, print_console=False):
-    """ output the image """
+def dump_img(fname):
+    """ output the image as text """
     img = Image.open(fname)
-    #width, height = img.size
     width, _ = img.size
     txt = ''
     pixels = list(img.getdata())
     for col in range(width):
-        if print_console != False:
-            print (pixels[col:col+width])
         txt += str(pixels[col:col+width])
     return txt    
