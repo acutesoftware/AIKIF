@@ -13,6 +13,9 @@ import image_tools as cl
 test_file1 = root_folder + os.sep + 'doc' + os.sep + 'AIKIF-Overview.jpg'
 test_file2 = root_folder + os.sep + 'doc' + os.sep + 'web-if-v02.jpg'
 
+photo_with_gps = os.path.join(os.getcwd(),'photo_with_gps.jpg')
+photo_no_gps = os.path.join(os.getcwd(),'photo_no_gps.jpg')
+
                     
 class TestClassImageTools(unittest.TestCase):
 
@@ -69,7 +72,28 @@ class TestClassImageTools(unittest.TestCase):
     def test_07_print_stats(self):       
         i = cl.load_image(test_file2)
         cl.print_stats(i)
+    
+    def test_08_get_gps_success(self):
+        metadata = cl.get_metadata_as_dict(photo_with_gps)
+        self.assertEqual(metadata['basename'], 'photo_with_gps.jpg')   
+        self.assertEqual(metadata['path'], os.getcwd())   
+        self.assertEqual(metadata['lat'], '-34.9948622')   
+        self.assertEqual(metadata['lon'], '138.5100967')   
         
+        self.assertEqual(metadata['mean'], '63.3060803186675,65.6400923523004,64.97187367338684,')
+        #for k,v in metadata.items():
+        #    print(k, '=', v)
+        
+    def test_09_get_gps_fail(self):
+        metadata = cl.get_metadata_as_dict(photo_no_gps)
+        self.assertEqual(metadata['basename'], 'photo_no_gps.jpg')   
+        self.assertEqual(metadata['path'], os.getcwd())   
+        self.assertEqual(metadata['lat'], 'None')   # WTF - why is this a string
+        self.assertEqual(metadata['lon'], 'None')   
+        for k,v in metadata.items():
+            print(k, '=', v)
+            
+    
 if __name__ == '__main__':
     unittest.main()
     
