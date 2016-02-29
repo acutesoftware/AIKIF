@@ -117,9 +117,20 @@ class TestClassImageTools(unittest.TestCase):
         self.assertTrue(os.path.exists('image_contour.jpg'))
     
     def test_13_dump_img(self):
-        txt = cl.dump_img('image_small.jpg', False)
+        txt = cl.dump_img('image_small.jpg')
         self.assertTrue(len(txt) > 2000000)
     
+    def test_14_check_duplicates(self):
+        """
+        collects hamming distance compared to image 1 but 
+        doesnt yet really check for dupes
+        """
+        no_dupes = ['image_small.jpg', 'image_crosshair.jpg', 'image_contour.jpg']
+        res = cl.check_image_duplicates(no_dupes)
+        for r in res:
+            print(r)
+        self.assertTrue(len(res) == 3)
+        
 if __name__ == '__main__':
     unittest.main()
     
