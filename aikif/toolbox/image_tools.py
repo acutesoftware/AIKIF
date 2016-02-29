@@ -223,8 +223,8 @@ def get_metadata_as_csv(fname):
     res = q + fname + q + d
     res = res + q + os.path.basename(fname) + q + d
     res = res + q + os.path.dirname(fname) + q + d
-    res = res + q + str(os.path.getsize(fname)) + q + d
     try:
+        res = res + q + str(os.path.getsize(fname)) + q + d
         img = Image.open(fname)
         # get the image's width and height in pixels
         width, height = img.size
@@ -248,8 +248,8 @@ def get_metadata_as_csv(fname):
         (lat, lon) = get_lat_lon(exif_data)
         res = res + q + str(lat) + q + d
         res = res + q + str(lon) + q + d
-    except Exception:
-        pass
+    except Exception as ex:
+        print('problem reading image file metadata in ', fname, str(ex))
     return res
         
     
@@ -265,7 +265,7 @@ def List2String(l, delim):
 
 def Dict2String(d):
     res = ","
-    for k, v in d: # .iteritems():
+    for k, v in d.items(): # .iteritems():
         res = res + k + ',' + str(v) + ','
     return res
 
@@ -277,10 +277,10 @@ def is_number(s):
         return False    
 
         
-def auto_contrast(img, opFile):
-    """ run the autocontrast PIL function to a new opFile """
-    imgOp = ImageOps.autocontrast(img)
-    imgOp.save(opFile)
+#def auto_contrast(img, opFile):
+#    """ run the autocontrast PIL function to a new opFile """
+#    imgOp = ImageOps.autocontrast(img)
+#    imgOp.save(opFile)
     
     
 def add_text_to_image(fname, txt, opFilename):
@@ -380,12 +380,15 @@ def load_image(fname):
     """ read an image from file """
     return Image.open(fname)
     
-def dump_img(fname):
+def dump_img(fname, print_console=False):
     """ output the image """
     img = Image.open(fname)
     #width, height = img.size
     width, _ = img.size
+    txt = ''
     pixels = list(img.getdata())
-    for col in xrange(width):
-        print (pixels[col:col+width])
-        
+    for col in range(width):
+        if print_console != False:
+            print (pixels[col:col+width])
+        txt += str(pixels[col:col+width])
+    return txt    
