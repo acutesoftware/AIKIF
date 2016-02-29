@@ -13,8 +13,12 @@ import image_tools as cl
 test_file1 = root_folder + os.sep + 'doc' + os.sep + 'AIKIF-Overview.jpg'
 test_file2 = root_folder + os.sep + 'doc' + os.sep + 'web-if-v02.jpg'
 
-photo_with_gps = os.path.join(os.getcwd(),'photo_with_gps.jpg')
-photo_no_gps = os.path.join(os.getcwd(),'photo_no_gps.jpg')
+if os.path.exists(os.path.join(os.getcwd(), 'photo_with_gps.jpg')):
+    photo_with_gps = os.path.join(os.getcwd(), 'photo_with_gps.jpg')
+    photo_no_gps = os.path.join(os.getcwd(), 'photo_no_gps.jpg')
+else:
+    photo_with_gps = os.path.join(os.getcwd(), 'tests', 'photo_with_gps.jpg')
+    photo_no_gps = os.path.join(os.getcwd(), 'tests', 'photo_no_gps.jpg')
 
                     
 class TestClassImageTools(unittest.TestCase):
