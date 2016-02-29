@@ -47,6 +47,9 @@ class TestClassImageTools(unittest.TestCase):
         #self.assertEqual(metadata['rms'], '250.0433210198374,250.27364842667234,244.31571431841436,')   
         #self.assertEqual(metadata['lat'], 'None')   
         #self.assertEqual(metadata['lon'], 'None')   
+        
+        # Now make sure a dud file returns almost empty dict with filename
+        self.assertEqual(cl.get_metadata_as_dict('no such file.blah'), {'filename':'no such file.blah'})
 
     def test_03_print_all_metadata(self): 
         cl.print_all_metadata(test_file1)

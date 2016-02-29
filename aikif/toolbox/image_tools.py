@@ -184,11 +184,11 @@ def metadata_header():
 def get_metadata_as_dict(fname):
     """ Gets all metadata and puts into dictionary """
     imgdict = {}
-    imgdict['filename'] = fname
-    imgdict['basename'] = os.path.basename(fname)
-    imgdict['path'] = os.path.dirname(fname)
-    imgdict['size'] = str(os.path.getsize(fname)) 
     try:
+        imgdict['filename'] = fname
+        imgdict['size'] = str(os.path.getsize(fname)) 
+        imgdict['basename'] = os.path.basename(fname)
+        imgdict['path'] = os.path.dirname(fname)
         img = Image.open(fname)
         # get the image's width and height in pixels
         width, height = img.size
