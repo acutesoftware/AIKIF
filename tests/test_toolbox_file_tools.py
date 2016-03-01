@@ -50,6 +50,7 @@ class TestToolboxFileTools(unittest.TestCase):
             
             
     def test_03_delete_files_in_folder(self):
+        file_tools.delete_file('no_such_file.txt')
         print('TODO - make temp folder')
         self.assertEqual(1, 1)
             
