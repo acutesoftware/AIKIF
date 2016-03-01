@@ -3,12 +3,6 @@
 import aikif.cls_log 
 import aikif.config
 
-def TEST():  
-    e = Environment('test')
-    e.create(20) #40,55, 'some nice text')
-    print(e)
-    e.destroy()
-    
 class Environment(object):
     """
     Main base class for all AIKIF environments
@@ -47,7 +41,3 @@ class Environment(object):
         """
         self.log.record_process('enviroment.py', 'Destroying environment - ' + self.name)
         
-  
-if __name__ == '__main__':
-    TEST()    
-    
