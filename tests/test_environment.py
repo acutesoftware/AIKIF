@@ -9,6 +9,14 @@ class TestEnvironment(unittest.TestCase):
         e = mod_env.Environment('unit_test')
         self.assertEqual(str(e), 'Environment: unit_test\n')
 
+    
+        e.create(1) # make one environment
+        res = str(e)
+        print(res)
+        e.destroy()
         
+        self.assertEqual(res, 'Environment: unit_test\n')
+
+    
 if __name__ == '__main__':
     unittest.main()
