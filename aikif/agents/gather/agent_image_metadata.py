@@ -6,16 +6,6 @@ import aikif.config as cfg
 import aikif.agents.agent as agt
 import aikif.toolbox.image_tools as mod_img
 
-def TEST():
-    ip_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'cur_files.txt'
-    #ip_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'all_pics.txt'
-    ip_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'lst.txt'
-    #op_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'all_pics_metadata.csv'
-    op_file = cfg.fldrs['log_folder'] + os.sep + 'filelist' + os.sep + 'lst_metadata.csv'
-    agt = ImageMetadataAgent('image_metadata_agent', ip_file, op_file)
-    print(agt.report())
-
-
 class ImageMetadataAgent(agt.Agent):
     """
     takes a list of image files (collected via agent.gather.agent_filelist)
@@ -52,14 +42,3 @@ class ImageMetadataAgent(agt.Agent):
                     else:
                         print('cant get metadata for file ' + fname)
     
-    
-    def check_last_updated(self):
-        """
-        checks the date of the output file list and returns 
-        when the list was last modified
-        """
-        pass
-        
-if __name__ == '__main__':
-    TEST()
-
