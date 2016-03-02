@@ -71,13 +71,14 @@ def count_via_minidom(fname, tag_name):
 # internal classes for toolkit
 ###############################
 
+"""
 def fast_iter(context, func, *args, **kwargs):
-    """
-    http://lxml.de/parsing.html#modifying-the-tree
-    Based on Liza Daly's fast_iter
-    http://www.ibm.com/developerworks/xml/library/x-hiperfparse/
-    See also http://effbot.org/zone/element-iterparse.htm
-    """
+    
+    #http://lxml.de/parsing.html#modifying-the-tree
+    #Based on Liza Daly's fast_iter
+    #http://www.ibm.com/developerworks/xml/library/x-hiperfparse/
+    #See also http://effbot.org/zone/element-iterparse.htm
+    
     for event, elem in context:
         func(elem, *args, **kwargs)
         # It's safe to call clear() here because no descendants will be
@@ -91,7 +92,7 @@ def fast_iter(context, func, *args, **kwargs):
 
 def process_element(elem):
     print(elem.xpath( 'description/text( )' ))
-
+"""
 
 
 class CycleFile(object):
@@ -177,9 +178,6 @@ class XmlFile(mod_file.TextFile):
     def count_elements_in_file(self, tag_name='MindOntology_Definition'):
         return count_via_minidom(self.fullname , tag_name)
     
-if __name__ == '__main__':
-    TEST()	
- 
 
 
 
