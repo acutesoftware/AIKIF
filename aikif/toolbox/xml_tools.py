@@ -35,7 +35,20 @@ def get_xml_stats(fname):
     res['date_modified'] = f.GetDateAsString(f.date_modified)
     
     return res
+
+def make_random_xml_file(fname, num_elements=200, depth=3):
+    """
+    makes a random xml file mainly for testing the xml_split
+    """
+    with open(fname, 'w') as f:
+        f.write('<random>\n')
+        for dep_num, _ in enumerate(range(1,depth)):
+            f.write('<depth>') # + str(dep_num) + '>\n')
+            for num, _ in enumerate(range(1, num_elements)):
+                f.write('<stuff>data line ' + str(num) + '</stuff>\n')
+            f.write('</depth>\n') #  + str(dep_num) + '>\n')
     
+        f.write('</random>\n')
 
 def split_xml(fname, element, num_elements):    
     parse(fname, XMLBreaker(element, break_after=num_elements, out=CycleFile(fname)))
