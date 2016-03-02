@@ -67,9 +67,9 @@ def get_lat_lon(exif_data):
     lat = None
     lon = None
  
-    if "GPSInfo" in exif_data:		
+    if "GPSInfo" in exif_data:      
         gps_info = exif_data["GPSInfo"]
-        #print("IN GET_LAT_LONG - GPSInfo = ", gps_info)
+        print("IN GET_LAT_LONG - GPSInfo = ", gps_info)
         gps_latitude = _get_if_exist(gps_info, "GPSLatitude")
         gps_latitude_ref = _get_if_exist(gps_info, 'GPSLatitudeRef')
         gps_longitude = _get_if_exist(gps_info, 'GPSLongitude')
@@ -209,7 +209,9 @@ def get_metadata_as_dict(fname):
         imgdict['stddev'] =  List2String(stat.stddev, ",") 
 
         exif_data = get_exif_data(img)
+        #print('exif_data = ', exif_data)
         (lat, lon) = get_lat_lon(exif_data)
+        print('(lat, lon)', (lat, lon))
         imgdict['lat'] =  str(lat)
         imgdict['lon'] =  str(lon)
     except Exception as ex:
