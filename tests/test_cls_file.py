@@ -47,6 +47,8 @@ class TestClassFile(unittest.TestCase):
 
     def test_07_get_file_sample(self):
         f = cl.TextFile(self.fname)
+        print(f)
+        self.assertTrue(len(str(f)) > 10)
         sample = f.get_file_sample(2)
         self.assertEqual(len(sample.split('\n')) - 1, 2)
 
