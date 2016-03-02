@@ -52,19 +52,23 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         x = xml_tools.XmlFile(small_file)
         self.assertEqual(x.name, 'sample_small.xml') 
         self.assertEqual(x.lines, 38) 
-        print(x)
+        #print(x)
 
-    def test_12_xml_breaker(self):
-        """
-        this wont work with large XML file on travis-ci
-        """
-        xml_tools.split_xml(small_file, 'sentence', 500)
-            
+             
     def test_13_get_xml_stats(self):
         s = xml_tools.get_xml_stats(small_file)
         self.assertEqual(s['num_lines'], '38 lines') 
         self.assertEqual(s['shortname'], 'sample_small.xml') 
-            
+        
+    def test_14_xml_breaker(self):
+        """
+        this wont work with large XML file on travis-ci, so 
+        ensure a small file splits with at least the first one
+        """
+        self.assertFalse(os.path.exists('sample_small1.xml'))
+        xml_tools.split_xml(small_file, 'sentence', 500)
+        self.assertTrue(os.path.exists('sample_small1.xml'))
+        os.remove('sample_small1.xml')    
     
 if __name__ == '__main__':
 	unittest.main()
