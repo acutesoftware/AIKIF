@@ -58,7 +58,19 @@ class File(object):
         
     def launch(self):
         """ launch a file - used for starting html pages """
-        os.system(self.fullname) # gives permission denied seeing it needs to be chmod +x
+        #os.system(self.fullname) # gives permission denied seeing it needs to be chmod +x
+        import subprocess
+        try:
+            retcode = subprocess.call(self.fullname, shell=True)
+            if retcode < 0:
+                print("Child was terminated by signal", -retcode, file=sys.stderr)
+            else:
+                print("Child returned", retcode, file=sys.stderr)
+        except OSError as e:
+            print("Execution failed:", e, file=sys.stderr)
+        
+        
+        
  
     def delete(self):
         """ delete a file, don't really care if it doesn't exist """
