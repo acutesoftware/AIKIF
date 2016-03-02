@@ -53,7 +53,8 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertEqual(x.name, 'sample_small.xml') 
         self.assertEqual(x.lines, 38) 
         #print(x)
-
+        self.assertEqual(str(x)[46:99], '| name     = sample_small.xml\n| size     = 528 bytes\n')
+        self.assertEqual(len(str(x)), 272)
              
     def test_13_get_xml_stats(self):
         s = xml_tools.get_xml_stats(small_file)
@@ -69,6 +70,20 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         xml_tools.split_xml(small_file, 'sentence', 500)
         self.assertTrue(os.path.exists('sample_small1.xml'))
         os.remove('sample_small1.xml')    
+        
+    def test_15_make_random_xml_file(self):
+        self.assertFalse(os.path.exists('big.xml'))
+        xml_tools.make_random_xml_file('big.xml', 1000, 12)
+        self.assertTrue(os.path.exists('big.xml'))
+        
+        
+    def test_16_break_big_file(self):
+        xml_tools.split_xml('big.xml', 'stuff', 8)
+        self.assertTrue(os.path.exists('big1.xml'))
+        # todo - fix this self.assertTrue(os.path.exists('big2.xml'))
+        os.remove('big.xml')    
+        os.remove('big1.xml')    
+            
     
 if __name__ == '__main__':
 	unittest.main()
