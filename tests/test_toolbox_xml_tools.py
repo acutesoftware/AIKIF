@@ -53,7 +53,7 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertEqual(x.name, 'sample_small.xml') 
         self.assertEqual(x.lines, 38) 
         #print(x)
-        self.assertEqual(str(x)[46:99], '| name     = sample_small.xml\n| size     = 528 bytes\n')
+        self.assertEqual(str(x)[46:75], '| name     = sample_small.xml')
         self.assertEqual(len(str(x)), 272)
              
     def test_13_get_xml_stats(self):
