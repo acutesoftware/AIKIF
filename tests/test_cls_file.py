@@ -11,7 +11,11 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 sys.path.append(root_folder + os.sep + 'aikif' + os.sep + 'lib' )
 
 import cls_file as cl
-                    
+ 
+img_file = root_folder + os.sep + 'doc' + os.sep + 'AIKIF-Overview.jpg'
+
+
+  
 class TestClassFile(unittest.TestCase):
  
     def setUp(self):
@@ -103,8 +107,8 @@ D20130611001220130611PCFile0500 60UsageDesktop
  
 
     def test_20_image_file(self):
-        i = cl.ImageFile('photo_with_gps.jpg')
-        self.assertEqual(len(str(i)), 258)
+        i = cl.ImageFile(img_file)
+        self.assertEqual(len(str(i)), 253)
         
     def test_30_audio_file(self):
         """ test will only pass locally """
