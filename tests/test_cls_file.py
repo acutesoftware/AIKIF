@@ -5,6 +5,7 @@ import unittest
 import os
 import sys
 import csv
+import datetime
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 sys.path.append(root_folder + os.sep + 'aikif' + os.sep + 'lib' )
@@ -75,8 +76,18 @@ D20130611001220130611PCFile0500 60UsageDesktop
         print('good date = ', f.GetDateAsString(dte_ok))
         self.assertEqual(len(f.GetDateAsString(dte_ok)), 19)
         self.assertEqual(len(f.GetDateAsString('this is not a date')), 0)
+        #dte2 = datetime.datetime.strptime('201603031230','%Y%m%d%H%M') # datetime.datetime(2016, 3, 3, 12, 30)
+        #print('dte2 = ', dte2)
+        #self.assertEqual(f.GetDateAsString(dte2)[0:11], '2016-03-03')
+
+    def test_10_count_line_in_file(self):
+        t = cl.TextFile('chr31_delimited_data_file.csv')
+        self.assertEqual(t.count_lines_in_file(), 4)
         
-        #bad_
+        # check for non file
+        self.assertEqual(t.count_lines_in_file('no such filename'), 0)
+    
+    
     
     
     def test_99_file_delete(self):
