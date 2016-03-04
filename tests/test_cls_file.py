@@ -34,11 +34,19 @@ class TestClassFile(unittest.TestCase):
         f = cl.TextFile(self.fname)
         txt = f.load_file_to_string()
         self.assertEqual(len(txt), 68) 
+        
+        # now try with a dud file
+        f_dud = cl.TextFile('blahdfgkjdlfgkjldkfgj.txt')
+        self.assertEqual(f_dud.load_file_to_string(), '')
+        
 
     def test_04_file_load_list(self):
         f = cl.TextFile(self.fname)
         lst = f.load_file_to_list()
         self.assertEqual(len(lst), 3) 
+        # now try with a dud file
+        f_dud = cl.TextFile('blahdfgkjdlfgkjldkfgj.txt')
+        self.assertEqual(len(f_dud.load_file_to_string()), 0)
         
   
     def test_06_launch(self):
@@ -88,7 +96,17 @@ D20130611001220130611PCFile0500 60UsageDesktop
         self.assertEqual(t.count_lines_in_file('no such filename'), 0)
     
     
-    
+    def test_11_get_file_sample(self):
+        t11 = cl.TextFile(self.fname)
+        self.assertEqual(t11.get_file_sample(1), '00000 # test file for cls_file\n')
+        self.assertEqual(len(t11.get_file_sample(999)), 86)  # returns full sample file
+ 
+
+    def test_20_image_file(self):
+        i = cl.ImageFile(os.path.join(os.getcwd(), 'photo_with_gps.jpg'))
+        self.assertEqual(len(str(i)), 258)
+        
+ 
     
     def test_99_file_delete(self):
         f = cl.File(self.fname)
