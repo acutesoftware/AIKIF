@@ -103,7 +103,7 @@ D20130611001220130611PCFile0500 60UsageDesktop
  
 
     def test_20_image_file(self):
-        i = cl.ImageFile(os.path.join(os.getcwd(), 'photo_with_gps.jpg'))
+        i = cl.ImageFile('photo_with_gps.jpg')
         self.assertEqual(len(str(i)), 258)
         
     def test_30_audio_file(self):
