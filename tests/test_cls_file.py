@@ -106,8 +106,23 @@ D20130611001220130611PCFile0500 60UsageDesktop
         i = cl.ImageFile(os.path.join(os.getcwd(), 'photo_with_gps.jpg'))
         self.assertEqual(len(str(i)), 258)
         
- 
-    
+    def test_30_audio_file(self):
+        """ test will only pass locally """
+        song = r"E:\backup\music\Music\_Rock\Angels\Red Back Fever\07 Red Back Fever.mp3"
+        if(os.path.exists(song)):
+            try:
+                a = cl.AudioFile(song)
+                
+            except Exception as ex:
+                print('mutagenx not loaded or not an audio file')
+
+            self.assertEqual(len(str(a)), 282)
+            self.assertEqual(a.size, 5735510)
+        else:
+            print('no audio file to test')
+
+
+            
     def test_99_file_delete(self):
         f = cl.File(self.fname)
         self.assertEqual(f.exists(), True)
