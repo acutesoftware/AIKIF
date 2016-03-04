@@ -69,6 +69,16 @@ D20130611001220130611PCFile0500 60UsageDesktop
         f_csv = cl.TextFile('chr31_delimited_data_file.csv')
         self.assertEqual(f_csv.get_file_sample(1), '00000 "D201306110009","20130611","PCFile","0122"," 15","Usage","","","","","","","","","Facebook - Google Chrome",""\n')
     
+    def test_09_date_as_string(self):
+        f = cl.File('chr31_delimited_data_file.dat')
+        dte_ok = f.date_modified
+        print('good date = ', f.GetDateAsString(dte_ok))
+        self.assertEqual(len(f.GetDateAsString(dte_ok)), 19)
+        self.assertEqual(len(f.GetDateAsString('this is not a date')), 0)
+        
+        #bad_
+    
+    
     def test_99_file_delete(self):
         f = cl.File(self.fname)
         self.assertEqual(f.exists(), True)
