@@ -46,13 +46,13 @@ def copy_file(src, dest):
     except Exception as ex:
         print('ERROR copying ' + src + '\n to ' + dest + str(ex))
     
-def copy_files_to_folder(src, dest):
+def copy_files_to_folder(src, dest, xtn='*.txt'):
     """
     copies all the files from src to dest folder
     """
     print('copying files from ' + src + '\nto ' + dest)
     
-    all_files = glob.glob(src + os.sep + '*.txt')
+    all_files = glob.glob(src + os.sep + xtn)
     for f in all_files:
         print(' ... copying ' + os.path.basename(f))
         copy_file(f, dest)
