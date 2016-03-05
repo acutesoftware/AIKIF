@@ -9,6 +9,7 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 pth = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' 
 sys.path.append(pth)
 
+temp_fldr = os.path.join(os.getcwd(),'test')
 import file_tools
 
 def ensure_dir(f):
@@ -35,7 +36,7 @@ class TestToolboxFileTools(unittest.TestCase):
 
     def test_02_copy_file(self):
         test_file = 'file_to_copy.txt'
-        ensure_dir(os.getcwd() + os.sep + 'test_results')
+        ensure_dir(temp_fldr)
         
         
         file_tools.delete_file(test_file, True)
@@ -43,21 +44,21 @@ class TestToolboxFileTools(unittest.TestCase):
         with open(test_file, 'w') as f:
             f.write('test file')
         self.assertEqual(os.path.exists(test_file), True)
-        file_tools.delete_file('test_results' + os.sep + test_file, True)
-        self.assertEqual(os.path.exists('test_results' + os.sep + test_file), False)
+        file_tools.delete_file(temp_fldr + os.sep + test_file, True)
+        self.assertEqual(os.path.exists(temp_fldr + os.sep + test_file), False)
         #file_tools.copy_file(test_file, 'test_results')
         #self.assertEqual(os.path.exists(os.getcwd() + os.sep + 'test_results' + os.sep + test_file), True)
             
             
-    def test_03_delete_files_in_folder(self):
+    def test_05_copy_files_to_folder(self):
+        file_tools.copy_files_to_folder(os.getcwd(), temp_fldr)
+        self.assertEqual(os.path.exists(temp_fldr + os.sep + 'tool_list.txt'), True)
+            
+    def test_06_delete_files_in_folder(self):
         file_tools.delete_file('no_such_file.txt')
-        print('TODO - make temp folder')
-        self.assertEqual(1, 1)
+        file_tools.delete_files_in_folder(temp_fldr)
+        self.assertEqual(os.path.exists(temp_fldr + os.sep + 'tool_list.txt'), False)
             
-    def test_04_copy_files_to_folder(self):
-        print('TODO - make temp folder')
-        self.assertEqual(1, 1)
-            
-            
+         
 if __name__ == '__main__':
     unittest.main()
