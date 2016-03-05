@@ -10,7 +10,8 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 pth = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' 
 sys.path.append(pth)
 
-temp_fldr = os.path.join(os.getcwd(),'test')
+#temp_fldr = os.path.join(os.getcwd(),'test')
+temp_fldr = os.path.join(root_folder,'tests', 'test')
 import file_tools
 
 def ensure_dir(f):
