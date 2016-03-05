@@ -4,6 +4,7 @@
 import os
 import sys
 import unittest
+import time
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 pth = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' 
@@ -52,12 +53,13 @@ class TestToolboxFileTools(unittest.TestCase):
             
     def test_05_copy_files_to_folder(self):
         file_tools.copy_files_to_folder(os.getcwd(), temp_fldr)
-        self.assertEqual(os.path.exists(temp_fldr + os.sep + 'tool_list.txt'), True)
+        time.sleep(2)
+        self.assertEqual(os.path.exists(os.path.join(temp_fldr,'file_to_copy.txt')), True)
             
     def test_06_delete_files_in_folder(self):
         file_tools.delete_file('no_such_file.txt')
         file_tools.delete_files_in_folder(temp_fldr)
-        self.assertEqual(os.path.exists(temp_fldr + os.sep + 'tool_list.txt'), False)
+        self.assertEqual(os.path.exists(temp_fldr + os.sep + 'file_to_copy.txt'), False)
             
          
 if __name__ == '__main__':
