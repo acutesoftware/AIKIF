@@ -7,8 +7,8 @@ import glob
 import shutil
 import aikif.lib.cls_filelist as mod_fl
 
-root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
-print(root_folder)
+root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "..") 
+print('root_folder = ', root_folder)
 fname = root_folder + os.sep + 'tests/test_results/cls_filelist_results1.csv'
 
 
@@ -33,6 +33,10 @@ def delete_file(f, ignore_errors=False):
         print('ERROR deleting ' + f + '\n' + str(ex))
 
 def delete_files_in_folder(fldr):
+    """
+    delete all files in folder 'fldr'
+    """
+    print('delete_files_in_folder = ', fldr)
     fl = glob.glob(fldr + os.sep + '*.*')
     for f in fl:
         delete_file(f, True)
