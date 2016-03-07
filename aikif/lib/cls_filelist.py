@@ -398,9 +398,3 @@ class FileList(object):
         """
         print("Updating index " + fname)
         
-        
-    
-if __name__ == '__main__':
-    TEST()
-    
-            
