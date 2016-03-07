@@ -12,7 +12,8 @@ root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.s
 #root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
 print("in test_cls_filelist : root_folder = " + root_folder)
 sys.path.append(root_folder + os.sep + 'aikif' + os.sep + 'lib')
-
+op_folder = os.path.join(root_folder, 'tests', 'test_results')
+print("in test_cls_filelist : root_folder = " + root_folder + '\nop folder = ' + op_folder)
 
 import cls_filelist as fl 
                     
@@ -108,6 +109,7 @@ class TestClassFile(unittest.TestCase):
         fl99 = fl.FileList([os.getcwd()], ['*.*'], [], "sample_filelist.csv")
         #print(fl99.fl_metadata)
         fl99.get_dirty_filelist()
+        fl99.backup(op_folder)
         fl99.get_metadata()
         fl99.get_failed_backups()
         fl99.add_failed_file('')
