@@ -41,7 +41,6 @@ class TestTemplate(unittest.TestCase):
         
         prg.comment('test_programs.py', 'comment on this program')
         # doesnt work same on all OS self.assertTrue('comment on this program' in str(prg))
-        prg.list()
         
         htm = prg.get_file_info_web(os.path.join(os.getcwd(),'test_programs.py'))
         print(htm)

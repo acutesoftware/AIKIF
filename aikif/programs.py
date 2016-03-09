@@ -88,15 +88,6 @@ class Programs(object):
             self.lg.record_process('adding description to - ' + nme)
 
 
-        
-    def list(self):
-        """
-        Display the list of items 
-        """
-        for i in self.lstPrograms:
-            print (i)
-        return self.lstPrograms
-        
     def save(self, fname=''):
         """
         Save the list of items to AIKIF core and optionally to local file fname
