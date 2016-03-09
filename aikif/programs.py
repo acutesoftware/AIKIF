@@ -136,7 +136,7 @@ class Programs(object):
         txt += '"' + str(f.size) + '"' + delim
         return txt  + '\n'
      
-    def get_file_info_web(self, fname, delim):
+    def get_file_info_web(self, fname, delim='<BR>\n'):
         """
         gathers info on a python program in list and formats as string
         """
