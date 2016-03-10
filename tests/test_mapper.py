@@ -88,8 +88,8 @@ class MapTest(unittest.TestCase):
     def test_40_read_raw_file(self):
         mapPC_Usage = mod_map.Mapper(os.path.join(fldr_raw_data, 'PC_Usage.map'))
         flds = ['Date', 'Time', 'Length', 'Caption']
-        tot, vals = mapPC_Usage.process_raw_file(os.path.join(fldr_raw_data, 'sample_PC_usage.txt'), flds)
-        print(tot, vals)
+        tot, vals, grps, events = mapPC_Usage.process_raw_file(os.path.join(fldr_raw_data, 'sample_PC_usage.txt'), flds)
+        print(tot, vals, grps, events)
         self.assertEqual(tot, 17)  # note that tot starts from zero, meaning 18 lines in file
         self.assertEqual(len(vals), 8)
         self.assertEqual(vals[0], 'C:\\Windows\\system32\\cmd.exe')
