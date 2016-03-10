@@ -100,7 +100,7 @@ class Mapper(object):
         
         dist_vals = sorted(list(set(group_dat)))
         
-        return num_lines, dist_vals
+        return num_lines, dist_vals, group_dat, sorted(list(set(events)))
 
     def aggregate_data(self):
         pass
