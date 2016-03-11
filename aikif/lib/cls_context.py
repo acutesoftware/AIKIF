@@ -135,7 +135,7 @@ class Context(object):
             if u['name'] == user:
                 return u['type'], u['name']
     
-    def inspect_phone(self, gps_lat = 137.0000, gps_lng = 100.0000, moving = False, move_dist_2_mn = 4, on_charge = True, screen_saver = False):
+    def inspect_phone(self, gps_lat_long = [137.0000,100.0000], moving = False, move_dist_2_mn = 4, on_charge = True, screen_saver = False):
         """
         FUNCTION STUB - TODO
         The intention is to get data from the mobile in the format:
@@ -151,8 +151,8 @@ class Context(object):
         """
         
         
-        self.phone_gps_lat = gps_lat
-        self.phone_gps_lng = gps_lng
+        self.phone_gps_lat = gps_lat_long[0]
+        self.phone_gps_lng = gps_lat_long[1]
         self.phone_moving = moving
         self.phone_move_dist_2_mn = move_dist_2_mn
         self.phone_on_charge = on_charge
