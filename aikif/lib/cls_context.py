@@ -135,7 +135,7 @@ class Context(object):
             if u['name'] == user:
                 return u['type'], u['name']
     
-    def inspect_phone(self):
+    def inspect_phone(self, gps_lat = 137.0000, gps_lng = 100.0000, moving = False, move_dist_2_mn = 4, on_charge = True, screen_saver = False):
         """
         FUNCTION STUB - TODO
         The intention is to get data from the mobile in the format:
@@ -149,12 +149,14 @@ class Context(object):
             screen_saver    = True | False
             on_charge       = True | False
         """
-        self.phone_gps_lat = 137.0000
-        self.phone_gps_lng = 100.0000
-        self.phone_moving = False
-        self.phone_move_dist_2_mn = 4
-        self.phone_on_charge = True
-        self.screen_saver = False
+        
+        
+        self.phone_gps_lat = gps_lat
+        self.phone_gps_lng = gps_lng
+        self.phone_moving = moving
+        self.phone_move_dist_2_mn = move_dist_2_mn
+        self.phone_on_charge = on_charge
+        self.screen_saver = screen_saver
         #-------------------------------
         phone_status = ''
         if self.phone_on_charge is True:
@@ -185,18 +187,4 @@ class Context(object):
         mem = psutil.virtual_memory()
         return str(cpu_pct), str(len(process_names)), str(mem.available), str(mem.total)
         
-#def TEST():
-    # """ self testing context class """
-    # where_am_i = Context()
-    #print(where_am_i)
-    #print(where_am_i.summarise())
-    #where_am_i.dump_all('yes')
-    # print(where_am_i.get_host())
-    # for k,v in os.environ.items():
-        # print(k,v)
-    # print(where_am_i.get_user())
-    # where_am_i.get_host_usage()
-       
-# if __name__ == '__main__':
-    # TEST()
-            
+
