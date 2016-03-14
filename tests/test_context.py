@@ -75,6 +75,14 @@ class ContextTest(unittest.TestCase):
         me.host_mem_available = '4000000'
         self.assertEqual(int(me.host_mem_available), 4000000)
         
+    def test_08_phone(self):
+        ph = context.Context()
+        self.assertEqual(ph.inspect_phone(), 'Phone is charging, sitting still')
+        self.assertEqual(ph.inspect_phone(moving = True), 'Phone is charging, driving in Car')
+        self.assertEqual(ph.inspect_phone(on_charge = False), 'Phone is being used')
+        
+        
+        
         
 if __name__ == '__main__':
     unittest.main()
