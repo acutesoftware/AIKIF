@@ -232,7 +232,7 @@ class Task(object):
     """
     def __init__(self, task_id, name, func, due_date=None, priority=None):
         if type(task_id) is not int:
-            raise Exception('Error - task_id must be an int')
+            raise ValueError('Error - task_id must be an int')
         self.task_id = task_id
         self.name = name 
         self.func = func
