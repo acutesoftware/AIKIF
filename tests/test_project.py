@@ -136,6 +136,7 @@ class TestProject(unittest.TestCase):
         """
         uses dummy_function as func to execute tasks
         """
+        
         proj13 = project.Project(name='Maths Calc', fldr=root_folder, desc='run simple maths functions')
         t1 = project.Task(1, 'task_1', dummy_function)
         t1.add_param(param_key='a_number', param_val=3)
@@ -148,8 +149,11 @@ class TestProject(unittest.TestCase):
         proj13.add_task(t1)
         proj13.add_task(t2)
         proj13.add_detail('info', 'This project runs a seris of calculations')
-        proj13.execute_tasks()
+        dummy_projects = project.Projects()
+        dummy_projects.add_project(proj13)
+        #proj13.execute_tasks()
         
+        dummy_projects.run()
        
 if __name__ == '__main__':
     unittest.main()
