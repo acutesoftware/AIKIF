@@ -10,6 +10,14 @@ import project as project
 import aikif.dataTools.cls_datatable as cls_datatable
 import aikif.toolbox.html_tools as mod_html
 
+
+def dummy_function(a, b):
+    """
+    dummy function called by run_all_tasks
+    """
+    print('running dummy function with values ', a, b)
+    return a * b
+
 class TestProject(unittest.TestCase):
 
       
@@ -86,6 +94,9 @@ class TestProject(unittest.TestCase):
         
         proj04.build_report('task.blah', 'UNKNOWN')
         
+        # check for non int task id passed
+        self.assertRaises(ValueError, project.Task, '1', 'task10', func)
+        
  
     def test_11_task(self):
         p = project.Project('update Country reference', fldr='c:\test')
@@ -120,6 +131,24 @@ class TestProject(unittest.TestCase):
         t12.add_param(param_key='deep', param_val=[7,6,5,[7,8,[{'d1':'woah'},['bb','cc'],45, 'hello']]])
         self.assertEqual(t12._force_str(t12.params[5]), '[\'deep\', [7, 6, 5, [7, 8, [{\'d1\': \'woah\'}, [\'bb\', \'cc\'], 45, \'hello\']]]]')
         self.assertEqual(str(t12.params[5]), '[\'deep\', [7, 6, 5, [7, 8, [{\'d1\': \'woah\'}, [\'bb\', \'cc\'], 45, \'hello\']]]]')
+    
+    def test_13_run_all_tasks(self):
+        """
+        uses dummy_function as func to execute tasks
+        """
+        proj13 = project.Project(name='Maths Calc', fldr=root_folder, desc='run simple maths functions')
+        t1 = project.Task(1, 'task_1', dummy_function)
+        t1.add_param(param_key='a_number', param_val=3)
+        t1.add_param(param_key='b_number', param_val=2)
+        t1.add_param(param_key='__success_test', param_val=6)
+        t2 = project.Task(2, 'task_1', dummy_function)
+        t2.add_param(param_key='a_number', param_val=4)
+        t2.add_param(param_key='b_number', param_val=10)
+        t2.add_param(param_key='__success_test', param_val=40)
+        proj13.add_task(t1)
+        proj13.add_task(t2)
+        proj13.add_detail('info', 'This project runs a seris of calculations')
+        proj13.execute_tasks()
         
        
 if __name__ == '__main__':
