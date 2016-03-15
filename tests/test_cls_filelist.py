@@ -79,45 +79,17 @@ class TestClassFile(unittest.TestCase):
         fldr = os.path.dirname(os.path.abspath(__file__))
         fl8 = fl.FileList([fldr], ['*.py'], [], "sample_filelist.csv")
         #col_headers = ["name", "size", "date", "path"]
-        col_headers = ["name", "date", "size"]
+        #col_headers = ["name", "date", "size"]
+        col_headers = ["name", "path", "size", "date", "fullfilename"]
         for f in fl8.fl_metadata:
             txt = fl8.print_file_details_in_line(f["fullfilename"], col_headers)
             self.assertTrue(len(str(txt)) > 6, True)
     
-    def test_20_is_file_dirty(self):
-        fldr = os.path.dirname(os.path.abspath(__file__))
-        fl20 = fl.FileList([fldr], ['*.py'], [], "sample_filelist.csv")
-        res_none = fl20.is_file_dirty(src_file_dict={}, dest_file='', date_accuracy='hour')
-        
-        fake_file = {}
-        myfile = os.getcwd() + os.sep + 'fake_file.py'
-        fake_file['fullfilename'] = myfile
-        fake_file['size'] = 100
-        fake_file['date'] = fl20.TodayAsString()
-        res_none = fl20.is_file_dirty(fake_file, myfile, 'hour')
-        self.assertEqual(res_none, True)
-        
-        # now pretend the file is old
-        self.assertEqual(fl20.compare_file_date(fake_file['date'], myfile, 'hour'), False)
-    
-
-    def test_99_unbuilt_functions(self):
-        fldr = os.path.dirname(os.path.abspath(__file__))
-        fl99 = fl.FileList([os.getcwd()], ['*.*'], [], "sample_filelist.csv")
-        #print(fl99.fl_metadata)
-        fl99.get_dirty_filelist()
-        fl99.get_metadata()
-        fl99.update_indexes('')
-        fl99.check_files_needing_synch('', '', date_accuracy = 'hour')
-        fl99.check_files_needing_synch('', 'IGNORE_BASE_PATH', date_accuracy = 'hour')
-        fl99.get_file_hash('')
-        self.assertTrue(True)
-        
-        line = fl99.print_file_details_as_csv('fake file', ["name", "path", "size", "date", "fullfilename"])
+        line = fl8.print_file_details_as_csv('fake file', ["name", "path", "size", "date", "fullfilename"])
         print(line)
         self.assertEqual(line, '"fake file","","Unknown size","Unknown Date","fake file",')
-        
-        
+    
+
         
         
 if __name__ == '__main__':
