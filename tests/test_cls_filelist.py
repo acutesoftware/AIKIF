@@ -21,12 +21,12 @@ class TestClassFile(unittest.TestCase):
  
     def setUp(self):
         self.fname = root_folder + os.sep + 'tests/test_results/cls_filelist_results1.csv'
-        self.assertTrue(len(fl.TodayAsString()) > 10)
         
     def test_01_file_result(self):
         """print("test1 - filelist with one file")"""
         lst1 = fl.FileList([root_folder + os.sep + 'tests'], ['test_*.py'], [],  self.fname)
         self.assertEqual(len(lst1.get_list()) > 18, True) 
+        self.assertTrue(len(lst1.TodayAsString()) > 10)
         
     def test_02_multiple_file_result(self):
         """print("test2 - Collecting multiple file metadata")"""
