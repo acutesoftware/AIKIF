@@ -41,6 +41,18 @@ class ContextTest(unittest.TestCase):
         else:
             self.assertEqual(res_change1, 'At Home\nPhone is charging, sitting still')
         self.assertTrue(len(res_change1) > 15)
+        
+        
+        # check for other conditions
+        me.user == 'Developer'
+        me.host == 'Home PC'
+        res_change3 = me.summarise()
+        print('res_change3 = ', res_change3)
+        me.host == 'Work PC'
+        res_change4 = me.summarise()
+        print('res_change4 = ', res_change4)
+        
+        
     
     def test_04_host_stats(self):
         """ check for reasonable ranges in CPU stats """
