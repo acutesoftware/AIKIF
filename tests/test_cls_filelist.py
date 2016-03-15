@@ -73,10 +73,7 @@ class TestClassFile(unittest.TestCase):
         fl_grp = fl.FileListGroup("AIKIF lib files", os.getcwd(), "E:\\backup")
         print(fl_grp)
         self.assertTrue(len(str(fl_grp)) > 6, True)
-        # call empty functions
-        fl_grp.backup()
-        fl_grp.backup_incremental()
-        
+ 
         
     def test_08_metadata_columns(self):
         fldr = os.path.dirname(os.path.abspath(__file__))
@@ -109,10 +106,7 @@ class TestClassFile(unittest.TestCase):
         fl99 = fl.FileList([os.getcwd()], ['*.*'], [], "sample_filelist.csv")
         #print(fl99.fl_metadata)
         fl99.get_dirty_filelist()
-        fl99.backup(op_folder)
         fl99.get_metadata()
-        fl99.get_failed_backups()
-        fl99.add_failed_file('')
         fl99.update_indexes('')
         fl99.check_files_needing_synch('', '', date_accuracy = 'hour')
         fl99.check_files_needing_synch('', 'IGNORE_BASE_PATH', date_accuracy = 'hour')

@@ -27,21 +27,6 @@ class FileListGroup(object):
         txt += 'dest_folder   : ' + self.dest_folder + '\n'
         return txt
 
-    def backup(self):
-        """
-        copies all files from the src folder to the dest folder
-        """
-        for fl in self.filelist:
-            print("TODO backing up filelist " + str(fl))
-
-
-    def backup_incremental(self):
-        """
-        copies CHANGED files from the src folder to the dest folder
-        This is the primary mode of AutoBackup
-        """
-        print("TODO backing up changed files only " + self.name)
-
 class FileList(object):
     def __init__(self, paths, xtn, excluded, output_file_name = 'my_files.csv'):
         self.output_file_name = output_file_name
@@ -63,24 +48,6 @@ class FileList(object):
     def get_metadata(self):
         return self.fl_metadata
     
-    def backup(self, dest_root_folder):
-        """
-        backup all files for the filelist into a destination
-        root folder
-        """
-        for fldr in self.filelist:
-            print('TODO - backing up ' + fldr)
-        
-
-    
-    def get_failed_backups(self):
-        return self.failed_backups
-
-    def add_failed_file(self, fname):
-        """ 
-        this file failed to backup, so log it for future retry 
-        """
-        self.failed_backups.append(fname)
     
     
     def check_files_needing_synch(self, dest_root_folder, base_path_ignore, date_accuracy = 'hour'):
