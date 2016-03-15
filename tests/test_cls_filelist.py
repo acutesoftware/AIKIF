@@ -21,6 +21,7 @@ class TestClassFile(unittest.TestCase):
  
     def setUp(self):
         self.fname = root_folder + os.sep + 'tests/test_results/cls_filelist_results1.csv'
+        self.assertTrue(len(fl.TodayAsString()) > 10)
         
     def test_01_file_result(self):
         """print("test1 - filelist with one file")"""
