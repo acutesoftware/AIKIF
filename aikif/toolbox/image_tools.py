@@ -11,7 +11,18 @@ from PIL import ImageFilter
 from PIL.ExifTags import TAGS, GPSTAGS
 from PIL import ImageStat
 from PIL import ImageOps
+try:
+    from PIL import ImageGrab
+except ImportException as ex:
+    print('cant load ImageGrab (running on Linux)' + str(ex))
 
+def screenshot(fname):
+    """
+    takes a screenshot of the users desktop (Currently Win only)
+    """
+    im = ImageGrab.grab()
+    im.save(fname)
+    
 def get_exif_data(image):
     """
     Returns a dictionary from the exif data of 
