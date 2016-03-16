@@ -130,6 +130,11 @@ class TestClassImageTools(unittest.TestCase):
         for r in res:
             print(r)
         self.assertTrue(len(res) == 3)
+
+    def test_15_screenshot(self):
+        self.assertFalse(os.path.exists('screenshot.png'))
+        cl.screenshot('screenshot.png')
+        self.assertTrue(os.path.exists('screenshot.png'))
         
 if __name__ == '__main__':
     unittest.main()
