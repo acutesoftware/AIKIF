@@ -23,7 +23,7 @@ def screenshot(fname):
     try:
         im = ImageGrab.grab()
         im.save(fname)
-    except:
+    except Exception as ex:
         print('image_tools.screenshot:cant create screenshot ' + str(ex))
     
 def get_exif_data(image):
