@@ -101,5 +101,6 @@ wipe_file('process.log')
 wipe_file('toolbox_network_protected_page.html')
 wipe_file('toolbox_network_password_protected.html')
 wipe_file('toolbox_network_download_proxy.html')
+wipe_file('screenshot.png')
 
 
