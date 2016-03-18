@@ -102,6 +102,7 @@ wipe_file('toolbox_network_protected_page.html')
 wipe_file('toolbox_network_password_protected.html')
 wipe_file('toolbox_network_download_proxy.html')
 wipe_file('screenshot.png')
-wipe_file('country.txt')
+wipe_file('test_country.txt')
+wipe_file('tool_list.txt')
 
 
