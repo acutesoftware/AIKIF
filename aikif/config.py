@@ -9,7 +9,7 @@ logs = {}
 params = {}
 
 
-
+"""
 # path for personal data location  (TODO - you need to modify this line below!)
 if sys.platform == 'linux':
     if os.path.exists('/home/duncan'):
@@ -23,7 +23,29 @@ if sys.platform == 'linux':
 else:
     hme = 'T:\\user\\'
     core_folder = 'T:\\user\\dev\\src\\python\\AIKIF'
+"""
+ 
+def get_root_folder():
+    """
+    returns the home folder and program root depending on OS
+    """
+    locations = {
+     'linux':{'hme':'/home/duncan/', 'core_folder':'/home/duncan/dev/src/python/AIKIF'},
+     'win32':{'hme':'T:\\user\\',    'core_folder':'T:\\user\\dev\\src\\python\\AIKIF'},
+     'cygwin':{'hme':os.getcwd() + os.sep,    'core_folder':os.getcwd()},
+     'darwin':{'hme':os.getcwd() + os.sep,    'core_folder':os.getcwd()}
+    }
+    hme = locations[sys.platform]['hme']
+    core_folder = locations[sys.platform]['core_folder']
 
+    if not os.path.exists(core_folder):
+        hme = os.getcwd()        
+        core_folder = os.getcwd()
+        print('config.py : running on CI build (or you need to modify the paths in config.py)')
+    return hme, core_folder
+
+ 
+hme, core_folder = get_root_folder()    
 
 fldrs['localPath'] = hme + 'AIKIF' + os.sep
 fldrs['log_folder'] = hme + 'AIKIF' + os.sep + 'log'
@@ -38,7 +60,7 @@ fldrs['public_data_path'] = core_folder + os.sep + 'aikif' + os.sep + 'data'
 fldrs['program_path'] = os.path.abspath(core_folder + os.sep + 'aikif') 
 
 # user defined parameters 
-params['AIKIF_version'] = '0.1.6'
+params['AIKIF_version'] = '0.1.9'
 params['AIKIF_deploy'] = 'DEV'
 
 
@@ -58,6 +80,7 @@ params['index_files'] = [fldrs['public_data_path'] + os.sep  + 'index' + os.sep 
                         ]
 
 
+
 def read_credentials(fname):
     """
     read a simple text file from a private location to get
@@ -75,19 +98,20 @@ def show_config():
     to manage folder paths, user settings, etc.
     Modify the parameters at the top of this file to suit
     """
-    
-    print("\n---------- Folder Locations ---------")
+    res = ''
+    res += '\n---------- Folder Locations ---------\n'
     for k,v in fldrs.items():
-        print(k,v)
+        res += str(k) + ' = ' + str(v) + '\n'
     
-    print("\n---------- Logfiles ---------")
+    res += '\n---------- Logfiles ---------\n'
     for k,v in logs.items():
-        print(k,v)
+        res += str(k) + ' = ' + str(v) + '\n'
         
-    print("\n---------- Parameters ---------")
+    res += '\n---------- Parameters ---------\n'
     for k,v in params.items():
-        print(k,v)
+        res += str(k) + ' = ' + str(v) + '\n'
     print("\nusage from other programs - returns " + fldr_root())
+    return res
     
 def fldr_root():
     return fldrs['root_path']
