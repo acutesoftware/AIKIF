@@ -35,8 +35,19 @@ class TestConfig(unittest.TestCase):
         self.assertEqual(pwd, 'hunter2')
 
     def test_04_show_config(self):
-        config.show_config()
-        self.assertEqual(1, 1)
+        res = config.show_config()
+        print(res)
+        self.assertEqual(res[1:37], '---------- Folder Locations --------')
+        self.assertTrue(len(res) > 100)
+        
+        
+    def test_05_get_root_folder(self):
+        res_hme, res_pth = config.get_root_folder()
+        self.assertEqual(res_hme[0:5], os.getcwd()[0:5])
+        self.assertEqual(res_pth[0:5], os.getcwd()[0:5])
+        self.assertTrue(os.path.exists(res_hme))
+        self.assertTrue(os.path.exists(res_pth))
+        
 
 if __name__ == '__main__':
     unittest.main()
