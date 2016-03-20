@@ -58,8 +58,14 @@ class WebAppWebUtilsTest(unittest.TestCase):
         fl = web_utils.GetFileList(web_app_path, '*.py', shortNameOnly='Y')
         htm = web_utils.filelist2html(fl, web_app_path, hasHeader='N')
         self.assertEqual(len(htm) > 10, True) 
-        print(htm)
+        #print(htm)
         self.assertEqual(htm[0:43], '<TABLE width=100% border=0><TR><TD><a href=')  
+        
+        htm_with_hdr = web_utils.filelist2html(fl, web_app_path, hasHeader='Y')
+        self.assertEqual(len(htm_with_hdr) > 10, True) 
+        print(htm_with_hdr)
+        self.assertEqual(htm_with_hdr[0:43], '<TABLE width=100% border=0><TR><TH><a href=')  
+        
         
     def test_04_build_search_form(self):
         txt = web_utils.build_search_form()
