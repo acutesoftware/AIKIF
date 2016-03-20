@@ -13,7 +13,7 @@ except Exception as ex:
 
 try:
     import win32con
-except:
+except Exception as ex:
     print('Cant import win32gui (probably CI build on linux)')
 
 try:
@@ -23,7 +23,7 @@ except Exception as ex:
 
 try:
     import win32com.client
-except:
+except Exception as ex:
     print('Cant import win32gui (probably CI build on linux)')
 
 root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
