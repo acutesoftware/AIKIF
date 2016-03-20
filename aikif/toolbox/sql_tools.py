@@ -3,10 +3,8 @@
 # sql_tools.py
 
 import os
-import aikif.lib.cls_filelist as mod_fl
 
-root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
-print(root_folder)
+root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") # used by tests
 
 
 def count_lines_in_file(src_file ):
@@ -31,7 +29,6 @@ def load_txt_to_sql(tbl_name, src_file_and_path, src_file, op_folder):
     and then executes it.
     Note that src_file is 
     """
-    res = ''
     if op_folder == '':
         pth = ''
     else:
@@ -40,13 +37,11 @@ def load_txt_to_sql(tbl_name, src_file_and_path, src_file, op_folder):
     fname_create_script = pth + 'CREATE_' + tbl_name + '.SQL'
     fname_backout_file  = pth + 'BACKOUT_' + tbl_name + '.SQL'
     fname_control_file  = pth + tbl_name + '.CTL'
-    fname_batch_file    = pth + 'LOAD_' + tbl_name + '.BAT'
-    
-    ctl_data_lines = []
+   
     cols = read_csv_cols_to_table_cols(src_file)
     create_script_staging_table(fname_create_script, tbl_name, cols)    
     create_file(fname_backout_file, 'DROP TABLE ' + tbl_name + ' CASCADE CONSTRAINTS;\n')
-    create_CTL(fname_control_file, tbl_name, src_file, cols, 'TRUNCATE')
+    create_CTL(fname_control_file, tbl_name, cols, 'TRUNCATE')
     
 def create_BAT_file(fname_batch_file, tbl_name, src_file_and_path, src_file, par_file):
     with open(fname_batch_file, 'w') as f:
@@ -74,7 +69,10 @@ def create_script_staging_table(fname_create, output_table, col_list):
     with open(fname_create, "w") as f:
         f.write(ddl_text)
 
-def create_CTL(fname, tbl_name, load_file, col_list, TRUNC_OR_APPEND, delim=','): 
+def create_CTL(fname, tbl_name, col_list, TRUNC_OR_APPEND, delim=','): 
+    """
+    create_CTL(fname_control_file, tbl_name, src_file, cols, 'TRUNCATE')
+    """
     with open(fname, 'w') as ct:
         ct.write('LOAD DATA\n')
         ct.write(TRUNC_OR_APPEND + '\n')
