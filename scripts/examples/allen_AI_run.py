@@ -77,7 +77,7 @@ def main():
     for tool_num, tool in enumerate(t.lstTools):
         print('tool=', tool)
         for param in params:
-            result = t.run(tool, ['test' + str(tool_num), param], 'Y', root_folder)
+            result = t.run(tool, ['test' + str(tool_num), param],  root_folder)
             p.record(results, '', [tool['file'], tool['function'], param, result, mod_dt.TodayAsString()])
     results.save_csv(os.path.join(root_folder, 'allen_AI_results.csv'))   
        
@@ -86,22 +86,5 @@ def main():
     p.build_report('allen_AI.rst', tpe='rst')
     print('Done...')
 
-       
-
-
-
-def define_tools(p):
-    """
-    setup all programs to be used for the competition
-    """
-
-
-    p2.add_task(1, 'Fetch source data', aikif.toolbox.data_view)
-    p2.add_task(2, 'Aggregate Population', t['Calc Average'])
-
-    p2.add_param(task=1, tbl = 'S_REF_COUNTRY' )
-    p2.add_param(task=2, group_by_col = 'CONTINENT', measure_col='POPULATION' )
-
-    p2.execute()  # with no parameters, data outputs to console    
 
 main()
