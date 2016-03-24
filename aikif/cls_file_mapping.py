@@ -3,7 +3,7 @@
 # cls_file_mapping.py
 
 import os
-import aikif.config as mod_cfg
+import config as mod_cfg
 import yaml
 
 root_folder   = mod_cfg.fldrs['root_path']
@@ -25,6 +25,9 @@ dataFileTypes = []
 dataSubjectAreas = []
 
 def load_data_subject_areas(subject_file):
+    """
+    reads the subject file to a list, to confirm config is setup
+    """
     lst = []
     if os.path.exists(subject_file):
         with open(subject_file, 'r') as f:
@@ -71,15 +74,21 @@ class FileMap(object):
         
  
     def get_root_folder(self):
-        """ returns root path for data folder - used by other modules in aikif """
+        """ 
+        returns root path for data folder - used by other modules in aikif 
+        """
         return self.root_folder 
       
     def get_localPath(self):
-        """ returns root path for data folder - used by other modules in aikif """
+        """ 
+        returns root path for data folder - used by other modules in aikif 
+        """
         return self.localPath 
       
     def get_datapath(self):
-        """ returns root path for data folder - used by other modules in aikif """
+        """ 
+        returns root path for data folder - used by other modules in aikif 
+        """
         return self.dataPath 
       
     def find_ontology(self, txt):
@@ -113,15 +122,21 @@ class FileMap(object):
         return match
         
     def get_full_filename(self, dataType, subjectArea):
-        """ returns the file based on dataType and subjectArea """
+        """ 
+        returns the file based on dataType and subjectArea 
+        """
         return dataPath + os.sep + 'core' + os.sep + dataType + '_' + subjectArea + '.CSV'
         
     def get_filename(self, dataType, subjectArea):
-        """ get relative filename of core file """
+        """ 
+        get relative filename of core file 
+        """
         return dataType + '_' + subjectArea + '.CSV'
         
     def add_file_to_mapping_list(self, fname, lst):
-        """ adds the name of the file to the list """
+        """ 
+        adds the name of the file to the list 
+        """
         lst.append(fname)
         
 def check_ontology(fname):    
