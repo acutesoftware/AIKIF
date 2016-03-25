@@ -6,7 +6,7 @@ import os
 import aikif.config as mod_cfg
 import aikif.toolbox.data_structures as mod_dat
 
-		
+        
 class ToolboxDataStructuresTest(unittest.TestCase):
 
     def test_01_graph(self):
@@ -27,7 +27,7 @@ class ToolboxDataStructuresTest(unittest.TestCase):
                                 [0, 1, 0, 0, 0, 0]])
         
     def test_03_node(self):
-        print('\n  --== Node Test ==--')
+        #print('\n  --== Node Test ==--')
         trunk = mod_dat.Node('root node') 
         branch1 = mod_dat.Node('1st branch')
         branch2 = mod_dat.Node('2nd branch')
@@ -43,7 +43,28 @@ class ToolboxDataStructuresTest(unittest.TestCase):
         branch3.add_link(twig2)
         self.assertEqual(str(branch3),'3rd branch : ( 1 links)\n  2nd twig')
         
+    def test_04_node_equiv(self):
+        #print('\n  --== Node Equiv Test ==--')
+        trunk = mod_dat.Node('root node') 
+        v1 = mod_dat.Node('Node v1')
+        v2 = mod_dat.Node('Node v2')
+        self.assertNotEqual(v1, v2)
+        
+        v3 = v1
+        self.assertEqual(v1, v3)
+        
+        trunk.add_link(v1)
+        trunk.add_link(v2)
+        self.assertEqual(len(trunk.get_children()), 2)
+        trunk.add_link(v3)
   
-		
+        self.assertEqual(len(trunk.get_children()), 3)
+  
+        #print('v2.get_parent() = ', v2.get_parent())
+        self.assertEqual(v1.get_parent(), trunk)
+        self.assertEqual(v2.get_parent(), trunk)
+        self.assertEqual(v3.get_parent(), trunk)
+  
+        
 if __name__ == '__main__':
-	unittest.main()
+    unittest.main()
