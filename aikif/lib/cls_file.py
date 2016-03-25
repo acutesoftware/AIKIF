@@ -34,8 +34,6 @@ class File(object):
             self.path = os.path.dirname(self.fullname)
             self.size = os.path.getsize(self.fullname)
             self.date_modified = os.path.getmtime(self.fullname)  # self.GetDateAsString(os.path.getmtime(fname))
-        except IOError as exIO:
-            print('cant access file ' + fname)
         except Exception as ex:     
             print('problem accessing ' + fname + ' ' + str(ex))
 
@@ -64,10 +62,13 @@ class File(object):
             retcode = subprocess.call(self.fullname, shell=True)
             if retcode < 0:
                 print("Child was terminated by signal", -retcode, file=sys.stderr)
+                return False
             else:
                 print("Child returned", retcode, file=sys.stderr)
+                return True
         except OSError as e:
             print("Execution failed:", e, file=sys.stderr)
+            return False
         
         
         
@@ -116,7 +117,8 @@ class TextFile(File):
                 for i, _ in enumerate(f):
                     pass
             return i + 1    
-        except IOError:
+        except Exception as ex:
+            print('cant count lines in file in "', fname, '":', str(ex))
             return 0
     
     def count_lines_of_code(self, fname=''):
@@ -130,9 +132,9 @@ class TextFile(File):
                     if l.strip() != '':
                         loc += 1
             return loc    
-        except IOError:
+        except Exception as ex:
+            print('cant count lines of code in "', fname, '":', str(ex))
             return 0
-    
     
     
     def get_file_sample(self, numLines=10):
@@ -144,9 +146,10 @@ class TextFile(File):
                     res += str(line_num).zfill(5) + ' ' + line 
                     if line_num >= numLines-1:
                         break
-        except IOError:
-            pass
-        return res
+            return res
+        except Exception as ex:
+            print('cant get_file_sample in "', self.fullname, '":', str(ex))
+            return res
         
     
     def append_text(self, txt):
