@@ -32,7 +32,7 @@ class TestClassFile(unittest.TestCase):
         
     def test_02_file_print(self):
         f = cl.File(self.fname)
-        print(f)
+        self.assertTrue(len(str(f)) > 5)
 
     def test_03_file_load_string(self):
         f = cl.TextFile(self.fname)
@@ -64,7 +64,6 @@ class TestClassFile(unittest.TestCase):
 
     def test_07_get_file_sample(self):
         f = cl.TextFile(self.fname)
-        print(f)
         self.assertTrue(len(str(f)) > 10)
         sample = f.get_file_sample(2)
         self.assertEqual(len(sample.split('\n')) - 1, 2)
@@ -89,7 +88,6 @@ D20130611001220130611PCFile0500 60UsageDesktop
     def test_09_date_as_string(self):
         f = cl.File('chr31_delimited_data_file.dat')
         dte_ok = f.date_modified
-        print('good date = ', f.GetDateAsString(dte_ok))
         self.assertEqual(len(f.GetDateAsString(dte_ok)), 19)
         self.assertEqual(len(f.GetDateAsString('this is not a date')), 0)
         #dte2 = datetime.datetime.strptime('201603031230','%Y%m%d%H%M') # datetime.datetime(2016, 3, 3, 12, 30)
