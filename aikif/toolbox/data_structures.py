@@ -1,13 +1,6 @@
 # data_structures.py    written by Duncan Murray 26/1/2015
 
-def TEST():
-    """
-    self test for various data structures used in aikif
-    initially starting with planning structures.
-    """
-    print('see /tests/test_data_structures.py')
- 
-        
+
 #----------------------------
 # Classes for Data Structures
 
@@ -46,7 +39,7 @@ class Node(object):
         return self.links
         
     def get_parent(self):
-        """ returns list of child nodes """
+        """ returns parent node """
         return self.parent
 
  
@@ -122,10 +115,3 @@ class Graph(object):
             
         return op
     
-    
-    
-if __name__ == '__main__':
-    print('running data_structures.py')
-    TEST()  
-else:
-    print('data_structures imported.py')
