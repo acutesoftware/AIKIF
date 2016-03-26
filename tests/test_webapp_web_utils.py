@@ -58,21 +58,25 @@ class WebAppWebUtilsTest(unittest.TestCase):
         fl = web_utils.GetFileList(web_app_path, '*.py', shortNameOnly='Y')
         htm = web_utils.filelist2html(fl, web_app_path, hasHeader='N')
         self.assertEqual(len(htm) > 10, True) 
-        #print(htm)
         self.assertEqual(htm[0:43], '<TABLE width=100% border=0><TR><TD><a href=')  
         
         htm_with_hdr = web_utils.filelist2html(fl, web_app_path, hasHeader='Y')
         self.assertEqual(len(htm_with_hdr) > 10, True) 
-        print(htm_with_hdr)
         self.assertEqual(htm_with_hdr[0:43], '<TABLE width=100% border=0><TR><TH><a href=')  
         
+        # check for nested list
+        lst2 = ['r1', ['r2a', 'r2b'], 'r3', 4,  ['r5a', 'r5b', 'r5c']]
+        htm_lst = web_utils.filelist2html(lst2, web_app_path, hasHeader='N')
+        self.assertEqual(htm_lst[0:47], '<TABLE width=100% border=0><TR><TD>r1</TD></TR>')
+        
+        htm_lst_hdr = web_utils.filelist2html(lst2, web_app_path, hasHeader='Y')
+        self.assertEqual(htm_lst_hdr[0:47], '<TABLE width=100% border=0><TR><TH>r1</TH></TR>')
         
     def test_04_build_search_form(self):
         txt = web_utils.build_search_form()
         self.assertEqual(txt[0:31], '<form action="." method="POST">')
         self.assertEqual(txt[-8:],'</form>\n')
-        #print(txt)
- 
+  
     def test_05_dict_to_htmlrow(self):
         dct = {'name':'duncan', 'email':'djmurray@acutesoftware.com.au'}
         htm = web_utils.dict_to_htmlrow(dct)
@@ -80,12 +84,16 @@ class WebAppWebUtilsTest(unittest.TestCase):
         self.assertEqual(htm[0:12], '<TR>\n<TD><p>')
         self.assertEqual(htm[-15:], '</p></TD></TR>\n')
 
+        # test for non str dict
+        dct = {'name':'tara', 'age':27}
+        htm = web_utils.dict_to_htmlrow(dct)
+        self.assertEqual(len(htm), 90) 
+        self.assertEqual(htm[5:84], '<TD><p>age:</p></TD><TD><p>27</p></TD><TD><p>name:</p></TD><TD><p>tara</p></TD>')
         
     def test_06_read_csv_to_html_table(self):
         dct = {'name':'duncan', 'email':'djmurray@acutesoftware.com.au'}
         htm = web_utils.read_csv_to_html_table(csv_file, 'Y')
         htm2 = web_utils.read_csv_to_html_table(csv_file, 'N')
-        #print(htm)
         self.assertEqual(len(htm), 186) 
         self.assertEqual('<TR><TH>name</TH>' in htm, True) 
 

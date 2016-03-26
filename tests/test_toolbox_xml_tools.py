@@ -85,14 +85,13 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertEqual(s['shortname'], 'sample_small.xml') 
         
     def test_14_xml_breaker(self):
-        
-        #this wont work with large XML file on travis-ci, so 
-        #ensure a small file splits with at least the first one
-        
+        """
+        this currently doesnt work with large XML file on travis-ci, so 
+        ensure a small file splits with at least the first one
+        """
         self.assertFalse(os.path.exists('sample_small1.xml'))
         xml_tools.split_xml(small_file, 'slide', 2)
         self.assertTrue(os.path.exists('sample_small1.xml'))
-        #os.remove('sample_small1.xml')    
         
     def test_15_make_random_xml_file(self):
         #self.assertFalse(os.path.exists('big.xml'))
