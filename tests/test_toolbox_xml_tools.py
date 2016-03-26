@@ -14,8 +14,8 @@ import xml_tools
 #small_file = root_folder + os.sep + 'aikif' + os.sep + 'ontology' + os.sep + 'mindOntology.xml'
 #large_file = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' + os.sep + '__ANC__WhereToHongKong.xml'
 small_file = os.getcwd() + os.sep + 'sample_small.xml'
+med_file = os.getcwd() + os.sep + 'med.xml'
 large_file = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' + os.sep + '__ANC__WhereToHongKong.xml'
-print('small_file = ', small_file)
 
 class ToolboxXmlToolsTest(unittest.TestCase):
     def test_01_create_xml_file_from_text(self):
@@ -48,6 +48,29 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertEqual(xml_tools.count_elements(small_file, 'slide'), (3,11))
         self.assertEqual(xml_tools.count_elements(small_file, 'point'), (5,11))
     
+    
+    def test_02_make_med_xml_file(self):
+        document = """<slideshow>
+        <title>Demo slideshow</title>
+        <slide><title>Slide 1</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 2</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 3</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 4</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 5</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 6</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 7</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 8</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 9</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 10</title><point>point 1</point><point>point 2</point></slide>
+        <slide><title>Slide 11</title><point>point 1</point><point>point 2</point></slide>
+        </slideshow>
+        """
+        with open(med_file, 'w') as f:
+            f.write(document)
+    
+    
+    
+    
     def test_11_xml_class(self):
         x = xml_tools.XmlFile(small_file)
         self.assertEqual(x.name, 'sample_small.xml') 
@@ -69,31 +92,26 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertFalse(os.path.exists('sample_small1.xml'))
         xml_tools.split_xml(small_file, 'slide', 2)
         self.assertTrue(os.path.exists('sample_small1.xml'))
-        os.remove('sample_small1.xml')    
+        #os.remove('sample_small1.xml')    
         
     def test_15_make_random_xml_file(self):
         #self.assertFalse(os.path.exists('big.xml'))
         xml_tools.make_random_xml_file('big.xml', 20, 15)
         self.assertTrue(os.path.exists('big.xml'))
         self.assertTrue(os.path.getsize('big.xml') > 3000)
-        os.remove('big.xml')    
+        #os.remove('big.xml')    
         #os.remove('big1.xml')    
      
     def test_16_break_big_file(self):
-        big_file = 'big.xml' # stuff, depth
         big_file = 'med.xml' # stuff, depth
-        #big_file = 'ANC__WhereToHongKong.xml' #  'annotationSet' or 'sentence'
-
-        
-        xml_tools.split_xml(big_file, 'slide', 10)
+        xml_tools.split_xml(big_file, 'slide', 5)
         self.assertTrue(os.path.exists(big_file))
-        #self.assertTrue(os.path.exists('ANC__WhereToHongKong2.xml'))
         print(xml_tools.get_xml_stats(big_file))
-        # todo - fix this self.assertTrue(os.path.exists('big2.xml'))
-        #print('sentence', xml_tools.count_via_minidom(big_file, 'sentence') )   
-        #print('annotationSet', xml_tools.count_via_minidom(big_file, 'annotationSet') )   
         print('title', xml_tools.count_via_minidom(big_file, 'title') )   
         print('slide', xml_tools.count_via_minidom(big_file, 'slide') )   
+        self.assertEqual(xml_tools.count_via_minidom(big_file, 'title'), 12)
+        self.assertEqual(xml_tools.count_via_minidom(big_file, 'slide'), 11)
+   
     
 if __name__ == '__main__':
 	unittest.main()
