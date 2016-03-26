@@ -47,7 +47,7 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertEqual(xml_tools.count_elements(small_file, 'title'), (3,11))
         self.assertEqual(xml_tools.count_elements(small_file, 'slide'), (3,11))
         self.assertEqual(xml_tools.count_elements(small_file, 'point'), (5,11))
-        
+    
     def test_11_xml_class(self):
         x = xml_tools.XmlFile(small_file)
         self.assertEqual(x.name, 'sample_small.xml') 
@@ -62,28 +62,38 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertEqual(s['shortname'], 'sample_small.xml') 
         
     def test_14_xml_breaker(self):
-        """
-        this wont work with large XML file on travis-ci, so 
-        ensure a small file splits with at least the first one
-        """
+        
+        #this wont work with large XML file on travis-ci, so 
+        #ensure a small file splits with at least the first one
+        
         self.assertFalse(os.path.exists('sample_small1.xml'))
-        xml_tools.split_xml(small_file, 'sentence', 500)
+        xml_tools.split_xml(small_file, 'slide', 2)
         self.assertTrue(os.path.exists('sample_small1.xml'))
         os.remove('sample_small1.xml')    
         
     def test_15_make_random_xml_file(self):
-        self.assertFalse(os.path.exists('big.xml'))
-        xml_tools.make_random_xml_file('big.xml', 1000, 12)
+        #self.assertFalse(os.path.exists('big.xml'))
+        xml_tools.make_random_xml_file('big.xml', 20, 15)
         self.assertTrue(os.path.exists('big.xml'))
-        
-        
-    def test_16_break_big_file(self):
-        xml_tools.split_xml('big.xml', 'stuff', 8)
-        self.assertTrue(os.path.exists('big1.xml'))
-        # todo - fix this self.assertTrue(os.path.exists('big2.xml'))
+        self.assertTrue(os.path.getsize('big.xml') > 3000)
         os.remove('big.xml')    
         os.remove('big1.xml')    
-            
+     
+    def test_16_break_big_file(self):
+        big_file = 'big.xml' # stuff, depth
+        big_file = 'med.xml' # stuff, depth
+        #big_file = 'ANC__WhereToHongKong.xml' #  'annotationSet' or 'sentence'
+
+        
+        xml_tools.split_xml(big_file, 'slide', 10)
+        self.assertTrue(os.path.exists(big_file))
+        #self.assertTrue(os.path.exists('ANC__WhereToHongKong2.xml'))
+        print(xml_tools.get_xml_stats(big_file))
+        # todo - fix this self.assertTrue(os.path.exists('big2.xml'))
+        #print('sentence', xml_tools.count_via_minidom(big_file, 'sentence') )   
+        #print('annotationSet', xml_tools.count_via_minidom(big_file, 'annotationSet') )   
+        print('title', xml_tools.count_via_minidom(big_file, 'title') )   
+        print('slide', xml_tools.count_via_minidom(big_file, 'slide') )   
     
 if __name__ == '__main__':
 	unittest.main()
