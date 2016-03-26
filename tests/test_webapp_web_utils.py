@@ -88,7 +88,9 @@ class WebAppWebUtilsTest(unittest.TestCase):
         dct = {'name':'tara', 'age':27}
         htm = web_utils.dict_to_htmlrow(dct)
         self.assertEqual(len(htm), 90) 
-        self.assertEqual(htm[5:84], '<TD><p>age:</p></TD><TD><p>27</p></TD><TD><p>name:</p></TD><TD><p>tara</p></TD>')
+        # Note that dicts dont return things in order 
+        self.assertTrue('<TD><p>age:</p></TD><TD><p>27</p></TD>' in htm)
+        self.assertTrue('<TD><p>name:</p></TD><TD><p>tara</p></TD>' in htm)
         
     def test_06_read_csv_to_html_table(self):
         dct = {'name':'duncan', 'email':'djmurray@acutesoftware.com.au'}
