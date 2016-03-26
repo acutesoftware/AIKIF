@@ -53,6 +53,8 @@ class ToolboxDataStructuresTest(unittest.TestCase):
         v3 = v1
         self.assertEqual(v1, v3)
         
+        self.assertNotEqual(v1, 'this is not a Note')
+        
         trunk.add_link(v1)
         trunk.add_link(v2)
         self.assertEqual(len(trunk.get_children()), 2)
@@ -64,6 +66,9 @@ class ToolboxDataStructuresTest(unittest.TestCase):
         self.assertEqual(v1.get_parent(), trunk)
         self.assertEqual(v2.get_parent(), trunk)
         self.assertEqual(v3.get_parent(), trunk)
+  
+  
+  
   
         
 if __name__ == '__main__':
