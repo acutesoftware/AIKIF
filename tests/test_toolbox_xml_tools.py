@@ -77,7 +77,7 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertTrue(os.path.exists('big.xml'))
         self.assertTrue(os.path.getsize('big.xml') > 3000)
         os.remove('big.xml')    
-        os.remove('big1.xml')    
+        #os.remove('big1.xml')    
      
     def test_16_break_big_file(self):
         big_file = 'big.xml' # stuff, depth
