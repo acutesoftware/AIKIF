@@ -12,12 +12,7 @@ from xml.sax.saxutils import XMLGenerator
 from xml.etree.ElementTree import iterparse
 import aikif.lib.cls_file as mod_file
 
-try:
-    from lxml import etree
-except ImportError:
-    print('you need to pip install lxml')
 
-    
 # Public facing functions
 ###############################
 def get_xml_stats(fname):
@@ -41,12 +36,14 @@ def make_random_xml_file(fname, num_elements=200, depth=3):
     makes a random xml file mainly for testing the xml_split
     """
     with open(fname, 'w') as f:
-        f.write('<random>\n')
+        f.write('<?xml version="1.0" ?>\n<random>\n')
         for dep_num, _ in enumerate(range(1,depth)):
-            f.write('<depth>') # + str(dep_num) + '>\n')
+            f.write(' <depth>\n  <content>\n')
+            #f.write('<depth' + str(dep_num) + '>\n')
             for num, _ in enumerate(range(1, num_elements)):
-                f.write('<stuff>data line ' + str(num) + '</stuff>\n')
-            f.write('</depth>\n') #  + str(dep_num) + '>\n')
+                f.write('    <stuff>data line ' + str(num) + '</stuff>\n')
+            #f.write('</depth' + str(dep_num) + '>\n')
+            f.write('  </content>\n </depth>\n')
     
         f.write('</random>\n')
 
@@ -61,10 +58,11 @@ def count_elements(fname, element):
     tot = 0
     for event, elem in iterparse(fname):
         tot += 1
-        #if elem.text != '':
-        #    print(' tag  = ', elem.tag)
-        #    #print(' event  = ', event   # always end
-        #    print(' text = ',  elem.text)
+        if elem.text != '':
+            #print(' tag  = ', elem.tag)
+            #print(' event  = ', event   # always end
+            #print(' text = ',  elem.text)
+            pass
         if element in elem.tag:
             #print(elem.xpath( 'description/text( )' ))
             #print(elem.text)
@@ -118,32 +116,33 @@ class CycleFile(object):
     def open_next_file(self):
         self.index += 1
         filename = self.basename + str(self.index) + self.ext
-        self.file = open(filename, 'w')
+        print('CycleFile:open_next_file: filename = ', filename)
+        self.file = open(filename, 'w', encoding='utf-8', errors='ignore' )
 
     def cycle(self):
+        print('CycleFile:cycle: self.index = ', self.index)
         self.file.close()
         self.open_next_file()
 
-    def tell(self):
-        self.file.tell()
-
     def write(self, txt):
+        #print('CycleFile:write: txt = ', txt.decode(encoding='UTF-8'), ', type(txt) = ',type(txt) )
+        #.decode(encoding='UTF-8')
+        #print('CycleFile:write: txt = ', bytes(txt, encoding="UTF-8"))
         if type(txt) is str:
             self.file.write(txt)
         else:
-            self.file.write(txt.decode('utf-8'))
-
-    def writelines(sequence):
-        self.file.writelines(sequence)
-
-    def flush(self):
-        self.file.flush()
+            self.file.write(txt.decode(encoding='utf-8'))
+            #self.file.write(str(txt))
+            #try:
+            #    self.file.write(txt.decode('utf-8'))
+            #except Exception as ex:
+            #    print('cant write data')
+            # unicode(str, errors='ignore')
 
     def close(self):
         self.file.close()
 
 class XMLBreaker(XMLGenerator):
-    
     def __init__(self, break_into=None, break_after=200, out=None, *args, **kwargs):
         XMLGenerator.__init__(self, out, *args, **kwargs)
         self.out_file = out
@@ -151,6 +150,7 @@ class XMLBreaker(XMLGenerator):
         self.break_after = break_after
         self.context = []
         self.count = 0
+        print('XMLBreaker __init__ : ', break_into, break_after)
 
     def start_element(self, name, attrs):
         XMLGenerator.start_element(self, name, attrs)
@@ -159,6 +159,7 @@ class XMLBreaker(XMLGenerator):
     def end_element(self, name):
         XMLGenerator.end_element(self, name)
         self.context.pop()
+        print('end_element:name = ', name, ', self.break_into = ', self.break_into)
         if name == self.break_into:
             self.count += 1
             if self.count >= self.break_after:
