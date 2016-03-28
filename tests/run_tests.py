@@ -10,6 +10,7 @@ import unittest as unittest
 # List of temp files to wipe after tests run
 
 files_to_wipe = [
+'dfgkljdfgkljdflkgjdlfkgj.sdfsdf',  # make sure a fake file doesnt break things
 '_sessions.txt',
 'BACKOUT_tbl_testload.SQL',
 'chr31_delimited_data_file.csv',
@@ -76,6 +77,8 @@ files_to_wipe = [
 'test_grid.txt',
 'test_map.csv',
 'test_nested.zip',
+'test_output.txt',
+'test_output_win.txt',
 'test_sql_code_agg_multiple_cols.sql',
 'test_sql_code_agg_single_col.sql',
 'test_sql_code_test_rev_piv.sql',
@@ -102,12 +105,11 @@ def wipe_file(fname):
     removes test file left behind without worrying if they cant be 
     deleted. Used only to make a git status look clean.
     """
-    if os.path.exists(fname):
-        try:
-            os.remove(fname)
-            print('deleted ' + fname)
-        except:
-            print('ERROR - cant delete ' + fname)
+    try:
+        os.remove(fname)
+        print('deleted ' + fname)
+    except Exception as ex:
+        print('ERROR - cant delete ' + fname + ' : ' + str(ex))
         
 print('Did the tests fail.... DID YOU TURN ON VIRTUALENV!   ". ~/p von"')
 print('WIPING ALL TEST RESULTS - PRESS CTRL C TO STOP')
