@@ -14,8 +14,8 @@ import xml_tools
 #small_file = root_folder + os.sep + 'aikif' + os.sep + 'ontology' + os.sep + 'mindOntology.xml'
 #large_file = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' + os.sep + '__ANC__WhereToHongKong.xml'
 small_file = os.getcwd() + os.sep + 'sample_small.xml'
-med_file = os.getcwd() + os.sep + 'med.xml'
-large_file = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' + os.sep + '__ANC__WhereToHongKong.xml'
+med_file   = os.getcwd() + os.sep + 'sample_med.xml'
+big_file   = os.getcwd() + os.sep + 'sample_big.xml'
 
 class ToolboxXmlToolsTest(unittest.TestCase):
     def test_01_create_xml_file_from_text(self):
@@ -39,7 +39,6 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertEqual(len(pretty_xml_as_string), 490) 
         self.assertEqual(pretty_xml_as_string[0:34], '<?xml version="1.0" ?>\n<slideshow>') 
         self.assertEqual(pretty_xml_as_string[-13:],'</slideshow>\n')
-        #print('small_file = ' + small_file)
         with open(small_file, 'w') as f:
             f.write(pretty_xml_as_string)
             
@@ -94,22 +93,19 @@ class ToolboxXmlToolsTest(unittest.TestCase):
         self.assertTrue(os.path.exists('sample_small1.xml'))
         
     def test_15_make_random_xml_file(self):
-        #self.assertFalse(os.path.exists('big.xml'))
-        xml_tools.make_random_xml_file('big.xml', 20, 15)
-        self.assertTrue(os.path.exists('big.xml'))
-        self.assertTrue(os.path.getsize('big.xml') > 3000)
-        #os.remove('big.xml')    
-        #os.remove('big1.xml')    
+        #self.assertFalse(os.path.exists(big_file))
+        xml_tools.make_random_xml_file(big_file, 20, 15)
+        self.assertTrue(os.path.exists(big_file))
+        self.assertTrue(os.path.getsize(big_file) > 3000)
      
     def test_16_break_big_file(self):
-        big_file = 'med.xml' # stuff, depth
-        xml_tools.split_xml(big_file, 'slide', 5)
-        self.assertTrue(os.path.exists(big_file))
-        print(xml_tools.get_xml_stats(big_file))
-        print('title', xml_tools.count_via_minidom(big_file, 'title') )   
-        print('slide', xml_tools.count_via_minidom(big_file, 'slide') )   
-        self.assertEqual(xml_tools.count_via_minidom(big_file, 'title'), 12)
-        self.assertEqual(xml_tools.count_via_minidom(big_file, 'slide'), 11)
+        xml_tools.split_xml(med_file, 'slide', 5)
+        self.assertTrue(os.path.exists(med_file))
+        print(xml_tools.get_xml_stats(med_file))
+        print('title', xml_tools.count_via_minidom(med_file, 'title') )   
+        print('slide', xml_tools.count_via_minidom(med_file, 'slide') )   
+        self.assertEqual(xml_tools.count_via_minidom(med_file, 'title'), 12)
+        self.assertEqual(xml_tools.count_via_minidom(med_file, 'slide'), 11)
    
     
 if __name__ == '__main__':
