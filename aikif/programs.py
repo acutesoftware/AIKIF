@@ -6,9 +6,9 @@
 # command
 
 import os
-import aikif.cls_log as mod_log
-import aikif.config as mod_cfg
-import aikif.cls_file_mapping as mod_filemap 
+import cls_log as mod_log
+import config as mod_cfg
+import cls_file_mapping as mod_filemap 
 import aikif.lib.cls_filelist as mod_fl
 import aikif.lib.cls_file as mod_file
 
