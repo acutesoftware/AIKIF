@@ -53,7 +53,6 @@ class TestToolboxClsGridLife(unittest.TestCase):
 
     def test_08_GetSampleData(self):
         d = review_ontology.GetSampleData('review_ontology.html')
-        print(d)
         self.assertEqual(len(d) > 100 , True)
         
     def test_09_deleteFile(self):
