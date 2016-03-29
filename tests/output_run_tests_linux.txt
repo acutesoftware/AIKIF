@@ -1,0 +1,1597 @@
+cmd = t, prj = AI, proj = python/AIKIF
+/home/duncan/dev/src/python/AIKIF
+Testing /home/duncan/dev/src/python/AIKIF
+/home/duncan/dev/src/python/AIKIF/tests
+................................................../bin/sh: 1: /home/duncan/dev/src/python/AIKIF/tests/cls_file_test_data.txt: Permission denied
+Child returned 126
+.............../home/duncan/dev/src/python/AIKIF/aikif
+config.py : running locally on duncans PC!
+ensure_dir: file = /home/duncan/dev/src/python/AIKIF/tests/command.log
+ensure_dir: d =  /home/duncan/dev/src/python/AIKIF/tests
+agents_logged =  Agent
+AgentInterfaceEnv
+AgentInterfaceWindows
+
+ensure_dir: file = /home/duncan/dev/src/python/AIKIF/tests/command.log
+ensure_dir: d =  /home/duncan/dev/src/python/AIKIF/tests
+in test_cls_filelist : root_folder = /home/duncan/dev/src/python/AIKIF
+pth =  /home/duncan/dev/src/python/AIKIF/aikif
+ dataFileTypes    =  7
+ dataSubjectAreas =  30
+in test_cls_filelist : root_folder = /home/duncan/dev/src/python/AIKIF
+in test_cls_filelist : root_folder = /home/duncan/dev/src/python/AIKIF
+op folder = /home/duncan/dev/src/python/AIKIF/tests/test_results
+data_structures imported.py
+Cant import win32gui (probably CI build on linux)No module named 'win32gui'
+Cant import win32gui (probably CI build on linux)
+Cant import win32gui (probably CI build on linux)
+Cant import win32gui (probably CI build on linux)
+/home/duncan/dev/src/python/AIKIF/aikif
+/home/duncan/dev/src/python/AIKIF/aikif
+/home/duncan/dev/src/python/AIKIF/aikif/data/raw
+test_folder =  /home/duncan/dev/src/python/AIKIF/tests
+root_folder =  /home/duncan/dev/src/python/AIKIF
+cant load ImageGrab (running on Linux)ImageGrab is OS X and Windows only
+ensure_dir: file = /home/duncan/dev/src/python/AIKIF/tests/command.log
+ensure_dir: d =  /home/duncan/dev/src/python/AIKIF/tests
+/home/duncan/dev/src/python/AIKIF/aikif
+sys.version =  3.4.3 (default, Oct 14 2015, 20:28:29) 
+[GCC 4.8.4]
+os.getcwd() =  /home/duncan/dev/src/python/AIKIF/tests
+aggregating  /home/duncan/dev/src/python/AIKIF/tests  to  /home/duncan/dev/src/python/AIKIF/tests/summary_diary.dat
+/home/duncan/dev/src/python/AIKIF/tests
+rawfile = /home/duncan/dev/src/python/AIKIF/tests/diary_duncan.txt
+Processing:  /home/duncan/dev/src/python/AIKIF/tests/diary_duncan.txt
+Agent Status:
+
+........
+........
+........
+........
+........
+.X......
+........
+...X....
+
+
+Agent Status:
+
+........
+........
+........
+........
+........
+.X......
+........
+...X....
+
+
+Agent Status:
+
+........
+........
+........
+........
+........
+.X......
+........
+...X....
+
+
+Agent Status:
+
+........
+........
+........
+........
+........
+.X...   
+..... . 
+...X.   
+
+
+ensure_dir: file = /home/duncan/dev/src/python/AIKIF/tests/command.log
+ensure_dir: d =  /home/duncan/dev/src/python/AIKIF/tests
+cant get metadata for file fullFilename
+
+--------- Agent Summary ---------
+Name    : image_metadata_agent
+Folder  : /home/duncan/dev/src/python/AIKIF/tests
+Status  : RUNNING
+Running : True
+
+ensure_dir: file = /home/duncan/dev/src/python/AIKIF/tests/command.log
+ensure_dir: d =  /home/duncan/dev/src/python/AIKIF/tests
+agents_logged =  Agent
+AgentInterfaceEnv
+AgentInterfaceWindows
+
+ensure_dir: file = /home/duncan/dev/src/python/AIKIF/tests/command.log
+ensure_dir: d =  /home/duncan/dev/src/python/AIKIF/tests
+agents_logged =  Agent
+AgentInterfaceEnv
+AgentInterfaceWindows
+
+ensure_dir: file = /home/duncan/dev/src/python/AIKIF/tests/command.log
+ensure_dir: d =  /home/duncan/dev/src/python/AIKIF/tests
+agents_logged =  Agent
+AgentInterfaceEnv
+AgentInterfaceWindows
+
+HEY - you cant call send_string directly
+ensure_dir: file = /home/duncan/dev/src/python/AIKIF/tests/command.log
+ensure_dir: d =  /home/duncan/dev/src/python/AIKIF/tests
+agents_logged =  Agent
+AgentInterfaceEnv
+AgentInterfaceWindows
+
+sending string to OS Windows
+Windows Interface is RUNNING
+test
+recipes
+------------------------------
+000 quant
+001 calories
+002 col_list
+003 name
+004 ingredient
+
+['map', 'comment\n']
+['01', 'test01\n']
+Folder of CSV Files contains the tables 
+file1.csv
+file2.csv
+test 2 - database
+schema contains the tables 
+
+Logging out
+WRINGI CONTWETESWREWR
+cant drop file "no such file.bla" : [Errno 2] No such file or directory: 'no such file.bla'
+get_col_data_by_name: col_name =  GENDER  WHERE =  
+get_col_data_by_name: col_name =  TERM  WHERE =  
+get_col_data_by_name: col_name =  TERM  WHERE =  
+get_col_data_by_name: col_name =  ID  WHERE =  
+get_col_data_by_name: col_name =  a  WHERE =  
+a NOT found = returning None
+get_col_data_by_name: col_name =  a  NOT FOUND
+get_col_data_by_name: col_name =  b  WHERE =  
+b NOT found = returning None
+get_col_data_by_name: col_name =  b  NOT FOUND
+get_col_data_by_name: col_name =  c  WHERE =  
+c NOT found = returning None
+get_col_data_by_name: col_name =  c  NOT FOUND
+get_col_data_by_name: col_name =  d  WHERE =  
+d NOT found = returning None
+get_col_data_by_name: col_name =  d  NOT FOUND
+TODO 
+get_col_data_by_name: col_name =  TERM  WHERE =  
+get_col_data_by_name: col_name =  ID  WHERE =  
+0 0 0
+date
+details
+get_col_data_by_name: col_name =  date  WHERE =  
+======================================================================
+date    amount  details 
+
+Table  =  3 cols x 0 rows
+HEADER =  ['date', 'amount', 'details']
+arr    =  []
+problem accessing cls_file_test_data.txt [Errno 2] No such file or directory: '/home/duncan/dev/src/python/AIKIF/tests/cls_file_test_data.txt'
+cant count lines in file in " cls_file_test_data.txt ": [Errno 2] No such file or directory: 'cls_file_test_data.txt'
+Cant delete  /home/duncan/dev/src/python/AIKIF/tests/cls_file_test_data.txt
+problem accessing blahdfgkjdlfgkjldkfgj.txt [Errno 2] No such file or directory: '/home/duncan/dev/src/python/AIKIF/tests/blahdfgkjdlfgkjldkfgj.txt'
+cant count lines in file in " blahdfgkjdlfgkjldkfgj.txt ": [Errno 2] No such file or directory: 'blahdfgkjdlfgkjldkfgj.txt'
+problem accessing blahdfgkjdlfgkjldkfgj.txt [Errno 2] No such file or directory: '/home/duncan/dev/src/python/AIKIF/tests/blahdfgkjdlfgkjldkfgj.txt'
+cant count lines in file in " blahdfgkjdlfgkjldkfgj.txt ": [Errno 2] No such file or directory: 'blahdfgkjdlfgkjldkfgj.txt'
+problem accessing no such file.blah [Errno 2] No such file or directory: '/home/duncan/dev/src/python/AIKIF/tests/no such file.blah'
+problem converting time this is not a date an integer is required (got type str)
+cant count lines in file in " no such filename ": [Errno 2] No such file or directory: 'no such filename'
+no audio file to test
+Cant delete  /home/duncan/dev/src/python/AIKIF/tests
+TODO - move data folder under AIKIF for this to work
+{'Event': {'Time_Scales': ['date',
+                           'now',
+                           'soon',
+                           'today',
+                           'tomorrow',
+                           'near future',
+                           'this week',
+                           'at some stage',
+                           'whenever',
+                           'if you get time']},
+ 'Location': {'Physical': ['Label Friendly - Work - Home - Shops (your '
+                           'primary supermarket) - Movies (your cinema[s]) '
+                           '- Mums (your mums house)',
+                           'Address',
+                           'GPS Coords',
+                           'Astronomy Coords'],
+              'Virtual': {'Computer': ['Folder', 'File'],
+                          'Website': ['domain', 'page']}},
+ 'Object': {'Physical': {'Assetts': ['Furniture', 'Car', 'House'],
+                         'Label_Friendly': ['My house (Home)', 'my car'],
+                         'Materials': ['Food ingredients', 'Wood'],
+                         'Other_stuff': ['Elephants, Walrus tusks, '
+                                         'Antique pipes, Clock Tower in '
+                                         'London'],
+                         'Tools': ['Hammer', 'Chisel', 'Saw', 'Screwdriver']},
+            'Virtual': {'Computer': ['Folder', 'File', 'Application'],
+                        'Label_Friendly': ['My website location / email '
+                                           'address',
+                                           'Location of My Documents / '
+                                           'backup folders, etc'],
+                        'Website': ['domain', 'page']}},
+ 'People': {'Class': ['Upper', 'Middle', 'Lower'],
+            'Label_Friendly': ['Me',
+                               'Spouse',
+                               'Relative',
+                               'Friend',
+                               'Colleague',
+                               .....................................'Acquaintance',
+                               'Customer',
+                               'Suppliers',
+                               'ToFollow',
+                               'ToBlock'],
+            'Profession': ['Student',
+                           'Home carer',
+                           'Plumber',
+                           'Carpenter',
+                           'Programmer',
+                           'Small Business Owner']},
+ 'Process': {'Learn': ['Study', 'Tradeskill'],
+             'Play': ['games'],
+             'Project': {'Task': ['Methods']},
+             'Work': ['Business']}}
+Generating list of Files...
+Paths =  ['/home/duncan/dev/src/python/AIKIF/tests/test_results']
+Xtns  =  ['*.*']
+exclude =  ['*.sql']
+/home/duncan/dev/src/python/AIKIF/tests/test_results
+['log']
+[]
+Found  37  files
+FileListGroup : AIKIF lib files
+dest_folder   : E:\backup
+
+"fake file","","Unknown size","Unknown Date","fake file",
+TODO = test_13_check_missing_logs_doesnt_break_sum (will fail)
+cfg.fldrs[localPath] =  /home/duncan/AIKIF/
+cfg.fldrs[log_folder] =  /home/duncan/AIKIF/log
+/home/duncan/AIKIF/log
+date,command,result,process,source
+,0,0,1592,0
+
+,0,0,4,0
+20140421,9,40,178,9
+20140423,0,0,6,0
+20140424,19,1,47,19
+20140425,24,0,117,24
+20140426,16,0,83,16
+20140427,1,0,6,1
+20140429,0,0,0,4
+20140430,17,0,136,17
+20140501,6,0,48,6
+20140502,0,34,39,0
+20140503,0,2,2,0
+20140504,0,1,10,0
+20140507,0,85,86,0
+20140508,0,12,13,0
+20140511,6,0,387,6
+20140512,3,0,200,3
+20140514,7,0,56,7
+20140518,0,0,1,0
+20140603,0,0,1,0
+20140604,0,0,2,0
+20140615,1,0,8,1
+20140616,1,0,10,1
+20140618,2,0,22,2
+20140628,0,0,6,0
+20140708,0,30,26,79
+20140709,0,40,20,46
+20140720,0,0,1,0
+20140725,0,25,25,0
+20140728,1,1,1,1
+20140729,0,0,15,0
+20140730,0,20,34,20
+20140805,0,0,18,0
+20140809,14,0,0,0
+20140811,3,0,0,0
+20140812,82,83,0,0
+20140813,20,32,0,0
+20140814,11,13,0,0
+20140815,71,245,0,0
+20140816,3,14,0,0
+20140817,152,101,0,0
+20140818,39,146,0,0
+20140819,3,18,0,0
+20140820,4,4,4,4
+20140821,8,45,16,24
+20140826,46,32,647,37
+20140907,4,22,0,0
+20140913,5,22,0,0
+20140915,30,0,0,0
+20140916,6,38,8,0
+20140921,22,0,0,0
+20140922,3,0,0,0
+20140923,81,0,0,0
+20140927,3,19,4,0
+20140928,22,0,6,0
+20140930,5,0,0,0
+20141003,16,85,21,0
+20141007,2,0,22,2
+20141008,6,28,9,0
+20141011,5,28,7,0
+20141013,5,0,0,0
+20141016,5,28,7,0
+20141024,1,1,2,0
+20141025,4,27,5,0
+20141026,6,0,188,6
+20141030,25,0,319,0
+20141031,30,0,2245,0
+20141101,7,0,1136,0
+20141102,5,0,739,0
+20141103,16,28,1226,0
+20141105,12,0,567,0
+20141106,6,0,486,0
+20141107,2,0,162,0
+20141108,6,29,9,0
+20141120,12,0,137,12
+20141121,6,28,19,1
+20141123,2,0,24,2
+20141126,3,0,164,0
+20141204,0,3,3,0
+20141211,80,0,51,80
+20141212,67,0,91,67
+20141223,4,0,6,4
+20150103,4,0,6,4
+20150113,50,0,0,0
+20150114,189,0,0,0
+20150117,0,9,2,10
+20150118,55,0,6,22
+20150119,12,0,1,6
+20150123,161,0,0,54
+20150124,273,0,60,160
+20150125,10,0,1,4
+20150126,151,69,2,87
+20150127,8,9,0,6
+20150128,73,29,31,44
+20150129,68,0,0,14
+20150201,182,0,1,38
+20150202,40,0,0,8
+20150204,2,0,1,2
+20150205,36,0,1,10
+20150209,20,0,0,4
+20150211,1,0,82,0
+20150213,1,0,102,0
+20150216,8,0,12,8
+20150217,21,0,7,6
+20150224,6,25,7,0
+20150228,283,0,70,71
+20150301,38,0,92,20
+20150303,2,0,12,1
+20150304,17,0,816,0
+20150305,23,0,211,6
+20150311,2,2,0,0
+20150312,4,17,1,0
+20150314,6,0,1,0
+20150317,12,0,103,12
+20150318,18,0,153,18
+20150319,6,0,12,6
+20150320,1,0,6,1
+20150325,2,0,0,0
+20150329,21,0,7,6
+20150401,6,19,1,0
+20150409,9,9,9,9
+20150414,1,0,0,0
+20150415,15,44,0,0
+20150416,30,67,0,0
+20150417,4,7,0,0
+20150418,1,0,0,0
+20150423,4,0,1,0
+20150425,4,0,1,0
+20150426,20,20,20,20
+20150506,4,0,1,0
+20150511,1,0,0,0
+20150512,1,0,91,0
+20150513,4,0,4,0
+20150514,27,0,39,0
+20150519,1,0,2,0
+20150520,46,4,13,20
+20150521,44,14,24,14
+20150522,117,10,258,49
+20150523,84,4,129,30
+20150524,23,2,9,8
+20150529,10,14,2,0
+20150531,65,6,51,24
+20150605,19,2,9,8
+20150607,4,0,1,0
+20150614,8,0,0,2
+20150616,1,0,0,0
+20150617,27,4,27,4
+20150619,20,2,10,8
+20150620,20,2,10,8
+20150625,20,2,10,8
+20150629,20,2,10,8
+20150702,20,2,10,8
+20150704,20,2,10,8
+20150710,20,2,10,8
+20150711,140,14,70,56
+20150719,20,2,10,8
+20150721,120,12,60,48
+20150722,20,2,18,63
+20150723,132,12,102,159
+20150724,22,2,23,27
+20150726,45,4,46,54
+20150727,21,2,11,26
+20150731,21,2,11,26
+20150801,21,2,11,26
+20150802,63,6,33,78
+20150803,190,18,93,126
+20150804,63,6,30,24
+20150806,63,6,30,24
+20150807,21,2,10,8
+20150808,21,2,10,8
+20150809,23,4,12,10
+20150811,13,14,0,0
+20150812,20,36,0,0
+20150813,24,6,10,8
+20150814,42,4,20,16
+20150819,42,4,20,16
+20150901,22,2,10,8
+20150902,46,4,20,16
+20150905,21,2,10,8
+20150906,63,6,30,24
+20150911,21,2,10,8
+20150917,21,2,10,8
+20150919,21,2,10,8
+20150923,16,16,16,16
+20150924,88,22,46,46
+20151003,34,6,18,18
+20151004,16,2,8,8
+20151005,32,4,16,16
+20151006,19,4,10,10
+20151007,80,14,44,44
+20151011,142,10,204,107
+20151012,56,6,45,32
+20151014,35,4,23,19
+20151015,17,2,10,9
+20151016,17,2,10,9
+20151017,19,4,12,11
+20151018,34,4,20,18
+20151019,66,8,40,36
+20151022,68,8,40,36
+20151104,63,12,39,33
+20151112,36,4,22,18
+20151122,126,24,78,66
+20151130,68,16,45,37
+20151208,21,4,14,11
+20151212,42,8,28,22
+20151225,21,4,14,11
+20151230,27,4,19,17
+20160110,27,4,19,17
+20160118,137,4,149,127
+20160119,27,4,19,17
+20160123,2,2,2,2
+20160208,27,4,19,17
+20160219,54,8,38,34
+20160224,27,4,19,17
+20160302,27,4,21,17
+20160316,27,4,21,17
+20160329,274,44,214,174
+
+WARNING - this will take 190182.65981659057 YEARS to run
+---------------------------------------------
+-- CREATE Dimension - dim_name
+---------------------------------------------
+DROP TABLE dim_stag_table CASCADE CONSTRAINTS;
+CREATE TABLE dim_stag_table (
+dim_cols VARCHAR2(200), 
+ UPDATE_DATE  DATE 
+);
+DROP TABLE dim_name CASCADE CONSTRAINTS;
+CREATE TABLE dim_name (
+ dim_key NUMBER, 
+dim_cols VARCHAR2(200), 
+ REC_SOURCE_SYSTEM  VARCHAR2(100), 
+ UPDATE_DATE  DATE 
+);
+CREATE OR REPLACE VIEW Uim_name AS SELECT * FROM dim_name;
+GRANT SELECT ON Uim_name TO ALL_USERS;
+
+DROP SEQUENCE SEQ_dim_name;
+CREATE SEQUENCE SEQ_dim_name;
+
+
+DROP TABLE C_AGG_PRODUCT;
+CREATE TABLE C_AGG_PRODUCT AS (
+    SELECT PRODUCT, CUSTOMER_NAME, sum(AMOUNT) AS result 
+    FROM C_SALES GROUP BY PRODUCT, CUSTOMER_NAME
+);
+---------------------------------------------
+-- Populate Dimension - dim_name
+---------------------------------------------
+DELETE FROM dim_stag_table;
+COMMIT;
+INSERT INTO dim_stag_table (
+dim_cols)
+ (SELECT 
+src_cols
+FROM src_table
+WHERE where_clause
+GROUP BY grain_cols
+); 
+COMMIT;
+DELETE FROM dim_name;
+COMMIT;
+INSERT INTO dim_name (
+dim_cols, REC_SOURCE_SYSTEM, UPDATE_DATE ) 
+(SELECT 
+src_cols, 'src_table', sysdate 
+FROM dim_stag_table
+); 
+COMMIT;
+UPDATE dim_name SET dim_key = SEQ_dim_name.nextval;
+COMMIT;
+
+
+C_SALES
+col : DATE
+col : PRODUCT
+col : CUSTOMER_NAME
+col : AMOUNT
+
+---------------------------------------------
+-- CREATE Staging Table - test07
+---------------------------------------------
+DROP TABLE test07 CASCADE CONSTRAINTS;
+CREATE TABLE test07 (
+  col1 VARCHAR2(200), 
+  col2 VARCHAR2(200), 
+  col3 VARCHAR2(200), 
+  UPDATE_DATE DATE 
+);
+
+
+usage from other programs - returns /home/duncan/dev/src/python/AIKIF
+
+---------- Folder Locations ---------
+public_data_path = /home/duncan/dev/src/python/AIKIF/aikif/data
+root_path = /home/duncan/dev/src/python/AIKIF
+localPath = /home/duncan/AIKIF/
+program_path = /home/duncan/dev/src/python/AIKIF/aikif
+pers_credentials = /home/duncan/AIKIF/pers_data/credentials
+log_folder = /home/duncan/AIKIF/log
+pers_data = /home/duncan/AIKIF/pers_data
+
+---------- Logfiles ---------
+logFileSource = /home/duncan/AIKIF/log/source.log
+logFileCommand = /home/duncan/AIKIF/log/command.log
+logFileProcess = /home/duncan/AIKIF/log/process.log
+logFileResult = /home/duncan/AIKIF/log/result.log
+
+---------- Parameters ---------
+AIKIF_deploy = DEV
+AIKIF_version = 0.1.9
+index_files = ['/home/duncan/dev/src/python/AIKIF/aikif/data/index/ndxAll.txt', '/home/duncan/AIKIF/pers_data/pers_index_final.txt', '/home/duncan/AIKIF/pers_data/ndx_PCusage.txt']
+
+Error:cls_context cant identify user 'NoneType' object is not iterable
+Error:cls_context cant identify host 'NoneType' object is not iterable
+Error:cls_context cant identify user 'NoneType' object is not iterable
+Error:cls_context cant identify host 'NoneType' object is not iterable
+res =  
+Phone is charging, sitting still..............................start: Unknown job: notepad
+...............
+res_change1 =  
+Phone is charging, sitting still
+res_change3 =  
+Phone is charging, sitting still
+res_change4 =  
+Phone is charging, sitting still
+Error:cls_context cant identify user 'NoneType' object is not iterable
+Error:cls_context cant identify host 'NoneType' object is not iterable
+phone         = Phone is charging, sitting still
+username      = 
+user          = 
+hostname      = 
+host          = 
+cpu_pct       = 4.3
+num_proc      = 226
+mem_avail     = 14116933632
+mem_total     = 16709992448
+Error:cls_context cant identify user 'NoneType' object is not iterable
+Error:cls_context cant identify host 'NoneType' object is not iterable
+Error:cls_context cant identify user 'NoneType' object is not iterable
+Error:cls_context cant identify host 'NoneType' object is not iterable
+Error:cls_context cant identify user 'NoneType' object is not iterable
+Error:cls_context cant identify host 'NoneType' object is not iterable
+Error:cls_context cant identify user 'NoneType' object is not iterable
+Error:cls_context cant identify host 'NoneType' object is not iterable
+TODO: process check =  
+Install Shelf  contracted to -> Projects
+TODO: process check =  TODO - set process
+Projects  contracted to -> Everything
+TODO - generate diary files from Event rows only
+DIARY row of type(<class 'core_data.Event'>) =  Sales Meeting
+DIARY row of type(<class 'core_data.Event'>) =  Sales Meeting#3
+DIARY row of type(<class 'core_data.Event'>) =  DEV AIKIF - core data
+DIARY row of type(<class 'core_data.Event'>) =  DEV LifePim - core data
+DIARY row of type(<class 'core_data.Event'>) =  DEV AIKIF - data tools
+  --== Graph Test ==--
+raw graph =  {'2': ['6', '7'], '1': ['2', '3', '4']}
+6 nodes: ['1', '2', '3', '4', '6', '7']
+5 links: [['2', '6'], ['2', '7'], ['1', '2'], ['1', '3'], ['1', '4']]
+[0, 1, 1, 1, 0, 0]
+[1, 0, 0, 0, 1, 1]
+[1, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 0, 0]
+[0, 1, 0, 0, 0, 0]
+[0, 1, 0, 0, 0, 0]
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+Environment: unit_test
+
+New Goal
+running plan  1
+running plan  2
+TODO running strategy : Travel_walk
+TODO running strategy : Travel_bike
+TODO running strategy : Travel_car
+TODO running strategy : Travel_bus
+Money Goal - fudge, TODO
+running strategy : Bank Savings for plan 1
+running strategy : Term Deposit for plan 1
+running strategy : Bank Savings for plan 2
+running strategy : Term Deposit for plan 2
+file already deleted - ignore[Errno 2] No such file or directory: 'index_normal_results.txt'
+index_normal_source.txt                    2      12       9 
+uniqueWords (9) items :
+ has,
+ file,
+ particular,
+ text,
+ is,
+ 
+has 
+file 
+particular 
+text 
+is 
+file already deleted - ignore[Errno 2] No such file or directory: 'index_odd_chars_results.txt'
+index_odd_chars_source.txt                 3      13       3 
+uniqueWords (3) items :
+ ccc,
+ bbb,
+ aaa,
+ 
+ccc 
+bbb 
+aaa 
+silent =  N
+------------------
+Rebuilding Indexes
+------------------
+Base Filename                          Lines   Words  Unique  
+OBJECT_INFO-PIM-CONTACT.csv                5       1       1 
+uniqueWords (1) items :
+ resources,
+ 
+resources 
+LOCATION_SYSTEM-PC-FILE.csv               10      47      15 
+uniqueWords (15) items :
+ 10,
+ tests,
+ user,
+ folder,
+ ai,
+ 
+10 
+tests 
+user 
+folder 
+ai 
+LOCATION_WORLD.csv                       262     890     813 
+uniqueWords (813) items :
+ waf,
+ cfr,
+ jamaica,
+ 70,
+ occupied,
+ 
+waf 
+cfr 
+jamaica 
+70 
+occupied 
+OBJECT_OBJECT-ASSET-RESOURCE.csv           5       7       7 
+uniqueWords (7) items :
+ wood,
+ resources,
+ text,
+ power,
+ editor,
+ 
+wood 
+resources 
+text 
+power 
+editor 
+EVENT_SYSTEM-PC-FILE.csv                 185    2583     400 
+uniqueWords (400) items :
+ 131724,
+ 145909,
+ 36,
+ thumbs,
+ 58,
+ 
+131724 
+145909 
+36 
+thumbs 
+58 
+OBJECT_INFO-COURSE.csv                    30     846     308 
+uniqueWords (308) items :
+ atlanta,
+ united,
+ stanford,
+ wickler,
+ gb,
+ 
+atlanta 
+united 
+stanford 
+wickler 
+gb 
+THING_INFO-PIM-SHOPPING.csv                6      13      11 
+uniqueWords (11) items :
+ shopping,
+ quant,
+ item,
+ key,
+ bag,
+ 
+shopping 
+quant 
+item 
+key 
+bag 
+EVENT_INFO-PIM-TASK.csv                   16      61      21 
+uniqueWords (21) items :
+ install,
+ example,
+ name,
+ shelf,
+ document,
+ 
+install 
+example 
+name 
+shelf 
+document 
+OBJECT_INFO-PIM-PROJECT.csv                4       1       1 
+uniqueWords (1) items :
+ resources,
+ 
+resources 
+THING_SYSTEM-PC-FILE-LECTURES.csv       2449   52837    5209 
+uniqueWords (5209) items :
+ 1315,
+ 2035,
+ block,
+ 469,
+ analyzing,
+ 
+1315 
+2035 
+block 
+469 
+analyzing 
+LINK_SYSTEM-PC-FILE.csv                  129     368     171 
+uniqueWords (171) items :
+ 155,
+ 67,
+ 183,
+ 119,
+ 176,
+ 
+155 
+67 
+183 
+119 
+176 
+LOCATION_INFO-COURSE.csv                2007   35549    4259 
+uniqueWords (4259) items :
+ 1315,
+ block,
+ 469,
+ analyzing,
+ programing,
+ 
+1315 
+block 
+469 
+analyzing 
+programing 
+EVENT_INFO-PIM-PROJECT.csv                 4      19      11 
+uniqueWords (11) items :
+ 06,
+ 2012,
+ 05,
+ 12,
+ type,
+ 
+06 
+2012 
+05 
+12 
+type 
+Done
+error calling win32com.client.Dispatch (AppActivate)
+error calling win32com.client.Dispatch (SendKeys)
+error calling win32com.client.Dispatch (SendKeys)
+error calling win32com.client.Dispatch (SendKeys)
+WARNING - Windows tests failed - likely due to running on Linux VM
+error launching app  dir with params []
+Can't convert 'list' object to str implicitly
+WARNING - Windows tests failed - likely due to running on Linux VM
+error calling win32gui.FindWindow name 'win32gui' is not defined
+window handle of Command prompt  =  -1
+WARNING - Windows tests failed - likely due to running on Linux VM
+error calling win32gui.FindWindow name 'win32gui' is not defined
+error calling SendMessage name 'win32api' is not defined
+WARNING - Windows tests failed - likely due to running on Linux VM
+TODO - Fact.process not yet implemented
+TODO - Fact.verify not yet implemented
+TODO - import NLP, split into verbs / nouns
+TODO - text + applying rule text           object         all            
+TODO - text + applying rule text           event          all            
+TODO - text + applying rule text           action         all            
+TODO - text + applying rule text           relationship   all            
+TODO - parse_file_to_dicttest.csv
+TODO - file + applying rule file           .py            program        
+TODO - file + applying rule file           .c             program        
+TODO - file + applying rule file           .php           program        
+TODO - file + applying rule file           .docx          document       
+TODO - file + applying rule file           .htm           document       
+TODO - file + applying rule file           .html          document       
+TODO - file + applying rule file           .xls           data_file      
+TODO - file + applying rule file           .xlsx          data_file      
+TODO - file + applying rule file           .csv           data_file      
+TODO - file + applying rule file           .dat           data_file      
+['fullFilename', 'name', 'path', 'size', 'date', '']
+get_col_data_by_name: col_name =  fullFilename  WHERE =  
+get_col_data_by_name: col_name =  name  WHERE =  
+get_col_data_by_name: col_name =  path  WHERE =  
+get_col_data_by_name: col_name =  size  WHERE =  
+get_col_data_by_name: col_name =  date  WHERE =  
+fullFilename
+name
+path
+size
+date
+self.col_file = /home/duncan/dev/src/python/AIKIF/aikif/data/ref/mapping_rules.csv
+17 ['C:\\Windows\\system32\\cmd.exe', 'Google Calendar - Google Chrome', 'Open', 'Quiz | Coursera - Google Chrome', 'Quiz | Coursera - Google Chrome with added comma ', 'T:\\user\\dev\\src\\python\\AIKIF\\aikif\\agents\\learn\\agent_learn_aixi.py - Notepad++', 'T:\\user\\dev\\src\\python\\AIKIF\\tests\\test_toolbox_maths_ml_algorithms.py - Notepad++', 'Z:\\duncan\\C\\user\\docs\\study\\process-mining\\ass1-CoSeLoG project.xes - Notepad++'] ['Google Calendar - Google Chrome', 'Z:\\duncan\\C\\user\\docs\\study\\process-mining\\ass1-CoSeLoG project.xes - Notepad++', 'Open', 'Z:\\duncan\\C\\user\\docs\\study\\process-mining\\ass1-CoSeLoG project.xes - Notepad++', 'T:\\user\\dev\\src\\python\\AIKIF\\aikif\\agents\\learn\\agent_learn_aixi.py - Notepad++', 'Open', 'T:\\user\\dev\\src\\python\\AIKIF\\tests\\test_toolbox_maths_ml_algorithms.py - Notepad++', 'Quiz | Coursera - Google Chrome with added comma ', 'T:\\user\\dev\\src\\python\\AIKIF\\tests\\test_toolbox_maths_ml_algorithms.py - Notepad++', 'C:\\Windows\\system32\\cmd.exe', 'C:\\Windows\\system32\\cmd.exe', 'T:\\user\\dev\\src\\python\\AIKIF\\tests\\test_toolbox_maths_ml_algorithms.py - Notepad++', 'C:\\Windows\\system32\\cmd.exe', 'T:\\user\\dev\\src\\python\\AIKIF\\tests\\test_toolbox_maths_ml_algorithms.py - Notepad++', 'Quiz | Coursera - Google Chrome', 'Quiz | Coursera - Google Chrome', 'Quiz | Coursera - Google Chrome', 'Quiz | Coursera - Google Chrome'].... ['2014-12-23']
+Ontologies 	= 18
+Documents 	= 14
+Comments 	= 2
+Cant delete  review_file_samples.html
+Cant delete  review_ontology.html
+Cant delete  review_ontology.txt
+Conclusion: 
+use an existing top level ontology as a starting point, but base remaining ones on DOLCE
+------ Ontologies-------
+
+{'url': 'http://wordnet.princeton.edu/wordnet/download/', 'name': 'WordNet', 'data': 'http://wordnetcode.princeton.edu/wn3.1.dict.tar.gz', 'localFile': 'S:\\DATA\\opendata\\ontology\\WordNet\\dict\\data.noun', 'tested': 'Untested', 'rating': 'Best word list, not in OWL format, though qualifies as an upper ontology by including \n     the most general concepts as well as more specialized concepts, related to each other not only by \n     the subsumption relations, but by other semantic relations as well, such as part-of and cause.\n     However, unlike Cyc, it has not been formally axiomatized so as to make the logical relations \n     between the concepts precise. It has been widely used in Natural language processing research'}
+{'url': 'http://en.wikipedia.org/wiki/Cyc#OpenCyc', 'name': 'OpenCyc', 'data': 'http://sourceforge.net/projects/texai/files/open-cyc-rdf/1.1/open-cyc.rdf.ZIP/download', 'localFile': 'S:\\DATA\\opendata\\ontology\\OpenCyc\\open-cyc.rdf', 'tested': 'Work in Progress', 'rating': 'Was proprietry, now open source. Fairly precise, this is the best bet for AI applications'}
+{'url': 'http://www.ontologyportal.org/', 'name': 'SUMO - Suggested Upper Merged Ontology', 'data': 'http://sigmakee.cvs.sourceforge.net/viewvc/sigmakee/KBs/?view=tar', 'localFile': 'S:\\DATA\\opendata\\ontology\\SUMO\\KBs\\Mid-level-ontology.kif', 'tested': 'Untested', 'rating': 'Created by the IEEE working group P1600.1 - has multiple files by subject area which includes an upper ontology (which file?)'}
+{'url': 'http://www.loa.istc.cnr.it/', 'name': 'DOLCE - Descriptive Ontology for Linguistic and Cognitive Engineering ', 'data': 'http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl', 'localFile': 'S:\\DATA\\opendata\\ontology\\DOLCE\\DOLCE-Lite.owl', 'tested': 'Untested', 'rating': 'Not an active project on website, but has a clear cognitive bias, in that it aims \n     at capturing the ontological categories underlying natural language and human common sense'}
+{'url': 'http://wiki.dbpedia.org/Datasets', 'name': 'DBPedia', 'data': 'http://wiki.dbpedia.org/Downloads39', 'localFile': 'S:\\DATA\\opendata\\ontology\\wikipedia_categories\\dbpedia-ontology.owl.bz2.owl.bz2.owl', 'tested': 'Untested', 'rating': 'The most comprehensive set of data based on Wikipedia (470M facts)'}
+{'url': 'http://www.ifomis.org/bfo', 'name': 'BFO - Basic Formal Ontology', 'data': 'http://www.ifomis.org/bfo/1.1', 'localFile': 'S:\\DATA\\opendata\\ontology\\BFO\\bfo-1.1.owl', 'tested': 'Untested', 'rating': 'Incorporates both three-dimensionalist and four-dimensionalist perspectives on \n     reality within a single framework. Has over 100 other ontologies build based on this'}
+{'url': 'http://structureddynamics.com/resources.html#Ontologies', 'name': 'UMBEL', 'data': 'https://github.com/structureddynamics/UMBEL/blob/master/Ontology/umbel.n3', 'localFile': 'S:\\DATA\\opendata\\ontology\\UMBEL\\umbel.n3', 'tested': 'Untested', 'rating': 'Maps to a simplified subset of the OpenCyc ontology (28,000 entries)'}
+{'url': 'http://stlab.istc.cnr.it/stlab/The_Semantic_Technology_Laboratory_%28STLab%29', 'name': 'DnS - Descriptions and Situations (implementation of DOLCE+DnS-Ultralite abbreviated to DUL) ', 'data': 'http://www.ontologydesignpatterns.org/ont/dul/DUL.owl', 'localFile': 'S:\\DATA\\opendata\\ontology\\DnS\\DUL.owl', 'tested': 'Untested', 'rating': 'constructivist ontology that pushes DOLCEs descriptive stance even \n     further allowing for context-sensitive redescriptions of the types and relations \n     postulated by other given ontologies'}
+{'url': 'http://www.onto-med.de/ontologies/index.jsp', 'name': 'GFO - General Formal Ontology', 'data': 'http://www.onto-med.de/ontologies/gfo.owl', 'localFile': 'S:\\DATA\\opendata\\ontology\\GFO\\gfo-ato.owl', 'tested': 'Untested', 'rating': 'have developed a top level ontology and a biological core ontology. OWL file is copyright, but redistribution allowed'}
+{'url': 'https://oxygen.informatik.tu-cottbus.de/drupal7/ufo/', 'name': 'UFO - Unified Foundation Ontology', 'data': '', 'localFile': '', 'tested': 'Untested', 'rating': 'new, pretty good. tested for complex domains, combines DOLCE and GFO. Count not find single download OWL file'}
+{'url': 'http://en.wikipedia.org/wiki/CIDOC_Conceptual_Reference_Model', 'name': 'CIDOC Conceptual Reference Model', 'data': 'http://www.cidoc-crm.org/rdfs/cidoc_crm_v5.0.4_official_release.rdfs', 'localFile': 'S:\\DATA\\opendata\\ontology\\CIDOC\\cidoc_crm_v5.0.4_official_release.rdfs', 'tested': 'Untested', 'rating': 'provides an extensible ontology for concepts and information in cultural heritage \n     and museum documentation. Includes its own version of an upper ontology in its core classes'}
+{'url': 'http://ontolog.cim3.net/cgi-bin/wiki.pl?COSMO', 'name': 'COSMO - COmmon Semantic MOdel', 'data': 'http://www.micra.com/COSMO/COSMO.owl', 'localFile': 'S:\\DATA\\opendata\\ontology\\COSMO\\COSMO.owl', 'tested': 'Untested', 'rating': 'The current (May 2009) OWL version of COSMO has over 6400 types (OWL classes), over 700 relations, and over 1400 restrictions'}
+{'url': 'http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/upperOnto.htm', 'name': 'YAMATO - Yet Another More Advanced Top Ontology', 'data': 'http://www.ei.sanken.osaka-u.ac.jp/hozo/onto_library/download.php?filename=YAMATO20120714owl.zip', 'localFile': 'S:\\DATA\\opendata\\ontology\\YAMATO\\YAMATO20120714.owl', 'tested': 'Untested', 'rating': 'complex but very advanced'}
+{'url': 'http://www.ontotext.com/proton-ontology', 'name': 'PROTON', 'data': 'http://www.ontotext.com/sites/default/files/proton/protontop.ttl', 'localFile': 'S:\\DATA\\opendata\\ontology\\PROTON\\protontop.ttl', 'tested': 'Untested', 'rating': 'basic subsumption hierarchy which provides coverage of most of the upper-level concepts \n     necessary for semantic annotation, indexing, and retrieval'}
+{'url': 'http://www.ideasgroup.org/7Documents/', 'name': 'IDEAS', 'data': 'http://www.ideasgroup.org/file_download/5/IDEAS+Foundation+v1_0+Released+2009-04-24.xmi.zip', 'localFile': 'S:\\DATA\\opendata\\ontology\\IDEAS\\IDEAS Foundation v1_0 Released 2009-04-24.xmi', 'tested': 'Untested', 'rating': 'The most common usage of IDEAS will be in direct exchange of information between architectural modelling tools are repositories'}
+{'url': 'http://www.ics.forth.gr/isl/MarineTLO/', 'name': 'MarineTLO', 'data': 'http://www.ics.forth.gr/isl/MarineTLO/v3/core_v3.owl', 'localFile': 'S:\\DATA\\opendata\\ontology\\MarineTLO\\core_v3.owl', 'tested': 'Untested', 'rating': 'MarineTLO is a top-level ontology for the marine domain (also applicable to the terrestrial domain)'}
+{'url': 'http://wiki.opencog.org/w/MindOntology', 'name': 'MindOntology (OpenCog)', 'data': 'http://wiki.opencog.org/wikihome/index.php?title=Special:AllPages&namespace=104', 'localFile': 'S:\\DATA\\opendata\\ontology\\MindOntology\\mindOntology.csv', 'tested': 'Untested', 'rating': 'Focussed for AGI use, but no single download found (arranged as wiki pages, converted to CSV 27/3/2014)'}
+{'url': 'http://localhost', 'name': 'DIY - eg build your own Ontology', 'data': '', 'localFile': '', 'tested': 'Untested', 'rating': 'Not ideal - better to use existing sets, but best method to get a concise set of tuples'}
+------ Documents-------
+
+A Comparison of Upper Ontologies (Technical Report DISI-TR-06-21) http://www.disi.unige.it/person/MascardiV/Download/DISI-TR-06-21.pdf
+Ontology-based data integration http://en.wikipedia.org/wiki/Ontology-based_data_integration
+Python RDF library https://github.com/RDFLib/rdflib
+Protege - ontology editor http://protege.stanford.edu/products.php#desktop-protege
+ontogenesis - upper level ontologies http://ontogenesis.knowledgeblog.org/740
+DAML Ontology Library http://www.daml.org/ontologies/
+Toward the Use of an Upper Ontology for U.S. Government and U.S. Military Domains: An Evaluation http://oai.dtic.mil/oai/oai?verb=getRecord&metadataPrefix=html&identifier=ADA459575..................................
+ROMULUS - A repository of foundational ontologies http://www.thezfiles.co.za/ROMULUS/downloads.html
+Ontological realism: A methodology for coordinated evolution of scientic ontologies http://iospress.metapress.com/content/1551884412214u67/fulltext.pdf
+Some Ideas and Examples to Evaluate Ontologies http://oa.upm.es/6242/1/Some_Ideas_and_Examples_to_Evaluate_Ontologies.pdf
+Ontology Development 101: A Guide to Creating Your First Ontology http://protege.stanford.edu/publications/ontology_development/ontology101-noy-mcguinness.html
+KSL Ontonlingua http://www.ksl.stanford.edu/software/ontolingua/
+OCHRE http://en.wikipedia.org/wiki/Object-centered_high-level_reference_ontology
+Onto-Med Report Nr. 8 http://www.onto-med.de/publications/2010/gfo-basic-principles.pdf
+------ COMMENTS-------
+
+there is no single correct ontology for any domain
+use an existing top level ontology as a starting point, but base remaining ones on DOLCE
+bizzare_type0 = I AM A BUS
+bizzare_type1 = No - you are a test case
+---==  Plan ==---- 
+name        : new plan
+version     : v0.10
+belief      : belief0
+belief      : belief1
+belief      : belief2
+desire      : desire0
+desire      : desire1
+intention   : intention0
+
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+TODO: not implemented - cls_plan_search.search()
+TODO: cls_plan_search.get_min_f_score not implemented
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+TODO - cls_plan_search.goal_test : isinstance(state_to_check, type(self.goal))
+TODO - cls_plan_search.goal_test : isinstance(state_to_check, type(self.goal))
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+TODO: cls_plan_search.path_cost not implemented
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+TODO: cls_plan_search.get_successors not implemented
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+All Python Program Statistics
+Files =  50  Bytes =  155134  Lines =  4100  Lines of Code =  3164
+All Python Program Statistics
+Files =  50  Bytes =  155134  Lines =  4100  Lines of Code =  3164
+MISSING DATA FILE (file_type_file)  /home/duncan/dev/src/python/AIKIF/data/ref/ONTOLOGY_FILE_TYPE.txt
+update your config.py or config.txt
+MISSING DATA FILE (subject_file)  /home/duncan/dev/src/python/AIKIF/data/ref/ONTOLOGY_FILE_TYPE.txt
+update your config.py or config.txt
+object_fileList = /home/duncan/dev/src/python/AIKIF/data/core/Unknown__TOP.CSV
+
+ERROR = cant write to object_filelist  /home/duncan/dev/src/python/AIKIF/data/core/Unknown__TOP.CSV [Errno 2] No such file or directory: '/home/duncan/dev/src/python/AIKIF/data/core/Unknown__TOP.CSV'
+['/home/duncan/dev/src/python/AIKIF/tests/_test_template.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/aikif_test_utils.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/check_python_env.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/run_tests.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_agent.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_agent_agg_load_PC_usage.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_agent_explore_grid.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_agent_image_metadata.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_agent_interface_environment.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_agent_map_data.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_bias.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_cls_dataset.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_cls_datatable.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_cls_file.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_cls_file_mapping.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_cls_filelist.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_cls_log.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_cls_sql_code_generator.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_config.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_context.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_core_data.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_data_structures.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_environment.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_goal.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_index.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_interface_windows_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_knowledge.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_mapper.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_ontology_review.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_plan_bdi.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_plan_search.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_programs.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_project.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_file_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_grid.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_html_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_image_detection_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_image_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_maths_ml_algorithms.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_network_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_sql_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_text_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_xml_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_toolbox_zip_tools.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_webapp_page_agents.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_webapp_page_data.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_webapp_page_programs.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_webapp_web_aikif.py', 'TODO - add comment']
+['/home/duncan/dev/src/python/AIKIF/tests/test_webapp_web_utils.py', 'TODO - add comment']
+
+Task #1       : task1
+Due Date       : 2015-02-13
+Priority       : High
+Function       : extract_page_links
+
+extract_page_links(url="http://www.", dest_zip="T:\data\download\country")  # task1: task1 loaded  []
+RUNNING 1 = task1
+extract_page_links(url="http://www.", dest_zip="T:\data\download\country")  # task1: task1 loaded  []
+
+Task #1       : task1
+Function       : extract_page_links
+  Param        : url = http://www.
+  Param        : dest_zip = T:\data\download\country
+
+TASK RESULT : []  but success =  True
+ABORTING TASK EXECUTION SEQUENCE1 = task1
+ /---- Project ------------------------------- 
+|  name = update Country reference
+|  desc = 
+|  fldr = c:	est
+\---------------------------------------------
+:Tasks:
+task1
+task2
+task3
+/home/duncan/dev/src/python/AIKIF/tests/venv2/lib/python3.4/site-packages/bs4/__init__.py:166: UserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html.parser"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+To get rid of this warning, change this:
+
+ BeautifulSoup([your markup])
+
+to this:
+
+ BeautifulSoup([your markup], "html.parser")
+
+  markup_type=markup_type))
+/home/duncan/dev/src/python/AIKIF/tests/venv2/lib/python3.4/site-packages/bs4/__init__.py:207: UserWarning: "b'http://www.'" looks like a URL. Beautiful Soup is not an HTTP client. You should probably use an HTTP client to get the document behind the URL, and feed that document to Beautiful Soup.
+  '"%s" looks like a URL. Beautiful Soup is not an HTTP client. You should probably use an HTTP client to get the document behind the URL, and feed that document to Beautiful Soup.' % markup)
+............
+RUNNING 1 = task_1
+running dummy function with values  3 2
+dummy_function(a_number="3", b_number="2")  # task1: task_1 loaded  6
+
+Task #1       : task_1
+Function       : dummy_function
+  Param        : a_number = 3
+  Param        : b_number = 2
+  Param        : __success_test = 6
+
+TASK RESULT : 6  but success =  6
+RUNNING 2 = task_1
+running dummy function with values  4 10
+dummy_function(a_number="4", b_number="10")  # task2: task_1 loaded  40
+
+Task #2       : task_1
+Function       : dummy_function
+  Param        : a_number = 4
+  Param        : b_number = 10
+  Param        : __success_test = 40
+
+TASK RESULT : 40  but success =  40
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+main called test_tool.py->sum_even_numbers with  [1, 2, 3, 4, 5, 6, 7]  =  ['int']
+test_tool.py has been run
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+Toolbox: program exists = FAIL :: ANOTHER_tool.py
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+ext_path= /home/duncan/dev/src/python/kaggle/aicomp
+main called method1.py->solve_example with  ['AAAA', 'BBB']  =  ['int']
+solve_example: ip= ['AAAA', 'BBB']  result = 454
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+{'file': 'tool1.py', 'return': ['int'], 'function': 'do_stuff', 'args': ['list']}
+{'file': 'tool2.py'}
+Warning - no function defined for tool {'file': 'tool2.py'}
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+Toolbox: program exists = FAIL :: test_tool.py
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+Toolbox: program exists = FAIL :: tool_doesnt_exist.py
+ensure_dir: file = /home/duncan/AIKIF/log/command.log
+ensure_dir: d =  /home/duncan/AIKIF/log
+collecting filelist from /home/duncan/dev/src/python/AIKIF/tests
+checking /test_sql_code_test_rev_piv_simple.sql
+checking /filelist_images.csv
+checking /test_data_structures.py
+checking /programs_test_folder.csv
+checking /aikif_test_utils.py
+checking /test_sql_code_test_rev_piv.sql
+checking /test_knowledge.pyc
+checking /test_cls_dataset.pyc
+checking /output_run_tests.txt
+checking /environment.md
+checking /task.html
+checking /run_local_coverage.bat
+checking /CREATE_TEST01.SQL
+checking /test_toolbox_sql_tools.py
+checking /test_config.pyc
+checking /test_webapp_web_aikif.pyc
+checking /programs_test_folder.md
+checking /test_cls_file_mapping.py
+checking /test_toolbox_html_tools.py
+checking /test_plan_search.py
+checking /test_toolbox.py
+checking /config_credentials.txt
+checking /test_cls_file.py
+checking /test_sql_code_agg_single_col.sql
+checking /test_agent_map_data.py
+checking /test_environment.pyc
+checking /task.md
+checking /task.rst
+checking /test_toolbox_image_tools.pyc
+checking /test_ontology_review.pyc
+checking /test_core_data.pyc
+checking /test_agent.py
+checking /image_contour.jpg
+checking /test_cls_file_mapping.pyc
+checking /photo_with_gps.jpg
+checking /chr31_delimited_data_file.dat
+checking /test_cls_datatable.pyc
+checking /test_core_data.py
+checking /test_cls_dataset.py
+checking /test_cls_file.pyc
+checking /test_toolbox_zip_tools.py
+checking /test_ontology_review.py
+checking /test_context.py
+checking /test_sql_code_agg_multiple_cols.sql
+checking /process.log
+checking /test_plan_bdi.py
+checking /test_bias.py
+checking /test_toolbox_grid.pyc
+checking /filelist_image_metadata.csv
+checking /test_environment.py
+checking /task.blah
+checking /diary_duncan.txt
+checking /CREATE_TABLE_test07.SQL
+checking /index_odd_chars_results.txt
+checking /test_agent_agg_context.pyc
+checking /test_knowledge.py
+checking /test_toolbox_text_tools.pyc
+checking /test_cls_log.py
+checking /test_webapp_page_programs.pyc
+checking /test_agent_interface_environment.py
+checking /test_programs.pyc
+checking /chr31_delimited_data_file.csv
+checking /test_toolbox_file_tools.py
+checking /_sessions.txt
+checking /command.log
+checking /test_toolbox_xml_tools.py
+checking /test_toolbox_text_tools.py
+checking /test_toolbox_maths_ml_algorithms.py
+checking /test_cls_datatable.py
+checking /test_cls_sql_code_generator.pyc
+checking /test_toolbox.pyc
+checking /data.txt
+checking /summary_diary.dat
+checking /test_toolbox_maths_ml_algorithms.pyc
+checking /test_plan_bdi.pyc
+checking /test_webapp_web_utils.py
+checking /test_cls_filelist.pyc
+checking /go.bat
+checking /test_interface_windows_tools.py
+checking /test_cls_log.pyc
+checking /test_agent.pyc
+checking /test_credentials.txt
+checking /index_normal_source.txt
+checking /test_project.py
+checking /datatable_output.csv
+checking /test_toolbox_image_tools.py
+checking /test_webapp_web_aikif.py
+checking /test_agent_explore_grid.pyc
+checking /test_cls_sql_code_generator.py
+checking /.coverage
+checking /test_webapp_page_programs.py
+checking /review_file_samples.html
+checking /test_webapp_web_utils.pyc
+checking /test_data_structures.pyc
+checking /test_agent_image_metadata.py
+checking /test_index.pyc
+checking /image_small.jpg
+checking /test_agent_explore_grid.py
+checking /test_mapper.pyc
+checking /test_toolbox_sql_tools.pyc
+checking /csv_sample.csv
+checking /test_toolbox_grid.py
+checking /test_index.py
+checking /test_toolbox_xml_tools.pyc
+checking /datatable_calcs.csv
+checking /run_tests.py
+checking /test_toolbox_image_detection_tools.pyc
+checking /test_webapp_page_agents.py
+checking /go_pyaixi.bat
+checking /test_programs.py
+checking /test_webapp_page_data.py
+checking /test_context.pyc
+checking /plan_test.txt
+checking /index_odd_chars_source.txt
+checking /test_project.pyc
+checking /test_mapper.py
+checking /index_normal_results.txt
+checking /test_agent_agg_load_PC_usage.py
+checking /test_agent_agg_load_PC_usage.pyc
+checking /test_config.py
+checking /test_toolbox_html_tools.pyc
+checking /test_agent_image_metadata.pyc
+checking /test_toolbox_network_tools.py
+checking /datatable_sample.csv
+checking /check_python_env.py
+checking /test_plan_search.pyc
+checking /rules_saved.txt
+checking /test_map.csv
+checking /test_toolbox_zip_tools.pyc
+checking /_test_template.py
+checking /test_agent_map_data.pyc
+checking /image_crosshair.jpg
+checking /tool_list.txt
+checking /test_toolbox_file_tools.pyc
+checking /test_webapp_page_data.pyc
+checking /test_bias.pyc
+checking /photo_no_gps.jpg
+checking /test_goal.py
+checking /review_ontology.html
+checking /test_goal.pyc
+checking /test_environments_worlds.pyc
+checking /dummy_credentials.txt
+checking /UNDO.SQL
+checking /test_toolbox_network_tools.pyc
+checking /test_run_agents.pyc
+checking /test_full_sql_generation.sql
+checking /test_toolbox_image_detection_tools.py
+checking /test_cls_filelist.py
+checking /T:\user\AIKIF\log/result.log
+checking /T:\user\AIKIF\log/log_sum.csv
+checking /T:\user\AIKIF\log/process.log
+checking /T:\user\AIKIF\log/prog2.txt
+checking /T:\user\AIKIF\log/_sessions.txt
+checking /T:\user\AIKIF\log/command.log
+checking /T:\user\AIKIF\log/prog1.txt
+checking /T:\user\AIKIF\log/test_log.txt
+checking /T:\user\AIKIF\log/source.log
+checking /test_results/result.log
+checking /test_results/environment.md
+checking /test_results/test_pandas_ages.csv
+checking /test_results/test_pandas.csv
+checking /test_results/tab_data.txt
+checking /test_results/test_will_fail_full_sql_generation.sql
+checking /test_results/test_pandas_notes.csv
+checking /test_results/log_sum.csv
+checking /test_results/programs_test_folder_linux.md
+checking /test_results/Events2015.user01
+checking /test_results/dummy.csv
+checking /test_results/process.log
+checking /test_results/index_odd_chars_results.txt
+checking /test_results/cls_file_test_data.txt
+checking /test_results/_sessions.txt
+checking /test_results/command.log
+checking /test_results/test_pandas_codes.csv
+checking /test_results/test_pandas.xlsx
+checking /test_results/context_win.txt.........................................................................
+checking /test_results/index_normal_source.txt
+checking /test_results/datatable_output.csv
+checking /test_results/cls_filelist_results1.csv
+checking /test_results/source.log
+checking /test_results/datatable_calcs.csv
+checking /test_results/context_linux.txt
+checking /test_results/index_odd_chars_source.txt
+checking /test_results/index_normal_results.txt
+checking /test_results/datatable_sample.csv
+checking /test_results/dummy.xlsx
+checking /test_results/programs_test_folder_linux.csv
+checking /test_results/log/result.log
+checking /test_results/log/log_sum.csv
+checking /test_results/log/Events2015.user01
+checking /test_results/log/process.log
+checking /test_results/log/_sessions.txt
+checking /test_results/log/command.log
+checking /test_results/log/source.log
+checking /temp/agt_run_7.log
+checking /temp/agt_run_8.log
+checking /temp/agt_run_6.log
+checking /temp/agt_run_15.log
+checking /temp/agt_run_9.log
+checking /temp/agt_run_3.log
+checking /temp/process.log
+checking /temp/agt_run_12.log
+checking /temp/_sessions.txt
+checking /temp/agt_run_0.log
+checking /temp/command.log
+checking /temp/agt_run_11.log
+checking /temp/agt_run_2.log
+checking /temp/agt_run_18.log
+checking /temp/agt_run_13.log
+checking /temp/agt_run_1.log
+checking /temp/agt_run_14.log
+checking /temp/agt_run_5.log
+checking /temp/agt_run__agents.txt
+checking /temp/agt_run_19.log
+checking /temp/agt_run_4.log
+checking /temp/agt_run_10.log
+checking /temp/agt_run_16.log
+checking /temp/agt_run_17.log
+copying files from /home/duncan/dev/src/python/AIKIF/tests
+to /home/duncan/dev/src/python/AIKIF/tests/test
+ ... copying output_run_tests.txt
+ ... copying config_credentials.txt
+ ... copying file_to_copy.txt
+ ... copying diary_duncan.txt
+ ... copying index_odd_chars_results.txt
+ ... copying _sessions.txt
+ ... copying data.txt
+ ... copying test_credentials.txt
+ ... copying index_normal_source.txt
+ ... copying plan_test.txt
+ ... copying index_odd_chars_source.txt
+ ... copying index_normal_results.txt
+ ... copying rules_saved.txt
+ ... copying tool_list.txt
+ ... copying dummy_credentials.txt
+ERROR deleting no_such_file.txt
+[Errno 2] No such file or directory: 'no_such_file.txt'
+delete_files_in_folder =  /home/duncan/dev/src/python/AIKIF/tests/test
+........
+......O.
+........
+........
+........
+........
+........
+.X......
+
+
+
+ XXOXOXXX
+OOOXOX.O
+XOXXXOXX
+OOOOXOOX
+XOX...X.
+X.OOX.X.
+.O.XXX.O
+OXX.XXOO
+
+
+ERROR = cant save grid results to /\/\_BAD_FILENAME.txt[Errno 2] No such file or directory: '/\\/\\_BAD_FILENAME.txt'
+ERROR - y less than zero -1
+ERROR - x less than zero -1
+ERROR - x larger than grid 999
+ERROR - y larger than grid 999
+....
+....
+...X
+...X
+
+
+GAME OVER
+GAME OVER
+GAME OVER
+GAME OVER
+GAME OVER
+GAME OVER
+GAME OVER
+XO
+OX
+
+
+7351
+6 bytes read
+
+html =  div aa
+
+txt  =  div aa
+ERROR - TODO implement these tests, once code written
+exif_data =  {}
+(lat, lon) (None, None)
+problem reading image file metadata in  none.blah [Errno 2] No such file or directory: 'none.blah'
+problem reading image file metadata in  none.blah [Errno 2] No such file or directory: 'none.blah'
+Filename   : /home/duncan/dev/src/python/AIKIF/doc/AIKIF-Overview.jpg
+Basename   : AIKIF-Overview.jpg
+Path       : /home/duncan/dev/src/python/AIKIF/doc
+Size       : 110659
+Width      : 895
+Height     : 570
+Format     : JPEG
+palette    : None
+extrema    :  [(0, 255), (0, 255), (0, 255)]
+count      :  [510150, 510150, 510150]
+sum        :  [124456196.0, 124797169.0, 124982434.0]
+sum2       :  [31192906918.0, 31346818279.0, 31448301230.0]
+mean       :  [243.96000392041557, 244.62838184847593, 244.99153974321277]
+median     :  [255, 255, 255]
+rms        :  [247.27429887604933, 247.88359593207457, 248.28452388843945]
+var        :  [1628.0953717925915, 1603.2319264122636, 1624.3502567588569]
+stddev     :  [40.349663837417424, 40.04037869966097, 40.30322886269606]
+GPS Lat    : None
+GPS Long   : None
+extrema    :  [(0, 255), (0, 255), (0, 255)]
+count      :  [407252, 407252, 407252]
+sum        :  [3875637.0, 10036578.0, 12348134.0]
+sum2       :  [478505413.0, 1430454218.0, 2155115714.0]
+mean       :  [9.516557315863396, 24.644637718169584, 30.320622120947228]
+median     :  [0, 0, 0]
+rms        :  [34.27771113788303, 59.26596612351612, 72.74508972653683]
+var        :  [1084.3966177060374, 2905.0965722939336, 4372.50795352062]
+stddev     :  [32.930177917922606, 53.898947784663974, 66.12494199256903]
+problem reading image file metadata in  /home/duncan/dev/src/python/AIKIF/tests/photo_with_gps.jpg tuple index out of range
+exif_data =  {'ResolutionUnit': 2, 'ImageLength': 2448, 'DateTime': '2013:05:26 08:45:59', 'ExifOffset': 224, 'FlashPixVersion': (b'0100',), 'FNumber': (2.65,), 'FocalLength': (4.03,), 'ImageWidth': 3264, 'SceneCaptureType': (0,), 'YCbCrPositioning': 1, 'MakerNote': (b'\x05\x00\x01\x00\x07\x00\x04\x00\x00\x000100\x02\x00\x04\x00\x01\x00\x00\x00\x00 \x01\x00@\x00\x04\x00\x01\x00\x00\x00\x00\x00\x00\x00P\x00\x04\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x01\x03\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',), 'Model': 'GT-I9100T', 'Flash': (16,), 'XResolution': 72.0, 'DateTimeOriginal': ('2013:05:26 08:45:59',), 'Orientation': 1, 'ISOSpeedRatings': (32,), 'ImageUniqueID': ('SCEF02',), 'ExifVersion': (b'0220',), 'ExifImageHeight': (2448,), 'ColorSpace': (1,), 'MeteringMode': (3,), 'WhiteBalance': (0,), 'UserComment': (b'ASCII\x00\x00\x00User comments',), 'ExposureMode': (0,), 'ShutterSpeedValue': (12.56,), 'ExifImageWidth': (3264,), 'BrightnessValue': (12.01,), 'MaxApertureValue': (2.81,), 'DateTimeDigitized': ('2013:05:26 08:45:59',), 'Make': 'SAMSUNG', 'ApertureValue': (2.81,), 'ExposureTime': (0.00016559032952475575,), 'YResolution': 72.0, 'Software': 'I9100TDVLP4', 'ExposureBiasValue': (0.0,), 'ExposureProgram': (3,)}
+(lat, lon) (None, None)
+lon = None
+count = 7990272,7990272,7990272,
+sum2 = 72332519826.0,74303628114.0,70641652418.0,
+stddev = 58.4419841308874,59.727821448313925,58.218401043129745,
+sum = 599914996.0,604935296.0,589959986.0,
+var = 3415.465509154895,3567.4126549616685,3389.382220018691,
+width = 3264
+lat = None
+filename = /home/duncan/dev/src/python/AIKIF/tests/photo_no_gps.jpg
+basename = photo_no_gps.jpg
+format = JPEG
+rms = 95.14500988966681,96.43267815492845,94.02636415469802,
+median = 62,63,63,
+size = 2279062
+mean = 75.08067259787902,75.70897411252082,73.83478134411445,
+palette = None
+height = 2448
+path = /home/duncan/dev/src/python/AIKIF/tests
+TODO - test_10_auto_contrast
+Checking Images for duplicates (despite resizing, colours, etc) 
+{'fname': 'image_small.jpg', 'hsh': '773c7c38b8f838f8', 'dist_to_img1': '0'}
+{'fname': 'image_crosshair.jpg', 'hsh': '373c7c38b8f8b838', 'dist_to_img1': '3'}
+{'fname': 'image_contour.jpg', 'hsh': 'c8c1cbcd4686c686', 'dist_to_img1': '16'}
+image_tools.screenshot:cant create screenshot name 'ImageGrab' is not defined
+lst =  [3, 3] entropy =  1.0
+lst =  [2, 0] entropy =  -0.0
+lst =  [1, 3] entropy =  0.811278
+lst =  [16, 0, 0, 0, 0, 0, 0, 0, 0] entropy =  -0.0
+lst =  [546, 314] entropy =  0.946848
+lst =  [184, 11] entropy =  0.313027
+lst =  [100, 50] entropy =  0.918296
+lst =  [80, 15] entropy =  0.629249
+lst =  [20, 35] entropy =  0.94566
+lst =  [70, 80] entropy =  0.996792
+Alpha Algorithm: calculating footprint matrix
+no logs passed
+Alpha Algorithm: calculating footprint matrix
+200
+success
+count_via_minidom : reading /home/duncan/dev/src/python/AIKIF/tests/sample_small.xml
+CycleFile:open_next_file: filename =  /home/duncan/dev/src/python/AIKIF/tests/sample_small1.xml
+XMLBreaker __init__ :  slide 2
+CycleFile:open_next_file: filename =  /home/duncan/dev/src/python/AIKIF/tests/sample_med1.xml
+XMLBreaker __init__ :  slide 5
+{'filesize': '1071 bytes', 'folder': '/home/duncan/dev/src/python/AIKIF/tests', 'shortname': 'sample_med.xml', 'date_modified': '2016-03-29 20:15:02', 'num_lines': '15 lines'}
+count_via_minidom : reading /home/duncan/dev/src/python/AIKIF/tests/sample_med.xml
+title 12
+count_via_minidom : reading /home/duncan/dev/src/python/AIKIF/tests/sample_med.xml
+slide 11
+count_via_minidom : reading /home/duncan/dev/src/python/AIKIF/tests/sample_med.xml
+count_via_minidom : reading /home/duncan/dev/src/python/AIKIF/tests/sample_med.xml
+test2.zip is type ZIP
+test.gz is type GZ
+test.tar is type TAR..............................
+----------------------------------------------------------------------
+Ran 300 tests in 24.584s
+
+OK
+
+get_list_data_files(): fldr = /home/duncan/dev/src/python/AIKIF/aikif/data/core
+test02 = page_data.data_folder =  /home/duncan/dev/src/python/AIKIF/aikif/data/core
+/home/duncan/dev/src/python/AIKIF/aikif/data/core/LOCATION_WORLD.csv
+get_list_data_files(): fldr = /home/duncan/dev/src/python/AIKIF/aikif/data/core
+
+READING /home/duncan/dev/src/python/AIKIF/aikif/data/core/LOCATION_WORLD.csv
+
+/home/duncan/dev/src/python/AIKIF/aikif/data/core/LOCATION_WORLD.csv
+get_list_data_files(): fldr = /home/duncan/dev/src/python/AIKIF/aikif/data/core
+page_search.py: aikif_folder =  /home/duncan/dev/src/python/AIKIF/aikif
+page_search.py: data_folder  =  /home/duncan/dev/src/python/AIKIF/data/core
+get_list_data_files(): fldr = /home/duncan/dev/src/python/AIKIF/aikif/data/core
+get_list_data_files(): fldr = /home/duncan/dev/src/python/AIKIF/aikif/data/core
+
+READING /home/duncan/dev/src/python/AIKIF/tests/csv_sample.csv
+
+/home/duncan/dev/src/python/AIKIF/tests/csv_sample.csv
+Did the tests fail.... DID YOU TURN ON VIRTUALENV!   ". ~/p von"
+WIPING ALL TEST RESULTS - PRESS CTRL C TO STOP
+ERROR - cant delete dfgkljdfgkljdflkgjdlfkgj.sdfsdf : [Errno 2] No such file or directory: 'dfgkljdfgkljdflkgjdlfkgj.sdfsdf'
+deleted _sessions.txt
+deleted BACKOUT_tbl_testload.SQL
+deleted chr31_delimited_data_file.csv
+deleted chr31_delimited_data_file.dat
+ERROR - cant delete cls_file_test_data.txt : [Errno 2] No such file or directory: 'cls_file_test_data.txt'
+deleted command.log
+ERROR - cant delete command.log : [Errno 2] No such file or directory: 'command.log'
+deleted config_credentials.txt
+deleted CREATE_TABLE_test07.SQL
+deleted CREATE_tbl_testload.SQL
+deleted CREATE_TEST01.SQL
+deleted csv_sample.csv
+deleted data.txt
+deleted datatable_calcs.csv
+deleted datatable_output.csv
+deleted datatable_sample.csv
+deleted file_to_copy.txt
+deleted filelist_image_metadata.csv
+deleted filelist_images.csv
+deleted image_metadata.csv
+deleted index_normal_results.txt
+deleted index_normal_source.txt
+deleted index_odd_chars_results.txt
+deleted index_odd_chars_source.txt
+deleted LOAD_tbl_testload.BAT
+ERROR - cant delete local_test_agent.py : [Errno 2] No such file or directory: 'local_test_agent.py'
+deleted my_grid.txt
+deleted plan_test.txt
+deleted process.log
+ERROR - cant delete process.log : [Errno 2] No such file or directory: 'process.log'
+deleted program_list.html
+deleted programs_test_folder.csv
+ERROR - cant delete programs_test_folder.csv : [Errno 2] No such file or directory: 'programs_test_folder.csv'
+ERROR - cant delete programs_test_folder.csv : [Errno 2] No such file or directory: 'programs_test_folder.csv'
+deleted programs_test_folder.md
+ERROR - cant delete programs_test_folder.md : [Errno 2] No such file or directory: 'programs_test_folder.md'
+ERROR - cant delete programs_test_folder.md : [Errno 2] No such file or directory: 'programs_test_folder.md'
+deleted result.log
+deleted review_file_samples.html
+deleted review_ontology.html
+ERROR - cant delete review_ontology.txt : [Errno 2] No such file or directory: 'review_ontology.txt'
+ERROR - cant delete review_ontology.txt : [Errno 2] No such file or directory: 'review_ontology.txt'
+deleted rules_saved.txt
+deleted sample_big.xml
+ERROR - cant delete sample_big1.xml : [Errno 2] No such file or directory: 'sample_big1.xml'
+deleted sample_med.xml
+deleted sample_med1.xml
+deleted sample_small.xml
+deleted sample_small1.xml
+ERROR - cant delete screenshot.png : [Errno 2] No such file or directory: 'screenshot.png'
+deleted small_image.jpg
+deleted summary_diary.dat
+deleted task.blah
+deleted task.html
+deleted task.md
+deleted task.rst
+deleted tbl_testload.CTL
+deleted temp.tar
+deleted test.gz
+deleted test.tar
+ERROR - cant delete test_bias.log : [Errno 2] No such file or directory: 'test_bias.log'
+deleted test_country.txt
+deleted test_full_sql_generation.sql
+deleted test_grid.txt
+deleted test_map.csv
+deleted test_nested.zip
+ERROR - cant delete test_output.txt : [Errno 2] No such file or directory: 'test_output.txt'
+ERROR - cant delete test_output_win.txt : [Errno 2] No such file or directory: 'test_output_win.txt'
+deleted test_sql_code_agg_multiple_cols.sql
+deleted test_sql_code_agg_single_col.sql
+deleted test_sql_code_test_rev_piv.sql
+deleted test_sql_code_test_rev_piv_simple.sql
+deleted test_src_file.csv
+ERROR - cant delete test_world.txt : [Errno 2] No such file or directory: 'test_world.txt'
+ERROR - cant delete test_world_traversed.txt : [Errno 2] No such file or directory: 'test_world_traversed.txt'
+deleted test2.zip
+deleted text_tools_sample.csv
+deleted tool_list.txt
+deleted toolbox_network_download_proxy.html
+deleted toolbox_network_password_protected.html
+deleted toolbox_network_protected_page.html
+ERROR - cant delete tools.txt : [Errno 2] No such file or directory: 'tools.txt'
+deleted UNDO.SQL
