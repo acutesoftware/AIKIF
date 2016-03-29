@@ -223,13 +223,15 @@ def get_metadata_as_dict(fname):
         imgdict['stddev'] =  List2String(stat.stddev, ",") 
 
         exif_data = get_exif_data(img)
-        #print('exif_data = ', exif_data)
+        print('exif_data = ', exif_data)
         (lat, lon) = get_lat_lon(exif_data)
         print('(lat, lon)', (lat, lon))
         imgdict['lat'] =  str(lat)
         imgdict['lon'] =  str(lon)
     except Exception as ex:
         print('problem reading image file metadata in ', fname, str(ex))
+        imgdict['lat'] =  'ERROR'
+        imgdict['lon'] =  'ERROR'
     return imgdict
         
 def get_metadata_as_csv(fname):
