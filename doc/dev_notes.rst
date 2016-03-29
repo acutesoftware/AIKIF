@@ -5,9 +5,6 @@ Current Tasks
 - mapper to read CSV files
 provide sample CSV files
 
-- logging
-use logging module instead of standard file logging in cls_log
-
 - bias
 bias module mostly working, but values will need tweaking (when all 
 areas are multiplied the result is too low - may need to change from 
@@ -73,3 +70,5 @@ agent location needs to be fully redone in a later stage. At the moment VAIS hol
 setting up local folder and config / mappings to load real data. Not many changes likely to AIKIF package apart from new toolbox modules.
 The external program should use the package via config files.
 
+- 2016-03-29 clean up of tests 
+Clean up tests and remove redundant print statements. Show output on both Linux and Windows
