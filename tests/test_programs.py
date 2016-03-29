@@ -43,7 +43,8 @@ class TestTemplate(unittest.TestCase):
         # doesnt work same on all OS self.assertTrue('comment on this program' in str(prg))
         
         htm = prg.get_file_info_web(os.path.join(os.getcwd(),'test_programs.py'))
-        print(htm)
+        self.assertEqual(len(htm) > 100, True)
+        
         
         
 if __name__ == '__main__':

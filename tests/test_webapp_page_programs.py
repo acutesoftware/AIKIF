@@ -32,7 +32,6 @@ class TestWebAppPageData(unittest.TestCase):
         if os.path.exists('program_list.html'):
             os.remove('program_list.html')
         pge = page_programs.get_page()
-        print(pge)
         self.assertEqual('<a href="/programs/rebuild">Rebuild Program List</a><BR>' in pge, True)
         self.assertEqual(len(pge) < 100, True)
 

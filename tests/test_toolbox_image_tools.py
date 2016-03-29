@@ -110,7 +110,7 @@ class TestClassImageTools(unittest.TestCase):
             
     def test_10_auto_contrast(self):
         #    cl.auto_contrast(photo_with_gps, 'photo_auto_contrast.jpg')
-        pass
+        print('TODO - test_10_auto_contrast')
     
     def test_11_add_crosshair_to_image(self):
         cl.resize(photo_with_gps, 400, 'image_small.jpg')

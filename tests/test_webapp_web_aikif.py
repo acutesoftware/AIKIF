@@ -54,7 +54,6 @@ class WebAppWebAikif(unittest.TestCase):
         
     def test_07a_page_programs_rebuild(self):
         txt = web_aikif.page_programs_rebuild()
-        print(txt)
         self.assertEqual(len(txt) > 4, True)
         
         
@@ -84,4 +83,4 @@ class WebAppWebAikif(unittest.TestCase):
 
         
 if __name__ == '__main__':
-	unittest.main()
+    unittest.main()
