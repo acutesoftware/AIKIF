@@ -90,7 +90,8 @@ class ExploreAgent(agt.Agent):
                 return
         
         self.grd.set_tile(self.start_y, self.start_x, 'A')
-        self.grd.save(root_folder + os.sep + 'agent.txt')
+        self.grd.save(os.path.join(os.getcwd(), 'agent.txt'))
+        
 
     def lg_mv(self, log_lvl, txt):
         """
