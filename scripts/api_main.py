@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 # api_main.py
+import aikif.cls_log as mod_log
+import aikif.config as mod_cfg
 
 from flask import Flask, jsonify, abort, make_response
 from flask.ext.restful import Api, Resource, reqparse, fields, marshal
@@ -17,7 +19,6 @@ base_url = '/aikif/api/v2.0/'
 base_url = '/'                   # http://127.0.0.1:5000/facts/2
 url_pre = 'http://127.0.0.1:5000' 
 #basic_auth = BasicAuth(app)
-
 
 
 @auth.get_password
@@ -189,6 +190,10 @@ class FactAPI(Resource):
         abort(404)
 
 class UserAPI(Resource):
+    """
+    check for user permissions - todo
+    """
+
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('user_id',  type=str, location='json')
@@ -208,10 +213,11 @@ class UserAPI(Resource):
     def delete(self, user_id):
         pass
 
-import aikif.cls_log as mod_log
-import aikif.config as mod_cfg
 
 class MapperListAPI(Resource):
+    """
+    manage mappings via API
+    """
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('map_id',  type=str, location='json')
@@ -233,6 +239,9 @@ class MapperListAPI(Resource):
 
 
 class LogAPI(Resource):
+    """
+    manage the Logging for the API
+    """
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('txt',  type=str, location='json')
