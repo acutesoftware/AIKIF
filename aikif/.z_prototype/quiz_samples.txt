@@ -1,0 +1,5 @@
+# quiz_samples.txt
+what is the capital of $param1
+how many $param1 in $param2
+why does $param1 use $param2
+which method to $param1 would not work if you only had $param2
