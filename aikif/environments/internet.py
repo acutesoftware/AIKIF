@@ -41,7 +41,7 @@ class Internet(mod_env.Environment):
         Creates the environment
         Code in Base class = self.log.record_process('enviroment.py', 'Creating environment - ' + self.name)
         """
-        super(Internet, self).create()
+        #super(Internet, self).create()
         print('building websites')
         for _ in range(0,num_sites):
             self.websites.append(Website())
