@@ -7,9 +7,9 @@ print ("os.getcwd() = ", os.getcwd())
 
 #AIKIF_WEB_VERSION = "PROD"
 AIKIF_WEB_VERSION = "DEV"
-AIKIF_VERSION_NUM = "Version 0.1.2 (pre-alpha) - updated 26-May-2015"
+AIKIF_VERSION_NUM = "Version 0.1.9 (pre-alpha) - updated 22-Apr-2016"
 
-import aikif.web_app.web_utils as web
+import web_utils as web
 from flask import Flask
 from flask import request
     
