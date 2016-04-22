@@ -62,7 +62,22 @@ def build_search_form():
     txt += '  <input type="submit" name="my-form" value="Search">\n'
     txt += '</form>\n'
     return txt
-    
+ 
+
+def build_edit_form(title, id, cols):
+    """ 
+    returns the html for a simple edit form 
+    """
+    txt = '<H3>' + title + '<H3>'
+    txt += '<form action="." method="POST">\n'
+    txt += '  updating id:' + str(id) + '\n'
+    for col_num, col in enumerate(cols):
+        txt += '  <input type="text" name="col_num_' + str(col_num) + '"><BR>\n'
+    txt += '  <input type="submit" name="update-form" value="Update">\n'
+    txt += '  <input type="submit" name="delete-form" value="Delete">\n'
+    txt += '</form>\n'
+    return txt
+ 
 def filelist2html(lst, fldr, hasHeader='N'):
     """ 
     formats a standard filelist to htmk using table formats 
