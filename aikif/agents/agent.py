@@ -46,19 +46,7 @@ class Agent(object):
         self.mylog.record_command('agent', self.name + ' - initilising')
         
         # log agent name to get list of all agents
-        with open(os.path.join(root_fldr, 'data', 'list_agent_names.txt'), 'a') as f:
-            f.write(self.__class__.__name__ + ":" + self.name + '\n')
-        
-        agt_list = os.path.join(root_fldr, 'data', 'list_agents.txt')
-        if os.path.exists(agt_list):
-            agents_logged = open(agt_list, 'r').read()
-        else:
-            agents_logged = ''
-        print('agents_logged = ', agents_logged)
-        if self.__class__.__name__ not in agents_logged:
-            with open(agt_list, 'a') as f:
-                f.write(self.__class__.__name__ + '\n')
-        
+        self._log_agent_name('list_agent_names.txt')
         
         if self.running is True:
             self.start()
@@ -81,7 +69,29 @@ class Agent(object):
 
             
         return txt
+    
+    def _get_instance(self):
+        """
+        returns unique class and name for logging
+        """
+        return self.__class__.__name__ + ":" + self.name + '\n'
+    
+    def _log_agent_name(self, unique_name_file):
+        """
+        logs the agent details to logfile
+        unique_name_file (list_agents.txtlist_agents_names.txt) = list of all instances of all agents
+        """
+        agt_list = os.path.join(root_fldr, 'data', unique_name_file)
+        if os.path.exists(agt_list):
+            agents_logged = open(agt_list, 'r').read()
+        else:
+            agents_logged = ''
+        print('agents_logged = ', agents_logged)
+        if self._get_instance() not in agents_logged:
+            with open(agt_list, 'a') as f:
+                f.write(self._get_instance() + '\n')
         
+    
     def start(self):
         """
         Starts an agent with standard logging
