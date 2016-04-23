@@ -10,7 +10,6 @@ print(root_fldr)
 def get_page():
     txt = ''
     txt += load_agent_list(os.path.join(root_fldr,"data"))
-    txt += 'hello'
     txt += web.build_edit_form('Agents', '001', ['Agent Name', 'Program Location', 'params'])
 
     return txt
@@ -20,7 +19,7 @@ def load_agent_list(fldr):
     reads the text file showing the list of agent classes used
     and presents counts based on the agent usage
     """
-    res = '\n<TABLE border=1 valign=top width=80%><TR><TH>Class</TH><TH>Name</TH></TR>\n'
+    res = '\n<BR><TABLE border=1 valign=top width=80%><TR><TH>Class</TH><TH>Name</TH></TR>\n'
     cols = []
     with open(os.path.join(fldr, 'list_agent_names.txt'), 'r') as f:
         for line in f:
