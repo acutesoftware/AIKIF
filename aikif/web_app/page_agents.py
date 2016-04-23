@@ -24,11 +24,12 @@ def load_agent_list(fldr):
     cols = []
     with open(os.path.join(fldr, 'list_agent_names.txt'), 'r') as f:
         for line in f:
-            res += '<TR><TD>'
-            cols = line.split(':')
-            res += cols[0] + '</TD><TD>'
-            res += cols[1] + '</TD>'
-            res += '</TR><BR>\n'
+            if line != '':
+                res += '<TR><TD>'
+                cols = line.split(':')
+                res += cols[0] + '</TD><TD>'
+                res += cols[1] + '</TD>'
+                res += '</TR><BR>\n'
     res += '</TABLE><BR><BR>\n'
     
     
