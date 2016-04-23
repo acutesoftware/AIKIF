@@ -74,7 +74,7 @@ class Agent(object):
         """
         returns unique class and name for logging
         """
-        return self.__class__.__name__ + ":" + self.name + '\n'
+        return self.__class__.__name__ + ":" + self.name
     
     def _log_agent_name(self, unique_name_file):
         """
