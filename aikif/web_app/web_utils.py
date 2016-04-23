@@ -70,11 +70,15 @@ def build_edit_form(title, id, cols):
     """
     txt = '<H3>' + title + '<H3>'
     txt += '<form action="." method="POST">\n'
-    txt += '  updating id:' + str(id) + '\n'
+    txt += '  updating id:' + str(id) + '\n<BR>'
+    txt += '  <TABLE width=80% valign=top border=1>'
+    
     for col_num, col in enumerate(cols):
-        txt += '  <input type="text" name="col_num_' + str(col_num) + '"><BR>\n'
-    txt += '  <input type="submit" name="update-form" value="Update">\n'
-    txt += '  <input type="submit" name="delete-form" value="Delete">\n'
+        txt += '  <TR><TD>' + col + '</TD><TD><input type="text" name="col_num_' + str(col_num) + '"></TD></TR>\n'
+    txt += '  <TR><TD></TD>\n'
+    txt += '  <TD><input type="submit" name="update-form" value="Update">\n'
+    txt += '  <input type="submit" name="delete-form" value="Delete"></TD>\n'
+    txt += '  </TR></TABLE>'
     txt += '</form>\n'
     return txt
  
