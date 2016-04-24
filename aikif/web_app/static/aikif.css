@@ -136,7 +136,17 @@ pre {
 	width: 60%;
 }
 
+#form_label {
+    float: right;
+    width: 40%;
+}
 
+#form_input {
+    float: left;
+    width: 60%;
+}
+
+    
 
 #footer {
 	height: 28px;
