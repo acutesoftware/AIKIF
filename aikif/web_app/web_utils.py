@@ -79,9 +79,11 @@ def build_edit_form(title, id, cols):
         txt += '    <TD><div id="form_input"><input type="text" name="col_num_' + str(col_num) + '"></div></TD>\n'
         txt += '  </TR>\n'
     txt += '  <TR><TD></TD>\n'
-    txt += '  <TD><input type="submit" name="update-form" value="Update">\n'
-    txt += '  <input type="submit" name="delete-form" value="Delete"></TD>\n'
-    txt += '  </TR></TABLE>'
+    txt += '  <TD>\n'
+    txt += '    <input type="submit" name="update-form" value="Save Changes">\n'
+    txt += '    <input type="submit" name="delete-form" value="Delete">\n'
+    txt += '    <input type="submit" name="add-form" value="Add">\n'
+    txt += '  </TD></TR></TABLE>'
     txt += '</form>\n'
     return txt
  
