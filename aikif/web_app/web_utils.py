@@ -74,7 +74,10 @@ def build_edit_form(title, id, cols):
     txt += '  <TABLE width=80% valign=top border=1>'
     
     for col_num, col in enumerate(cols):
-        txt += '  <TR><TD>' + col + '</TD><TD><input type="text" name="col_num_' + str(col_num) + '"></TD></TR>\n'
+        txt += '  <TR>\n'
+        txt += '    <TD><div id="form_label">' + col + '</div></TD>\n'
+        txt += '    <TD><div id="form_input"><input type="text" name="col_num_' + str(col_num) + '"></div></TD>\n'
+        txt += '  </TR>\n'
     txt += '  <TR><TD></TD>\n'
     txt += '  <TD><input type="submit" name="update-form" value="Update">\n'
     txt += '  <input type="submit" name="delete-form" value="Delete"></TD>\n'
