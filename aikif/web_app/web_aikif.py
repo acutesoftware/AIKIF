@@ -112,6 +112,17 @@ def page_agents():
     txt += agt.get_page()
     txt += get_footer()
     return txt
+
+
+@app.route("/agents", methods=['POST'])
+def edit_agents():
+    editedinfo = []
+    print('hi - about to get form values')
+    editedinfo[0] = request.form['col_num_0']
+    editedinfo[1] = request.form['col_num_2']
+    editedinfo[2] = request.form['col_num_3']
+    print(editedinfo)
+
     
 @app.route("/programs")
 def page_programs():
