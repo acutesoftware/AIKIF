@@ -117,12 +117,14 @@ def page_agents():
 @app.route("/agents", methods=['POST'])
 def edit_agents():
     editedinfo = []
-    print('hi - about to get form values')
-    editedinfo[0] = request.form['col_num_0']
-    editedinfo[1] = request.form['col_num_2']
-    editedinfo[2] = request.form['col_num_3']
-    print(editedinfo)
-
+    print('hi - about to get form values', request.form)
+    editedinfo.append(request.form['Agent Name']) # request.form['search_text']
+    editedinfo.append(request.form['Program Location'])
+    editedinfo.append(request.form['params'])
+    
+    #for i in range(0,2):
+    #    editedinfo[i] = request.form[i]
+    return str(editedinfo)
     
 @app.route("/programs")
 def page_programs():
