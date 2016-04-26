@@ -69,14 +69,14 @@ def build_edit_form(title, id, cols):
     returns the html for a simple edit form 
     """
     txt = '<H3>' + title + '<H3>'
-    txt += '<form action="." method="POST">\n'
+    txt += '<form action="/agents" method="POST">\n'
     txt += '  updating id:' + str(id) + '\n<BR>'
     txt += '  <TABLE width=80% valign=top border=1>'
     
     for col_num, col in enumerate(cols):
         txt += '  <TR>\n'
         txt += '    <TD><div id="form_label">' + col + '</div></TD>\n'
-        txt += '    <TD><div id="form_input"><input type="text" name="col_num_' + str(col_num) + '"></div></TD>\n'
+        txt += '    <TD><div id="form_input"><input type="text" name="col_' + str(col_num) + '"></div></TD>\n'
         txt += '  </TR>\n'
     txt += '  <TR><TD></TD>\n'
     txt += '  <TD>\n'
