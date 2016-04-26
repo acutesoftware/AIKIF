@@ -116,6 +116,7 @@ def page_agents():
 
 @app.route("/agents", methods=['POST'])
 def edit_agents():
+    res = ''
     editedinfo = []
     print('hi - about to get form values', request.form)
     #editedinfo.append(request.form['Agent Name']) # request.form['search_text']
@@ -124,7 +125,25 @@ def edit_agents():
     
     for i in range(0,3):
         editedinfo.append(request.form['col_' + str(i)])
-    return str(editedinfo)
+        
+    #print('update-form ',   request.form['update-form'] )
+    #print('add-form ',   request.form['add-form'] )
+    #print('delete-form ',   request.form['delete-form'] )
+    
+    try:
+        res = request.form['update-form']
+    except:
+        pass
+    try: 
+        res = request.form['add-form']
+    except:
+        pass
+    try:
+        res = request.form['delete-form']
+    except:
+        pass
+    
+    return res + str(editedinfo)
     
 @app.route("/programs")
 def page_programs():
