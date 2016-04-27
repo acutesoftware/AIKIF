@@ -100,7 +100,10 @@ class Data(object):
         """
         create a standard data object based on CSV file
         """
-        self.content['data'] = 'TODO - read website ' + self.input_data
+        import aikif.toolbox.network_tools as mod_net
+        mod_net.download_file_no_logon(self.input_data, 'temp_file.htm')
+        with open('temp_file.htm', 'r') as f:
+            self.content['data'] = f.read()
         lg.record_process('_create_from_url', 'read ' + str(self.data_records) + ' from ' + self.input_data)
         
         
