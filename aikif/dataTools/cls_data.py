@@ -7,7 +7,8 @@ import os
 import aikif.cls_log as mod_log
 import aikif.config as mod_cfg
 
-lg = mod_log.Log(mod_cfg.fldrs['log_folder'])
+#lg = mod_log.Log(mod_cfg.fldrs['log_folder'])
+lg = mod_log.Log(os.getcwd())
 
 class Data(object):
     """
@@ -83,7 +84,12 @@ class Data(object):
         """
         create a standard data object based on CSV file
         """
-        self.content['data'] = 'TODO - read CSV from ' + self.input_data
+       
+        import aikif.dataTools.cls_datatable as cl
+        fle = cl.DataTable(self.input_data, ',')
+        fle.load_to_array()
+        self.content['data'] = fle.arr
+        
         
         lg.record_process('_create_from_csv', 'read ' + str(self.data_records) + ' from ' + self.input_data)
         
