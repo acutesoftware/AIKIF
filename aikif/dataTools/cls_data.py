@@ -29,6 +29,7 @@ class Data(object):
         self.bias = bias
         self.data_records = 0
         self.data_length = 0
+        self.data_length = 0
         
 
         if self.data_type == '':
@@ -37,7 +38,7 @@ class Data(object):
         self.read_data()
         
         
-        lg.record_source(self.src, 'length=' + str(self.data_length) + ', records=' + str(self.data_records))
+        lg.record_source(self.src, self._calc_size_stats())
         
         
     def __str__(self):
@@ -91,7 +92,7 @@ class Data(object):
         self.content['data'] = fle.arr
         
         
-        lg.record_process('_create_from_csv', 'read ' + str(self.data_records) + ' from ' + self.input_data)
+        lg.record_process('_create_from_csv', 'read ' + self._calc_size_stats() + ' from ' + self.input_data)
         
     def _create_from_owl(self):
         """
@@ -99,7 +100,7 @@ class Data(object):
         """
         self.content['data'] = 'TODO - read OWL from ' + self.input_data
         
-        lg.record_process('_create_from_owl', 'read ' + str(self.data_records) + ' from ' + self.input_data)
+        lg.record_process('_create_from_owl', 'read ' + self._calc_size_stats() + ' from ' + self.input_data)
         
         
     def _create_from_url(self):
@@ -110,6 +111,33 @@ class Data(object):
         mod_net.download_file_no_logon(self.input_data, 'temp_file.htm')
         with open('temp_file.htm', 'r') as f:
             self.content['data'] = f.read()
-        lg.record_process('_create_from_url', 'read ' + str(self.data_records) + ' from ' + self.input_data)
+        lg.record_process('_create_from_url', 'read ' + self._calc_size_stats() + ' from ' + self.input_data)
         
         
+    def _calc_size_stats(self):
+        """
+        get the size in bytes and num records of the content
+        """
+        self.total_records = 0
+        self.total_length = 0
+        self.total_nodes = 0
+        if hasattr(self.content['data'], '__iter__') and type(self.content['data']) is not str:
+            self._get_size_recursive(self.content['data'])
+        else:
+                self.total_records += 1
+                self.total_length += len(str(self.content['data']))
+            
+        return str(self.total_records) + ' records [or ' +  str(self.total_nodes) + ' nodes], taking ' + str(self.total_length) + ' bytes'
+        
+    def _get_size_recursive(self, dat):
+        """
+        recursively walk through a data set or json file 
+        to get the total number of nodes
+        """
+        self.total_records += 1
+        for rec in dat:
+            if hasattr(rec, '__iter__') and type(rec) is not str:
+                self._get_size_recursive(rec)
+            else:
+                self.total_nodes += 1
+                self.total_length += len(str(rec))
