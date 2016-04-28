@@ -27,19 +27,16 @@ class Data(object):
         self.data_type = data_type
         self.src = src
         self.bias = bias
-        self.data_records = 0
-        self.data_length = 0
-        self.data_length = 0
-        
+        self.total_records = 0
+        self.total_nodes = 0
+        self.total_length = 0
 
         if self.data_type == '':
             self._identify_datatype(self.input_data)
         
         self.read_data()
         
-        
         lg.record_source(self.src, self._calc_size_stats())
-        
         
     def __str__(self):
         """
