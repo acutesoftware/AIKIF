@@ -46,6 +46,28 @@ John,M,124
 Betty,F,67""")
         d05 = cls_data.Data('data.csv')
         self.assertEqual(str(d05), "[['Frank', 'M', '1866'], ['John', 'M', '124'], ['Betty', 'F', '67']]")
+
+
+    def test_06_size_string(self):
+        d06 = cls_data.Data('ABCDEFG')
+        self.assertEqual(d06.content['data'], 'ABCDEFG')
+        self.assertEqual(d06.total_records, 1)
+        self.assertEqual(d06.total_length, 7)
+        self.assertEqual(d06.total_nodes, 0)
+        
+    def test_07_size_list(self):
+        d07 = cls_data.Data(['ABCDEFG', 'WWW', 'd'])
+        self.assertEqual(d07.content['data'], ['ABCDEFG', 'WWW', 'd'])
+        self.assertEqual(d07.total_records, 1)
+        self.assertEqual(d07.total_length, 11)
+        self.assertEqual(d07.total_nodes, 3)
+        
+    def test_08_size_nested_list(self):
+        d07 = cls_data.Data(['ABCDEFG', 'WWW', ['d','e','f','g']])
+        self.assertEqual(d07.content['data'], ['ABCDEFG', 'WWW', ['d','e','f','g']])
+        self.assertEqual(d07.total_records, 2) # 2 records - TODO - is this correct?
+        self.assertEqual(d07.total_length, 14)
+        self.assertEqual(d07.total_nodes, 6)
         
 if __name__ == '__main__':
     unittest.main()
