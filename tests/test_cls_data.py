@@ -63,11 +63,11 @@ Betty,F,67""")
         self.assertEqual(d07.total_nodes, 3)
         
     def test_08_size_nested_list(self):
-        d07 = cls_data.Data(['ABCDEFG', 'WWW', ['d','e','f','g']])
-        self.assertEqual(d07.content['data'], ['ABCDEFG', 'WWW', ['d','e','f','g']])
-        self.assertEqual(d07.total_records, 2) # 2 records - TODO - is this correct?
-        self.assertEqual(d07.total_length, 14)
-        self.assertEqual(d07.total_nodes, 6)
+        d08 = cls_data.Data(['ABCDEFG', 'WWW', ['d','e','f','g']])
+        self.assertEqual(d08.content['data'], ['ABCDEFG', 'WWW', ['d','e','f','g']])
+        self.assertEqual(d08.total_records, 2) # 2 records - because list is 1 rec, and subset is 2nd
+        self.assertEqual(d08.total_length, 14)
+        self.assertEqual(d08.total_nodes, 6)
         
 if __name__ == '__main__':
     unittest.main()
