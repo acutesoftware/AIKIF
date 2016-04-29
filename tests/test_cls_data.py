@@ -69,5 +69,38 @@ Betty,F,67""")
         self.assertEqual(d08.total_length, 14)
         self.assertEqual(d08.total_nodes, 6)
         
+    def test_09_size_dict(self):
+        """
+        TODO - check size of dicts and node counts
+        """
+        json_example = {"menu": {
+          "id": "file",
+          "value": "File",
+          "popup": {
+            "menuitem": [
+              {"value": "New", "onclick": "CreateNewDoc()"},
+              {"value": "Open", "onclick": "OpenDoc()"},
+              {"value": "Close", "onclick": "CloseDoc()"}
+            ]
+          }
+        }}
+
+        d09 = cls_data.Data(json_example)
+        self.assertEqual(d09.total_records, 1) 
+        self.assertEqual(d09.total_length, 201)
+        self.assertEqual(d09.total_nodes, 3)
+        self.assertEqual(d09.content['data']['menu']['id'], 'file')
+        self.assertEqual(d09.content['data']['menu']['value'], 'File')
+        self.assertEqual(d09.content['data']['menu']['popup']['menuitem'][0]['value'], 'New')
+        self.assertEqual(d09.content['data']['menu']['popup']['menuitem'][1]['value'], 'Open')
+        self.assertEqual(d09.content['data']['menu']['popup']['menuitem'][2]['value'], 'Close')
+
+        self.assertEqual(d09.content['data']['menu']['popup']['menuitem'], [
+              {"value": "New", "onclick": "CreateNewDoc()"},
+              {"value": "Open", "onclick": "OpenDoc()"},
+              {"value": "Close", "onclick": "CloseDoc()"}
+            ])
+
+        
 if __name__ == '__main__':
     unittest.main()
