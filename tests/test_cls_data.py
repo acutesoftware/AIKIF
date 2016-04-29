@@ -101,6 +101,18 @@ Betty,F,67""")
               {"value": "Close", "onclick": "CloseDoc()"}
             ])
 
+            
+    def test_10_size_dict_flat(self):
+        json_example = {"fruit": ['apples', 'oranges', 'pears'],
+                        "vegetables":['carrots','peas', 'onions'],
+                        "meat":['lamb','beef','chicken','pork']
+                        }
+        d10 = cls_data.Data(json_example)
+        self.assertEqual(d10.total_records, 1) 
+        self.assertEqual(d10.total_length, 131)
+        self.assertEqual(d10.total_nodes, 10)
+
+            
         
 if __name__ == '__main__':
     unittest.main()

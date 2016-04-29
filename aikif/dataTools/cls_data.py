@@ -123,7 +123,6 @@ class Data(object):
         self.total_length = 0
         self.total_nodes = 0
         if type(self.content['data']) is dict:
-            print('DICT to calc size',self.content['data'] )
             self.total_length += len(str(self.content['data']))
             self.total_records += 1
             self.total_nodes = sum(len(x) for x in self.content['data'].values())
