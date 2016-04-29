@@ -54,8 +54,10 @@ class Data(object):
         """
         if isinstance(input_data, (int, float)) :
             self.data_type = 'number'
-        if isinstance(input_data, (list, dict)):
+        elif isinstance(input_data, (list)): #, set
             self.data_type = 'list'
+        elif isinstance(input_data, dict):
+            self.data_type = 'dict'
         elif type(input_data) is str:
             if self.input_data[0:4] == 'http':
                 self.data_type = 'url'
@@ -76,6 +78,8 @@ class Data(object):
                 self._create_from_owl()
         elif self.data_type == 'url':
             self._create_from_url()
+        else:   # dictionary and others to be specified later
+            self.content['data'] = self.input_data
             
     
     def _create_from_csv(self):
@@ -118,7 +122,13 @@ class Data(object):
         self.total_records = 0
         self.total_length = 0
         self.total_nodes = 0
-        if hasattr(self.content['data'], '__iter__') and type(self.content['data']) is not str:
+        if type(self.content['data']) is dict:
+            print('DICT to calc size',self.content['data'] )
+            self.total_length += len(str(self.content['data']))
+            self.total_records += 1
+            self.total_nodes = sum(len(x) for x in self.content['data'].values())
+                               
+        elif hasattr(self.content['data'], '__iter__') and type(self.content['data']) is not str:
             self._get_size_recursive(self.content['data'])
         else:
                 self.total_records += 1
