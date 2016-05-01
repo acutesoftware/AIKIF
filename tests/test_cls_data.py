@@ -103,14 +103,20 @@ Betty,F,67""")
 
             
     def test_10_size_dict_flat(self):
-        json_example = {"fruit": ['apples', 'oranges', 'pears'],
-                        "vegetables":['carrots','peas', 'onions'],
-                        "meat":['lamb','beef','chicken','pork']
-                        }
+        json_example = {
+            'fruit': [{'name':'apples'}, {'name':'oranges'}, {'name':'pears'}],
+            'vegetables':[{'name':'carrots'},{'name':'peas'}, {'name':'onions'}],
+            'meat':[{'name':'lamb'},{'name':'beef'},{'name':'chicken'},{'name':'pork'}]
+        }
         d10 = cls_data.Data(json_example)
         self.assertEqual(d10.total_records, 1) 
-        self.assertEqual(d10.total_length, 131)
+        self.assertEqual(d10.total_length, 231)
         self.assertEqual(d10.total_nodes, 10)
+        self.assertEqual(d10.content['data']['fruit'][1], {'name':'oranges'})
+        self.assertEqual(d10.content['data']['fruit'][2]['name'], 'pears')
+        self.assertEqual(d10.content['data']['vegetables'][0], {'name':'carrots'})
+        self.assertEqual(d10.content['data']['vegetables'][0]['name'], 'carrots')
+        self.assertEqual(len(d10.content['data']['meat']), 4)
 
             
         
