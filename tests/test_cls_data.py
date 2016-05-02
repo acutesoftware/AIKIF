@@ -118,6 +118,29 @@ Betty,F,67""")
         self.assertEqual(d10.content['data']['vegetables'][0]['name'], 'carrots')
         self.assertEqual(len(d10.content['data']['meat']), 4)
 
+    def test_11_numbers_integer(self):
+        num = cls_data.Data(1)
+        self.assertEqual(num.total_records, 1) 
+        self.assertEqual(num.total_length, 1)
+        self.assertEqual(num.total_nodes, 0)
+        
+    def test_12_numbers_float(self):
+        num = cls_data.Data(13434.323)
+        self.assertEqual(num.total_records, 1) 
+        self.assertEqual(num.total_length, 9)
+        self.assertEqual(num.total_nodes, 0)
+        
+    def test_13_numbers_integers(self):
+        num = cls_data.Data([1,2,3,4,5,[6,7,8],9])
+        self.assertEqual(num.total_records, 2) 
+        self.assertEqual(num.total_length, 9)
+        self.assertEqual(num.total_nodes, 9)
+        
+    def test_14_numbers_more_integers(self):
+        num = cls_data.Data([1,2,3],[4,5,6],[7,8,9])
+        self.assertEqual(num.total_records, 1) 
+        self.assertEqual(num.total_length, 3)
+        self.assertEqual(num.total_nodes, 3) 
             
         
 if __name__ == '__main__':

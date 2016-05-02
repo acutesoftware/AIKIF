@@ -130,8 +130,8 @@ class Data(object):
         elif hasattr(self.content['data'], '__iter__') and type(self.content['data']) is not str:
             self._get_size_recursive(self.content['data'])
         else:
-                self.total_records += 1
-                self.total_length += len(str(self.content['data']))
+            self.total_records += 1
+            self.total_length += len(str(self.content['data']))
             
         return str(self.total_records) + ' records [or ' +  str(self.total_nodes) + ' nodes], taking ' + str(self.total_length) + ' bytes'
         
@@ -141,6 +141,7 @@ class Data(object):
         to get the total number of nodes
         """
         self.total_records += 1
+        #self.total_nodes += 1
         for rec in dat:
             if hasattr(rec, '__iter__') and type(rec) is not str:
                 self._get_size_recursive(rec)
