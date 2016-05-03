@@ -55,13 +55,10 @@ class TestClassFile(unittest.TestCase):
   
     def test_06_launch(self):
         f = cl.File(self.fname)
-        # TODO - enable this, but change to be non modal 
-        #self.assertTrue(f.launch())  
+        #self.assertTrue(f.launch())  # TODO - enable this, but change to be non modal 
+        self.assertEqual(str(f)[0:20], '====================')
         
-        # test that a fake file returns an exception
-            
-        f_fail = cl.File('no such file.blah')
-        #self.assertFalse(f_fail.launch())
+
 
 
     def test_07_get_file_sample(self):
