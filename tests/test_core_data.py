@@ -28,7 +28,7 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(len(str(self.c)) , 4) 
  
     def test_02_object(self):
-        f = mod_core.Object('Food')
+        f = mod_core.CoreDataWhat('Food')
         self.assertEqual(str(f) , 'Food') 
         f.expand('List', ['Apples', 'Chops', 'Cheese'])
         self.assertEqual(str(f.drill_down()[0]) , 'Apples') 
@@ -39,13 +39,13 @@ class CoreDataTest(unittest.TestCase):
     def test_03_events(self):
     
         # Events
-        e = mod_core.Event('Sales Meeting', ['2015-04-11', 'Office', 'Meet with client to discuss custom software'])
+        e = mod_core.CoreDataWhen('Sales Meeting', ['2015-04-11', 'Office', 'Meet with client to discuss custom software'])
         self.assertEqual(len(e.format_csv()), 85)
         self.assertEqual(len(e.format_dict()), 104)
         self.assertEqual(str(e), 'Sales Meeting')
         
     def test_04_detailed_core_data_usage(self):
-        root = mod_core.Object('Everything')
+        root = mod_core.CoreDataWhat('Everything')
 
         # add the domains
         root.expand('List', ['Food', 'Projects', 'Software'])
@@ -84,11 +84,11 @@ class CoreDataTest(unittest.TestCase):
         
         #ev = mod_core.CoreTable(config.fldrs['log_folder'], tpe='Events', user='user01', header=['date', 'category', 'details'])
         ev = mod_core.CoreTable(test_fldr, tpe='Events', user='user01', header=['date', 'category', 'details'])
-        ev.add(mod_core.Event('Sales Meeting', ['2014-01-11', 'Office', 'Catchup with client']))
-        ev.add(mod_core.Event('Sales Meeting#3', ['2015-03-11', 'Office', 'Catchup with client']))
-        ev.add(mod_core.Event('DEV AIKIF - core data', ['2015-05-11', 'Software', 'update TEST - no test for CORE_DATA']))
-        ev.add(mod_core.Event('DEV LifePim - core data', ['2015-03-11', 'Software', 'use data for LifePim']))
-        ev.add(mod_core.Event('DEV AIKIF - data tools', ['2015-05-11', 'Software', 'fix data tools ']))
+        ev.add(mod_core.CoreDataWhen('Sales Meeting', ['2014-01-11', 'Office', 'Catchup with client']))
+        ev.add(mod_core.CoreDataWhen('Sales Meeting#3', ['2015-03-11', 'Office', 'Catchup with client']))
+        ev.add(mod_core.CoreDataWhen('DEV AIKIF - core data', ['2015-05-11', 'Software', 'update TEST - no test for CORE_DATA']))
+        ev.add(mod_core.CoreDataWhen('DEV LifePim - core data', ['2015-03-11', 'Software', 'use data for LifePim']))
+        ev.add(mod_core.CoreDataWhen('DEV AIKIF - data tools', ['2015-05-11', 'Software', 'fix data tools ']))
         #print(ev)
         ev.save()
         with open(test_fldr + os.sep + 'Events2015.user01', 'r') as f:
@@ -102,13 +102,13 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(ob.get_filename('2999'), test_fldr + os.sep + 'Object2999.user03')
         
     def test_07_locations(self):
-        l = mod_core.Location('Office', ['Office', 'Physical', '2 Downing St, London'])
+        l = mod_core.CoreDataWhere('Office', ['Office', 'Physical', '2 Downing St, London'])
         #print(l)
         self.assertEqual(len(l.format_csv()) >  5, True)
         
     def test_10_links_to(self):
-        f = mod_core.Object('Food')
-        r = mod_core.Object('Recipe')
+        f = mod_core.CoreDataWhat('Food')
+        r = mod_core.CoreDataWhat('Recipe')
         f.links_to('Recipe', 'Process')
         #print('LINKS')
         #print('links from f = ', f.links)
