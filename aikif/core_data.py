@@ -146,11 +146,31 @@ class Location(CoreData):
         return CoreData.__str__(self)
     
     
-class Charater(CoreData):
-    pass
+class Character(CoreData):
+    def __init__(self, name, data=None, parent=None):
+        """
+        Characters are physical people, or software agents
+        data = ['Name', 'Phys|Virt', rights]
+        """
+        
+        CoreData.__init__(self, name, data, parent)
+        
+    def __str__(self):
+        return CoreData.__str__(self)
     
 class Process(CoreData):
-    pass
+    def __init__(self, name, data=None, parent=None):
+        """
+        Processes are the act of doing things physically
+        such as 'build a boat', 'hammer a nail', 'go to shops',
+        or software processes (BAT runs , etc)
+        data = ['Name', 'Phys|Virt', start_name]
+        """
+        
+        CoreData.__init__(self, name, data, parent)
+        
+    def __str__(self):
+        return CoreData.__str__(self)
     
 class CoreTable(object):
     """
