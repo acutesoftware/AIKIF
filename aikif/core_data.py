@@ -66,7 +66,7 @@ class CoreData(object):
         #print(self.name, ' expanded to ->', child_nodes)
         self.child_nodes = []   # reset ??
         for n in child_nodes:
-            self.child_nodes.append(Object(n, parent=self))
+            self.child_nodes.append(CoreData(n, parent=self))
 
     def contract(self, process):
         """
@@ -112,17 +112,19 @@ class CoreData(object):
         return False
         
 
-class Object(CoreData):
+class CoreDataWhat(CoreData):
     def __init__(self, name, data=None, parent=None):
         """
+        WHAT
         Objects currently dont have any additional 
         data properties
         """
         CoreData.__init__(self, name, data, parent)
     
-class Event(CoreData):
+class CoreDataWhen(CoreData):
     def __init__(self, name, data=None, parent=None):
         """
+        WHEN
         Events have a simple data structure
         date, category, remind_time, event
         """
@@ -133,9 +135,10 @@ class Event(CoreData):
     def __str__(self):
         return CoreData.__str__(self)
     
-class Location(CoreData):
+class CoreDataWhere(CoreData):
     def __init__(self, name, data=None, parent=None):
         """
+        WHERE
         Locations are physical or virtual places
         data = ['Name', 'Phys|Virt', 'Location']
         """
@@ -146,9 +149,10 @@ class Location(CoreData):
         return CoreData.__str__(self)
     
     
-class Character(CoreData):
+class CoreDataWho(CoreData):
     def __init__(self, name, data=None, parent=None):
         """
+        WHO
         Characters are physical people, or software agents
         data = ['Name', 'Phys|Virt', rights]
         """
@@ -158,12 +162,30 @@ class Character(CoreData):
     def __str__(self):
         return CoreData.__str__(self)
     
-class Process(CoreData):
+class CoreDataHow(CoreData):
     def __init__(self, name, data=None, parent=None):
         """
+        HOW
         Processes are the act of doing things physically
         such as 'build a boat', 'hammer a nail', 'go to shops',
         or software processes (BAT runs , etc)
+        data = ['Name', 'Phys|Virt', start_name]
+        """
+        
+        CoreData.__init__(self, name, data, parent)
+        
+    def __str__(self):
+        return CoreData.__str__(self)
+        
+class CoreDataWhy(CoreData):
+    def __init__(self, name, data=None, parent=None):
+        """
+        WHY
+        Facts are all other information or generally LINKS
+        between other types, eg 
+            John ate an Apple => Who.John How.Ate What.Apple
+            Mars is heavy => What.Mars Process.PropertyEquals 'heavy' <--- how to classify this
+        
         data = ['Name', 'Phys|Virt', start_name]
         """
         
