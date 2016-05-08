@@ -112,6 +112,20 @@ class CoreData(object):
         return False
         
 
+class CoreDataWho(CoreData):
+    def __init__(self, name, data=None, parent=None):
+        """
+        WHO
+        Characters are physical people, or software agents
+        data = ['Name', 'Phys|Virt', rights]
+        """
+        
+        CoreData.__init__(self, name, data, parent)
+        
+    def __str__(self):
+        return CoreData.__str__(self)
+    
+        
 class CoreDataWhat(CoreData):
     def __init__(self, name, data=None, parent=None):
         """
@@ -121,19 +135,6 @@ class CoreDataWhat(CoreData):
         """
         CoreData.__init__(self, name, data, parent)
     
-class CoreDataWhen(CoreData):
-    def __init__(self, name, data=None, parent=None):
-        """
-        WHEN
-        Events have a simple data structure
-        date, category, remind_time, event
-        """
-        #data = [date, category, details]
-        
-        CoreData.__init__(self, name, data, parent)
-        
-    def __str__(self):
-        return CoreData.__str__(self)
     
 class CoreDataWhere(CoreData):
     def __init__(self, name, data=None, parent=None):
@@ -148,14 +149,14 @@ class CoreDataWhere(CoreData):
     def __str__(self):
         return CoreData.__str__(self)
     
-    
-class CoreDataWho(CoreData):
+class CoreDataWhen(CoreData):
     def __init__(self, name, data=None, parent=None):
         """
-        WHO
-        Characters are physical people, or software agents
-        data = ['Name', 'Phys|Virt', rights]
+        WHEN
+        Events have a simple data structure
+        date, category, remind_time, event
         """
+        #data = [date, category, details]
         
         CoreData.__init__(self, name, data, parent)
         
