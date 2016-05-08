@@ -103,8 +103,9 @@ class CoreDataTest(unittest.TestCase):
         
     def test_07_locations(self):
         l = mod_core.CoreDataWhere('Office', ['Office', 'Physical', '2 Downing St, London'])
-        #print(l)
         self.assertEqual(len(l.format_csv()) >  5, True)
+        self.assertEqual(str(l) , 'Office')
+        
         
     def test_10_links_to(self):
         f = mod_core.CoreDataWhat('Food')
