@@ -113,7 +113,8 @@ class CoreDataTest(unittest.TestCase):
         l = mod_core.CoreDataWhere('Office', ['Office', 'Physical', '2 Downing St, London'])
         self.assertEqual(len(l.format_csv()) >  5, True)
         self.assertEqual(str(l) , 'Office (type=where)')
-        
+        self.assertEqual(l.type_desc , 'Location')
+        self.assertEqual(l.data_type , 'where')
        
         
          
