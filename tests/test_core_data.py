@@ -29,7 +29,7 @@ class CoreDataTest(unittest.TestCase):
  
     def test_02_object(self):
         f = mod_core.CoreDataWhat('Food')
-        self.assertEqual(str(f) , 'Food') 
+        self.assertEqual(str(f) , 'Food (type=what)') 
         f.expand('List', ['Apples', 'Chops', 'Cheese'])
         self.assertEqual(str(f.drill_down()[0]) , 'Apples') 
         self.assertEqual(str(f.drill_down()[1]) , 'Chops') 
@@ -42,7 +42,7 @@ class CoreDataTest(unittest.TestCase):
         e = mod_core.CoreDataWhen('Sales Meeting', ['2015-04-11', 'Office', 'Meet with client to discuss custom software'])
         self.assertEqual(len(e.format_csv()), 85)
         self.assertEqual(len(e.format_dict()), 104)
-        self.assertEqual(str(e), 'Sales Meeting')
+        self.assertEqual(str(e), 'Sales Meeting (type=when)')
         
     def test_04_detailed_core_data_usage(self):
         root = mod_core.CoreDataWhat('Everything')
@@ -57,7 +57,7 @@ class CoreDataTest(unittest.TestCase):
         # for the Food - expand it further
         food.expand('List', ['Apples', 'Chops', 'Cheese'])
         self.assertEqual(str(food)[0:4],'Food')
-        self.assertEqual(str(food.parent),'Everything')
+        self.assertEqual(str(food.parent),'Everything (type=what)')
         
 
         # describe a 2nd domain
@@ -73,7 +73,7 @@ class CoreDataTest(unittest.TestCase):
 
         # contract
         self.assertEqual(str(shelf.contract('')), 'Projects')
-        self.assertEqual(str(proj.contract('TODO - set process')), 'Everything')
+        self.assertEqual(str(proj.contract('TODO - set process')), 'Everything (type=what)')
         
         
     def test_05_save_a_table(self):
@@ -101,22 +101,20 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(len(str(ob)) > 50, True)
         self.assertEqual(ob.get_filename('2999'), test_fldr + os.sep + 'Object2999.user03')
         
-    def test_07_locations(self):
-        l = mod_core.CoreDataWhere('Office', ['Office', 'Physical', '2 Downing St, London'])
-        self.assertEqual(len(l.format_csv()) >  5, True)
-        self.assertEqual(str(l) , 'Office')
-        
-        
+       
     def test_10_links_to(self):
         f = mod_core.CoreDataWhat('Food')
         r = mod_core.CoreDataWhat('Recipe')
         f.links_to('Recipe', 'Process')
-        #print('LINKS')
-        #print('links from f = ', f.links)
-        #print('links from r = ', r.links)
+        self.assertEqual(f.links, [['Recipe', 'Process']])
         self.assertRaises(Exception, f.links_to, 'Recipe', 'WRONG_TYPE')
         
+    def test_21_core_data_where(self):
+        l = mod_core.CoreDataWhere('Office', ['Office', 'Physical', '2 Downing St, London'])
+        self.assertEqual(len(l.format_csv()) >  5, True)
+        self.assertEqual(str(l) , 'Office (type=where)')
         
+       
         
          
 if __name__ == '__main__':
