@@ -2,6 +2,15 @@
 # -*- coding: utf-8 -*-
 # core_data.py
 import os
+
+core_data_types = [ 'Character',    # Who
+                    'Object',       # What
+                    'Location',     # Where
+                    'Event',        # When
+                    'Process',      # How
+                    'Fact'          # Why
+                  ]
+        
     
 class CoreData(object):
     """
@@ -17,6 +26,7 @@ class CoreData(object):
         self.child = []
         self.links = []
         self.data_type = ''
+        self.type_desc = ''
         
     def __str__(self):
         if self.data_type == '':
@@ -109,8 +119,7 @@ class CoreData(object):
         you are trying to do here.
         returns the type of object based on type string
         """
-        valid_types = ['Object', 'Event', 'Location', 'Character', 'Process']
-        for v in valid_types:
+        for v in core_data_types:
             if tpe == v:
                 return True
         return False
@@ -125,7 +134,8 @@ class CoreDataWho(CoreData):
         """
         
         CoreData.__init__(self, name, data, parent)
-        self.data_type = 'who'
+        self.type_type = 'who'
+        self.type_desc = 'Character'
         
     def __str__(self):
         return CoreData.__str__(self)
@@ -140,6 +150,7 @@ class CoreDataWhat(CoreData):
         """
         CoreData.__init__(self, name, data, parent)
         self.data_type = 'what'
+        self.type_desc = 'Object'
     
     
 class CoreDataWhere(CoreData):
@@ -152,6 +163,7 @@ class CoreDataWhere(CoreData):
         
         CoreData.__init__(self, name, data, parent)
         self.data_type = 'where'
+        self.type_desc = 'Location'
         
     def __str__(self):
         return CoreData.__str__(self)
@@ -167,7 +179,8 @@ class CoreDataWhen(CoreData):
         
         CoreData.__init__(self, name, data, parent)
         self.data_type = 'when'
-        
+        self.type_desc = 'Event'
+
     def __str__(self):
         return CoreData.__str__(self)
     
@@ -183,7 +196,8 @@ class CoreDataHow(CoreData):
         
         CoreData.__init__(self, name, data, parent)
         self.data_type = 'how'
-
+        self.type_desc = 'Process'
+        
     def __str__(self):
         return CoreData.__str__(self)
         
@@ -201,6 +215,7 @@ class CoreDataWhy(CoreData):
         
         CoreData.__init__(self, name, data, parent)
         self.data_type = 'why'
+        self.type_desc = 'Fact'
         
     def __str__(self):
         return CoreData.__str__(self)
