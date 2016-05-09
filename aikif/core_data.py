@@ -16,9 +16,13 @@ class CoreData(object):
         self.parent = parent
         self.child = []
         self.links = []
+        self.data_type = ''
         
     def __str__(self):
-        return self.name
+        if self.data_type == '':
+            return self.name
+        else:
+            return self.name +  ' (type=' + self.data_type + ')'
     
     def format_csv(self, delim=',', qu='"'):
         """
@@ -121,6 +125,7 @@ class CoreDataWho(CoreData):
         """
         
         CoreData.__init__(self, name, data, parent)
+        self.data_type = 'who'
         
     def __str__(self):
         return CoreData.__str__(self)
@@ -134,6 +139,7 @@ class CoreDataWhat(CoreData):
         data properties
         """
         CoreData.__init__(self, name, data, parent)
+        self.data_type = 'what'
     
     
 class CoreDataWhere(CoreData):
@@ -145,6 +151,7 @@ class CoreDataWhere(CoreData):
         """
         
         CoreData.__init__(self, name, data, parent)
+        self.data_type = 'where'
         
     def __str__(self):
         return CoreData.__str__(self)
@@ -159,6 +166,7 @@ class CoreDataWhen(CoreData):
         #data = [date, category, details]
         
         CoreData.__init__(self, name, data, parent)
+        self.data_type = 'when'
         
     def __str__(self):
         return CoreData.__str__(self)
@@ -174,7 +182,8 @@ class CoreDataHow(CoreData):
         """
         
         CoreData.__init__(self, name, data, parent)
-        
+        self.data_type = 'how'
+
     def __str__(self):
         return CoreData.__str__(self)
         
@@ -191,6 +200,7 @@ class CoreDataWhy(CoreData):
         """
         
         CoreData.__init__(self, name, data, parent)
+        self.data_type = 'why'
         
     def __str__(self):
         return CoreData.__str__(self)
