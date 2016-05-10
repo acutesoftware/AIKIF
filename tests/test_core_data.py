@@ -109,7 +109,15 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(f.links, [['Recipe', 'Process']])
         self.assertRaises(Exception, f.links_to, 'Recipe', 'WRONG_TYPE')
         
-    def test_21_core_data_where(self):
+    def test_21_core_data_who(self):
+        l = mod_core.CoreDataWho('Frank', ['Frank', 'Physical', 'Customer'])
+        #self.assertEqual(str(l) , 'Frank (type=who)')
+        print(l)
+        self.assertEqual(str(l) , 'Frank')
+        #self.assertEqual(l.type_desc , 'Character')
+        #self.assertEqual(l.data_type , 'who')
+       
+    def test_22_core_data_where(self):
         l = mod_core.CoreDataWhere('Office', ['Office', 'Physical', '2 Downing St, London'])
         self.assertEqual(len(l.format_csv()) >  5, True)
         self.assertEqual(str(l) , 'Office (type=where)')
