@@ -39,8 +39,9 @@ class CoreData(object):
         Prepares the data in CSV format
         """
         res = qu + self.name + qu + delim
-        for d in self.data:
-            res += qu + str(d) + qu + delim
+        if self.data:
+            for d in self.data:
+                res += qu + str(d) + qu + delim
         return res + '\n'
         
     def format_dict(self, delim=':', qu="'"):
@@ -276,7 +277,7 @@ class CoreTable(object):
         """
         extracts event information from core tables into diary files
         """
-        print('TODO - generate diary files from Event rows only')
+        print('Generate diary files from Event rows only')
         for r in self.table:
-            print('DIARY row of type('  + str(type(r)) + ') = ', r)
+            print(str(type(r)) + ' = ', r)
         
