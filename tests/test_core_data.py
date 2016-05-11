@@ -89,7 +89,6 @@ class CoreDataTest(unittest.TestCase):
         ev.add(mod_core.CoreDataWhen('DEV AIKIF - core data', ['2015-05-11', 'Software', 'update TEST - no test for CORE_DATA']))
         ev.add(mod_core.CoreDataWhen('DEV LifePim - core data', ['2015-03-11', 'Software', 'use data for LifePim']))
         ev.add(mod_core.CoreDataWhen('DEV AIKIF - data tools', ['2015-05-11', 'Software', 'fix data tools ']))
-        #print(ev)
         ev.save()
         with open(test_fldr + os.sep + 'Events2015.user01', 'r') as f:
             txt = f.read()
@@ -112,19 +111,53 @@ class CoreDataTest(unittest.TestCase):
     def test_21_core_data_who(self):
         l = mod_core.CoreDataWho('Frank', ['Frank', 'Physical', 'Customer'])
         #self.assertEqual(str(l) , 'Frank (type=who)')
-        print(l)
         self.assertEqual(str(l) , 'Frank')
         #self.assertEqual(l.type_desc , 'Character')
         #self.assertEqual(l.data_type , 'who')
        
-    def test_22_core_data_where(self):
+    def test_22_core_data_what(self):
+        l = mod_core.CoreDataWhat('Apple')
+        self.assertEqual(len(l.format_csv()) >  5, True)
+        self.assertEqual(str(l) , 'Apple (type=what)')
+        self.assertEqual(l.type_desc , 'Object')
+        self.assertEqual(l.data_type , 'what')
+       
+    def test_23_core_data_where(self):
         l = mod_core.CoreDataWhere('Office', ['Office', 'Physical', '2 Downing St, London'])
         self.assertEqual(len(l.format_csv()) >  5, True)
         self.assertEqual(str(l) , 'Office (type=where)')
         self.assertEqual(l.type_desc , 'Location')
         self.assertEqual(l.data_type , 'where')
        
+    def test_24_core_data_when(self):
+        l = mod_core.CoreDataWhen('Sales Meeting', ['Meet with Clients'])
+        self.assertEqual(len(l.format_csv()) >  5, True)
+        self.assertEqual(str(l) , 'Sales Meeting (type=when)')
+        self.assertEqual(l.type_desc , 'Event')
+        self.assertEqual(l.data_type , 'when')
         
-         
+    def test_25_core_data_how(self):
+        l = mod_core.CoreDataHow('Automatic Backup', ['./backup.py'])
+        self.assertEqual(len(l.format_csv()) >  5, True)
+        self.assertEqual(str(l) , 'Automatic Backup (type=how)')
+        self.assertEqual(l.type_desc , 'Process')
+        self.assertEqual(l.data_type , 'how')
+ 
+    def test_26_core_data_why(self):
+        l = mod_core.CoreDataWhy('List of Countries', [{'src_file':'countries.csv','bias':0.9}])
+        self.assertEqual(len(l.format_csv()) >  5, True)
+        self.assertEqual(str(l) , 'List of Countries (type=why)')
+        self.assertEqual(l.type_desc , 'Fact')
+        self.assertEqual(l.data_type , 'why')
+        self.assertEqual(l.data[0]['src_file'] , 'countries.csv')
+        self.assertEqual(l.data[0]['bias'] , 0.9)
+        csv_str = l.format_csv()  # "List of Countries","{'src_file': 'countries.csv', 'bias': 0.9}",
+        self.assertTrue('"List of Countries","{' in csv_str)
+        self.assertTrue("'src_file': 'countries.csv'" in csv_str)
+        self.assertTrue("'bias': 0.9" in csv_str)
+        
+        
+ 
+ 
 if __name__ == '__main__':
     unittest.main()
