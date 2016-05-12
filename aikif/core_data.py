@@ -135,7 +135,7 @@ class CoreDataWho(CoreData):
         """
         
         CoreData.__init__(self, name, data, parent)
-        self.type_type = 'who'
+        self.data_type = 'who'
         self.type_desc = 'Character'
         
     def __str__(self):
