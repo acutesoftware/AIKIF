@@ -110,10 +110,9 @@ class CoreDataTest(unittest.TestCase):
         
     def test_21_core_data_who(self):
         l = mod_core.CoreDataWho('Frank', ['Frank', 'Physical', 'Customer'])
-        #self.assertEqual(str(l) , 'Frank (type=who)')
-        self.assertEqual(str(l) , 'Frank')
-        #self.assertEqual(l.type_desc , 'Character')
-        #self.assertEqual(l.data_type , 'who')
+        self.assertEqual(str(l) , 'Frank (type=who)')
+        self.assertEqual(l.type_desc , 'Character')
+        self.assertEqual(l.data_type , 'who')
        
     def test_22_core_data_what(self):
         l = mod_core.CoreDataWhat('Apple')
