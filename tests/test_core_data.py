@@ -174,7 +174,25 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(person4.name,person1.name)  # confirm names same for object
         self.assertFalse(person4 == person1)         # but they are different object
    
+  
+    def test_40_linking_overview(self):
+        """
+        shows usage on general linking of objects using a Fact
+        """
+        ob_cat = mod_core.CoreDataWhat('Cat', [{'genus':'Felis', 'is_tameable':True}])
+        print(ob_cat)
         
+        # option 1 - link via data (though difficult to autosearch)
+        pet1 = mod_core.CoreDataWho('Tiddles', [{'obj_type':ob_cat, 'type':'animal', 'likes':'Fish'}])
+  
+        print(pet1)
+        
+        self.assertEqual(pet1.name, 'Tiddles')
+        self.assertEqual(pet1.data[0]['obj_type'], ob_cat)
+        self.assertEqual(pet1.data[0]['obj_type'].data[0]['is_tameable'], True)
+        
+        
+  
         
 if __name__ == '__main__':
     unittest.main()
