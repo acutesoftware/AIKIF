@@ -156,7 +156,25 @@ class CoreDataTest(unittest.TestCase):
         self.assertTrue("'bias': 0.9" in csv_str)
         
         
- 
- 
+    def test_30_duplicate_nodes(self):
+        """
+        test to demonstrate how core data handles
+        copies of nodes and duplicate named nodes
+        """
+        person1 = mod_core.CoreDataWho('Tolkien', [{'first_name':'John', 'type':'person', 'occupation':'Author'}])
+        person2 = mod_core.CoreDataWho('Bilbo', [{'knownas':'Bilbo Baggins', 'type':'fictional', 'occupation':'Thief'}])
+        self.assertFalse(person2 == person1)   # confirm objects aren't same for different names
+
+        person3 = person1
+        self.assertTrue(person3 == person1)  # confirm assign new object is the same
+        
+        person4 = mod_core.CoreDataWho('Tolkien', [{'first_name':'Christopher', 'type':'person', 'occupation':'Author'}])
+        #print('person4 = ', person4)
+        
+        self.assertEqual(person4.name,person1.name)  # confirm names same for object
+        self.assertFalse(person4 == person1)         # but they are different object
+   
+        
+        
 if __name__ == '__main__':
     unittest.main()
