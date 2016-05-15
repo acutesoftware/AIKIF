@@ -191,8 +191,17 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(pet1.data[0]['obj_type'], ob_cat)
         self.assertEqual(pet1.data[0]['obj_type'].data[0]['is_tameable'], True)
         
-        
+        # option 2 - link 2 objects with 3rd 'Fact' object
+        pet2 = mod_core.CoreDataWho('Meatball', [{'type':'animal', 'likes':'Fish'}])
   
+        print(pet2)
+        
+        self.assertEqual(pet2.name, 'Meatball')
+        pet2.links_to(ob_cat, 'Character')
+        self.assertEqual(pet2.links, [[ob_cat, 'Character']])
+
+        print(pet2)
+ 
         
 if __name__ == '__main__':
     unittest.main()
