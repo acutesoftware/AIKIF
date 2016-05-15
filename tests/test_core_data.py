@@ -82,7 +82,6 @@ class CoreDataTest(unittest.TestCase):
         except Exception:
             print('file not found, but we dont care')
         
-        #ev = mod_core.CoreTable(config.fldrs['log_folder'], tpe='Events', user='user01', header=['date', 'category', 'details'])
         ev = mod_core.CoreTable(test_fldr, tpe='Events', user='user01', header=['date', 'category', 'details'])
         ev.add(mod_core.CoreDataWhen('Sales Meeting', ['2014-01-11', 'Office', 'Catchup with client']))
         ev.add(mod_core.CoreDataWhen('Sales Meeting#3', ['2015-03-11', 'Office', 'Catchup with client']))
@@ -169,8 +168,6 @@ class CoreDataTest(unittest.TestCase):
         self.assertTrue(person3 == person1)  # confirm assign new object is the same
         
         person4 = mod_core.CoreDataWho('Tolkien', [{'first_name':'Christopher', 'type':'person', 'occupation':'Author'}])
-        #print('person4 = ', person4)
-        
         self.assertEqual(person4.name,person1.name)  # confirm names same for object
         self.assertFalse(person4 == person1)         # but they are different object
    
@@ -193,14 +190,10 @@ class CoreDataTest(unittest.TestCase):
         
         # option 2 - link 2 objects with 3rd 'Fact' object
         pet2 = mod_core.CoreDataWho('Meatball', [{'type':'animal', 'likes':'Fish'}])
-  
-        print(pet2)
-        
         self.assertEqual(pet2.name, 'Meatball')
         pet2.links_to(ob_cat, 'Character')
         self.assertEqual(pet2.links, [[ob_cat, 'Character']])
-
-        print(pet2)
+        print(pet2.links)
  
         
 if __name__ == '__main__':
