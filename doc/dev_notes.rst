@@ -72,3 +72,6 @@ The external program should use the package via config files.
 
 - 2016-03-29 clean up of tests 
 Clean up tests and remove redundant print statements. Show output on both Linux and Windows
+
+- 2016-05-15 core_data linking
+Working on various methods of using and linking core_data 
