@@ -174,27 +174,32 @@ class CoreDataTest(unittest.TestCase):
   
     def test_40_linking_overview(self):
         """
-        shows usage on general linking of objects using a Fact
+        shows usage on general linking of objects using a Fact.
+        Note - work in progress, none of these methods allow for
+        any real discoverability without contrived coding / searching
+        in datasets.
         """
         ob_cat = mod_core.CoreDataWhat('Cat', [{'genus':'Felis', 'is_tameable':True}])
-        print(ob_cat)
         
         # option 1 - link via data (though difficult to autosearch)
         pet1 = mod_core.CoreDataWho('Tiddles', [{'obj_type':ob_cat, 'type':'animal', 'likes':'Fish'}])
-  
-        print(pet1)
-        
         self.assertEqual(pet1.name, 'Tiddles')
         self.assertEqual(pet1.data[0]['obj_type'], ob_cat)
         self.assertEqual(pet1.data[0]['obj_type'].data[0]['is_tameable'], True)
         
         # option 2 - link 2 objects with 3rd 'Fact' object
-        pet2 = mod_core.CoreDataWho('Meatball', [{'type':'animal', 'likes':'Fish'}])
+        pet2 = mod_core.CoreDataWho('Meatball', [{'type':'cat', 'likes':'Fish'}])
         self.assertEqual(pet2.name, 'Meatball')
         pet2.links_to(ob_cat, 'Character')
         self.assertEqual(pet2.links, [[ob_cat, 'Character']])
-        print(pet2.links)
  
+        # option 3 - link objects via parent / child 
+        ob_dog = mod_core.CoreDataWhat('Dog', [{'genus':'Canis', 'is_tameable':True}])
+        pet3 = mod_core.CoreDataWho('Rover', data=[{'type':'dog'}], parent=ob_dog)
+        self.assertEqual(pet3.name, 'Rover')
+        self.assertEqual(pet3.parent, ob_dog)
+        self.assertEqual(pet3.parent.name, 'Dog')
+
         
 if __name__ == '__main__':
     unittest.main()
