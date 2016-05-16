@@ -200,6 +200,31 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(pet3.parent, ob_dog)
         self.assertEqual(pet3.parent.name, 'Dog')
 
+ 
+    def test_50_extract_csv_to_fact(self):
+        """
+        read a CSV file to facts
+        and parse it to CoreData obects
+        """
         
+        # step 1 - setup raw data
+        import aikif.dataTools.cls_datatable as cl
+        fle = cl.DataTable(os.path.join(pth, 'data', 'core', 'LOCATION_WORLD.csv'), ',')
+        fle.load_to_array()
+
+        # step 2 - parse into coredata types (manual method first)
+        for row in fle.arr:
+            r = mod_core.CoreDataWhy(row[1], [{'code':row[1],'name':row[2]}])
+            print(r)
+            self.assertEqual(r.name, row[1])
+ 
+    def test_51_map_csv_to_fact(self):
+        """
+        use the mapper to define how to map a CSV file to facts
+        and parse it to CoreData obects
+        """
+        print('TODO')
+          
+ 
 if __name__ == '__main__':
     unittest.main()
