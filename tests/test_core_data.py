@@ -228,8 +228,14 @@ class CoreDataTest(unittest.TestCase):
         raw_file = os.path.join(pth, 'data', 'core', 'LOCATION_WORLD.csv')
 
         mapPC_Usage = mapper.Mapper(os.path.join(os.path.join(pth, 'data', 'raw'), 'country.map'))
+        #print(mapPC_Usage)
         tot, vals, grps, events = mapPC_Usage.process_raw_file(raw_file, ["id","code","name"])
-        print(tot, vals, grps, events)        
+        #print(tot, vals, grps, events)        
+        self.assertEqual(tot, 261)
+        self.assertEqual(len(vals), 785)
+        self.assertEqual(len(grps), 786)
+        self.assertEqual(len(events), 0)
+
         
  
 if __name__ == '__main__':
