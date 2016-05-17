@@ -1,0 +1,4 @@
+# country.map
+col, id, group_distinct
+col, code, group_distinct
+col, name, group_distinct
