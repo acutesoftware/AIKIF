@@ -200,7 +200,33 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(pet3.parent, ob_dog)
         self.assertEqual(pet3.parent.name, 'Dog')
 
- 
+    def test_42_object_drilldown_detailed(self):
+        f = mod_core.CoreDataWhat('Furniture')
+        chair = mod_core.CoreDataWhat('Chair', parent=f)
+        table = mod_core.CoreDataWhat('Table', parent=f)
+        cupboard = mod_core.CoreDataWhat('Cupboard', parent=f)
+        
+        f.links_to(chair, 'Object')
+        f.links_to(table, 'Object')
+        
+        
+        self.assertEqual(str(f) , 'Furniture (type=what)') 
+        f.expand('List', [table, chair, cupboard])
+        
+        wood = mod_core.CoreDataWhat('Wood')
+        leather = mod_core.CoreDataWhat('Leather')
+        wood.links_to(chair, 'Object')
+        wood.links_to(table, 'Object')
+        leather.links_to(chair, 'Object')
+        
+        
+        f.expand('Built via', [wood, leather])
+        self.assertEqual(f.drill_up() , None) # TODO - keep track of location of graph 
+        self.assertEqual(chair.drill_up() , f) # TODO - keep track of location of graph 
+    
+        print(chair.format_all())
+        print(f.format_all())
+        
     def test_50_extract_csv_to_fact(self):
         """
         read a CSV file to facts
