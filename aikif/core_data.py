@@ -64,8 +64,15 @@ class CoreData(object):
         res += ' parent = ' + str(self.parent) + '\n'
         for c in self.child:
             res += ' child = ' + str(c) + '\n'
+            if c.child:
+                for grandchild in c.child:
+                    res += '   child = ' + str(grandchild) + '\n'
         for l in self.links:
             res += ' links = ' + str(l[0]) + '\n'
+            if l[0].child:
+                for sublink in l[0].child:
+                    res += '   sublink = ' + str(sublink) + '\n'
+            
         return res
     
     def drill_down(self):
