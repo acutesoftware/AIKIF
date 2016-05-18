@@ -11,7 +11,9 @@ core_data_types = [ 'Character',    # Who
                     'Fact'          # Why
                   ]
         
-    
+core_process =    [ 'List',
+                  ]
+        
 class CoreData(object):
     """
     Base class for all core data objects
@@ -53,7 +55,19 @@ class CoreData(object):
         for num, d in enumerate(self.data):
             res += 'col' + str(num) + delim + qu + str(d) + qu + ','
         return res
-        
+    
+    def format_all(self):
+        """
+        return a trace of parents and children of the obect
+        """
+        res = '\n--- Format all : ' + str(self.name) + ' -------------\n'
+        res += ' parent = ' + str(self.parent) + '\n'
+        for c in self.child:
+            res += ' child = ' + str(c) + '\n'
+        for l in self.links:
+            res += ' links = ' + str(l[0]) + '\n'
+        return res
+    
     def drill_down(self):
         """ 
         this WALKS down the tree to get the LIST of 
