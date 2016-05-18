@@ -79,9 +79,7 @@ class MapTest(unittest.TestCase):
     
     def test_90_get_maps_stats(self):
         mc = mod_map.Mapper(mod_map.map_file)
-        #print(mc)
         stats = mc.get_maps_stats()
-        #print(stats)
         self.assertTrue(stats,  {'file': 10, 'text': 4})
     
 
@@ -89,10 +87,20 @@ class MapTest(unittest.TestCase):
         mapPC_Usage = mod_map.Mapper(os.path.join(fldr_raw_data, 'PC_Usage.map'))
         flds = ['Date', 'Time', 'Length', 'Caption']
         tot, vals, grps, events = mapPC_Usage.process_raw_file(os.path.join(fldr_raw_data, 'sample_PC_usage.txt'), flds)
-        print(tot, vals, grps, events)
+        print(' tot = ', tot)
+        print('vals = ', vals[0:2])
+        print('grps = ', grps[0:2])
+        print('events = ', events[0:2])
         self.assertEqual(tot, 17)  # note that tot starts from zero, meaning 18 lines in file
         self.assertEqual(len(vals), 8)
-        self.assertEqual(vals[0], 'C:\\Windows\\system32\\cmd.exe')
+        self.assertEqual(len(grps), 18)
+        self.assertEqual(len(events), 1)
+        self.assertTrue('C:\\Windows\\system32\\cmd.exe' in vals)
+        self.assertTrue('2014-12-23' in events)
+        self.assertTrue('Google Calendar - Google Chrome' in grps)
+        
+    
+    
     
     def test_99(self):
         """ prints the test to screen to make sure all is ok """
