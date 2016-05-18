@@ -201,30 +201,35 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(pet3.parent.name, 'Dog')
 
     def test_42_object_drilldown_detailed(self):
-        f = mod_core.CoreDataWhat('Furniture')
+        asset =  mod_core.CoreDataWhat('Asset')
+        f = mod_core.CoreDataWhat('Furniture', parent = asset)
         chair = mod_core.CoreDataWhat('Chair', parent=f)
         table = mod_core.CoreDataWhat('Table', parent=f)
         cupboard = mod_core.CoreDataWhat('Cupboard', parent=f)
         
+        tradeperson = mod_core.CoreDataWho('Trade Person')
+        carpenter = mod_core.CoreDataWho('Carpenter', parent=tradeperson)
+        
         f.links_to(chair, 'Object')
         f.links_to(table, 'Object')
         
+        f.links_to(carpenter, 'Character')
         
         self.assertEqual(str(f) , 'Furniture (type=what)') 
         f.expand('List', [table, chair, cupboard])
         
-        wood = mod_core.CoreDataWhat('Wood')
-        leather = mod_core.CoreDataWhat('Leather')
+        wood = mod_core.CoreDataWhat('Wood', parent = mod_core.CoreDataWhat('Material'))
+        leather = mod_core.CoreDataWhat('Leather', parent = mod_core.CoreDataWhat('Material'))
         wood.links_to(chair, 'Object')
         wood.links_to(table, 'Object')
         leather.links_to(chair, 'Object')
         
         
         f.expand('Built via', [wood, leather])
-        self.assertEqual(f.drill_up() , None) # TODO - keep track of location of graph 
-        self.assertEqual(chair.drill_up() , f) # TODO - keep track of location of graph 
+        self.assertEqual(f.drill_up() , asset) 
+        self.assertEqual(chair.drill_up() , f) 
     
-        print(chair.format_all())
+        print(wood.format_all())
         print(f.format_all())
         
     def test_50_extract_csv_to_fact(self):
