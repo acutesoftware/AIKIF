@@ -70,8 +70,11 @@ class CoreData(object):
         for l in self.links:
             res += ' links = ' + str(l[0]) + '\n'
             if l[0].child:
-                for sublink in l[0].child:
-                    res += '   sublink = ' + str(sublink) + '\n'
+                for chld in l[0].child:
+                    res += '   child = ' + str(chld) + '\n'
+            if l[0].links:
+                for lnk in l[0].links:
+                    res += '   sublink = ' + str(lnk) + '\n'
             
         return res
     
