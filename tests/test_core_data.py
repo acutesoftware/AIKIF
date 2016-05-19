@@ -238,11 +238,16 @@ class CoreDataTest(unittest.TestCase):
         build_chair.links_to(bld_cut_wood, 'Process')
         build_chair.links_to(bld_measure, 'Process')
         
-        print(woodwork)
-        
         chair.links_to(build_chair, 'Process')
-        print(chair.format_all())
-        
+       
+        self.assertEqual(str(chair.format_all()),"""
+--- Format all : Chair -------------
+ parent = Furniture (type=what)
+ links = Build Chair (type=how)
+   sublink = Assemble Chair Legs (type=how)
+   sublink = Cut Wood for chair (type=how)
+   sublink = Measure Wood for chair (type=how)
+""")
         
         f.expand('Built via', [wood, leather])
         self.assertEqual(f.drill_up() , asset) 
