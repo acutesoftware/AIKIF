@@ -201,6 +201,9 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(pet3.parent.name, 'Dog')
 
     def test_42_object_drilldown_detailed(self):
+        """
+        demonstrate how mulitple drilldowns can work 
+        """
         asset =  mod_core.CoreDataWhat('Asset')
         f = mod_core.CoreDataWhat('Furniture', parent = asset)
         chair = mod_core.CoreDataWhat('Chair', parent=f)
@@ -212,6 +215,7 @@ class CoreDataTest(unittest.TestCase):
         
         f.links_to(chair, 'Object')
         f.links_to(table, 'Object')
+        f.links_to(cupboard, 'Object')
         
         f.links_to(carpenter, 'Character')
         
@@ -222,7 +226,22 @@ class CoreDataTest(unittest.TestCase):
         leather = mod_core.CoreDataWhat('Leather', parent = mod_core.CoreDataWhat('Material'))
         wood.links_to(chair, 'Object')
         wood.links_to(table, 'Object')
+        wood.links_to(cupboard, 'Object')
         leather.links_to(chair, 'Object')
+        
+        woodwork = mod_core.CoreDataHow('Woodwork')
+        build_chair =  mod_core.CoreDataHow('Build Chair', parent=woodwork)
+        bld_assemble_legs =  mod_core.CoreDataHow('Assemble Chair Legs', parent=build_chair)
+        bld_cut_wood =  mod_core.CoreDataHow('Cut Wood for chair', parent=build_chair)
+        bld_measure =  mod_core.CoreDataHow('Measure Wood for chair', parent=build_chair)
+        build_chair.links_to(bld_assemble_legs, 'Process')
+        build_chair.links_to(bld_cut_wood, 'Process')
+        build_chair.links_to(bld_measure, 'Process')
+        
+        print(woodwork)
+        
+        chair.links_to(build_chair, 'Process')
+        print(chair.format_all())
         
         
         f.expand('Built via', [wood, leather])
