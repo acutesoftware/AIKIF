@@ -271,9 +271,8 @@ class CoreDataTest(unittest.TestCase):
         csv_res = ''
         for row in fle.arr:
             r = mod_core.CoreDataWhy(row[1], [{'code':row[1],'name':row[2]}])
-             csv_res += r.format_csv()
+            csv_res += r.format_csv()
             self.assertEqual(r.name, row[1])
-        print(csv_res[0:90])
         self.assertTrue('"COD","' in csv_res)
         self.assertTrue('\'name\': \'LABEL\'' in csv_res)
         self.assertTrue('\'code\': \'COD\'' in csv_res)
