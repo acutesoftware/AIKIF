@@ -268,10 +268,17 @@ class CoreDataTest(unittest.TestCase):
         fle.load_to_array()
 
         # step 2 - parse into coredata types (manual method first)
+        csv_res = ''
         for row in fle.arr:
             r = mod_core.CoreDataWhy(row[1], [{'code':row[1],'name':row[2]}])
-            #print(r)
+             csv_res += r.format_csv()
             self.assertEqual(r.name, row[1])
+        print(csv_res[0:90])
+        self.assertTrue('"COD","' in csv_res)
+        self.assertTrue('\'name\': \'LABEL\'' in csv_res)
+        self.assertTrue('\'code\': \'COD\'' in csv_res)
+        self.assertTrue('\'West Bank\'' in csv_res)
+ 
  
     def test_51_map_csv_to_fact(self):
         """
@@ -283,7 +290,6 @@ class CoreDataTest(unittest.TestCase):
         raw_file = os.path.join(pth, 'data', 'core', 'LOCATION_WORLD.csv')
 
         mapPC_Usage = mapper.Mapper(os.path.join(os.path.join(pth, 'data', 'raw'), 'country.map'))
-        #print(mapPC_Usage)
         tot, vals, grps, events = mapPC_Usage.process_raw_file(raw_file, ["id","code","name"])
         #print(tot, vals, grps, events)        
         self.assertEqual(tot, 261)
