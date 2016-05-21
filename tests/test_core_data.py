@@ -277,7 +277,8 @@ class CoreDataTest(unittest.TestCase):
         self.assertTrue('\'name\': \'LABEL\'' in csv_res)
         self.assertTrue('\'code\': \'COD\'' in csv_res)
         self.assertTrue('\'West Bank\'' in csv_res)
- 
+        self.assertEqual(len(csv_res), 12163)
+        
  
     def test_51_map_csv_to_fact(self):
         """
