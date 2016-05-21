@@ -262,12 +262,10 @@ class CoreDataTest(unittest.TestCase):
         and parse it to CoreData obects
         """
         
-        # step 1 - setup raw data
         import aikif.dataTools.cls_datatable as cl
         fle = cl.DataTable(os.path.join(pth, 'data', 'core', 'LOCATION_WORLD.csv'), ',')
         fle.load_to_array()
 
-        # step 2 - parse into coredata types (manual method first)
         csv_res = ''
         for row in fle.arr:
             r = mod_core.CoreDataWhy(row[1], [{'code':row[1],'name':row[2]}])
@@ -282,7 +280,6 @@ class CoreDataTest(unittest.TestCase):
  
     def test_51_map_csv_to_fact(self):
         """
-        TODO - WORK IN PROGRESS
         use the mapper to define how to map a CSV file to facts
         and parse it to CoreData obects
         """
@@ -291,13 +288,10 @@ class CoreDataTest(unittest.TestCase):
 
         mapPC_Usage = mapper.Mapper(os.path.join(os.path.join(pth, 'data', 'raw'), 'country.map'))
         tot, vals, grps, events = mapPC_Usage.process_raw_file(raw_file, ["id","code","name"])
-        #print(tot, vals, grps, events)        
         self.assertEqual(tot, 261)
         self.assertEqual(len(vals), 785)
         self.assertEqual(len(grps), 786)
         self.assertEqual(len(events), 0)
-
-        
  
 if __name__ == '__main__':
     unittest.main()
