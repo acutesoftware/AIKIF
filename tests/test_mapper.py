@@ -18,18 +18,19 @@ import mapper as mod_map
 class MapTest(unittest.TestCase):
     
     def setUp(self):
-        """ gets called for EACH test """
+        """ 
+        gets called for EACH test 
+        """
         unittest.TestCase.setUp(self)
         self.mymap = mod_map.Mapper(mod_map.map_file)
         
         
     def tearDown(self):
-        """ called once at the end of this test class """
+        """ 
+        called once at the end of this test class 
+        """
         unittest.TestCase.tearDown(self)
 
-    """ 
-    tests for maps go below - use mymap instantiated object
-    """
     def test_01_instantiate(self):
         self.assertEqual(len(str(self.mymap)) > 500, True)
 
@@ -43,7 +44,6 @@ class MapTest(unittest.TestCase):
 
     def test_13_process_unknown(self):
         res = self.mymap.identify_data('blah blah', 'SOME_STUFF')
-        #print(res)
         self.assertEqual(res , 0)
         
         
@@ -99,13 +99,6 @@ class MapTest(unittest.TestCase):
         self.assertTrue('2014-12-23' in events)
         self.assertTrue('Google Calendar - Google Chrome' in grps)
         
-    
-    
-    
-    def test_99(self):
-        """ prints the test to screen to make sure all is ok """
-        #print(str(self.mymap))
-        pass
     
 if __name__ == '__main__':
     unittest.main()
