@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# coding: utf-8
 # test_bias.py
 
 import unittest
@@ -67,8 +69,14 @@ class BiasTest(unittest.TestCase):
             {'label':'test_label', 'value': 'test_value'},
         ]
         bias = mod_bias.Bias(more_metadata)
-        #print(bias)
+        self.assertEqual(str(bias), """Bias
+test_label = test_value
+BIAS Rating    = 1
+""")
+        
+        
         for d in dat:
+            print(d)
             pass
  
  
