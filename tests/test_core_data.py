@@ -283,7 +283,7 @@ class CoreDataTest(unittest.TestCase):
         use the mapper to define how to map a CSV file to facts
         and parse it to CoreData obects
         """
-        import aikif.mapper as mapper  
+        import mapper  
         raw_file = os.path.join(pth, 'data', 'core', 'LOCATION_WORLD.csv')
 
         mapPC_Usage = mapper.Mapper(os.path.join(os.path.join(pth, 'data', 'raw'), 'country.map'))
