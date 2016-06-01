@@ -26,8 +26,17 @@ class TestEnvironment(unittest.TestCase):
         
         self.assertTrue(str(e.websites[0])[0:6], '127.0.')
         self.assertTrue(len(str(e.websites[0])) > 5)
-       
         self.assertEqual(str(e.websites[0].pages[0]), 'Test page')
+        
+    def test_02_mid_size(self):
+        e = mod_int.Internet('Med Internet',  'Simulation of 8000 websites')
+        e.create(800)
+        self.assertEqual(len(e.websites), 800)
+        
+    def test_03_large_size(self):
+        e = mod_int.Internet('Med Internet',  'Simulation of 200000 websites')
+        e.create(200000)
+        self.assertEqual(len(e.websites), 200000)
         
     
 if __name__ == '__main__':
