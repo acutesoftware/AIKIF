@@ -62,7 +62,9 @@ class Website(object):
         self.pages = []
         
         for _ in range(0,random.randint(3,8)):
-            self.pages.append(WebPage)
+            w = WebPage()
+            #print(w)
+            self.pages.append(w)
             
     def __str__(self):
         return self.url
