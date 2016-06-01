@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# coding: utf-8
 # test_environment.py
 
 import unittest
