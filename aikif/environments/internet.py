@@ -1,14 +1,9 @@
 # internet.py     written by Duncan Murray 14//5/2014
 
 import random
-import aikif.environments.environment as mod_env
+import environment as mod_env
 
-def TEST():  
-    e = Internet('Virtual Internet',  'Simulation of several websites')
-    e.create(5)
-    print(e)
-    e.destroy()
-    
+
 class Internet(mod_env.Environment):
     """
     Main base class for all AIKIF environments. Example output
@@ -41,8 +36,8 @@ class Internet(mod_env.Environment):
         Creates the environment
         Code in Base class = self.log.record_process('enviroment.py', 'Creating environment - ' + self.name)
         """
-        #super(Internet, self).create()
-        print('building websites')
+        super(Internet, self).create(num_sites)
+        #print('building websites')
         for _ in range(0,num_sites):
             self.websites.append(Website())
         
@@ -81,7 +76,4 @@ class WebPage(object):
     def __str__(self):
         return self.title
     
-    
-if __name__ == '__main__':
-    TEST()    
     
