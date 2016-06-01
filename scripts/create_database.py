@@ -10,7 +10,7 @@ if sys.version[0:1] != '3':
 import aikif.dataTools.cls_datatable as mod_table
 from aikif.dataTools.cls_sql_code_generator import SQLCodeGenerator
 
-fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + 'data') 
+fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep  + "aikif" + os.sep + 'data') 
 build_all_file = fldr + os.sep + '_BUILD_ALL.SQL'
 
 def main():
