@@ -217,7 +217,7 @@ class AudioFile(File):
         import aikif.toolbox.audio_tools as aud
         super(AudioFile, self).__init__(fname)
         self.meta = aud.get_audio_metadata(fname)
-        print(self.meta)
+        #print(self.meta)
         
     def __str__(self):
         """ display the meta data from the audio file """
