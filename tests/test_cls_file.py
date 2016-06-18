@@ -94,17 +94,22 @@ D20130611001220130611PCFile0500 60UsageDesktop
         #self.assertEqual(f.GetDateAsString(dte2)[0:11], '2016-03-03')
 
     def test_10_count_line_in_file(self):
-        t = cl.TextFile('chr31_delimited_data_file.csv')
-        self.assertEqual(t.count_lines_in_file(), 4)
+        t10 = cl.TextFile('chr31_delimited_data_file.csv')
+        self.assertEqual(t10.count_lines_in_file(), 4)
         
         # check for non file
-        self.assertEqual(t.count_lines_in_file('no such filename'), 0)
+        t_fail = cl.TextFile('no such filename')
+        self.assertEqual(t_fail.count_lines_in_file(), 0)
     
     
     def test_11_get_file_sample(self):
         t11 = cl.TextFile(self.fname)
         self.assertEqual(t11.get_file_sample(1), '00000 # test file for cls_file\n')
         self.assertEqual(len(t11.get_file_sample(999)), 86)  # returns full sample file
+        
+        # check for non file
+        t_fail = cl.TextFile('no such filename')
+        self.assertEqual(t_fail.get_file_sample(1), '')
  
 
     def test_20_image_file(self):
