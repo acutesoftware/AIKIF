@@ -35,7 +35,17 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(str(f.drill_down()[1]) , 'Chops') 
         self.assertEqual(str(f.drill_down()[2]) , 'Cheese') 
         self.assertEqual(f.drill_up() , None) # TODO - keep track of location of graph 
-
+        self.assertEqual(f.format_all(),"""
+--- Format all : Food -------------
+ parent = None
+ child = Apples
+ child = Chops
+ child = Cheese
+ links = None
+""")
+        
+        
+        
     def test_03_events(self):
     
         # Events
@@ -229,6 +239,7 @@ class CoreDataTest(unittest.TestCase):
         wood.links_to(cupboard, 'Object')
         leather.links_to(chair, 'Object')
         
+        
         woodwork = mod_core.CoreDataHow('Woodwork')
         build_chair =  mod_core.CoreDataHow('Build Chair', parent=woodwork)
         bld_assemble_legs =  mod_core.CoreDataHow('Assemble Chair Legs', parent=build_chair)
@@ -243,6 +254,7 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(str(chair.format_all()),"""
 --- Format all : Chair -------------
  parent = Furniture (type=what)
+ child = None
  links = Build Chair (type=how)
    sublink = Assemble Chair Legs (type=how)
    sublink = Cut Wood for chair (type=how)
@@ -254,7 +266,7 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(chair.drill_up() , f) 
     
         print(wood.format_all())
-        print(f.format_all())
+        
         
     def test_50_extract_csv_to_fact(self):
         """
