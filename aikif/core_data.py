@@ -25,7 +25,7 @@ class CoreData(object):
         self.name = name
         self.data = data    # can be as detailed or simple as needed
         self.parent = parent
-        self.child = []
+        self.child_nodes = []
         self.links = []
         self.data_type = ''
         self.type_desc = ''
@@ -62,19 +62,28 @@ class CoreData(object):
         """
         res = '\n--- Format all : ' + str(self.name) + ' -------------\n'
         res += ' parent = ' + str(self.parent) + '\n'
-        for c in self.child:
-            res += ' child = ' + str(c) + '\n'
-            if c.child:
-                for grandchild in c.child:
-                    res += '   child = ' + str(grandchild) + '\n'
-        for l in self.links:
-            res += ' links = ' + str(l[0]) + '\n'
-            if l[0].child:
-                for chld in l[0].child:
-                    res += '   child = ' + str(chld) + '\n'
-            if l[0].links:
-                for lnk in l[0].links:
-                    res += '   sublink = ' + str(lnk[0]) + '\n'
+        print('format_all = ', str(self.child_nodes))
+        
+        if self.child_nodes:
+            for c in self.child_nodes:
+                res += ' child = ' + str(c) + '\n'
+                if c.child_nodes:
+                    for grandchild in c.child_nodes:
+                        res += '   child = ' + str(grandchild) + '\n'
+        else:
+            res += ' child = None\n'
+            
+        if self.links:
+            for l in self.links:
+                res += ' links = ' + str(l[0]) + '\n'
+                if l[0].child_nodes:
+                    for chld in l[0].child_nodes:
+                        res += '   child = ' + str(chld) + '\n'
+                if l[0].links:
+                    for lnk in l[0].links:
+                        res += '   sublink = ' + str(lnk[0]) + '\n'
+        else:
+            res += ' links = None\n'
             
         return res
     
@@ -103,7 +112,7 @@ class CoreData(object):
         """
         #print('TODO: process check = ', process)
         #print(self.name, ' expanded to ->', child_nodes)
-        self.child_nodes = []   # reset ??
+        self.child_nodes = []  
         for n in child_nodes:
             self.child_nodes.append(CoreData(n, parent=self))
 
@@ -177,6 +186,9 @@ class CoreDataWhat(CoreData):
         self.data_type = 'what'
         self.type_desc = 'Object'
     
+    def __str__(self):
+        return CoreData.__str__(self)
+        
     
 class CoreDataWhere(CoreData):
     def __init__(self, name, data=None, parent=None):
