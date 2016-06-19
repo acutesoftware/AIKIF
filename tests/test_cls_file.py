@@ -101,8 +101,16 @@ D20130611001220130611PCFile0500 60UsageDesktop
         t_fail = cl.TextFile('no such filename')
         self.assertEqual(t_fail.count_lines_in_file(), 0)
     
+    def test_11_count_lines_of_code(self):
+        t10 = cl.TextFile('chr31_delimited_data_file.csv')
+        self.assertEqual(t10.count_lines_of_code(), 4)
+        
+        # check for non file
+        t_fail = cl.TextFile('no such filename')
+        self.assertEqual(t_fail.count_lines_of_code(), 0)
     
-    def test_11_get_file_sample(self):
+    
+    def test_12_get_file_sample(self):
         t11 = cl.TextFile(self.fname)
         self.assertEqual(t11.get_file_sample(1), '00000 # test file for cls_file\n')
         self.assertEqual(len(t11.get_file_sample(999)), 86)  # returns full sample file
