@@ -85,6 +85,14 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(str(shelf.contract('')), 'Projects')
         self.assertEqual(str(proj.contract('TODO - set process')), 'Everything (type=what)')
         
+        self.assertEqual(proj.format_all(), """
+--- Format all : Projects -------------
+ parent = Everything (type=what)
+ child = Install Shelf
+ child = AIKIF
+ child = Prepare Sales Report
+ links = None
+""")
         
     def test_05_save_a_table(self):
         try:
@@ -266,6 +274,8 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(chair.drill_up() , f) 
     
         print(wood.format_all())
+        # this returns a str error type CoreDataWhat - print(f.format_all())
+        #print(build_chair.format_all())
         
         
     def test_50_extract_csv_to_fact(self):
