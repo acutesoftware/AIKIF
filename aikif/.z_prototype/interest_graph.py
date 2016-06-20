@@ -9,7 +9,18 @@
 
 from pprint import pprint
 
-people = ['Frank', 'Jane', 'Pat']
+#local = 'N'
+local = 'Y'
+
+if local == 'Y':
+    people = []
+    with open('T:\\user\\AIKIF\\_PROD\\data\\raw\\contacts.csv', 'r') as f:
+        for line in f:
+            people.append(line.strip('\n'))
+else:
+    people = ['Frank', 'Jane', 'Pat']
+
+
 concepts = ['Movies', 'Music', 'Art', 'Travel', 'Science']
 objects = ['Die Hard', 'Mozart', 'Mona Lisa', 'France', 'Solar Power']
 
