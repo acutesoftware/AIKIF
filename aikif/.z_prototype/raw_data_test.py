@@ -1,10 +1,22 @@
 # raw_data_test.py
 
 import os
-import aikif.project as mod_prj
-import aikif.dataTools.cls_datatable as mod_dt
-import rawdata.generate
-import rawdata.content
+import sys
+
+# AIKIF latest files
+aikif_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
+sys.path.append(aikif_fldr)
+sys.path.append(os.path.join(aikif_fldr, 'dataTools'))
+print(' aikif_fldr = ', aikif_fldr)
+import project as mod_prj
+import cls_datatable as mod_dt
+
+# rawdata latest files (from this prototype folder in AIKIF)
+rawdata_fldr = os.path.join(os.path.abspath(os.path.dirname(os.path.abspath(__file__))), "..", "..", "..", 'rawdata', 'rawdata'  )
+sys.path.append(rawdata_fldr)
+print(' rawdata_fldr = ', rawdata_fldr)
+import generate
+import content
 
 def main():
     """
@@ -27,7 +39,7 @@ def main():
     # create the rawdata
     col_names = ['Year', 'name',   'Purchase', 'Location']
     col_types = ['DATE', 'PEOPLE', 'CURRENCY', 'PLACE']
-    t = rawdata.generate.TableGenerator(50, col_types, col_names)
+    t = generate.TableGenerator(10, col_types, col_names)
     
     
     # save the table (you can save it via rawdata class, but demonstrates other use
