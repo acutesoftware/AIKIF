@@ -1,6 +1,6 @@
 --- 
 name: AIKIF Roadmap
-date_last_updated: 2015-10-04
+date_last_updated: 2016-06-22
 projects:
     - AIKIF
     - virtual-AI-simulator
@@ -16,23 +16,22 @@ AIKIF:
         - sample map file - image downloading
         - sample map file - zip extraction, data extraction
             
-    knowledge:
+    core data:
         - work out the architecture
-        - sample raw data file - sentence
-        - sample raw data file - data table
-        - sample raw data file - website
-        - sample raw data file - project management
+        - data structures for Who, What, Where, When, Why
+        - sample raw data file - project management (done)
+ 
             
     API:
-        - identify all public interfaces
-        - have an API to call them
+        - identify all public interfaces (progress)
+        - basic api server (done)
+        - authentication
             
     website:
-        - decide on website purpose and users
         - basic structure and menu
-        - css styling
+        - css styling (good enough)
         - uses AIKIF via API
-        - load public sample data
+        - load public sample data (done)
             
     toolbox:
         - document working tools as DATA (yaml)
@@ -49,8 +48,8 @@ virtual-AI-simulator:
         
 worldbuild:
     worlds:
-        - generate planet randomly as x/y grid
-        - read JPG hand drawn map and convert to data
+        - generate planet randomly as x/y grid (done)
+        - read JPG hand drawn map and convert to data (out of scope)
     objects:
         - define objects for use in world
         
@@ -58,8 +57,8 @@ rawdata:
     generate:
         - generate random data (done)
     gather:
-        - read emails
-        - read file metadata
+        - read emails (done)
+        - read file metadata (done)
         - read documents
         
 
