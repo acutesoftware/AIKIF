@@ -106,7 +106,7 @@ class CoreDataTest(unittest.TestCase):
         ev.add(mod_core.CoreDataWhen('DEV AIKIF - core data', ['2015-05-11', 'Software', 'update TEST - no test for CORE_DATA']))
         ev.add(mod_core.CoreDataWhen('DEV LifePim - core data', ['2015-03-11', 'Software', 'use data for LifePim']))
         ev.add(mod_core.CoreDataWhen('DEV AIKIF - data tools', ['2015-05-11', 'Software', 'fix data tools ']))
-        ev.save()
+        ev.save('2015')
         with open(test_fldr + os.sep + 'Events2015.user01', 'r') as f:
             txt = f.read()
         self.assertEqual(len(txt), 353)
