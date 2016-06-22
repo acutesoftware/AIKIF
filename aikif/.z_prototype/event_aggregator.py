@@ -41,6 +41,7 @@ def main():
             
     lg.record_command('event_aggregator.py', 'generating events to op_folder=' + op_folder)        
     add_manual_events()
+    add_screenshots()
     
 
 def add_manual_events():
@@ -60,7 +61,36 @@ def add_manual_events():
     #print(ev_man.get_filename('ManualTEST'))
     #ev_man.generate_diary()    
 
+  
+
+def add_screenshots(file_tag='Screenshot'):
+    """
+    add events based on screenshot creation
+    """
+    hdr = ['date', 'category', 'size', 'filename', 'path']
+    ev = core_data.CoreTable(op_folder, tpe='Events', user=usr, header=hdr)
+    op_file = ev.get_filename(file_tag)
+    if os.path.exists(op_file):
+        os.remove(op_file)
+        
+    lg.record_process('event_aggregator.py', 'loading screenshots')
     
+    # get collection of screenshots
+    import aikif.lib.cls_filelist as fl 
+    
+    fl_filename = os.path.join(op_folder,'filelist_screenshots.csv')
+    fles = fl.FileList(['E:\\games\\Steam\\userdata'], ['*.jpg'], [], fl_filename)
+    fles.save_filelist(fl_filename, ["name", "path", "size", "date"])
+    files = fles.get_metadata()
+    for file_dict in files:
+        ev.add(core_data.CoreDataWhen('Screenshot', [file_dict["date"], 'Games', file_dict["size"], file_dict["name"],file_dict["path"] ]))
+
+        
+    print(file_dict)
+    ev.save(file_tag)
+
+
+  
     
 if __name__ == '__main__':
     main()
