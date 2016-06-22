@@ -78,8 +78,15 @@ def add_screenshots(file_tag='Screenshot'):
     # get collection of screenshots
     import aikif.lib.cls_filelist as fl 
     
+    fldrs_to_search = []
+    with open(os.path.join(data_folder,'screenshot.folders'), 'r') as f:
+        for line in f:
+            if line.strip('\n') != '':
+                fldrs_to_search.append(line.strip('\n'))
+    
+    print('fldrs_to_search = ', fldrs_to_search)
     fl_filename = os.path.join(op_folder,'filelist_screenshots.csv')
-    fles = fl.FileList(['E:\\games\\Steam\\userdata'], ['*.jpg'], [], fl_filename)
+    fles = fl.FileList(fldrs_to_search, ['*.jpg', '*.png'], [], fl_filename)
     fles.save_filelist(fl_filename, ["name", "path", "size", "date"])
     files = fles.get_metadata()
     for file_dict in files:
