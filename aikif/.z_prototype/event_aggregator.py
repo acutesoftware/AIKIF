@@ -88,7 +88,7 @@ def add_screenshots(cat, folder, file_tag='FileUsage' ):
     
     # get collection of screenshots
     fl_filename = os.path.join(op_folder,'filelist_screenshots.csv')
-    fles = fl.FileList([folder], ['*.jpg', '*.png'], [], fl_filename)
+    fles = fl.FileList([folder], ['*.jpg', '*.png'], ['\\thumbnails\\'], fl_filename)
     fles.save_filelist(fl_filename, ["name", "path", "size", "date"])
     files = fles.get_metadata()
     for file_dict in files:
