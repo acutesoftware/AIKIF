@@ -298,14 +298,14 @@ class CoreTable(object):
                 #print(e)
         return result
     
-    def save(self):
+    def save(self, file_tag='2016'):
         """
         save table to folder in appropriate files
         NOTE - ONLY APPEND AT THIS STAGE - THEN USE DATABASE
         """
             
         for e in self.table: 
-            fname = self.get_filename('2015')
+            fname = self.get_filename(file_tag)
             with open(fname, 'a') as f:
                 f.write(e.format_csv())
  
