@@ -13,6 +13,7 @@ root_path = root_fldr + os.sep + 'samples'
 import config
 import cls_log
 import core_data
+import aikif.lib.cls_filelist as fl 
  
 password_folder = config.fldrs['pers_credentials']
 log_folder = config.fldrs['log_folder'] 
@@ -31,6 +32,11 @@ def main():
     print('log_folder      = ', log_folder)
     print('data_folder     = ', data_folder)
     print('op_folder       = ', op_folder)
+    
+    Screenshot folder is a text file as follows:
+        Minecraft|C:\\Users\\Duncan\AppData\Roaming\\.minecraft\\screenshots
+        Steam|E:\\games\\Steam\\userdata    
+    
     """
     if '_PROD' in op_folder:
         correct = random.choice(['y', '1', ' ', '#'])
@@ -41,7 +47,13 @@ def main():
             
     lg.record_command('event_aggregator.py', 'generating events to op_folder=' + op_folder)        
     add_manual_events()
-    add_screenshots()
+    
+    
+    with open(os.path.join(data_folder,'screenshot.folders'), 'r') as f:
+        for line in f:
+            if line.strip('\n') != '':
+                cat, folder = line.strip('\n').split('|')
+                add_screenshots(cat, folder)
     
 
 def add_manual_events():
@@ -63,38 +75,26 @@ def add_manual_events():
 
   
 
-def add_screenshots(file_tag='Screenshot'):
+def add_screenshots(cat, folder, file_tag='FileUsage' ):
     """
     add events based on screenshot creation
     """
     hdr = ['date', 'category', 'size', 'filename', 'path']
     ev = core_data.CoreTable(op_folder, tpe='Events', user=usr, header=hdr)
-    op_file = ev.get_filename(file_tag)
+    op_file = ev.get_filename(file_tag + '-' + cat)
     if os.path.exists(op_file):
         os.remove(op_file)
         
     
     # get collection of screenshots
-    import aikif.lib.cls_filelist as fl 
-    
-    fldrs_to_search = []
-    with open(os.path.join(data_folder,'screenshot.folders'), 'r') as f:
-        for line in f:
-            if line.strip('\n') != '':
-                fldrs_to_search.append(line.strip('\n'))
-    
-    #print('fldrs_to_search = ', fldrs_to_search)
     fl_filename = os.path.join(op_folder,'filelist_screenshots.csv')
-    fles = fl.FileList(fldrs_to_search, ['*.jpg', '*.png'], [], fl_filename)
+    fles = fl.FileList([folder], ['*.jpg', '*.png'], [], fl_filename)
     fles.save_filelist(fl_filename, ["name", "path", "size", "date"])
     files = fles.get_metadata()
     for file_dict in files:
-        ev.add(core_data.CoreDataWhen('Screenshot', [file_dict["date"], 'Games', file_dict["size"], file_dict["name"],file_dict["path"] ]))
+        ev.add(core_data.CoreDataWhen(cat, [file_dict["date"], file_tag, file_dict["size"], file_dict["name"],file_dict["path"] ]))
 
-    lg.record_process('event_aggregator.py', 'created ' + str(len(files)) + ' events from screenshots')
-    
-        
-    print(file_dict)
+    lg.record_process('event_aggregator.py', 'created ' + str(len(files)) + ' events for ' + cat + '-' + file_tag)
     ev.save(file_tag)
 
 
