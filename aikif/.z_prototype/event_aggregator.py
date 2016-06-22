@@ -73,7 +73,6 @@ def add_screenshots(file_tag='Screenshot'):
     if os.path.exists(op_file):
         os.remove(op_file)
         
-    lg.record_process('event_aggregator.py', 'loading screenshots')
     
     # get collection of screenshots
     import aikif.lib.cls_filelist as fl 
@@ -84,7 +83,7 @@ def add_screenshots(file_tag='Screenshot'):
             if line.strip('\n') != '':
                 fldrs_to_search.append(line.strip('\n'))
     
-    print('fldrs_to_search = ', fldrs_to_search)
+    #print('fldrs_to_search = ', fldrs_to_search)
     fl_filename = os.path.join(op_folder,'filelist_screenshots.csv')
     fles = fl.FileList(fldrs_to_search, ['*.jpg', '*.png'], [], fl_filename)
     fles.save_filelist(fl_filename, ["name", "path", "size", "date"])
@@ -92,6 +91,8 @@ def add_screenshots(file_tag='Screenshot'):
     for file_dict in files:
         ev.add(core_data.CoreDataWhen('Screenshot', [file_dict["date"], 'Games', file_dict["size"], file_dict["name"],file_dict["path"] ]))
 
+    lg.record_process('event_aggregator.py', 'created ' + str(len(files)) + ' events from screenshots')
+    
         
     print(file_dict)
     ev.save(file_tag)
