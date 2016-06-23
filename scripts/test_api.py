@@ -127,6 +127,14 @@ class TestApi(unittest.TestCase):
             r = requests.get(url + 'maps')
             #print(r.text)
             self.assertEqual(r.status_code in valid_response, True)
+            lst = json.loads(r.text)['maps']
+            self.assertEqual(len(lst), 2)  # default api loads 2 records
+            self.assertEqual(lst[0]['map_id'], '1')
+            self.assertEqual(lst[0]['map_name'], 'map test1')
+            self.assertEqual(lst[1]['map_id'], '2')
+            self.assertEqual(lst[1]['map_name'], 'map test2')
+            
+            
         except Exception as ex:
             print('test_07: API not running - ' + str(ex))
 
@@ -135,7 +143,6 @@ class TestApi(unittest.TestCase):
         new_map1 = json.dumps({'map_name':'New Map added by test_08'})
         try:
             r = requests.post(url + 'maps', data=new_map1,headers=headers)
-            #print(r.text)
             self.assertEqual(r.status_code, 201)
         except Exception as ex:
             print('test_08: API not running - ' + str(ex))
@@ -148,6 +155,12 @@ class TestApi(unittest.TestCase):
         except Exception as ex:
             print('test_09: API not running - ' + str(ex))
 
+    
+    def test_99_notes(self):
+        print('\nREMEMBER\n- tests will fail if server has already been running')
+        print('- you need to shutdown and restart api_main.py')
+        
+    
     
 if __name__ == '__main__':
     unittest.main()
