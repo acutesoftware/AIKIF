@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 # api_main.py
+import os
 import aikif.cls_log as mod_log
 import aikif.config as mod_cfg
+
+lg = mod_log.Log(mod_cfg.fldrs['log_folder'])
+lg.record_command('api_main', 'starting API server in ' + os.getcwd())
 
 from flask import Flask, jsonify, abort, make_response
 from flask.ext.restful import Api, Resource, reqparse, fields, marshal
@@ -54,6 +58,11 @@ help_list = [
         'help_id': 'users',
         'help_str': 'List all the users of the system',
         'help_url': url_pre + base_url + 'users'
+    },
+    {
+        'help_id': 'search',
+        'help_str': 'Search for information',
+        'help_url': url_pre + base_url + 'search'
     },
     {
         'help_id': 'facts',
@@ -225,11 +234,13 @@ class MapperListAPI(Resource):
         super(MapperListAPI, self).__init__()
         
     def get(self):
+        lg.record_process('api_main.py:MapperListAPI:get','map_fields ?? ')
         return {'maps': [marshal(mp, map_fields) for mp in maps]}
 
     def post(self):
         args = self.reqparse.parse_args()
-
+        lg.record_process('api_main.py:MapperListAPI:post',args['map_name'])
+        
         mp = {
             'map_id':   maps[-1]['map_id'] + 1,
             'map_name':  args['map_name'],
@@ -245,13 +256,13 @@ class LogAPI(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('txt',  type=str, location='json')
-        self.lg = mod_log.Log(mod_cfg.fldrs['log_folder'])
+        
         super(LogAPI, self).__init__()
         
 
     def post(self, txt):
         print('Log put: recording event ' + txt)
-        self.lg.record_process(txt)
+        lg.record_process('api_main.py:LogAPI:post',txt)
         args = self.reqparse.parse_args()
 
         log = {
