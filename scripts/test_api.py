@@ -14,6 +14,7 @@ url = 'http://127.0.0.1:5000' + api.base_url
 # allow either not logged in error, or success just while testing
 valid_response = [403, 200]  # TODO - set to 200 after user login works
 
+
 def start_api_server():
     """
     starts the server locally after an initial fail
@@ -53,7 +54,7 @@ class TestApi(unittest.TestCase):
             r = requests.get(url + 'help')
             #print(r.text)
             if r.status_code == 200:  # so travis_ci passes if api not on
-                self.assertEqual(len(r.text), 698)
+                self.assertEqual(len(r.text), 857)
                 self.assertEqual(r.status_code, 200)  # should always pass regardless of logging in
         except Exception as ex:
             print('test_02: API not running - ' + str(ex))
@@ -100,14 +101,26 @@ class TestApi(unittest.TestCase):
             headers = {'content-type': 'application/json'}
             r = requests.post(url + 'facts', data=new_fact1,headers=headers) 
             self.assertEqual(r.status_code, 201, True)
+        
+            # now list the facts back
+            r2 = requests.get(url + 'facts')
+            lst = json.loads(r2.text)['facts']
             
+            #for line in lst:
+            #    print('line[fact_id] = ', line['fact_id'], 'line[fact_str] = ', line['fact_str'])
+                
+            self.assertEqual(lst[0]['fact_id'], '1')
+            self.assertEqual(lst[0]['fact_str'], 'A Project is a process using resources')
+            self.assertEqual(lst[1]['fact_id'], '2')
+            self.assertEqual(lst[1]['fact_str'], 'AIKIF is a Project')
+            self.assertEqual(lst[2]['fact_id'], '3')
+            self.assertEqual(lst[2]['fact_str'], 'New Fact added by test_05')
+            
+
+        
         except Exception as ex:
             print('test_05: API not running - ' + str(ex))
 
-            # now list the facts back
-            
-        #r2 = requests.get(url + 'facts')
-        #print(r2.text)
             
     def test_07_map_get(self):
         try:
@@ -130,7 +143,7 @@ class TestApi(unittest.TestCase):
     def test_09_map_get_again(self):
         try:
             r = requests.get(url + 'maps')
-            print(r.text)
+            #print(r.text)
             self.assertEqual(r.status_code in valid_response, True)
         except Exception as ex:
             print('test_09: API not running - ' + str(ex))
