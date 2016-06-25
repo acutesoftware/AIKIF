@@ -48,6 +48,13 @@ aliases = {
 
    
 def main():
+    """
+    Results = 
+{'cmd': 'backup', 'toolbox': 'aikif.toolbox.file_tools', 'ask': 'copy files each day to dropbox'}
+{'cmd': 'email',  'toolbox': 'rawdata.gather.email',     'ask': 'save emails to U:'}
+{'cmd': 'email',  'toolbox': 'rawdata.gather.email',     'ask': 'get emails each day'}    
+    """
+
     print(generate_rules('copy files each day to dropbox'))
     print(generate_rules('save emails to U:'))
     print(generate_rules('get emails each day'))
