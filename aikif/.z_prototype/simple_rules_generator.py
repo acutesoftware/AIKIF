@@ -30,15 +30,30 @@ predefined_rules = [
     {'name':'email', 'toolbox':'rawdata.gather.email'},
 ]
 
-aliases = []    
-for k,v in predefined_rules:
-    aliases.append(v)
+general_rules = [
+    {'name':'files',  'folder':'T:\\user'},
+    {'name':'photos', 'folder':'P:\\'},
+]    
 
-print('aliases = ', aliases)    
-    
+aliases = {
+    'email':'email',
+    'emails':'email',
+    'mail':'email',
+    'download':'download',
+    'get':'download',
+    'backup':'backup',
+    'copy':'backup',
+    'save':'backup',
+}    
+
+   
 def main():
-    backup1 = generate_rules('Backup files each day to dropbox')
+    print(generate_rules('copy files each day to dropbox'))
+    print(generate_rules('save emails to U:'))
+    print(generate_rules('get emails each day'))
 
+     
+    
 def generate_rules(txt):
     """
     takes a sentence and uses rules to determine intent
@@ -47,12 +62,20 @@ def generate_rules(txt):
     ask user to choose (or for now, return error message)
     
     """
-    res = ''
+    res = {}
+    res['ask'] = txt
     words = txt.split(' ')
-    for word in words:
-        if word in aliases:
-            print('found ', word)
     
+    found = []
+    for word in words:
+        for k,v in aliases.items():
+            if word == k:
+                found.append(v)
+                res['cmd'] = v
+    
+    for rule in predefined_rules:
+        if rule['name'] in found:
+            res['toolbox'] = rule['toolbox']
     return res
 
 
