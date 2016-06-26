@@ -46,6 +46,12 @@ aliases = {
     'save':'backup',
 }    
 
+
+required_parameters = [
+    {'process':'backup', 'params':['source', 'dest', 'schedule']},
+    {'process':'download', 'params':['source', 'dest', 'type']},
+]
+
    
 def main():
     """
@@ -69,10 +75,13 @@ def generate_rules(txt):
     ask user to choose (or for now, return error message)
     
     """
+    
+    # Step 1 - get the list of words (not at all NLP but ok if we write it)
     res = {}
     res['ask'] = txt
     words = txt.split(' ')
     
+    # Step 2 - find commands in phrase 
     found = []
     for word in words:
         for k,v in aliases.items():
@@ -80,9 +89,20 @@ def generate_rules(txt):
                 found.append(v)
                 res['cmd'] = v
     
+    # Step 3 - get the toolboxes that will be used for this
     for rule in predefined_rules:
         if rule['name'] in found:
             res['toolbox'] = rule['toolbox']
+            
+    # Step 4 - for the command, ensure required parameters are passed.
+    #print('res = ', res)
+    for param in required_parameters:
+        #print('    param = ', param)
+        if param['process'] == res['cmd']:
+            print(' you need to check for these params :' , param['params'])
+            #for num, p in enumerate(param['params']):
+            #    res['param' + str(num+)] = p # param['params']
+            res['params'] = param['params']    
     return res
 
 
