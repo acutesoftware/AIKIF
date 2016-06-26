@@ -47,15 +47,25 @@ def main():
             
     lg.record_command('event_aggregator.py', 'generating events to op_folder=' + op_folder)        
     add_manual_events()
-    
-    
-    with open(os.path.join(data_folder,'screenshot.folders'), 'r') as f:
-        for line in f:
-            if line.strip('\n') != '':
-                cat, folder = line.strip('\n').split('|')
-                add_screenshots(cat, folder)
+    #add_screenshots(list_of_folders)
+    create_diary(data_folder)
     
 
+def create_diary(fldr):
+    """
+    find all created event files in folder and generate
+    diary files (and display)
+    
+    """
+    print('generating diary from files in ' + fldr)
+    fles = fl.FileList([op_folder], ['*.' + usr], [], '')
+    files = fles.get_metadata()
+    for file_dict in files:
+        print('  reading ' + str(file_dict['fullfilename'])) 
+    
+    
+    
+    
 def add_manual_events():
     """
     add events manually from code, and sample text files
@@ -74,8 +84,16 @@ def add_manual_events():
     #ev_man.generate_diary()    
 
   
+def add_screenshots(list_of_folders):
+    with open(os.path.join(data_folder,'screenshot.folders'), 'r') as f:
+        for line in f:
+            if line.strip('\n') != '':
+                cat, folder = line.strip('\n').split('|')
+                collect_screenshots(cat, folder)
 
-def add_screenshots(cat, folder, file_tag='FileUsage' ):
+  
+
+def collect_screenshots(cat, folder, file_tag='FileUsage' ):
     """
     add events based on screenshot creation
     """
