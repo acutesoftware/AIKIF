@@ -36,6 +36,7 @@ class CoreData(object):
         else:
             return self.name +  ' (type=' + self.data_type + ')'
     
+        
     def format_csv(self, delim=',', qu='"'):
         """
         Prepares the data in CSV format
@@ -298,7 +299,7 @@ class CoreTable(object):
                 #print(e)
         return result
     
-    def save(self, file_tag='2016'):
+    def save(self, file_tag='2016', add_header='N'):
         """
         save table to folder in appropriate files
         NOTE - ONLY APPEND AT THIS STAGE - THEN USE DATABASE
@@ -307,8 +308,21 @@ class CoreTable(object):
         for e in self.table: 
             fname = self.get_filename(file_tag)
             with open(fname, 'a') as f:
+                if add_header == 'Y':
+                    f.write(self.format_hdr())
                 f.write(e.format_csv())
- 
+
+    def format_hdr(self, delim=',', qu='"'):
+        """
+        Prepares the header in CSV format
+        """
+        res = ''
+        if self.header:
+            for d in self.header:
+                res += qu + str(d) + qu + delim
+        return res + '\n'
+
+                
     def generate_diary(self):
         """
         extracts event information from core tables into diary files
