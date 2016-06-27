@@ -117,7 +117,7 @@ class CoreDataTest(unittest.TestCase):
         with open(test_fldr + os.sep + 'Events2015.user01', 'r') as f:
             txt = f.read()
         print('txt = ', txt)
-        self.assertEqual(len(txt), 851)
+        self.assertEqual(len(txt), 735)
         
         
         
