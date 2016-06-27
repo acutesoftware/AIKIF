@@ -112,6 +112,15 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(len(txt), 353)
         ev.generate_diary()
         
+        # now save with header
+        ev.save('2015', add_header='Y')
+        with open(test_fldr + os.sep + 'Events2015.user01', 'r') as f:
+            txt = f.read()
+        print('txt = ', txt)
+        self.assertEqual(len(txt), 851)
+        
+        
+        
     def test_06_core_table(self):
         ob = mod_core.CoreTable(test_fldr, tpe='Object', user='user03', header=['code', 'desc'])
         self.assertEqual(len(str(ob)) > 50, True)
