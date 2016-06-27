@@ -304,13 +304,13 @@ class CoreTable(object):
         save table to folder in appropriate files
         NOTE - ONLY APPEND AT THIS STAGE - THEN USE DATABASE
         """
-            
-        for e in self.table: 
-            fname = self.get_filename(file_tag)
-            with open(fname, 'a') as f:
-                if add_header == 'Y':
-                    f.write(self.format_hdr())
-                f.write(e.format_csv())
+        fname = self.get_filename(file_tag)
+        with open(fname, 'a') as f:
+            if add_header == 'Y':
+                f.write(self.format_hdr())
+                
+            for e in self.table: 
+                    f.write(e.format_csv())
 
     def format_hdr(self, delim=',', qu='"'):
         """
