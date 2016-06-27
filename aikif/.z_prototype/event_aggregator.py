@@ -47,7 +47,7 @@ def main():
             
     lg.record_command('event_aggregator.py', 'generating events to op_folder=' + op_folder)        
     add_manual_events()
-    #add_screenshots(list_of_folders)
+    add_screenshots()
     create_diary(data_folder)
     
 
@@ -62,7 +62,10 @@ def create_diary(fldr):
     files = fles.get_metadata()
     for file_dict in files:
         print('  reading ' + str(file_dict['fullfilename'])) 
-    
+        with open(str(file_dict['fullfilename']), 'r') as f:
+            hdr = f.readline().strip('"').split(',')
+            print('hdr = ', hdr)
+            
     
     
     
@@ -79,12 +82,12 @@ def add_manual_events():
     lg.record_process('event_aggregator.py', 'loading manual events')
     ev_man.add(core_data.CoreDataWhen('Build Event Aggregator', ['2016-06-22', 'Dev', 'Started example to generate diary with AIKIF']))
 
-    ev_man.save('Manual')
+    ev_man.save('Manual', add_header='Y')
     #print(ev_man.get_filename('ManualTEST'))
     #ev_man.generate_diary()    
 
   
-def add_screenshots(list_of_folders):
+def add_screenshots():
     with open(os.path.join(data_folder,'screenshot.folders'), 'r') as f:
         for line in f:
             if line.strip('\n') != '':
@@ -113,7 +116,7 @@ def collect_screenshots(cat, folder, file_tag='FileUsage' ):
         ev.add(core_data.CoreDataWhen(cat, [file_dict["date"], file_tag, file_dict["size"], file_dict["name"],file_dict["path"] ]))
 
     lg.record_process('event_aggregator.py', 'created ' + str(len(files)) + ' events for ' + cat + '-' + file_tag)
-    ev.save(file_tag)
+    ev.save(file_tag, add_header='N')
 
 
   
