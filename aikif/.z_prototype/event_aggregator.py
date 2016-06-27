@@ -116,7 +116,7 @@ def collect_screenshots(cat, folder, file_tag='FileUsage' ):
         ev.add(core_data.CoreDataWhen(cat, [file_dict["date"], file_tag, file_dict["size"], file_dict["name"],file_dict["path"] ]))
 
     lg.record_process('event_aggregator.py', 'created ' + str(len(files)) + ' events for ' + cat + '-' + file_tag)
-    ev.save(file_tag, add_header='N')
+    ev.save(file_tag, add_header='Y')
 
 
   
