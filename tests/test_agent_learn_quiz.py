@@ -19,7 +19,15 @@ agt = mod_agt.LearnAgentQuiz('TEST - quiz_agent',  os.getcwd(), 4, True)
 
 
 class TestAgentLearnQuiz(unittest.TestCase):
-
+    """
+    Sample output of logfile
+    "2016-06-28 22:56:09","000000026","Duncan","Treebeard","TEST - quiz_agent - initilising","agent",
+    "2016-06-28 22:56:09","000000026","Duncan","Treebeard","['calc', '4', '+', '5']","TEST - quiz_agent",
+    "2016-06-28 22:56:09","000000026","Duncan","Treebeard","['where', 'is', 'boston?']","TEST - quiz_agent",
+    "2016-06-28 22:56:09","000000026","Duncan","Treebeard","['when', 'did', 'i', 'hand', 'in', 'the', 'latest', 'tps', 'report?']","TEST - quiz_agent",
+    "2016-06-28 22:56:09","000000026","Duncan","Treebeard","['why', 'do', 'my', 'potplants', 'have', 'faded', 'leaves?']","TEST - quiz_agent",
+    """
+    
     def test_11_answer_maths(self):
         self.assertEqual(agt.answer('calc 4 + 5'), 'calculating maths result')
         
