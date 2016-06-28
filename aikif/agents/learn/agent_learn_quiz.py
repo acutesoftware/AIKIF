@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # agent_learn_quiz.py.py
 
 
@@ -34,6 +36,7 @@ class LearnAgentQuiz(agt.Agent):
         These are dummy answers to questions
         """
         words = [w.lower() for w in question.split(' ')]
+        self.mylog.record_command(self.name, str(words))
         if 'calc' in words:
             return 'calculating maths result'
         elif 'where' in words:
