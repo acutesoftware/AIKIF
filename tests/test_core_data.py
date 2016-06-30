@@ -112,11 +112,18 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(len(txt), 353)
         ev.generate_diary()
         
+        
+        srch = ev.find('Sales')
+        self.assertEqual(str(srch[0]), 'Sales Meeting (type=when)')
+        self.assertEqual(str(srch[1]), 'Sales Meeting#3 (type=when)')
+        
+        srch2 = ev.find('data')
+        self.assertEqual(len(srch2), 3)    
+            
         # now save with header
         ev.save('2015', add_header='Y')
         with open(test_fldr + os.sep + 'Events2015.user01', 'r') as f:
             txt = f.read()
-        print('txt = ', txt)
         self.assertEqual(len(txt), 735)
         
         
