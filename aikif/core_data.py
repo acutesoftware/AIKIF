@@ -294,7 +294,8 @@ class CoreTable(object):
     def find(self, txt):
         result = []
         for e in self.table:
-            if txt in e.data[0]:
+            print('find(self, txt) e = ', e)
+            if txt in str(e):
                 result.append(e)
                 #print(e)
         return result
