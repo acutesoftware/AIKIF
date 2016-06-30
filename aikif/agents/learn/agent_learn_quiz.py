@@ -35,15 +35,32 @@ class LearnAgentQuiz(agt.Agent):
         """
         These are dummy answers to questions
         """
+        ans = ''
+        words, toolbox = self.identify_question(question)
+        print('importing toolbox ', toolbox)
+        
+        return ans
+        
+        
+        
+    def identify_question(self, question):
+        """
+        reads an english question (structured - lets be reasonable)
+        and returns the list of words and probable type of question
+        for calling appropriate toolbox
+        """
         words = [w.lower() for w in question.split(' ')]
         self.mylog.record_command(self.name, str(words))
         if 'calc' in words:
-            return 'calculating maths result'
+            toolbox = 'info_maths' #  'calculating maths result'
         elif 'where' in words:
-            return "that's somewhere on Earth I think"
+            toolbox = 'info_geography' #  "that's somewhere on Earth I think"
         elif 'when' in words:
-            return "Last Wednesday"
+            toolbox = 'info_event' #  "Last Wednesday"
         elif 'why' in words:
-            return "Probably caused by lack of sunlight"
+            toolbox = 'info_fact' # "Probably caused by lack of sunlight"
         
+        
+        return words, toolbox
+    
         
