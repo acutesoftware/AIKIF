@@ -32,6 +32,10 @@ class WebAppWebAikif(unittest.TestCase):
         import page_search
         txt = page_search.get_page('test')
         self.assertEqual(len(txt) > 4, True)
+    
+        # call function as if user typed into search box
+        txt2 = web_aikif._search('blah blah')
+        self.assertEqual(len(txt2) > 4, True)
         
     def test_04_page_todo(self):
         self.assertEqual(len(web_aikif.page_todo()) > 4, True)
