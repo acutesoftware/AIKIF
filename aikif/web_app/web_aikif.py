@@ -51,12 +51,16 @@ def page_home():
 
 @app.route('/', methods=['POST'])
 def search_post():
-    search_text = request.form['search_text']
+    return(_search(request.form['search_text']))
+ 
+def _search(search_text):
     txt = aikif_web_menu()
     txt += web.build_search_form()
     import page_search
     txt += page_search.get_page(search_text)
     return txt
+
+
 
     
 @app.route("/todo")
