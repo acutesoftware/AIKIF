@@ -1,16 +1,13 @@
-# page_search.py	written by Duncan Murray 4/6/2014
+#!/usr/bin/python3
+# coding: utf-8
+# page_search.py
 # displays search results for AIKIF web interface
 
 import os
-#import aikif.web_app.web_utils as web
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 data_folder = os.path.abspath(aikif_folder + os.sep + '..' + os.sep  + 'data' + os.sep + 'core')
-
-print('page_search.py: aikif_folder = ', aikif_folder)
-print('page_search.py: data_folder  = ', data_folder)
-#sys.path.append(aikif_folder)
 
 def get_page(search_text):
     """
