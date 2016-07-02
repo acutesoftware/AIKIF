@@ -37,6 +37,10 @@ class WebAppWebAikif(unittest.TestCase):
         txt2 = web_aikif._search('blah blah')
         self.assertEqual(len(txt2) > 4, True)
         
+        # search with HTML output off
+        txt3 = page_search.search_aikif('hello', formatHTML=False)
+        #print(txt3)
+        
     def test_04_page_todo(self):
         self.assertEqual(len(web_aikif.page_todo()) > 4, True)
         
