@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # api_main.py
 import os
 import aikif.cls_log as mod_log
