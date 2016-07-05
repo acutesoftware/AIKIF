@@ -5,14 +5,7 @@
 import os
 
 try:
-    #    from PIL import Image as ImagePIL
     from PIL import Image
-    from PIL import ImageDraw
-    from PIL import ImageFont
-    from PIL import ImageFilter
-    from PIL.ExifTags import TAGS, GPSTAGS
-    from PIL import ImageStat
-    from PIL import ImageOps
 
 except ImportError:
     print("--------------------------------------------------------------------------")
@@ -155,4 +148,4 @@ class ImageArea(object):
         self.col = col
         self.density = density
     
-#TEST('')        
+   
