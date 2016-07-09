@@ -55,7 +55,6 @@ def create_diary(fldr):
     """
     find all created event files in folder and generate
     diary files (and display)
-    
     """
     print('generating diary from files in ' + fldr)
     fles = fl.FileList([op_folder], ['*.' + usr], [], '')
@@ -109,7 +108,7 @@ def collect_screenshots(cat, folder, file_tag='FileUsage' ):
     
     # get collection of screenshots
     fl_filename = os.path.join(op_folder,'filelist_screenshots.csv')
-    fles = fl.FileList([folder], ['*.jpg', '*.png'], ['\\thumbnails\\'], fl_filename)
+    fles = fl.FileList([folder], ['*.jpg', '*.png', '*.gif'], ['\\thumbnails\\'], fl_filename)
     fles.save_filelist(fl_filename, ["name", "path", "size", "date"])
     files = fles.get_metadata()
     for file_dict in files:
