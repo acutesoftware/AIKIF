@@ -23,7 +23,7 @@ class AgentInterfaceEnv(agt.Agent):
     def __str__(self):
         return self.name  + " is " + self.status
         
-    def send_string(self, wnd, txt):
+    def send_string(self, *args):
         """
         sends a string of text to the window 'wnd', note that this 
         must be subclassed by appropriate OS
