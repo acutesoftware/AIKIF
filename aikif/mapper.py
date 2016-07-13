@@ -77,11 +77,11 @@ class Mapper(object):
         This is a top level function and uses self.maps which 
         should be the column descriptions (in order).
         """
-        num_outouts = 0
+        #num_outouts = 0
         dist_vals = []
         group_dat = []
         events = []
-        facts = []
+        #facts = []
         
         with open(raw_file_name) as csvfile:
             reader = csv.DictReader(csvfile, fieldnames = field_names)
@@ -95,8 +95,8 @@ class Mapper(object):
                         elif self.maps[col_num].val == 'event_date':
                             events.append(row[fld])
 
-                    except:
-                       print('parsing error - shouldnt really be splitting using a comma anyway!')
+                    except Exception as ex:
+                        print('parsing error - shouldnt really be splitting using a comma anyway!', str(ex))
         
         dist_vals = sorted(list(set(group_dat)))
         
@@ -361,8 +361,8 @@ class MapColumn(object):
         try:
             txt = self.cols[num].strip(' ').strip('\n')
             return txt
-        except:
-            #print('cant put text into col ' , num, ' txt = ', txt)
+        except Exception as ex:
+            print('cant put text into col ' , num, ' txt = ', txt, ' ', str(ex))
             return ''
             
     def _parse_csv_col_rules(self):
