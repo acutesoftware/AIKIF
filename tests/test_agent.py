@@ -33,7 +33,7 @@ class AgentTest(unittest.TestCase):
     
     def test_05_agent_coords(self):
         self.assertEqual(agt.get_coords(), {'x':0, 'y':0, 'z':0, 't':0})
-        agt.set_coords({'x':546.343, 'y':-1, 'z':6949395996, 't':9})
+        agt.set_coords(x = 546.343, y = -1, z = 6949395996, t = 9)
         self.assertEqual(agt.get_coords(), {'x':546.343, 'y':-1, 'z':6949395996, 't':9})
         
     

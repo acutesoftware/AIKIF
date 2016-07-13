@@ -10,13 +10,13 @@ print(root_fldr)
 import aikif.cls_log as mod_log
 import aikif.config as mod_cfg
         
-agent_status = [  	'NONE',				# agent was never instantiated (then how would it report this?)
-                    'RUNNING', 			# agent is running
-                    'STOPPED', 		    # agent was stopped - not sure if it finished or not
-                    'FINISHED', 		# agent has finished performing its task, ready to report
-                    'READY', 			# agent has reported its results back, and is ready for next command
-                    'WAITING', 			# agent is running, but waiting on other input
-                    'ERROR', 			# agent has encountered an error it cannot handle
+agent_status = [    'NONE',             # agent was never instantiated (then how would it report this?)
+                    'RUNNING',          # agent is running
+                    'STOPPED',          # agent was stopped - not sure if it finished or not
+                    'FINISHED',         # agent has finished performing its task, ready to report
+                    'READY',            # agent has reported its results back, and is ready for next command
+                    'WAITING',          # agent is running, but waiting on other input
+                    'ERROR',            # agent has encountered an error it cannot handle
             ]
                 
 class Agent(object):
@@ -100,15 +100,15 @@ class Agent(object):
         self.status = 'RUNNING'
         self.mylog.record_process('agent', self.name + ' - starting')
     
-    def set_coords(self, coords = {'x':0, 'y':0, 'z':0, 't':0}):
+    def set_coords(self, x=0, y=0, z=0, t=0):
         """
         set coords of agent in an arbitrary world
         """
         self.coords = {}
-        self.coords['x']=coords['x']
-        self.coords['y']=coords['y']
-        self.coords['z']=coords['z']
-        self.coords['t']=coords['t']
+        self.coords['x'] = x
+        self.coords['y'] = y
+        self.coords['z'] = z
+        self.coords['t'] = t
 
     def get_coords(self):
         """
