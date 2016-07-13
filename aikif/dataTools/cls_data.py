@@ -20,13 +20,12 @@ class Data(object):
     feeds, web sites) and shouldn't have to worry too much about 
     file formats / data types.
     """
-    def __init__(self, input_data, name='unamed data', data_type='', src='', bias=[]):
+    def __init__(self, input_data, name='unamed data', data_type='', src=''):
         self.input_data = input_data
         self.content = {}
         self.name = name
         self.data_type = data_type
         self.src = src
-        self.bias = bias
         self.total_records = 0
         self.total_nodes = 0
         self.total_length = 0
