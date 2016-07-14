@@ -31,7 +31,7 @@ print(' dataSubjectAreas = ', len(dataSubjectAreas))
 class TestFileMap(unittest.TestCase):
  
     def setUp(self):
-        self.filemap = mod_filemap.FileMap(dataFileTypes, dataSubjectAreas, '.')
+        self.filemap = mod_filemap.FileMap(dataFileTypes, dataSubjectAreas)
 
     def test_01_count_dataFileTypes(self):
         self.assertEqual( len(dataFileTypes), 7)	
@@ -82,7 +82,12 @@ class TestFileMap(unittest.TestCase):
 
     def test_06_fileMap_get_full_filename(self):  
         self.assertEqual(self.filemap.get_full_filename('AAAAA', 'BBBBB'), self.filemap.get_datapath() + os.sep + 'core' + os.sep  + 'AAAAA_BBBBB.CSV')	
-
+        
+    def test_07_fileMap_get_root_folder(self):  
+        res = self.filemap.get_root_folder()
+        print('root_folder = ', res)
+        self.assertTrue('AIKIF' in res)
+        
     def test_20_check_ontology(self):
         mod_filemap.check_ontology(os.path.join(pth, 'data', 'ref', 'ontology.yaml'))
         
