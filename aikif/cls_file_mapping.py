@@ -56,10 +56,9 @@ class FileMap(object):
     """
     Provides mapping to file names
     """
-    def __init__(self, lst_type, lst_subj, localPath = '.'):
+    def __init__(self, lst_type, lst_subj):
         self.root_folder = root_folder
         self.dataPath    = root_folder + os.sep + "data"
-        self.localPath   = localPath  # not used, so why is this here? TODO - check
         self.dataFiles   = []
         
         if lst_type == []:
@@ -78,13 +77,7 @@ class FileMap(object):
         returns root path for data folder - used by other modules in aikif 
         """
         return self.root_folder 
-      
-    def get_localPath(self):
-        """ 
-        returns root path for data folder - used by other modules in aikif 
-        """
-        return self.localPath 
-      
+     
     def get_datapath(self):
         """ 
         returns root path for data folder - used by other modules in aikif 
