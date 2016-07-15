@@ -1,9 +1,6 @@
-# program.py    written by Duncan Murray 18/4/2014
-# part of AIKIF
-# standard set of programs used for each interface in ccd
-# each having the same functions (at this stage for proof
-# of concept) which allow you to call things as a normal
-# command
+#!/usr/bin/python3
+# coding: utf-8
+# programs.py
 
 import os
 import cls_log as mod_log
@@ -100,7 +97,7 @@ class Programs(object):
         
         # save to standard AIKIF structure
         
-        filemap = mod_filemap.FileMap([], [], mod_filemap.dataPath)
+        filemap = mod_filemap.FileMap([], [])
         #location_fileList = filemap.get_full_filename(filemap.find_type('LOCATION'), filemap.find_ontology('FILE-PROGRAM')[0])     
         object_fileList = filemap.get_full_filename(filemap.find_type('OBJECT'), filemap.find_ontology('FILE-PROGRAM')[0])      
         print('object_fileList = ' + object_fileList + '\n')
