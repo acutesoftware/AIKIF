@@ -137,7 +137,10 @@ class LogTest(unittest.TestCase):
         self.mylog.record_command( 'logging a string')        
         self.mylog.record_command( ['logging a list', 'more list items'])        
         self.mylog.record_command( {'01':'logging a dictionary',  '02':'more dict logging'})        
-        
+ 
+    def test_20_utf8_characters(self):
+        self.mylog.record_source('BAD_CHARS', 'α')   
+ 
         
 if __name__ == '__main__':
     unittest.main()
