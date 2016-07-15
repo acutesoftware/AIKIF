@@ -162,7 +162,7 @@ class Log(object):
         if prg == '':
             prg = 'cls_log.log' 
         logEntry = q + dte + q + delim + q + i + q + delim + q + usr + q + delim + q + hst + q + delim + q + prg + q + delim + q + txt + q + delim + '\n'
-        with open(fname, "a") as myfile:
+        with open(fname, "a", encoding='utf-8', errors='replace') as myfile:
             myfile.write(logEntry)
 
     def record_source(self, src, prg=''):
