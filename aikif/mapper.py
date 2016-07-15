@@ -91,9 +91,9 @@ class Mapper(object):
                     try:
                         #print('self.maps[', col_num, '] = ', self.maps[col_num])
                         if self.maps[col_num].val == 'group_distinct':
-                            group_dat.append(row[fld])
+                            group_dat.append(str(row[fld]))
                         elif self.maps[col_num].val == 'event_date':
-                            events.append(row[fld])
+                            events.append(str(row[fld]))
 
                     except Exception as ex:
                         print('parsing error - shouldnt really be splitting using a comma anyway!', str(ex))
