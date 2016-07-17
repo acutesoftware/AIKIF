@@ -362,7 +362,8 @@ class MapColumn(object):
             txt = self.cols[num].strip(' ').strip('\n')
             return txt
         except Exception as ex:
-            print('cant put text into col ' , num, ' txt = ', txt, ' ', str(ex))
+            #print('cant put text into col ' , num, ' txt = ', txt, ' ', str(ex))
+            # TODO - only log issues AFTER sorting out mapping validation on load
             return ''
             
     def _parse_csv_col_rules(self):
