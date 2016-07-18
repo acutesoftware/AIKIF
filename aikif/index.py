@@ -114,7 +114,7 @@ def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName='
         f = os.path.basename(ipFile)
     else:
         f = ipFile
-    with open(ndxFile, "a") as ndx:
+    with open(ndxFile, "a", encoding='utf-8', errors='replace') as ndx:
         word_keys = uniqueWords.keys()
         #uniqueWords.sort()
         for word in sorted(word_keys):
@@ -153,7 +153,10 @@ def show(title, lst, full=-1):
                     txt = txt + j + ', '
                 txt = txt + ']\n'
         num = num + 1
-    print(txt)
+    try:
+        print(txt)
+    except Exception as ex:
+        print('index.show() - cant print line, error ' + str(ex))
     
 def getWordList(ipFile, delim):
     """
@@ -165,7 +168,7 @@ def getWordList(ipFile, delim):
     totLines = 0
     #f = open(ipFile, 'r')
     #f = open(ipFile, 'r', encoding='utf-8')  # doesnt work in Python 3.4
-    with codecs.open(ipFile, "r",encoding='utf-8', errors='ignore') as f:
+    with codecs.open(ipFile, "r",encoding='utf-8', errors='replace') as f:
         for line in f:
             totLines = totLines + 1
             words = multi_split(line, delim)
@@ -206,7 +209,7 @@ def consolidate(ipFile, opFile):
     curWord = ''
     curLineNums = ''
     indexedWords = {}
-    with open(ipFile, "r") as ip:
+    with open(ipFile, "r", encoding='utf-8', errors='replace') as ip:
         for line in ip:
             cols = line.split(',')
             curFile = cols[0]
@@ -217,7 +220,7 @@ def consolidate(ipFile, opFile):
                 indexedWords[curWord] =  indexedWords[curWord] + ', ' + curFile + ' - ' + curLineNums
             else:
                 indexedWords[curWord] = curFile + ' - ' + curLineNums
-    with open(opFile, "w") as op:
+    with open(opFile, "w",encoding='utf-8', errors='replace') as op:
         op.write('word, filenames\n')  # this shows which words appear in which files
         word_keys = indexedWords.keys()
         for word in sorted(word_keys):
