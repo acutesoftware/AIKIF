@@ -1,4 +1,6 @@
-# test_index.py     written by Duncan Murray 20/3/2014
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# test_index.py
 # unit testing for AIKIF - test the indexing
 
 import unittest
@@ -33,7 +35,7 @@ class TestIndex(unittest.TestCase):
         with open(ip_file_normal, "w") as myfile:
             myfile.write('This is a normal text file\nThis particular text file has two lines\n')
         ndx.buildIndex(ip_file_normal, op_file_normal, 'N', 'N')	# run the index routine
-        self.assertEqual( CountLines(op_file_normal), 9)	# make sure there are 9 lines in index
+        self.assertEqual( count_lines(op_file_normal), 9)	# make sure there are 9 lines in index
 
     def test_02_index_odd_characters(self):
         # test.txt, aaa, 1 2 3 3
@@ -42,7 +44,7 @@ class TestIndex(unittest.TestCase):
         with open(ip_file_odd_chars, "w") as myfile:
             myfile.write('AAA_BBB\n ccc-AaA \nBbB CCC*cCc%ccC   aaa&bbb&ccc  ---AAa-$%#%$BBB')
         ndx.buildIndex(ip_file_odd_chars, op_file_odd_chars, 'N', 'N')	# run the index routine
-        self.assertEqual( CountLines(op_file_odd_chars), 3)	# make sure there are 3 lines in index
+        self.assertEqual( count_lines(op_file_odd_chars), 3)	# make sure there are 3 lines in index
 
     def test_03_wordList_function(self):
         totWords, totLines, indexedWords = ndx.getWordList(ip_file_odd_chars, [' '])
@@ -64,7 +66,7 @@ class TestIndex(unittest.TestCase):
     #        pass
 
         
-def CountLines(fname):
+def count_lines(fname):
     with open(fname) as f:
         for i, l in enumerate(f):
             pass
