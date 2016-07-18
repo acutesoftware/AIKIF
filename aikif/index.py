@@ -1,5 +1,6 @@
-# coding: utf-8
-# index.py  written by Duncan Murray 19/3/2014  (C) Acute Software
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# index.py
 # Indexes all the data in AIKIF for fast searching
 
 import os
