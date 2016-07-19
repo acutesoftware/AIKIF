@@ -9,14 +9,9 @@ import codecs
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
 sys.path.append(root_folder)
 
-
 import cls_log as mod_log
 import config as mod_cfg
 import lib.cls_filelist as mod_fl
-
-#import aikif.cls_log as mod_log
-#import aikif.config as mod_cfg
-#import aikif.lib.cls_filelist as mod_fl
 
 silent = 'N'
 if len(sys.argv) == 2:
@@ -90,7 +85,6 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
         print(format_op_row(ipFile, totLines, totWords, uniqueWords))
    
         show('uniqueWords', uniqueWords, 5)
-    #print(uniqueWords)  # this is now a DICTIONARY with no key names - TODO - how to save properly
     DisplayIndexAsDictionary(uniqueWords)
 
 def format_op_row(ipFile, totLines, totWords, uniqueWords):
@@ -232,14 +226,7 @@ def consolidate(ipFile, opFile):
             op.write('\n')
     
  
-
-#def DebugIndexing(curFile, curWord, curLineNums, line):
-#    print('line = ' + line)
-#    print('curFile = ' + curFile)
-#    print('curWord = ' + curWord)
-#    print('curLineNums = ' + curLineNums)
     
-        
 if __name__ == '__main__':
     index() 
     
