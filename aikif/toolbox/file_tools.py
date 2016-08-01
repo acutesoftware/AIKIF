@@ -56,13 +56,14 @@ def copy_files_to_folder(src, dest, xtn='*.txt'):
     """
     print('copying files from ' + src + '\nto ' + dest)
     
-    all_files = glob.glob(src + os.sep + xtn)
+    all_files = glob.glob(os.path.join(src,xtn))
     for f in all_files:
-        print(' ... copying ' + os.path.basename(f))
+        #print(' ... copying ' + os.path.basename(f))
         copy_file(f, dest)
 
 def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
     """
+    file_tools.copy_all_files_and_subfolders(src, dest, backup_path, ['*.*'])
     gets list of all subfolders and copies each file to 
     its own folder in 'dest' folder
     paths, xtn, excluded, output_file_name = 'my_files.csv')
@@ -70,6 +71,7 @@ def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
     fl = mod_fl.FileList([src], xtn_list, [os.sep + 'venv', os.sep + 'venv2', os.sep + '__pycache__', os.sep + 'htmlcov'],  '')
     all_paths = list(set([p['path'] for p in fl.fl_metadata]))
     #print('all_paths = ' , all_paths)
+    fl.save_filelist(os.path.join(dest,'files_backed_up.csv'),  ["name", "path", "size", "date"])
     
     for p in all_paths:
         dest_folder = os.path.join(dest, p[len(base_path_ignore):])
@@ -78,5 +80,5 @@ def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
                 os.makedirs(dest_folder) # create all directories, raise an error if it already exists
             except:
                 print('Error - cant create directory')
-        copy_files_to_folder(src, dest_folder, xtn='*.*')
+        copy_files_to_folder(p, dest_folder, xtn='*')
  
