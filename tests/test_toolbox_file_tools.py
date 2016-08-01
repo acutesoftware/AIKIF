@@ -57,11 +57,18 @@ class TestToolboxFileTools(unittest.TestCase):
         #self.assertEqual(os.path.exists(os.path.join(temp_fldr,'file_to_copy.txt')), True)
 
             
-    def test_06_delete_files_in_folder(self):
+    def test_07_copy_all_files_and_subfolders(self):
+        self.assertEqual(os.path.exists(temp_fldr + os.sep + 'test_toolbox_file_tools.py'), False)
+        file_tools.copy_all_files_and_subfolders(os.getcwd(), temp_fldr, os.getcwd(), ['*.py'])
+        self.assertEqual(os.path.exists(temp_fldr + os.sep + 'test_toolbox_file_tools.py'), True)
+        
+        
+    def test_12_delete_files_in_folder(self):
         file_tools.delete_file('no_such_file.txt')
         file_tools.delete_files_in_folder(temp_fldr)
         self.assertEqual(os.path.exists(temp_fldr + os.sep + 'file_to_copy.txt'), False)
-            
+
+        
          
 if __name__ == '__main__':
     unittest.main()
