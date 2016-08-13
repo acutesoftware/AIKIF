@@ -4,11 +4,12 @@
 # Base class for agents in AIKIF
 
 import os
-
+import sys
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
-print(root_fldr)
-import aikif.cls_log as mod_log
-import aikif.config as mod_cfg
+sys.path.append(root_fldr)
+
+import cls_log as mod_log
+import config as mod_cfg
         
 agent_status = [    'NONE',             # agent was never instantiated (then how would it report this?)
                     'RUNNING',          # agent is running
