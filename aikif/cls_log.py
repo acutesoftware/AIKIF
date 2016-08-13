@@ -56,20 +56,14 @@ class Log(object):
     """
     def __init__(self, fldr):
         """
-        pass the folder on command line 
+        pass the folder on command line, use os.path.join
+        to null effect if trailing os.sep if passed
         """
-        self.log_folder = fldr
-        # shitty fix to make sure os.sep isnt added twice
-        if fldr[-1] == os.sep:
-            file_delim = ''
-        else:
-            file_delim = os.sep
-        
-        
-        self.logFileProcess = self.log_folder + file_delim + 'process.log'
-        self.logFileSource  = self.log_folder + file_delim + 'source.log'
-        self.logFileCommand = self.log_folder + file_delim + 'command.log'
-        self.logFileResult  = self.log_folder + file_delim + 'result.log'
+        self.log_folder = os.path.abspath(os.path.join(fldr)) 
+        self.logFileProcess = os.path.join(self.log_folder,'process.log')
+        self.logFileSource  = os.path.join(self.log_folder,'source.log')
+        self.logFileCommand = os.path.join(self.log_folder,'command.log')
+        self.logFileResult  = os.path.join(self.log_folder,'result.log')
         ensure_dir(self.logFileCommand)  # need to pass file not the folder for this to work
         self.session_id = self.get_session_id()
         self.watch_points = []   # watch points list of dicts to watch for which represent key results
