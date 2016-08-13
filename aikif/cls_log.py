@@ -7,7 +7,7 @@ import time
 import getpass
 import socket
 import random
-import aikif.config as cfg
+import config as cfg
 
 def TEST():
     """ simple test function """
