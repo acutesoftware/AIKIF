@@ -40,6 +40,14 @@ def TEST():
     sm.filter_by_program('prog2.py', cfg.fldrs['log_folder'] + os.sep + 'prog2.txt')
   
 
+def debug(fn):
+    def wrapper(*args):
+        res = fn(*args)
+        print (fn.__name__ + ' ' +  str(args) + ': ' + str(res))
+        return res
+    return wrapper
+  
+  
 class Log(object):
     """
     Main logging class for AIKIF should record appropriate
@@ -159,6 +167,7 @@ class Log(object):
         with open(fname, "a", encoding='utf-8', errors='replace') as myfile:
             myfile.write(logEntry)
 
+    @debug
     def record_source(self, src, prg=''):
         """
         function to collect raw data from the web and hard drive
@@ -310,6 +319,7 @@ class LogSummary(object):
                     d_log_sum[dte] = 1
         return d_log_sum
     
+@debug    
 def ensure_dir(f):
     """ NOTE - not sure if this works exactly - needs a separate test """
     #print('ensure_dir: file = ' + f)
