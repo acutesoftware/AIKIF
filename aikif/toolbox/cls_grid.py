@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # cls_grid.py       written by Duncan Murray 15/6/2014
 # class to handle a grid used for board and puzzle games
 
