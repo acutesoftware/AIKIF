@@ -7,8 +7,6 @@ import glob
 import shutil
 import aikif.lib.cls_filelist as mod_fl
 
-root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "..") 
-
 def get_filelist(fldr):
     """
     extract a list of files from fldr
