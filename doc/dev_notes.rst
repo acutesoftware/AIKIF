@@ -75,3 +75,6 @@ Clean up tests and remove redundant print statements. Show output on both Linux 
 
 - 2016-05-15 core_data linking
 Working on various methods of using and linking core_data 
+
+- 2016-08-22 cleanup of code quality
+fixing various issues found by code climate
