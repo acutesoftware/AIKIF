@@ -6,7 +6,13 @@ import os
 #logging.basicConfig(filename='test_bias.log',level=logging.DEBUG,format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 import cls_log
 
-
+def debug(fn):
+    def wrapper(*args):
+        res = fn(*args)
+        print (fn.__name__ + ' ' +  str(args) + ': ' + str(res))
+        return res
+    return wrapper
+ 
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 
 bias_files = [  'bias-website.csv', 
@@ -53,6 +59,7 @@ class Bias(object):
         get_bias_rating() = returns the bias rating 0=bullshit -> 1=fact
         
     """
+    #@debug
     def __init__(self, metadata):
         """ 
         passes all data on command line leave as empty string for blank
@@ -67,7 +74,6 @@ class Bias(object):
         self._calculate_bias()
         lg.record_process('bias.py', 'bias rating = ' + str(self.bias_rating) + ' for ' + str(self.metadata))
 
-        
     def __str__(self):
         """ 
         returns a string of basic inputs and outputs 
@@ -91,7 +97,6 @@ class Bias(object):
             res += '\n'
         return res
         
-    
     def _calculate_bias(self):
         """
         returns a weighting from 0 to 1 based on the sources.
@@ -109,7 +114,7 @@ class Bias(object):
                         lg.record_process('bias.py','ERROR converting bias value to float: ' + str(b))
                     self.bias_rating *= l_bias
     
-    
+    #@debug
     def _read_bias_rating(self, short_filename):
         """
         read the bias file based on the short_filename
@@ -174,8 +179,8 @@ class Controversy(object):
             for num, r in enumerate(reader):
                 self.topics.append({'name':r[0], 'controversy':float(r[1]), 'noise':float(r[2])})
         
-        self.controversy = self.get_controversy()
-        self.noise = self.get_noise()
+        self.controversy = self.get_controversy('controversy')
+        self.noise = self.get_controversy('noise')
         
     def __str__(self):
         res = 'Controversy: '
@@ -183,17 +188,11 @@ class Controversy(object):
         res += ' controversy=' + str(self.controversy) + ' noise=' + str(self.noise) + '\n'
         return res
     
-    def get_controversy(self):
+    def get_controversy(self, item='controversy'):
         for t in self.topics:
-            #print(t)
             if t['name'] == self.topic:
-                return t['controversy']
+                return t[item]
         return 0    
-            
-    def get_noise(self):
-        for t in self.topics:
-            #print(t)
-            if t['name'] == self.topic:
-                return t['noise']
-        return 0    
+    
+
             
