@@ -33,7 +33,6 @@ def index():
     """
     lg = mod_log.Log(mod_cfg.fldrs['localPath'])
     lg.record_command('Starting indexing',  'index.py') # sys.modules[self.__module__].__file__)
-    print('silent = ', silent)
     if silent == 'N':
         print('------------------')
         print('Rebuilding Indexes')
@@ -125,9 +124,6 @@ def DisplayIndexAsDictionary(word_occurrences):
     for num, word in enumerate(word_keys):
         line_nums = word_occurrences[word]
         print(word + " ")
-        #for line_num in line_nums[0:3]:
-        #    print(str(line_num) + " ")
-        #print("\n")
         if num > 3:
             break
             
@@ -156,30 +152,26 @@ def getWordList(ipFile, delim):
     """
     extract a unique list of words and have line numbers that word appears
     """
-    #print(headersOnly)
     indexedWords = {}
     totWords = 0
     totLines = 0
-    #f = open(ipFile, 'r')
-    #f = open(ipFile, 'r', encoding='utf-8')  # doesnt work in Python 3.4
     with codecs.open(ipFile, "r",encoding='utf-8', errors='replace') as f:
         for line in f:
             totLines = totLines + 1
             words = multi_split(line, delim)
             totWords = totWords + len(words)
-            #show('orig words', words)
             for word in words:
                 cleanedWord = word.lower().strip()
                 if cleanedWord not in indexedWords:
                     indexedWords[cleanedWord] =  str(totLines)
                 else:
                     indexedWords[cleanedWord] = indexedWords[cleanedWord] + ' ' + str(totLines)
-    #print ('total words = ' + str(len(indexedWords)))
-    #show('indexedWords', indexedWords, 50)
     return totWords, totLines, indexedWords
 
 def multi_split(txt, delims):
-    """ split by multiple delimiters """
+    """ 
+    split by multiple delimiters 
+    """
     res = [txt]
     for delimChar in delims:
         txt, res = res, []
