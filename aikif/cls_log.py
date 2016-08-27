@@ -8,6 +8,7 @@ import getpass
 import socket
 import random
 import config as cfg
+from decorators import debug
 
 def TEST():
     """ simple test function """
@@ -40,14 +41,6 @@ def TEST():
     sm.filter_by_program('prog2.py', cfg.fldrs['log_folder'] + os.sep + 'prog2.txt')
   
 
-def debug(fn):
-    def wrapper(*args):
-        res = fn(*args)
-        print (fn.__name__ + ' ' +  str(args) + ': ' + str(res))
-        return res
-    return wrapper
-  
-  
 class Log(object):
     """
     Main logging class for AIKIF should record appropriate
