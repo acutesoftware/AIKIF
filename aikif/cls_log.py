@@ -339,7 +339,8 @@ def TodayAsString():
 
 def force_to_string(unknown):
     """
-    converts and unknown type to string for display purposes
+    converts and unknown type to string for display purposes.
+    
     """
     result = ''
     if type(unknown) is str:
@@ -359,7 +360,6 @@ def GetUserName():
     """ 
     return username of person logged onto host PC
     """
-    
     return getpass.getuser()
 
 def GetHostName():
