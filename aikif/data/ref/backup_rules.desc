@@ -1,0 +1,30 @@
+# backup_rules.desc
+# updated 29/8/2016
+# prototype for backup using reasonable english
+
+# Where do your files live (locations)
+Master documents drive is T:
+Backup drive is U:
+Photos drive is P:
+Music drive is M:
+Source code is in T:\user\dev
+
+# Who are the users / destinations for backups
+Me=djmurray
+family= fangorn\duncan, fangorn\fred, fangorn\jane 
+Github=https://github.com/acutesoftware
+GDrive=https://drive.google.com/drive/my-drive
+Instagram=your_instagram_url
+
+# What should be shared and to who
+Photos in P:\personal are private
+Photos in P:\cooking are public
+Documents are private
+Music is public to LAN
+Source code in T:\user\dev\src\python\aikif is public
+
+# Backups
+Each week backup all photos to U:
+Each day backup documents from T: to U:
+Each day backup cooking photos to Instagram
+
