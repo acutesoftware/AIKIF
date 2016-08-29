@@ -9,6 +9,8 @@ import socket
 import random
 import config as cfg
 from decorators import debug
+from decorators import show_timing
+
 
 def TEST():
     """ simple test function """
@@ -114,7 +116,7 @@ class Log(object):
         return this_session
         
         
-        
+    @show_timing    
     def estimate_complexity(self, x,y,z,n):
         """ 
         calculates a rough guess of runtime based on product of parameters 
@@ -160,7 +162,7 @@ class Log(object):
         with open(fname, "a", encoding='utf-8', errors='replace') as myfile:
             myfile.write(logEntry)
 
-    @debug
+    #@debug
     def record_source(self, src, prg=''):
         """
         function to collect raw data from the web and hard drive
@@ -312,7 +314,7 @@ class LogSummary(object):
                     d_log_sum[dte] = 1
         return d_log_sum
     
-@debug    
+#@debug    
 def ensure_dir(f):
     """ NOTE - not sure if this works exactly - needs a separate test """
     #print('ensure_dir: file = ' + f)
