@@ -40,9 +40,9 @@ class ToolboxHtmlToolsTest(unittest.TestCase):
         url = 'http://xkcd.com/292'
         raw_text = mod_net.get_web_page(url)
         links = mod_html.extract_page_links(raw_text, '')
-        print(len(raw_text))
-        self.assertEqual(len(raw_text) > 6000, True) 
-        self.assertEqual(len(links) > 10, True)
+        #print(len(raw_text))
+        self.assertEqual(len(raw_text) > 1000, True) 
+        self.assertEqual(len(links) > 5, True)
         self.assertEqual(mod_html.extract_content(raw_text).strip()[0:10], 'xkcd: goto')
         self.assertEqual(mod_html.extract_content(raw_text).strip()[-13:], 'More details.')
 
