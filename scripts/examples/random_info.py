@@ -26,5 +26,22 @@ Someome has a request to solve an issue
 
 """
 
+import os
+import aikif.project as prj
 
-print(desc)
+proj_fldr = os.getcwd()
+
+all_projects = prj.Projects()
+all_projects.add_ontology('researcher')
+
+prj_random = prj.Project(name='Random Information Request', desc=desc, fldr=proj_fldr)
+
+all_projects.add_project(prj_random)
+
+print(all_projects)
+
+#print(prj_random)
+
+
+
+
