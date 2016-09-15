@@ -7,7 +7,16 @@ def TEST():
     backup_rules = 'T:\\user\\dev\\src\\python\\AIKIF\\aikif\\data\\ref\\backup_rules.desc'
     p = Parse(backup_rules)
     print(p)
-    
+ 
+
+def find_key_concepts(txt):
+    """
+    parse the string 'txt' and return a list of nouns or strings 
+    that are in personal ontology lists with a weighting based on
+    likely meaning.
+    """
+    p = Parse(txt)
+ 
 class Parse(object):
     """
     Handles the parsing of english descriptions to a 
@@ -24,6 +33,7 @@ class Parse(object):
         self.users = []      # list of users who will access the files
         self.rules = []      # rules showing which users can access which locations
         self.schedules = []  # final schedules for backups
+        self.key_concepts = [] # list of key concepts (projects / strings from pers ontology)
         self._read_file()
         
 
