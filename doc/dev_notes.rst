@@ -78,3 +78,7 @@ Working on various methods of using and linking core_data
 
 - 2016-08-22 cleanup of code quality
 fixing various issues found by code climate
+
+- 2016-09-16 random_example
+working on example for capturing and logging random information
+
