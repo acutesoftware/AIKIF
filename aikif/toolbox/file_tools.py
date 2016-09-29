@@ -7,11 +7,17 @@ import glob
 import shutil
 import aikif.lib.cls_filelist as mod_fl
 
+exclude_folders = [ os.sep + 'venv', 
+                    os.sep + 'venv2', 
+                    os.sep + '__pycache__', 
+                    os.sep + 'htmlcov'
+]
+
 def get_filelist(fldr):
     """
     extract a list of files from fldr
     """
-    lst = mod_fl.FileList([fldr], ['*.*'], [os.sep + 'venv', os.sep + 'venv2', os.sep + '__pycache__', os.sep + 'htmlcov'],  '')
+    lst = mod_fl.FileList([fldr], ['*.*'], exclude_folders,  '')
     return lst.get_list()
 
 def delete_file(f, ignore_errors=False):
@@ -59,7 +65,7 @@ def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
     its own folder in 'dest' folder
     paths, xtn, excluded, output_file_name = 'my_files.csv')
     """
-    fl = mod_fl.FileList([src], xtn_list, [os.sep + 'venv', os.sep + 'venv2', os.sep + '__pycache__', os.sep + 'htmlcov'],  '')
+    fl = mod_fl.FileList([src], xtn_list, exclude_folders,  '')
     all_paths = list(set([p['path'] for p in fl.fl_metadata]))
     fl.save_filelist(os.path.join(dest,'files_backed_up.csv'),  ["name", "path", "size", "date"])
     
