@@ -18,16 +18,13 @@ class TestTemplate(unittest.TestCase):
     def setUp(self):
         unittest.TestCase.setUp(self)
 
-        
     def tearDown(self):
         unittest.TestCase.tearDown(self)
 
-    
     def test_01_txt2bin(self):
         b = crypto_tools.txt2bin(msg)
-        print('encode64 : ' + msg )
-        print('binary   : ' + b)
-        print('decode64 : ' + crypto_tools.bin2txt(b))
+        self.assertNotEqual(msg,b)
+        self.assertFalse(msg in b)
         self.assertEqual(msg,crypto_tools.bin2txt(b))
 
 if __name__ == '__main__':
