@@ -1,6 +1,6 @@
-# crypt_utils.py	written by Duncan Murray 1/5/2014
-# originally forked from lib_crypt.py		written by Duncan Murray 1/5/2014
-# functions for various ciphers, encryptions, translators
+#!/usr/bin/python3
+# coding: utf-8
+# crypto_tools.py
 
 """
 OUTPUT
@@ -26,6 +26,8 @@ import sys
 try:
     from Crypto.Cipher import AES
 except ImportError:
+    #raise ValueError('You need to install https://pypi.python.org/pypi/pycrypto/2.6.1')
+    #this may not stay here - not sure if a custom install should be required for this package
     print('You need to install https://pypi.python.org/pypi/pycrypto/2.6.1')
 
 def solve(encrypted_text):
@@ -48,8 +50,7 @@ def test_base64(msg):
     b = txt2bin(msg)
     print('encode64 : ' + msg )
     print('binary   : ' + b)
-    reCoded = bin2txt(b)
-    print('decode64 : ' + reCoded)
+    print('decode64 : ' + bin2txt(b))
 
 def test_caeser(txt):
     for i in range(0,3):
@@ -69,24 +70,35 @@ def test_crypto(msg):
 
     
 def encode64(visible_text): 
-    """ encodes a string to base 64 - not encryption but handy for hiding text from shoulder surfing  """
+    """ 
+    encodes a string to base 64 - not encryption 
+    but handy for hiding text from shoulder surfing  
+    """
     return base64.b64encode(bytes(visible_text, 'utf-8')).decode('utf-8') 
     
 def decode64(poorly_hidden_text): 
-    """ decodes base 64 string to clear text   """
+    """ 
+    decodes base 64 string to clear text   
+    """
     return base64.b64decode(poorly_hidden_text).decode('utf-8')
     
 def reverse(txt): 
-    """ reverses all letters in a string """
+    """ 
+    reverses all letters in a string 
+    """
     return txt[::-1] 
     
 def reverse_slow(txt): 
-    """ reverses all letters in a string - slower method """
+    """ 
+    reverses all letters in a string - slower method 
+    """
     return ''.join(reversed(txt))
 
 
 def jumble_words(txt):
-    """ takes a sentence and randomly shuffles the word positions """
+    """ 
+    takes a sentence and randomly shuffles the word positions 
+    """
     words = txt.split(' ')
     for _ in range(0,200):
         pos1 = random.randint(0, len(words)-1)
@@ -96,7 +108,9 @@ def jumble_words(txt):
 
 
 def caesar(msg, shift):
-    """ caeser cipher jumbles text by bit shifting -  requires Python 2.7 """
+    """ 
+    caeser cipher jumbles text by bit shifting -  requires Python 2.7 
+    """
     letters = string.ascii_lowercase
     shuffled = letters[shift:] + letters[:shift]
     table = string.maketrans(letters, shuffled) 
@@ -104,44 +118,60 @@ def caesar(msg, shift):
 
     
 def caeser2(msg, shift):
-    """ caeser cipher jumbles text by bit shifting - longer version """
-    cipherText = ""
+    """ 
+    caeser cipher jumbles text by bit shifting - longer version 
+    """
+    cipher_text = ""
     for ch in msg:
         if ch.isalpha():
-            stayInAlphabet = ord(ch) + shift 
-            if stayInAlphabet > ord('z'):
-                stayInAlphabet -= 26
-            finalLetter = chr(stayInAlphabet)
-            cipherText += finalLetter
-    return cipherText
+            stay_in_alphabet = ord(ch) + shift 
+            if stay_in_alphabet > ord('z'):
+                stay_in_alphabet -= 26
+            cipher_text += chr(stay_in_alphabet)
+    return cipher_text
     
 def encrypt_AES(key, plain_text, IV456):
+    """
+    AES encryption routine
+    """
     obj = AES.new(key, AES.MODE_CBC, IV456)
     return obj.encrypt(plain_text)
     
 def decrypt_AES(key, ciphertext, IV456):	
+    """
+    AES decryption routine
+    """    
     obj = AES.new(key, AES.MODE_CBC, IV456)
     return obj.decrypt(ciphertext)
 
     
 def txt2bin(txt): 
-    """ convert text to binary string - The code expects ascii characters in range: [ -~] """
+    """ 
+    convert text to binary string - The code 
+    expects ascii characters in range: [ -~] 
+    """
     return bin(int(binascii.hexlify(txt.encode('ascii', 'strict')), 16))
 
 def bin2txt(b):
-    """ convert binary string to text """
+    """ 
+    convert binary string to text 
+    """
     n = int(b, 2)
     return n.to_bytes((n.bit_length() + 7) // 8, 'big').decode()	
 
 
 def test_full_range():
-    """ lists the ASCII characters - currently buggy after 128 """
+    """ 
+    lists the ASCII characters - currently buggy after 128 
+    """
     for i in range(0, 128):
         char = chr(i)
         print(str(i) + '  ' + char + ' ' + txt2bin(char))
 
 def pprint_binary(txt):
-    """ splits a binary string starting with 0b into a nice 2 x 4 digit display"""
+    """ 
+    splits a binary string starting with 0b into a nice 2 x 4 digit display
+    """
     op = txt[2:].zfill(7)
     return op[:4] + '-' + op[4:]
         
