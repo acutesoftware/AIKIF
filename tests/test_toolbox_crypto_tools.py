@@ -27,6 +27,8 @@ class TestTemplate(unittest.TestCase):
         b = crypto_tools.txt2bin(msg)
         print('encode64 : ' + msg )
         print('binary   : ' + b)
-        print('decode64 : ' + bin2txt(b))
-        self.assertEqual(msg,bin2txt(b))
+        print('decode64 : ' + crypto_tools.bin2txt(b))
+        self.assertEqual(msg,crypto_tools.bin2txt(b))
 
+if __name__ == '__main__':
+    unittest.main()
