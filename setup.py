@@ -26,7 +26,8 @@ setup(
           'noise >= 1.2.2',
           'xlrd >= 0.9.0',
           'pyyaml >= 3.10',
-          'psutil > 0.1.0'
+          'psutil > 0.1.0',
+          'pycrypto > 2.6.0'
     ],
     classifiers = [
     'Development Status :: 2 - Pre-Alpha',
