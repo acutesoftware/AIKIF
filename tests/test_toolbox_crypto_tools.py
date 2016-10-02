@@ -31,7 +31,14 @@ class TestTemplate(unittest.TestCase):
         """
         wont work unless crypto installed
         """
-        pass
+        msg = 'blah blah'
+        secret = crypto_tools.encrypt_AES('key123', msg, 'iv456')
+        result = crypto_tools.decrypt_AES('key123', secret, 'iv456')
+        self.assertEqual(msg, result)
+        print('original  = ' + msg)
+        print('encrypted = ' + secret)
+        print('decrypted = ' + result)
+
         
         
     def test_03_base64(self):
