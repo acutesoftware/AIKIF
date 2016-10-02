@@ -26,6 +26,20 @@ class TestTemplate(unittest.TestCase):
         self.assertNotEqual(msg,b)
         self.assertFalse(msg in b)
         self.assertEqual(msg,crypto_tools.bin2txt(b))
+        
+    def test_02_AES(self):
+        """
+        wont work unless crypto installed
+        """
+        pass
+        
+        
+    def test_03_base64(self):
+        poorly_enrcrypted_text = crypto_tools.encode64('hi')
+        print(poorly_enrcrypted_text)
+        self.assertEqual('aGk=', poorly_enrcrypted_text)
+        
+        
 
 if __name__ == '__main__':
     unittest.main()
