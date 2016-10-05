@@ -46,6 +46,10 @@ class TestTemplate(unittest.TestCase):
         print(poorly_enrcrypted_text)
         self.assertEqual('aGk=', poorly_enrcrypted_text)
         
+    def test_10_pprint_binary(self):
+        self.assertEqual(crypto_tools.pprint_binary('0b010'), '0000-010')
+        self.assertEqual(crypto_tools.pprint_binary('0b01001'), '0001-001')
+        self.assertEqual(crypto_tools.pprint_binary('0b01101011'), '0110-1011')
         
 
 if __name__ == '__main__':
