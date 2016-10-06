@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='AIKIF',
-    version='0.1.9',
+    version='0.2.0',
     author='Duncan Murray',
     author_email='djmurray@acutesoftware.com.au',
     packages=['aikif', 'aikif.agents','aikif.agents.aggregate','aikif.agents.explore','aikif.agents.gather','aikif.agents.learn', 'aikif.dataTools','aikif.environments','aikif.lib', 'aikif.ontology','aikif.toolbox', 'aikif.web_app'],
@@ -30,7 +30,7 @@ setup(
           'pycrypto > 2.6.0'
     ],
     classifiers = [
-    'Development Status :: 2 - Pre-Alpha',
+    'Development Status :: 3 - Alpha',
     'Environment :: Web Environment',
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.4',
