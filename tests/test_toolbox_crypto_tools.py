@@ -47,9 +47,15 @@ class TestTemplate(unittest.TestCase):
         self.assertEqual('aGk=', poorly_enrcrypted_text)
         
     def test_10_pprint_binary(self):
-        self.assertEqual(crypto_tools.pprint_binary('0b010'), '0000-010')
-        self.assertEqual(crypto_tools.pprint_binary('0b01001'), '0001-001')
-        self.assertEqual(crypto_tools.pprint_binary('0b01101011'), '0110-1011')
+        pprint_renames = [
+            ['0b010', '0000-010'],
+            ['0b01001', '0001-001'],
+            ['0b01101011', '0110-1011'],
+        ]
+        
+        for rename in pprint_renames:
+            self.assertEqual(crypto_tools.pprint_binary(rename[0]), rename[1])
+
         
 
 if __name__ == '__main__':
