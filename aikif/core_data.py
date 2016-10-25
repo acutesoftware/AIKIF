@@ -63,8 +63,16 @@ class CoreData(object):
         """
         res = '\n--- Format all : ' + str(self.name) + ' -------------\n'
         res += ' parent = ' + str(self.parent) + '\n'
-        print('format_all = ', str(self.child_nodes))
-        
+        res += self._get_all_children()    
+        res += self._get_links()
+            
+        return res
+
+    def _get_all_children(self,):
+        """ 
+        return the list of children of a node
+        """
+        res = ''
         if self.child_nodes:
             for c in self.child_nodes:
                 res += ' child = ' + str(c) + '\n'
@@ -73,7 +81,13 @@ class CoreData(object):
                         res += '   child = ' + str(grandchild) + '\n'
         else:
             res += ' child = None\n'
-            
+        return res
+        
+    def _get_links(self,):
+        """ 
+        return the list of links of a node
+        """
+        res = ''
         if self.links:
             for l in self.links:
                 res += ' links = ' + str(l[0]) + '\n'
@@ -87,6 +101,9 @@ class CoreData(object):
             res += ' links = None\n'
             
         return res
+        
+    
+    
     
     def drill_down(self):
         """ 
