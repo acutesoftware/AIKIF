@@ -17,16 +17,13 @@ import config as cfg
 class LogTest(unittest.TestCase):
     
     def setUp(self):
-        """ Note, this gets called for EACH test """
         unittest.TestCase.setUp(self)
         self.mylog = mod_log.Log(test_fldr)
+        
     def tearDown(self):
-        """ called once at the end of this test class """
         unittest.TestCase.tearDown(self)
 
-
     def test_01_new_log(self):
-        #self.assertTrue(len(str(self.mylog)) > 1)
         lg = mod_log.Log(os.getcwd())
         lg.record_process('test_cls_log.py', 'TEST LOG')
         lg.record_process('test_cls_log.py', 'another log entry')
@@ -35,11 +32,9 @@ class LogTest(unittest.TestCase):
 
         sum = mod_log.LogSummary(lg, '')
         extract = sum.extract_logs(os.getcwd() + os.sep + 'process.log', 'test_cls_log.py')
-        #print('extract = ', extract)
         self.assertEqual(len(extract) > 0, True) # ['"2015-10-23 22:24:47","000000054","Dunc[1934 chars],\n'])
         
 
-        
     def test_02_get_folder(self):
         result = self.mylog.get_folder_process()
         self.assertEqual(result, test_fldr + os.sep + 'process.log')
