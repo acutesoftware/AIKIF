@@ -64,12 +64,12 @@ def build_search_form():
     return txt
  
 
-def build_edit_form(title, id, cols):
+def build_edit_form(title, id, cols, return_page):
     """ 
     returns the html for a simple edit form 
     """
     txt = '<H3>' + title + '<H3>'
-    txt += '<form action="/agents" method="POST">\n'
+    txt += '<form action="' + return_page + '" method="POST">\n' # return_page = /agents
     txt += '  updating id:' + str(id) + '\n<BR>'
     txt += '  <TABLE width=80% valign=top border=1>'
     
