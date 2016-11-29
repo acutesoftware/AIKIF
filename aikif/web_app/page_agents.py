@@ -10,7 +10,7 @@ print(root_fldr)
 def get_page():
     txt = ''
     txt += load_agent_list(os.path.join(root_fldr,"data"))
-    txt += web.build_edit_form('Agents', '001', ['Agent Name', 'Program Location', 'params'])
+    txt += web.build_edit_form('Agents', '001', ['Agent Name', 'Program Location', 'params'], '/agents')
 
     return txt
     
