@@ -2,7 +2,7 @@
 # handles the projects page for AIKIF web interface
 
 
-#import aikif.web_app.web_utils as web
+import aikif.web_app.web_utils as web
 import aikif.project as project
 import aikif.dataTools.cls_datatable as cls_datatable
 import aikif.config as mod_cfg
@@ -20,6 +20,11 @@ def get_page():
         txt += '<td>' + p.fldr + '</td>\n'
         txt += '</tr>\n'
     txt += '</table>\n'
+    
+    
+    txt += web.build_edit_form('Add Project', '002', ['Project Name', 'Folder Location', 'Details'], '/progects')
+
+    return txt
     
     return txt
     
