@@ -5,6 +5,7 @@ import sys
 import os
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif"  + os.sep + "toolbox")
 test_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "test_results" + os.sep + "log")
+#print('root_fldr = ' , root_fldr)
 sys.path.append(root_fldr)
 import Toolbox as mod_tool
 
