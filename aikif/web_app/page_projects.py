@@ -22,10 +22,8 @@ def get_page():
     txt += '</table>\n'
     
     
-    txt += web.build_edit_form('Add Project', '002', ['Project Name', 'Folder Location', 'Details'], '/progects')
+    txt += web.build_edit_form('Add Project', '002', ['Project Name', 'Folder Location', 'Details'], '/projects')
 
-    return txt
-    
     return txt
     
     
