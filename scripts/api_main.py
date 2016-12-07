@@ -2,8 +2,20 @@
 # -*- coding: utf-8 -*-
 # api_main.py
 import os
-import aikif.cls_log as mod_log
-import aikif.config as mod_cfg
+
+# odd issue running this on Windows 10, so using local version
+import sys
+root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + "aikif" )
+sys.path.append(root_fldr)
+
+#import aikif.cls_log as mod_log
+#import aikif.config as mod_cfg
+
+
+import cls_log as mod_log
+import config as mod_cfg
+
+
 
 lg = mod_log.Log(mod_cfg.fldrs['log_folder'])
 lg.record_command('api_main', 'starting API server in ' + os.getcwd())
