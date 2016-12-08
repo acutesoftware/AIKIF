@@ -7,41 +7,9 @@ import time
 import getpass
 import socket
 import random
-import config as cfg
 from decorators import debug
 from decorators import show_timing
 
-
-def TEST():
-    """ simple test function """
-    print('cfg.fldrs[localPath] = ', cfg.fldrs['localPath'])
-    print('cfg.fldrs[log_folder] = ', cfg.fldrs['log_folder'])
-    
-    
-    lg = Log(cfg.fldrs['log_folder'])
-    lg.record_process('prog1.py', 'prog1.py - recording process')
-    lg.record_source('prog1.py', 'prog1.py - recording source')
-    lg.record_command('prog1.py', 'prog1.py - recording command')
-    lg.record_result('prog1.py', 'prog1.py - OUCH - massive failure')
-    
-    lg.record_process('prog2.py', 'prog2.py - recording process')
-    lg.record_source('prog2.py', 'prog2.py - recording source')
-    lg.record_command('prog2.py', 'prog2.py - recording command')
-    lg.record_result('prog2.py', 'prog2.py - JACKPOT')
-    
-    print(lg)
-    lg.add_watch_point('JACKPOT', 9, 8)
-    lg.add_watch_point('OUCH - massive failure', 1, 8)
-    sm = LogSummary(lg, cfg.fldrs['log_folder'])
-    sm.summarise_events()
-    print(sm)
-    
-    
-    # check extract by program
-    sm.filter_by_program('test.txt', cfg.fldrs['log_folder'] + os.sep + 'test_log.txt')
-    sm.filter_by_program('prog1.py', cfg.fldrs['log_folder'] + os.sep + 'prog1.txt')
-    sm.filter_by_program('prog2.py', cfg.fldrs['log_folder'] + os.sep + 'prog2.txt')
-  
 
 class Log(object):
     """
@@ -370,5 +338,3 @@ def GetHostName():
     """
     return socket.gethostname()
             
-if __name__ == '__main__':     
-    TEST()
