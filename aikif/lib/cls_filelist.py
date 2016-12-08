@@ -8,7 +8,7 @@ import os
 import fnmatch
 import time
 from datetime import datetime
-import aikif.cls_log as mod_log
+#import aikif.cls_log as mod_log
 
 class FileListGroup(object):
     """ 
