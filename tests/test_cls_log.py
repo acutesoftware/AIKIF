@@ -116,8 +116,6 @@ class LogTest(unittest.TestCase):
     def test_13_check_missing_logs_doesnt_break_sum(self):
         print("TODO = test_13_check_missing_logs_doesnt_break_sum (will fail)")
         
-    def test_14_self_test(self):
-        mod_log.TEST()
         
     def test_15_estimate_complexity(self):
         lg = mod_log.Log(os.getcwd())
