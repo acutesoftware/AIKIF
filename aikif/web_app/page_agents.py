@@ -5,7 +5,6 @@ import os
 import web_utils as web
 
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." )
-print(root_fldr)
 
 def get_page():
     txt = ''
