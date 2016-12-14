@@ -2,7 +2,7 @@
 # handles the projects page for AIKIF web interface
 
 
-import aikif.web_app.web_utils as web
+import web_utils as web
 import aikif.project as project
 import aikif.dataTools.cls_datatable as cls_datatable
 import aikif.config as mod_cfg
