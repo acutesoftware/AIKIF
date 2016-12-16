@@ -267,6 +267,8 @@ Web app example shows how this can be used to manage AI applications run with di
 Log all results with useful milestones and checkpoints
 ``````````````
 
+Logs are defined at the start of each process, and tags are used to define what is a good result or bad result (this is different to normal exceptions or outliers).
+
 The log aggregates should show useful summaries
 
 
