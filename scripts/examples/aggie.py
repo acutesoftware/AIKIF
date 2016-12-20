@@ -16,10 +16,25 @@ import cls_log as mod_log
 
 
 def main():
-    lg = mod_log.Log(log_fldr)
-    lg.record_source('aggie.py','Hello, my name is Aggie.')
-    lg.record_source('aggie.py','base folder is ' + mod_cfg.get_root_folder()[1])
+    
+    a = Aggie()
+    print(a)
     print('done')
+    
+
+class Aggie(object):
+    """
+    main class for agent
+    """
+    
+    def __init__(self, fldr=os.getcwd()):
+        self.fldr = fldr
+        self.lg = mod_log.Log(fldr)
+        self.lg.record_source('aggie.py','Hello, my name is Aggie.')
+        self.lg.record_source('aggie.py','base folder is ' + self.fldr)
+        
+    def __str__(self):
+        return 'running aggie in ' + self.fldr
     
 main()    
     
