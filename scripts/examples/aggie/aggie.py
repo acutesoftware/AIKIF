@@ -34,6 +34,28 @@ class Aggie(object):
         
     def __str__(self):
         return 'running aggie in ' + self.fldr
-    
+
+
+
+    def answer(self, question):
+        """
+        takes a question and returns the best answer based on known skills
+        """
+        if 'weather' in question:
+            ans = 'sunny'
+        elif 'where' in question:
+            ans = '4km to the North'
+            
+        elif 'when' in question:
+            ans = 'next week'
+        else:
+            ans = 'I dont'' know'
+
+        self.lg.record_process('aggie.py', 'Question > ' +  question)
+        self.lg.record_process('aggie.py', 'Answer > ' + ans)
+        return ans
+
+
+        
 main()    
     
