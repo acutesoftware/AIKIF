@@ -26,8 +26,10 @@ class Aggie(object):
     main class for agent
     """
     
-    def __init__(self, fldr=os.getcwd()):
+    def __init__(self, fldr=os.getcwd(), skills = None, info = None):
         self.fldr = fldr
+        self.skills = skills
+        self.info = info
         self.lg = mod_log.Log(fldr)
         self.lg.record_source('aggie.py','Hello, my name is Aggie.')
         self.lg.record_source('aggie.py','base folder is ' + self.fldr)
@@ -56,6 +58,33 @@ class Aggie(object):
         return ans
 
 
+class Info(object):
+    def __init__(self):
+        self.facts = []
+        self.derived = []
+
+    def __str__(self):
+        res = 'Info=' +str( len(self.facts)) + ' facts known\n'
+        res += 'Derived Facts = ' + str(len(self.derived))
+        return res
+        
+    def add_fact(self, factiod):
+        self.facts.append(factiod)
+    
+class Skills(object):
+    def __init__(self):
+        self.skills = []
+    
+    def __str__(self):
+        res = 'Skills='
+        for s in self.skills:
+            res += str(s[0]) + ', '
+        return res
+    
+    def add_skill(self, new_skill):
+        self.skills.append(new_skill)
+    
+        
         
 main()    
     
