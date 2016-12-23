@@ -21,6 +21,7 @@ class TestAggie(unittest.TestCase):
         s = aggie.Skills()
         s.add_skill(['Get Weather', 'return weather for [City]'])
         print(s)
+        self.assertTrue(len(str(s)) > 5)
         
     def test_03_load_info(self):
         i = aggie.Info()
@@ -28,6 +29,7 @@ class TestAggie(unittest.TestCase):
         i.add_fact(['[Me]', 'What', 'I am a piece of software'])
         i.add_fact(['City', 'Adelaide', 'Town in South Australia'])
         print(i)
+        self.assertTrue(len(str(i)) > 5)
         
 if __name__ == '__main__':
     unittest.main()
