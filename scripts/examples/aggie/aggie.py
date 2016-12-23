@@ -102,6 +102,6 @@ class Skills(object):
         self.skills.append(new_skill)
     
         
-        
-main()    
+if __name__ == "__main__":        
+    main()    
     
