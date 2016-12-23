@@ -44,13 +44,12 @@ class Aggie(object):
         loops until exit command given
         """
         while self.status != 'QUIT':
-            self.command = self.get_input()
-            self.answer(self.command)
+            print(self.answer(self.get_input()))
         
         print('Bye')
     
     def get_input(self):
-        q = input(self.status)
+        q = input(self.status + ' > ')
         if q[0:3] == 'quit':
             self.status = 'QUIT'
         return q
@@ -66,9 +65,11 @@ class Aggie(object):
             
         elif 'when' in question:
             ans = 'next week'
+        elif question[0:4].lower() == 'quit':
+            print('bye')
+            sys.exit()
         else:
             ans = 'I dont'' know'
-
         self.lg.record_process('aggie.py', 'Question > ' +  question)
         self.lg.record_process('aggie.py', 'Answer > ' + ans)
         return ans
