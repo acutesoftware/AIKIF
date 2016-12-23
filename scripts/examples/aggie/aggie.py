@@ -17,6 +17,7 @@ import cls_log as mod_log
 def main():
     
     a = Aggie()
+    a.run()
     print(a)
     print('done')
     
@@ -30,6 +31,7 @@ class Aggie(object):
         self.fldr = fldr
         self.skills = skills
         self.info = info
+        self.status = 'Ready'
         self.lg = mod_log.Log(fldr)
         self.lg.record_source('aggie.py','Hello, my name is Aggie.')
         self.lg.record_source('aggie.py','base folder is ' + self.fldr)
@@ -37,7 +39,21 @@ class Aggie(object):
     def __str__(self):
         return 'running aggie in ' + self.fldr
 
-
+    def run(self):
+        """
+        loops until exit command given
+        """
+        while self.status != 'QUIT':
+            self.command = self.get_input()
+            self.answer(self.command)
+        
+        print('Bye')
+    
+    def get_input(self):
+        q = input(self.status)
+        if q[0:3] == 'quit':
+            self.status = 'QUIT'
+        return q
 
     def answer(self, question):
         """
