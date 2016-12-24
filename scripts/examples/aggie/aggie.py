@@ -43,21 +43,24 @@ class Aggie(object):
         """
         loops until exit command given
         """
-        while self.status != 'QUIT':
+        while self.status != 'EXIT':
             print(self.answer(self.get_input()))
         
         print('Bye')
     
     def get_input(self):
         q = input(self.status + ' > ')
-        if q[0:3] == 'quit':
-            self.status = 'QUIT'
+        if q.lower() == 'quit' or q.lower() == 'exit':
+            self.status = 'EXIT'
         return q
 
     def answer(self, question):
         """
         takes a question and returns the best answer based on known skills
         """
+        if self.status == 'EXIT':
+            print('bye')
+            sys.exit()
         if 'weather' in question:
             ans = 'sunny'
         elif 'where' in question:
@@ -65,9 +68,6 @@ class Aggie(object):
             
         elif 'when' in question:
             ans = 'next week'
-        elif question[0:4].lower() == 'quit':
-            print('bye')
-            sys.exit()
         else:
             ans = 'I dont'' know'
         self.lg.record_process('aggie.py', 'Question > ' +  question)
