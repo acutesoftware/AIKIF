@@ -29,8 +29,13 @@ class Aggie(object):
     
     def __init__(self, fldr=os.getcwd(), skills = None, info = None):
         self.fldr = fldr
+        
         self.skills = skills
-        self.info = info
+        
+        if info:
+            self.info = info
+        else:
+            self.info = Info()
         self.status = 'Ready'
         self.lg = mod_log.Log(fldr)
         self.lg.record_source('aggie.py','Hello, my name is Aggie.')
@@ -58,6 +63,7 @@ class Aggie(object):
         """
         takes a question and returns the best answer based on known skills
         """
+        ans = ''
         if self.status == 'EXIT':
             print('bye')
             sys.exit()
@@ -68,8 +74,14 @@ class Aggie(object):
             
         elif 'when' in question:
             ans = 'next week'
+        elif question.startswith(':LIST'):
+            for i in self.info.raw_input:
+                print('raw input = ', str(i))
+                
         else:
-            ans = 'I dont'' know'
+            #ans = 'I dont'' know'
+            ans = 'Adding info..'
+            self.info.raw_input.append(question)
         self.lg.record_process('aggie.py', 'Question > ' +  question)
         self.lg.record_process('aggie.py', 'Answer > ' + ans)
         return ans
@@ -77,6 +89,7 @@ class Aggie(object):
 
 class Info(object):
     def __init__(self):
+        self.raw_input = []
         self.facts = []
         self.derived = []
 
