@@ -12,7 +12,7 @@ class TestAggie(unittest.TestCase):
     def test_01_hard_coded_answers(self):
         a = aggie.Aggie()
         self.assertEqual(a.answer('when is my dentist appointment'),'next week')
-        self.assertEqual(a.answer('this is a contrived example'),'I dont'' know')
+        self.assertEqual(a.answer('this is a contrived example'),'Adding info..')
         self.assertEqual(a.answer('what is the weather in Spain'),'sunny')
         self.assertEqual(a.answer('where is the best picnic spot nearby'),'4km to the North')
 
