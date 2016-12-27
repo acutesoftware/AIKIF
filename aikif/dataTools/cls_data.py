@@ -3,9 +3,12 @@
 # cls_data.py
 
 import os
+import sys
 
-import aikif.cls_log as mod_log
-import aikif.config as mod_cfg
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+import cls_log as mod_log
+import config as mod_cfg
 
 #lg = mod_log.Log(mod_cfg.fldrs['log_folder'])
 lg = mod_log.Log(os.getcwd())
