@@ -20,7 +20,6 @@ class TestAggie(unittest.TestCase):
     def test_02_load_skills(self):
         s = aggie.Skills()
         s.add_skill(['Get Weather', 'return weather for [City]'])
-        print(s)
         self.assertTrue(len(str(s)) > 5)
         self.assertEqual(len(s.skills), 1)
         
@@ -29,10 +28,15 @@ class TestAggie(unittest.TestCase):
         i.add_fact(['[Me]', 'Name', 'My name is Aggie'])
         i.add_fact(['[Me]', 'What', 'I am a piece of software'])
         i.add_fact(['City', 'Adelaide', 'Town in South Australia'])
-        print(i)
         self.assertTrue(len(str(i)) > 5)
         self.assertEqual(len(i.facts), 3)
         
+    def test_04_add_info(self):
+        h = aggie.Aggie()
+        h.answer('France is a country')
+        h.answer('Red is a colour')
+        self.assertTrue(h.info.raw_input, ['France is a country', 'Red is a colour'])
+
         
 if __name__ == '__main__':
     unittest.main()
