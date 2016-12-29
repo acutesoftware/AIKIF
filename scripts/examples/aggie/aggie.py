@@ -13,14 +13,12 @@ sys.path.append(code_fldr)
 import config as mod_cfg
 import cls_log as mod_log
 
+aggie_version = '0.0.1'
 
 def main():
-    
     a = Aggie()
     a.run()
-    print(a)
-    print('done')
-    
+
 
 class Aggie(object):
     """
@@ -31,7 +29,7 @@ class Aggie(object):
         self.fldr = fldr
         
         self.skills = skills
-        
+        self.prompt = ' Aggie ' + aggie_version + ' [EXIT | :LIST | ![add raw data]  > '
         if info:
             self.info = info
         else:
@@ -54,7 +52,7 @@ class Aggie(object):
         print('Bye')
     
     def get_input(self):
-        q = input(self.status + ' > ')
+        q = input(self.status + ' ' + self.prompt)
         if q.lower() == 'quit' or q.lower() == 'exit':
             self.status = 'EXIT'
         return q
