@@ -67,7 +67,7 @@ class Aggie(object):
             sys.exit()
         
         if '?' in question:
-            print(self.info.find_answer(question))
+            ans = self.info.find_answer(question)
         elif question.startswith(':LIST'):
             for i in self.info.raw_input:
                 print('raw input = ', str(i))
