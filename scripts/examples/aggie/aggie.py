@@ -47,7 +47,7 @@ class Aggie(object):
         loops until exit command given
         """
         while self.status != 'EXIT':
-            print(self.answer(self.get_input()))
+            print(self.process_input(self.get_input()))
         
         print('Bye')
     
@@ -57,7 +57,7 @@ class Aggie(object):
             self.status = 'EXIT'
         return q
 
-    def answer(self, question):
+    def process_input(self, question):
         """
         takes a question and returns the best answer based on known skills
         """
@@ -65,17 +65,14 @@ class Aggie(object):
         if self.status == 'EXIT':
             print('bye')
             sys.exit()
-        if 'weather' in question:
-            ans = 'sunny'
-        elif 'where' in question:
-            ans = '4km to the North'
-            
-        elif 'when' in question:
-            ans = 'next week'
+        
+        if '?' in question:
+            print(self.info.find_answer(question))
         elif question.startswith(':LIST'):
             for i in self.info.raw_input:
                 print('raw input = ', str(i))
-                
+            
+            
         else:
             #ans = 'I dont'' know'
             ans = 'Adding info..'
@@ -98,6 +95,29 @@ class Info(object):
         
     def add_fact(self, factiod):
         self.facts.append(factiod)
+        
+        
+    def find_answer(self, qu):
+        """
+        This takes the question 'qu' and parses info and raw input 
+        to try and find an answer.
+        It should use the skills, and where parameters are needed it
+        should guess them if not in there - for example weather should
+        default to local location unless a [country|city] is part of question
+        """
+        if 'weather' in qu:
+            ans = 'sunny'
+        elif 'where' in qu:
+            ans = '4km to the North'
+            
+        elif 'when' in qu:
+            ans = 'next week'
+        
+        else:
+            ans = 'I dont know'
+        return ans
+        
+        
     
 class Skills(object):
     def __init__(self):
