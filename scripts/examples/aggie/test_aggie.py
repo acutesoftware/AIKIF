@@ -9,6 +9,12 @@ import os
 import aggie 
 
 class TestAggie(unittest.TestCase):
+    def test_00_aggie_version(self):
+        """ 
+        make sure we are testing the same version 
+        """
+        self.assertEqual(aggie.aggie_version, '0.0.2')
+
     def test_01_hard_coded_answers(self):
         a = aggie.Aggie()
         self.assertEqual(a.process_input('when is my dentist appointment?'),'next week')

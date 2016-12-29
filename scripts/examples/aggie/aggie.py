@@ -13,7 +13,7 @@ sys.path.append(code_fldr)
 import config as mod_cfg
 import cls_log as mod_log
 
-aggie_version = '0.0.1'
+aggie_version = '0.0.2'
 
 def main():
     a = Aggie()
