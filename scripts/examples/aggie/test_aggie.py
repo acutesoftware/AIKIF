@@ -11,10 +11,10 @@ import aggie
 class TestAggie(unittest.TestCase):
     def test_01_hard_coded_answers(self):
         a = aggie.Aggie()
-        self.assertEqual(a.answer('when is my dentist appointment'),'next week')
-        self.assertEqual(a.answer('this is a contrived example'),'Adding info..')
-        self.assertEqual(a.answer('what is the weather in Spain'),'sunny')
-        self.assertEqual(a.answer('where is the best picnic spot nearby'),'4km to the North')
+        self.assertEqual(a.process_input('when is my dentist appointment?'),'next week')
+        self.assertEqual(a.process_input('this is a contrived example'),'Adding info..')
+        self.assertEqual(a.process_input('what is the weather in Spain?'),'sunny')
+        self.assertEqual(a.process_input('where is the best picnic spot nearby?'),'4km to the North')
 
         
     def test_02_load_skills(self):
@@ -33,8 +33,8 @@ class TestAggie(unittest.TestCase):
         
     def test_04_add_info(self):
         h = aggie.Aggie()
-        h.answer('France is a country')
-        h.answer('Red is a colour')
+        h.process_input('France is a country')
+        h.process_input('Red is a colour')
         self.assertTrue(h.info.raw_input, ['France is a country', 'Red is a colour'])
 
         
