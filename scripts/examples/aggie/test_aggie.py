@@ -37,12 +37,19 @@ class TestAggie(unittest.TestCase):
         self.assertTrue(len(str(i)) > 5)
         self.assertEqual(len(i.facts), 3)
         
-    def test_04_add_info(self):
+         
+    def test_05_add_info(self):
         h = aggie.Aggie()
         h.process_input('France is a country')
         h.process_input('Red is a colour')
         self.assertTrue(h.info.raw_input, ['France is a country', 'Red is a colour'])
 
+    def test_06_find_answer(self):
+        h = aggie.Aggie()
+        self.assertEqual(h.info.find_answer('when'), 'next week')
+        
+        
+        
         
 if __name__ == '__main__':
     unittest.main()
