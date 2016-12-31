@@ -29,7 +29,7 @@ def delete_file(f, ignore_errors=False):
     except Exception as ex:
         if ignore_errors:
             return
-        print('ERROR deleting ' + f + '\n' + str(ex))
+        print('ERROR deleting file ' + str(ex))
 
 def delete_files_in_folder(fldr):
     """
@@ -46,7 +46,7 @@ def copy_file(src, dest):
     try:
         shutil.copy2(src , dest)
     except Exception as ex:
-        print('ERROR copying ' + src + '\n to ' + dest + str(ex))
+        print('ERROR copying file ' + str(ex))
     
 def copy_files_to_folder(src, dest, xtn='*.txt'):
     """
@@ -55,7 +55,6 @@ def copy_files_to_folder(src, dest, xtn='*.txt'):
     
     all_files = glob.glob(os.path.join(src,xtn))
     for f in all_files:
-        #print(' ... copying ' + os.path.basename(f))
         copy_file(f, dest)
 
 def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
