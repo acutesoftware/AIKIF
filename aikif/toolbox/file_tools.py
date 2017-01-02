@@ -46,16 +46,19 @@ def copy_file(src, dest):
     try:
         shutil.copy2(src , dest)
     except Exception as ex:
-        print('ERROR copying file ' + str(ex))
+        print('ERROR copying file')
     
 def copy_files_to_folder(src, dest, xtn='*.txt'):
     """
     copies all the files from src to dest folder
     """
     
-    all_files = glob.glob(os.path.join(src,xtn))
-    for f in all_files:
-        copy_file(f, dest)
+    try:
+        all_files = glob.glob(os.path.join(src,xtn))
+        for f in all_files:
+            copy_file(f, dest)
+    except Exception as ex:
+        print('ERROR copy_files_to_folder')
 
 def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
     """
