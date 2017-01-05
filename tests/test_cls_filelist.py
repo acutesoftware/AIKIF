@@ -9,11 +9,8 @@ import os
 import sys
 
 root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
-#root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
-print("in test_cls_filelist : root_folder = " + root_folder)
 sys.path.append(root_folder + os.sep + 'aikif' + os.sep + 'lib')
 op_folder = os.path.join(root_folder, 'tests', 'test_results')
-print("in test_cls_filelist : root_folder = " + root_folder + '\nop folder = ' + op_folder)
 
 import cls_filelist as fl 
                     
@@ -23,18 +20,24 @@ class TestClassFile(unittest.TestCase):
         self.fname = root_folder + os.sep + 'tests/test_results/cls_filelist_results1.csv'
         
     def test_01_file_result(self):
-        """print("test1 - filelist with one file")"""
+        """
+        test filelist with one file
+        """
         lst1 = fl.FileList([root_folder + os.sep + 'tests'], ['test_*.py'], [],  self.fname)
         self.assertEqual(len(lst1.get_list()) > 18, True) 
         self.assertTrue(len(lst1.TodayAsString()) > 10)
         
     def test_02_multiple_file_result(self):
-        """print("test2 - Collecting multiple file metadata")"""
+        """
+        test Collecting multiple file metadata
+        """
         lst2 = fl.FileList([root_folder + os.sep + 'tests'], ['*.*'], [],  self.fname)
         self.assertEqual(len(lst2.get_list()) > 30, True) 
         
     def test_03_exclude_files(self):
-        """print("test2 - Collecting multiple file metadata")"""
+        """
+        test exclude files
+        """
         lst3 = fl.FileList([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['*.*'], ['*.sql'],  self.fname)
         self.assertEqual(len(lst3.get_list()) > 10, True) 
         self.assertEqual(len(lst3.get_file_list([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['*.*'], ['*.sql'],VERBOSE=True)) > 10, True) 
@@ -42,12 +45,13 @@ class TestClassFile(unittest.TestCase):
         
         
     def test_04_save_filelist(self):
-        """ test saving filelist  """
+        """ 
+        test saving filelist  
+        """
         
         if os.path.isfile(self.fname):
             os.remove(self.fname)
         aikif_fl = fl.FileList([root_folder + os.sep + 'tests'], ['*.py'], [],  self.fname)
-        #print('FL = ', aikif_fl.get_list())
         aikif_fl.save_filelist(self.fname, ["name", "path", "size", "date"])
         if os.path.isfile(self.fname):
             self.assertEqual("File Exists", "File Exists") 
@@ -55,7 +59,9 @@ class TestClassFile(unittest.TestCase):
             self.assertEqual("File Exists", "Whoops - nope") 
 
     def test_05_check_metadata(self):
-        """ make sure metadata is correct for this file """
+        """ 
+        make sure metadata is correct for this file 
+        """
         lst5 = fl.FileList([os.path.dirname(os.path.abspath(__file__))], ['test_cls_filelist.py'], [],  self.fname)
         files = lst5.get_metadata()
         for file_dict in files:
@@ -65,7 +71,9 @@ class TestClassFile(unittest.TestCase):
             self.assertEqual(file_dict["path"], os.path.dirname(os.path.abspath(__file__))) 
     
     def test_06_check_duplicate_folders(self):
-        """ not really a test but more checking the version of python works as expected """
+        """ 
+        not really a test but more checking the version of python works as expected 
+        """
         lst = ['C:\\AAA', 'C:\\BBB', 'C:\\BBB', 'C:\\CCC', 'C:\\BBB', 'C:\\CCC']
         self.assertEqual(len(lst), 6)
         self.assertEqual(len(list(set(lst))), 3)
