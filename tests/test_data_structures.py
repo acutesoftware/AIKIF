@@ -10,15 +10,18 @@ import aikif.toolbox.data_structures as mod_dat
 class ToolboxDataStructuresTest(unittest.TestCase):
 
     def test_01_graph(self):
-        print('  --== Graph Test ==--')
+        """
+        Graph Test
+        """
         g = mod_dat.Graph({'1': ['2','3','4'], '2':['6','7']})
-        print('raw graph = ', g)
         self.assertEqual(g.graph,{'2': ['6', '7'], '1': ['2', '3', '4']})
         
     def test_02_get_adjacency_matrix(self):
+        """
+        get_adjacency_matrix
+        """
         g = mod_dat.Graph({'1': ['2','3','4'], '2':['6','7']})
-        mat = g.get_adjacency_matrix(True)
-        #print('\nget_adjacency_matrix =', mat)
+        mat = g.get_adjacency_matrix(False)
         self.assertEqual(mat, [ [0, 1, 1, 1, 0, 0],
                                 [1, 0, 0, 0, 1, 1],
                                 [1, 0, 0, 0, 0, 0],
@@ -27,7 +30,9 @@ class ToolboxDataStructuresTest(unittest.TestCase):
                                 [0, 1, 0, 0, 0, 0]])
         
     def test_03_node(self):
-        #print('\n  --== Node Test ==--')
+        """
+        Node Test for branches
+        """
         trunk = mod_dat.Node('root node') 
         branch1 = mod_dat.Node('1st branch')
         branch2 = mod_dat.Node('2nd branch')
@@ -44,7 +49,9 @@ class ToolboxDataStructuresTest(unittest.TestCase):
         self.assertEqual(str(branch3),'3rd branch : ( 1 links)\n  2nd twig')
         
     def test_04_node_equiv(self):
-        #print('\n  --== Node Equiv Test ==--')
+        """
+        Node Equiv Test
+        """
         trunk = mod_dat.Node('root node') 
         v1 = mod_dat.Node('Node v1')
         v2 = mod_dat.Node('Node v2')
