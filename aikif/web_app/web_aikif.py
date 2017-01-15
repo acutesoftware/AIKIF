@@ -8,7 +8,7 @@ print ("os.getcwd() = ", os.getcwd())
 
 #AIKIF_WEB_VERSION = "PROD"
 AIKIF_WEB_VERSION = "DEV"
-AIKIF_VERSION_NUM = "Version 0.1.9 (pre-alpha) - updated 22-Apr-2016"
+AIKIF_VERSION_NUM = "Version 0.2.1 (alpha) - updated 15-Jan-2017"
 
 import web_utils as web
 from flask import Flask
@@ -30,7 +30,7 @@ menu = [
 def start_server():
     if AIKIF_WEB_VERSION == "DEV":
         print("WARNING - DEBUG MODE ACTIVE")
-        app.debug = True	# TURN THIS OFF IN PRODUCTION
+        app.debug = True # TURN THIS OFF IN PRODUCTION
     app.run()
 
 ###################### ROUTING #########################
@@ -43,9 +43,9 @@ def page_home():
     txt += "<H3>Pages on this site</h3><TABLE width=80% border=0 align=centre>\n"
     for m in menu:
         txt += '<TR><TD><a href="' + m[0] + '">' + m[1] + '</a></td><td>' + m[2] + '</td></tr>\n'
-    txt += "</table><BR>\n"
-    txt += "<H3>Status</h3>\n"
-    txt += "Pre-Alpha stage\n"
+    txt += '</table><BR>\n'
+    txt += '<H3>Status</h3>\n'
+    txt += AIKIF_VERSION_NUM + ' (Mode=' + AIKIF_WEB_VERSION + ')\n'
     txt += "<BR><BR>\n"
     txt += get_footer()
     return txt

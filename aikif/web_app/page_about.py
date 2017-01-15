@@ -1,8 +1,8 @@
+#!/usr/bin/python3
+# coding: utf-8
 # page_about.py	written by Duncan Murray 31/5/2014
 # handles the about page for AIKIF web interface
 
-
-#import aikif.web_app.web_utils as web
 
 def get_page(dataFile=''):
     txt = ''
