@@ -88,6 +88,18 @@ def build_edit_form(title, id, cols, return_page):
     txt += '</form>\n'
     return txt
  
+def build_data_list(lst):
+    """ 
+    returns the html with supplied list as a HTML listbox 
+    """
+    txt = '<H3>' + List + '<H3><UL>'
+    for i in lst:
+        txt += '<LI>' + i + '</LI>'
+        
+    txt += '<UL>'
+    return txt
+ 
+ 
 def filelist2html(lst, fldr, hasHeader='N'):
     """ 
     formats a standard filelist to htmk using table formats 
@@ -181,6 +193,9 @@ def read_csv_to_html_table(csvFile, hasHeader='N'):
 
     
 def read_csv_to_html_list(csvFile):
+    """
+    reads a CSV file and converts it to a HTML List
+    """
     txt = ''
     with open(csvFile) as csv_file:
         for row in csv.reader(csv_file, delimiter=','):
