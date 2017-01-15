@@ -71,6 +71,7 @@ def build_edit_form(title, id, cols, return_page):
     txt = '<H3>' + title + '<H3>'
     txt += '<form action="' + return_page + '" method="POST">\n' # return_page = /agents
     txt += '  updating id:' + str(id) + '\n<BR>'
+    txt += '  <input type="hidden" name="rec_id" readonly value="' + str(id) + '"> '
     txt += '  <TABLE width=80% valign=top border=1>'
     
     for col_num, col in enumerate(cols):
