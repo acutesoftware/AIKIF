@@ -114,5 +114,41 @@ class WebAppWebUtilsTest(unittest.TestCase):
         self.assertEqual('<TD>3, 4, 5, </TD></TR>' in res, True)
         self.assertEqual('<TD>2</TD>' in res, True)
         
+    def test_09_build_edit_form(self):
+        title = 'name'
+        id = 1
+        cols = ['first','last']
+        return_page = 'home.html'
+        htm = web_utils.build_edit_form(title, id, cols, return_page)
+        
+        self.assertTrue('<form action="home.html" method="POST">' in htm)
+        self.assertTrue('updating id:1' in htm)
+        self.assertTrue('<div id="form_label">first</div>' in htm)
+        self.assertTrue('<div id="form_input"><input type="text" name="col_0"></div>' in htm)
+        self.assertTrue('<div id="form_label">last</div>' in htm)
+        self.assertTrue('<div id="form_input"><input type="text" name="col_0"></div>' in htm)
+        self.assertTrue('<input type="submit" name="update-form" value="Save Changes">' in htm)
+        self.assertTrue('<input type="submit" name="delete-form" value="Delete">' in htm)
+        self.assertTrue('<input type="submit" name="add-form" value="Add">' in htm)
+        self.assertTrue('</form>' in htm)
+        
+        
+        self.assertEqual(htm, """<H3>name<H3><form action="home.html" method="POST">
+  updating id:1
+<BR>  <TABLE width=80% valign=top border=1>  <TR>
+    <TD><div id="form_label">first</div></TD>
+    <TD><div id="form_input"><input type="text" name="col_0"></div></TD>
+  </TR>
+  <TR>
+    <TD><div id="form_label">last</div></TD>
+    <TD><div id="form_input"><input type="text" name="col_1"></div></TD>
+  </TR>
+  <TR><TD></TD>
+  <TD>
+    <input type="submit" name="update-form" value="Save Changes">
+    <input type="submit" name="delete-form" value="Delete">
+    <input type="submit" name="add-form" value="Add">
+  </TD></TR></TABLE></form>
+""")        
 if __name__ == '__main__':
 	unittest.main()
