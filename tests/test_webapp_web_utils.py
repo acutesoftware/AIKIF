@@ -132,6 +132,15 @@ class WebAppWebUtilsTest(unittest.TestCase):
         self.assertTrue('<input type="submit" name="delete-form" value="Delete">' in htm)
         self.assertTrue('<input type="submit" name="add-form" value="Add">' in htm)
         self.assertTrue('</form>' in htm)
+
+    def test_10_build_html_listbox(self):
+        res = web_utils.build_html_listbox(['one', 'two'], 'mylistbox')
+        #print(res)
+        self.assertEqual(res, """<select name="mylistbox" multiple="multiple">
+    <option>one</option>
+    <option>two</option>
+</select>
+""")
         
                
 if __name__ == '__main__':
