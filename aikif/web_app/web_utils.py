@@ -87,7 +87,18 @@ def build_edit_form(title, id, cols, return_page):
     txt += '  </TD></TR></TABLE>'
     txt += '</form>\n'
     return txt
- 
+
+def build_html_listbox(lst, nme):
+    """
+    returns the html to display a listbox
+    """
+    res = '<select name="' + nme + '" multiple="multiple">\n'
+    for l in lst:
+        res += '    <option>' + str(l) + '</option>\n'
+    res += '</select>\n'
+
+    return res
+    
 def build_data_list(lst):
     """ 
     returns the html with supplied list as a HTML listbox 
