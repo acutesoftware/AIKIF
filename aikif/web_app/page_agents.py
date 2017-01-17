@@ -12,8 +12,23 @@ def get_page():
     txt += web.build_edit_form('Agents', '001', ['Agent Name', 'Program Location', 'params'], '/agents')
 
     return txt
+
+
     
 def load_agent_list(fldr):
+    """
+    reads the text file showing the list of agent classes used
+    and presents counts based on the agent usage
+    """
+    res = []
+    with open(os.path.join(fldr, 'list_agent_names.txt'), 'r') as f:
+        for line in f:
+            if line != '':
+                res.append(line)
+
+    return web.build_html_listbox(res, 'agents')
+
+def load_agent_list_OLD(fldr):
     """
     reads the text file showing the list of agent classes used
     and presents counts based on the agent usage
@@ -28,7 +43,5 @@ def load_agent_list(fldr):
                 res += cols[0] + '</TD><TD>'
                 res += cols[1] + '</TD>'
                 res += '</TR><BR>\n'
-    res += '</TABLE><BR><BR>\n'
+    res += '</TABLE><BR><BR>\n'    
     
-    
-    return res
