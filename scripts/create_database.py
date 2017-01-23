@@ -29,6 +29,11 @@ def main():
     make_table(f_all, 'CORE_PEOPLE', ['id', 'name', 'key', 'value'])
     make_table(f_all, 'CORE_FACTS', ['id', 'name', 'key', 'value'])
     make_table(f_all, 'CORE_PROCESSES', ['id', 'name', 'key', 'value'])
+
+    make_table(f_all, 'ADMIN_LOG', ['id', 'date', 'program', 'details'])
+    make_table(f_all, 'ADMIN_USER', ['id', 'user', 'name'])
+	make_table(f_all, 'ADMIN_USER_ACCESS', ['id', 'user', 'table', 'grant'])
+	
     f_all.close()
     print('Done..')
     
