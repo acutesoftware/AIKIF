@@ -6,7 +6,7 @@ import os
 # Change User Settings below (currently hard coded)
 hosts = [
     dict(type='Work PC', name='xxxxxxxxx'),
-    dict(type='Home PC', name='Treebeard'),
+    dict(type='Home PC', name='treebeard'),
     dict(type='Laptop', name='Ent'),            
     dict(type='Server', name='Fangorn'),       
     dict(type='Phone',  name='GT-19001T'),       
@@ -122,6 +122,7 @@ class Context(object):
         for h in hosts:
             if h['name'] == host_name:
                 return h['type'], h['name']
+        return dict(type='Unknown', name=host_name)
         
     def get_user(self):
         """ 
