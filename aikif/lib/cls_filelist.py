@@ -173,6 +173,12 @@ class FileList(object):
         uses a List of files and collects meta data on them and saves 
         to an text file as a list or with metadata depending on opFormat.
         """
+        
+        op_folder = os.path.dirname(opFile)
+        if not os.path.exists(op_folder):
+            os.makedirs(op_folder)
+        
+        
         with open(opFile,'w') as fout:
             fout.write("fullFilename" + delim)
             for colHeading in opFormat:
