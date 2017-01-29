@@ -3,9 +3,15 @@
 # file_tools.py
 
 import os
+import sys
 import glob
 import shutil
-import aikif.lib.cls_filelist as mod_fl
+
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+pth = root_folder + os.sep + 'lib'
+sys.path.append(pth)
+
+import cls_filelist as mod_fl
 
 exclude_folders = [ os.sep + 'venv', 
                     os.sep + 'venv2', 
