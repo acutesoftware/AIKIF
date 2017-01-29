@@ -175,8 +175,9 @@ class FileList(object):
         """
         
         op_folder = os.path.dirname(opFile)
-        if not os.path.exists(op_folder):
-            os.makedirs(op_folder)
+        if op_folder is not None:   # short filename passed
+            if not os.path.exists(op_folder):
+                os.makedirs(op_folder)
         
         
         with open(opFile,'w') as fout:
