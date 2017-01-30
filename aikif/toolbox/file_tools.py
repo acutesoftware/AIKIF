@@ -57,7 +57,7 @@ def copy_file(src, dest):
 def copy_files_to_folder(src, dest, xtn='*.txt'):
     """
     copies all the files from src to dest folder
-    """
+    """ 
     
     try:
         all_files = glob.glob(os.path.join(src,xtn))
@@ -79,6 +79,7 @@ def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
     
     for p in all_paths:
         dest_folder = os.path.join(dest, p[len(base_path_ignore):])
+        #print('dest_folder = ', dest_folder)
         if not os.path.exists(dest_folder):
             try:
                 os.makedirs(dest_folder) # create all directories, raise an error if it already exists
