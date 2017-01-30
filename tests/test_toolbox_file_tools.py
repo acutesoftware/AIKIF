@@ -94,11 +94,14 @@ class TestToolboxFileTools(unittest.TestCase):
 			
 	def test_07_copy_all_files_and_subfolders(self):
 		#self.assertEqual(os.path.exists(temp_fldr + os.sep + 'test_toolbox_file_tools.py'), False)
-		pass
-		# TODO - fix this, copies too many files on travis-ci
-		#file_tools.copy_all_files_and_subfolders(os.getcwd(), temp_fldr, os.getcwd(), ['*.py'])
-		#self.assertEqual(os.path.exists(temp_fldr + os.sep + 'test_toolbox_file_tools.py'), True)
+		file_tools.copy_all_files_and_subfolders(src_fldr, dest_fldr, dest_fldr, ['*.txt'])
+		self.assertEqual(os.path.exists(dest_fldr + os.sep + 'file1.txt'), True)
 		
+		# there will be the 9 files backed up plus the CSV list
+		fl7 = file_tools.get_filelist(dest_fldr)
+		self.assertEqual(len(fl7), 10)
+
+
 		
 	def test_12_delete_files_in_folder(self):
 		# file doesn't exist, show an error to console, but pass test
