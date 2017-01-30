@@ -1,5 +1,0 @@
-,column,data_type,aikif_map
-0,event_date,str,fact (not event)
-1,event_time,str,fact (not event)
-2,evt_datetime,date,event
-3,details,str,object
