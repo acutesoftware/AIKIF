@@ -38,9 +38,9 @@ class TestClassFile(unittest.TestCase):
         """
         test exclude files
         """
-        lst3 = fl.FileList([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['*.*'], ['*.sql'],  self.fname)
-        self.assertEqual(len(lst3.get_list()) > 10, True) 
-        self.assertEqual(len(lst3.get_file_list([root_folder + os.sep + 'tests' + os.sep + 'test_results'], ['*.*'], ['*.sql'],VERBOSE=True)) > 10, True) 
+        lst3 = fl.FileList([root_folder + os.sep + 'tests'], ['*.*'], ['myenv', '__pycache__', 'htmlcov'],  self.fname)
+        self.assertEqual(len(lst3.get_list()) > 3, True) 
+       # self.assertEqual(len(lst3.get_file_list([root_folder + os.sep + 'tests'], ['*.*'], ['myenv', 'pycache'],VERBOSE=True)) > 3, True) 
         
         
         
