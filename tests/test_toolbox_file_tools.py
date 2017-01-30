@@ -5,6 +5,7 @@ import os
 import sys
 import unittest
 import time
+import shutil
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 pth = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' 
@@ -14,6 +15,9 @@ sys.path.append(pth)
 src_fldr = os.path.join(root_folder,'tests', 'test_src')
 dest_fldr = os.path.join(root_folder,'tests', 'test_dest')
 another_dest_fldr = os.path.join(root_folder,'tests', 'another_dest_fldr')
+
+
+
 import file_tools
 
 def ensure_dir(d):
@@ -131,7 +135,20 @@ class TestToolboxFileTools(unittest.TestCase):
         #print(fl)
         self.assertEqual(len(fl12), 6)  # files in folder are deleted, but the subfolders have files
 
-        
+ 
+
+    def test_99_cleanup_temp_folders(self):
+        """
+        make sure we start tests cleanly
+        To check results - comment out this test
+        """
+        time.sleep(1)
+        shutil.rmtree(src_fldr, ignore_errors=True, onerror=None)
+        shutil.rmtree(dest_fldr, ignore_errors=True, onerror=None)
+        shutil.rmtree(another_dest_fldr, ignore_errors=True, onerror=None)
+ 
+        pass
+ 
          
 if __name__ == '__main__':
     unittest.main()
