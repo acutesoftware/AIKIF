@@ -120,10 +120,8 @@ class TestToolboxFileTools(unittest.TestCase):
         # there will be the 9 files backed up plus the CSV list
         fl8 = file_tools.get_filelist(dest_fldr)
         self.assertEqual(len(fl8), 10)
+        self.assertTrue(os.path.join(dest_fldr,'files_backed_up.csv') in fl8)
 
-
-        
-        
         
     def test_12_delete_files_in_folder(self):
         # file doesn't exist, show an error to console, but pass test
@@ -147,8 +145,7 @@ class TestToolboxFileTools(unittest.TestCase):
         shutil.rmtree(dest_fldr, ignore_errors=True, onerror=None)
         shutil.rmtree(another_dest_fldr, ignore_errors=True, onerror=None)
  
-        pass
- 
+
          
 if __name__ == '__main__':
     unittest.main()
