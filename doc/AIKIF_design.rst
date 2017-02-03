@@ -3,8 +3,8 @@
 AIKIF Design
 ====================
 
-Last updated 5-Feb-2016
-AIKIF Dev version 0.1.9
+Last updated 3-Feb-2017
+AIKIF Dev version 0.2.2
 
 This document is a scratch pad area for design notes during the development of AIKIF
 
@@ -36,7 +36,7 @@ Key Concepts
 
 - define / use toolbox to populate data
 
-- build agents to collect and aggregate [the data collection is being moved to the rawdata package]
+- (???) agents to aggregate [the data collection is being moved to the rawdata package]
 
 - optional build environments for test areas  (eg File System?)
 
@@ -300,6 +300,7 @@ You need to subclass the methods do_your_job and optionally others such as check
 
 Sample Agents
 ``````````````
+Note - all gather agents moved to rawdata/scripts
 
 The explore agent looks like the following
 
@@ -346,6 +347,10 @@ The following code shows how to start and stop agents
 
 Environments [testing]
 ------------------------------
+
+Note - environments may still have a handling class in AIKIF, but the actual management will be done in Worldbuild
+
+
 This is a data structure / parameter set which allows agents to run in worlds
 
 They contain methods to self generate randomly so you can create a set of worlds with different layouts / parameters and simulate the agents running in them.
