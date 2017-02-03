@@ -52,7 +52,7 @@ def copy_file(src, dest):
     try:
         shutil.copy2(src , dest)
     except Exception as ex:
-        print('ERROR copying file')
+        print('ERROR copying file' + str(ex))
     
 def copy_files_to_folder(src, dest, xtn='*.txt'):
     """
@@ -64,7 +64,7 @@ def copy_files_to_folder(src, dest, xtn='*.txt'):
         for f in all_files:
             copy_file(f, dest)
     except Exception as ex:
-        print('ERROR copy_files_to_folder')
+        print('ERROR copy_files_to_folder - ' + str(ex))
 
 def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
     """
@@ -84,6 +84,7 @@ def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
             try:
                 os.makedirs(dest_folder) # create all directories, raise an error if it already exists
             except:
-                print('Error - cant create directory')
+                print('Error - cant create directory'  + str(dest_folder))
+                
         copy_files_to_folder(p, dest_folder, xtn='*')
  
