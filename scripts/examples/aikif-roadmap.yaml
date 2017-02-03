@@ -10,7 +10,7 @@ projects:
 
 AIKIF:
     mapper:
-        - read map file
+        - read map file (done)
         - sample map file - files
         - sample map file - data loading
         - sample map file - image downloading
@@ -18,7 +18,7 @@ AIKIF:
             
     core data:
         - work out the architecture
-        - data structures for Who, What, Where, When, Why
+        - data structures for Who, What, Where, When, Why (done)
         - sample raw data file - project management (done)
  
             
@@ -36,7 +36,7 @@ AIKIF:
     toolbox:
         - document working tools as DATA (yaml)
         - use YAML data above as auto generated MD for github
-        - add toolbox - data conversion
+        - add toolbox - data conversion (done)
         - add toolbox - image recognition
         - add toolbox - NLP
         - add toolbox - Machine Learning
@@ -44,7 +44,7 @@ AIKIF:
 virtual-AI-simulator:
     simulator:
         - define simulation parameters
-        - run simulations
+        - run simulations (done)
         
 worldbuild:
     worlds:
