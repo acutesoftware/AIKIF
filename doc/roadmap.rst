@@ -3,18 +3,9 @@ Roadmap for AIKIF
 AIKIF
 ---------------------------------------------------
 
-toolbox
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - document working tools as DATA (yaml)
-  - use YAML data above as auto generated MD for github
-  - add toolbox - data conversion
-  - add toolbox - image recognition
-  - add toolbox - NLP
-  - add toolbox - Machine Learning
-
 mapper
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - read map file
+  - read map file (done)
   - sample map file - files
   - sample map file - data loading
   - sample map file - image downloading
@@ -23,8 +14,14 @@ mapper
 core data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - work out the architecture
-  - data structures for Who, What, Where, When, Why
+  - data structures for Who, What, Where, When, Why (done)
   - sample raw data file - project management (done)
+
+API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - identify all public interfaces (progress)
+  - basic api server (done)
+  - authentication
 
 website
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,11 +30,14 @@ website
   - uses AIKIF via API
   - load public sample data (done)
 
-API
+toolbox
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - identify all public interfaces (progress)
-  - basic api server (done)
-  - authentication
+  - document working tools as DATA (yaml)
+  - use YAML data above as auto generated MD for github
+  - add toolbox - data conversion (done)
+  - add toolbox - image recognition
+  - add toolbox - NLP
+  - add toolbox - Machine Learning
 
 virtual-AI-simulator
 ---------------------------------------------------
@@ -45,7 +45,7 @@ virtual-AI-simulator
 simulator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - define simulation parameters
-  - run simulations
+  - run simulations (done)
 
 worldbuild
 ---------------------------------------------------
@@ -62,15 +62,15 @@ objects
 rawdata
 ---------------------------------------------------
 
+generate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - generate random data (done)
+
 gather
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - read emails (done)
   - read file metadata (done)
   - read documents
-
-generate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - generate random data (done)
 
 lifepim
 ---------------------------------------------------
