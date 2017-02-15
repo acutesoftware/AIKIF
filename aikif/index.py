@@ -72,7 +72,7 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
         except Exception as ex:
             print('file already deleted - ignore' + str(ex))
             
-    delims = [',', '$', '&', '"', '%', '/', '\\', '.', ';', ':', '!', '?', '-', '_', ' ', '\n', '*', '\'', '(', ')', '[', ']', '{', '}']
+    delims = [',', chr(31), '', '$', '&', '"', '%', '/', '\\', '.', ';', ':', '!', '?', '-', '_', ' ', '\n', '*', '\'', '(', ')', '[', ']', '{', '}']
     # 1st pass - index the ontologies, including 2 depths up (later - TODO)
     #buildIndex(ipFile, ndxFile, ' ', 1, 'Y')
 
