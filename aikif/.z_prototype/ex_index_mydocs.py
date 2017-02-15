@@ -22,6 +22,9 @@ print('diary_folder = ', diary_folder)
 print('local_folder = ', local_folder)
 
 manual_files_to_index = []
+
+diary_range_filter = 'D*.DAT'
+
 ndxFile = 'T:\\user\\AIKIF\\pers_data\\ndx_temp.txt'
 ndxFile_final = 'T:\\user\\AIKIF\\pers_data\\ndx_final.txt'
 
@@ -58,7 +61,7 @@ def add_diary_files_to_list(lst, fldr):
     """ 
     adds all Diary files from folder to the lst   
     """
-    fl = mod_fl.FileList([fldr], ['D2014*.DAT'], ["__pycache__", ".git"], "temp.csv")
+    fl = mod_fl.FileList([fldr], [diary_range_filter], ["__pycache__", ".git"], "temp.csv")
  
     for f in fl.get_list():
         lst.append(f)
