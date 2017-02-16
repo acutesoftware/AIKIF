@@ -1,3 +1,5 @@
 Agent:test_agent_number_685848
 AgentInterfaceEnv:Agent Enviroment Interface
 AgentInterfaceWindows:Windows Interface
+ExploreAgent:TEST - exploring_agent
+PCUsageAgent:PCUsage
