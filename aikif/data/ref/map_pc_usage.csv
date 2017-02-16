@@ -1,0 +1,36 @@
+Category,IF location,contains string,THEN App Name,Class as,Context
+Application,Right, - Message (HTML),Outlook,Email,Work
+Application,Right, - Message (Plain Text),Outlook,Email,Work
+Application,Right, - Microsoft Outlook,Outlook,Email,Work
+Application,Right, - Message (HTML),Outlook,Email,Work
+Application,Right, - Calendar,Outlook,Calendar,Work
+Application,Right, - Meeting,Outlook,Calendar,Work
+Application,Left,Toad for Oracle -,TOAD,Database,Work
+Application,Left,Microsoft Excel -,Excel,Data,Any
+Application,Any, - Microsoft Word,Word,Documentation,Any
+Application,Any, - Google Docs -,Google Docs,Documentation,Home
+Application,Any, - Google Drive -,Google Drive,File Mgt,Home
+Application,Left,C:\,Windows Explorer,File Mgt,Any
+Application,Left,D:\,Windows Explorer,File Mgt,Any
+Application,Left,T:\,Windows Explorer,File Mgt,Any
+Application,Left,W:\,Windows Explorer,File Mgt,Any
+Application,Any, - Google Sheets -,Google Sheets,Spreadsheet,Home
+Application,Right, - Notepad,Notepad,Dev Tool,Any
+Application,Any,Adobe Photoshop,Photoshop,Graphics,Any
+Application,Right, - Google Chrome,Chrome,Browser,Any
+Application,Right, - Windows Internet Explorer,IE,Browser,Any
+Application,Right, - Notepad++,Notepad++,Dev Tool,Any
+Application,Full,Desktop,Desktop,Away from PC,Any
+Application,Any, - Microsoft Visual Studio,Visual Studio,Dev Tool,Any
+Application,Right, - Acute Software's Diary,Diary,Calendar,Home
+Website,Any AND Appl == Browser,Stack Overflow -,Stack Overflow,Dev,Any
+Website,Left AND Appl == Browser,Slashdot,Slashdot,News,Any
+Website,Any AND Appl == Browser,- The Daily WTF -,(url here),Fun,Any
+Website,Any AND Appl == Browser,github,github,Dev Review,Any
+Website,Any AND Appl == Browser,Twitter,Twitter,Social Media,Any
+Website,Any AND Appl == Browser,coursera,coursera,Study,Any
+Folder,Left,D:\py,Python,Work Type,Work
+Folder,Left,U:\My Documents\_working\python,Python,Work Type,Work
+Remote,Right, - Remote Desktop Connection,Remote Desktop,Remote PC,Both
+Remote,left AND remote=True,dev,Remote Desktop,Development,Home
+Remote,left AND remote=True,prod,Remote Desktop,"Email, index",Home
