@@ -33,9 +33,9 @@ class AgentAggLoadPCUsageTest(unittest.TestCase):
         start the map_usage object
         """
         map_file = os.path.join(root_fldr, 'data', 'ref','map_pc_usage.csv')
-        print('loading map file ', map_file)
+        #print('loading map file ', map_file)
         m = mod_usage.MapUsage(map_file)
-        print(m.maps)
+        #print(m.maps)
         self.assertEqual(len(m.maps), 36)
         self.assertEqual(m.maps[1], ['Application', 'Right', ' - Message (HTML)', 'Outlook', 'Email', 'Work\n'])
         self.assertEqual(m.maps[12], ['Application', 'Left', 'C:\\', 'Windows Explorer', 'File Mgt', 'Any\n'])
