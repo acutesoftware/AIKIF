@@ -74,6 +74,10 @@ class NetworkToolsTest(unittest.TestCase):
         self.assertEqual(os.path.isfile(op_file), True)
         
     def test_07_download_file_proxy(self):
+        """
+        this is a dummy test on a non password page to check that
+        null proxy works
+        """
         url = 'https://github.com/acutesoftware/AIKIF/blob/master/LICENSE.txt'
         op_file = 'toolbox_network_download_proxy.html'
         proxy = []  # dummy test so pass no proxy
