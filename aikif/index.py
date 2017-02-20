@@ -87,6 +87,9 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
     DisplayIndexAsDictionary(uniqueWords)
 
 def format_op_row(ipFile, totLines, totWords, uniqueWords):
+    """
+    Format the output row with stats
+    """
     txt = os.path.basename(ipFile).ljust(36) + ' '
     txt += str(totLines).rjust(7) + ' '
     txt += str(totWords).rjust(7) + ' '
@@ -94,6 +97,9 @@ def format_op_row(ipFile, totLines, totWords, uniqueWords):
     return txt
 
 def format_op_hdr():
+    """
+    Build the header
+    """
     txt = 'Base Filename'.ljust(36) + ' '
     txt += 'Lines'.rjust(7) + ' '
     txt += 'Words'.rjust(7) + '  '
@@ -102,7 +108,9 @@ def format_op_hdr():
     
     
 def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName='Y'):
-    """ Save the list of unique words to the master list """
+    """ 
+    Save the list of unique words to the master list 
+    """
     if useShortFileName == 'Y':
         f = os.path.basename(ipFile)
     else:
@@ -119,7 +127,9 @@ def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName='
                 ndx.write('\n')
                 
 def DisplayIndexAsDictionary(word_occurrences):
-    """ print the index as a dict """
+    """ 
+    print the index as a dict 
+    """
     word_keys = word_occurrences.keys()
     for num, word in enumerate(word_keys):
         line_nums = word_occurrences[word]
