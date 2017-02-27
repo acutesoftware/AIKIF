@@ -2,7 +2,7 @@
 # html_tools.py
 
 from bs4 import BeautifulSoup
-import aikif.toolbox.network_tools as mod_net
+#import aikif.toolbox.network_tools as mod_net
 
 
     
