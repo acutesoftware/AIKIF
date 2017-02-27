@@ -2,12 +2,18 @@
 # network_tools.py  written by Duncan Murray 26/3/2015
 
 import os
+import sys
 import urllib
 import urllib.request
-import aikif.config as mod_cfg
-import aikif.cls_log as mod_log
 import getpass
 import socket
+
+
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+
+sys.path.append(root_folder)
+import config as mod_cfg
+import cls_log as mod_log
 
 lg = mod_log.Log(os.getcwd())  # TODO - fix this. not the best way
 
