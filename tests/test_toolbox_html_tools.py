@@ -2,9 +2,16 @@ import unittest
 import sys
 import os
 import time
-import aikif.config as mod_cfg
-import aikif.toolbox.html_tools as mod_html
-import aikif.toolbox.network_tools as mod_net
+
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+pth = root_folder + os.sep + 'aikif'
+
+#sys.path.append(pth)
+#import config as mod_cfg
+
+sys.path.append(pth + os.sep + 'toolbox' )
+import html_tools as mod_html
+import network_tools as mod_net
 
 """
 WARNING - remember to update Beautiful Soup when updating
