@@ -142,6 +142,46 @@ class WebAppWebUtilsTest(unittest.TestCase):
 </select>
 """)
         
-               
+
+    def test_90_integration__web_page(self):
+        """
+        Integration test to build a complete web form
+        """
+        op_web_list = os.getcwd() + os.sep + 'web_sample_list.html'
+        op_web_edit = os.getcwd() + os.sep + 'web_sample_edit.html'
+        
+        txt = '<HTML><HEAD>\n'
+        txt += '<title>Shopping List (AIKIF Itegration Test)</title>\n'
+        txt += '</HEAD><body><H1>Shopping List example</H1>\n'
+        
+        list_isles = ['vegetables', 'dairy', 'meat', 'bakery', 'household', 'baking', 'drinks', 'confectionary']
+        list_products = ['apples', 'bananas', 'milk', 'cheese', 'yogurt', 'steak', 'chicken', 'soap', 'bread', 'water', 'chips']
+        
+        txt += '<H2>Isles</H2><div id="isles">'
+        
+        txt += web_utils.list2html(list_isles)
+        
+        txt += '</div><BR><BR><div id="form">'
+        
+        txt += web_utils.build_edit_form('Add an item', 1, ['product', 'isle'], 'web_form_sample.html')
+
+        txt += '</div><BR><BR>'
+        txt += '\n\n<BR><BR><BR>\n<div id="footer">\n'
+        txt += 'Python version:' + sys.version + '\n'
+        txt += '</div></BODY></HTML>\n'
+
+
+        print(txt)
+        
+        with open(op_web_list, 'w') as f:
+            f.write(txt)
+        
+        
+        
+        
+        
+        
+
+        
 if __name__ == '__main__':
 	unittest.main()
