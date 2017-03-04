@@ -1,5 +1,37 @@
 # building.yaml
 
+# base actions have a rough guide of skills and costs
+
+- base_actions:
+    - join
+        uses: glue
+        time: 1
+        tools: clamps
+        skill: 7
+    
+    - slice
+        uses: none
+        time: 1
+        tools: saw
+        skill: 5
+        
+    - smelt
+        uses: coal
+        time: 3
+        tools: furnace
+        skill: 3
+        
+    - break
+        uses: none
+        time: 1
+        tools: hammer|axe|pick
+        skill: 0
+        
+        
+
+# actions are specific versions of base actions 
+# with modifiable skills and costs
+
 - actions:
     - nail: 
         type: join
@@ -15,6 +47,13 @@
 - materials:
     - pine:
         type: wood
+        
+    - hinges:
+        type: allow_movement
+        cost: 0.2
+        uses: screws
+        
+        
  
 
 
@@ -36,5 +75,9 @@
     - door:
         type: entrance
         openable: yes
-        uses: wood_planks
+        uses: 
+            - wood_planks
+            - glue
+            - hinges
+            
         
