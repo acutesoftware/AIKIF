@@ -1,0 +1,40 @@
+# building.yaml
+
+- actions:
+    - nail: 
+        type: join
+        uses: nails
+
+- base_materials:
+    - wood
+    - metal
+    - plastic
+    - brick
+    - clay
+        
+- materials:
+    - pine:
+        type: wood
+ 
+
+
+- processing:
+    - bricks:
+        uses: clay
+        action: smelt
+        time: 1
+        yield: 90%
+        
+    - wood_planks:    
+        uses: wood
+        action: slice
+        time: 1
+        yield: 80%
+
+    
+- schematics:
+    - door:
+        type: entrance
+        openable: yes
+        uses: wood_planks
+        
