@@ -17,7 +17,7 @@ setup(
     long_description=open('README.txt').read(),
     install_requires=[
           'nose >= 1.0',
-          'flask >= 0.10.1',
+          'flask >= 0.12',
           'flask-httpauth >= 2.3.0',
           'flask-restful >= 0.3.1',
           'requests >= 2.3',
