@@ -9,7 +9,7 @@ root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.se
 pth = root_folder + os.sep + 'aikif' + os.sep + 'toolbox' 
 sys.path.append(pth)
 
-import ???_tools
+#import ???_tools
 
 
 class TestTemplate(unittest.TestCase):
