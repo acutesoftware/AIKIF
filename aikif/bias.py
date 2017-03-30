@@ -97,6 +97,9 @@ class Bias(object):
         Due to fractions multiplying resulting in very small 
         numbers, adding 0.5 to bias calculations which means
         actual range is 0.5 -> 1.5 (still testing)
+        
+        Note - range should be from 0 - > 1
+        
         """
         for m in self.metadata:
             for b in self.bias_details:
