@@ -1,6 +1,6 @@
-##AIKIF
+# AIKIF
 
-Artificial Intelligence Knowledge Information Framework (Alpha)
+#### Artificial Intelligence Knowledge Information Framework (Alpha)
 
 [![Build Status](https://travis-ci.org/acutesoftware/AIKIF.svg?branch=master)](https://travis-ci.org/acutesoftware/AIKIF) [![PyPI version](https://badge.fury.io/py/AIKIF.svg)](http://badge.fury.io/py/AIKIF) [![Code Health](https://landscape.io/github/acutesoftware/AIKIF/master/landscape.svg?style=flat)](https://landscape.io/github/acutesoftware/AIKIF/master) [![Code Climate](https://codeclimate.com/github/acutesoftware/AIKIF/badges/gpa.svg)](https://codeclimate.com/github/acutesoftware/AIKIF) [![Coverage Status](https://coveralls.io/repos/acutesoftware/AIKIF/badge.svg)](https://coveralls.io/r/acutesoftware/AIKIF) [![Requirements Status](https://requires.io/github/acutesoftware/AIKIF/requirements.svg?branch=master)](https://requires.io/github/acutesoftware/AIKIF/requirements/?branch=master) [![Join the chat at https://gitter.im/acutesoftware/AIKIF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/acutesoftware/AIKIF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
 
@@ -21,7 +21,7 @@ A tool is any python wrapped function or application and is easily extensible.<b
 
 
 
-##Quick Start
+## Quick Start
 This github repository [https://github.com/acutesoftware/AIKIF](https://github.com/acutesoftware/AIKIF) contains the latest code, but the current public release is available via
 
 `pip install aikif`
@@ -41,7 +41,7 @@ To start the API server use `aikif/api_main.py` and run the `tests/test_api.py`
 ![screenshot of web interface](https://github.com/acutesoftware/AIKIF/blob/master/doc/web-if-v02.jpg "Screenshot of web interface") 
 
 
-####Simple Usage
+#### Simple Usage
 In its simplest form AIKIF can be used to manage your projects and tasks, by updating information from scripts and tracking via the web application
 ```
 my_biz = project.Project(name='Acute Software', type='business', desc='Custom Software')
@@ -49,7 +49,7 @@ my_biz.add_detail('website', 'http://www.acutesoftware.com.au')
 my_biz.add_detail('email', 'djmurray@acutesoftware.com.au')
 ```
 
-####Logging data
+#### Logging data
 You can use AIKIF as a database to manage adhoc data logging tasks
 ```
 proj2 = project.Project(name='Sales Log', desc='Record list of sales')
@@ -61,7 +61,7 @@ proj2.record(tbl_exp, 'Expense', ['2015-02-15', 29.00, 'petrol'])
 proj2.record(tbl_exp, 'Expense', ['2015-02-17', 89.95, 'fringe tickets'])
 ```
 
-####Data Collection Usage
+#### Data Collection Usage
 
 ```
 p = aikif.project.Project('update Country reference', type='Auto')
@@ -77,7 +77,7 @@ p.execute()
 This will execute the methods for each task using the specified parameters to update the table from the web
 
 
-####Map information
+#### Map information
 Define how columns in raw data should be mapped
 ```
 m = aikif.mapper('custom mapper for countries', tbl = 'S_REF_COUNTRY')
@@ -88,7 +88,7 @@ m.add_col('Population', data_type='NUMBER', map_to_col='POPULATION')
 ```
 
 
-####Define your own Toolbox methods
+#### Define your own Toolbox methods
 Say you have a program 'my_average.py' which calculates averages that you want to include in the toolbox methods
 ```
 t = aikif.toolbox.Toolbox()
@@ -104,7 +104,7 @@ p2.add_param(task=2, group_by_col = 'CONTINENT', measure_col='POPULATION' )
 p2.execute()  # with no parameters, data outputs to console
 ```
 
-###More Information
+### More Information
 [Requirements Documentation](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_requirements.rst)<br />
 [Design Notes](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_design.rst)<br />
 [Overview Diagram](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg)<br />
