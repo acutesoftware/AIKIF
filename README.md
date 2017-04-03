@@ -1,6 +1,6 @@
-#AIKIF
+##AIKIF
 
-#####Artificial Intelligence Knowledge Information Framework (Alpha)
+Artificial Intelligence Knowledge Information Framework (Alpha)
 
 [![Build Status](https://travis-ci.org/acutesoftware/AIKIF.svg?branch=master)](https://travis-ci.org/acutesoftware/AIKIF) [![PyPI version](https://badge.fury.io/py/AIKIF.svg)](http://badge.fury.io/py/AIKIF) [![Code Health](https://landscape.io/github/acutesoftware/AIKIF/master/landscape.svg?style=flat)](https://landscape.io/github/acutesoftware/AIKIF/master) [![Code Climate](https://codeclimate.com/github/acutesoftware/AIKIF/badges/gpa.svg)](https://codeclimate.com/github/acutesoftware/AIKIF) [![Coverage Status](https://coveralls.io/repos/acutesoftware/AIKIF/badge.svg)](https://coveralls.io/r/acutesoftware/AIKIF) [![Requirements Status](https://requires.io/github/acutesoftware/AIKIF/requirements.svg?branch=master)](https://requires.io/github/acutesoftware/AIKIF/requirements/?branch=master) [![Join the chat at https://gitter.im/acutesoftware/AIKIF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/acutesoftware/AIKIF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
 
