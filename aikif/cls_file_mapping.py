@@ -7,7 +7,7 @@ import config as mod_cfg
 import yaml
 
 root_folder   = mod_cfg.fldrs['root_path']
-dataPath      = root_folder + os.sep + "data"
+dataPath      = root_folder + os.sep + 'aikif' + os.sep + "data"
 dataFiles     = [] 
 
 
@@ -58,7 +58,7 @@ class FileMap(object):
     """
     def __init__(self, lst_type, lst_subj):
         self.root_folder = root_folder
-        self.dataPath    = root_folder + os.sep + "data"
+        self.dataPath    = root_folder + os.sep + "aikif" + os.sep + "data"
         self.dataFiles   = []
         
         if lst_type == []:
