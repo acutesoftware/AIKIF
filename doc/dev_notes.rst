@@ -82,3 +82,5 @@ fixing various issues found by code climate
 - 2016-09-16 random_example
 working on example for capturing and logging random information
 
+- 2017-05-13 prototype for implementing thought process
+at a macro level, try out ideas for iterating over scenarios to simulate the result of thinking
