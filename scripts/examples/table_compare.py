@@ -11,18 +11,7 @@ sys.path.append(root_folder + os.sep + 'dataTools')
 
 import cls_datatable as cl
 
-
 with open('dummy_table1.csv', "w") as f:
-    f.writelines(
-"""TERM,GENDER,ID,tot1,tot2,tot3
-5300,F,00078,18,66,45
-7310,M,00078,16,465,64
-7310,F,00078,30,2,3
-7310,F ,00016,25,12,2
-5320,M,00016,31,0,66
-7310,F,00016,67,873,2""")
-
-with open('dummy_table2.csv', "w") as f:
     f.writelines(
 """TERM,Gender,ID,tot1,tot2
 5300,F,00078,18,66
@@ -32,6 +21,17 @@ with open('dummy_table2.csv', "w") as f:
 7310,F,00016,25,12
 5300,M,00016,31,0 
 7310,F,00016,67,873""")
+
+with open('dummy_table2.csv', "w") as f:
+    f.writelines(
+"""TERM,GENDER,ID,tot1,tot2,tot3
+5300,F,00078,18,66,45
+7310,M,00078,16,465,64
+7310,F,00078,30,2,3
+7310,F ,00016,25,12,2
+5320,M,00016,31,0,66
+7310,F,00016,67,873,2""")
+
 
 old_table = 'dummy_table1.csv'
 new_table = 'dummy_table2.csv'
@@ -59,23 +59,33 @@ def main():
     
     print('Comparing tables ' )
 
-    print(check_col_names(t_old, t_new))
-    print(check_rows(t_old, t_new))
+    res, pass_fail = check_col_names(t_old, t_new)
+    print(res)
+    if pass_fail != 'OK':
+        print('Bypassing exact row test, as columns are different')
+    else:
+        print(check_rows(t_old, t_new))
 
+    res, pass_fail = compare_values(t_old, t_new)
+    print(res)
+    
+    
     
     
 def check_col_names(t_old, t_new):
     res = '\n -- Column Name check -- \n'
-
+    pass_fail = 'OK'
     for col_num, c in enumerate(t_old.header):
         if len(t_new.header) >= col_num + 1:
             if c == t_new.header[col_num]:
                 res += c + ' ok\n'
             else:
                 res += c + ' different name (now ' + t_new.header[col_num] + ')\n'
+                pass_fail = 'Different Name'
         else:
             res += c + ' is missing in new table\n'
-    return res
+            pass_fail = 'Missing Column'
+    return res, pass_fail
     
     
 def check_rows(t_old, t_new):
@@ -90,6 +100,22 @@ def check_rows(t_old, t_new):
         else:
             res += r + ' is missing in new table\n'
     return res
+    
+def compare_values(t_old, t_new):
+    res = '\n -- compare_values -- \n'
+    pass_fail = 'OK'
+
+    for row_num, r in enumerate(t_old.arr):
+        if len(t_new.arr) >= row_num + 1:
+            for col_num, c in enumerate(r):
+                if c == t_new.arr[row_num][col_num]:
+                    #res += c + ' ok\n'
+                    pass
+                else:
+                    res += ' different value in [' + str(row_num) + '][' + str(col_num) + '] was ' + c +  ' => ' + t_new.arr[row_num][col_num] + '\n'
+                    pass_fail = 'Different value'
+
+    return res, pass_fail
     
    
 
