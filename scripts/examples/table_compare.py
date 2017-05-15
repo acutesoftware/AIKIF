@@ -112,7 +112,7 @@ def compare_values(t_old, t_new):
                     #res += c + ' ok\n'
                     pass
                 else:
-                    res += ' different value in [' + str(row_num) + '][' + str(col_num) + '] was ' + c +  ' => ' + t_new.arr[row_num][col_num] + '\n'
+                    res += ' different value in r[' + str(row_num) + ']c[' + str(col_num) + '] ' + t_new.header[col_num] + ' was ' + c +  ' => ' + t_new.arr[row_num][col_num] + '\n'
                     pass_fail = 'Different value'
 
     return res, pass_fail
