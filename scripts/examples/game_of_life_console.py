@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # game_of_life_console.py
 import os
 import sys
@@ -5,11 +7,18 @@ import time
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
 lib_folder = os.path.abspath(cur_folder + os.sep + ".." +  os.sep + "toolbox" )
-aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
+aikif_folder = os.path.abspath(cur_folder + os.sep + ".." + os.sep + ".."  )
 
-import aikif.toolbox.cls_grid_life as mod_grid
-import aikif.cls_log as mod_log
-import aikif.config as cfg
+
+print('cur_folder = ', cur_folder)
+print('lib_folder = ', lib_folder)
+print('aikif_folder = ', aikif_folder)
+
+sys.path.append(aikif_folder + os.sep + 'aikif')
+from toolbox import cls_grid_life as mod_grid
+from toolbox import cls_grid as mod_grid # 
+import cls_log as mod_log
+import config as cfg
 lg = mod_log.Log(cfg.fldrs['log_folder'])
 
 lg.record_process("Running Game of Life Console...")
@@ -59,6 +68,9 @@ def set_random_starting_grid(lfe):
     set of patterns (just to make it interesting)
     """
     cls_patterns = mod_grid.GameOfLifePatterns(25)
+    print(cls_patterns)
+    exit(0)
+    
     patterns = cls_patterns.get_patterns()
     for pattern in patterns:
         lfe.set_tile(pattern[0], pattern[1], 1)
