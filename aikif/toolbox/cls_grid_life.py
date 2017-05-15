@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # cls_grid_life.py
 
 import os
@@ -7,9 +9,9 @@ cur_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
 lib_folder = os.path.abspath(cur_folder )
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 
-import aikif.toolbox.cls_grid as mod_grid # 
+from . import cls_grid
 
-class GameOfLife(mod_grid.Grid):
+class GameOfLife(cls_grid.Grid):
     """
     Extend Grid class to support Game of Life
     """
@@ -60,7 +62,17 @@ class GameOfLifePatterns(object):
                              ]
         for _ in range(num_patterns):
             pattern_to_add = random.choice(self.pattern_list)
+            print('pattern_to_add = ', pattern_to_add)
+            print('sys.modules = ')
+            import pprint
+            pprint.pprint(sys.modules)
+            
+            
             methodToCall = getattr(sys.modules['cls_grid_life'], pattern_to_add)
+            
+            print('methodToCall = ', methodToCall)
+            
+            
             result = methodToCall()
             self.patterns.extend(self.random_offset(self.bitmap_pattern_to_list(result)))
 
