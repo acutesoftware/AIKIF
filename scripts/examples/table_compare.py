@@ -13,7 +13,7 @@ import cls_datatable as cl
 
 with open('dummy_table1.csv', "w") as f:
     f.writelines(
-"""TERM,Gender,ID,tot1,tot2
+"""TERM,GENDER,ID,tot1,tot2
 5300,F,00078,18,66
 7310,M,00078,18,465
 7310,M,00078,10,12
@@ -70,7 +70,8 @@ def main():
     print(res)
     
     
-    
+    print('Comparing distinct values....')
+    print(distinct_values(t_old, t_new))
     
 def check_col_names(t_old, t_new):
     res = '\n -- Column Name check -- \n'
@@ -98,7 +99,7 @@ def check_rows(t_old, t_new):
             else:
                 res += str(r) + ' different values (now ' + str(t_new.arr[row_num]) + ')\n'
         else:
-            res += r + ' is missing in new table\n'
+            res += str(r) + ' is missing in new table\n'
     return res
     
 def compare_values(t_old, t_new):
@@ -117,7 +118,31 @@ def compare_values(t_old, t_new):
 
     return res, pass_fail
     
-   
+def distinct_values(t_old, t_new):   
+    """
+    for all columns, check which values are not in 
+    the other table
+    """
+    for new_col in t_new.header:
+        dist_new = t_new.get_distinct_values_from_cols([new_col])
+        #print('NEW Distinct values for ' + new_col + ' = ' + str(dist_new))
+        for old_col in t_old.header:
+            if old_col == new_col:
+                dist_old = t_old.get_distinct_values_from_cols([old_col])
+                #print('OLD Distinct values for ' + old_col + ' = ' + str(dist_old))
+                
+                # Now compare the old and new values to see what is different
+                not_in_new = [x for x in dist_old[0] if x not in dist_new[0]]
+                if not_in_new != []:
+                    print(old_col + ' not_in_new = ' , not_in_new)
+                    
+                not_in_old = [x for x in dist_new[0] if x not in dist_old[0]]
+                if not_in_old != []:
+                    print(new_col + ' not_in_old = ' , not_in_old)
+                    
+                    
+    
+    return 'done'
 
 if __name__ == '__main__':
     main()    
