@@ -38,7 +38,7 @@ new_table = 'dummy_table2.csv'
 
 
 def main():
-
+    analysis = []
     if len(sys.argv) != 3:
         print('usage:')
         print('table_compare.py "TABLE1.CSV" "TABLE2.CSV":')
@@ -60,18 +60,22 @@ def main():
     print('Comparing tables ' )
 
     res, pass_fail = check_col_names(t_old, t_new)
-    print(res)
+    #print(res)
+    analysis.append(res)
     if pass_fail != 'OK':
         print('Bypassing exact row test, as columns are different')
     else:
         print(check_rows(t_old, t_new))
 
     res, pass_fail = compare_values(t_old, t_new)
-    print(res)
+    analysis.append(res)
     
     
     print('Comparing distinct values....')
-    print(distinct_values(t_old, t_new))
+    analysis.append(distinct_values(t_old, t_new))
+    
+    import pprint
+    pprint.pprint(analysis)
     
 def check_col_names(t_old, t_new):
     res = '\n -- Column Name check -- \n'
@@ -123,6 +127,7 @@ def distinct_values(t_old, t_new):
     for all columns, check which values are not in 
     the other table
     """
+    res = []
     for new_col in t_new.header:
         dist_new = t_new.get_distinct_values_from_cols([new_col])
         #print('NEW Distinct values for ' + new_col + ' = ' + str(dist_new))
@@ -134,15 +139,17 @@ def distinct_values(t_old, t_new):
                 # Now compare the old and new values to see what is different
                 not_in_new = [x for x in dist_old[0] if x not in dist_new[0]]
                 if not_in_new != []:
-                    print(old_col + ' not_in_new = ' , not_in_new)
+                    #print(old_col + ' not_in_new = ' , not_in_new)
+                    res.append(['Not in New', old_col, not_in_new])
                     
                 not_in_old = [x for x in dist_new[0] if x not in dist_old[0]]
                 if not_in_old != []:
-                    print(new_col + ' not_in_old = ' , not_in_old)
+                    #print(new_col + ' not_in_old = ' , not_in_old)
+                    res.append(['Not in Old', new_col, not_in_old])
                     
                     
     
-    return 'done'
+    return sorted(res)
 
 if __name__ == '__main__':
     main()    
