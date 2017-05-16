@@ -310,7 +310,7 @@ class DataTable(object):
         
     def get_col_data_by_name(self, col_name, WHERE_Clause=''):
         """ returns the values of col_name according to where """
-        print('get_col_data_by_name: col_name = ', col_name, ' WHERE = ', WHERE_Clause)
+        #print('get_col_data_by_name: col_name = ', col_name, ' WHERE = ', WHERE_Clause)
         col_key = self.get_col_by_name(col_name)
         if col_key is None:
             print('get_col_data_by_name: col_name = ', col_name, ' NOT FOUND')
