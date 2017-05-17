@@ -1,0 +1,35 @@
+results
+
+ -- Column Name check -- 
+TERM ok
+GENDER ok
+ID ok
+tot1 ok
+tot2 ok
+
+
+ -- compare_values -- 
+ different value in r[1]c[3] tot1 was 18 => 16
+ different value in r[2]c[1] GENDER was M => F
+ different value in r[2]c[3] tot1 was 10 => 30
+ different value in r[2]c[4] tot2 was 12 => 2
+ different value in r[3]c[1] GENDER was F => F 
+ different value in r[3]c[2] ID was 00078 => 00016
+ different value in r[3]c[3] tot1 was 30 => 25
+ different value in r[3]c[4] tot2 was 2 => 12
+ different value in r[4]c[0] TERM was 7310 => 5320
+ different value in r[4]c[1] GENDER was F => M
+ different value in r[4]c[3] tot1 was 25 => 31
+ different value in r[4]c[4] tot2 was 12 => 0
+ different value in r[5]c[0] TERM was 5300 => 7310
+ different value in r[5]c[1] GENDER was M => F
+ different value in r[5]c[3] tot1 was 31 => 67
+ different value in r[5]c[4] tot2 was 0  => 873
+
+Not in New,tot1,[10]
+Not in New,tot2,[0 ]
+Not in Old,GENDER,[F ]
+Not in Old,TERM,[5320]
+Not in Old,tot1,[16]
+Not in Old,tot2,[0]
+
