@@ -38,7 +38,7 @@ new_table = 'dummy_table2.csv'
 
 
 def main():
-    analysis = []
+    analysis = cl.DataTable('Results' , ',', col_names = ['results'])
     if len(sys.argv) != 3:
         print('usage:')
         print('table_compare.py "TABLE1.CSV" "TABLE2.CSV":')
@@ -61,18 +61,22 @@ def main():
 
     res, pass_fail = check_col_names(t_old, t_new)
     #print(res)
-    analysis.append(res)
+    analysis.add([res])
     if pass_fail != 'OK':
         print('Bypassing exact row test, as columns are different')
     else:
         print(check_rows(t_old, t_new))
 
     res, pass_fail = compare_values(t_old, t_new)
-    analysis.append(res)
-    
+    analysis.add([res])
+    print(analysis.arr)
     
     print('Comparing distinct values....')
-    analysis.append(distinct_values(t_old, t_new))
+    res = distinct_values(t_old, t_new)
+    for r in res:
+        analysis.add(r)
+        
+    analysis.save_csv('results.csv', write_header_separately=True)
     
     import pprint
     pprint.pprint(analysis)
