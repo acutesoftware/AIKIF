@@ -49,14 +49,14 @@ def main():
     rules = load_rules()
     
     for m in maps:
-        print('AIKIF mapping  : ' + m[0] + ' => ' + m[1])
+        print(('AIKIF mapping  : ' + m[0] + ' => ' + m[1]))
 
     for rule in rules:
         #print(rule)
         if rule[0] == 'agg':
-            print('summing        : ' + rule[1] + ' into ' +  rule[2] )
+            print(('summing        : ' + rule[1] + ' into ' +  rule[2] ))
         elif rule[0] == 'derive':
-            print('New column     : ' + rule[1] + ' = ' + rule[2] + ' WHERE ' + rule[1] + ' ELSE ' + rule[3] )
+            print(('New column     : ' + rule[1] + ' = ' + rule[2] + ' WHERE ' + rule[1] + ' ELSE ' + rule[3] ))
     
     print('Done\n')
     
@@ -67,7 +67,7 @@ def read_bank_statements(fname):
     this is normally load from CSV but put in list for example
     format is - DATE | AMOUNT  | DETAILS
     """
-    print("TODO = read from file " + fname)
+    print(("TODO = read from file " + fname))
     return [  
     ['27-06-14',	-53.34,	"BUNNINGS 412000   MARION"],      
     ['27-06-14',	-19,   "BECKS BAKEHOUSE SP  SOMERTON PARK"],   	

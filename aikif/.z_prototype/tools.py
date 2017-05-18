@@ -11,7 +11,7 @@ import aikif.config as mod_cfg
 
 aikif_dir = mod_cfg.core_folder # os.path.dirname(os.path.abspath(__file__))
 fldr = os.path.abspath(aikif_dir + os.sep + "aikif" + os.sep + "toolbox" )
-print('tools.py : fldr = ' + fldr)
+print(('tools.py : fldr = ' + fldr))
 
 sys.path.append(fldr) # YUCK - but doesnt seem to work otherwise
 
@@ -64,7 +64,7 @@ def main():
     args = [1,2,3,4,5,6,7]
     for ndx in range(0,1):
         testResult = tl.run(tl.lstTools[ndx], args, 'N')
-        print('Ran test on ', os.path.basename(tl.lstTools[ndx]['file']) + '->' + tl.lstTools[ndx]['function'], ' Result = ', testResult)
+        print(('Ran test on ', os.path.basename(tl.lstTools[ndx]['file']) + '->' + tl.lstTools[ndx]['function'], ' Result = ', testResult))
 
     run_multiple(tl, tl.lstTools[0], 5)
     
@@ -78,8 +78,8 @@ def run_multiple(t1, tool, numIterations, silent='Y'):
         #print('testname = ', testname)
         answer = t1.run(tool, args, silent)
         results.append({'tool':testname, 'args':args, 'result':answer})
-    print("Method1 = ", time.time() - start_time, "seconds")
-    print('Done processing ' + str(len(results)) + ' calculations')
+    print(("Method1 = ", time.time() - start_time, "seconds"))
+    print(('Done processing ' + str(len(results)) + ' calculations'))
     return results
     
 

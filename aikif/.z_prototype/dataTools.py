@@ -68,24 +68,24 @@ def delete_file(f):
 
 def csv_from_excel(excel_file, pth):
     opFname = ''
-    print('converting file ' + excel_file + '  to folder ' + pth)
+    print(('converting file ' + excel_file + '  to folder ' + pth))
     workbook = xl.open_workbook(pth + '\\' + excel_file)
     all_worksheets = workbook.sheet_names()
     for worksheet_name in all_worksheets:
         if worksheet_name != 'Pivot':
-            print('converting - ' + worksheet_name)
+            print(('converting - ' + worksheet_name))
             worksheet = workbook.sheet_by_name(worksheet_name)
             opFname = pth + '\\' + os.path.splitext(excel_file)[0] + '_' + worksheet_name + '.csv'
-            print('SAVING - ' + opFname)
+            print(('SAVING - ' + opFname))
             csv_file = open(opFname, 'wb')
             #csv_file = open(pth + ''.join([worksheet_name,'.csv']), 'wb')
             wr = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
 
-            for rownum in xrange(worksheet.nrows):
-                wr.writerow([unicode(entry).encode("utf-8") for entry in worksheet.row_values(rownum)])
+            for rownum in range(worksheet.nrows):
+                wr.writerow([str(entry).encode("utf-8") for entry in worksheet.row_values(rownum)])
             csv_file.close()
         else:
-            print('ignoring tab - ' + worksheet_name)
+            print(('ignoring tab - ' + worksheet_name))
     
 
 def DownloadFile(url, fname):
@@ -111,11 +111,11 @@ def CreateRandomIndentedCSVFile(fname):
             
 def IntentifyColumns(fname):
     # returns a dict with detailed estimates of col types
-    print('IntentifyColumns(' + fname + '):')
+    print(('IntentifyColumns(' + fname + '):'))
     
 def DataSet(fname):
     # defines a dataset
-    print('dataset defined = ' + fname)
+    print(('dataset defined = ' + fname))
 
 def MapTo(opFile):
     pass
@@ -132,7 +132,7 @@ def GetCountUniqueValues(fname, colNum, colText, topN_values, opFile):
     with open(fname) as input_file:
         for row in csv.reader(input_file, delimiter=','):
             cols[row[colNum]] += 1
-    print (colText, Dict2String(cols.most_common()[0:topN_values]))
+    print((colText, Dict2String(cols.most_common()[0:topN_values])))
     addSampleData(opFile, colText + ',' +  Dict2String(cols.most_common()[0:topN_values]))
 
 def AnalyseCSV_File(datafile, opFolder):
@@ -173,7 +173,7 @@ def split_CSV_by_Column_Values(ipFile, colName):
 
         
 def ExtractTable(fname, opFile, opCols, startRow=1, startCol=1, endRow=5, endCol=5):			
-    print('Extracting ' + os.path.basename(fname) + ' to ' + opFile)
+    print(('Extracting ' + os.path.basename(fname) + ' to ' + opFile))
     curRow = 1
     curCol = 1
     cols = collections.Counter()
@@ -208,7 +208,7 @@ def AutoFillCSV(fname, opFile, colList, autoFillCols):
             # 31	data 1
             # 32	data 2
 
-    print('\nAutoFilling ' + os.path.basename(fname) + ' to ' + opFile)
+    print(('\nAutoFilling ' + os.path.basename(fname) + ' to ' + opFile))
     curCol = 1
     lastValues = []
     for c in colList:
@@ -231,7 +231,7 @@ def AutoFillCSV(fname, opFile, colList, autoFillCols):
     
 def RemoveBlankRecs(fname, opFile, masterCol):
     # removes lines where col number 'masterCol' is blank
-    print('cleaning ' + os.path.basename(fname) )
+    print(('cleaning ' + os.path.basename(fname) ))
     curCol = 1
     rowText = ''
     csv_file = open(opFile, 'w')
@@ -284,7 +284,7 @@ def GenerateSQL(csvFile, tblName, opFile, headerRow=1):
     if opFile == '':	
         opFile = str(os.path.basename(csvFile).split('.')[0] + '.SQL')
         
-    print("Generating SQL for table " + tbl + " via " + opFile)
+    print(("Generating SQL for table " + tbl + " via " + opFile))
     # read in the CSV file header
     cols = []
     SQL_file = open(opFile, 'w')   # Note - with one version of Python this needs wb

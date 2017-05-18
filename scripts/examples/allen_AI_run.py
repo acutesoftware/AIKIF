@@ -75,7 +75,7 @@ def main():
     p.log_table(results)
     
     for tool_num, tool in enumerate(t.lstTools):
-        print('tool=', tool)
+        print(('tool=', tool))
         for param in params:
             result = t.run(tool, ['test' + str(tool_num), param],  root_folder)
             p.record(results, '', [tool['file'], tool['function'], param, result, mod_dt.TodayAsString()])

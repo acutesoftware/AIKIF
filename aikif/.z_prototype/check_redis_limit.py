@@ -166,7 +166,7 @@ def main():
     d = mod_redis.redis_server(host, port , db)
     d.connect()
   
-    print('Current Memory = ', d.connection.info()['used_memory_human'])
+    print(('Current Memory = ', d.connection.info()['used_memory_human']))
     load_lots_of_strings(d)
 #    load_random_tables(d)
     
@@ -180,7 +180,7 @@ def load_random_tables(d):
     for load in range(20, 20 + num_loads):
         schema = 'tst' + str(load).zfill(5)
         d.import_datatable(dt, schema, 0)
-        print('dbsize=',d.connection.dbsize(), ' Total memory=', d.connection.info()['used_memory_human'])
+        print(('dbsize=',d.connection.dbsize(), ' Total memory=', d.connection.info()['used_memory_human']))
 
 
     
@@ -193,14 +193,14 @@ def load_lots_of_strings(d):
                 val = [j*i/3.7 for j in range(200)]
                 key = schema + ':' + str(i)  + ':' + str(j)+ ':' + str(val)
                 d.set(key, val)
-        print('dbsize=',d.connection.dbsize(), ' Total memory=', d.connection.info()['used_memory_human'])
+        print(('dbsize=',d.connection.dbsize(), ' Total memory=', d.connection.info()['used_memory_human']))
 
 
         
     
 def confirm_loadtesting():
     print("\n--------WARNING--------\nThis will load test the redis database\n")
-    if input('Press 6 to continue') != '6':
+    if eval(input('Press 6 to continue')) != '6':
         print("Aborting")
         return False
     return True

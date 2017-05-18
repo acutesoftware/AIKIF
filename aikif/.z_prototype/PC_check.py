@@ -20,9 +20,9 @@ def main():
     except:
         fldr = os.getcwd()
         listFiles = 'N' #'Y'
-    print("listFiles=" + listFiles)
+    print(("listFiles=" + listFiles))
     fldrs, files, bytes = GetFolderSize(fldr, pattern, listFiles)
-    print("Found " + str(files) + " in " + str(fldrs) + " Total size = " + str(bytes) + " (" + str(bytes/1000000) + "MBytes)")
+    print(("Found " + str(files) + " in " + str(fldrs) + " Total size = " + str(bytes) + " (" + str(bytes/1000000) + "MBytes)"))
 
 def GetFileSize(fname):
     #print(fname)
@@ -42,7 +42,7 @@ def GetFolderSize(rootPath, pattern, showFiles):
     cur_files = 0
     for root, dirs, files in os.walk(rootPath):
         tot_fldrs += 1
-        print( root + ", " + str(cur_files) + " files ( "  + str(cur_bytes/1000) + "kBytes)" )
+        print(( root + ", " + str(cur_files) + " files ( "  + str(cur_bytes/1000) + "kBytes)" ))
         cur_bytes = 0
         cur_files = 0
         for filename in fnmatch.filter(files, pattern):
@@ -53,7 +53,7 @@ def GetFolderSize(rootPath, pattern, showFiles):
             cur_bytes += file_size
             #print( os.path.join(root, filename))
             if showFiles == 'Y':
-                print( os.path.join(root, filename), str(file_size))
+                print(( os.path.join(root, filename), str(file_size)))
             #print( filename, file_size)
             
     return tot_fldrs, tot_files, tot_bytes		

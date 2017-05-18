@@ -17,7 +17,7 @@ except ImportError:
     print('you need to install https://pypi.python.org/pypi/pypyodbc/ ')
     exit(1)
 
-from if_database import Database
+from .if_database import Database
 
 
 def TEST():
@@ -26,7 +26,7 @@ def TEST():
     
     d = MSSQL_server(['server', 'database', 'username', 'password'])
     d.connect()
-    print(d.server)
+    print((d.server))
     
 class MSSQL_server(Database):
 
@@ -41,7 +41,7 @@ class MSSQL_server(Database):
 
     def SQLServer_to_CSV(self, cred, schema, table, fldr):
         opFile = fldr + table + '.CSV'
-        print ('Saving ' + table + ' to ' + opFile)
+        print(('Saving ' + table + ' to ' + opFile))
         #cred = [server, database, username, password]
         connection_string ='Driver={SQL Server Native Client 11.0};Server=' + cred[0] + ';Database=' + cred[1] + ';Uid=' + cred[2] + ';Pwd=' + cred[3] + ';'
         #print(connection_string)

@@ -1,7 +1,7 @@
 # internet.py     written by Duncan Murray 14//5/2014
 
 import random
-import environment as mod_env
+from . import environment as mod_env
 
 
 class Internet(mod_env.Environment):

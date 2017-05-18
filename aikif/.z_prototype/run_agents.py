@@ -55,15 +55,15 @@ def verify_agents(l_agent_list):
     for i in l_agent_list:
         if i['schedule_type'] not in schedule_types:
             all_good = False
-            print('ERROR - ', i['name'], 'has invalid schedule type', i['schedule_type'])
+            print(('ERROR - ', i['name'], 'has invalid schedule type', i['schedule_type']))
         if not os.path.isfile(i['file']):
             all_good = False
-            print('ERROR - ', i['name'], 'program does not exist', i['file'])
+            print(('ERROR - ', i['name'], 'program does not exist', i['file']))
     return all_good
 
 def run(scriptFile, logUsage='Y'):
     from subprocess import call
-    print('  ... running ' + scriptFile)
+    print(('  ... running ' + scriptFile))
     lg = mod_log.Log(os.getcwd())
     lg.record_process(scriptFile)
     try:
@@ -84,7 +84,7 @@ def is_agent_scheduled_to_start(agt):
     if agt['schedule_type'] == 'minute':
         return True
     else:
-        print('Not scheduled to run ', agt['name'])
+        print(('Not scheduled to run ', agt['name']))
         return False
             
 if __name__ == '__main__':

@@ -10,9 +10,9 @@ lib_folder = os.path.abspath(cur_folder + os.sep + ".." +  os.sep + "toolbox" )
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".." + os.sep + ".."  )
 
 
-print('cur_folder = ', cur_folder)
-print('lib_folder = ', lib_folder)
-print('aikif_folder = ', aikif_folder)
+print(('cur_folder = ', cur_folder))
+print(('lib_folder = ', lib_folder))
+print(('aikif_folder = ', aikif_folder))
 
 sys.path.append(aikif_folder + os.sep + 'aikif')
 from toolbox import cls_grid_life as mod_grid
@@ -52,7 +52,7 @@ def run_game_of_life(years, width, height, time_delay, silent="N"):
     lg.record_source(lfe, 'game_of_life_console.py')
     print(lfe)
     start_cells = lfe.count_filled_positions()
-    for ndx, dummy_idx in enumerate(range(years)):
+    for ndx, dummy_idx in enumerate(list(range(years))):
         lfe.update_gol()
         if silent == "N":
             print_there(1,1, "Game of Life - Iteration # " + str(ndx))

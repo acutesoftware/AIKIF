@@ -38,7 +38,7 @@ def ml_entropy(lst):
             l = math.log( p, 2)
             res += round(p * l, 6)
     res = round(res * -1, 6)
-    print('lst = ', lst, 'entropy = ', res)
+    print(('lst = ', lst, 'entropy = ', res))
     return res
   
 

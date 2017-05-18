@@ -65,7 +65,7 @@ class Agent(object):
         else:
             txt += 'Running : False\n'
             
-        for c,v in self.coords.items():
+        for c,v in list(self.coords.items()):
             txt += '  coord ' + str(c) + ' = ' + str(v) + '\n'
 
             
@@ -87,7 +87,7 @@ class Agent(object):
             agents_logged = open(agt_list, 'r').read()
         else:
             agents_logged = ''
-        print('agents_logged = ', agents_logged)
+        print(('agents_logged = ', agents_logged))
         if self._get_instance() not in agents_logged:
             with open(agt_list, 'a') as f:
                 f.write(self._get_instance() + '\n')

@@ -50,7 +50,7 @@ class LogTest(unittest.TestCase):
         ext_tool = {'file':'method1.py', 'function':'solve_example', 'args':['list'], 'return':['int']}
         ext_path = '/home/duncan/dev/src/python/kaggle/aicomp'
         self.tb.add(ext_tool)
-        print('ext_path=', ext_path)
+        print(('ext_path=', ext_path))
         if os.path.exists(ext_path):  # dont test this on travis-CI, and DONT verify
             test_result = self.tb.run(self.tb.lstTools[1], ['AAAA', 'BBB'], new_import_path=ext_path)
         else:

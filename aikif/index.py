@@ -9,9 +9,9 @@ import codecs
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
 sys.path.append(root_folder)
 
-import cls_log as mod_log
-import config as mod_cfg
-import lib.cls_filelist as mod_fl
+from . import cls_log as mod_log
+from . import config as mod_cfg
+from . import lib.cls_filelist as mod_fl
 
 silent = 'N'
 if len(sys.argv) == 2:
@@ -45,7 +45,7 @@ def index():
     
     
     if silent == 'N':
-        print(format_op_hdr())
+        print((format_op_hdr()))
         
     for f in files_to_index.get_list():
         buildIndex(f, ndxFile, silent)
@@ -70,7 +70,7 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
         try:
             os.remove(ndxFile)
         except Exception as ex:
-            print('file already deleted - ignore' + str(ex))
+            print(('file already deleted - ignore' + str(ex)))
             
     delims = [',', chr(31), '', '$', '&', '"', '%', '/', '\\', '.', ';', ':', '!', '?', '-', '_', ' ', '\n', '*', '\'', '(', ')', '[', ']', '{', '}']
     # 1st pass - index the ontologies, including 2 depths up (later - TODO)
@@ -81,7 +81,7 @@ def buildIndex(ipFile, ndxFile, append='Y', silent='N', useShortFileName='Y'):
     
     AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName)
     if silent == 'N':
-        print(format_op_row(ipFile, totLines, totWords, uniqueWords))
+        print((format_op_row(ipFile, totLines, totWords, uniqueWords)))
    
         show('uniqueWords', uniqueWords, 5)
     DisplayIndexAsDictionary(uniqueWords)
@@ -116,7 +116,7 @@ def AppendIndexDictionaryToFile(uniqueWords, ndxFile, ipFile, useShortFileName='
     else:
         f = ipFile
     with open(ndxFile, "a", encoding='utf-8', errors='replace') as ndx:
-        word_keys = uniqueWords.keys()
+        word_keys = list(uniqueWords.keys())
         #uniqueWords.sort()
         for word in sorted(word_keys):
             if word != '':
@@ -130,10 +130,10 @@ def DisplayIndexAsDictionary(word_occurrences):
     """ 
     print the index as a dict 
     """
-    word_keys = word_occurrences.keys()
+    word_keys = list(word_occurrences.keys())
     for num, word in enumerate(word_keys):
         line_nums = word_occurrences[word]
-        print(word + " ")
+        print((word + " "))
         if num > 3:
             break
             
@@ -156,7 +156,7 @@ def show(title, lst, full=-1):
     try:
         print(txt)
     except Exception as ex:
-        print('index.show() - cant print line, error ' + str(ex))
+        print(('index.show() - cant print line, error ' + str(ex)))
     
 def getWordList(ipFile, delim):
     """
@@ -218,7 +218,7 @@ def consolidate(ipFile, opFile):
                 indexedWords[curWord] = curFile + ' - ' + curLineNums
     with open(opFile, "w",encoding='utf-8', errors='replace') as op:
         op.write('word, filenames\n')  # this shows which words appear in which files
-        word_keys = indexedWords.keys()
+        word_keys = list(indexedWords.keys())
         for word in sorted(word_keys):
             if word != '':
                 line_nums = indexedWords[word]

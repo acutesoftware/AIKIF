@@ -31,7 +31,7 @@ class GoalTest(unittest.TestCase):
 
     def test_02_success(self):
         result = self.mygoal.check_for_success()
-        print(self.mygoal)
+        print((self.mygoal))
         self.assertEqual(str(self.mygoal), 'New Goal')
         self.assertEqual(result, False)
 

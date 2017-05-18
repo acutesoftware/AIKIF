@@ -62,7 +62,7 @@ class GameOfLifePatterns(object):
                              ]
         for _ in range(num_patterns):
             pattern_to_add = random.choice(self.pattern_list)
-            print('pattern_to_add = ', pattern_to_add)
+            print(('pattern_to_add = ', pattern_to_add))
             print('sys.modules = ')
             import pprint
             pprint.pprint(sys.modules)
@@ -70,7 +70,7 @@ class GameOfLifePatterns(object):
             
             methodToCall = getattr(sys.modules['cls_grid_life'], pattern_to_add)
             
-            print('methodToCall = ', methodToCall)
+            print(('methodToCall = ', methodToCall))
             
             
             result = methodToCall()

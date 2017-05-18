@@ -37,7 +37,7 @@ class GoalMoney(Goal):
         executes a plan by running the passed strategy
         and then updates the local results
         """
-        print ("running strategy : " + strategy['name'] + " for plan " + plan)
+        print(("running strategy : " + strategy['name'] + " for plan " + plan))
         
 
     def find_best_plan(self):

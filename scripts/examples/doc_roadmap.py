@@ -56,9 +56,9 @@ def format_h2(txt):
     return res
     
 def _print_yaml(fname):
-    print('\n' + fname)
+    print(('\n' + fname))
     with open(fname, 'r') as stream:
-        print(yaml.load(stream))
+        print((yaml.load(stream)))
      
 def _read_yaml(fname):
     with open(fname, 'r') as stream:

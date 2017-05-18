@@ -51,7 +51,7 @@ class ToolboxGridTest(unittest.TestCase):
         for i in range(50):
             grd.new_tile()
         self.assertEqual(grd.count_blank_positions(),12)
-        print('\n', grd)
+        print(('\n', grd))
         
     def test_06_save_grid(self):
         good_file = 'my_grid.txt'

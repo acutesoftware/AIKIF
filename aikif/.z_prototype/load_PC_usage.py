@@ -9,10 +9,10 @@ import os
  
 def process_all(ipFolder, op_file):	
     
-    print('aggregating ', ipFolder, ' to ' , op_file)
+    print(('aggregating ', ipFolder, ' to ' , op_file))
     rawFiles = get_raw_files(ipFolder)
     for f in rawFiles:
-        print('rawfile = ' + f)
+        print(('rawfile = ' + f))
         process_raw_file(f, op_file)
     
 def get_raw_files(ipFolder):
@@ -27,7 +27,7 @@ def get_raw_files(ipFolder):
 
 
 def process_raw_file(f, op_file):
-    print ('Processing: ', f)
+    print(('Processing: ', f))
     usage = []
     with open(op_file,'a') as op:
         with open(f, 'r') as ip:

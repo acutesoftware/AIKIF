@@ -12,7 +12,7 @@ except ImportError:
     
 import csv
 #import ctypes
-from if_database import Database
+from .if_database import Database
 
 
 def TEST():
@@ -32,7 +32,7 @@ class Oracle(Database):
         
     def Oracle2CSV(self, conn, tblName, fldrLocation = '', printHeader = True):
         csv_file_dest = fldrLocation + tblName + ".CSV"
-        print('Exporting ', tblName,' to ',csv_file_dest )
+        print(('Exporting ', tblName,' to ',csv_file_dest ))
         outputFile = open(csv_file_dest,'wb') # 'wb'
         output = csv.writer(outputFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
         sql = "select * from " + tblName
@@ -53,8 +53,8 @@ class Oracle(Database):
     def ConnectOracle(self, schema, dbase, usr, encryptedPasswd):
         # connects to Oracle database and returns the open connection cursor
         password = base64.b64decode(encryptedPasswd)
-        conn_str = schema + u'/' + password + '@' + dbase
-        print(conn_str, usr)
+        conn_str = schema + '/' + password + '@' + dbase
+        print((conn_str, usr))
         conn = cx_Oracle.connect(conn_str)
         return conn
 

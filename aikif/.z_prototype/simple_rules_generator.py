@@ -61,9 +61,9 @@ def main():
 {'cmd': 'email',  'toolbox': 'rawdata.gather.email',     'ask': 'get emails each day'}    
     """
 
-    print(generate_rules('copy files each day to dropbox'))
-    print(generate_rules('save emails to U:'))
-    print(generate_rules('get emails each day'))
+    print((generate_rules('copy files each day to dropbox')))
+    print((generate_rules('save emails to U:')))
+    print((generate_rules('get emails each day')))
 
      
     
@@ -84,7 +84,7 @@ def generate_rules(txt):
     # Step 2 - find commands in phrase 
     found = []
     for word in words:
-        for k,v in aliases.items():
+        for k,v in list(aliases.items()):
             if word == k:
                 found.append(v)
                 res['cmd'] = v
@@ -99,7 +99,7 @@ def generate_rules(txt):
     for param in required_parameters:
         #print('    param = ', param)
         if param['process'] == res['cmd']:
-            print(' you need to check for these params :' , param['params'])
+            print((' you need to check for these params :' , param['params']))
             #for num, p in enumerate(param['params']):
             #    res['param' + str(num+)] = p # param['params']
             res['params'] = param['params']    

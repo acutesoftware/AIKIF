@@ -35,7 +35,7 @@ class TestTemplate(unittest.TestCase):
         #secret = crypto_tools.encrypt_AES('key123', msg, 'ERTE66TERTiv456')
         #result = crypto_tools.decrypt_AES('key123', secret, 'ERTE66TERTiv456')
         #self.assertEqual(msg, result)
-        print('test_02_AES:original message = ' + msg)
+        print(('test_02_AES:original message = ' + msg))
         #print('test_02_AES:encrypted = ' + secret)
         #print('test_02_AES:decrypted = ' + result)
 

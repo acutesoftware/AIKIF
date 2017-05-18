@@ -65,7 +65,7 @@ class TestToolboxFileTools(unittest.TestCase):
         #print(fl)
         self.assertEqual(len(fl), 9)
         for f in fl:
-            print('checking ' + f.replace(os.getcwd(), ''))
+            print(('checking ' + f.replace(os.getcwd(), '')))
             self.assertEqual(os.path.exists(f), True)
 
     def test_02_copy_file(self):

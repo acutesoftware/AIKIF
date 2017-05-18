@@ -23,7 +23,7 @@ def extract_by_div(raw_text, divID):
     soup = BeautifulSoup(raw_text)
     results = soup.find("div", {"id": divID})
     txt = results.getText()  
-    print(str(len(txt)) + ' bytes read\n')
+    print((str(len(txt)) + ' bytes read\n'))
     for line in results.contents:
         html = html + str(line) + '\n'
     return html, txt

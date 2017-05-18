@@ -36,7 +36,7 @@ def TEST():
     h.add_factor(HappinessFactors('tradition', 'Personal', 0.3, 0.9))
     h.add_factor(HappinessFactors('equity', 'Personal', 0.1, 0.9))
     h.add_factor(HappinessFactors('growth', 'Economic', 0.01, 0.09))
-    print(h.show_details())
+    print((h.show_details()))
     
 class World(object):
     """
@@ -150,7 +150,7 @@ class WorldFinder(object):
                         self.net_happiness = world_happiness
                         self.unhappy_people = num_unhappy
                         if not silent:
-                            print('found better world - ' + w.nme + ' = ' + str(world_happiness) + ' - total unhappy_people = ' + str(self.unhappy_people))
+                            print(('found better world - ' + w.nme + ' = ' + str(world_happiness) + ' - total unhappy_people = ' + str(self.unhappy_people)))
 
 class HappinessFactors(object):
     """

@@ -100,7 +100,7 @@ class ExploreAgent(agt.Agent):
         wrapper for debugging print and log methods
         """
         if log_lvl <= self.LOG_LEVEL:
-            print(txt + str(self.current_y) + "," + str(self.current_x))
+            print((txt + str(self.current_y) + "," + str(self.current_x)))
         
     def get_intended_direction(self):
         """
@@ -146,5 +146,5 @@ class ExploreAgent(agt.Agent):
         txt += "current_y = " + str(self.current_y) + "\n"
        
         
-        print(self.grd)
+        print((self.grd))
         return txt

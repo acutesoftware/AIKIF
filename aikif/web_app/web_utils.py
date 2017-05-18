@@ -159,7 +159,7 @@ def dict_to_htmlrow(d):
     converts a dictionary to a HTML table row
     """
     res = "<TR>\n"
-    for k, v in d.items():
+    for k, v in list(d.items()):
         if type(v) == str:
             res = res + '<TD><p>' + k + ':</p></TD><TD><p>' + v + '</p></TD>'
         else:

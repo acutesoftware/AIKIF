@@ -50,9 +50,9 @@ class FileList(object):
         """
         if VERBOSE:
             print("Generating list of Files...")
-            print("Paths = ", lstPaths)
-            print("Xtns  = ", lstXtn)
-            print("exclude = ", lstExcluded)
+            print(("Paths = ", lstPaths))
+            print(("Xtns  = ", lstXtn))
+            print(("exclude = ", lstExcluded))
         numFiles = 0    
         self.filelist = []
         self.fl_metadata = []
@@ -77,7 +77,7 @@ class FileList(object):
                                 self.add_file_metadata(filename)    # not sure why there is a 2nd list, but there is.
 
         if VERBOSE:
-            print("Found ", numFiles, " files")
+            print(("Found ", numFiles, " files"))
         return self.filelist
 
     def add_file_metadata(self, fname):

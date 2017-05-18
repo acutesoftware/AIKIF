@@ -40,7 +40,7 @@ def main():
     """
     if '_PROD' in op_folder:
         correct = random.choice(['y', '1', ' ', '#'])
-        ans = input('Saving to PROD - press ' + correct + ' to continue')
+        ans = eval(input('Saving to PROD - press ' + correct + ' to continue'))
         if ans != correct:
             lg.record_process('event_aggregator.py', 'abort process on startup')
             sys.exit()
@@ -56,14 +56,14 @@ def create_diary(fldr):
     find all created event files in folder and generate
     diary files (and display)
     """
-    print('generating diary from files in ' + fldr)
+    print(('generating diary from files in ' + fldr))
     fles = fl.FileList([op_folder], ['*.' + usr], [], '')
     files = fles.get_metadata()
     for file_dict in files:
-        print('  reading ' + str(file_dict['fullfilename'])) 
+        print(('  reading ' + str(file_dict['fullfilename']))) 
         with open(str(file_dict['fullfilename']), 'r') as f:
             hdr = f.readline().strip('"').split(',')
-            print('hdr = ', hdr)
+            print(('hdr = ', hdr))
             
     
     

@@ -105,9 +105,9 @@ def wipe_file(fname):
     """
     try:
         os.remove(fname)
-        print('deleted ' + fname)
+        print(('deleted ' + fname))
     except Exception as ex:
-        print('ERROR - cant delete ' + fname + ' : ' + str(ex))
+        print(('ERROR - cant delete ' + fname + ' : ' + str(ex)))
         
 print('Did the tests fail.... DID YOU TURN ON VIRTUALENV!   ". ~/p von"')
 print('WIPING ALL TEST RESULTS - PRESS CTRL C TO STOP')

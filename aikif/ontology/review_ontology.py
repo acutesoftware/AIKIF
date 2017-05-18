@@ -231,9 +231,9 @@ def main():
     ShowConclusion()
 
 def ShowStatistics():
-    print('Ontologies 	= ' + str(len(ontologyList)))
-    print('Documents 	= ' + str(len(documentList)))
-    print('Comments 	= ' + str(len(commentsList)))
+    print(('Ontologies 	= ' + str(len(ontologyList))))
+    print(('Documents 	= ' + str(len(documentList))))
+    print(('Comments 	= ' + str(len(commentsList))))
 
     
 def ShowConclusion():
@@ -241,7 +241,7 @@ def ShowConclusion():
     for i in commentsList:
         #print(i['src'], i['comment'])
         if i['src'] == 'conclusion':
-            print(i['comment'])
+            print((i['comment']))
 
 
     
@@ -253,11 +253,11 @@ def ShowData():
         
     print('------ Documents-------\n')
     for i in documentList:
-        print(i['title'], i['url'])
+        print((i['title'], i['url']))
 
     print('------ COMMENTS-------\n')
     for i in commentsList:
-        print(i['comment'])
+        print((i['comment']))
 
 
 def SaveHTML_Review(htmlFile):
@@ -337,7 +337,7 @@ def deleteFile(f):
         try:
             os.remove(f)
         except Exception:
-            print("Cant delete ",f)
+            print(("Cant delete ",f))
 
 def AppendToFile(fname, txt):
     with open(fname, "a") as myfile:
@@ -370,7 +370,7 @@ def DoesFileExist(localFile):
 def TestLocalFile(localFile):
     result = 'Not downloaded'
     if DoesFileExist(localFile):
-        print('Collecting stats for ' + localFile)
+        print(('Collecting stats for ' + localFile))
         result = '<I>Sample file saved to ' + localFile + ' (' + format(GetFileSize(localFile), ',d') + ' bytes)<BR>'
         result = result + '' + format(GetTotalNumFiles(localFile), ',d')
         result = result + ' files in folder, totalling ' + format(GetTotalFileSizesForFolder(localFile), ',d') + ' bytes</I>'

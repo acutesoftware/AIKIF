@@ -50,7 +50,7 @@ def search_aikif(txt, formatHTML=True):
                 if formatHTML is True:
                     results.append('<h3>' + f + ' = ' + str(num_found) + ' results</h3>')
                 else:    
-                    print(f + ' = ' + str(num_found) + '')
+                    print((f + ' = ' + str(num_found) + ''))
         except Exception:
             results.append('problem with file ' + f)
     if len(results) == 0:

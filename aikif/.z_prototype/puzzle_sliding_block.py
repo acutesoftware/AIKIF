@@ -187,7 +187,7 @@ class TilePuzzle:
         """
         h = 0
         cur_state = self.current_state_as_list()
-        print('cur_state = ', cur_state)
+        print(('cur_state = ', cur_state))
         
         if len(cur_state) == 0:
             print('error - blank self.cells')
@@ -255,7 +255,7 @@ class TilePuzzle:
         print('expand : ')
         (x,y) = self.cur_node[row][col]
         moves = self.legal_moves()
-        print('x,y  = ' , (x,y))
+        print(('x,y  = ' , (x,y)))
         for m in moves:
             if m == 'left':
                 nodes.append(self.cells[x-1][y])

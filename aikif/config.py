@@ -100,17 +100,17 @@ def show_config():
     """
     res = ''
     res += '\n---------- Folder Locations ---------\n'
-    for k,v in fldrs.items():
+    for k,v in list(fldrs.items()):
         res += str(k) + ' = ' + str(v) + '\n'
     
     res += '\n---------- Logfiles ---------\n'
-    for k,v in logs.items():
+    for k,v in list(logs.items()):
         res += str(k) + ' = ' + str(v) + '\n'
         
     res += '\n---------- Parameters ---------\n'
-    for k,v in params.items():
+    for k,v in list(params.items()):
         res += str(k) + ' = ' + str(v) + '\n'
-    print("\nusage from other programs - returns " + fldr_root())
+    print(("\nusage from other programs - returns " + fldr_root()))
     return res
     
 def fldr_root():

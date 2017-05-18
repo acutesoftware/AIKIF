@@ -9,7 +9,7 @@ import os
 try:
     import win32gui
 except Exception as ex:
-    print('Cant import win32gui (probably CI build on linux)' + str(ex))
+    print(('Cant import win32gui (probably CI build on linux)' + str(ex)))
 
 try:
     import win32con
@@ -37,7 +37,7 @@ def get_window_by_caption(caption):
         hwnd = win32gui.FindWindow(None, caption)
         return hwnd
     except Exception as ex:
-        print('error calling win32gui.FindWindow ' + str(ex))
+        print(('error calling win32gui.FindWindow ' + str(ex)))
         return -1
     
 def send_text(hwnd, txt):
@@ -52,7 +52,7 @@ def send_text(hwnd, txt):
             else:
                 win32api.SendMessage(hwnd, win32con.WM_CHAR, ord(c), 0)            
     except Exception as ex:
-        print('error calling SendMessage ' + str(ex))
+        print(('error calling SendMessage ' + str(ex)))
                 
 def launch_app(app_path, params=[], time_before_kill_app=15):
     """
@@ -61,13 +61,13 @@ def launch_app(app_path, params=[], time_before_kill_app=15):
     import subprocess
     try:
         res = subprocess.call([app_path, params], timeout=time_before_kill_app, shell=True)
-        print('res = ', res)
+        print(('res = ', res))
         if res == 0:
             return True
         else:
             return False
     except Exception as ex:
-        print('error launching app  ' + str(app_path) + ' with params ' + str(params) + '\n' + str(ex))
+        print(('error launching app  ' + str(app_path) + ' with params ' + str(params) + '\n' + str(ex)))
         return False
     
     

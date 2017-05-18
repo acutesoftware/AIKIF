@@ -67,7 +67,7 @@ def LoadShoppingList(ipFile, opFile):
 	shopping_key = 0
 	f = open(ipFile, 'r')
 	if silent == 'N':
-		print('Saving shopping list to ' + opFile + ' from ' + ipFile)
+		print(('Saving shopping list to ' + opFile + ' from ' + ipFile))
 		
 	for line in f:
 		if len(line) > 0:
@@ -80,7 +80,7 @@ def LoadShoppingList(ipFile, opFile):
 	f.close()
 	
 	if silent == 'N':
-		print('Loaded ' + str(len(shopping)-1) + ' shopping list items')
+		print(('Loaded ' + str(len(shopping)-1) + ' shopping list items'))
 		print(shopping)
 	return shopping
 	

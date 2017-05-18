@@ -57,7 +57,7 @@ def solve(target, big_numbers, small_numbers):
                 
         if tot == target:
             
-            print('SUCCESS', desc + desc_mult + desc_big + desc_comb)
+            print(('SUCCESS', desc + desc_mult + desc_big + desc_comb))
         all_results.append(tot)
         
     print(all_results)

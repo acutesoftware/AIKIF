@@ -29,7 +29,7 @@ def SaveListFirstWordOnly(msg, ipfile, opFile):
             noun = line[0:line.find(' ')]
             opList.append(noun)
     dat.SaveListToFile(opList, opFile)
-    print ('Saved ' + str(numRecs) + ' ' + msg)
+    print(('Saved ' + str(numRecs) + ' ' + msg))
     return numRecs
 
 def ExtractListOfWords():
@@ -50,7 +50,7 @@ def ExtractListOfWords():
             verbList.append(verb + 's')  # turns play to plays  - TODO, use stemming algorithm
             verbList.append(verb + 'ed')
     dat.SaveListToFile(verbList, opFolder + 'verbList.txt')    
-    print ('Saved ' + str(numRecs) + ' verbs')
+    print(('Saved ' + str(numRecs) + ' verbs'))
 
 
 def ExtractCat(fname, opFile):
@@ -68,7 +68,7 @@ def ExtractCat(fname, opFile):
     # infoboxproperties_en.csv.bz2.csv.bz2 = list of properties or labels (name, age, BestBowlerFirstInnings, PilotName, ProducerAge, etc)
 
     # ontology is in RDF format
-    print(fname + ' = ' + str(dat.countLinesInFile(fname)) + ' rows' )
+    print((fname + ' = ' + str(dat.countLinesInFile(fname)) + ' rows' ))
 
      
     
@@ -97,17 +97,17 @@ def GetOntologyExtract(fname, txt):
     # see http://stackoverflow.com/questions/14853243/parsing-xml-with-namespace-in-python-elementtree
     namespaces = {'owl': 'http://www.w3.org/2002/07/owl#'} # add more as needed
     #namespaces = {'rdfs': 'http://www.w3.org/2000/01/rdf-schema#'}
-    print('Extracting ' + txt )
+    print(('Extracting ' + txt ))
     tree = ET.parse(fname)
     doc = tree.getroot()
     #nodes = doc.findall('owl:Class', namespaces=namespaces)
     nodes = doc.findall(txt, namespaces=namespaces)
     #nodes = doc.findall('rdfs:label', namespaces=namespaces)
-    print('found ' + str(len(nodes)) + ' nodes\n ' )
+    print(('found ' + str(len(nodes)) + ' nodes\n ' ))
     for node in nodes:
         numFound = numFound + 1
-        for itm in node.items():
-            print (itm[1][28:])
+        for itm in list(node.items()):
+            print((itm[1][28:]))
         #print(node.tail)    
    # find_in_tree(root,"myNode")
         #print(node.attrib)
@@ -134,9 +134,9 @@ def GetOntologyExtract(fname, txt):
 #    MAIN
 opFile = '..\\data\\ref\\ontology_list.txt'
 print('create_word_list.py - script to extract lists for AIKIF')
-print('Reading - ' + ontologyClassificationFile)
+print(('Reading - ' + ontologyClassificationFile))
 #ExtractListOfWords()
-print('Extracted ' + str(ExtractCat(ontologyClassificationFile, opFile)) + ' nodes to ' + opFile)
+print(('Extracted ' + str(ExtractCat(ontologyClassificationFile, opFile)) + ' nodes to ' + opFile))
 #print('Found ' + str(GetOntologyExtract(ontologyClassificationFile, 'owl:Class')) + ' nodes')
 print('Done..')
 

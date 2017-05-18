@@ -66,8 +66,8 @@ except ImportError:
     print('you need to run pip install redis \nand also install the server via https://github.com/ServiceStack/redis-windows')
     exit(1)
 
-from if_database import Database
-import cls_datatable
+from .if_database import Database
+from . import cls_datatable
 
 def TEST():
     root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + '..' + os.sep + '..' + os.sep + 'data')
@@ -81,15 +81,15 @@ def TEST():
         
     d = redis_server(host, port , db)
     d.connect()
-    print(d.server)
+    print((d.server))
     d.set('test123', 'this is a test')
-    print(d.get('test123'))
+    print((d.get('test123')))
     
     dt = cls_datatable.DataTable(fname, ',')
     dt.load_to_array()
     d.import_datatable(dt, 'aikif', 1)
     
-    print(d.get("aikif:OBJECT_INFO-COURSE.csv:categories:Artificial Intelligence Planning"))
+    print((d.get("aikif:OBJECT_INFO-COURSE.csv:categories:Artificial Intelligence Planning")))
     
     #127.0.0.1:6379> get #"aikif:OBJECT_INFO-COURSE.csv:categories:Artificial Intelligence Planning"
     #    "https://class.coursera.org/aiplan-002/"
@@ -139,16 +139,16 @@ class redis_server(Database):
                     key = schema_root_key + row[col_key] + ':' + hdr[col_num]
                     self.connection.set(key, col)
                     #self.connection.lpush(key, col)
-        print ('loaded ', str(row_num) , ' rows')
+        print(('loaded ', str(row_num) , ' rows'))
         
         
     def export_to_CSV(self, fldr, printHeader = True):
         opFile = fldr + 'test' + '.CSV'
         if printHeader is True:
             print('saving header')
-        print ('Saving to ' + opFile)
+        print(('Saving to ' + opFile))
         #cred = [server, database, username, password]
-        print(self.connection)
+        print((self.connection))
 
     
 if __name__ == '__main__':

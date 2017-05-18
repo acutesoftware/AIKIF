@@ -29,7 +29,7 @@ class TransposeTest(unittest.TestCase):
         self.obj_transpose = None
 
     def test_01_instantiate(self):
-        print(self.obj_transpose)
+        print((self.obj_transpose))
         self.assertEqual(len(self.obj_transpose.ip_data) , 5) 
         
     def test_02_pivot(self):
@@ -48,9 +48,9 @@ class TransposeTest(unittest.TestCase):
     
     def test_04_kv_test2(self):
         obj2 = transpose.Transpose(lst_ppl) 
-        print(obj2.ip_data)
+        print((obj2.ip_data))
         obj2.key_value_pairs()
-        print(obj2.op_data)
+        print((obj2.op_data))
         
 if __name__ == '__main__':
     unittest.main()

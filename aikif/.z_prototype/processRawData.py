@@ -23,7 +23,7 @@ def main():
 
 def run(scriptFile, logUsage='Y'):
 	from subprocess import call
-	print('  ... running ' + scriptFile)
+	print(('  ... running ' + scriptFile))
 	aikif.LogProcess(scriptFile)
 	try:
 		retcode = call(scriptFile + ' Q', shell=True)   # Q tells program to run in silent mode

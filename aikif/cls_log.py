@@ -8,8 +8,8 @@ import getpass
 import socket
 import random
 
-from decorators import debug
-from decorators import show_timing
+from .decorators import debug
+from .decorators import show_timing
 
 
 class Log(object):
@@ -109,7 +109,7 @@ class Log(object):
         elif seconds < 3600*24*365:
             return str(round(seconds/(3600*24), 1)) + ' days'
         else:
-            print('WARNING - this will take ' + str(seconds/(60*24*365)) + ' YEARS to run' )
+            print(('WARNING - this will take ' + str(seconds/(60*24*365)) + ' YEARS to run' ))
             return str(round(seconds/(60*24*365), 1)) + ' years'
 
     def _log(self, fname, txt, prg=''):
@@ -301,7 +301,7 @@ def List2String(l):
     
 def Dict2String(d):
     res = "{"
-    for k, v in d.items(): 
+    for k, v in list(d.items()): 
         res += k + ':' + str(v) + ','
     return res + '}'
     

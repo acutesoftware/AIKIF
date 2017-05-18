@@ -53,7 +53,7 @@ class TestAgentInterfaceEnvironment(unittest.TestCase):
     def test_03_get_window_by_caption(self):
         try:
             hw = mod_tool.get_window_by_caption('C:\\WINDOWS\\system32\\cmd.exe')
-            print('window handle of Command prompt  = ', hw)
+            print(('window handle of Command prompt  = ', hw))
             self.assertTrue(hw > 1)
         except Exception as ex:
             print('WARNING - Windows tests failed - likely due to running on Linux VM')

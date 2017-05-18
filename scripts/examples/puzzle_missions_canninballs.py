@@ -116,11 +116,11 @@ import aikif.lib.cls_plan_search as mod_plan
 
 
 def main():
-    missionaries = int(input('how many missionaries (e.g. 1-9, start with 3)'))
-    canniballs =   int(input('how many canniballs  (e.g. 1-9, start with 3)'))
+    missionaries = int(eval(input('how many missionaries (e.g. 1-9, start with 3)')))
+    canniballs =   int(eval(input('how many canniballs  (e.g. 1-9, start with 3)')))
     result = solve(missionaries,canniballs)
     if not result: 
-        print('No path found for ' + str(missionaries) + ' missionaries and '  + str(canniballs) + ' canniballs')
+        print(('No path found for ' + str(missionaries) + ' missionaries and '  + str(canniballs) + ' canniballs'))
     else:
         paths = decode_paths_from_results(result, missionaries, canniballs)
         show_results(paths, missionaries,canniballs)
@@ -132,7 +132,7 @@ def decode_paths_from_results(result, m,c):
     return paths
         
 def show_results(result, missionaries,canniballs):
-    print('Took ' + str(len(result)) + ' trips for ' + str(missionaries) + ' missionaries and '  + str(canniballs) + ' canniballs' )
+    print(('Took ' + str(len(result)) + ' trips for ' + str(missionaries) + ' missionaries and '  + str(canniballs) + ' canniballs' ))
     print(' /-----------|-----------\\')
     print('| Left Bank  | Right Bank |')
     print(' \-----------|-----------/')
@@ -150,7 +150,7 @@ def show_results(result, missionaries,canniballs):
             displ += side.ljust(min_spacing, ' ') + '| '
         displ += ''  
         print(displ)
-        print(num, p)
+        print((num, p))
         
 
 def boat_on_left_bank(node):

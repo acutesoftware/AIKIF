@@ -29,7 +29,7 @@ def main():
     """
     dataSubjectAreas = ['log events', 'reminders', 'todo']
     diary_file = mod_filemap.FileMap([],[]).get_full_filename('EVENT', 'INFO-PIM-DIARY')
-    print('Diary file = ', diary_file)
+    print(('Diary file = ', diary_file))
     today = '20170418'
     add_event(diary_file, today, 'Testing aikif.examples.diary.py')
     add_event(diary_file, today, 'random diary entry')
@@ -42,7 +42,7 @@ def add_event(fname, dte, details, remindme='', cat='Diary'):
     function to take a diary / calendar or reminder note and
     add to AIKIF raw data store.
     """
-    print("Adding event:", dte, remindme, details)
+    print(("Adding event:", dte, remindme, details))
     
     e = c.CoreDataWhen('Diary', [dte, cat, details])
     

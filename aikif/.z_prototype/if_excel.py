@@ -13,7 +13,7 @@ def create_blank_xls_file(fname):
     #  df.to_excel('pandas.xls', sheet_name='Pandas_test')   # NOTE - xlsx not supported
     #  df.to_excel('pandas.xls')   # NOTE - xlsx not supported
     #  df.to_csv('pandas.csv')  # works
-    print('WARNING - doesnt work in all systems\n saving dataframe to Excel = ', fname)
+    print(('WARNING - doesnt work in all systems\n saving dataframe to Excel = ', fname))
     df.to_excel(fname, sheet_name='sheet1', index=False)
 
 def xls_to_csv(xls_filename):

@@ -120,7 +120,7 @@ CREATE TABLE test07 (
 );
 """
         self.assertEqual(t7.ddl_text, expected_result) 	
-        print(t7.ddl_text)
+        print((t7.ddl_text))
         t7.save_ddl('CREATE_TABLE_test07.SQL')
         self.assertTrue(os.path.exists('CREATE_TABLE_test07.SQL'))
         

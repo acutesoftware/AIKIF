@@ -100,7 +100,7 @@ def identify_delim(txt):
     """
     possible_delims = _get_dict_char_count(txt)  # {'C': 3, 'a': 4, 'b': 5, 'c': 6, ',': 6, 'A': 3, '\n': 3, 'B': 3})
         
-    delim = max(possible_delims.keys(), key=(lambda k: possible_delims[k]))
+    delim = max(list(possible_delims.keys()), key=(lambda k: possible_delims[k]))
     
     """
     count_by_row = []

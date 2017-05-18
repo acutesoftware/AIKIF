@@ -43,7 +43,7 @@ class AICLI(object):
         elif mode == 'QUERY':
             self.prompt = '?? > '
         if txt == '':
-            txt = input(self.prompt)
+            txt = eval(input(self.prompt))
         return txt 
      
     def show_output(self, txt, device='Console'):
@@ -123,7 +123,7 @@ class AICLI(object):
 
     def cmd_help(self):
         txt = '\n'
-        for k,v in self.all_commands.items():
+        for k,v in list(self.all_commands.items()):
             txt += k.ljust(6) + '= ' 
             txt += v[1].ljust(25)
             for cmd in v[0]:
@@ -139,7 +139,7 @@ class AICLI(object):
         """
         self.show_output('Adding ', txt)
         self.raw.add(txt)
-        print(self.raw)
+        print((self.raw))
         return 'Added ' + txt
         
 

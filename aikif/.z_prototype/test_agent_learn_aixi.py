@@ -23,7 +23,7 @@ class AgentLearnAixiTest(unittest.TestCase):
 
     def test_02_run_as_bat(self):
         try:
-            print('deleting logfile - ' + mod_aixi.log_file)
+            print(('deleting logfile - ' + mod_aixi.log_file))
             os.remove(mod_aixi.log_file)
         except: 
             pass

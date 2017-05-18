@@ -3,7 +3,7 @@ import sys, os
 import datetime
 
 if sys.version[0:1] != '3':
-	print ("Python Version = " + sys.version)
+	print(("Python Version = " + sys.version))
 	print('==== WARNING - use Python 3 ======')
 	exit(1)
 
@@ -22,7 +22,7 @@ def main():
 	f_all.write('https://github.com/acutesoftware/AIKIF\n')
 	f_all.write('*/\n\n')
 	f_all.write('-- CREATE TABLES -- \n')
-	print('Creating database script in ' + fldr)
+	print(('Creating database script in ' + fldr))
 	make_table(f_all, 'CORE_EVENTS', ['id', 'name', 'key', 'value'])
 	make_table(f_all, 'CORE_OBJECTS', ['id', 'name', 'key', 'value'])
 	make_table(f_all, 'CORE_LOCATIONS', ['id', 'name', 'key', 'value'])

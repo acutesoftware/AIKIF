@@ -69,9 +69,9 @@ class DataTable(object):
         """ describes various contents of data table """
         print('======================================================================')
         print(self)
-        print('Table  = ',  str(len(self.header)) + ' cols x ' + str(len(self.arr)) + ' rows')
-        print('HEADER = ', self.get_header())
-        print('arr    = ', self.arr[0:2])
+        print(('Table  = ',  str(len(self.header)) + ' cols x ' + str(len(self.arr)) + ' rows'))
+        print(('HEADER = ', self.get_header()))
+        print(('arr    = ', self.arr[0:2]))
         #for num, itm in enumerate(self.get_header()):
         #    print('HEADER ', num, itm)
         
@@ -161,7 +161,7 @@ class DataTable(object):
         
     def Dict2String(self, d):
         res = ""
-        for k, v in d.items(): # .iteritems():
+        for k, v in list(d.items()): # .iteritems():
             res = res + k + '=' + str(v) + ','
         return res
 
@@ -264,7 +264,7 @@ class DataTable(object):
             try:
                 os.remove(fname)
             except Exception as ex:
-                print('cant drop file "' + fname + '" : ' + str(ex))
+                print(('cant drop file "' + fname + '" : ' + str(ex)))
         #elif self.dataset_type == 'view':
         #    print ("TODO - drop view")
         #elif self.dataset_type == 'table':
@@ -305,7 +305,7 @@ class DataTable(object):
             if c == col_name:
                 #print('found = c =', c, ' num=', num)
                 return num
-        print(col_name, 'NOT found = returning None')
+        print((col_name, 'NOT found = returning None'))
         return None
         
     def get_col_data_by_name(self, col_name, WHERE_Clause=''):
@@ -313,7 +313,7 @@ class DataTable(object):
         #print('get_col_data_by_name: col_name = ', col_name, ' WHERE = ', WHERE_Clause)
         col_key = self.get_col_by_name(col_name)
         if col_key is None:
-            print('get_col_data_by_name: col_name = ', col_name, ' NOT FOUND')
+            print(('get_col_data_by_name: col_name = ', col_name, ' NOT FOUND'))
             return []
         #print('get_col_data_by_name: col_key =', col_key)
         res = []

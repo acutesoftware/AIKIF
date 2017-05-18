@@ -76,9 +76,9 @@ def main():
     fame_and_fortune = False
     tot_calcs = 0
     for n in range(start_n, end_n):
-        print('n = ', n)
+        print(('n = ', n))
         for i in range(start_z, (start_z + steps_z)):
-            print('testing n=', n, ' z=', i, ' (total calcs = ', tot_calcs , ')')
+            print(('testing n=', n, ' z=', i, ' (total calcs = ', tot_calcs , ')'))
             for j in range(start_y, (start_y + steps_y)):
                 for k in range(start_x, (start_x + steps_x)):
                     tot_calcs += 1
@@ -88,7 +88,7 @@ def main():
     if fame_and_fortune:
         print('Found match!')
     else:
-        print('No matches found - total calculations = ' + str(tot_calcs))
+        print(('No matches found - total calculations = ' + str(tot_calcs)))
         mylog.record_result(proj, 'FAILED with params: ' + format_vars_as_string(k,j,i,n) + ' after ' + str(tot_calcs) + ' calculations')    
     
     sum = mod_log.LogSummary(mylog, log_folder)
@@ -110,8 +110,8 @@ def format_vars_detailed(x,y,z,n): # + ' + str(n) + '
 def fermat_test(x, y, z, n):
     """ check to see if the parameters pass the test """
     if x**n + y**n == z**n:
-        print('Match found !', x,y,z,n)
-        print('PROOF: ' + format_vars_detailed(x,y,z,n)) 
+        print(('Match found !', x,y,z,n))
+        print(('PROOF: ' + format_vars_detailed(x,y,z,n))) 
         return False
     return True
     

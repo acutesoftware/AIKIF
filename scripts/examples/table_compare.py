@@ -65,11 +65,11 @@ def main():
     if pass_fail != 'OK':
         print('Bypassing exact row test, as columns are different')
     else:
-        print(check_rows(t_old, t_new))
+        print((check_rows(t_old, t_new)))
 
     res, pass_fail = compare_values(t_old, t_new)
     analysis.add([res])
-    print(analysis.arr)
+    print((analysis.arr))
     
     print('Comparing distinct values....')
     res = distinct_values(t_old, t_new)

@@ -37,7 +37,7 @@ def main():
     frame.mainloop()
     
 def generate_sql(text_box, fname, proj_id, tbl_name, cols):
-    print("Generating SQL for proj", proj_id, " using table ", tbl_name, ", to fname ", fname)
+    print(("Generating SQL for proj", proj_id, " using table ", tbl_name, ", to fname ", fname))
     sql = []
     col_list = cols.split(',')
     for col in col_list:

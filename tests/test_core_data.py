@@ -289,7 +289,7 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(f.drill_up() , asset) 
         self.assertEqual(chair.drill_up() , f) 
     
-        print(wood.format_all())
+        print((wood.format_all()))
         # this returns a str error type CoreDataWhat - print(f.format_all())
         #print(build_chair.format_all())
         
