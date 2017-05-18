@@ -37,10 +37,10 @@ def make_random_xml_file(fname, num_elements=200, depth=3):
     """
     with open(fname, 'w') as f:
         f.write('<?xml version="1.0" ?>\n<random>\n')
-        for dep_num, _ in enumerate(range(1,depth)):
+        for dep_num, _ in enumerate(list(range(1,depth))):
             f.write(' <depth>\n  <content>\n')
             #f.write('<depth' + str(dep_num) + '>\n')
-            for num, _ in enumerate(range(1, num_elements)):
+            for num, _ in enumerate(list(range(1, num_elements))):
                 f.write('    <stuff>data line ' + str(num) + '</stuff>\n')
             #f.write('</depth' + str(dep_num) + '>\n')
             f.write('  </content>\n </depth>\n')
@@ -72,7 +72,7 @@ def count_elements(fname, element):
     
 def count_via_minidom(fname, tag_name):
     from xml.dom.minidom import parseString
-    print('count_via_minidom : reading ' + fname)
+    print(('count_via_minidom : reading ' + fname))
     file = open(fname,'r')
     data = file.read()
     file.close()
@@ -116,11 +116,11 @@ class CycleFile(object):
     def open_next_file(self):
         self.index += 1
         filename = self.basename + str(self.index) + self.ext
-        print('CycleFile:open_next_file: filename = ', filename)
+        print(('CycleFile:open_next_file: filename = ', filename))
         self.file = open(filename, 'w', encoding='utf-8', errors='ignore' )
 
     def cycle(self):
-        print('CycleFile:cycle: self.index = ', self.index)
+        print(('CycleFile:cycle: self.index = ', self.index))
         self.file.close()
         self.open_next_file()
 
@@ -150,7 +150,7 @@ class XMLBreaker(XMLGenerator):
         self.break_after = break_after
         self.context = []
         self.count = 0
-        print('XMLBreaker __init__ : ', break_into, break_after)
+        print(('XMLBreaker __init__ : ', break_into, break_after))
 
     def start_element(self, name, attrs):
         XMLGenerator.start_element(self, name, attrs)
@@ -159,7 +159,7 @@ class XMLBreaker(XMLGenerator):
     def end_element(self, name):
         XMLGenerator.end_element(self, name)
         self.context.pop()
-        print('end_element:name = ', name, ', self.break_into = ', self.break_into)
+        print(('end_element:name = ', name, ', self.break_into = ', self.break_into))
         if name == self.break_into:
             self.count += 1
             if self.count >= self.break_after:

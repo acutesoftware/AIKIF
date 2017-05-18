@@ -65,11 +65,11 @@ def get_audio_metadata(fname):
 def get_audio_metadata_old(fname):
     """ retrieve the metadata from an MP3 file """
     audio_dict = {}
-    print("IDv2 tag info for %s:" % fname)
+    print(("IDv2 tag info for %s:" % fname))
     try:
         audio = mutagenx.id3.ID3(fname, translate=False)
-    except StandardError as err:
-        print("ERROR = " + str(err))
+    except Exception as err:
+        print(("ERROR = " + str(err)))
     #else:
         #print(audio.pprint().encode("utf-8", "replace"))
         #for frame in audio.values():

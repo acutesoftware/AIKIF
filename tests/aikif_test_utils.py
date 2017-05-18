@@ -30,5 +30,5 @@ sys.path.insert(0, root_fldr)
 
 test_fldr = os.path.dirname(__file__) + os.sep + 'test_results'
 
-print('root_fldr : ' + root_fldr)
-print('test_fldr : ' + test_fldr)
+print(('root_fldr : ' + root_fldr))
+print(('test_fldr : ' + test_fldr))

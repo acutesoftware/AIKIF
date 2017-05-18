@@ -1,0 +1,75 @@
+# -*- coding: utf-8 -*-
+# cls_mssqlserver.py	 written by Duncan Murray 28/4/2014
+# Simple wrapper for MS SQL Server functionality
+
+#  install https://pypi.python.org/pypi/pypyodbc/ 
+#  extract folder to D:\install\python\pypyodbc-1.3.1
+# shell to folder, run setup.py
+# in your main program:
+# import lib_data_SQLServer as sql
+# sql.CreateAccessDatabase('test.mdb')
+
+
+
+try:
+    import pypyodbc 
+except ImportError:
+    print('you need to install https://pypi.python.org/pypi/pypyodbc/ ')
+    exit(1)
+
+from if_database import Database
+
+
+def TEST():
+    #testFile = 'D:\\database.mdb'
+    print('wrapper for MS SQL Server and Access databases')
+    
+    d = MSSQL_server(['server', 'database', 'username', 'password'])
+    d.connect()
+    print(d.server)
+    
+class MSSQL_server(Database):
+
+    def CreateAccessDatabase(self, fname):
+        pypyodbc.win_create_mdb(fname)
+        connection = pypyodbc.win_connect_mdb(fname)
+        connection.cursor().execute('CREATE TABLE t1 (id COUNTER PRIMARY KEY, name CHAR(25));').commit()
+        connection.close()
+
+    def CompactAccessDatabase(self, fname):
+        pypyodbc.win_compact_mdb(fname,'D:\\compacted.mdb')
+
+    def SQLServer_to_CSV(self, cred, schema, table, fldr):
+        opFile = fldr + table + '.CSV'
+        print ('Saving ' + table + ' to ' + opFile)
+        #cred = [server, database, username, password]
+        connection_string ='Driver={SQL Server Native Client 11.0};Server=' + cred[0] + ';Database=' + cred[1] + ';Uid=' + cred[2] + ';Pwd=' + cred[3] + ';'
+        #print(connection_string)
+        conn = pypyodbc.connect(connection_string)
+        cur = conn.cursor()	
+        sqlToExec = 'SELECT * FROM ' + schema + '.' + table + ';'
+        cur.execute(sqlToExec)
+        op = open(opFile,'wb') # 'wb'
+        # add column headers
+        txt = ''
+        for col in cur.description:
+            txt += '"' + self.force_string(col[0]) + '",'
+        op.write(txt + '\n')
+        for row_data in cur: # add table rows			.encode('utf-8')
+            txt = ''
+            for col in row_data:
+                txt += '"' + self.force_string(col) + '",'
+            op.write(txt + '\n')
+        op.close()	
+        cur.close()
+        conn.close()
+
+    def force_string(self, obj):
+        if type(obj) is str:
+            return obj
+        else:
+            return str(obj)
+    
+if __name__ == '__main__':
+    TEST()	
+    

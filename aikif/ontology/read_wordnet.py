@@ -11,7 +11,7 @@ def main():
     allWords = []
     for f in files:
         numLines = 0
-        print('Reading WordNet file - ', f)
+        print(('Reading WordNet file - ', f))
         fullName = ipFolder + '\\' + f
         for line in open(fullName,'r'): 
             if line[0:2] != '  ':
@@ -27,14 +27,14 @@ def main():
                         #print(rec)
                         pass
             
-        print('Finished reading ' + str(numLines) + ' lines\n')
-    print('allWords = ', str(len(allWords)))
+        print(('Finished reading ' + str(numLines) + ' lines\n'))
+    print(('allWords = ', str(len(allWords))))
     # Do a lookup
     for i in lookup:
         results = Lookup(i, allWords)
         for r in results:
             print(r)
-            print('Result for ' + i + ' - ' + r[0] + ' ' + r[1] + '\n ' , r[2], '\n')
+            print(('Result for ' + i + ' - ' + r[0] + ' ' + r[1] + '\n ' , r[2], '\n'))
 
     # TESTING - show lines for index
     PrintLineForIndex('00469029', allWords)
@@ -66,11 +66,11 @@ def GetWordForIndex(ndxToFind, lst):
     return wrdResult
 
 def PrintLineForIndex(i, wrdList):
-    print('looking for index - ', i)
+    print(('looking for index - ', i))
     for line in wrdList:  # bug here - TODO
         if i in line:
             print(line)
-            print('found index ' , i[0:40], '\n')
+            print(('found index ' , i[0:40], '\n'))
     
 def ParseLine(line):
     wrds = []

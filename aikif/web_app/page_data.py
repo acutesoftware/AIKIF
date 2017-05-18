@@ -3,7 +3,7 @@
 # handles the data display page for AIKIF web interface
 
 import os
-import web_utils as web
+from . import web_utils as web
 
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
@@ -17,7 +17,7 @@ def get_page(dataFile=''):
     txt += '<div id="table_data">\n'
     if dataFile:
         fullName = os.path.join(data_folder , dataFile)
-        print("\nREADING " + fullName + '\n')
+        print(("\nREADING " + fullName + '\n'))
         txt += show_data_file(fullName)
     else:
         txt += get_aikif_structure()
@@ -47,7 +47,7 @@ def get_aikif_structure():
     
 def get_list_data_files(fldr):
     txt = '<H3>Master File Mapping</H3>\n' # <TABLE width=100% border=0 align=centre>\n'
-    print( "get_list_data_files(): fldr = " + fldr )
+    print(( "get_list_data_files(): fldr = " + fldr ))
     lst = web.GetFileList(fldr, '*.csv')
     #print(lst)
     txt += web.filelist2html(lst, fldr)

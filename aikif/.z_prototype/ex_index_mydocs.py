@@ -18,8 +18,8 @@ import index as ndx
 local_folder = mod_cfg.fldrs['pers_data'] + os.sep + 'diary' + os.sep
 diary_folder = os.path.join('T:\\','user','AIKIF','diary','netDiary_backup')
 
-print('diary_folder = ', diary_folder)
-print('local_folder = ', local_folder)
+print(('diary_folder = ', diary_folder))
+print(('local_folder = ', local_folder))
 
 manual_files_to_index = []
 
@@ -46,10 +46,10 @@ def main():
     for f in all_files:
         try:
             numFiles += 1
-            print('indexing ', str(numFiles) , ' of ', str(len(all_files)), ' : ', f)
+            print(('indexing ', str(numFiles) , ' of ', str(len(all_files)), ' : ', f))
             ndx.buildIndex(f, ndxFile, 'Y', 'N')	# run the index routine
         except Exception:
-            print('ERROR - cant index file ', f)
+            print(('ERROR - cant index file ', f))
     
     
     print('consolidating.... ')		
@@ -94,7 +94,7 @@ def convert_acute_diary_files_to_text(fldr, opfolder):
                             cols = line.split(chr(31))
                             fop.write(cols[1] + ', ' + cols[2] + ', ' + cols[14] + '\n')
                         except Exception as ex:
-                            print("Error - ", str(ex))
+                            print(("Error - ", str(ex)))
     
 
 

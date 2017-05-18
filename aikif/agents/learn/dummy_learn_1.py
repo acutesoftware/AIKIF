@@ -13,13 +13,13 @@ def main(arg1=55, arg2='test', arg3=None):
     There can optionally be have additional functions 
     to call to allow for easy logging access
     """
-    print('Starting dummy AI algorithm with :', arg1, arg2, arg3)
+    print(('Starting dummy AI algorithm with :', arg1, arg2, arg3))
     
     if arg3 is None:
         arg3=[5,6,7,5,4,]
     result = arg1 + arg3[0] * 7566.545  # dummy result
     
-    print('Done - returning ', result)
+    print(('Done - returning ', result))
     return result
 
 

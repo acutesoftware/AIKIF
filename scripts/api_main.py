@@ -183,7 +183,7 @@ class FactListAPI(Resource):
             abort(404)
         fact = fact[0]
         args = self.reqparse.parse_args()
-        for k, v in args.items():
+        for k, v in list(args.items()):
             if v is not None:
                 fact[k] = v
         return {'fact': marshal(fact, fact_fields)}
@@ -274,7 +274,7 @@ class LogAPI(Resource):
         
 
     def post(self, txt):
-        print('Log put: recording event ' + txt)
+        print(('Log put: recording event ' + txt))
         lg.record_process('api_main.py:LogAPI:post',txt)
         args = self.reqparse.parse_args()
 

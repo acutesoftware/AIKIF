@@ -8,7 +8,7 @@ import aikif.lib.cls_filelist as fl
         
 def TEST():
     agt = FileListAgent('filelist_agent', root_folder, True,  'T:\\user\\AIKIF')
-    print(agt.report())
+    print((agt.report()))
 
       
 class FileListAgent(agt.Agent):

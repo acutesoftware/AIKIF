@@ -3,9 +3,9 @@
 # programs.py
 
 import os
-import cls_log as mod_log
-import config as mod_cfg
-import cls_file_mapping as mod_filemap 
+from . import cls_log as mod_log
+from . import config as mod_cfg
+from . import cls_file_mapping as mod_filemap 
 import aikif.lib.cls_filelist as mod_fl
 import aikif.lib.cls_file as mod_file
 
@@ -55,7 +55,7 @@ class Programs(object):
                 self.tot_files += 1
  
         print('All Python Program Statistics')
-        print('Files = ', self.tot_files, ' Bytes = ', self.tot_bytes, ' Lines = ', self.tot_lines, ' Lines of Code = ', self.tot_loc)
+        print(('Files = ', self.tot_files, ' Bytes = ', self.tot_bytes, ' Lines = ', self.tot_lines, ' Lines of Code = ', self.tot_loc))
             
          
     def add(self, nme, desc):
@@ -100,7 +100,7 @@ class Programs(object):
         filemap = mod_filemap.FileMap([], [])
         #location_fileList = filemap.get_full_filename(filemap.find_type('LOCATION'), filemap.find_ontology('FILE-PROGRAM')[0])     
         object_fileList = filemap.get_full_filename(filemap.find_type('OBJECT'), filemap.find_ontology('FILE-PROGRAM')[0])      
-        print('object_fileList = ' + object_fileList + '\n')
+        print(('object_fileList = ' + object_fileList + '\n'))
         if os.path.exists(object_fileList):
             os.remove(object_fileList)
         self.lstPrograms.sort()
@@ -109,7 +109,7 @@ class Programs(object):
             with open(object_fileList, 'a') as f:
                 f.write('\n'.join([i[0] for i in self.lstPrograms]))
         except Exception as ex:
-            print('ERROR = cant write to object_filelist ' , object_fileList, str(ex))
+            print(('ERROR = cant write to object_filelist ' , object_fileList, str(ex)))
 
     def get_file_info_line(self, fname, delim):
         """

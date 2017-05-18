@@ -22,7 +22,7 @@ def main():
         print("Error printing")
         
     try:
-        print(ip_data[3]['dat'].decode("utf-8", "strict")  )
+        print((ip_data[3]['dat'].decode("utf-8", "strict")  ))
     except:
         logger.exception("Error decode(utf-8, strict)")
         print('Error decode("utf-8", "strict")'  )
@@ -31,16 +31,16 @@ def main():
 def print_ip_data(ip):  
     for num, row in enumerate(ip_data):
         try:
-            print(num, row['type'], ' = ', row['dat'])
+            print((num, row['type'], ' = ', row['dat']))
         except:
-            print('cant print row ', str(num))
+            print(('cant print row ', str(num)))
      
 def hex_to_ascii(ip): 
     for c in ip_data[1]['dat']:
         #print(c, ord('\u' + str(c)))
-        print(type(c), c)
+        print((type(c), c))
         try:
-            print(chr(c))
+            print((chr(c)))
         except:
             print('cant convert to chr')
             

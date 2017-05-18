@@ -11,10 +11,10 @@ def describe_problem(capacity, items):
     print('This attempts to maximise the number of items that can fit into a Knapsack')
     print('--------------------------------------------------------------------------')
     print('PROBLEM : '   )
-    print('Knapsack Capacity = ' + str(capacity))
-    print('Total Items = ' + str(len(items)))
+    print(('Knapsack Capacity = ' + str(capacity)))
+    print(('Total Items = ' + str(len(items))))
     for item in items:
-        print ('item [' + str(item.index) + '] value = ' + str(item.value) + ', item.weight = ' + str(item.weight) + ' density = ' + str(item.density))
+        print(('item [' + str(item.index) + '] value = ' + str(item.value) + ', item.weight = ' + str(item.weight) + ' density = ' + str(item.density)))
     print('--------------------------------------------------------------------------')
     
 
@@ -93,13 +93,13 @@ def main():
 
     describe_problem(capacity, items)
     value, taken = solve_expensive_items_first(capacity, items)
-    print('solve_expensive_items_first = ', value, taken)
+    print(('solve_expensive_items_first = ', value, taken))
     
     value, taken = solve_smallest_items_first(capacity, items)
-    print('solve_smallest_items_first = ', value, taken)
+    print(('solve_smallest_items_first = ', value, taken))
 
     value, taken = solve_value_density(capacity, items)
-    print('solve_value_density = ', value, taken)
+    print(('solve_value_density = ', value, taken))
 
 if __name__ == '__main__':
     main()

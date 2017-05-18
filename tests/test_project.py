@@ -15,7 +15,7 @@ def dummy_function(a, b):
     """
     dummy function called by run_all_tasks
     """
-    print('running dummy function with values ', a, b)
+    print(('running dummy function with values ', a, b))
     return a * b
 
 class TestProject(unittest.TestCase):

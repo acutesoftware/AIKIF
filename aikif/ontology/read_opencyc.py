@@ -10,8 +10,8 @@ ip_folder =  'S:\\DATA\\opendata\\ontology\\OpenCyc'
 op_folder = os.path.abspath(ip_folder + os.sep + ".." + os.sep + ".." + os.sep + "data" )
 
 
-print ('ip = ', ip_folder)
-print ('op = ', op_folder)
+print(('ip = ', ip_folder))
+print(('op = ', op_folder))
 
 
 #files = ['open-cyc.n3', 'open-cyc.rdf', 'open-cyc.trig']
@@ -27,7 +27,7 @@ def main():
 
 def load_data(fname):
     """ loads previously exported CSV file to redis database """
-    print('Loading ' + fname + ' to redis')
+    print(('Loading ' + fname + ' to redis'))
     r = redis.StrictRedis(host = '127.0.0.1', port = 6379, db = 0);
     with open(fname, 'r') as f:
         for line_num, row in enumerate(f): 
@@ -35,7 +35,7 @@ def load_data(fname):
                 if line_num < 100000000:
                     l_key, l_val = parse_n3(row, 'csv')
                     if line_num % 1000 == 0: 
-                        print('loading line #', line_num, 'key=', l_key, ' = ', l_val)
+                        print(('loading line #', line_num, 'key=', l_key, ' = ', l_val))
                     if l_key != '':
                         r.set(l_key, l_val)
 
@@ -91,7 +91,7 @@ def summarise_file_as_html(fname):
     """
     txt = '<H1>' + fname + '</H1>'
     num_lines = 0
-    print('Reading OpenCyc file - ', fname)
+    print(('Reading OpenCyc file - ', fname))
     with open(ip_folder + os.sep + fname, 'r') as f:
         txt += '<PRE>'
         for line in f: 

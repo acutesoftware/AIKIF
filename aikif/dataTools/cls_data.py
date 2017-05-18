@@ -127,7 +127,7 @@ class Data(object):
         if type(self.content['data']) is dict:
             self.total_length += len(str(self.content['data']))
             self.total_records += 1
-            self.total_nodes = sum(len(x) for x in self.content['data'].values())
+            self.total_nodes = sum(len(x) for x in list(self.content['data'].values()))
                                
         elif hasattr(self.content['data'], '__iter__') and type(self.content['data']) is not str:
             self._get_size_recursive(self.content['data'])

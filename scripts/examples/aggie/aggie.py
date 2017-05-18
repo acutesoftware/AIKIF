@@ -47,12 +47,12 @@ class Aggie(object):
         loops until exit command given
         """
         while self.status != 'EXIT':
-            print(self.process_input(self.get_input()))
+            print((self.process_input(self.get_input())))
         
         print('Bye')
     
     def get_input(self):
-        q = input(self.status + ' ' + self.prompt)
+        q = eval(input(self.status + ' ' + self.prompt))
         if q.lower() == 'quit' or q.lower() == 'exit':
             self.status = 'EXIT'
         return q

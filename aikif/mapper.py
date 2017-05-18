@@ -7,7 +7,7 @@ import csv
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 
 import aikif.dataTools.cls_datatable as mod_datatable
-import config as mod_cfg
+from . import config as mod_cfg
 
 data_folder = mod_cfg.core_folder + os.sep + 'aikif' + os.sep + 'data' + os.sep +  'ref'
 
@@ -96,7 +96,7 @@ class Mapper(object):
                             events.append(str(row[fld]))
 
                     except Exception as ex:
-                        print('parsing error - shouldnt really be splitting using a comma anyway!', str(ex))
+                        print(('parsing error - shouldnt really be splitting using a comma anyway!', str(ex)))
         
         dist_vals = sorted(list(set(group_dat)))
         
@@ -125,7 +125,7 @@ class Mapper(object):
         uses the MapRule 'm' to run through the 'dict'
         and extract data based on the rule
         """
-        print('TODO - ' + tpe + ' + applying rule ' + str(m).replace('\n', '') )
+        print(('TODO - ' + tpe + ' + applying rule ' + str(m).replace('\n', '') ))
         #print(dct)
     
     def format_raw_data(self, tpe, raw_data):
@@ -158,7 +158,7 @@ class Mapper(object):
         process the file according to the mapping rules.
         The cols list must match the columns in the filename
         """
-        print('TODO - parse_file_to_dict' + fname)
+        print(('TODO - parse_file_to_dict' + fname))
         for m in self.maps:
             if m.tpe == 'file':
                 if m.key[0:3] == 'col':
@@ -286,7 +286,7 @@ class MapColumns(object):
     
     def __str__(self):
         res = ' -- List of Column Mappings -- \n'
-        print('self.col_file = ' + self.col_file)
+        print(('self.col_file = ' + self.col_file))
         for m in self.col_maps:
             res += str(m)
             #print(m)

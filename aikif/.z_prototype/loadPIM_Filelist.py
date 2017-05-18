@@ -83,7 +83,7 @@ def PrintList(lst):
     num = 0
     for i in lst:
         num = num + 1
-        print('\n' + str(num) + ' = ' )
+        print(('\n' + str(num) + ' = ' ))
         print(i)
 
 
@@ -94,7 +94,7 @@ def LoadData_FileList(fname):
     #   "T:\user\dev\src\python\AI\README.md","README.md","T:\user\dev\src\python\AI","3071","",
 	fileData = dat.ReadFileToList(fname, 2)
 	if silent == 'N':
-		print('processing ' + str(len(fileData)) + ' rows of filedata')
+		print(('processing ' + str(len(fileData)) + ' rows of filedata'))
     
     # set up file structures for the data to be returned
     #todaysDate = datetime.fromtimestamp(t).strftime("%Y-%m-%d %H:%M:%S")
@@ -189,10 +189,10 @@ def FindLinks(lstA, lstB):
 
 def DisplayShortListOutput(lst, title):
     num = 1
-    print('\n' + title + ' - ' + str(len(lst)) + ' elements')
+    print(('\n' + title + ' - ' + str(len(lst)) + ' elements'))
     for i in lst:
         if num < 4:
-            print(num, ' - ' , i)
+            print((num, ' - ' , i))
         num = num + 1
     
 	

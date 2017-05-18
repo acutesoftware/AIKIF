@@ -89,8 +89,8 @@ class Graph(object):
                 all_nodes.append(connection)
         self.nodes = sorted(list(set(all_nodes)))
         if show_in_console is not False:
-            print (len(self.nodes), 'nodes:', self.nodes)
-            print (len(self.links), 'links:', self.links)
+            print((len(self.nodes), 'nodes:', self.nodes))
+            print((len(self.links), 'links:', self.links))
         
         for y in range(len(self.nodes)):
             row = []

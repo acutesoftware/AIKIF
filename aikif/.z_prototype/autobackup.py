@@ -49,7 +49,7 @@ USE THIS FOR EVERYTHING = 2015 Aug
 
 def autobackup(nme, fldr, ignore_root, dest_folder, log_folder, ndx_file):
     aikif.LogCommand('autobackup - ' + nme, 'autobackup.py')
-    print('Starting backup "' + nme + '" - ' +  fldr)
+    print(('Starting backup "' + nme + '" - ' +  fldr))
     fl = agt.FileListAgent(nme, fldr, True, log_folder ) # ['name', 'size', 'date', 'path'])
     # , name,  fldr, running,  log_folder):
     

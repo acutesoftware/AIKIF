@@ -3,14 +3,14 @@
 import sys
 import os
 
-print ("sys.version = ", sys.version)
-print ("os.getcwd() = ", os.getcwd())
+print(("sys.version = ", sys.version))
+print(("os.getcwd() = ", os.getcwd()))
 
 #AIKIF_WEB_VERSION = "PROD"
 AIKIF_WEB_VERSION = "DEV"
 AIKIF_VERSION_NUM = "Version 0.2.1 (alpha) - updated 15-Jan-2017"
 
-import web_utils as web
+from . import web_utils as web
 from flask import Flask
 from flask import request
     
@@ -57,7 +57,7 @@ def search_post():
 def _search(search_text):
     txt = aikif_web_menu()
     txt += web.build_search_form()
-    import page_search
+    from . import page_search
     txt += page_search.get_page(search_text)
     return txt
 
@@ -87,7 +87,7 @@ def page_todo():
 @app.route("/projects")
 def page_projects():
     txt = aikif_web_menu('Projects')
-    import page_projects
+    from . import page_projects
     txt += page_projects.get_page()
     txt += get_footer()
     return txt
@@ -95,7 +95,7 @@ def page_projects():
 @app.route("/data")
 def page_data():
     txt = aikif_web_menu('Data')
-    import page_data
+    from . import page_data
     txt += page_data.get_page()
     txt += get_footer()
     return txt
@@ -103,7 +103,7 @@ def page_data():
 @app.route("/data/<dataFile>")
 def page_data_show(dataFile):
     txt = aikif_web_menu('Data')
-    import page_data
+    from . import page_data
     txt += page_data.get_page(dataFile)
     txt += get_footer()
     return txt
@@ -113,7 +113,7 @@ def page_data_show(dataFile):
 @app.route("/agents")
 def page_agents():
     txt = aikif_web_menu('Agents')
-    import page_agents as agt
+    from . import page_agents as agt
     txt += agt.get_page()
     txt += get_footer()
     return txt
@@ -123,7 +123,7 @@ def page_agents():
 def edit_agents():
     res = ''
     editedinfo = []
-    print('hi - about to get form values', request.form)
+    print(('hi - about to get form values', request.form))
     #editedinfo.append(request.form['Agent Name']) # request.form['search_text']
     #editedinfo.append(request.form['Program Location'])
     #editedinfo.append(request.form['params'])
@@ -153,14 +153,14 @@ def edit_agents():
 @app.route("/programs")
 def page_programs():
     txt = aikif_web_menu('Programs')
-    import page_programs as prg
+    from . import page_programs as prg
     txt += prg.get_page()
     return txt
     
 @app.route("/programs/rebuild")
 def page_programs_rebuild():
     txt = aikif_web_menu('Programs')
-    import page_programs as prg
+    from . import page_programs as prg
     prg.rebuild()
     txt += prg.get_page()
     return txt
@@ -168,7 +168,7 @@ def page_programs_rebuild():
 @app.route("/about")
 def page_about():
     txt = aikif_web_menu('About')
-    import page_about as abt
+    from . import page_about as abt
     txt += abt.get_page()
     txt += get_footer()
     return txt

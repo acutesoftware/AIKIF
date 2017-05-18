@@ -25,7 +25,7 @@ class SQLCodeGenerator(object):
             with open(fname, "w") as f:
                 f.write(self.sql_text)
         except IOError:
-            print("Error - cant save file " + fname)
+            print(("Error - cant save file " + fname))
    
     def save_ddl(self, fname):
         with open(fname, "w") as f:
@@ -305,8 +305,8 @@ class SQLCodeGenerator(object):
         self.sql_text += "COMMIT;\n\n"
         
         
-        print(self.ddl_text)
-        print(self.sql_text)
+        print((self.ddl_text))
+        print((self.sql_text))
         
     def aggregate(self, opTable, group_by_cols, meas):
         """ 

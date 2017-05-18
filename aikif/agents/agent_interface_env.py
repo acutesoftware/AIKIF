@@ -5,7 +5,7 @@
 import os
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." + os.sep + "..") 
 
-import agent as agt
+from . import agent as agt
 
 
 class AgentInterfaceEnv(agt.Agent):

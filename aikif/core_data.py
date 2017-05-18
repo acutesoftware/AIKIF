@@ -142,8 +142,8 @@ class CoreData(object):
         (In real terms it returns the parent and recalculates)
         TODO = processes need to be recalculated
         """
-        print('TODO: process check = ', process)
-        print(self.name, ' contracted to ->', self.parent)
+        print(('TODO: process check = ', process))
+        print((self.name, ' contracted to ->', self.parent))
         return self.parent
     
     def get_child_by_name(self, name):
@@ -311,7 +311,7 @@ class CoreTable(object):
     def find(self, txt):
         result = []
         for e in self.table:
-            print('find(self, txt) e = ', e)
+            print(('find(self, txt) e = ', e))
             if txt in str(e):
                 result.append(e)
                 #print(e)
@@ -347,5 +347,5 @@ class CoreTable(object):
         """
         print('Generate diary files from Event rows only')
         for r in self.table:
-            print(str(type(r)) + ' = ', r)
+            print((str(type(r)) + ' = ', r))
         

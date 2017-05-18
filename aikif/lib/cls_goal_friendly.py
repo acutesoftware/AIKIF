@@ -31,7 +31,7 @@ class GoalFriendly(Goal):
         executes a plan by running the passed strategy
         and then updates the local results
         """
-        print ("running strategy : " + strategy['name'] + " for plan " + plan['name'])
+        print(("running strategy : " + strategy['name'] + " for plan " + plan['name']))
         
 
     def find_best_plan(self):

@@ -95,7 +95,7 @@ def ProcessData(subjectAreaSearch, lst, title):
 	#print('subjectAreaSearch = ', subjectAreaSearch)
 	#print('subjectArea = ', subjectArea)
 
-	print('Processing - ', title)
+	print(('Processing - ', title))
 	location_fileList = filemap.GetFullFilename(filemap.FindType('location'), subjectArea[0])   
 	eventsList = [[0, 'date', 'event_type', 'name']]
 	locationsList = [[0, 'folder']]
@@ -105,7 +105,7 @@ def ProcessData(subjectAreaSearch, lst, title):
 	for dictRecord in lst:
 		text = ''
 		#print(dictRecord)
-		for k,v in dictRecord.items():  # this is the projects, tasks, contacts or goals
+		for k,v in list(dictRecord.items()):  # this is the projects, tasks, contacts or goals
 			#print('key=',k,', val=',v)
 			#text = v['name']
 			if k == 'name': 
@@ -115,7 +115,7 @@ def ProcessData(subjectAreaSearch, lst, title):
 					#print('TESTING k=', k, ' == ', e['column'])
 					if e['column'] in k:
 #						if text != '':
-						print('mapping ', text, ' to ', k) 
+						print(('mapping ', text, ' to ', k)) 
 						eventsList.append([0, v, k, text])
 			for dic in aikif_objects:
 				if dic['table'] == title:
@@ -129,13 +129,13 @@ def ProcessData(subjectAreaSearch, lst, title):
 			
 	appendToExistingFiles = False
 	if len(locationsList) > 1:
-		print('LOCATION :  ' + location_fileList + ' (' + str(len(locationsList)) + ') rows')
+		print(('LOCATION :  ' + location_fileList + ' (' + str(len(locationsList)) + ') rows'))
 		ai.SaveFileDataToFile(locationsList, location_fileList, appendToExistingFiles)
 	if len(eventsList) > 1:	
-		print('EVENTS   :  ' + event_fileList + ' (' + str(len(eventsList)) + ') rows')
+		print(('EVENTS   :  ' + event_fileList + ' (' + str(len(eventsList)) + ') rows'))
 		ai.SaveFileDataToFile(eventsList, event_fileList, appendToExistingFiles)
 	if len(objectsList) > 1:	
-		print('OBJECTS  :  ' + object_fileList + ' (' + str(len(objectsList)) + ') rows')
+		print(('OBJECTS  :  ' + object_fileList + ' (' + str(len(objectsList)) + ') rows'))
 		ai.SaveFileDataToFile(objectsList, object_fileList, appendToExistingFiles)
 
 
@@ -143,17 +143,17 @@ def ProcessData(subjectAreaSearch, lst, title):
 	
 def ShowData():		
 	def show_goals():
-		print('Goals = ',  str(len(goals)))
+		print(('Goals = ',  str(len(goals))))
 		
 	def show_projects():
-		print('Projects = ' + str(len(projects)))
+		print(('Projects = ' + str(len(projects))))
 		for p in projects:
 			#print (p['name'])
 			add.add_string(p['name'])
 			add.add_dataset(p['folder'])
 		
 	def show_tasks():
-		print('Tasks = ' + str(len(tasks)))
+		print(('Tasks = ' + str(len(tasks))))
 	show_goals()
 	show_projects()
 	show_tasks()

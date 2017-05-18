@@ -124,7 +124,7 @@ class Thoughts(object):
         lst = []
         for i, thought in enumerate(self._thoughts):
             if print_console is True:
-                print(self._type + str(i) + ' = ' + thought)
+                print((self._type + str(i) + ' = ' + thought))
             lst.append(thought)
         return lst
     
@@ -158,7 +158,7 @@ def TEST():
     myplan.intentions.list()
     #myplan.save_plan("test_plan.txt")
     #myplan.load_plan("test_plan.txt")
-    print(str(myplan))
+    print((str(myplan)))
     
 if __name__ == '__main__':
     TEST()  

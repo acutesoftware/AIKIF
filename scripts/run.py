@@ -18,19 +18,19 @@ def configure():
     print(' |  Welcome to AIKIF  | ')
     print(' \--------------------/ \n')
     print('This script asks for a folder to save to, and builds the database scripts.')
-    print('You can do this manually by setting creating the file ' + settings_file )
-    print('in your current folder (' + cur_fldr + ')')
+    print(('You can do this manually by setting creating the file ' + settings_file ))
+    print(('in your current folder (' + cur_fldr + ')'))
     print('')
     fldr = get_local_config()
     if fldr == '':
         fldr = ask_for_folder()
-    print('Folder = ' + fldr)
+    print(('Folder = ' + fldr))
     import create_database
     create_database.main()
     
 def ask_for_folder():
     print('Please enter the folder to save your personal data [press enter to use current folder]\n')
-    fldr = input('Current Folder = ' + cur_fldr)
+    fldr = eval(input('Current Folder = ' + cur_fldr))
     if fldr == '':
         fldr = cur_fldr
         with open(cfg_file, 'w') as f:

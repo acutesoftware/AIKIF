@@ -93,7 +93,7 @@ def LoadData_Lectures(rootFolder):
 		pass
 		
 	if silent == 'N':
-		print (' reading folder ' , rootFolder)
+		print((' reading folder ' , rootFolder))
 
 	filelist = fle.GetFileList([rootFolder], ['*.*'], ["Thumbs.db", "thumbs.db"], False)
 	for file in filelist:
@@ -117,7 +117,7 @@ def IndexLectureText(f, ndxFile):
 	try:
 		index.buildIndex(f, ndxFile, 'Y', 'Y', 'N')  # append=Y and silent=Y, useShortFileName='N'
 	except:
-		print('error indexing ', f)
+		print(('error indexing ', f))
 	
 def ExtractCourseData(jsonFile, course_key):
 	# extracts course information from a coursera .json file
@@ -138,12 +138,12 @@ def ExtractCourseData(jsonFile, course_key):
 	lst.append(data["universities"][0]["location"])
 	lst.append(data["universities"][0]["location_country"])
 	for uni in data["universities"]:
-		print(uni["abbr_name"], ' - ' ,uni["name"] , uni["location_country"] , uni["website"], uni["location"] )
+		print((uni["abbr_name"], ' - ' ,uni["name"] , uni["location_country"] , uni["website"], uni["location"] ))
 	lst.append(data["instructor"])
 		
 	lst.append(data["courses"][0]["start_year"])	
 	for crsOffering in data["courses"]:
-		print(crsOffering["start_year"], crsOffering["start_date_string"], crsOffering["home_link"])   # one per course offering, but no way to know which offering you did, so ignore
+		print((crsOffering["start_year"], crsOffering["start_date_string"], crsOffering["home_link"]))   # one per course offering, but no way to know which offering you did, so ignore
 		latestWebLink = crsOffering["home_link"]
 		
 	lst.append(latestWebLink)
@@ -157,10 +157,10 @@ def ExtractCourseData(jsonFile, course_key):
 	
 def DisplayShortListOutput(lst, title):
     num = 1
-    print('\n' + title + ' - ' + str(len(lst)) + ' elements')
+    print(('\n' + title + ' - ' + str(len(lst)) + ' elements'))
     for i in lst:
         if num < 4:
-            print(num, ' - ' , i)
+            print((num, ' - ' , i))
         num = num + 1
     
 		

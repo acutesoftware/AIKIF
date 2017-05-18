@@ -12,4 +12,4 @@ class clsCollect(object):
 		self.fldr = fldr
 
 	def log(self, msg):
-		print("log: ", msg)
+		print(("log: ", msg))

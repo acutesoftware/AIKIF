@@ -59,7 +59,7 @@ if len(sys.argv) == 2:
 		silent = 'Y'
 
 def extractZip(ip, op):
-	print('extracting ' + ip + ' to ' + op)
+	print(('extracting ' + ip + ' to ' + op))
 	
 		
 def main():
@@ -92,7 +92,7 @@ def LoadAustPostcodeFile(ipFile, opFile):
 	f = open(ipFile, 'r')
 	
 	if silent == 'N':
-		print('Saving master country list to ' + opFile + ' from ' + ipFile)
+		print(('Saving master country list to ' + opFile + ' from ' + ipFile))
 		
 	for line in f:
 		if len(line) > 0:

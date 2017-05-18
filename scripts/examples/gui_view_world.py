@@ -4,7 +4,7 @@ import os
 import math
 
 try:
-    import Tkinter as Tkinter
+    import tkinter as Tkinter
 except ImportError:
     import tkinter as Tkinter
 
@@ -22,7 +22,7 @@ def display_map(fname):
     """
     view a text file (map) in high resolution
     """
-    print("viewing ", fname)
+    print(("viewing ", fname))
     
     wrld = read_map(fname)
     for row in wrld:

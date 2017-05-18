@@ -17,7 +17,7 @@ def main():
     # not yet - wait for beta release print(' w. wipe data and install everything from scratch')
     print(' |  q. quit                          |')
     print(' \\-----------------------------------/')
-    cmd = input('?')
+    cmd = eval(input('?'))
     if cmd == 's':
         show_setup()   
     elif cmd == 'f':
@@ -48,15 +48,15 @@ def setup_folders():
 def create_folder(fldr):
     try:
         os.mkdir(fldr) 
-        print('creating folder ' + fldr)
+        print(('creating folder ' + fldr))
     except Exception:
-        print(os.getcwd() + os.sep + fldr + ' already exists')
+        print((os.getcwd() + os.sep + fldr + ' already exists'))
 
 def show_setup():
     print(' -= Current Setup =- ')
     try:
         with open(config_file, 'r') as cfg_file:
-            print(cfg_file.read())
+            print((cfg_file.read()))
             #for line in cfg_file:
             #    print(line)
     except Exception:
@@ -67,7 +67,7 @@ def create_sample_data():
         print('== WARNING - CONFIG DATA ALREADY EXISTS ==\n')
         show_setup()
         print('== ENTER OK to wipe this data and reset ==\n')
-        if input() != 'OK':
+        if eval(input()) != 'OK':
             print('Aborting create sample data')
             return
     print('creating sample data')

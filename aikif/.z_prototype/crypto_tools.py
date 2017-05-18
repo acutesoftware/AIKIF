@@ -36,22 +36,22 @@ def solve(encrypted_text):
     takes an array of bytes and applies several methods to 
     decrypt or unjumble to find words
     """
-    print('attempting to decrypt ' + encrypted_text)
+    print(('attempting to decrypt ' + encrypted_text))
     print('TODO')
     
 def check_for_words(txt):
     """
     checks for english words in a string to see if decrypted
     """
-    print('TODO' + txt)
+    print(('TODO' + txt))
     return False
     
 
 def test_base64(msg):
     b = txt2bin(msg)
-    print('encode64 : ' + msg )
-    print('binary   : ' + b)
-    print('decode64 : ' + bin2txt(b))
+    print(('encode64 : ' + msg ))
+    print(('binary   : ' + b))
+    print(('decode64 : ' + bin2txt(b)))
 
 def test_caeser(txt):
     for i in range(0,3):
@@ -59,15 +59,15 @@ def test_caeser(txt):
             res = caesar(txt, 0)
         else:   # Running alternate caeser function Python 3.3
             res = caeser2(txt, i)
-        print('caeser   : ' + txt + ' shifted ' + str(i) + ' = ' + res)
+        print(('caeser   : ' + txt + ' shifted ' + str(i) + ' = ' + res))
     
 def test_crypto(msg):
     secret = encrypt_AES('key123', msg, 'iv456')
     result = decrypt_AES('key123', secret, 'iv456')
     print()
-    print('original  = ' + msg)
-    print('encrypted = ' + secret)
-    print('decrypted = ' + result)
+    print(('original  = ' + msg))
+    print(('encrypted = ' + secret))
+    print(('decrypted = ' + result))
 
     
 def encode64(visible_text): 
@@ -167,7 +167,7 @@ def test_full_range():
     """
     for i in range(0, 128):
         char = chr(i)
-        print(str(i) + '  ' + char + ' ' + txt2bin(char))
+        print((str(i) + '  ' + char + ' ' + txt2bin(char)))
 
 def pprint_binary(txt):
     """ 

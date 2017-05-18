@@ -6,12 +6,12 @@ def search(search_string):
     """ 
     main function to search using indexes 
     """
-    print('Searching for ' + search_string)
+    print(('Searching for ' + search_string))
     ndxFiles = cfg.params['index_files']
     numResults = 0
     totLines = 0
     for fname in ndxFiles:
-        print("Searching " + fname)
+        print(("Searching " + fname))
         with open(fname, 'r') as f:
             line_num = 0
             for line_num, line in enumerate(f):
@@ -22,8 +22,8 @@ def search(search_string):
                     except Exception:
                         print("Cant print search result")
                     numResults = numResults + 1
-            print(str(line_num) + " lines searched")
-    print('Found ', str(numResults), 'results in', str(totLines), 'lines over', str(len(ndxFiles)), 'index files')
+            print((str(line_num) + " lines searched"))
+    print(('Found ', str(numResults), 'results in', str(totLines), 'lines over', str(len(ndxFiles)), 'index files'))
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Search.py looks in AIKIF index files for strings')

@@ -87,10 +87,10 @@ class MapTest(unittest.TestCase):
         mapPC_Usage = mod_map.Mapper(os.path.join(fldr_raw_data, 'PC_Usage.map'))
         flds = ['Date', 'Time', 'Length', 'Caption']
         tot, vals, grps, events = mapPC_Usage.process_raw_file(os.path.join(fldr_raw_data, 'sample_PC_usage.txt'), flds)
-        print(' tot = ', tot)
-        print('vals = ', vals[0:2])
-        print('grps = ', grps[0:2])
-        print('events = ', events[0:2])
+        print((' tot = ', tot))
+        print(('vals = ', vals[0:2]))
+        print(('grps = ', grps[0:2]))
+        print(('events = ', events[0:2]))
         self.assertEqual(tot, 17)  # note that tot starts from zero, meaning 18 lines in file
         self.assertEqual(len(vals), 8)
         self.assertEqual(len(grps), 18)

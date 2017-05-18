@@ -20,12 +20,12 @@ class Database(object):
         
     def getData(self, sqlText):
         lst = []
-        print('extracting data - ', sqlText)
+        print(('extracting data - ', sqlText))
         return lst
         
     def get_info(self):
         return '\nserver='+self.server + '\ndatabase=' + self.database + '\nusername='+ self.username + '\npassword=' + self.password
         
     def connect(self):
-        print(self.get_info())
+        print((self.get_info()))
         

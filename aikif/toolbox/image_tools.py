@@ -14,7 +14,7 @@ from PIL import ImageOps
 try:
     from PIL import ImageGrab
 except Exception as ex:
-    print('cant load ImageGrab (running on Linux)' + str(ex))
+    print(('cant load ImageGrab (running on Linux)' + str(ex)))
 
 def screenshot(fname):
     """
@@ -24,7 +24,7 @@ def screenshot(fname):
         im = ImageGrab.grab()
         im.save(fname)
     except Exception as ex:
-        print('image_tools.screenshot:cant create screenshot ' + str(ex))
+        print(('image_tools.screenshot:cant create screenshot ' + str(ex)))
     
 def get_exif_data(image):
     """
@@ -34,7 +34,7 @@ def get_exif_data(image):
     exif_data = {}
     info = image._getexif()
     if info:
-        for tag, value in info.items():
+        for tag, value in list(info.items()):
             decoded = TAGS.get(tag, tag)
             if decoded == "GPSInfo":
                 gps_data = {}
@@ -83,7 +83,7 @@ def get_lat_lon(exif_data):
  
     if "GPSInfo" in exif_data:      
         gps_info = exif_data["GPSInfo"]
-        print("IN GET_LAT_LONG - GPSInfo = ", gps_info)
+        print(("IN GET_LAT_LONG - GPSInfo = ", gps_info))
         gps_latitude = _get_if_exist(gps_info, "GPSLatitude")
         gps_latitude_ref = _get_if_exist(gps_info, 'GPSLatitudeRef')
         gps_longitude = _get_if_exist(gps_info, 'GPSLongitude')
@@ -114,15 +114,15 @@ def resize(fname, basewidth, opFilename):
 def print_stats(img):
     """ prints stats, remember that img should already have been loaded """
     stat = ImageStat.Stat(img)
-    print("extrema    : ", stat.extrema)
-    print("count      : ", stat.count)
-    print("sum        : ", stat.sum)
-    print("sum2       : ", stat.sum2)
-    print("mean       : ", stat.mean)
-    print("median     : ", stat.median)
-    print("rms        : ", stat.rms)
-    print("var        : ", stat.var)
-    print("stddev     : ", stat.stddev)
+    print(("extrema    : ", stat.extrema))
+    print(("count      : ", stat.count))
+    print(("sum        : ", stat.sum))
+    print(("sum2       : ", stat.sum2))
+    print(("mean       : ", stat.mean))
+    print(("median     : ", stat.median))
+    print(("rms        : ", stat.rms))
+    print(("var        : ", stat.var))
+    print(("stddev     : ", stat.stddev))
 
     
 #def print_exif_data(img):   
@@ -151,26 +151,26 @@ def print_stats(img):
         
 def print_all_metadata(fname):
     """ high level that prints all as long list """
-    print("Filename   :", fname )
-    print("Basename   :", os.path.basename(fname))
-    print("Path       :", os.path.dirname(fname))
-    print("Size       :", os.path.getsize(fname))
+    print(("Filename   :", fname ))
+    print(("Basename   :", os.path.basename(fname)))
+    print(("Path       :", os.path.dirname(fname)))
+    print(("Size       :", os.path.getsize(fname)))
     img = Image.open(fname)
     # get the image's width and height in pixels
     width, height = img.size
     # get the largest dimension
     #max_dim = max(img.size)
-    print("Width      :", width)
-    print("Height     :", height)
-    print("Format     :", img.format)
-    print("palette    :", img.palette )
+    print(("Width      :", width))
+    print(("Height     :", height))
+    print(("Format     :", img.format))
+    print(("palette    :", img.palette ))
      
     print_stats(img)
     #print_exif_data(img)
     exif_data = get_exif_data(img)
     (lat, lon) = get_lat_lon(exif_data)
-    print("GPS Lat    :", lat )
-    print("GPS Long   :", lon )
+    print(("GPS Lat    :", lat ))
+    print(("GPS Long   :", lon ))
 
 def metadata_header():
     hdr = [
@@ -223,13 +223,13 @@ def get_metadata_as_dict(fname):
         imgdict['stddev'] =  List2String(stat.stddev, ",") 
 
         exif_data = get_exif_data(img)
-        print('exif_data = ', exif_data)
+        print(('exif_data = ', exif_data))
         (lat, lon) = get_lat_lon(exif_data)
-        print('(lat, lon)', (lat, lon))
+        print(('(lat, lon)', (lat, lon)))
         imgdict['lat'] =  str(lat)
         imgdict['lon'] =  str(lon)
     except Exception as ex:
-        print('problem reading image file metadata in ', fname, str(ex))
+        print(('problem reading image file metadata in ', fname, str(ex)))
         imgdict['lat'] =  'ERROR'
         imgdict['lon'] =  'ERROR'
     return imgdict
@@ -267,7 +267,7 @@ def get_metadata_as_csv(fname):
         res = res + q + str(lat) + q + d
         res = res + q + str(lon) + q + d
     except Exception as ex:
-        print('problem reading image file metadata in ', fname, str(ex))
+        print(('problem reading image file metadata in ', fname, str(ex)))
     return res
         
     
@@ -283,7 +283,7 @@ def List2String(l, delim):
 
 def Dict2String(d):
     res = ","
-    for k, v in d.items(): # .iteritems():
+    for k, v in list(d.items()): # .iteritems():
         res = res + k + ',' + str(v) + ','
     return res
 
@@ -305,7 +305,7 @@ def add_text_to_image(fname, txt, opFilename):
     """ convert an image by adding text """
     ft = ImageFont.load("T://user//dev//src//python//_AS_LIB//timR24.pil")
     #wh = ft.getsize(txt)
-    print("Adding text ", txt, " to ", fname, " pixels wide to file " , opFilename)
+    print(("Adding text ", txt, " to ", fname, " pixels wide to file " , opFilename))
     im = Image.open(fname)
     draw = ImageDraw.Draw(im)
     draw.text((0, 0), txt, fill=(0, 0, 0), font=ft)
@@ -337,7 +337,7 @@ def detect_face(fname, opFile):
         for face in detected:
             print (face, 'saving to ', opFile)
     """
-    print("detect_face NOT IMPLEMENTED: ", fname, opFile)
+    print(("detect_face NOT IMPLEMENTED: ", fname, opFile))
     
     
 def check_image_duplicates(file_list):

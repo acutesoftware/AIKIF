@@ -3,7 +3,7 @@
 
 import os
 import sys
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import urllib.request
 import getpass
 import socket
@@ -70,7 +70,7 @@ def get_protected_page(url, user, pwd, filename):
     """
     import requests
     r = requests.get(url, auth=(user, pwd))
-    print(r.status_code)
+    print((r.status_code))
     if r.status_code == 200:
         print('success')
         with open(filename, 'wb') as fd:

@@ -105,8 +105,8 @@ class TestClassImageTools(unittest.TestCase):
         self.assertEqual(metadata['basename'], 'photo_no_gps.jpg')   
         self.assertEqual(metadata['lat'], 'None')   # WTF - why is this a string
         self.assertEqual(metadata['lon'], 'None')   
-        for k,v in metadata.items():
-            print(k, '=', v)
+        for k,v in list(metadata.items()):
+            print((k, '=', v))
             
     def test_10_auto_contrast(self):
         #    cl.auto_contrast(photo_with_gps, 'photo_auto_contrast.jpg')

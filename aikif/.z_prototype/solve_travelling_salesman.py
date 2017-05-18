@@ -16,7 +16,7 @@ def main():
     dist = read_distance()
     for i in dist:
         #print(i)
-        print(i['town'] + ' is ' + i['dist'] + ' from Bucharest')
+        print((i['town'] + ' is ' + i['dist'] + ' from Bucharest'))
     
 def read_distance():
     with open(city_distances_csv, 'r') as file:

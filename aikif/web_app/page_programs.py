@@ -3,7 +3,7 @@
 # handles the programs display page for AIKIF web interface
 
 import os
-import web_utils as web
+from . import web_utils as web
 cur_folder = os.path.dirname(os.path.abspath(__file__)) 
 aikif_folder = os.path.abspath(cur_folder + os.sep + ".."  )
 root_folder = os.path.abspath(aikif_folder + os.sep + '..')

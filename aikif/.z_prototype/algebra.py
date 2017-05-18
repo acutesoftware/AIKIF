@@ -23,7 +23,7 @@ def evalFunction(formula, n, verbose = 'verbose'):
         pass
         #       print('error at value n = ', n)
     if verbose == 'verbose':
-        print ('IF n=',n, ' THEN ', formula, ' = ', round(answer, 4))
+        print(('IF n=',n, ' THEN ', formula, ' = ', round(answer, 4)))
     return answer
 
 if __name__ == '__main__':        

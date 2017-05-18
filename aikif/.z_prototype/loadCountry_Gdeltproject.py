@@ -65,7 +65,7 @@ def LoadCountryFile(ipFile, opFile):
 	f = open(ipFile, 'r')
 	
 	if silent == 'N':
-		print('Saving master country list to ' + opFile + ' from ' + ipFile)
+		print(('Saving master country list to ' + opFile + ' from ' + ipFile))
 		
 	for line in f:
 		if len(line) > 0:

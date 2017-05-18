@@ -15,7 +15,7 @@ import config
 
 #test_folder = config.core_folder  #os.getcwd()
 test_folder = os.getcwd()
-print('test_folder = ', test_folder)
+print(('test_folder = ', test_folder))
 
 class TestTemplate(unittest.TestCase):
     def setUp(self):

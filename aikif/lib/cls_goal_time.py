@@ -41,7 +41,7 @@ class GoalTime(Goal):
         executes a plan by running the passed strategy
         and then updates the local results
         """
-        print ("TODO running strategy : " + strategy['name'] )
+        print(("TODO running strategy : " + strategy['name'] ))
         
 
     def find_best_plan(self):

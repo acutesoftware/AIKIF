@@ -24,7 +24,7 @@ class ContextTest(unittest.TestCase):
     def test_03_summarise(self):
         me = context.Context()
         res = me.summarise()
-        print('res = ', res)
+        print(('res = ', res))
         if me.host == 'Home PC':
             self.assertEqual(res, 'At Home\nPhone is charging, sitting still')  
         else:
@@ -35,7 +35,7 @@ class ContextTest(unittest.TestCase):
         me.host == 'Unknown'
         me.user == 'Developer'
         res_change1 = me.summarise()
-        print('res_change1 = ', res_change1)
+        print(('res_change1 = ', res_change1))
         if sys.platform == 'linux':
             self.assertEqual(res_change1, '\nPhone is charging, sitting still')
         else:
@@ -47,10 +47,10 @@ class ContextTest(unittest.TestCase):
         me.user == 'Developer'
         me.host == 'Home PC'
         res_change3 = me.summarise()
-        print('res_change3 = ', res_change3)
+        print(('res_change3 = ', res_change3))
         me.host == 'Work PC'
         res_change4 = me.summarise()
-        print('res_change4 = ', res_change4)
+        print(('res_change4 = ', res_change4))
         
         
     

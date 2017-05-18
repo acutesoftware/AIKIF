@@ -3,7 +3,7 @@
 # cls_file_mapping.py
 
 import os
-import config as mod_cfg
+from . import config as mod_cfg
 import yaml
 
 root_folder   = mod_cfg.fldrs['root_path']
@@ -34,7 +34,7 @@ def load_data_subject_areas(subject_file):
             for line in f:
                 lst.append(line.strip())
     else:
-        print('MISSING DATA FILE (subject_file) ' , subject_file)
+        print(('MISSING DATA FILE (subject_file) ' , subject_file))
         print('update your config.py or config.txt')
     return lst
 
@@ -47,7 +47,7 @@ def load_data_file_types(file_type_file):
             for line in f:
                 lst.append(line.strip())
     else:
-        print('MISSING DATA FILE (file_type_file) ' , file_type_file)
+        print(('MISSING DATA FILE (file_type_file) ' , file_type_file))
         print('update your config.py or config.txt')
     return lst
 

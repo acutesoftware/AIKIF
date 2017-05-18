@@ -24,7 +24,7 @@ lg.record_source('PARAM: your_param3 = ' + str(your_param3), 'dummy_learn_1.py')
 
 
 # 3. Import and run your algorithm
-import dummy_learn_1 as your_ai 
+from . import dummy_learn_1 as your_ai 
 result = your_ai.main(your_param1, your_param2, your_param3)
 
 

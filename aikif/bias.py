@@ -4,8 +4,8 @@
 import os
 #import logging
 #logging.basicConfig(filename='test_bias.log',level=logging.DEBUG,format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-import cls_log
-from decorators import debug
+from . import cls_log
+from .decorators import debug
 
 root_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 

@@ -47,7 +47,7 @@ class Toolbox(object):
         try:
             res += '.' + tool['function']
         except Exception as ex:
-            print('Warning - no function defined for tool ' + str(tool))
+            print(('Warning - no function defined for tool ' + str(tool)))
         res += '\n'
         return res
      
@@ -100,10 +100,10 @@ class Toolbox(object):
         check that the tool exists
         """
         if os.path.isfile(tool['file']):
-            print('Toolbox: program exists = TOK  :: ' + tool['file'])
+            print(('Toolbox: program exists = TOK  :: ' + tool['file']))
             return True
         else:
-            print('Toolbox: program exists = FAIL :: ' + tool['file'])
+            print(('Toolbox: program exists = FAIL :: ' + tool['file']))
             return False
 
     def run(self, tool, args, new_import_path=''):
@@ -115,7 +115,7 @@ class Toolbox(object):
             sys.path.append(new_import_path)
         
         #if silent == 'N':
-        print('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return'])
+        print(('main called ' + tool['file'] + '->' + tool['function'] + ' with ', args, ' = ', tool['return']))
         mod = __import__( os.path.basename(tool['file']).split('.')[0]) # for absolute folder names
         # mod = __import__( tool['file'][:-2]) # for aikif folders (doesnt work)
         func = getattr(mod, tool['function'])

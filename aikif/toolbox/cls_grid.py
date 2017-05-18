@@ -55,7 +55,7 @@ class Grid(object):
             with open(fname, "w") as f:
                 f.write(str(self))
         except Exception as ex:
-            print('ERROR = cant save grid results to ' + fname + str(ex))
+            print(('ERROR = cant save grid results to ' + fname + str(ex)))
             
         
         
@@ -199,22 +199,22 @@ class Grid(object):
         """   
         #print('set_tile: y=', row, 'x=', col)
         if col < 0:
-            print("ERROR - x less than zero", col)
+            print(("ERROR - x less than zero", col))
             col = 0
             #return
             
         if col > self.grid_width - 1 :
-            print("ERROR - x larger than grid", col)
+            print(("ERROR - x larger than grid", col))
             col = self.grid_width - 1
             #return
             
         if row < 0:
-            print("ERROR - y less than zero", row)
+            print(("ERROR - y less than zero", row))
             row = 0
             #return
             
         if row > self.grid_height - 1:
-            print("ERROR - y larger than grid", row)
+            print(("ERROR - y larger than grid", row))
             row = self.grid_height - 1
 
         self.grid[row][col] = value

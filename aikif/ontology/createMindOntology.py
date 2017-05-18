@@ -40,7 +40,7 @@ def main():
     currentWebText = ''
     for p in allPages:
         fixedURL = p['url'].replace('%26', ' ')  # not needed - the actual page returned 404 anyway
-        print('Reading ... ' + fixedURL)
+        print(('Reading ... ' + fixedURL))
         currentWebText = GetWebPage(fixedURL)
         if currentWebText != '404':
             p['html'], p['txt'] = ExtractContent(currentWebText, searchStringWebText)
@@ -96,7 +96,7 @@ def ExtractContent(rawText, divID):
     soup = BeautifulSoup(rawText)
     results = soup.find("div", {"id": divID})
     txt = results.getText()   # gives results without List items
-    print(str(len(txt)) + ' bytes read\n')
+    print((str(len(txt)) + ' bytes read\n'))
     for line in results.contents:
         html = html + str(line) + '\n'
     return html, txt

@@ -31,7 +31,7 @@ class Goal(object):
         to simulate a result
         """
         for plan in self.plans:
-            print("running plan ", plan[0])
+            print(("running plan ", plan[0]))
             
         
     def check_for_success(self):

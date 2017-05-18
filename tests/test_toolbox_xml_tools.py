@@ -101,9 +101,9 @@ class ToolboxXmlToolsTest(unittest.TestCase):
     def test_16_break_big_file(self):
         xml_tools.split_xml(med_file, 'slide', 5)
         self.assertTrue(os.path.exists(med_file))
-        print(xml_tools.get_xml_stats(med_file))
-        print('title', xml_tools.count_via_minidom(med_file, 'title') )   
-        print('slide', xml_tools.count_via_minidom(med_file, 'slide') )   
+        print((xml_tools.get_xml_stats(med_file)))
+        print(('title', xml_tools.count_via_minidom(med_file, 'title') ))   
+        print(('slide', xml_tools.count_via_minidom(med_file, 'slide') ))   
         self.assertEqual(xml_tools.count_via_minidom(med_file, 'title'), 12)
         self.assertEqual(xml_tools.count_via_minidom(med_file, 'slide'), 11)
    

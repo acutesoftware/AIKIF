@@ -16,7 +16,7 @@ def check_environment_for_aikif():
     gives status of python environment including which
     of the commonly used (in AIKIF) libraries are installed
     """
-    print ("Python Version = " + sys.version)
+    print(("Python Version = " + sys.version))
     lst_all_imports = get_import_list(os.getcwd() + os.sep + '..')
     lst_imports = test_libraries(lst_all_imports)
     tok, fail = test_libraries(packages)
@@ -44,7 +44,7 @@ def generate_report(lst_imports, tok, fail ):
         f.write("##List of all imports in all modules\n")
         for imp in lst_imports:
             f.write(imp + "<BR>\n")        
-    print('Done - see ' + op_file + ' for details')
+    print(('Done - see ' + op_file + ' for details'))
 
 def get_import_list(root_folder):
     """
@@ -54,13 +54,13 @@ def get_import_list(root_folder):
     Shelve for now, use hard coded list
     """
     import_statements = []
-    print("ROOT FOLDER = " + root_folder)
+    print(("ROOT FOLDER = " + root_folder))
 #    py_files = cl.clsCollectFiles(os.path.join(os.path.dirname(root_folder), os.pardir), '*.py')  # test_cls_collect
     
     py_files = cl.FileList([root_folder], ['*.py'], ['venv2'], "sample_filelist.csv")
     for fname in py_files.fl_metadata:
         #print(fl.print_file_details_in_line(f, ["fullfilename"]))
-        print(fname["fullfilename"])
+        print((fname["fullfilename"]))
         with open(fname["fullfilename"], "r") as f:
             for line in f:
                 if line.strip()[0:6] == 'import':

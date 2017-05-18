@@ -19,23 +19,23 @@ def main():
 
 def load_graph_from_rdf(fname):
     """ reads an RDF file into a graph """
-    print("reading RDF from " + fname + "....")
+    print(("reading RDF from " + fname + "...."))
     store = Graph()
     store.parse(fname, format="n3")
-    print("Loaded " + str(len(store)) + " tuples")
+    print(("Loaded " + str(len(store)) + " tuples"))
     return store
     
 def show_graph_summary(g):
     """ display sample data from a graph """
     sample_data = []
-    print("list(g[RDFS.Class]) = " + str(len(list(g[RDFS.Class]))))
+    print(("list(g[RDFS.Class]) = " + str(len(list(g[RDFS.Class])))))
     # Get Subject Lists
     num_subj = 0
     for subj in g.subjects(RDF.type):
         num_subj += 1
         if num_subj < 5:
             sample_data.append("subjects.subject: " + get_string_from_rdf(subj))
-    print("g.subjects(RDF.type) = " + str(num_subj))
+    print(("g.subjects(RDF.type) = " + str(num_subj)))
     
     # Get Sample of Subjects, Predicates, Objects
     num_subj = 0
@@ -46,7 +46,7 @@ def show_graph_summary(g):
             sample_data.append("g.predicate : " + get_string_from_rdf(subj))
             sample_data.append("g.object    : " + get_string_from_rdf(obj))
             
-    print("g.obj(RDF.type) = " + str(num_subj))
+    print(("g.obj(RDF.type) = " + str(num_subj)))
     
     
     print ("------ Sample Data ------")
@@ -64,7 +64,7 @@ def export(g, csv_fname):
             f.write('"' + get_string_from_rdf(subj) + '",')
             f.write('"' + get_string_from_rdf(pred) + '",')
             f.write('"' + get_string_from_rdf(obj) + '"\n')
-    print("Finished exporting " , num_tuples, " tuples")
+    print(("Finished exporting " , num_tuples, " tuples"))
     
 def get_string_from_rdf(src):
     """ extracts the real content from an RDF info object """

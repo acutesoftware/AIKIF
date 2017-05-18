@@ -34,7 +34,7 @@ else:
 def main():
     agentFileList = AggContext()
     agentFileList.start()
-    print(agentFileList.report())
+    print((agentFileList.report()))
     
     
 class AggContext(Agent):
@@ -46,7 +46,7 @@ class AggContext(Agent):
         This is the function that actually does the work of the agent subclass 
         """
         fullfilenames, files, folders = summarise_filelist(localFolder + fileListSrc)
-        print('AggContext found ' + str(len(files)) + ' files')
+        print(('AggContext found ' + str(len(files)) + ' files'))
         self.results.append(['Found ' + str(len(fullfilenames)) + ' files in ' + str(len(folders)) + ' folders'] )
     
 def summarise_filelist(fname):
@@ -62,7 +62,7 @@ def summarise_filelist(fname):
         """
         with open(fname, 'w', encoding="utf8") as f:
             counts = Counter( sorted(lst) )
-            sorted_x = sorted(counts.items(), key=operator.itemgetter(0))
+            sorted_x = sorted(list(counts.items()), key=operator.itemgetter(0))
             for l in sorted_x:
                 f.write('"' + l[0] + '","' +  str(l[1]) + '",\n')
     
@@ -78,7 +78,7 @@ def summarise_filelist(fname):
     fullfilenames = []
     files = []
     folders = []
-    print('Summarizing FileList = ', fname)
+    print(('Summarizing FileList = ', fname))
     with open(fname, 'r', encoding="utf8") as f:
         for line in f:
             if len(line) > 0:

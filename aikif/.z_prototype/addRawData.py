@@ -32,12 +32,12 @@ def TEST():
 
 def addData(src, method, rawString):
     # adds the raw string to the dataset
-    print('\n' + rawString + ' (src:' + src + ', method: ' + method + ')'  )
+    print(('\n' + rawString + ' (src:' + src + ', method: ' + method + ')'  ))
     n, v, a, j = parseRawString(rawString)
-    print ('nouns      : ', n)
-    print ('verbs      : ', v)
-    print ('adverbs    : ', a)
-    print ('adjectives : ', j)
+    print(('nouns      : ', n))
+    print(('verbs      : ', v))
+    print(('adverbs    : ', a))
+    print(('adjectives : ', j))
     
 def parseRawString(rawString):
     nouns = []

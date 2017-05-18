@@ -40,5 +40,5 @@ class ImageMetadataAgent(agt.Agent):
                         #print(dat)
                         op.write(dat + '\n')
                     else:
-                        print('cant get metadata for file ' + fname)
+                        print(('cant get metadata for file ' + fname))
     

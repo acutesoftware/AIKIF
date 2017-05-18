@@ -55,7 +55,7 @@ def main():
     print('AIKIF Security Settings')
     
     
-    print(show_security())
+    print((show_security()))
     
     
 if __name__ == '__main__':

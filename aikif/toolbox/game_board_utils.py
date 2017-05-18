@@ -5,7 +5,7 @@
 # assist testing usage of functions within Toolbox class.
 # 
 
-from cls_grid import Grid
+from .cls_grid import Grid
 
 def build_board_2048():
     """ builds a 2048 starting board 
@@ -50,14 +50,14 @@ def TEST():
     grd.new_tile()
     grd.new_tile()
     print(grd)
-    print("There are ", grd.count_blank_positions(), " blanks in grid 1\n")
+    print(("There are ", grd.count_blank_positions(), " blanks in grid 1\n"))
 
     grd2 = Grid(5,5, ['A','B'])
     grd2.new_tile(26)
     print(grd2)
     build_board_checkers()
 
-    print("There are ", grd2.count_blank_positions(), " blanks in grid 2")
+    print(("There are ", grd2.count_blank_positions(), " blanks in grid 2"))
 
 #build_board_checkers()
 build_board_2048()

@@ -9,9 +9,9 @@ import csv
 
 root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "..") 
 #root_folder =  os.path.abspath(os.path.dirname(os.path.abspath(__file__))) 
-print("in test_cls_filelist : root_folder = " + root_folder)
+print(("in test_cls_filelist : root_folder = " + root_folder))
 pth = os.path.join(root_folder,'aikif')
-print('pth = ' , pth)
+print(('pth = ' , pth))
 sys.path.append(pth)
 
 import cls_file_mapping as mod_filemap
@@ -22,8 +22,8 @@ file_type_file = pth + os.sep + "data" + os.sep + "ref" + os.sep + "ONTOLOGY_FIL
 dataFileTypes = mod_filemap.load_data_file_types(file_type_file)
 dataSubjectAreas = mod_filemap.load_data_subject_areas(subject_file)
 
-print(' dataFileTypes    = ', len(dataFileTypes))    
-print(' dataSubjectAreas = ', len(dataSubjectAreas))    
+print((' dataFileTypes    = ', len(dataFileTypes)))    
+print((' dataSubjectAreas = ', len(dataSubjectAreas)))    
 
 
 
@@ -85,7 +85,7 @@ class TestFileMap(unittest.TestCase):
         
     def test_07_fileMap_get_root_folder(self):  
         res = self.filemap.get_root_folder()
-        print('root_folder = ', res)
+        print(('root_folder = ', res))
         self.assertTrue('AIKIF' in res)
         
     def test_20_check_ontology(self):

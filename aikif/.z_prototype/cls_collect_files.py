@@ -21,7 +21,7 @@ class clsCollectFiles(cls_collect.clsCollect):
         self.folders = []
 
     def collect_filelist(self):
-        print("collecting files from " , self.fldr)
+        print(("collecting files from " , self.fldr))
         self.filelist = []
         self.folders = []
         for root, dirs, files in os.walk(self.fldr):
@@ -43,10 +43,10 @@ class clsCollectFiles(cls_collect.clsCollect):
         return self.tot_bytes
         
     def get_filelist(self):
-        print("there are " , str(len(self.filelist)), " files found")
+        print(("there are " , str(len(self.filelist)), " files found"))
         return self.filelist
         
     def get_folders(self):
-        print("there are " , str(len(self.folders)), " folders found")
+        print(("there are " , str(len(self.folders)), " folders found"))
         return self.folders
         

@@ -51,11 +51,11 @@ class Context(object):
         try:
             self.user, self.username = self.get_user()
         except Exception as ex:
-            print('Error:cls_context cant identify user ' + str(ex))
+            print(('Error:cls_context cant identify user ' + str(ex)))
         try:
             self.host, self.hostname = self.get_host()
         except Exception as ex:
-            print('Error:cls_context cant identify host ' + str(ex))
+            print(('Error:cls_context cant identify host ' + str(ex)))
         self.transport = self.inspect_phone()
         self.summary = self.summarise()
         self.host_cpu_pct, self.host_num_processes, self.host_mem_available, self.host_mem_total = self.get_host_usage()
@@ -80,7 +80,7 @@ class Context(object):
         all_params.append(dict(name='mem_total', val=self.host_mem_total))
         if silent != 'NO':
             for a in all_params:
-                print(a['name'].ljust(14) + '= ' + a['val'])
+                print((a['name'].ljust(14) + '= ' + a['val']))
     
         return all_params
         

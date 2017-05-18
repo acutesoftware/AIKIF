@@ -134,14 +134,14 @@ class Project(object):
         run execute on all tasks IFF prior task is successful
         """
         for t in self.tasks:
-            print('RUNNING ' + str(t.task_id) + ' = ' + t.name)
+            print(('RUNNING ' + str(t.task_id) + ' = ' + t.name))
             t.execute()
             if t.success != '__IGNORE__RESULT__':
                 print(t)
-                print('TASK RESULT :', t.result, ' but success = ' , t.success )
+                print(('TASK RESULT :', t.result, ' but success = ' , t.success ))
                 if t.result != t.success:
                     #raise Exception('Project execution failed at task ' + str(t.task_id) + ' = ' + t.name)
-                    print('ABORTING TASK EXECUTION SEQUENCE'  + str(t.task_id) + ' = ' + t.name)
+                    print(('ABORTING TASK EXECUTION SEQUENCE'  + str(t.task_id) + ' = ' + t.name))
                     break
 
         
@@ -277,7 +277,7 @@ class Task(object):
         
         
         self.result = self.func(*func_params)
-        print(exec_str + ' loaded ', self.result)
+        print((exec_str + ' loaded ', self.result))
         
     
     def _force_str(self, obj):

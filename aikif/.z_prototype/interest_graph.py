@@ -57,7 +57,7 @@ def get_sentiment(txt):
     will use a proper function for this later
     """
     res = 0
-    print('checking sentiment in ', txt)
+    print(('checking sentiment in ', txt))
     positive = ['Loved', 'listening', 'interesting']    
     negative = ['overated', 'hate', 'crap', 'shit', 'rubbish']    
     for word in positive:    

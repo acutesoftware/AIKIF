@@ -23,10 +23,10 @@ def start_api_server():
     import subprocess
     try:
         res = subprocess.call(['api_main.py'], timeout=2, shell=True)
-        print('API Main started : ', res)
+        print(('API Main started : ', res))
         time.sleep(2)
     except Exception as ex:
-        print('error starting API ' + '\n' + str(ex))
+        print(('error starting API ' + '\n' + str(ex)))
     
 
 
@@ -46,7 +46,7 @@ class TestApi(unittest.TestCase):
             r = requests.get(url + 'facts')
             self.assertEqual(r.status_code in valid_response, True)
         except Exception as ex:
-            print('API not running - attempting to start it' + str(ex))
+            print(('API not running - attempting to start it' + str(ex)))
             start_api_server()
 
     def test_02_help(self):
@@ -57,7 +57,7 @@ class TestApi(unittest.TestCase):
                 self.assertEqual(len(r.text), 857)
                 self.assertEqual(r.status_code, 200)  # should always pass regardless of logging in
         except Exception as ex:
-            print('test_02: API not running - ' + str(ex))
+            print(('test_02: API not running - ' + str(ex)))
         
     def test_03_user(self):
         #usr01 = '"user":{"password":"local","user_id":"1","username":"local"}'
@@ -68,7 +68,7 @@ class TestApi(unittest.TestCase):
                 self.assertEqual(len(r.text), 105)
                 self.assertEqual('"username": "local"' in r.text, True)
         except Exception as ex:
-            print('test_03: API not running - ' + str(ex))
+            print(('test_03: API not running - ' + str(ex)))
     
     
     def test_04_log(self):
@@ -91,7 +91,7 @@ class TestApi(unittest.TestCase):
             headers = {'content-type': 'application/json'}
             r = requests.post(url + 'log', data=dat1,headers=headers) 
         except Exception as ex:
-            print('test_04: API not running - ' + str(ex))
+            print(('test_04: API not running - ' + str(ex)))
         
     def test_05_fact_post(self):
         #new_fact1 = json.dumps({'fact_id':6, 'fact_str':'New Fact 6 added by test_05'})
@@ -119,7 +119,7 @@ class TestApi(unittest.TestCase):
 
         
         except Exception as ex:
-            print('test_05: API not running - ' + str(ex))
+            print(('test_05: API not running - ' + str(ex)))
 
             
     def test_07_map_get(self):
@@ -136,7 +136,7 @@ class TestApi(unittest.TestCase):
             
             
         except Exception as ex:
-            print('test_07: API not running - ' + str(ex))
+            print(('test_07: API not running - ' + str(ex)))
 
     def test_08_map_post(self):
         headers = {'content-type': 'application/json'}
@@ -145,7 +145,7 @@ class TestApi(unittest.TestCase):
             r = requests.post(url + 'maps', data=new_map1,headers=headers)
             self.assertEqual(r.status_code, 201)
         except Exception as ex:
-            print('test_08: API not running - ' + str(ex))
+            print(('test_08: API not running - ' + str(ex)))
             
     def test_09_map_get_again(self):
         try:
@@ -153,7 +153,7 @@ class TestApi(unittest.TestCase):
             #print(r.text)
             self.assertEqual(r.status_code in valid_response, True)
         except Exception as ex:
-            print('test_09: API not running - ' + str(ex))
+            print(('test_09: API not running - ' + str(ex)))
 
     
     def test_99_notes(self):

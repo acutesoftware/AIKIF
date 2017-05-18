@@ -56,8 +56,8 @@ class ToolboxHtmlToolsTest(unittest.TestCase):
     def test_06_extract_by_div(self):
         raw_text = '<DIV id=aa>div aa</DIV>blah blah'
         html, txt = mod_html.extract_by_div(raw_text, 'aa')
-        print('html = ', html)
-        print('txt  = ', txt)
+        print(('html = ', html))
+        print(('txt  = ', txt))
         self.assertEqual(html, 'div aa\n')
         self.assertEqual(txt, 'div aa')
         

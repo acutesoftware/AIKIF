@@ -125,7 +125,7 @@ class TestClassDataTable(unittest.TestCase):
         
         # check edge case for calc_percentiles
         first, third, median = fle.calc_percentiles(new_col, ['TERM', 'ID'], ['dummy', 'no_data'])
-        print(first, third, median)
+        print((first, third, median))
         self.assertEqual(first, 0)
         self.assertEqual(third, 0)
         self.assertEqual(median, 0)

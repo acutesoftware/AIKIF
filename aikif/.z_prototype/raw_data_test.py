@@ -7,14 +7,14 @@ import sys
 aikif_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  )
 sys.path.append(aikif_fldr)
 sys.path.append(os.path.join(aikif_fldr, 'dataTools'))
-print(' aikif_fldr = ', aikif_fldr)
+print((' aikif_fldr = ', aikif_fldr))
 import project as mod_prj
 import cls_datatable as mod_dt
 
 # rawdata latest files (from this prototype folder in AIKIF)
 rawdata_fldr = os.path.join(os.path.abspath(os.path.dirname(os.path.abspath(__file__))), "..", "..", "..", 'rawdata', 'rawdata'  )
 sys.path.append(rawdata_fldr)
-print(' rawdata_fldr = ', rawdata_fldr)
+print((' rawdata_fldr = ', rawdata_fldr))
 import generate
 import content
 
