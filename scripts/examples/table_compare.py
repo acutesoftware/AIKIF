@@ -56,8 +56,6 @@ def main():
     t_new = cl.DataTable(new_table, ',')
     t_new.load_to_array()
     t_new.describe_contents()
-    
-    print('Comparing tables ' )
 
     res, pass_fail = check_col_names(t_old, t_new)
     #print(res)
@@ -69,9 +67,6 @@ def main():
 
     res, pass_fail = compare_values(t_old, t_new)
     analysis.add([res])
-    print(analysis.arr)
-    
-    print('Comparing distinct values....')
     res = distinct_values(t_old, t_new)
     for r in res:
         analysis.add(r)
