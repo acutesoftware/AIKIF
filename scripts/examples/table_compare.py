@@ -58,7 +58,6 @@ def main():
     t_new.describe_contents()
 
     res, pass_fail = check_col_names(t_old, t_new)
-    #print(res)
     analysis.add([res])
     if pass_fail != 'OK':
         print('Bypassing exact row test, as columns are different')
@@ -73,11 +72,11 @@ def main():
         
     analysis.save_csv('results.csv', write_header_separately=True)
     
-    import pprint
-    pprint.pprint(analysis)
+    #print(analysis)
+    print('results of analysis saved to "results.csv"')
     
 def check_col_names(t_old, t_new):
-    res = '\n -- Column Name check -- \n'
+    res = ' -- Column Name check -- \n'
     pass_fail = 'OK'
     for col_num, c in enumerate(t_old.header):
         if len(t_new.header) >= col_num + 1:
@@ -93,7 +92,7 @@ def check_col_names(t_old, t_new):
     
     
 def check_rows(t_old, t_new):
-    res = '\n -- Row Name check#1 -- \n'
+    res = '\n -- Row Name check -- \n'
 
     for row_num, r in enumerate(t_old.arr):
         if len(t_new.arr) >= row_num + 1:
@@ -127,6 +126,7 @@ def distinct_values(t_old, t_new):
     the other table
     """
     res = []
+    res.append([' -- NOT IN check -- '])
     for new_col in t_new.header:
         dist_new = t_new.get_distinct_values_from_cols([new_col])
         #print('NEW Distinct values for ' + new_col + ' = ' + str(dist_new))
