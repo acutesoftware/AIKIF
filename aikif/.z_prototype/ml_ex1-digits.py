@@ -30,9 +30,95 @@ def main():
     #print_digit_data(digits)    # tok
     #plot_training_data(digits)  # tok
     #plot_target_data(digits)    # tok
-    show_PCA_training(digits)
+    #show_PCA_training(digits)   # tok
     
+    data = preprocess_data(digits)
+    print(data)
+    
+    X_train, X_test, y_train, y_test = split_data_into_training_and_test(data, digits)
+    
+    
+    clf = cluser_digits(X_train)
+    # show_cluster_digits(clf)  # TOK
+    
+    lbls = predict_labels(clf, X_test, y_test)
+   
 
+def predict_labels(clf, X_test, y_test):
+    # Predict the labels for `X_test`
+    y_pred=clf.predict(X_test)
+
+    # Print out the first 100 instances of `y_pred`
+    print(y_pred[:100])
+
+    # Print out the first 100 instances of `y_test`
+    print(y_test[:100])
+
+    # Study the shape of the cluster centers
+    clf.cluster_centers_.shape
+   
+    
+def cluser_digits(X_train):
+    # Import the `cluster` module
+    from sklearn import cluster
+
+    # Create the KMeans model
+    clf = cluster.KMeans(init='k-means++', n_clusters=10, random_state=42)
+
+    # Fit the training data to the model
+    clf.fit(X_train)
+    return clf
+
+def show_cluster_digits(clf):    
+    import matplotlib.pyplot as plt
+
+    # Figure size in inches
+    fig = plt.figure(figsize=(8, 3))
+
+    # Add title
+    fig.suptitle('Cluster Center Images', fontsize=14, fontweight='bold')
+
+    # For all labels (0-9)
+    for i in range(10):
+        # Initialize subplots in a grid of 2X5, at i+1th position
+        ax = fig.add_subplot(2, 5, 1 + i)
+        # Display images
+        ax.imshow(clf.cluster_centers_[i].reshape((8, 8)), cmap=plt.cm.binary)
+        # Don't show the axes
+        plt.axis('off')
+
+    # Show the plot
+    plt.show()
+    
+    
+    
+    
+    
+    
+def split_data_into_training_and_test(data, digits):
+    from sklearn.cross_validation import train_test_split
+    import numpy as np
+    
+    # Split the `digits` data into training and test sets
+    X_train, X_test, y_train, y_test, images_train, images_test = train_test_split(data, digits.target, digits.images, test_size=0.25, random_state=42)
+ 
+    # Number of training features
+    n_samples, n_features = X_train.shape
+
+    print('n_samples = ', n_samples)
+    print('n_features = ', n_features)
+
+    # Number of Training labels
+    n_digits = len(np.unique(y_train))
+    print(len(y_train))
+    
+    return X_train, X_test, y_train, y_test 
+
+ 
+def preprocess_data(digits):
+    from sklearn.preprocessing import scale
+    data = scale(digits.data)   
+    return data
 
 def print_digit_data(digits):
     # Get the keys of the `digits` data
