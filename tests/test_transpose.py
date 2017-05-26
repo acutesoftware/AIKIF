@@ -69,7 +69,7 @@ class TransposeTest(unittest.TestCase):
         
         obj5 = transpose.Transpose(lst_raw) 
         lst1 = obj5.data_to_links( 0, 1)    
-        print('lst1 = ' + str(len(lst1)))
+        #print('lst1 = ' + str(len(lst1)))
         #pprint.pprint(lst1)
         
         self.assertEqual(lst_raw[0], ['NAME','Location','Job'])
@@ -80,7 +80,7 @@ class TransposeTest(unittest.TestCase):
         
         lst2 = obj5.data_to_links( 0, 1, include_links_self='N')    
         self.assertEqual(len(lst2), 4)
-        print('lst2 (no SELF links) = ' + str(len(lst2)))
+        #print('lst2 (no SELF links) = ' + str(len(lst2)))
         pprint.pprint(lst2)
         
         lst3 = obj5.data_to_links( 0, 2)    
@@ -89,7 +89,7 @@ class TransposeTest(unittest.TestCase):
         self.assertEqual(len(lst3), 7)
         
         lst4 = obj5.data_to_links( 0, 2, include_links_self='N')    
-        print('lst4 (link by Job, no SELF links)= ' + str(len(lst4)))
+        #print('lst4 (link by Job, no SELF links)= ' + str(len(lst4)))
         pprint.pprint(lst4)
         self.assertEqual(len(lst4), 2)
         
@@ -98,7 +98,6 @@ class TransposeTest(unittest.TestCase):
         """
         transpose a CSV file  into a cartesan product of links
         DATE	Project Code	Location	Contractor	 Job Colour	Balance
-
         """
 
         lst_raw = []
@@ -112,11 +111,11 @@ class TransposeTest(unittest.TestCase):
                 #print(r)
                 lst_raw.append(r)
         
-        print(lst_raw[0:10])
+        #print(lst_raw[0:10])
         obj6 = transpose.Transpose(lst_raw) 
         lst1 = obj6.data_to_links( 3, 1, include_links_self='N')    
-        print('lst1 = ' + str(len(lst1)))
-        pprint.pprint(lst1[0:10])
+        #print('lst1 = ' + str(len(lst1)))
+        #pprint.pprint(lst1[0:10])
 
 
  
