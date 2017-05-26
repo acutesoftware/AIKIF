@@ -12,6 +12,8 @@ pth = root_folder + os.sep + 'aikif'
 sys.path.append(pth)
 import transpose
 
+import pprint
+
 test_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "test_results")
 
 test_list = [['col1','col2','col3'],['r1c1','r1c2','r1c3'],['r2c1','r2c2','r2c3'],['r3c1','r3c2','r3c3'],['r4c1','r4c2','r4c3']]
@@ -51,6 +53,32 @@ class TransposeTest(unittest.TestCase):
         print(obj2.ip_data)
         obj2.key_value_pairs()
         print(obj2.op_data)
+        
+    def test_05_data_to_links(self):
+        """
+        transpose a list into a cartesan product of links
+        """
+        lst_raw = [
+        ['NAME','Location','Job'],
+        ['John','Perth','Plumber'] ,
+        ['Mary','Burra','Farmer' ],
+        ['Jane','Darwin','Farmer'] , 
+        ['Fred','Perth','Cleaner'],
+        ['Cindy','Perth','Manager' ] ,
+        ]
+        
+        obj5 = transpose.Transpose(lst_raw) 
+        lst_links = obj5.data_to_links( 0, 1)    
+        print('lst_links = ')
+        pprint.pprint(lst_links)
+        
+        self.assertEqual(lst_raw[0], ['NAME','Location','Job'])
+        self.assertEqual(len(lst_raw), 6)
+        self.assertEqual(lst_links[0], ['Cat_name', 'Location', 'NAME_a', 'NAME_b'])
+        self.assertEqual(len(lst_links), 12)
+        
+        
+        
         
 if __name__ == '__main__':
     unittest.main()
