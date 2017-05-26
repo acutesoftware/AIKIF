@@ -44,7 +44,7 @@ class Transpose(object):
                 self.op_data.append([id_col, hdrs[col_num], col])
         
             
-    def data_to_links(self, id_col_num, link_col_num):
+    def data_to_links(self, id_col_num, link_col_num, include_links_self='Y'):
         """
         This takes a table of data conaining a person identifier (Name or ID)
         and returns a table showing all links based on a common column 
@@ -66,23 +66,28 @@ class Transpose(object):
         hdr_col_name = 'Cat_name'
         hdr_col_val = self.ip_data[0][link_col_num]  # gets the header 'Location'
         hdr_col_base_id = self.ip_data[0][id_col_num]  # gets the header 'NAME'
-        op_hdr = [hdr_col_name,hdr_col_val,hdr_col_base_id + '_a', hdr_col_base_id + '_b']
+        op_hdr = [hdr_col_name,hdr_col_val,hdr_col_base_id + '_a', hdr_col_base_id + '_b','link_count']
         
         res.append(op_hdr)
         
-        for row in self.ip_data[1:]:
+        for row in self.ip_data[1:]:  #.sort(key=lambda x:x[id_col_num]):
             id_col_a = row[id_col_num]
             link_col = row[link_col_num]
             row_cat_name = hdr_col_val   # this is replicated for this links list
-            
+            ok_to_add = True
             for link_row in self.ip_data[1:]:    # find all links to this
                 if link_row[link_col_num] == link_col:
                     id_col_b = link_row[id_col_num] # get the name of the other link
-                    if id_col_a != id_col_b:
-                        res.append([row_cat_name, link_col, id_col_a, id_col_b])
+                    if id_col_a == id_col_b:
+                        ok_to_add = False
+                        
+                    # check that we aren't adding links in reverse order
+                        
+                    if ok_to_add == True:
+                        res.append([row_cat_name, link_col, id_col_a, id_col_b, 1])
             
-            # do we add the self link?
-            res.append([row_cat_name, link_col, id_col_a, ''])
+            if include_links_self == 'Y': # do we add the self link?
+                res.append([row_cat_name, link_col, id_col_a, id_col_a, 0])
         return res
         
         
