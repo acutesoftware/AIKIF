@@ -14,7 +14,7 @@ import transpose
 
 import pprint
 
-test_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + "test_results")
+this_fldr = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
 
 test_list = [['col1','col2','col3'],['r1c1','r1c2','r1c3'],['r2c1','r2c2','r2c3'],['r3c1','r3c2','r3c3'],['r4c1','r4c2','r4c3']]
 
@@ -101,7 +101,7 @@ class TransposeTest(unittest.TestCase):
         """
 
         lst_raw = []
-        with open('random_projects.csv', 'r') as f:
+        with open(os.path.join(this_fldr, 'random_projects.csv'), 'r') as f:
             for line in f:
                 r = []
                 cols = line.split(',')
@@ -112,11 +112,12 @@ class TransposeTest(unittest.TestCase):
                 lst_raw.append(r)
         
         #print(lst_raw[0:10])
+        self.assertEqual(len(lst_raw), 10000)
         obj6 = transpose.Transpose(lst_raw) 
         lst1 = obj6.data_to_links( 3, 1, include_links_self='N')    
-        #print('lst1 = ' + str(len(lst1)))
+        print('lst1 = ' + str(len(lst1)))
         #pprint.pprint(lst1[0:10])
-
+        self.assertEqual(len(lst1), 598)
 
  
 if __name__ == '__main__':
