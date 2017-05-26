@@ -68,17 +68,57 @@ class TransposeTest(unittest.TestCase):
         ]
         
         obj5 = transpose.Transpose(lst_raw) 
-        lst_links = obj5.data_to_links( 0, 1)    
-        print('lst_links = ')
-        pprint.pprint(lst_links)
+        lst1 = obj5.data_to_links( 0, 1)    
+        print('lst1 = ' + str(len(lst1)))
+        #pprint.pprint(lst1)
         
         self.assertEqual(lst_raw[0], ['NAME','Location','Job'])
         self.assertEqual(len(lst_raw), 6)
-        self.assertEqual(lst_links[0], ['Cat_name', 'Location', 'NAME_a', 'NAME_b'])
-        self.assertEqual(len(lst_links), 12)
+        self.assertEqual(lst1[0], ['Cat_name', 'Location', 'NAME_a', 'NAME_b', 'link_count'])
+        self.assertEqual(len(lst1), 9)
+        #self.assertTrue(['Location', 'Perth', 'John', 'Fred'] OR ['Location', 'Perth', 'Fred', 'John'] in lst1)
         
+        lst2 = obj5.data_to_links( 0, 1, include_links_self='N')    
+        self.assertEqual(len(lst2), 4)
+        print('lst2 (no SELF links) = ' + str(len(lst2)))
+        pprint.pprint(lst2)
         
+        lst3 = obj5.data_to_links( 0, 2)    
+        #print('lst3 (link by Job)= ' + str(len(lst3)))
+        #pprint.pprint(lst3)
+        self.assertEqual(len(lst3), 7)
         
+        lst4 = obj5.data_to_links( 0, 2, include_links_self='N')    
+        print('lst4 (link by Job, no SELF links)= ' + str(len(lst4)))
+        pprint.pprint(lst4)
+        self.assertEqual(len(lst4), 2)
         
+ 
+    def test_06_data_to_links_CSV(self):
+        """
+        transpose a CSV file  into a cartesan product of links
+        DATE	Project Code	Location	Contractor	 Job Colour	Balance
+
+        """
+
+        lst_raw = []
+        with open('random_projects.csv', 'r') as f:
+            for line in f:
+                r = []
+                cols = line.split(',')
+                #print('cols = ', cols)
+                for c in cols:
+                    r.append(c.strip('\n').strip('"'))
+                #print(r)
+                lst_raw.append(r)
+        
+        print(lst_raw[0:10])
+        obj6 = transpose.Transpose(lst_raw) 
+        lst1 = obj6.data_to_links( 3, 1, include_links_self='N')    
+        print('lst1 = ' + str(len(lst1)))
+        pprint.pprint(lst1[0:10])
+
+
+ 
 if __name__ == '__main__':
     unittest.main()
