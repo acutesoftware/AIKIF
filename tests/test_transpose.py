@@ -31,7 +31,7 @@ class TransposeTest(unittest.TestCase):
         self.obj_transpose = None
 
     def test_01_instantiate(self):
-        print(self.obj_transpose)
+        #print(self.obj_transpose)
         self.assertEqual(len(self.obj_transpose.ip_data) , 5) 
         
     def test_02_pivot(self):
@@ -50,9 +50,10 @@ class TransposeTest(unittest.TestCase):
     
     def test_04_kv_test2(self):
         obj2 = transpose.Transpose(lst_ppl) 
-        print(obj2.ip_data)
+        #print(obj2.ip_data)
         obj2.key_value_pairs()
-        print(obj2.op_data)
+        #print(obj2.op_data)
+        print('todo - test for this - test_04_kv')
         
     def test_05_data_to_links(self):
         """
@@ -111,14 +112,33 @@ class TransposeTest(unittest.TestCase):
                 #print(r)
                 lst_raw.append(r)
         
-        #print(lst_raw[0:10])
+        print('Raw data from large CSV = ' + str(len(lst_raw)))
+        pprint.pprint(lst_raw[0:5])
         self.assertEqual(len(lst_raw), 10000)
         obj6 = transpose.Transpose(lst_raw) 
+        
         lst1 = obj6.data_to_links( 3, 1, include_links_self='N')    
-        print('lst1 = ' + str(len(lst1)))
-        #pprint.pprint(lst1[0:10])
-        self.assertEqual(len(lst1), 598)
+        print('Project Links from large CSV = ' + str(len(lst1)))
+        pprint.pprint(lst1[0:5])
+        self.assertEqual(len(lst1), 598)  # 598 valid links on projects
 
+        lst2 = obj6.data_to_links( 3, 1, include_links_self='Y')    
+        print('Project Links from large CSV (with SELF links) = ' + str(len(lst2)))
+        pprint.pprint(lst1[0:5])
+        self.assertEqual(len(lst2), 10597) # over 10k links (with SELF) on projects
+        
+        lst3 = obj6.data_to_links( 3, 2, include_links_self='N')    
+        print('Location Links from large CSV = ' + str(len(lst3)))
+        pprint.pprint(lst3[0:5])
+        self.assertEqual(len(lst3), 171756)  # 171756 valid links on location
+
+
+        
+        
+        
+
+        
+        
  
 if __name__ == '__main__':
     unittest.main()
