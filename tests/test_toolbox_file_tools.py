@@ -16,6 +16,9 @@ src_fldr = os.path.join(root_folder,'tests', 'test_src')
 dest_fldr = os.path.join(root_folder,'tests', 'test_dest')
 another_dest_fldr = os.path.join(root_folder,'tests', 'another_dest_fldr')
 
+print('src folder = ', src_fldr)
+print('Dest folder = ', dest_fldr)
+
 
 
 import file_tools
@@ -73,18 +76,18 @@ class TestToolboxFileTools(unittest.TestCase):
         
         #not sure if we need this for dest ? ensure_dir(dest_fldr)
         
-        """
+        
         file_tools.delete_file(test_file, True)
         self.assertEqual(os.path.exists(test_file), False)
         with open(test_file, 'w') as f:
             f.write('test file')
         self.assertEqual(os.path.exists(test_file), True)
-        file_tools.delete_file(temp_fldr + os.sep + test_file, True)
-        self.assertEqual(os.path.exists(temp_fldr + os.sep + test_file), False)
+        file_tools.delete_file(test_file, True)
+        self.assertEqual(os.path.exists(test_file), False)
         
         #file_tools.copy_file(test_file, dest_fldr)
         #self.assertEqual(os.path.exists(dest_fldr + os.sep + test_file), True)
-        """	
+        	
             
     def test_05_copy_files_to_folder(self):
         ensure_dir(another_dest_fldr)
@@ -98,19 +101,24 @@ class TestToolboxFileTools(unittest.TestCase):
             
     def test_07_copy_all_files_and_subfolders(self):
         # copy the files to dest folder as is
+        
+        #ensure_dir(src_fldr)
+        #ensure_dir(src_fldr)
+
         file_tools.copy_all_files_and_subfolders(src_fldr, dest_fldr, base_path_ignore=dest_fldr, xtn_list=['*.txt'])
         self.assertEqual(os.path.exists(dest_fldr + os.sep + 'file1.txt'), True)
         
         # there will be the 9 files backed up plus the CSV list
         fl7 = file_tools.get_filelist(dest_fldr)
         self.assertEqual(len(fl7), 10)
-
+        
 
     def test_08_copy_all_files_and_subfolders_base_path(self):
         """
         copy the files using base path, e.g.
 
         """
+        print('running test_08_copy_all_files_and_subfolders_base_path ')
         backup_path = "E:\\back2"  # this works on local PC only
         backup_path = another_dest_fldr  # use this for public tests on travis-CI
         
@@ -127,25 +135,26 @@ class TestToolboxFileTools(unittest.TestCase):
         # file doesn't exist, show an error to console, but pass test
         file_tools.delete_file('no_such_file.txt')  
         
+        """
         file_tools.delete_files_in_folder(another_dest_fldr)
         #self.assertEqual(os.path.exists(temp_fldr + os.sep + 'file_to_copy.txt'), False)
         fl12 = file_tools.get_filelist(another_dest_fldr)
         #print(fl)
         self.assertEqual(len(fl12), 6)  # files in folder are deleted, but the subfolders have files
-
+        """
  
 
     def test_99_cleanup_temp_folders(self):
         """
         make sure we start tests cleanly
         To check results - comment out this test
-        """
         time.sleep(1)
         shutil.rmtree(src_fldr, ignore_errors=True, onerror=None)
         shutil.rmtree(dest_fldr, ignore_errors=True, onerror=None)
         shutil.rmtree(another_dest_fldr, ignore_errors=True, onerror=None)
+        """
  
-
+        pass
          
 if __name__ == '__main__':
     unittest.main()
