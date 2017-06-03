@@ -26,6 +26,9 @@ def get_filelist(fldr):
     lst = mod_fl.FileList([fldr], ['*.*'], exclude_folders,  '')
     return lst.get_list()
 
+def ensure_dir(d):
+    os.makedirs(d, exist_ok=True)
+    
 def delete_file(f, ignore_errors=False):
     """
     delete a single file
@@ -66,6 +69,8 @@ def copy_files_to_folder(src, dest, xtn='*.txt'):
     except Exception as ex:
         print('ERROR copy_files_to_folder - ' + str(ex))
 
+        
+        
 def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
     """
     file_tools.copy_all_files_and_subfolders(src, dest, backup_path, ['*.*'])
@@ -74,17 +79,12 @@ def copy_all_files_and_subfolders(src, dest, base_path_ignore, xtn_list):
     paths, xtn, excluded, output_file_name = 'my_files.csv')
     """
     fl = mod_fl.FileList([src], xtn_list, exclude_folders,  '')
-    all_paths = list(set([p['path'] for p in fl.fl_metadata]))
+    all_paths = fl.get_list_of_paths()
     fl.save_filelist(os.path.join(dest,'files_backed_up.csv'),  ["name", "path", "size", "date"])
     
     for p in all_paths:
         dest_folder = os.path.join(dest, p[len(base_path_ignore):])
-        #print('dest_folder = ', dest_folder)
-        if not os.path.exists(dest_folder):
-            try:
-                os.makedirs(dest_folder) # create all directories, raise an error if it already exists
-            except:
-                print('Error - cant create directory'  + str(dest_folder))
-                
+        ensure_dir(dest_folder)
+        #print('copying ' + p)
         copy_files_to_folder(p, dest_folder, xtn='*')
  
