@@ -43,7 +43,17 @@ class FileList(object):
     def get_metadata(self):
         return self.fl_metadata
     
-        
+    
+    def get_list_of_paths(self):
+        """
+        return a list of unique paths in the file list
+        """
+        all_paths = []
+        for p in self.fl_metadata:
+            all_paths.append(p['path'])
+        return list(set(all_paths))   
+    
+    
     def get_file_list(self, lstPaths, lstXtn, lstExcluded, VERBOSE = False):
         """
         builds a list of files and returns as a list 
