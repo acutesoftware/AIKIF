@@ -148,11 +148,12 @@ class TestToolboxFileTools(unittest.TestCase):
         """
         make sure we start tests cleanly
         To check results - comment out this test
+        """
         time.sleep(1)
         shutil.rmtree(src_fldr, ignore_errors=True, onerror=None)
         shutil.rmtree(dest_fldr, ignore_errors=True, onerror=None)
         shutil.rmtree(another_dest_fldr, ignore_errors=True, onerror=None)
-        """
+        
  
         pass
          
