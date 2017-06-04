@@ -50,7 +50,14 @@ class FileList(object):
         """
         all_paths = []
         for p in self.fl_metadata:
-            all_paths.append(p['path'])
+            try:
+                all_paths.append(p['path'])
+            except:
+                try:
+                    print('cls_filelist - no key path, ignoring folder ' + str(p))
+                except:
+                    print('cls_filelist - no key path, ignoring odd character folder')
+                
         return list(set(all_paths))   
     
     
