@@ -60,6 +60,10 @@ def copy_file(src, dest):
 		shutil.copy2(src , dest)
 	except Exception as ex:
 		print('ERROR copying file' + str(ex))
+		#try:
+		#	print(src)
+		#except:
+		#	pass # ignore if failed file has odd characters
 	
 def copy_files_to_folder(src, dest, xtn='*.txt'):
 	"""
