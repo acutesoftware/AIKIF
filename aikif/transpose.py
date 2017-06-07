@@ -91,7 +91,7 @@ class Transpose(object):
         return res
         
         
-    def links_to_data(self, id_col_num, link_a_col_num, link_b_col_num):
+    def links_to_data(self, col_name_col_num, col_val_col_num, id_a_col_num, id_b_col_num):
         """
         This is the reverse of data_to_links and takes a links table and 
         generates a data table as follows
@@ -101,5 +101,30 @@ class Transpose(object):
         Location,Perth,John,Cindy           Cindy,Perth
         Location,Perth,Fred,Cindy           Fred,Perth
         """
-        pass
+        print('Converting links to data')
+        self.op_data
+        unique_ids = []
+        unique_vals = []
+        self.op_data.append(['Name', self.ip_data[1][col_name_col_num]])
+        
+        for r in self.ip_data[1:]:
+            if r[id_a_col_num] not in unique_ids:
+                unique_ids.append(r[id_a_col_num])
+                self.op_data.append([r[id_a_col_num], r[col_val_col_num]])
+            if r[id_b_col_num] not in unique_ids:
+                unique_ids.append(r[id_b_col_num])
+            if r[col_val_col_num] not in unique_vals:
+                unique_vals.append(r[col_val_col_num])
+                
+        
+        #for id in unique_ids:
+        #    self.op_data.append([id, ''])
+        
+            
+        print('unique_ids = ', unique_ids)
+        print('unique_vals= ', unique_vals)
+        print('op_data   = ', self.op_data)
+        
+        
+        
         
