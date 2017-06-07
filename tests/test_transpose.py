@@ -90,9 +90,22 @@ class TransposeTest(unittest.TestCase):
         self.assertEqual(len(lst3), 7)
         
         lst4 = obj5.data_to_links( 0, 2, include_links_self='N')    
-        #print('lst4 (link by Job, no SELF links)= ' + str(len(lst4)))
+        print('lst4 (link by Job, no SELF links)= ' + str(len(lst4)))
         pprint.pprint(lst4)
         self.assertEqual(len(lst4), 2)
+        
+        lst5 = obj5.data_to_links( 0, 2, include_links_self='Y')    
+        print('lst5 (link by Job, with SELF links)= ' + str(len(lst5)))
+        pprint.pprint(lst5)
+        self.assertEqual(len(lst5), 7)
+        
+        lst6 = obj5.data_to_links( 0, 1, include_links_self='Y')    
+        print('lst6 (link by Location, with SELF links)= ' + str(len(lst6)))
+        pprint.pprint(lst6)
+        self.assertEqual(len(lst6), 9)
+        
+        
+        
         
  
     def test_06_data_to_links_CSV(self):
@@ -102,6 +115,7 @@ class TransposeTest(unittest.TestCase):
         """
 
         lst_raw = []
+        """
         with open(os.path.join(this_fldr, 'random_projects.csv'), 'r') as f:
             for line in f:
                 r = []
@@ -113,31 +127,69 @@ class TransposeTest(unittest.TestCase):
                 lst_raw.append(r)
         
         print('Raw data from large CSV = ' + str(len(lst_raw)))
-        pprint.pprint(lst_raw[0:5])
+        #pprint.pprint(lst_raw[0:5])
         self.assertEqual(len(lst_raw), 10000)
         obj6 = transpose.Transpose(lst_raw) 
         
         lst1 = obj6.data_to_links( 3, 1, include_links_self='N')    
         print('Project Links from large CSV = ' + str(len(lst1)))
-        pprint.pprint(lst1[0:5])
+        #pprint.pprint(lst1[0:5])
         self.assertEqual(len(lst1), 598)  # 598 valid links on projects
 
         lst2 = obj6.data_to_links( 3, 1, include_links_self='Y')    
         print('Project Links from large CSV (with SELF links) = ' + str(len(lst2)))
-        pprint.pprint(lst1[0:5])
+        #pprint.pprint(lst1[0:5])
         self.assertEqual(len(lst2), 10597) # over 10k links (with SELF) on projects
         
         lst3 = obj6.data_to_links( 3, 2, include_links_self='N')    
         print('Location Links from large CSV = ' + str(len(lst3)))
-        pprint.pprint(lst3[0:5])
+        #pprint.pprint(lst3[0:5])
         self.assertEqual(len(lst3), 171756)  # 171756 valid links on location
-
-
-        
-        
-        
+        """
 
         
+    def test_07_links_to_data_jobs(self):
+        """
+        reverse the above list - the output from test_06 above is below
+        """
+        
+        lnks_jobs = [
+            ['Cat_name', 'Job', 'NAME_a', 'NAME_b', 'link_count'],
+            ['Job', 'Plumber', 'John', 'John', 0],
+            ['Job', 'Farmer', 'Mary', 'Mary', 0],
+            ['Job', 'Farmer', 'Jane', 'Mary', 1],
+            ['Job', 'Farmer', 'Jane', 'Jane', 0],
+            ['Job', 'Cleaner', 'Fred', 'Fred', 0],
+            ['Job', 'Manager', 'Cindy', 'Cindy', 0]
+        ]
+        
+        print('test_07 - lnks_jobs = ', len(lnks_jobs))
+        pprint.pprint(lnks_jobs)        
+
+        obj7 = transpose.Transpose(lnks_jobs)
+        obj7.links_to_data(col_name_col_num=0, col_val_col_num=1, id_a_col_num=2, id_b_col_num=3)
+
+    def test_08_links_to_data_location(self):
+        """
+        reverse the above list - the output from test_06 above is below
+        """
+        lnks_location = [
+            ['Cat_name', 'Location', 'NAME_a', 'NAME_b', 'link_count'],
+            ['Location', 'Perth', 'John', 'John', 0],
+            ['Location', 'Burra', 'Mary', 'Mary', 0],
+            ['Location', 'Darwin', 'Jane', 'Jane', 0],
+            ['Location', 'Perth', 'Fred', 'John', 1],
+            ['Location', 'Perth', 'Fred', 'Fred', 0],
+            ['Location', 'Perth', 'Cindy', 'John', 1],
+            ['Location', 'Perth', 'Cindy', 'Fred', 1],
+            ['Location', 'Perth', 'Cindy', 'Cindy', 0]
+        ]
+        
+        print('test_08 - lnks_location = ', len(lnks_location))
+        pprint.pprint(lnks_location)        
+
+        obj8 = transpose.Transpose(lnks_location)
+
         
  
 if __name__ == '__main__':
