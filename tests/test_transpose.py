@@ -115,7 +115,6 @@ class TransposeTest(unittest.TestCase):
         """
 
         lst_raw = []
-        """
         with open(os.path.join(this_fldr, 'random_projects.csv'), 'r') as f:
             for line in f:
                 r = []
@@ -145,7 +144,6 @@ class TransposeTest(unittest.TestCase):
         print('Location Links from large CSV = ' + str(len(lst3)))
         #pprint.pprint(lst3[0:5])
         self.assertEqual(len(lst3), 171756)  # 171756 valid links on location
-        """
 
         
     def test_07_links_to_data_jobs(self):
@@ -167,7 +165,15 @@ class TransposeTest(unittest.TestCase):
         pprint.pprint(lnks_jobs)        
 
         obj7 = transpose.Transpose(lnks_jobs)
-        obj7.links_to_data(col_name_col_num=0, col_val_col_num=1, id_a_col_num=2, id_b_col_num=3)
+        lst7 = obj7.links_to_data(col_name_col_num=0, col_val_col_num=1, id_a_col_num=2, id_b_col_num=3)
+        pprint.pprint(lst7)
+        self.assertEqual(len(lst7), 6)
+        
+        self.assertTrue(['John', 'Plumber'] in lst7)
+        self.assertTrue(['Mary', 'Farmer'] in lst7)
+        self.assertTrue(['Fred', 'Cleaner'] in lst7)
+        
+        
 
     def test_08_links_to_data_location(self):
         """
