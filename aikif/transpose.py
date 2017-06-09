@@ -126,5 +126,5 @@ class Transpose(object):
         print('op_data   = ', self.op_data)
         
         
-        
+        return self.op_data
         
