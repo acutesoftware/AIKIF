@@ -198,7 +198,9 @@ class TransposeTest(unittest.TestCase):
         lst8 = obj8.links_to_data(col_name_col_num=0, col_val_col_num=1, id_a_col_num=2, id_b_col_num=3)
         pprint.pprint(lst8)
         self.assertEqual(len(lst8), 6)
-
+        self.assertTrue(['John', 'Perth'] in lst8)
+        self.assertTrue(['Mary', 'Burra'] in lst8)
+        self.assertTrue(['Fred', 'Perth'] in lst8)
         
  
 if __name__ == '__main__':
