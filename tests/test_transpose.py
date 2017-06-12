@@ -195,6 +195,9 @@ class TransposeTest(unittest.TestCase):
         pprint.pprint(lnks_location)        
 
         obj8 = transpose.Transpose(lnks_location)
+        lst8 = obj8.links_to_data(col_name_col_num=0, col_val_col_num=1, id_a_col_num=2, id_b_col_num=3)
+        pprint.pprint(lst8)
+        self.assertEqual(len(lst8), 6)
 
         
  
