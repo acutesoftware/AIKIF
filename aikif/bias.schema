@@ -14,11 +14,41 @@ CREATE TABLE bias_user_reactions (
   UPDATE_DATE DATE 
 );
 
+DROP TABLE bias_user_source_reactions CASCADE CONSTRAINTS;
+CREATE TABLE bias_user_source_reactions (
+  user_id VARCHAR2(200), 
+  source_id VARCHAR2(200), 
+  reaction_id VARCHAR2(200),
+  UPDATE_DATE DATE 
+);
 
-DROP TABLE ref_user_reactions CASCADE CONSTRAINTS;
-CREATE TABLE ref_user_reactions (
+
+DROP TABLE bias_facts CASCADE CONSTRAINTS;
+CREATE TABLE bias_facts (
+  fact_id VARCHAR2(200), 
+  fact_title VARCHAR2(200),
+  fact_source_id VARCHAR2(200),
+  fact_details VARCHAR2(4000),
+  UPDATE_DATE DATE 
+);
+
+DROP TABLE bias_source CASCADE CONSTRAINTS;
+CREATE TABLE bias_source (
+  source_id VARCHAR2(200),
+  source_name VARCHAR2(4000),
+  source_details VARCHAR2(4000),
+  UPDATE_DATE DATE 
+);
+
+
+DROP TABLE ref_reactions CASCADE CONSTRAINTS;
+CREATE TABLE ref_reactions (
   reaction_id VARCHAR2(200),
   reaction_name VARCHAR2(200),
+  is_positive VARCHAR2(1),
+  is_negative VARCHAR2(1),
+  is_sarcastic VARCHAR2(1),
+  reaction_score NUMBER,
   UPDATE_DATE DATE 
 );
 
