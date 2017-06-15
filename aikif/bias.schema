@@ -37,6 +37,15 @@ CREATE TABLE bias_source (
   source_id VARCHAR2(200),
   source_name VARCHAR2(4000),
   source_details VARCHAR2(4000),
+  source_type_id VARCHAR2(200),
+  UPDATE_DATE DATE 
+);
+
+DROP TABLE bias_source_type CASCADE CONSTRAINTS;
+CREATE TABLE bias_source_type (
+  source_type_id VARCHAR2(200),
+  source_type_name VARCHAR2(4000),
+  source_type_details VARCHAR2(4000),
   UPDATE_DATE DATE 
 );
 
