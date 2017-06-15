@@ -33,6 +33,10 @@ sample_rawdata = {  'metadata': sample_metadata,
 lg = cls_log.Log(os.getcwd())
 lg.record_process('bias.py', 'starting bias.py')
 
+
+bias_schema = open(os.path.join(root_fldr, 'aikif', 'bias.schema'), 'r').readlines()
+print(bias_schema)
+
                 
 class Bias(object):
     """
