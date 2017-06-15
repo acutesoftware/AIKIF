@@ -1,0 +1,25 @@
+DROP TABLE bias_users CASCADE CONSTRAINTS;
+CREATE TABLE bias_users (
+  user_id VARCHAR2(200), 
+  user_details VARCHAR2(200)
+  UPDATE_DATE DATE 
+);
+
+
+DROP TABLE bias_user_reactions CASCADE CONSTRAINTS;
+CREATE TABLE bias_user_reactions (
+  user_id VARCHAR2(200), 
+  fact_id VARCHAR2(200), 
+  reaction_id VARCHAR2(200),
+  UPDATE_DATE DATE 
+);
+
+
+DROP TABLE ref_user_reactions CASCADE CONSTRAINTS;
+CREATE TABLE ref_user_reactions (
+  reaction_id VARCHAR2(200),
+  reaction_name VARCHAR2(200),
+  UPDATE_DATE DATE 
+);
+
+
