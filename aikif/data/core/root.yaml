@@ -1,0 +1,39 @@
+---
+Interface:
+    - Environment
+    - Agents
+    - Toolbox
+    - Run
+    - Review
+    - Projects
+    
+    
+Environment_types:
+    - Numeric
+    - Grid 2D
+    - Grid 3D
+    - Vector Map
+    - Virtual World GPS
+    - Real World Camera
+    - Network
+    - Website
+    - Computer
+    - Phone
+    - File Collection
+    - File
+    - Image Collection
+    - Image
+
+
+Agent_types:
+    - Collector
+    - Data Processing
+    - Solver
+    - Explorer
+    - Learner
+
+Toolbox_imports:
+    - aikif.toolbox
+    - T:\user\AIKIF\_PROD\toolbox
+    
+    
