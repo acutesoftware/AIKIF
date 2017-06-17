@@ -43,8 +43,8 @@ def main():
     prj_random = prj.Project(name='Random Information Request', desc=desc, fldr=proj_fldr)
     
     # add sources of data
-    prj_random.add_source('Root Ontology', os.path.join(src_fldr, 'data','ref', 'ontology.yaml'))
-    prj_random.add_source('Toolboxes', os.path.join(src_fldr, 'data','ref', 'toolbox.csv'))
+    prj_random.add_source('Root Ontology', os.path.abspath(os.path.join(src_fldr, 'data','ref', 'ontology.yaml')))
+    #prj_random.add_source('Toolboxes', os.path.abspath(os.path.join(src_fldr, 'data','ref', 'toolbox.csv')))
     
     
     # parse the request for possible toolboxes to use based on local ontology
@@ -53,8 +53,8 @@ def main():
         with open(s[1], 'r') as f:
             for line in f:
                 print(s[1], ' = ' , line)
-                for word in line:
-                    keywords.append(word)
+                for word in line.split(' '):
+                    keywords.append(word.strip('\n').strip(' '))
     
     # a. split request into words
     # b. lookup local ontology of words to concepts
