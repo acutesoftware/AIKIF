@@ -125,4 +125,35 @@ def identify_delim(txt):
     
     return delim
    
+def fingerprint(txt):
+    """
+    takes a string and truncates to standard form for data matching.
+    Based on the spec at OpenRefine 
+    https://github.com/OpenRefine/OpenRefine/wiki/Clustering-In-Depth#fingerprint
+    - remove leading and trailing whitespace
+    - change all characters to their lowercase representation
+    - remove all punctuation and control characters
+    - split the string into whitespace-separated tokens
+    - sort the tokens and remove duplicates
+    - join the tokens back together
+    - normalize extended western characters to their ASCII representation (for example "gödel" → "godel")  
+    
+    """
+    
+    raw_text = txt.upper().strip(' ').replace('\n','').replace(',', '').replace('.', '')
+    tokens = sorted(list(set(raw_text.split(' '))))
+    #print('tokens = ', tokens)
+    
+    res = ''.join([t for t in tokens])
+    return res
+ 
+def is_match(txt1, txt2):
+    """
+    see if there is a match based on fingerprint
+    """
+    if fingerprint(txt1) == fingerprint(txt2):
+        return True
+    else:
+        return False
 
+ 
