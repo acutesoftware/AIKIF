@@ -60,6 +60,16 @@ life	plant	vegetable	potato		"""
         self.assertEqual(delim, ',')
         t3 = text_tools.parse_text_to_table(test_hdr)   
         self.assertEqual(t3, [['Name', 'Address', 'zip', '', '', '', '']])
-        
-#if __name__ == '__main__':
-#    unittest.main()
+ 
+
+    def test_07_fingerprint(self):
+        print('test fingerprint')
+        #self.assertEqual(text_tools.fingerprint('hi there'), 'HITHERE')
+        self.assertEqual(text_tools.fingerprint('FRANK JOHNSON'), 'FRANKJOHNSON')
+        self.assertEqual(text_tools.fingerprint('Johnson, Frank'), 'FRANKJOHNSON')
+        self.assertTrue(text_tools.is_match('Johnson, Frank', 'FRANK JOHNSON'))
+        self.assertTrue(text_tools.is_match('Jane', 'JANE'))
+        self.assertFalse(text_tools.is_match('Jane', 'J@NE'))
+ 
+if __name__ == '__main__':
+    unittest.main()
