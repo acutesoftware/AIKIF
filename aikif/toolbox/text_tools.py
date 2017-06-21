@@ -139,13 +139,26 @@ def fingerprint(txt):
     - normalize extended western characters to their ASCII representation (for example "gödel" → "godel")  
     
     """
-    
-    raw_text = txt.upper().strip(' ').replace('\n','').replace(',', '').replace('.', '')
+    raw_text = txt.upper() #.strip(' ').replace('\n','')
     tokens = sorted(list(set(raw_text.split(' '))))
     #print('tokens = ', tokens)
     
-    res = ''.join([t for t in tokens])
+    res = ''.join([strip_nonalpha(t) for t in tokens])
     return res
+ 
+def strip_nonalpha(txt):
+    """
+    removes non alpha characters from string
+    TODO - replace UniCode chars with standard replacements
+    res = ''
+    for c in txt:
+        if c.isalpha():
+            res += c
+    return res
+    """
+    
+    return ''.join([c for c in txt if c.isalpha()]) 
+    
  
 def is_match(txt1, txt2):
     """
