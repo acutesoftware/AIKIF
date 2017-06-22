@@ -64,11 +64,11 @@ life	plant	vegetable	potato		"""
 
     def test_07_fingerprint(self):
         print('test fingerprint')
-        #self.assertEqual(text_tools.fingerprint('hi there'), 'HITHERE')
-        self.assertEqual(text_tools.fingerprint('FRANK JOHNSON'), 'FRANKJOHNSON')
-        self.assertEqual(text_tools.fingerprint('Johnson, Frank'), 'FRANKJOHNSON')
+        self.assertEqual(text_tools.fingerprint('hi\n there\n'), 'HITHERE')
+        self.assertEqual(text_tools.fingerprint(' FRANK JOHNSON\n\n'), 'FRANKJOHNSON')
+        self.assertEqual(text_tools.fingerprint('Johnson, Frank 2 1!!!!'), 'FRANKJOHNSON')
         self.assertTrue(text_tools.is_match('Johnson, Frank', 'FRANK JOHNSON'))
-        self.assertTrue(text_tools.is_match('Jane', 'JANE'))
+        self.assertTrue(text_tools.is_match('Jane6959494', 'JANE'))
         self.assertFalse(text_tools.is_match('Jane', 'J@NE'))
  
 if __name__ == '__main__':
