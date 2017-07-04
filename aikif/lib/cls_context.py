@@ -26,7 +26,17 @@ transport = [
     dict(type='Public',name='Tram'),  # <-- edit your preferred public transport
 ]
 
-
+logged_ssids = [
+    dict(location='Home', name='AcuteSoftware', owned_by='Me'),
+    dict(location='Home', name='Netcomm Duplicate Name', owned_by='Unknown'),
+    dict(location='Home', name='Blah Modem', owned_by='Unknown'),
+    dict(location='Work', name='123NETCOM', owned_by='Unknown'),
+    dict(location='Work', name='Tesltra 3G', owned_by='Unknown'),
+    dict(location='Work', name='Netcomm Duplicate Name', owned_by='Unknown'),
+    dict(location='Work', name='Cafe Awesome', owned_by='Unknown'),
+    dict(location='Work', name='my_3G', owned_by='Me')
+]    
+    
 #####################################################
 
 physical = ['home', 'work', 'travelling']
@@ -36,6 +46,38 @@ usage = []
 
 mode = ['work', 'business', 'email', 'web', 'games', 'media', 'nonPC']
 tpe = ['passive', 'typing', 'clicking']
+
+
+
+def where_am_i():
+    """
+    high level function that can estimate where user is based 
+    on predefined setups.
+    """
+    locations = {'Work':0, 'Home':0}
+    for ssid in scan_for_ssids():
+        #print('checking scanned_ssid ', ssid)
+        for l in logged_ssids:
+            #print('checking logged_ssid ', l)
+            if l['name'] == ssid:
+                locations[l['location']] += 1
+                #print('MATCH')
+    print('Where Am I: SSIDS Matching Home = ', locations['Home'], ' SSIDs matching Work = ', locations['Work'])
+    if locations['Home'] > locations['Work']:
+        return 'Home'
+    else:
+        return 'Work'
+       
+    
+    
+def scan_for_ssids():
+    """
+    this currently returns a list but should use the wifi
+    module to scan for local ssids - not quite sure how this
+    will work on CI
+    """
+    return ['AcuteSoftware', 'Netcomm Duplicate Name', 'Some other SSID']
+
 
 class Context(object):
     """
