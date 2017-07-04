@@ -94,7 +94,10 @@ class ContextTest(unittest.TestCase):
         self.assertEqual(ph.inspect_phone(on_charge = False), 'Phone is being used')
         
         
-        
+    def test_10_where_am_i(self):
+       location = context.where_am_i()
+       self.assertEqual(location, 'Home')
+       
         
 if __name__ == '__main__':
     unittest.main()
