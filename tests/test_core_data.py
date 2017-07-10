@@ -330,6 +330,29 @@ class CoreDataTest(unittest.TestCase):
         self.assertEqual(len(vals), 785)
         self.assertEqual(len(grps), 786)
         self.assertEqual(len(events), 0)
- 
+
+
+    def test_60_example_notes(self):
+        note_pc = mod_core.CoreDataWhat('PC:Install')
+        note_steam = mod_core.CoreDataWhat('Games:Steam', parent=note_pc)
+        note_git = mod_core.CoreDataWhat('Programming:Git', parent=note_pc)
+        note_pc.expand('', [note_steam.name,note_git.name] )
+
+        print(note_git)
+        print(note_steam)
+        print(note_pc)
+        
+        print('child_nodes of note_pc = ', note_pc.child_nodes)
+        
+        #for c in note_pc.child_nodes:
+        #    print('c  = ' , str(c))
+        
+        res = note_pc._get_all_children()
+        print(res)
+        self.assertEqual(res, ' child = Games:Steam\n child = Programming:Git\n')
+        
+
+
+        
 if __name__ == '__main__':
     unittest.main()
