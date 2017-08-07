@@ -94,9 +94,15 @@ class ContextTest(unittest.TestCase):
         self.assertEqual(ph.inspect_phone(on_charge = False), 'Phone is being used')
         
         
-    def test_10_where_am_i(self):
+    def test_10_scan_for_ssids(self):
+       ssids = context.scan_for_ssids()
+       self.assertEqual(ssids, ['AcuteSoftware', 'Netcomm Duplicate Name', 'Some other SSID'])
+       
+    def test_11_where_am_i(self):
        location = context.where_am_i()
        self.assertEqual(location, 'Home')
+       
+       
        
         
 if __name__ == '__main__':
