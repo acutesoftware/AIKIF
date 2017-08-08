@@ -1,4 +1,6 @@
-# cls_context.py    written by Duncan Murray 6-Sep-2014
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# cls_context.py
 
 import os
 
@@ -83,7 +85,6 @@ class Context(object):
     """
     This class does a best guess to return a plain english version 
     of what the user (you), this software (aikif) and the computer is doing.
-    
     """
     def __init__(self):
         self.user = ''
@@ -127,7 +128,9 @@ class Context(object):
         return all_params
         
     def summarise(self):
-        """ extrapolate a human readable summary of the contexts """
+        """ 
+        extrapolate a human readable summary of the contexts 
+        """
         res = ''
         if self.user == 'Developer': 
             if self.host == 'Home PC':
@@ -142,14 +145,18 @@ class Context(object):
     
 
     def is_user_busy(self):
-        """ determines from user details if user is busy or not """
+        """ 
+        determines from user details if user is busy or not 
+        """
         if self.phone_on_charge is True and self.user == 'Developer':
             return False
         else:
             return True
     
     def is_host_busy(self):
-        """ determines from host details if computer is busy or not """
+        """ 
+        determines from host details if computer is busy or not 
+        """
         if self.host_cpu_pct > '25' or self.host_mem_available < '500000':
             return False
         else:
@@ -223,7 +230,9 @@ class Context(object):
         return phone_status
 
     def get_host_usage(self):
-        """ get details of CPU, RAM usage of this PC """
+        """ 
+        get details of CPU, RAM usage of this PC 
+        """
         import psutil
         process_names = [proc.name for proc in psutil.process_iter()]
         cpu_pct = psutil.cpu_percent(interval=1)
