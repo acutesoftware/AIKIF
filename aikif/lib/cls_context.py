@@ -65,12 +65,9 @@ def where_am_i():
                 locations[l['location']] += 1
                 #print('MATCH')
     print('Where Am I: SSIDS Matching Home = ', locations['Home'], ' SSIDs matching Work = ', locations['Work'])
-    if locations['Home'] > locations['Work']:
-        return 'Home'
-    else:
-        return 'Work'
-       
     
+    return max(locations.keys(), key=lambda k: locations[k])
+
     
 def scan_for_ssids():
     """
