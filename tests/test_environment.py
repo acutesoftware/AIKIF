@@ -1,9 +1,15 @@
 #!/usr/bin/python3
 # coding: utf-8
 # test_environment.py
-
+import os
+import sys
 import unittest
-import aikif.environments.environment as mod_env
+
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+pth = root_folder + os.sep + 'aikif' + os.sep + 'environments' 
+sys.path.append(pth)
+
+import environment as mod_env
 
 class TestEnvironment(unittest.TestCase):
     
