@@ -1,7 +1,16 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 # environment.py     written by Duncan Murray 14//5/2014
 
-import aikif.cls_log 
-import aikif.config
+import os
+import sys 
+
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+sys.path.append(root_folder)
+
+import cls_log 
+import config
+
 
 class Environment(object):
     """
@@ -13,7 +22,7 @@ class Environment(object):
         super().__init__(self, *arg)
         """
         self.name = name
-        self.log = aikif.cls_log.Log(aikif.config.fldrs['log_folder'])
+        self.log = cls_log.Log(config.fldrs['log_folder'])
         self.log.record_command('enviroment.py', 'Initilising base environment - ' + self.name)
     
     def __str__(self):
