@@ -19,7 +19,6 @@ class Room(env.Environment):
     Room environments
     """
     def __init__(self, name):
-        print('starting Room')
         env.Environment.__init__(self, name)
         self.doors_connect_to = []
         
@@ -30,7 +29,6 @@ class Room(env.Environment):
         show the Room details
         """
         res = 'Room: ' + self.name + '\n'
-        
         return res
 
         
