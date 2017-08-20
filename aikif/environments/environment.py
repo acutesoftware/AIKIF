@@ -7,9 +7,9 @@ import sys
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
 sys.path.append(root_folder)
-
+print('config root_folder = ', root_folder)
 import cls_log 
-import config
+import config as mod_cfg
 
 
 class Environment(object):
@@ -22,7 +22,10 @@ class Environment(object):
         super().__init__(self, *arg)
         """
         self.name = name
-        self.log = cls_log.Log(config.fldrs['log_folder'])
+        
+        log_folder = mod_cfg.fldrs['log_folder']
+        
+        self.log = cls_log.Log(log_folder)
         self.log.record_command('enviroment.py', 'Initilising base environment - ' + self.name)
     
     def __str__(self):
