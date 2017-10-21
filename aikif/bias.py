@@ -57,7 +57,7 @@ class Bias(object):
         get_bias_rating() = returns the bias rating 0=bullshit -> 1=fact
         
     """
-    #@debug
+    @debug
     def __init__(self, metadata):
         """ 
         passes all data on command line leave as empty string for blank
