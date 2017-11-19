@@ -170,3 +170,13 @@ def is_match(txt1, txt2):
         return False
 
  
+ 
+def get_date_from_str(datestring):
+	"""
+	find a date from string
+	"""
+
+	import dateutil.parser
+	return dateutil.parser.parse(datestring)
+ 
+ 
