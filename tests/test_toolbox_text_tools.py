@@ -63,13 +63,38 @@ life	plant	vegetable	potato		"""
  
 
     def test_07_fingerprint(self):
-        print('test fingerprint')
         self.assertEqual(text_tools.fingerprint('hi\n there\n'), 'HITHERE')
         self.assertEqual(text_tools.fingerprint(' FRANK JOHNSON\n\n'), 'FRANKJOHNSON')
         self.assertEqual(text_tools.fingerprint('Johnson, Frank 2 1!!!!'), 'FRANKJOHNSON')
         self.assertTrue(text_tools.is_match('Johnson, Frank', 'FRANK JOHNSON'))
         self.assertTrue(text_tools.is_match('Jane6959494', 'JANE'))
         self.assertFalse(text_tools.is_match('Jane', 'J@NE'))
+        
+        
+    def test_08_get_date_from_str01(self):
+        print('test date guessing')
+        dte = text_tools.get_date_from_str('17-Nov-2017')
+        print('dte = ', dte)
+        
+        print(text_tools.get_date_from_str('Nov-17-2017'))
+        print(text_tools.get_date_from_str('Nov-17th-2017'))
+        print(text_tools.get_date_from_str('Nov 17 / 2017'))
+        print(text_tools.get_date_from_str('17/Nov/17'))
+        print(text_tools.get_date_from_str('10th Nov 17'))
+        print(text_tools.get_date_from_str('Nov 10th, 2017'))
+        print(text_tools.get_date_from_str('Nov 17th'))
+        print(text_tools.get_date_from_str('11/17'))
+        print(text_tools.get_date_from_str('2017-11-17'))
+        print(text_tools.get_date_from_str('2017-11-10'))
+        print(text_tools.get_date_from_str('20171209'))
+        
+        
+        
+        
+        
+        
+        self.assertEqual(1, 1)
+			
  
 if __name__ == '__main__':
     unittest.main()
