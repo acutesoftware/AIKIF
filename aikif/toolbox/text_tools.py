@@ -45,6 +45,25 @@ def _is_white_space(ch):
         return True
     else:
         return False
+
+
+def load_tbl_from_csv(fname):
+	"""
+	read a CSV file to list without worrying about odd characters
+	"""
+    import csv
+
+    rows_to_load = []
+    
+    with open(filename, 'r', encoding='cp1252', errors='ignore') as csvfile:
+        csvreader = csv.reader(csvfile, delimiter = ',' )
+
+        reader = csv.reader(csvfile)            
+
+        rows_to_load = list(reader)
+    
+    return rows_to_load
+    	
         
 def save_tbl_as_csv(t, fname):
     with open(fname, 'w') as f:
