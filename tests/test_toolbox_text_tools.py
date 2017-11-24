@@ -87,17 +87,25 @@ life	plant	vegetable	potato		"""
 		print(text_tools.get_date_from_str('2017-11-17'))
 		print(text_tools.get_date_from_str('2017-11-10'))
 		print(text_tools.get_date_from_str('20171209'))
+		print(text_tools.get_date_from_str('Sun')) # 26/11/2017 as at Fri 24/11
+		print(text_tools.get_date_from_str('Wed')) # 29/11/2017 as at Fri 24/11
+		
+		
 		
 		
 	def test_09_read_csv(self):
 		fldr = os.path.join(root_folder, 'aikif', 'data', 'ref')
 		lst1 = text_tools.load_tbl_from_csv(os.path.join(fldr, 'bias_by_topic.csv')) 
-		print(lst1)
 		self.assertEqual(lst1, [['maths', '0.01', '0.1'], ['physics', '0.012', '0.2'], ['economics', '0.4', '0.3'], ['politics', '0.85', '0.9'], ['religion', '0.95', '0.9']])   
 		
+		lst2 = text_tools.load_tbl_from_csv(os.path.join(fldr, 'rules_column_maps.csv'))
+		#print(lst2)
+		
+		self.assertEqual(len(lst2), 111)  # num rows with non blank lines
+		self.assertEqual(len(lst2[0]), 9) # header cols
+		self.assertEqual(len(lst2[0]), 9) # data cols on row1
 		
 		
-		self.assertEqual(1, 1)
 			
  
 if __name__ == '__main__':
