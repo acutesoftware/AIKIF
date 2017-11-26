@@ -105,6 +105,12 @@ life	plant	vegetable	potato		"""
 		self.assertEqual(len(lst2[0]), 9) # header cols
 		self.assertEqual(len(lst2[0]), 9) # data cols on row1
 		
+		lst3 = text_tools.load_tbl_from_csv(os.path.join(fldr, '..','core','THING_SYSTEM-PC-FILE-LECTURES.csv'))
+		#print(lst3)
+		
+		self.assertEqual(len(lst3), 2449)  # num rows with non blank lines
+		self.assertEqual(len(lst3[0]), 3) # header cols
+		self.assertEqual(len(lst3[1]), 3) # 1st row cols
 		
 			
  
