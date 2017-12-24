@@ -2,7 +2,13 @@ data_type_name,database_map,info_map
 name,string,CORE.PERSON
 address,string,CORE.LOCATION
 ip_address,string,CORE.LOCATION
+geo_coord_lat,number,CORE.LOCATION
+geo_coord_long,number,CORE.LOCATION
 age,number,CORE.FACT
 gender,string,CORE.FACT
 event_date,date,CORE.EVENT
+date_event,date,CORE.EVENT
+date_birth,date,CORE.EVENT
 mail_sent_date,date,CORE.EVENT
+mail_received_date,date,CORE.EVENT
+log_date,date,CORE.EVENT
