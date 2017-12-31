@@ -284,7 +284,7 @@ class Person(object):
         if self.values:
             res += 'Has the following values rated:\n'
             for v in self.values:
-                res += ' - ' + str(v) + '\n'
+                res += ' - ' + v[0].nme + ' = ' + str(v[1]) + '\n'
         return res
 
     def add_value(self, value, importance):
@@ -300,13 +300,33 @@ class Value(object):
     A value is an atomic description of something a person
     believes in.
     """
-    def __init__(self, nme, desc):
+    def __init__(self, nme, desc=''):
         self.desc = desc
         self.nme = nme
 
     def __str__(self):
         return self.nme + '\n'
 
+    def match_value_to_text(self, text):
+        """
+        this is going to be the tricky bit - probably not possible
+        to get the 'exact' rating for a value. Will need to do sentiment
+        analysis of the text to see how it matches the rating. Even that
+        sounds like it wont work - maybe a ML algorithm would do it, but
+        that requires a large body of text already matched to values - and
+        values aren't even defined as far as I have found.
+
+        UPDATE - this could work if we assume values can be single words,
+        eg tax=0.3, freedom=0.7, healthcare=0.3, welfare=0.3 etc
+        """
+
+        if self.nme in text:
+
+            res = 0.8
+        else:
+            res = 0.2
+
+        return self.nme + ' = ' + str(res) + ' match against ' + text
 
 
 if __name__ == '__main__':
