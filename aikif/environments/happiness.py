@@ -274,12 +274,26 @@ class Person(object):
     def __init__(self, nme, prefs):
         self.prefs = prefs
         self.nme = nme
+        self.values = []
 
     def __str__(self):
         res = 'Preferences for ' + self.nme + '\n'
         for k in self.prefs:
             res += k + '  = ' + str(self.prefs[k]) + '\n'
+
+        if self.values:
+            res += 'Has the following values rated:\n'
+            for v in self.values:
+                res += ' - ' + str(v) + '\n'
         return res
+
+    def add_value(self, value, importance):
+        """
+        add a value that a person believes in and the
+        importance of that value to the person (1-100)
+        """
+        self.values.append([value, importance])
+
 
 class Value(object):
     """
@@ -292,7 +306,7 @@ class Value(object):
 
     def __str__(self):
         return self.nme + '\n'
-    
+
 
 
 if __name__ == '__main__':
