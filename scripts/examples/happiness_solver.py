@@ -1,11 +1,12 @@
 # example_solve_happiness.py   written by Duncan Murray 8/2/2015
 
 import os
+import sys
 import random
 
 root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  + os.sep + ".." )
 env_folder = root_folder + os.sep + 'aikif'  + os.sep + 'environments'
-
+sys.path.append(env_folder)
 import happiness as mod_hap_env
 
 people_list = []
