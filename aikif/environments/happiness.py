@@ -4,7 +4,7 @@ def TEST():
     """
     Modules for testing happiness of 'persons' in 'worlds'
     based on simplistic preferences. Just a toy - dont take seriously
-            
+
         ----- WORLD SUMMARY for : Mars -----
         population = 0
         tax_rate   = 0.0
@@ -21,15 +21,15 @@ def TEST():
                     tax: Economic = 0.1 -> 0.3
               tradition: Personal = 0.3 -> 0.9
                  equity: Personal = 0.1 -> 0.9
-                 growth: Economic = 0.01 -> 0.09    
-    
-    
+                 growth: Economic = 0.01 -> 0.09
+
+
     """
     w = World('Mars', [0, 0.0, 0.9, 0.0])
     print(w)
     p = Person('Rover', {'tax_min':0.0, 'tax_max':0.9,'tradition':0.9, 'equity':0.0})
     print(p)
-    
+
     h = Happiness(p,w)
     #h.add_factor(HappinessFactors(name, type, min, max))
     h.add_factor(HappinessFactors('tax', 'Economic', 0.1, 0.3))
@@ -37,7 +37,7 @@ def TEST():
     h.add_factor(HappinessFactors('equity', 'Personal', 0.1, 0.9))
     h.add_factor(HappinessFactors('growth', 'Economic', 0.01, 0.09))
     print(h.show_details())
-    
+
 class World(object):
     """
     define a 'world' that all the population live it
@@ -48,8 +48,8 @@ class World(object):
         self.tax_rate = params[1]
         self.tradition = params[2]
         self.equity = params[3]
-        self.world_locations = []  
-        
+        self.world_locations = []
+
     def __str__(self):
         res = '\n----- WORLD SUMMARY for : ' + self.nme + ' -----\n'
         res += 'population = ' + str( self.population) + '\n'
@@ -57,13 +57,13 @@ class World(object):
         res += 'tradition  = ' + str( self.tradition) + '\n'
         res += 'equity     = ' + str( self.equity) #+ '\n'
         return res
-    
+
     def add_location(self, loc):
         """
         a world can have 0 or many locations - this adds one to the world
         """
         self.world_locations.append(loc)
-    
+
     def get_population(self):
         pop = 0
         for loc in self.world_locations:
@@ -83,7 +83,7 @@ class WorldLocations(object):
         self.tax_rate = params[1]
         self.tradition = params[2]
         self.equity = params[3]
-        
+
     def __str__(self):
         res = '\n----- WORLD SUMMARY for : ' + self.nme + ' -----\n'
         res += 'population = ' + str( self.population) + '\n'
@@ -95,7 +95,7 @@ class WorldLocations(object):
 class WorldFinder(object):
     """
     Class to iterate through list of worlds (randomly generated
-    or using a solver / bit fit algorithm) to try and find the 
+    or using a solver / bit fit algorithm) to try and find the
     best set of parameters for a world to make all people happy.
     """
     def __init__(self, all_people):
@@ -106,8 +106,8 @@ class WorldFinder(object):
         self.tax_range = (0,7)
         self.tradition_range = (1,9)
         self.equity_range = (1,9)
-        
-    
+
+
     def __str__(self):
         res = '\n   === World Finder Results ===\n'
         res += 'Worlds tested        = ' + str(self.num_worlds) + '\n'
@@ -125,10 +125,10 @@ class WorldFinder(object):
             return 'Yes'
         else:
             return 'No'
-        
+
     def solve(self, max_worlds=10000, silent=False):
         """
-        find the best world to make people happy 
+        find the best world to make people happy
         """
         self.num_worlds = 0
         num_unhappy = 0
@@ -163,31 +163,31 @@ class HappinessFactors(object):
         self.type = tpe
         self.min = mn
         self.max = mx
-    
+
     def __str__(self):
         res = self.name.rjust(15) + ': '
         res += self.type + ' = '
         res += str(self.min) + ' -> '
         res += str(self.max) + '\n'
         return res
-        
- 
+
+
 class Happiness(object):
     """
     abstract to manage the happiness calculations.
-    The purpose of this class is to attempt to assign a number 
+    The purpose of this class is to attempt to assign a number
     to a persons happiness in a (limited parameters) world
-    Note - original calculation was flat out wrong - just 
-    because the tax_rate is not ideal doesn't mean the person 
+    Note - original calculation was flat out wrong - just
+    because the tax_rate is not ideal doesn't mean the person
     is unhappy, rather that is a desire or preference.
-    It does have an influence but the influence needs to be 
+    It does have an influence but the influence needs to be
     scaled right back.
-    
+
     Options
-    Need to have a class of preferences and their weightings, 
-    so things like death by starvation has high unhappiness but 
+    Need to have a class of preferences and their weightings,
+    so things like death by starvation has high unhappiness but
     wishing you were a flying dragon has a low impact on happiness
-    
+
     """
     def __init__(self, person, world):
         self.person = person
@@ -195,30 +195,30 @@ class Happiness(object):
         self.factors = []
         self.rating = 0
         self.calculate()
-        
+
     def __str__(self):
-        """ 
-        return happiness rating as description 
         """
-        res = self.person.nme + ' is ' 
+        return happiness rating as description
+        """
+        res = self.person.nme + ' is '
         if self.rating > 50:
             res += 'Very Happy'
-        elif self.rating > 25: 
+        elif self.rating > 25:
             res += 'Happy'
-        elif self.rating > 5: 
+        elif self.rating > 5:
             res += 'Slightly Happy'
-        elif self.rating > -5: 
+        elif self.rating > -5:
             res += 'Indifferent'
-        elif self.rating > -25: 
+        elif self.rating > -25:
             res += 'Slightly Unhappy'
-        elif self.rating > -50: 
+        elif self.rating > -50:
             res += 'Unhappy'
         else:
             res += 'Very Unhappy'
-            
-        res += ' in ' + self.world.nme + ' (' + str(self.rating) + ')' 
+
+        res += ' in ' + self.world.nme + ' (' + str(self.rating) + ')'
         return res
-    
+
     def show_details(self):
         """
         extended print details of happiness parameters
@@ -227,13 +227,13 @@ class Happiness(object):
         res += '\nDETAILS\n'
         for f in self.factors:
             res += str(f)
-        
+
         return res
-    
+
     def add_factor(self, factor):
         self.factors.append(factor)
-        
-    
+
+
     def calculate(self):
         """
         calculates the estimated happiness of a person
@@ -245,7 +245,7 @@ class Happiness(object):
         self.rating = 0
         for f in self.factors:
             self._update_pref(f.min, f.max, self.world.tax_rate)
-        
+
     def _update_pref(self, lmin, lmax, cur):
         """
         update the self rating based on the parameters.
@@ -269,7 +269,7 @@ class Happiness(object):
             else:
                 self.rating -= (int(abs(lmax - cur)*rate_of_change_negative)) + add_negative
 
-    
+
 class Person(object):
     def __init__(self, nme, prefs):
         self.prefs = prefs
@@ -281,6 +281,19 @@ class Person(object):
             res += k + '  = ' + str(self.prefs[k]) + '\n'
         return res
 
-        
+class Value(object):
+    """
+    A value is an atomic description of something a person
+    believes in.
+    """
+    def __init__(self, nme, desc):
+        self.desc = desc
+        self.nme = nme
+
+    def __str__(self):
+        return self.nme + '\n'
+    
+
+
 if __name__ == '__main__':
     TEST()
