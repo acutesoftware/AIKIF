@@ -105,5 +105,23 @@ class TestSolveHappiness(unittest.TestCase):
         self.assertEqual(hf.name, 'tax')
 
 
+    def test_12_person_value_01(self):
+        pref1 =  {'tax_min':0.0, 'tax_max':0.2,'tradition':0.5, 'equity':0.1}
+        frank = mod_env.Person('Frank', pref1)
+        frank.add_value('Do not kill humans', 100)
+        frank.add_value('Do not kill animals for food', 20)
+        frank.add_value('Do not kill animals for sport', 90)
+        print(frank)
+
+    def test_13_person_value_02(self):
+        pref1 =  {}
+        jack = mod_env.Person('Jack', pref1)
+        jack.add_value('All taxes are bad', 90)
+        jack.add_value('Freedom of Speech', 100)
+        print(jack)
+
+
+
+
 if __name__ == '__main__':
     unittest.main()
