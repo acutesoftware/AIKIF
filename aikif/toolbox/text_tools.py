@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# text_tools.py 
+# text_tools.py
 
 def parse_text_to_table(txt):
 	"""
-	takes a blob of text and finds delimiter OR guesses 
+	takes a blob of text and finds delimiter OR guesses
 	the column positions to parse into a table.
 	input:   txt = blob of text, lines separated by \n
 	output:  res = table of text
 	"""
 	res = []                # resulting table
 	delim = identify_delim(txt)
+	print('txt to parse = ', txt, '\ndelim=',delim)
 	if delim == '' or delim == ' ':
 		fixed_split = identify_col_pos(txt)
 		if fixed_split == []:
@@ -19,13 +20,13 @@ def parse_text_to_table(txt):
 			res = parse_text_by_col_pos(txt, fixed_split)
 	else:
 		res = parse_text_by_delim(txt, delim)
-		
-	
+
+
 	return res
 
 def identify_col_pos(txt):
 	"""
-	assume no delimiter in this file, so guess the best 
+	assume no delimiter in this file, so guess the best
 	fixed column widths to split by
 	"""
 	res = []
@@ -39,7 +40,7 @@ def identify_col_pos(txt):
 	res.append(col_pos)
 	return res
 
-	
+
 def _is_white_space(ch):
 	if ch in [' ', '\t']:
 		return True
@@ -54,25 +55,25 @@ def load_tbl_from_csv(fname):
 	import csv
 
 	rows_to_load = []
-	
+
 	with open(fname, 'r', encoding='cp1252', errors='ignore') as csvfile:
 		csvreader = csv.reader(csvfile, delimiter = ',' )
 
-		reader = csv.reader(csvfile)            
+		reader = csv.reader(csvfile)
 
 		rows_to_load = list(reader)
-	
+
 	return rows_to_load
-		
-		
+
+
 def save_tbl_as_csv(t, fname):
 	with open(fname, 'w') as f:
 		for row in t:
 			for col in row:
 				f.write('"' + col + '",')
 			f.write('\n')
-		
-		
+
+
 def parse_text_by_col_pos(txt, fixed_split):
 	tbl = []
 	cur_pos = 0
@@ -87,7 +88,7 @@ def parse_text_by_col_pos(txt, fixed_split):
 			cols.append(line[cur_pos:])
 		tbl.append(cols)
 	return tbl
-	
+
 def parse_text_by_delim(txt, delim):
 	tbl = []
 	lines = txt.split('\n')
@@ -95,7 +96,7 @@ def parse_text_by_delim(txt, delim):
 		if line.strip('\n') != '':
 			tbl.append(line.split(delim))
 	return tbl
-	
+
 def _get_dict_char_count(txt):
 	"""
 	reads the characters in txt and returns a dictionary
@@ -108,7 +109,7 @@ def _get_dict_char_count(txt):
 		else:
 			dct[letter] = 1
 	return dct
- 
+
 
 def identify_delim(txt):
 	"""
@@ -118,9 +119,9 @@ def identify_delim(txt):
 	in all rows.
 	"""
 	possible_delims = _get_dict_char_count(txt)  # {'C': 3, 'a': 4, 'b': 5, 'c': 6, ',': 6, 'A': 3, '\n': 3, 'B': 3})
-		
+
 	delim = max(possible_delims.keys(), key=(lambda k: possible_delims[k]))
-	
+
 	"""
 	count_by_row = []
 	max_cols = 0
@@ -141,13 +142,13 @@ def identify_delim(txt):
 	pprint.pprint(matrix)
 	"""
 
-	
+
 	return delim
-   
+
 def fingerprint(txt):
 	"""
 	takes a string and truncates to standard form for data matching.
-	Based on the spec at OpenRefine 
+	Based on the spec at OpenRefine
 	https://github.com/OpenRefine/OpenRefine/wiki/Clustering-In-Depth#fingerprint
 	- remove leading and trailing whitespace
 	- change all characters to their lowercase representation
@@ -155,16 +156,16 @@ def fingerprint(txt):
 	- split the string into whitespace-separated tokens
 	- sort the tokens and remove duplicates
 	- join the tokens back together
-	- normalize extended western characters to their ASCII representation (for example "gödel" → "godel")  
-	
+	- normalize extended western characters to their ASCII representation (for example "gödel" → "godel")
+
 	"""
 	raw_text = txt.upper() #.strip(' ').replace('\n','')
 	tokens = sorted(list(set(raw_text.split(' '))))
 	#print('tokens = ', tokens)
-	
+
 	res = ''.join([strip_nonalpha(t) for t in tokens])
 	return res
- 
+
 def strip_nonalpha(txt):
 	"""
 	removes non alpha characters from string
@@ -175,10 +176,10 @@ def strip_nonalpha(txt):
 			res += c
 	return res
 	"""
-	
-	return ''.join([c for c in txt if c.isalpha()]) 
-	
- 
+
+	return ''.join([c for c in txt if c.isalpha()])
+
+
 def is_match(txt1, txt2):
 	"""
 	see if there is a match based on fingerprint
@@ -188,8 +189,8 @@ def is_match(txt1, txt2):
 	else:
 		return False
 
- 
- 
+
+
 def get_date_from_str(datestring):
 	"""
 	find a date from string
@@ -197,5 +198,3 @@ def get_date_from_str(datestring):
 
 	import dateutil.parser
 	return dateutil.parser.parse(datestring)
- 
- 
