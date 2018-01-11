@@ -10,7 +10,7 @@ setup(
     package_data = {
         '': ['*.txt', '*.csv', '*.yaml'],
         'aikif': ['data/*.*'],
-    },    
+    },
     url='https://github.com/acutesoftware/AIKIF',
     license='GNU General Public License v3 (GPLv3)',
     description='Artificial Intelligence Knowledge Information Framework',
@@ -22,6 +22,7 @@ setup(
           'flask-restful >= 0.3.1',
           'requests >= 2.3',
           'beautifulsoup4 >= 1.0',
+          'python-dateutil >= 2.2',
           'Pillow >= 1.0',
           'noise >= 1.2.2',
           'xlrd >= 0.9.0',
@@ -46,5 +47,3 @@ setup(
     ],
 
 )
-
-
