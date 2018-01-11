@@ -2,22 +2,23 @@
 
 #### Artificial Intelligence Knowledge Information Framework (Alpha)
 
-[![Build Status](https://travis-ci.org/acutesoftware/AIKIF.svg?branch=master)](https://travis-ci.org/acutesoftware/AIKIF) [![PyPI version](https://badge.fury.io/py/AIKIF.svg)](http://badge.fury.io/py/AIKIF) [![Code Health](https://landscape.io/github/acutesoftware/AIKIF/master/landscape.svg?style=flat)](https://landscape.io/github/acutesoftware/AIKIF/master) [![Code Climate](https://codeclimate.com/github/acutesoftware/AIKIF/badges/gpa.svg)](https://codeclimate.com/github/acutesoftware/AIKIF) [![Coverage Status](https://coveralls.io/repos/acutesoftware/AIKIF/badge.svg)](https://coveralls.io/r/acutesoftware/AIKIF) [![Requirements Status](https://requires.io/github/acutesoftware/AIKIF/requirements.svg?branch=master)](https://requires.io/github/acutesoftware/AIKIF/requirements/?branch=master) [![Join the chat at https://gitter.im/acutesoftware/AIKIF](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/acutesoftware/AIKIF?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
+[![Build Status](https://travis-ci.org/acutesoftware/AIKIF.svg?branch=master)](https://travis-ci.org/acutesoftware/AIKIF) [![PyPI version](https://badge.fury.io/py/AIKIF.svg)](http://badge.fury.io/py/AIKIF) [![Code Health](https://landscape.io/github/acutesoftware/AIKIF/master/landscape.svg?style=flat)](https://landscape.io/github/acutesoftware/AIKIF/master) [![Code Climate](https://codeclimate.com/github/acutesoftware/AIKIF/badges/gpa.svg)](https://codeclimate.com/github/acutesoftware/AIKIF) [![Coverage Status](https://coveralls.io/repos/acutesoftware/AIKIF/badge.svg)](https://coveralls.io/r/acutesoftware/AIKIF) [![Requirements Status](https://requires.io/github/acutesoftware/AIKIF/requirements.svg?branch=master)](https://requires.io/github/acutesoftware/AIKIF/requirements/?branch=master) [![Github All Releases](https://img.shields.io/github/downloads/acutesoftware/AIKIF/total.svg)]()
 
-This is an information classification framework that maps structured or freeform data to 
+
+This is an information classification framework that maps structured or freeform data to
 a standard knowledge store.<br />
 
 Manages a dataset of your applications, the source data, parameters, runs and results and then uses your business rules to convert and store the information in a machine usable format.
 
-Your AI software can link to AIKIF by setting up logging watch-points to define success / 
-failure along with the range of input parameters. Goals and plans are defined by breaking 
+Your AI software can link to AIKIF by setting up logging watch-points to define success /
+failure along with the range of input parameters. Goals and plans are defined by breaking
 them down to smaller tasks until the task can be run by a tool in the Toolbox.<br />
 
 A tool is any python wrapped function or application and is easily extensible.<br />
 
 
 
-![Overview of AIKIF](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg) 
+![Overview of AIKIF](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg)
 
 
 
@@ -37,8 +38,8 @@ To start the API server use `aikif/api_main.py` and run the `tests/test_api.py`
 ```
 
  To start the web interface use `aikif/web_app/web_aikif.py` or the batch file `aikif\go_web_aikif`
- 
-![screenshot of web interface](https://github.com/acutesoftware/AIKIF/blob/master/doc/web-if-v02.jpg "Screenshot of web interface") 
+
+![screenshot of web interface](https://github.com/acutesoftware/AIKIF/blob/master/doc/web-if-v02.jpg "Screenshot of web interface")
 
 
 #### Simple Usage
@@ -67,7 +68,7 @@ proj2.record(tbl_exp, 'Expense', ['2015-02-17', 89.95, 'fringe tickets'])
 p = aikif.project.Project('update Country reference', type='Auto')
 p.add_task(1, 'download file', aikif.toolbox.web_download)
 p.add_task(2, 'extract zip', aikif.toolbox.zip_util)  # not implemented
-p.add_task(3, 'overwrite TXT to database staging', aikif.toolbox.data_load) 
+p.add_task(3, 'overwrite TXT to database staging', aikif.toolbox.data_load)
 
 p.add_param(task=1, url='http://www.')
 p.add_param(task=1, dest_zip = 'T:\data\download\country')
@@ -108,4 +109,3 @@ p2.execute()  # with no parameters, data outputs to console
 [Requirements Documentation](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_requirements.rst)<br />
 [Design Notes](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF_design.rst)<br />
 [Overview Diagram](https://github.com/acutesoftware/AIKIF/blob/master/doc/AIKIF-Overview.jpg)<br />
-
