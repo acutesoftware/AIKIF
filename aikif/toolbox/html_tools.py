@@ -5,28 +5,31 @@ from bs4 import BeautifulSoup
 #import aikif.toolbox.network_tools as mod_net
 
 
-    
-def extract_page_links(rawText, searchText):    
+
+def extract_page_links(rawText, searchText):
     links = []
-    soup = BeautifulSoup(rawText)
+    soup = BeautifulSoup(rawText, "html.parser")
     for link in soup.findAll('a'):
         #print(link)
         l = str(link.get('href'))
         if searchText in l:
             if l != '/':
                 links.append(l)
-    return links    
+    return links
 
- 
+
 def extract_by_div(raw_text, divID):
     html = ''
-    soup = BeautifulSoup(raw_text)
+    soup = BeautifulSoup(raw_text, "html.parser")
     results = soup.find("div", {"id": divID})
-    txt = results.getText()  
+    txt = results.getText()
     print(str(len(txt)) + ' bytes read\n')
     for line in results.contents:
         html = html + str(line) + '\n'
     return html, txt
-    
+
 def extract_content(raw_text):
     return BeautifulSoup(raw_text).get_text()
+
+#html, txt = extract_by_div('<DIV id=aa>div aa</DIV>blah blah', 'aa')
+#print(html, txt)
