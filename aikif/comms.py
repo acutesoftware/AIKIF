@@ -2,12 +2,13 @@
 # coding: utf-8
 # comms.py
 
+import cls_log as mod_log
+import config as mod_cfg
 
-def TEST():
-    cm = CommsManager()
-    cm.add_channel(Channel('audio', 'F57gj3thddj'), 'F57gj3thddj')
-    cm.add_channel(Channel('TCP', 'Jgfdedfsweewr54'), 'Jgfdedfsweewr54')
-    print(cm)
+
+lg = mod_log.Log(mod_cfg.fldrs['log_folder'])
+lg.record_process('comms.py', 'Initialing Comms...')
+
 
 class CommsManager(object):
     """
@@ -28,11 +29,14 @@ class CommsManager(object):
         """
         adds a channel, but must have authenication
         """
-        # TODO
         if channel.pwd_hash == pwd_hash:
             self.channels.append(channel)
+            lg.record_process('comms.py', 'Added channel ' + channel.name)
+
+            return True
         else:
-            print('incorrect password')
+            lg.record_process('comms.py', 'ERROR - wrong hash for channel ' + channel.name)
+            return False
 
 
 class Channel(object):
