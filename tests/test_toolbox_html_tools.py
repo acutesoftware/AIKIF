@@ -3,7 +3,7 @@ import sys
 import os
 import time
 
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." ) 
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." )
 pth = root_folder + os.sep + 'aikif'
 
 #sys.path.append(pth)
@@ -23,7 +23,7 @@ C:\Python34\lib\site-packages\beautifulsoup4-4.3.2-py3.4.egg\bs4\builder\_htmlpa
 rser.py:157: DeprecationWarning: The value of convert_charrefs will become True
 in 3.5. You are encouraged to set the value explicitly.
 """
-            
+
 class ToolboxHtmlToolsTest(unittest.TestCase):
 
     def test_01_extract_page_links_none(self):
@@ -42,12 +42,12 @@ class ToolboxHtmlToolsTest(unittest.TestCase):
         txt = 'this is some test, and <a href=http://xkcd.com/292>this is a link</a>'
         self.assertEqual(mod_html.extract_content(txt), 'this is some test, and this is a link')
 
- 
+
     def test_05_parse_page(self):
         url = 'http://xkcd.com/292'
         raw_text = mod_net.get_web_page(url)
         links = mod_html.extract_page_links(raw_text, '')
-        self.assertEqual(len(raw_text) > 1000, True) 
+        self.assertEqual(len(raw_text) > 1000, True)
         self.assertEqual(len(links) > 5, True)
         #self.assertEqual(mod_html.extract_content(raw_text).strip()[0:10], 'xkcd: goto')
         self.assertEqual(mod_html.extract_content(raw_text).strip()[-13:], 'More details.')
@@ -56,10 +56,10 @@ class ToolboxHtmlToolsTest(unittest.TestCase):
     def test_06_extract_by_div(self):
         raw_text = '<DIV id=aa>div aa</DIV>blah blah'
         html, txt = mod_html.extract_by_div(raw_text, 'aa')
-        print('html = ', html)
-        print('txt  = ', txt)
+        #print('html = ', html)
+        #print('txt  = ', txt)
         self.assertEqual(html, 'div aa\n')
         self.assertEqual(txt, 'div aa')
-        
+
 if __name__ == '__main__':
     unittest.main()
