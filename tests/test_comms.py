@@ -34,7 +34,9 @@ class CommsTest(unittest.TestCase):
         #self.comms = mod_bias.Bias(test_metadata)
         cm = mod_comms.CommsManager()
         self.assertTrue('---- CommsManager ----' in str(cm))
-        cm.add_channel(mod_comms.Channel('text', '12345'), '12345')
+        self.assertTrue(cm.add_channel(mod_comms.Channel('text', '12345'), '12345'))
+        self.assertFalse(cm.add_channel(mod_comms.Channel('text', '12345'), 'WRONG HASH'))
+
         self.assertTrue('channel : text : 0 incoming messages' in str(cm))
 
 
