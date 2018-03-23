@@ -43,13 +43,10 @@ class Channel(object):
         self.name = name
         self.pwd_hash = pwd_hash
         self.inc_msg = 0
-        
+
 
 
     def __str__(self):
         res = self.name
         res += ' : ' + str(self.inc_msg) + ' incoming messages'
         return res
-
-
-TEST()
