@@ -35,8 +35,24 @@ class CommsManager(object):
 
             return True
         else:
-            lg.record_process('comms.py', 'ERROR - wrong hash for channel ' + channel.name)
+            lg.record_process('comms.py', 'ERROR - Cant add channel : wrong hash for ' + channel.name)
             return False
+
+    def delete_channel(self, channel, pwd_hash):
+        """
+        adds a channel, but must have authenication
+        """
+        if channel.pwd_hash == pwd_hash:
+            self.channels.remove(channel)
+            lg.record_process('comms.py', 'Removed channel ' + channel.name)
+
+            return True
+        else:
+            lg.record_process('comms.py', 'ERROR - Cant delete : wrong hash for  ' + channel.name)
+            return False
+
+
+
 
 
 class Channel(object):
