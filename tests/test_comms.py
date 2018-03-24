@@ -39,6 +39,13 @@ class CommsTest(unittest.TestCase):
 
         self.assertTrue('channel : text : 0 incoming messages' in str(cm))
 
+        temp_channel = mod_comms.Channel('temp_input', '12345')
+        cm.add_channel(temp_channel, '12345')
+        self.assertTrue('channel : temp_input : 0 incoming messages' in str(cm))
+        self.assertFalse(cm.delete_channel(temp_channel, 'FAKE'))
+        self.assertTrue('channel : temp_input : 0 incoming messages' in str(cm))
+        self.assertTrue(cm.delete_channel(temp_channel, '12345'))
+        
 
 if __name__ == '__main__':
     unittest.main()
