@@ -87,7 +87,7 @@ class Message(object):
         self.send_success = False
 
     def __str__(self):
-        res = self.name
+        res = ''
         res += ' : ' + str(self.sender) + ' attempting to send message to ' + str(self.receiver)
         return res
 
@@ -96,8 +96,8 @@ class Message(object):
         """
         this handles the message transmission
         """
-        print('sending message to ' + self.receiver)
+        #print('sending message to ' + self.receiver)
 
         ## TODO - send message via library
 
-        return True 
+        return True
