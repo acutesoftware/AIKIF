@@ -70,3 +70,15 @@ class Channel(object):
         res = self.name
         res += ' : ' + str(self.inc_msg) + ' incoming messages'
         return res
+
+
+class Message(object):
+    """
+    handles a message
+    """
+    def __init__(self, sender, receiver, title, details):
+        self.sender = sender
+        self.receiver = receiver
+        self.title = title
+        self.details = details
+        self.send_success = False
