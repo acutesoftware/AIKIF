@@ -2,6 +2,8 @@
 # coding: utf-8
 # comms.py
 
+import datetime
+
 import cls_log as mod_log
 import config as mod_cfg
 
@@ -81,4 +83,21 @@ class Message(object):
         self.receiver = receiver
         self.title = title
         self.details = details
+        self.date_msg = datetime.datetime.now()
         self.send_success = False
+
+    def __str__(self):
+        res = self.name
+        res += ' : ' + str(self.sender) + ' attempting to send message to ' + str(self.receiver)
+        return res
+
+
+    def send(self):
+        """
+        this handles the message transmission
+        """
+        print('sending message to ' + self.receiver)
+
+        ## TODO - send message via library
+
+        return True 
