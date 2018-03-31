@@ -47,7 +47,10 @@ class CommsTest(unittest.TestCase):
         self.assertTrue(cm.delete_channel(temp_channel, '12345'))
 
     def test_03_message(self):
-        m = mod_comms.Message('sender', 'receiver', 'title', 'details')
+        c_tx =  mod_comms.Channel('RF channel #1', '12345')
+        c_rx =  mod_comms.Channel('RF channel #2', '54321')
+
+        m = mod_comms.Message(c_tx, c_rx, 'hello - this is a test', 'content of message')
         self.assertTrue(str(m), 'sender attempting to send message to receiver')
         self.assertTrue(m.send())
 
