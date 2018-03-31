@@ -79,6 +79,7 @@ class Message(object):
     handles a message
     """
     def __init__(self, sender, receiver, title, details):
+
         self.sender = sender
         self.receiver = receiver
         self.title = title
@@ -90,6 +91,18 @@ class Message(object):
         res = ''
         res += ' : ' + str(self.sender) + ' attempting to send message to ' + str(self.receiver)
         return res
+
+
+    def prepare(self):
+        """
+        does some basic validation
+        """
+        try:
+            assert(type(self.sender) is Channel)
+            assert(type(self.receiver) is Channel)
+            return True
+        except:
+            return False
 
 
     def send(self):
