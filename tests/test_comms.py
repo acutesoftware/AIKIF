@@ -50,9 +50,23 @@ class CommsTest(unittest.TestCase):
         c_tx =  mod_comms.Channel('RF channel #1', '12345')
         c_rx =  mod_comms.Channel('RF channel #2', '54321')
 
+        self.assertTrue(type(c_tx) is mod_comms.Channel)
+        self.assertTrue(type(c_rx) is mod_comms.Channel)
         m = mod_comms.Message(c_tx, c_rx, 'hello - this is a test', 'content of message')
+
+        self.assertTrue(m.prepare())
+
         self.assertTrue(str(m), 'sender attempting to send message to receiver')
         self.assertTrue(m.send())
+
+    def test_04_message_wrong_setup(self):
+        c_tx =  'not a real channel'
+        c_rx =  23423234234234
+        m = mod_comms.Message(c_tx, c_rx, 'BAD MESSAGE', 'wrong setup - need to pass classes')
+
+
+
+
 
 
 if __name__ == '__main__':
