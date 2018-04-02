@@ -110,7 +110,9 @@ class Message(object):
         this handles the message transmission
         """
         #print('sending message to ' + self.receiver)
-
-        ## TODO - send message via library
-
-        return True
+        if self.prepare():
+            ## TODO - send message via library
+            print('sending message')
+            return True
+        else:
+            return False 
