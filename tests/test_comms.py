@@ -63,6 +63,8 @@ class CommsTest(unittest.TestCase):
         c_tx =  'not a real channel'
         c_rx =  23423234234234
         m = mod_comms.Message(c_tx, c_rx, 'BAD MESSAGE', 'wrong setup - need to pass classes')
+        self.assertFalse(m.prepare())
+        self.assertFalse(m.send())
 
 
 
