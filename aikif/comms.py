@@ -65,6 +65,7 @@ class Channel(object):
         self.name = name
         self.pwd_hash = pwd_hash
         self.inc_msg = 0
+        lg.record_process('comms.py', 'Starting channel ' + name)
 
 
 
@@ -113,6 +114,8 @@ class Message(object):
         if self.prepare():
             ## TODO - send message via library
             print('sending message')
+            lg.record_process('comms.py', 'Sending message ' + self.title)
+
             return True
         else:
-            return False 
+            return False
