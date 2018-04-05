@@ -3,6 +3,12 @@ Roadmap for AIKIF
 AIKIF
 ---------------------------------------------------
 
+API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - identify all public interfaces (progress)
+  - basic api server (done)
+  - authentication (tok in lifepim - to be copied to aikif)
+
 mapper
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - read map file (done)
@@ -10,25 +16,6 @@ mapper
   - sample map file - data loading
   - sample map file - image downloading
   - sample map file - zip extraction, data extraction
-
-core data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - work out the architecture
-  - data structures for Who, What, Where, When, Why (done)
-  - sample raw data file - project management (done)
-
-API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - identify all public interfaces (progress)
-  - basic api server (done)
-  - authentication
-
-website
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - basic structure and menu
-  - css styling (good enough)
-  - uses AIKIF via API
-  - load public sample data (done)
 
 toolbox
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,6 +25,19 @@ toolbox
   - add toolbox - image recognition
   - add toolbox - NLP
   - add toolbox - Machine Learning
+
+website
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - basic structure and menu
+  - css styling (good enough)
+  - uses AIKIF via API
+  - load public sample data (done)
+
+core data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - work out the architecture
+  - data structures for Who, What, Where, When, Why (done)
+  - sample raw data file - project management (done)
 
 virtual-AI-simulator
 ---------------------------------------------------
@@ -50,14 +50,14 @@ simulator
 worldbuild
 ---------------------------------------------------
 
+objects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - define objects for use in world
+
 worlds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - generate planet randomly as x/y grid (done)
   - read JPG hand drawn map and convert to data (out of scope)
-
-objects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - define objects for use in world
 
 rawdata
 ---------------------------------------------------
@@ -71,17 +71,18 @@ gather
   - read emails (done)
   - read file metadata (done)
   - read documents
+  - extract browser usage (done)
 
 lifepim
 ---------------------------------------------------
 
-website
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  - define structure (done)
-  - design style
-  - implement basic crud functionality
-
 collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   - collecters using rawdata package for email, files, webbrowsing
+
+website
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - define structure (done)
+  - design style (done)
+  - implement basic crud functionality (done)
 
