@@ -3,3 +3,5 @@ AgentInterfaceEnv:Agent Enviroment Interface
 AgentInterfaceWindows:Windows Interface
 ExploreAgent:TEST - exploring_agent
 PCUsageAgent:PCUsage
+Agent:Jenny
+ThinkingAgent:Jenny

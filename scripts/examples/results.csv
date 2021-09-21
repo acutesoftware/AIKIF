@@ -1,5 +1,4 @@
 results
-
  -- Column Name check -- 
 TERM ok
 GENDER ok
@@ -26,6 +25,7 @@ tot2 ok
  different value in r[5]c[3] tot1 was 31 => 67
  different value in r[5]c[4] tot2 was 0  => 873
 
+ -- NOT IN check -- 
 Not in New,tot1,[10]
 Not in New,tot2,[0 ]
 Not in Old,GENDER,[F ]
