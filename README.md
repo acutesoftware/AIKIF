@@ -2,8 +2,7 @@
 
 #### Artificial Intelligence Knowledge Information Framework (Alpha)
 
-[![Build Status](https://travis-ci.org/acutesoftware/AIKIF.svg?branch=master)](https://travis-ci.org/acutesoftware/AIKIF) [![PyPI version](https://badge.fury.io/py/AIKIF.svg)](http://badge.fury.io/py/AIKIF) [![Code Health](https://landscape.io/github/acutesoftware/AIKIF/master/landscape.svg?style=flat)](https://landscape.io/github/acutesoftware/AIKIF/master) [![Coverage Status](https://coveralls.io/repos/acutesoftware/AIKIF/badge.svg)](https://coveralls.io/r/acutesoftware/AIKIF) [![Requirements Status](https://requires.io/github/acutesoftware/AIKIF/requirements.svg?branch=master)](https://requires.io/github/acutesoftware/AIKIF/requirements/?branch=master)
-
+[![Build Status](https://travis-ci.org/acutesoftware/AIKIF.svg?branch=master)](https://travis-ci.org/acutesoftware/AIKIF) [![PyPI version](https://badge.fury.io/py/AIKIF.svg)](http://badge.fury.io/py/AIKIF) 
 
 This is an information classification framework that maps structured or freeform data to
 a standard knowledge store.<br />
