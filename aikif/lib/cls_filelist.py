@@ -11,8 +11,8 @@ from datetime import datetime
 #import aikif.cls_log as mod_log
 
 class FileListGroup(object):
-    """ 
-    not sure about the point of this class - might be simpler 
+    """
+    not sure about the point of this class - might be simpler
     to just get cls_filelist to do all the work. Will leave it in
     in case I remember the original idea
     """
@@ -36,14 +36,14 @@ class FileList(object):
         self.xtn = xtn
         self.excluded = excluded
         self.get_file_list(self.paths, self.xtn, self.excluded)
-    
+
     def get_list(self):
         return self.filelist
 
     def get_metadata(self):
         return self.fl_metadata
-    
-    
+
+
     def get_list_of_paths(self):
         """
         return a list of unique paths in the file list
@@ -57,20 +57,20 @@ class FileList(object):
                     print('cls_filelist - no key path, ignoring folder ' + str(p))
                 except:
                     print('cls_filelist - no key path, ignoring odd character folder')
-                
-        return list(set(all_paths))   
-    
-    
+
+        return list(set(all_paths))
+
+
     def get_file_list(self, lstPaths, lstXtn, lstExcluded, VERBOSE = False):
         """
-        builds a list of files and returns as a list 
+        builds a list of files and returns as a list
         """
         if VERBOSE:
             print("Generating list of Files...")
             print("Paths = ", lstPaths)
             print("Xtns  = ", lstXtn)
             print("exclude = ", lstExcluded)
-        numFiles = 0    
+        numFiles = 0
         self.filelist = []
         self.fl_metadata = []
         for rootPath in lstPaths:
@@ -101,29 +101,33 @@ class FileList(object):
         """
         collects the files metadata - note that this will fail
         with strange errors if network connection drops out to
-        shared folder, but it is better to stop the program 
-        rather than do a try except otherwise you will get an 
+        shared folder, but it is better to stop the program
+        rather than do a try except otherwise you will get an
         incomplete set of files.
         """
-        
+
         file_dict = {}
         file_dict["fullfilename"] = fname
-        try:        
+        try:
             file_dict["name"] = os.path.basename(fname)
             file_dict["date"] = self.GetDateAsString(fname)
             file_dict["size"] = os.path.getsize(fname)
             file_dict["path"] = os.path.dirname(fname)
         except IOError:
             print('Error getting metadata for file')
-            
+
         self.fl_metadata.append(file_dict)
 
     def print_file_details_in_line(self, fname, col_headers):
-        """ 
-        makes a nice display of filename for printing based on columns passed 
+        """
+        makes a nice display of filename for printing based on columns passed
         print('{:<30}'.format(f["name"]), '{:,}'.format(f["size"]))
         """
         line = ''
+        try:
+            sze = os.path.getsize(fname)
+        except Exception as ex:
+            return 'no file'
         for fld in col_headers:
             if fld == "fullfilename":
                 line = line + fname
@@ -132,12 +136,12 @@ class FileList(object):
             if fld == "date":
                 line = line + self.GetDateAsString(fname) + ' '
             if fld == "size":
-                line = line + '{:,}'.format(os.path.getsize(fname)) + ' ' 
+                line = line + '{:,}'.format(os.path.getsize(fname)) + ' '
             if fld == "path":
                 line = line + os.path.dirname(fname) + ' '
         #line += '\n'
         return line
-        
+
     def print_file_details_as_csv(self, fname, col_headers):
         """ saves as csv format """
         line = ''
@@ -154,12 +158,12 @@ class FileList(object):
                 line = line + qu + self.get_size_as_string(fname) + qu + d
             if fld == "path":
                 try:
-                    line = line + qu + os.path.dirname(fname) + qu + d 
+                    line = line + qu + os.path.dirname(fname) + qu + d
                 except IOError:
                     line = line + qu + 'ERROR_PATH' + qu + d
 
         return line
-    
+
     def get_size_as_string(self, fname):
         res = ''
         try:
@@ -169,39 +173,39 @@ class FileList(object):
         return res
 
     def GetDateAsString(self, fname):
-        res = ''  
+        res = ''
         try:
             t = os.path.getmtime(fname)
             res = str(datetime.fromtimestamp(t).strftime("%Y-%m-%d %H:%M:%S"))
         except Exception:
             res = 'Unknown Date'
-        return res     
-        
+        return res
+
     def TodayAsString(self):
         """
         returns current date and time like oracle
         return time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
         """
         return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        
-        
+
+
     def save_filelist(self, opFile, opFormat, delim=',', qu='"'):
         """
-        uses a List of files and collects meta data on them and saves 
+        uses a List of files and collects meta data on them and saves
         to an text file as a list or with metadata depending on opFormat.
         """
-        
+
         op_folder = os.path.dirname(opFile)
         if op_folder is not None:   # short filename passed
             if not os.path.exists(op_folder):
                 os.makedirs(op_folder)
-        
-        
+
+
         with open(opFile,'w') as fout:
             fout.write("fullFilename" + delim)
             for colHeading in opFormat:
                 fout.write(colHeading + delim)
-            fout.write('\n')    
+            fout.write('\n')
             for f in self.filelist:
                 line = qu + f + qu + delim
                 try:
@@ -209,7 +213,7 @@ class FileList(object):
                         if fld == "name":
                             line = line + qu + os.path.basename(f) + qu + delim
                         if fld == "date":
-                            line = line + qu + self.GetDateAsString(f) + qu + delim 
+                            line = line + qu + self.GetDateAsString(f) + qu + delim
                         if fld == "size":
                             line = line + qu + str(os.path.getsize(f)) + qu + delim
                         if fld == "path":
@@ -222,4 +226,3 @@ class FileList(object):
                 except IOError:
                     #print("Cant print line - cls_filelist line 304")
                     pass
-    

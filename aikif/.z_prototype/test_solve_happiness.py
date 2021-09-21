@@ -3,8 +3,15 @@
 import unittest
 import sys
 import os
-import aikif.examples.happiness_solver as mod_happy
-import aikif.environments.happiness as mod_env
+
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." + os.sep + ".." )
+pth = root_folder + os.sep + 'aikif'
+
+sys.path.append(root_folder + os.sep + 'scripts' + os.sep + 'examples')
+sys.path.append(pth + os.sep + 'environments')
+
+import happiness_solver as mod_happy
+import happiness as mod_env
 
 all_people = []
 all_people.append(mod_env.Person('Gand', {'tax_min':0.3, 'tax_max':0.5, 'tradition':0.2, 'equity':0.9}))
@@ -17,7 +24,7 @@ all_worlds.append(w1)
 all_worlds.append(w2)
 
 class TestSolveHappiness(unittest.TestCase):
-    
+
     def test_01_instantiation(self):
         for people in all_people:
             for world in all_worlds:
@@ -27,13 +34,13 @@ class TestSolveHappiness(unittest.TestCase):
     def test_02_person_name(self):
         self.assertEqual(all_people[0].nme, 'Gand')
         self.assertEqual(all_people[1].nme, 'Murd')
-                
+
     def test_03_person_prefs(self):
         self.assertEqual(all_people[0].prefs['tax_min'], 0.3)
         self.assertEqual(all_people[0].prefs['tax_max'], 0.5)
         self.assertEqual(all_people[0].prefs['tradition'], 0.2)
         self.assertEqual(all_people[0].prefs['equity'], 0.9)
-                
+
         self.assertEqual(all_people[1].prefs['tax_min'], 0.0)
         self.assertEqual(all_people[1].prefs['tax_max'], 0.2)
         self.assertEqual(all_people[1].prefs['tradition'], 0.5)
@@ -42,7 +49,7 @@ class TestSolveHappiness(unittest.TestCase):
     def test_04_world_name(self):
         self.assertEqual(all_worlds[0].nme, 'Astr')
         self.assertEqual(all_worlds[1].nme, 'Cryx')
-        
+
     def test_05_world_prefs(self):
         self.assertEqual(all_worlds[0].population, 5000)
         self.assertEqual(all_worlds[0].tax_rate, 0.1)
@@ -53,7 +60,7 @@ class TestSolveHappiness(unittest.TestCase):
         self.assertEqual(all_worlds[1].tax_rate, 0.3)
         self.assertEqual(all_worlds[1].tradition, 0.3)
         self.assertEqual(all_worlds[1].equity, 0.5)
-     
+
     def test_06_worldfinder(self):
         utopia = mod_env.WorldFinder(all_people)
         self.assertEqual(len(str(utopia)) , 160)
@@ -62,7 +69,7 @@ class TestSolveHappiness(unittest.TestCase):
        # fails self.assertEqual(utopia.net_happiness , 24.200000000000003)
         self.assertEqual(utopia.num_worlds , 448)
         self.assertEqual(utopia.unhappy_people , 0)
-  
+
         self.assertEqual(utopia.tax_range[0], 0)
         self.assertEqual(utopia.tax_range[1], 7)
 
@@ -71,10 +78,10 @@ class TestSolveHappiness(unittest.TestCase):
 
         self.assertEqual(utopia.equity_range[0], 1)
         self.assertEqual(utopia.equity_range[1], 9)
-        
+
         self.assertEqual(utopia.is_everyone_happy(), 'Yes')
-        
- 
+
+
     def test_07_create_single_person_list(self):
         list1 = mod_happy.create_random_population(num=1)
         self.assertEqual(len(list1), 1)
@@ -92,11 +99,33 @@ class TestSolveHappiness(unittest.TestCase):
         country1 = mod_env.WorldLocations('Ostraleu', [26, 0.3, 0.3, 0.4])
         erth.add_location(country1)
         self.assertEqual(len(str(country1)), 108)
- 
+
     def test_11_happiness_factors(self):
         hf = mod_env.HappinessFactors('tax', 'Economic', 0.1, 0.3)
         self.assertEqual(hf.name, 'tax')
 
-        
+
+    def test_12_person_value_01(self):
+        pref1 =  {'tax_min':0.0, 'tax_max':0.2,'tradition':0.5, 'equity':0.1}
+        frank = mod_env.Person('Frank', pref1)
+        frank.add_value(mod_env.Value('Do not kill humans'), 100)
+        frank.add_value(mod_env.Value('Do not kill animals for food'), 20)
+        frank.add_value(mod_env.Value('Do not kill animals for sport'), 90)
+        print(frank)
+
+
+
+    def test_13_person_value_02(self):
+        pref1 =  {}
+        jack = mod_env.Person('Jack', pref1)
+        jack.add_value(mod_env.Value('All taxes are bad'), 90)
+        jack.add_value(mod_env.Value('Freedom of Speech'), 100)
+        print(jack)
+
+        for v in jack.values:
+            print(v[0].match_value_to_text('All taxes are bad'))
+
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,12 +1,13 @@
 # example_solve_happiness.py   written by Duncan Murray 8/2/2015
 
 import os
+import sys
 import random
 
-root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".." )
-env_folder = root_folder + os.sep + 'environments' 
-
-import aikif.environments.happiness as mod_hap_env
+root_folder = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) + os.sep + ".."  + os.sep + ".." )
+env_folder = root_folder + os.sep + 'aikif'  + os.sep + 'environments'
+sys.path.append(env_folder)
+import happiness as mod_hap_env
 
 people_list = []
 people_list.append(['Gand', {'tax_min':0.3, 'tax_max':0.5, 'tradition':0.2, 'equity':0.9}])
@@ -22,7 +23,7 @@ def main():
     utopia = mod_hap_env.WorldFinder(all_people)
     utopia.solve(silent=False)
     print(utopia)
- 
+
 
 ############# Utility functions ############
 def create_random_population(num=100):
